@@ -131,7 +131,7 @@ Task("Test")
  
 
     // run using dotnet test
-    var projects = GetFiles("./src/**/*.Tests.csproj");
+    var projects = GetFiles("./tests/**/*.Tests.csproj");
     foreach(var project in projects)
     {
         var settings = new DotNetCoreTestSettings
@@ -159,7 +159,7 @@ Task("Test")
     }
 
     // run using NUnit
-    var testAssemblies = GetFiles("./src/**/bin/" + parameters.Configuration + "/" + parameters.FullFxVersion + "/*.Tests.dll");
+    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + parameters.FullFxVersion + "/*.Tests.dll");
 
     var nunitSettings = new NUnit3Settings
     {
