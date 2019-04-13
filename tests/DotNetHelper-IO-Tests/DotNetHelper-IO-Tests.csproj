@@ -1,9 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFrameworks>net452;netcoreapp2.2</TargetFrameworks>
 
     <IsPackable>false</IsPackable>
+
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DotNetHelper-IO.csproj" />
+    <ProjectReference Include="..\..\src\DotNetHelper-IO\DotNetHelper-IO.csproj" />
   </ItemGroup>
 
 </Project>

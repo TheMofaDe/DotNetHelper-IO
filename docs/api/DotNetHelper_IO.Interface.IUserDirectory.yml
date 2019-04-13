@@ -1,0 +1,136 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Interface.IUserDirectory
+  commentId: T:DotNetHelper_IO.Interface.IUserDirectory
+  id: IUserDirectory
+  parent: DotNetHelper_IO.Interface
+  children:
+  - DotNetHelper_IO.Interface.IUserDirectory.DeleteAllUserFolder
+  - DotNetHelper_IO.Interface.IUserDirectory.GetUserFolder(DotNetHelper_IO.Interface.DirectoryType)
+  langs:
+  - csharp
+  - vb
+  name: IUserDirectory
+  nameWithType: IUserDirectory
+  fullName: DotNetHelper_IO.Interface.IUserDirectory
+  type: Interface
+  source:
+    remote:
+      path: src/Interface/IUserDirectory.cs
+      branch: Feature-ImplementUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: IUserDirectory
+    path: ../src/Interface/IUserDirectory.cs
+    startLine: 2
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Interface
+  syntax:
+    content: public interface IUserDirectory
+    content.vb: Public Interface IUserDirectory
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: DotNetHelper_IO.Interface.IUserDirectory.GetUserFolder(DotNetHelper_IO.Interface.DirectoryType)
+  commentId: M:DotNetHelper_IO.Interface.IUserDirectory.GetUserFolder(DotNetHelper_IO.Interface.DirectoryType)
+  id: GetUserFolder(DotNetHelper_IO.Interface.DirectoryType)
+  parent: DotNetHelper_IO.Interface.IUserDirectory
+  langs:
+  - csharp
+  - vb
+  name: GetUserFolder(DirectoryType)
+  nameWithType: IUserDirectory.GetUserFolder(DirectoryType)
+  fullName: DotNetHelper_IO.Interface.IUserDirectory.GetUserFolder(DotNetHelper_IO.Interface.DirectoryType)
+  type: Method
+  source:
+    remote:
+      path: src/Interface/IUserDirectory.cs
+      branch: Feature-ImplementUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetUserFolder
+    path: ../src/Interface/IUserDirectory.cs
+    startLine: 4
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Interface
+  syntax:
+    content: IFolderObject GetUserFolder(DirectoryType type)
+    parameters:
+    - id: type
+      type: DotNetHelper_IO.Interface.DirectoryType
+    return:
+      type: DotNetHelper_IO.Interface.IFolderObject
+    content.vb: Function GetUserFolder(type As DirectoryType) As IFolderObject
+  overload: DotNetHelper_IO.Interface.IUserDirectory.GetUserFolder*
+- uid: DotNetHelper_IO.Interface.IUserDirectory.DeleteAllUserFolder
+  commentId: M:DotNetHelper_IO.Interface.IUserDirectory.DeleteAllUserFolder
+  id: DeleteAllUserFolder
+  parent: DotNetHelper_IO.Interface.IUserDirectory
+  langs:
+  - csharp
+  - vb
+  name: DeleteAllUserFolder()
+  nameWithType: IUserDirectory.DeleteAllUserFolder()
+  fullName: DotNetHelper_IO.Interface.IUserDirectory.DeleteAllUserFolder()
+  type: Method
+  source:
+    remote:
+      path: src/Interface/IUserDirectory.cs
+      branch: Feature-ImplementUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: DeleteAllUserFolder
+    path: ../src/Interface/IUserDirectory.cs
+    startLine: 5
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Interface
+  syntax:
+    content: bool DeleteAllUserFolder()
+    return:
+      type: System.Boolean
+    content.vb: Function DeleteAllUserFolder As Boolean
+  overload: DotNetHelper_IO.Interface.IUserDirectory.DeleteAllUserFolder*
+references:
+- uid: DotNetHelper_IO.Interface
+  commentId: N:DotNetHelper_IO.Interface
+  name: DotNetHelper_IO.Interface
+  nameWithType: DotNetHelper_IO.Interface
+  fullName: DotNetHelper_IO.Interface
+- uid: DotNetHelper_IO.Interface.IUserDirectory.GetUserFolder*
+  commentId: Overload:DotNetHelper_IO.Interface.IUserDirectory.GetUserFolder
+  name: GetUserFolder
+  nameWithType: IUserDirectory.GetUserFolder
+  fullName: DotNetHelper_IO.Interface.IUserDirectory.GetUserFolder
+- uid: DotNetHelper_IO.Interface.DirectoryType
+  commentId: T:DotNetHelper_IO.Interface.DirectoryType
+  parent: DotNetHelper_IO.Interface
+  name: DirectoryType
+  nameWithType: DirectoryType
+  fullName: DotNetHelper_IO.Interface.DirectoryType
+- uid: DotNetHelper_IO.Interface.IFolderObject
+  commentId: T:DotNetHelper_IO.Interface.IFolderObject
+  parent: DotNetHelper_IO.Interface
+  name: IFolderObject
+  nameWithType: IFolderObject
+  fullName: DotNetHelper_IO.Interface.IFolderObject
+- uid: DotNetHelper_IO.Interface.IUserDirectory.DeleteAllUserFolder*
+  commentId: Overload:DotNetHelper_IO.Interface.IUserDirectory.DeleteAllUserFolder
+  name: DeleteAllUserFolder
+  nameWithType: IUserDirectory.DeleteAllUserFolder
+  fullName: DotNetHelper_IO.Interface.IUserDirectory.DeleteAllUserFolder
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

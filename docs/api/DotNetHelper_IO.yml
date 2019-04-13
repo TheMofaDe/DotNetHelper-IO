@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO
+  commentId: N:DotNetHelper_IO
+  id: DotNetHelper_IO
+  children:
+  - DotNetHelper_IO.CompressedFile
+  - DotNetHelper_IO.FileObject
+  - DotNetHelper_IO.FileObject.SizeUnits
+  - DotNetHelper_IO.FolderObject
+  - DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper_IO
+  nameWithType: DotNetHelper_IO
+  fullName: DotNetHelper_IO
+  type: Namespace
+  assemblies:
+  - DotNetHelper-IO
+references:
+- uid: DotNetHelper_IO.FileObject
+  commentId: T:DotNetHelper_IO.FileObject
+  parent: DotNetHelper_IO
+  name: FileObject
+  nameWithType: FileObject
+  fullName: DotNetHelper_IO.FileObject
+- uid: DotNetHelper_IO.FileObject.SizeUnits
+  commentId: T:DotNetHelper_IO.FileObject.SizeUnits
+  parent: DotNetHelper_IO
+  name: FileObject.SizeUnits
+  nameWithType: FileObject.SizeUnits
+  fullName: DotNetHelper_IO.FileObject.SizeUnits
+- uid: DotNetHelper_IO.FolderObject
+  commentId: T:DotNetHelper_IO.FolderObject
+  parent: DotNetHelper_IO
+  name: FolderObject
+  nameWithType: FolderObject
+  fullName: DotNetHelper_IO.FolderObject
+- uid: DotNetHelper_IO.ZipFileObject
+  commentId: T:DotNetHelper_IO.ZipFileObject
+  name: ZipFileObject
+  nameWithType: ZipFileObject
+  fullName: DotNetHelper_IO.ZipFileObject
+- uid: DotNetHelper_IO.CompressedFile
+  commentId: T:DotNetHelper_IO.CompressedFile
+  name: CompressedFile
+  nameWithType: CompressedFile
+  fullName: DotNetHelper_IO.CompressedFile
+- uid: DotNetHelper_IO
+  commentId: N:DotNetHelper_IO
+  name: DotNetHelper_IO
+  nameWithType: DotNetHelper_IO
+  fullName: DotNetHelper_IO
