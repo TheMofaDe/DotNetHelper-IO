@@ -132,11 +132,13 @@ Task("Test")
 
     // run using dotnet test
     var projects = GetFiles("./tests/**/*.Tests.csproj");
+
+		Information(projects);
     foreach(var project in projects)
     {
         var settings = new DotNetCoreTestSettings
         {
-            Framework = parameters.FullFxVersion,
+            Framework = parameters.StandardFxVersion,
             NoBuild = true,
             NoRestore = true,
             Configuration = parameters.Configuration
@@ -159,8 +161,9 @@ Task("Test")
     }
 
     // run using NUnit
-    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + parameters.FullFxVersion + "/*.Tests.dll");
+    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + parameters.StandardFxVersion + "/*.Tests.dll");
 
+	// Information(testAssemblies);
     var nunitSettings = new NUnit3Settings
     {
         Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Files.TestCoverageOutputFilePath } }
