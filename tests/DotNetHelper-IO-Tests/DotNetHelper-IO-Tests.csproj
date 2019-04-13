@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DotNetHelper-IO.csproj" />
+    <ProjectReference Include="..\..\src\DotNetHelper-IO\DotNetHelper-IO.csproj" />
   </ItemGroup>
 
 </Project>
