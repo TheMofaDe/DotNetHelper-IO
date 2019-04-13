@@ -131,14 +131,13 @@ Task("Test")
  
 
     // run using dotnet test
-    var projects = GetFiles("./tests/**/*.Tests.csproj");
-
-		Information(projects);
+    var projects = GetFiles("./tests/**/*-Tests.csproj");
+	
     foreach(var project in projects)
-    {
+    {	
         var settings = new DotNetCoreTestSettings
         {
-            Framework = parameters.StandardFxVersion,
+            Framework = parameters.FullFxVersion,
             NoBuild = true,
             NoRestore = true,
             Configuration = parameters.Configuration
@@ -156,14 +155,13 @@ Task("Test")
             settings.Filter = "TestCategory!=NoMono";
         }
 
-        // DotNetCoreTest(project.FullPath, settings, coverletSettings);
-        DotNetCoreTest(project.FullPath, settings);
+        // DotNetCoreTest(project.FullPath, settings, coverletSettings);		
+         DotNetCoreTest(project.FullPath, settings);
     }
 
     // run using NUnit
-    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + parameters.StandardFxVersion + "/*.Tests.dll");
+    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + parameters.FullFxVersion  + "/*-Tests.dll");
 
-	// Information(testAssemblies);
     var nunitSettings = new NUnit3Settings
     {
         Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Files.TestCoverageOutputFilePath } }

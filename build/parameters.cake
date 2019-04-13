@@ -9,7 +9,7 @@ public class BuildParameters
     public string Configuration { get; private set; }
 
     public string StandardFxVersion { get; private set; } = "netstandard2.0"; // TODO ::  Configurable per project. Enter the framwork your targeting
-    public string CoreFxVersion { get; private set; } = "netcoreapp2.1"; // TODO ::  Configurable per project. Enter the framwork your targeting
+    public string CoreFxVersion { get; private set; } = "netcoreapp2.2"; // TODO ::  Configurable per project. Enter the framwork your targeting
     public string FullFxVersion { get; private set; } = "net452"; // TODO ::  Configurable per project. Enter the framwork your targeting
     public string RepositoryOwner {get; private set;} = "TheMoFaDe";
     public string RepositoryName {get; private set;} // leave null if same as project name
