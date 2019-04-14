@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "gGo7X7Do7FPtIyFws49YJA=="
+          "hash": "3uKebEmjsi6edL8ZAHTrRg=="
         }
       },
       "is_incremental": false,
@@ -189,11 +189,10 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 12,
-          "skipped_file_count": 2
+          "skipped_file_count": 12
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ConceptualDocumentProcessor disable incremental build because last build doesn't contain version .",
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 1,
           "skipped_file_count": 0
