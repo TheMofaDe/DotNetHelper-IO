@@ -4,6 +4,6 @@
   href: articles/
   homepage: articles/gettingstarted.md
 - name: API Documentation
-  href: api/DotNetHelper_Encryption.html
+  href: api/DotNetHelper_IO.html
 - name: REST API
   href: restapi/
