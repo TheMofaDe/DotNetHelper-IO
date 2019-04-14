@@ -44,6 +44,7 @@ bool publishingError = false;
 
 Setup<BuildParameters>(context =>
 {
+    Information("Starting Setup...");
     var parameters = BuildParameters.GetParameters(Context);
 
     Build(parameters.Configuration,parameters.SolutionFileName);
