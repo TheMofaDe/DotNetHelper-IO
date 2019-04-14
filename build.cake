@@ -77,16 +77,16 @@ Teardown<BuildParameters>((context, parameters) =>
     {
         Information("Starting Teardown...");
 
-        Information("Repository info : IsMainRepo {0}, IsMainBranch {1}, IsTagged: {2}, IsPullRequest: {3}",
-            parameters.IsMainRepo,
-            parameters.IsMainBranch,
-            parameters.IsTagged,
-            parameters.IsPullRequest);
-
-        if(context.Successful)
-        {
-
-        }
+     //   Information("Repository info : IsMainRepo {0}, IsMainBranch {1}, IsTagged: {2}, IsPullRequest: {3}",
+     //       parameters.IsMainRepo,
+     //       parameters.IsMainBranch,
+     //       parameters.IsTagged,
+     //       parameters.IsPullRequest);
+	 //
+     //   if(context.Successful)
+     //   {
+	 //
+     //   }
 
         Information("Finished running tasks.");
     }
