@@ -34,11 +34,11 @@ items:
   type: Interface
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ISerializer
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 7
   assemblies:
   - DotNetHelper-IO
@@ -85,11 +85,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SerializeToStream
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 17
   assemblies:
   - DotNetHelper-IO
@@ -137,11 +137,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SerializeToStream
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 29
   assemblies:
   - DotNetHelper-IO
@@ -185,11 +185,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SerializeToFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 38
   assemblies:
   - DotNetHelper-IO
@@ -234,11 +234,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SerializeToFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 47
   assemblies:
   - DotNetHelper-IO
@@ -283,11 +283,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SerializeToFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 57
   assemblies:
   - DotNetHelper-IO
@@ -328,11 +328,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SerializeToFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 66
   assemblies:
   - DotNetHelper-IO
@@ -370,11 +370,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SerializeToString
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 75
   assemblies:
   - DotNetHelper-IO
@@ -409,11 +409,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SerializeToString
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 85
   assemblies:
   - DotNetHelper-IO
@@ -455,11 +455,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeFromFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 94
   assemblies:
   - DotNetHelper-IO
@@ -497,11 +497,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeFromFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 103
   assemblies:
   - DotNetHelper-IO
@@ -544,11 +544,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeFromFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 120
   assemblies:
   - DotNetHelper-IO
@@ -579,11 +579,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeListFromFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 127
   assemblies:
   - DotNetHelper-IO
@@ -614,11 +614,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeToList
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 134
   assemblies:
   - DotNetHelper-IO
@@ -649,11 +649,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeListFromFile
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 141
   assemblies:
   - DotNetHelper-IO
@@ -691,11 +691,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeFromStream
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 150
   assemblies:
   - DotNetHelper-IO
@@ -736,11 +736,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeFromStream
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 159
   assemblies:
   - DotNetHelper-IO
@@ -778,11 +778,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeFromString
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 168
   assemblies:
   - DotNetHelper-IO
@@ -825,11 +825,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeToList
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 177
   assemblies:
   - DotNetHelper-IO
@@ -872,11 +872,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeFromString
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 186
   assemblies:
   - DotNetHelper-IO
@@ -914,11 +914,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/ISerializer.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/ISerializer.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeserializeToCSharpClass
-    path: ../src/Interface/ISerializer.cs
+    path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
     startLine: 189
   assemblies:
   - DotNetHelper-IO

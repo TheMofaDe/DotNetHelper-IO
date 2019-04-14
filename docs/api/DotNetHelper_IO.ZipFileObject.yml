@@ -21,11 +21,11 @@ items:
   type: Class
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ZipFileObject
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 16
   assemblies:
   - DotNetHelper-IO
@@ -116,11 +116,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Type
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 18
   assemblies:
   - DotNetHelper-IO
@@ -151,11 +151,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 20
   assemblies:
   - DotNetHelper-IO
@@ -186,11 +186,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncate
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 32
   assemblies:
   - DotNetHelper-IO
@@ -225,11 +225,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: UnZipFile
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 60
   assemblies:
   - DotNetHelper-IO
@@ -262,11 +262,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: AddFileToZip
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 86
   assemblies:
   - DotNetHelper-IO
@@ -295,11 +295,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: AddFilesToZip
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 95
   assemblies:
   - DotNetHelper-IO
@@ -337,11 +337,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: RemoveFilesToZip
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 120
   assemblies:
   - DotNetHelper-IO

@@ -22,11 +22,11 @@ items:
   type: Enum
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DirectoryType
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 9
   assemblies:
   - DotNetHelper-IO
@@ -53,11 +53,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Files
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 11
   assemblies:
   - DotNetHelper-IO
@@ -85,11 +85,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Videos
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 12
   assemblies:
   - DotNetHelper-IO
@@ -117,11 +117,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Photos
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 13
   assemblies:
   - DotNetHelper-IO
@@ -149,11 +149,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Audio
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 14
   assemblies:
   - DotNetHelper-IO
@@ -181,11 +181,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Documents
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 15
   assemblies:
   - DotNetHelper-IO
@@ -213,11 +213,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Sqls
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 16
   assemblies:
   - DotNetHelper-IO
@@ -245,11 +245,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Other
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 17
   assemblies:
   - DotNetHelper-IO
@@ -277,11 +277,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Root
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 18
   assemblies:
   - DotNetHelper-IO

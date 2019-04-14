@@ -23,11 +23,11 @@ items:
   type: Enum
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SizeUnits
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1200
   assemblies:
   - DotNetHelper-IO
@@ -54,11 +54,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Byte
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO
@@ -86,11 +86,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Kb
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO
@@ -118,11 +118,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Mb
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO
@@ -150,11 +150,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Gb
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO
@@ -182,11 +182,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Tb
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO
@@ -214,11 +214,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Pb
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO
@@ -246,11 +246,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Eb
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO
@@ -278,11 +278,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Zb
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO
@@ -310,11 +310,11 @@ items:
   type: Field
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Yb
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1202
   assemblies:
   - DotNetHelper-IO

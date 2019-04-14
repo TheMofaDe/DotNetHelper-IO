@@ -14,11 +14,11 @@ items:
   type: Class
   source:
     remote:
-      path: src/ZipFileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CompressedFile
-    path: ../src/ZipFileObject.cs
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 287
   assemblies:
   - DotNetHelper-IO

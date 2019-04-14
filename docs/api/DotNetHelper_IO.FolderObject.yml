@@ -48,11 +48,11 @@ items:
   type: Class
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FolderObject
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 24
   assemblies:
   - DotNetHelper-IO
@@ -99,11 +99,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FolderNameOnly
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 30
   assemblies:
   - DotNetHelper-IO
@@ -137,11 +137,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FullFolderPath
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 35
   assemblies:
   - DotNetHelper-IO
@@ -175,11 +175,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Exist
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 40
   assemblies:
   - DotNetHelper-IO
@@ -213,11 +213,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Watcher
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 45
   assemblies:
   - DotNetHelper-IO
@@ -251,11 +251,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Files
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 50
   assemblies:
   - DotNetHelper-IO
@@ -289,11 +289,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Subfolders
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 55
   assemblies:
   - DotNetHelper-IO
@@ -327,11 +327,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WatchTimeout
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 60
   assemblies:
   - DotNetHelper-IO
@@ -365,11 +365,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: NotifyFilters
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 65
   assemblies:
   - DotNetHelper-IO
@@ -403,11 +403,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ParentFolder
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 70
   assemblies:
   - DotNetHelper-IO
@@ -441,11 +441,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LastWriteTimeUtc
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 75
   assemblies:
   - DotNetHelper-IO
@@ -479,11 +479,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LastWriteTime
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 80
   assemblies:
   - DotNetHelper-IO
@@ -517,11 +517,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LastAccessTime
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 85
   assemblies:
   - DotNetHelper-IO
@@ -555,11 +555,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LastAccessTimeUtc
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 90
   assemblies:
   - DotNetHelper-IO
@@ -593,11 +593,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreationTimeUtc
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 95
   assemblies:
   - DotNetHelper-IO
@@ -631,11 +631,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreationTime
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 100
   assemblies:
   - DotNetHelper-IO
@@ -669,11 +669,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ParentNameOnly
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 105
   assemblies:
   - DotNetHelper-IO
@@ -707,11 +707,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LoadSubFolders
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 111
   assemblies:
   - DotNetHelper-IO
@@ -745,11 +745,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LoadFilesInFolder
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 116
   assemblies:
   - DotNetHelper-IO
@@ -783,11 +783,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LoadRecursive
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 121
   assemblies:
   - DotNetHelper-IO
@@ -821,11 +821,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 130
   assemblies:
   - DotNetHelper-IO
@@ -866,11 +866,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 140
   assemblies:
   - DotNetHelper-IO
@@ -899,11 +899,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: RefreshObject
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 177
   assemblies:
   - DotNetHelper-IO
@@ -940,11 +940,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Create
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 248
   assemblies:
   - DotNetHelper-IO
@@ -981,11 +981,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetAllFiles
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 306
   assemblies:
   - DotNetHelper-IO
@@ -1021,11 +1021,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetAllFolders
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 351
   assemblies:
   - DotNetHelper-IO
@@ -1063,11 +1063,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyTo
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 420
   assemblies:
   - DotNetHelper-IO
@@ -1106,11 +1106,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: MoveTo
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 443
   assemblies:
   - DotNetHelper-IO
@@ -1149,11 +1149,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ZipFolderToFileSystem
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 473
   assemblies:
   - DotNetHelper-IO
@@ -1198,11 +1198,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ZipFolderToMemory
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 518
   assemblies:
   - DotNetHelper-IO
@@ -1233,11 +1233,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SetFileAttribute
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 542
   assemblies:
   - DotNetHelper-IO
@@ -1275,11 +1275,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeleteFolder
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 578
   assemblies:
   - DotNetHelper-IO
@@ -1315,11 +1315,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StartWatching
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 618
   assemblies:
   - DotNetHelper-IO
@@ -1357,11 +1357,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StopWatching
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 646
   assemblies:
   - DotNetHelper-IO
@@ -1389,11 +1389,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Dispose
-    path: ../src/FolderObject.cs
+    path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 716
   assemblies:
   - DotNetHelper-IO

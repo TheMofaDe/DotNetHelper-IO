@@ -16,11 +16,11 @@ items:
   type: Interface
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: IUserDirectory
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 2
   assemblies:
   - DotNetHelper-IO
@@ -47,11 +47,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetUserFolder
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 4
   assemblies:
   - DotNetHelper-IO
@@ -78,11 +78,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/Interface/IUserDirectory.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeleteAllUserFolder
-    path: ../src/Interface/IUserDirectory.cs
+    path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 5
   assemblies:
   - DotNetHelper-IO

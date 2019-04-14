@@ -14,11 +14,11 @@ items:
   type: Interface
   source:
     remote:
-      path: src/Interface/IFolderObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/Interface/IFolderObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: IFolderObject
-    path: ../src/Interface/IFolderObject.cs
+    path: ../src/DotNetHelper-IO/Interface/IFolderObject.cs
     startLine: 2
   assemblies:
   - DotNetHelper-IO

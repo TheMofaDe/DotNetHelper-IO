@@ -64,11 +64,11 @@ items:
   type: Class
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileObject
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 26
   assemblies:
   - DotNetHelper-IO
@@ -117,11 +117,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileNameOnly
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 34
   assemblies:
   - DotNetHelper-IO
@@ -157,11 +157,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileNameOnlyNoExtension
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 39
   assemblies:
   - DotNetHelper-IO
@@ -197,11 +197,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FilePathOnly
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 44
   assemblies:
   - DotNetHelper-IO
@@ -237,11 +237,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FullFilePath
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 49
   assemblies:
   - DotNetHelper-IO
@@ -277,11 +277,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: IncrementFullFilePath
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 50
   assemblies:
   - DotNetHelper-IO
@@ -312,11 +312,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LastWriteTimeUtc
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 55
   assemblies:
   - DotNetHelper-IO
@@ -352,11 +352,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LastWriteTime
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 60
   assemblies:
   - DotNetHelper-IO
@@ -392,11 +392,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LastAccessTime
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 65
   assemblies:
   - DotNetHelper-IO
@@ -432,11 +432,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LastAccessTimeUtc
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 70
   assemblies:
   - DotNetHelper-IO
@@ -472,11 +472,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreationTimeUtc
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 75
   assemblies:
   - DotNetHelper-IO
@@ -512,11 +512,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreationTime
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 80
   assemblies:
   - DotNetHelper-IO
@@ -552,11 +552,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Extension
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 85
   assemblies:
   - DotNetHelper-IO
@@ -592,11 +592,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FolderNameOnly
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 90
   assemblies:
   - DotNetHelper-IO
@@ -632,11 +632,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileSize
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 96
   assemblies:
   - DotNetHelper-IO
@@ -672,11 +672,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Exist
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 101
   assemblies:
   - DotNetHelper-IO
@@ -712,11 +712,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WatchTimeout
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 106
   assemblies:
   - DotNetHelper-IO
@@ -752,11 +752,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Watcher
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 111
   assemblies:
   - DotNetHelper-IO
@@ -792,11 +792,11 @@ items:
   type: Property
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: NotifyFilters
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 117
   assemblies:
   - DotNetHelper-IO
@@ -832,11 +832,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 128
   assemblies:
   - DotNetHelper-IO
@@ -868,11 +868,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 140
   assemblies:
   - DotNetHelper-IO
@@ -906,11 +906,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: RefreshObject
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 157
   assemblies:
   - DotNetHelper-IO
@@ -940,11 +940,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyTo
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 247
   assemblies:
   - DotNetHelper-IO
@@ -995,11 +995,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: MoveTo
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 286
   assemblies:
   - DotNetHelper-IO
@@ -1048,11 +1048,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SetFileAttribute
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 332
   assemblies:
   - DotNetHelper-IO
@@ -1092,11 +1092,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ChangeExtension
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 372
   assemblies:
   - DotNetHelper-IO
@@ -1145,11 +1145,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeleteFile
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 391
   assemblies:
   - DotNetHelper-IO
@@ -1187,11 +1187,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncate
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 456
   assemblies:
   - DotNetHelper-IO
@@ -1228,11 +1228,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetIncrementFileName
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 543
   assemblies:
   - DotNetHelper-IO
@@ -1263,11 +1263,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetIncrementExtension
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 584
   assemblies:
   - DotNetHelper-IO
@@ -1298,11 +1298,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadFileToList
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 637
   assemblies:
   - DotNetHelper-IO
@@ -1335,11 +1335,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadFile
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 651
   assemblies:
   - DotNetHelper-IO
@@ -1372,11 +1372,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadFileToStream
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 667
   assemblies:
   - DotNetHelper-IO
@@ -1409,11 +1409,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetFileStream
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 732
   assemblies:
   - DotNetHelper-IO
@@ -1454,11 +1454,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetStreamWriter
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 787
   assemblies:
   - DotNetHelper-IO
@@ -1495,11 +1495,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetStreamReader
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 806
   assemblies:
   - DotNetHelper-IO
@@ -1532,11 +1532,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteContentToFile
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 842
   assemblies:
   - DotNetHelper-IO
@@ -1573,11 +1573,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: EncryptFile
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 874
   assemblies:
   - DotNetHelper-IO
@@ -1617,11 +1617,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DecryptFile
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 905
   assemblies:
   - DotNetHelper-IO
@@ -1665,11 +1665,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ImportData
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 956
   assemblies:
   - DotNetHelper-IO
@@ -1714,11 +1714,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ImportDataList
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 969
   assemblies:
   - DotNetHelper-IO
@@ -1765,11 +1765,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ExportData
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 992
   assemblies:
   - DotNetHelper-IO
@@ -1819,11 +1819,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteStreamToFileAsync
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1017
   assemblies:
   - DotNetHelper-IO
@@ -1869,11 +1869,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteStreamToFile
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1071
   assemblies:
   - DotNetHelper-IO
@@ -1918,11 +1918,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetFileEncoding
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1125
   assemblies:
   - DotNetHelper-IO
@@ -1955,11 +1955,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetFileSizeDisplay
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1158
   assemblies:
   - DotNetHelper-IO
@@ -1995,11 +1995,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetFileSize
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1190
   assemblies:
   - DotNetHelper-IO
@@ -2037,11 +2037,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: IsFileLocked
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1211
   assemblies:
   - DotNetHelper-IO
@@ -2071,11 +2071,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StartWatching
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1244
   assemblies:
   - DotNetHelper-IO
@@ -2115,11 +2115,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StopWatching
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1277
   assemblies:
   - DotNetHelper-IO
@@ -2149,11 +2149,11 @@ items:
   type: Method
   source:
     remote:
-      path: src/FileObject.cs
-      branch: Feature-ImplementUnitTest
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Dispose
-    path: ../src/FileObject.cs
+    path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1347
   assemblies:
   - DotNetHelper-IO
