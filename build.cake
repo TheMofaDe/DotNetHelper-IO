@@ -71,30 +71,44 @@ Setup<BuildParameters>(context =>
     return parameters;
 });
 
-Teardown<BuildParameters>((context, parameters) =>
+
+Teardown(context =>
 {
     try
     {
         Information("Starting Teardown...");
-
-     //   Information("Repository info : IsMainRepo {0}, IsMainBranch {1}, IsTagged: {2}, IsPullRequest: {3}",
-     //       parameters.IsMainRepo,
-     //       parameters.IsMainBranch,
-     //       parameters.IsTagged,
-     //       parameters.IsPullRequest);
-	 //
-     //   if(context.Successful)
-     //   {
-	 //
-     //   }
-
-        Information("Finished running tasks.");
     }
     catch (Exception exception)
     {
         Error(exception.Dump());
     }
 });
+
+
+// Teardown<BuildParameters>((context, parameters) =>
+// {
+//     try
+//     {
+//         Information("Starting Teardown...");
+// 
+//      //   Information("Repository info : IsMainRepo {0}, IsMainBranch {1}, IsTagged: {2}, IsPullRequest: {3}",
+//      //       parameters.IsMainRepo,
+//      //       parameters.IsMainBranch,
+//      //       parameters.IsTagged,
+//      //       parameters.IsPullRequest);
+// 	 //
+//      //   if(context.Successful)
+//      //   {
+// 	 //
+//      //   }
+// 
+//         Information("Finished running tasks.");
+//     }
+//     catch (Exception exception)
+//     {
+//         Error(exception.Dump());
+//     }
+// });
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
