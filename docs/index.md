@@ -28,13 +28,18 @@ NotifyFilters NotifyFilters = file.NotifyFilters; // FileName, LastWrite, LastAc
 FileSystemWatcher Watcher = file.Watcher; // NULL
 Int32 WatchTimeout = file.WatchTimeout; // 2147483647
 
-// Quick access to IO operations (Not all available methods are showned in this snippet)
-void EncryptFile(SymmetricProvider algorithm, byte[] key);
-void DecryptFile(SymmetricProvider algorithm, byte[] key = null);
+// Perform thread safe IO operations with progress reporting
 public bool MoveTo(string moveToFullFilePath, FileOption option, IProgress<double> progress = null)
 public bool CopyTo(string copyToFullFilePath, FileOption option, IProgress<double> progress = null)
-long? GetFileSize(FileObject.SizeUnits sizeUnits, bool refreshObject = false);  
 public void DeleteFile(Action<Exception> onFailedDeletion, bool disposeObject = false)
+
+
+// Simplify Encryption
+void EncryptFile(SymmetricProvider algorithm, byte[] key);
+void DecryptFile(SymmetricProvider algorithm, byte[] key = null);
+
+
+long? GetFileSize(FileObject.SizeUnits sizeUnits, bool refreshObject = false);  
 ```
 
 ## Targeted .NET Frameworks
