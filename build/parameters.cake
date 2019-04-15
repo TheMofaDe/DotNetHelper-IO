@@ -263,7 +263,10 @@ public class BuildParameters
     private static bool IsEnabled(ICakeContext context, string envVar, bool nullOrEmptyAsEnabled = true)
     {
         var value = context.EnvironmentVariable(envVar);
-
+        try{
         return string.IsNullOrWhiteSpace(value) ? nullOrEmptyAsEnabled : bool.Parse(value);
+        }catch(Exception error){
+        return false;   
+        }
     }
 }
