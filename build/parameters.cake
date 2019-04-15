@@ -96,12 +96,12 @@ public class BuildParameters
             IsRunningOnTravis        = buildSystem.IsRunningOnTravisCI,
             IsRunningOnAzurePipeline = buildSystem.IsRunningOnVSTS,
 
-      //      IsMainRepo    = IsOnMainRepo(context,RepositoryOwner,RepositoryName),
+            IsMainRepo    = IsOnMainRepo(context,RepositoryOwner,RepositoryName),
             IsMainBranch  = IsOnMainBranch(context),
             IsPullRequest = IsPullRequestBuild(context),
             IsTagged      = IsBuildTagged(context),
         };
-         parmeters.IsMainRepo    = IsOnMainRepo(context,parmeters.RepositoryOwner,parmeters.RepositoryName);
+        // parmeters.IsMainRepo    = IsOnMainRepo(context,parmeters.RepositoryOwner,parmeters.RepositoryName);
         return parmeters;
     }
 
@@ -136,8 +136,8 @@ public class BuildParameters
             [$"{RepositoryName}.DotNetCore"] = Paths.Directories.ArtifactsBinCoreFx,
             [$"{RepositoryName}.DotNetStandard"] = Paths.Directories.ArtifactsBinStandardFx,
             [$"{RepositoryName}"] = Paths.Directories.ArtifactsBinFullFx,
-       //     ["ApplicationName.Portable"] = Paths.Directories.ArtifactsBinFullFxPortable,
-      //      ["ApplicationName.Tool"] = Paths.Directories.ArtifactsBinCoreFx,
+       //     ["{RepositoryName}.Portable"] = Paths.Directories.ArtifactsBinFullFxPortable,
+      //      ["{RepositoryName}.Tool"] = Paths.Directories.ArtifactsBinCoreFx,
         };
 
         Credentials = BuildCredentials.GetCredentials(context);
@@ -192,7 +192,7 @@ public class BuildParameters
         }
         else if (buildSystem.IsLocalBuild)
         {
-             repositoryName = "Local Bulid";
+             repositoryName = "";
         }
 
         context.Information("Repository Name: {0}" , repositoryName);

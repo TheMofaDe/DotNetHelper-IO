@@ -419,9 +419,9 @@ Task("Pack")
 #region Publish
 
 Task("Release-Notes")
-   // .WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnWindows,       "Release notes are generated only on Windows agents.")
-   // .WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnAzurePipeline, "Release notes are generated only on AzurePipeline.")
-   // .WithCriteria<BuildParameters>((context, parameters) => parameters.IsStableRelease(),        "Release notes are generated only for stable releases.")
+    .WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnWindows,       "Release notes are generated only on Windows agents.")
+    .WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnAzurePipeline, "Release notes are generated only on AzurePipeline.")
+    .WithCriteria<BuildParameters>((context, parameters) => parameters.IsStableRelease(),        "Release notes are generated only for stable releases.")
     .Does<BuildParameters>((parameters) =>
 {
      var releaseNotesExitCode = StartProcess(@"tools\GitReleaseNotes.0.7.1\tools\GitReleaseNotes.exe", new ProcessSettings { Arguments = ". /o RELEASENOTES.md" });
@@ -645,9 +645,9 @@ Task("Publish")
     .IsDependentOn("Publish-AppVeyor")
     .IsDependentOn("Publish-AzurePipeline")
     .IsDependentOn("Publish-Coverage")
-    .IsDependentOn("Publish-NuGet")
-    .IsDependentOn("Publish-Chocolatey")
-    .IsDependentOn("Publish-DockerHub")
+ //   .IsDependentOn("Publish-NuGet")
+ //   .IsDependentOn("Publish-Chocolatey") 
+ //   .IsDependentOn("Publish-DockerHub")
     .Finally(() =>
 {
     if (publishingError)
