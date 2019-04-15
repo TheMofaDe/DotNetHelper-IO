@@ -37,9 +37,9 @@ public class BuildPaths
         var buildArtifactDir              = artifactsDir.Combine("build-artifact");
         var testCoverageOutputDir         = artifactsDir.Combine("code-coverage");
 
-        var zipArtifactPathCoreClr = artifactsDir.CombineWithFilePath("ApplicationName-bin-corefx-v" + semVersion + ".zip"); // TODO :: Configurable per project
-        var zipArtifactPathDesktop = artifactsDir.CombineWithFilePath("ApplicationName-bin-fullfx-v" + semVersion + ".zip"); // TODO :: Configurable per project
-        var zipArtifactPathStandard = artifactsDir.CombineWithFilePath("ApplicationName-bin-standardfx-v" + semVersion + ".zip"); // TODO :: Configurable per project
+        var zipArtifactPathCoreClr = artifactsDir.CombineWithFilePath("DotNetHelper-IO-bin-corefx-v" + semVersion + ".zip"); // TODO :: Configurable per project
+        var zipArtifactPathDesktop = artifactsDir.CombineWithFilePath("DotNetHelper-IO-bin-fullfx-v" + semVersion + ".zip"); // TODO :: Configurable per project
+        var zipArtifactPathStandard = artifactsDir.CombineWithFilePath("DotNetHelper-IO-bin-standardfx-v" + semVersion + ".zip"); // TODO :: Configurable per project
 
         var testCoverageOutputFilePath = testCoverageOutputDir.CombineWithFilePath("TestResult.xml");
 
