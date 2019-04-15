@@ -96,12 +96,12 @@ public class BuildParameters
             IsRunningOnTravis        = buildSystem.IsRunningOnTravisCI,
             IsRunningOnAzurePipeline = buildSystem.IsRunningOnVSTS,
 
-            IsMainRepo    = IsOnMainRepo(context,RepositoryOwner,RepositoryName),
+         //   IsMainRepo    = IsOnMainRepo(context,RepositoryOwner,RepositoryName),
             IsMainBranch  = IsOnMainBranch(context),
             IsPullRequest = IsPullRequestBuild(context),
             IsTagged      = IsBuildTagged(context),
         };
-        // parmeters.IsMainRepo    = IsOnMainRepo(context,parmeters.RepositoryOwner,parmeters.RepositoryName);
+         parmeters.IsMainRepo    = IsOnMainRepo(context,parmeters.RepositoryOwner,parmeters.RepositoryName);
         return parmeters;
     }
 
