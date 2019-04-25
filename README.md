@@ -1,5 +1,5 @@
 # DotNetHelper-IO
-#####  A simple and easy to use library for managing folders & files
+#####  A simple and easy to use library for managing folders & files 
 
 
 |     BADGE(s)             |       Windows                                          |                 Linux                        |
