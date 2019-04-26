@@ -138,13 +138,7 @@ namespace DotNetHelper_IO
             RefreshObject(LoadSubFolders, LoadFilesInFolder, LoadRecursive);
         }
 
-        public FolderObject(string path)
-        {
-            // NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.CreationTime
-            FullFolderPath = FormatPath(path);
-            RefreshObject(LoadSubFolders, LoadFilesInFolder, LoadRecursive);
-        }
-
+   
 
         /// <summary>
         /// Formats the path.
@@ -158,13 +152,15 @@ namespace DotNetHelper_IO
             {
                 throw result.Item2;
             }
-            if (path.EndsWith(Path.DirectorySeparatorChar.ToString()))
+
+            var separator = Path.IsPathRooted(path) ? Path.DirectorySeparatorChar : Path.AltDirectorySeparatorChar;
+            if (path.EndsWith(separator.ToString()))
             {
 
             }
             else
             {
-                path = path + Path.DirectorySeparatorChar;
+                    path += separator;
             }
             return path;
         }

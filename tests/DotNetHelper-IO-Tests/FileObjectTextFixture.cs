@@ -66,12 +66,12 @@ namespace Tests
         public void Test_MoveFile()
         {
 
-            var newFile = $"{TestFolder.FullFolderPath}MOVESuccess";
+            var newFile = $"{TestFolder.FullFolderPath}MOVE";
             TestFile.CreateOrTruncate();
             TestFile.WriteContentToFile($"this file was original name {TestFile.FullFilePath} and should had been moved to the following location {newFile}");
             TestFile.MoveTo(newFile, FileOption.Overwrite);
             FileShouldExist(newFile);
-            FileShouldntExist(TestFile.FullFilePath);
+            FileShouldNotExist(TestFile.FullFilePath);
 
         }
 
@@ -80,7 +80,7 @@ namespace Tests
         public void Test_CopyFile()
         {
 
-            var newFile = $"{TestFolder.FullFolderPath}CopySuccess";
+            var newFile = $"{TestFolder.FullFolderPath}COPY";
             TestFile.WriteContentToFile($"This file should have been copied to the following location {newFile}");
             TestFile.CopyTo(newFile, FileOption.Overwrite);
             FileShouldExist(newFile);
@@ -92,7 +92,7 @@ namespace Tests
             var value = File.Exists(file);
             Assert.IsTrue(value, $"Test failed due to file not existing {file}");
         }
-        private void FileShouldntExist(string file)
+        private void FileShouldNotExist(string file)
         {
             var value = File.Exists(file);
             Assert.IsFalse(value, $"Test failed due to file existing {file}");
