@@ -7,7 +7,7 @@ namespace DotNetHelper_IO_Console
     {
         static void Main(string[] args)
         {
-
+       
             var folderObject = new FolderObject("./",false,true);
             var folderObject2 = new FolderObject(Environment.CurrentDirectory,false,true);
 

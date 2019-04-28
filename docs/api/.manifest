@@ -63,7 +63,6 @@
   "DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_Contracts.Enum.IO.FileOption)": "DotNetHelper_IO.FileObject.yml",
   "DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)": "DotNetHelper_IO.FileObject.yml",
   "DotNetHelper_IO.FolderObject": "DotNetHelper_IO.FolderObject.yml",
-  "DotNetHelper_IO.FolderObject.#ctor(System.String)": "DotNetHelper_IO.FolderObject.yml",
   "DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)": "DotNetHelper_IO.FolderObject.yml",
   "DotNetHelper_IO.FolderObject.CopyTo(System.String,System.Boolean)": "DotNetHelper_IO.FolderObject.yml",
   "DotNetHelper_IO.FolderObject.Create(System.Action{System.Exception})": "DotNetHelper_IO.FolderObject.yml",

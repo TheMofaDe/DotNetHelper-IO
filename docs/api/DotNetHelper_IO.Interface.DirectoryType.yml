@@ -23,8 +23,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DirectoryType
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 9
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Files
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 11
@@ -86,8 +86,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Videos
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 12
@@ -118,8 +118,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Photos
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 13
@@ -150,8 +150,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Audio
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 14
@@ -182,8 +182,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Documents
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 15
@@ -214,8 +214,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Sqls
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 16
@@ -246,8 +246,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Other
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 17
@@ -278,8 +278,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Root
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 18

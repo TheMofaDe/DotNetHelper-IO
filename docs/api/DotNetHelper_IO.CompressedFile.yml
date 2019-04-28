@@ -15,8 +15,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CompressedFile
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 287

@@ -15,8 +15,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IFolderObject
     path: ../src/DotNetHelper-IO/Interface/IFolderObject.cs
     startLine: 2

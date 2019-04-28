@@ -3,12 +3,13 @@ using DotNetHelper_IO;
 using NUnit.Framework;
 using System;
 using System.IO;
+using DotNetHelper_IO_Tests;
 
 namespace Tests
 {
     [TestFixture]
     [NonParallelizable] //since were sharing a single file across multiple test cases we don't want Parallelizable
-    public class FileObjectTextFixture
+    public class FileObjectTextFixture : BaseTest
     {
         public FolderObject TestFolder { get; }
         public  FileObject TestFile { get;  }
@@ -59,6 +60,17 @@ namespace Tests
                 FileShouldExist($"{TestFile.FilePathOnly}{TestFile.FileNameOnlyNoExtension}.{i}");
 
             }
+        }
+
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test]
+        public void Test_WritingToAndReadingFile()
+        {
+            var content = $"A {Environment.NewLine} B!";
+            var newFile = new FileObject($"{TestFolder.FullFolderPath}TestWritingAndReading");
+            newFile.WriteContentToFile(content,FileOption.Overwrite);
+            var readValue = newFile.ReadFile();
+            Assert.IsTrue(readValue == content,"The content that was written to the file didn't match what was read.");
         }
 
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]

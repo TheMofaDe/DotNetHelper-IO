@@ -116,9 +116,9 @@ namespace DotNetHelper_IO
         /// <value><c>true</c> if [load files in folder]; otherwise, <c>false</c>.</value>
         public bool LoadFilesInFolder { get; }
         /// <summary>
-        /// Gets a value indicating whether [load files in folder recursivly].
+        /// Gets a value indicating whether [load files in folder recursively].
         /// </summary>
-        /// <value><c>true</c> if [load files in folder recursivly]; otherwise, <c>false</c>.</value>
+        /// <value><c>true</c> if [load files in folder recursively]; otherwise, <c>false</c>.</value>
         public bool LoadRecursive { get; }
 
         /// <summary>
@@ -235,13 +235,16 @@ namespace DotNetHelper_IO
         }
 
 
-
-
-
-        /// <summary>
-        /// Creates a empty Directory if it doesn't exist otherwise does nothing
-        /// </summary>
-        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        /// <summary>Creates all directories and subdirectories in the specified path unless they already exist.</summary>
+        /// <param name="onException">callback to execute if an exception is catch. </param>
+        /// <returns>An object that represents the directory at the specified path. This object is returned regardless of whether a directory at the specified path already exists.</returns>
+        /// <exception cref="T:System.IO.IOException">The directory specified is a file.-or-The network name is not known.</exception>
+        /// <exception cref="T:System.UnauthorizedAccessException">The caller does not have the required permission. </exception>
+        /// <exception cref="T:System.ArgumentException"> </exception>
+        /// <exception cref="T:System.ArgumentNullException"> </exception>
+        /// <exception cref="T:System.IO.PathTooLongException">The specified path, file name, or both exceed the system-defined maximum length. For example, on Windows-based platforms, paths must be less than 248 characters and file names must be less than 260 characters. </exception>
+        /// <exception cref="T:System.IO.DirectoryNotFoundException">The specified path is invalid (for example, it is on an unmapped drive). </exception>
+        /// <exception cref="T:System.NotSupportedException"></exception>
         public bool Create(Action<Exception> onException)
         {
             RefreshObject(LoadSubFolders, LoadFilesInFolder);
@@ -254,6 +257,7 @@ namespace DotNetHelper_IO
                 catch (Exception error)
                 {
                     onException?.Invoke(error);
+                    return false;
                 }
             }
             return true;

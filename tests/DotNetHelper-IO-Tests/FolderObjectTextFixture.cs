@@ -3,12 +3,13 @@ using DotNetHelper_IO;
 using NUnit.Framework;
 using System;
 using System.IO;
+using DotNetHelper_IO_Tests;
 
 namespace Tests
 {
     [TestFixture]
     [NonParallelizable] //since were sharing a single file across multiple test cases we don't want Parallelizable
-    public class FolderObjectTextFixture
+    public class FolderObjectTextFixture : BaseTest
     {
         public FolderObject AbsoluteTestFolder { get; }
         public  FileObject AbsoluteTestFile { get;  }

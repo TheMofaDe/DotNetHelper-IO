@@ -764,12 +764,6 @@ references:
   commentId: T:DotNetHelper_IO.FolderObject
   fullName: DotNetHelper_IO.FolderObject
   nameWithType: FolderObject
-- uid: DotNetHelper_IO.FolderObject.#ctor(System.String)
-  name: FolderObject(String)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_String_
-  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.String)
-  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.String)
-  nameWithType: FolderObject.FolderObject(String)
 - uid: DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
   name: FolderObject(String, Boolean, Boolean, Boolean)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_String_System_Boolean_System_Boolean_System_Boolean_

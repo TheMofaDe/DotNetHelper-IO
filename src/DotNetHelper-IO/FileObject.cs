@@ -839,22 +839,20 @@ namespace DotNetHelper_IO
         /// Writes the content to file. This method is thread safe
         /// </summary>
         /// <param name="content">The content.</param>
+        /// <param name="encoding"></param>
         /// <param name="option">The option.</param>
-        public void WriteContentToFile(string content, FileOption option = FileOption.Append)
+        public void WriteContentToFile(string content, Encoding encoding, FileOption option = FileOption.Append)
         {
-
             RefreshObject();
             if (option == FileOption.DoNothingIfExist && Exist == true) return; 
             lock (ThreadSafe)
             {
                 using (var stream = GetFileStream(option))
-                using (var sw = new StreamWriter(stream))
+                using (var sw = new StreamWriter(stream,encoding))
                 {
                     sw.Write(content);
                 }
             }
-
-
         }
 
 
