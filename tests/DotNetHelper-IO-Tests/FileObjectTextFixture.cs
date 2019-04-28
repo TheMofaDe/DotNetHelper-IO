@@ -3,6 +3,8 @@ using DotNetHelper_IO;
 using NUnit.Framework;
 using System;
 using System.IO;
+using System.Text;
+using DotNetHelper_Contracts.Enum.Encryption;
 using DotNetHelper_IO_Tests;
 
 namespace Tests
@@ -56,7 +58,7 @@ namespace Tests
         {
             for (var i = 1; i < 110; i++)
             {
-                TestFile.WriteContentToFile($"{i}", FileOption.IncrementFileExtensionIfExist);
+                TestFile.WriteContentToFile($"{i}", Encoding.UTF8,FileOption.IncrementFileExtensionIfExist);
                 FileShouldExist($"{TestFile.FilePathOnly}{TestFile.FileNameOnlyNoExtension}.{i}");
 
             }
@@ -68,7 +70,7 @@ namespace Tests
         {
             var content = $"A {Environment.NewLine} B!";
             var newFile = new FileObject($"{TestFolder.FullFolderPath}TestWritingAndReading");
-            newFile.WriteContentToFile(content,FileOption.Overwrite);
+            newFile.WriteContentToFile(content, Encoding.UTF8, FileOption.Overwrite);
             var readValue = newFile.ReadFile();
             Assert.IsTrue(readValue == content,"The content that was written to the file didn't match what was read.");
         }
@@ -80,7 +82,7 @@ namespace Tests
 
             var newFile = $"{TestFolder.FullFolderPath}MOVE";
             TestFile.CreateOrTruncate();
-            TestFile.WriteContentToFile($"this file was original name {TestFile.FullFilePath} and should had been moved to the following location {newFile}");
+            TestFile.WriteContentToFile($"this file was original name {TestFile.FullFilePath} and should had been moved to the following location {newFile}", Encoding.UTF8);
             TestFile.MoveTo(newFile, FileOption.Overwrite);
             FileShouldExist(newFile);
             FileShouldNotExist(TestFile.FullFilePath);
@@ -93,7 +95,7 @@ namespace Tests
         {
 
             var newFile = $"{TestFolder.FullFolderPath}COPY";
-            TestFile.WriteContentToFile($"This file should have been copied to the following location {newFile}");
+            TestFile.WriteContentToFile($"This file should have been copied to the following location {newFile}", Encoding.UTF8);
             TestFile.CopyTo(newFile, FileOption.Overwrite);
             FileShouldExist(newFile);
         }

@@ -869,11 +869,10 @@ namespace DotNetHelper_IO
         /// Encrypts the file. this method is thread safe.
         /// </summary>
         /// <param name="algorithm">The algorithm.</param>
-        /// <param name="key">The key. defaults to the IAppconfig interface if key is null </param>
+        /// <param name="key">The key. </param>
         public void EncryptFile(SymmetricProvider algorithm, byte[] key )
         {
             var tempFileName = Path.GetTempFileName();
-
             using (var cipher = EncryptionSymmetric.Create(algorithm))
             lock (ThreadSafe)
             {
@@ -882,14 +881,12 @@ namespace DotNetHelper_IO
                 {
                     cipher.Key = key;
                     tempFile.Write(cipher.IV, 0, cipher.IV.Length);
-                    using (var cryptoStream =
-                        new CryptoStream(tempFile, cipher.CreateEncryptor(), CryptoStreamMode.Write))
+                    using (var cryptoStream = new CryptoStream(tempFile, cipher.CreateEncryptor(), CryptoStreamMode.Write))
                     {
                         fileStream.CopyTo(cryptoStream);
                     }
                 }
             }
-
             File.Delete(FullFilePath);
             File.Move(tempFileName, FullFilePath);
         }
@@ -898,29 +895,24 @@ namespace DotNetHelper_IO
         /// Decrypts the file.
         /// </summary>
         /// <param name="algorithm">The algorithm.</param>
-        /// <param name="key">The key. defaults to the IAppconfig interface if key is null</param>
+        /// <param name="key">The key. </param>
         /// <exception cref="EndOfStreamException">
         /// </exception>
-        public void DecryptFile(SymmetricProvider algorithm, byte[] key = null)
+        public void DecryptFile(SymmetricProvider algorithm, byte[] key)
         {
             var tempFileName = Path.GetTempFileName();
 
             using (var cipher = EncryptionSymmetric.Create(algorithm))
             using (var fileStream = File.OpenRead(FullFilePath))
             using (var tempFile = File.Create(tempFileName))
-            {
-              
+            {             
                 cipher.Key = key ?? throw new ArgumentNullException(nameof(key));
                 var iv = cipher.IV;
-                // var iv = new byte[cipher.BlockSize / 8];
-                //  var headerBytes =  new byte[6];
                 var remain = key.Length;
                 remain = iv.Length;
                 while (remain != 0)
                 {
-
                     var read = fileStream.Read(iv, iv.Length - remain, remain);
-
                     if (read == 0)
                     {
                         throw new EndOfStreamException();

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Text;
+using DotNetHelper_Contracts.Enum.Encryption;
+using DotNetHelper_Contracts.Enum.IO;
 using DotNetHelper_IO;
 
 namespace DotNetHelper_IO_Console
@@ -6,15 +9,15 @@ namespace DotNetHelper_IO_Console
     class Program
     {
         static void Main(string[] args)
-        {
-       
+        {   
             var folderObject = new FolderObject("./",false,true);
-            var folderObject2 = new FolderObject(Environment.CurrentDirectory,false,true);
 
-
-            Console.WriteLine($"Test Result {folderObject2.Files.Count == folderObject.Files.Count}");
-            Console.WriteLine("Hello World!");
-
+            var content = $"PasswordPasswordPasswordPassword";
+            var newFile = new FileObject($"{folderObject.FullFolderPath}Encrypt");
+            newFile.WriteContentToFile(content, Encoding.UTF8, FileOption.Overwrite);
+            newFile.EncryptFile(SymmetricProvider.AES, Encoding.UTF8.GetBytes(content));
+            var readValue = newFile.ReadFile();
+            newFile.DecryptFile(SymmetricProvider.AES, Encoding.UTF8.GetBytes(content));
             Console.ReadKey();
         }
     }
