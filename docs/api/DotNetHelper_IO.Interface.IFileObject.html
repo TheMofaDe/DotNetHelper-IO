@@ -929,7 +929,7 @@ and refreshes the object with the new file path if it was successful</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DecryptFile(SymmetricProvider algorithm, byte[] key = null)</code></pre>
+    <pre><code class="lang-csharp hljs">void DecryptFile(SymmetricProvider algorithm, byte[] key)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1853,19 +1853,19 @@ and refreshes the object with the new file path if it was successful</p>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/UpdateUnitTest/apiSpec/new?filename=DotNetHelper_IO_Interface_IFileObject_WriteContentToFile_System_String_DotNetHelper_Contracts_Enum_IO_FileOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String%2CDotNetHelper_Contracts.Enum.IO.FileOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/UpdateUnitTest/apiSpec/new?filename=DotNetHelper_IO_Interface_IFileObject_WriteContentToFile_System_String_System_Text_Encoding_DotNetHelper_Contracts_Enum_IO_FileOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String%2CSystem.Text.Encoding%2CDotNetHelper_Contracts.Enum.IO.FileOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/UpdateUnitTest/src/DotNetHelper-IO/Interface/IFileObject.cs/#L215">View Source</a>
   </span>
   <a id="DotNetHelper_IO_Interface_IFileObject_WriteContentToFile_" data-uid="DotNetHelper_IO.Interface.IFileObject.WriteContentToFile*"></a>
-  <h4 id="DotNetHelper_IO_Interface_IFileObject_WriteContentToFile_System_String_DotNetHelper_Contracts_Enum_IO_FileOption_" data-uid="DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)">WriteContentToFile(String, FileOption)</h4>
+  <h4 id="DotNetHelper_IO_Interface_IFileObject_WriteContentToFile_System_String_System_Text_Encoding_DotNetHelper_Contracts_Enum_IO_FileOption_" data-uid="DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)">WriteContentToFile(String, Encoding, FileOption)</h4>
   <div class="markdown level1 summary"><p>Writes the content to file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void WriteContentToFile(string content, FileOption option = FileOption.Append)</code></pre>
+    <pre><code class="lang-csharp hljs">void WriteContentToFile(string content, Encoding encoding, FileOption option = FileOption.Append)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1882,6 +1882,11 @@ and refreshes the object with the new file path if it was successful</p>
         <td><span class="parametername">content</span></td>
         <td><p>The content.</p>
 </td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
+        <td><span class="parametername">encoding</span></td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">DotNetHelper_Contracts.Enum.IO.FileOption</span></td>

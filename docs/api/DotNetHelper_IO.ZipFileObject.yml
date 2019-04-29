@@ -75,7 +75,7 @@ items:
   - DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_Contracts.Enum.IO.FileOption)
   - DotNetHelper_IO.FileObject.GetStreamWriter(System.Boolean)
   - DotNetHelper_IO.FileObject.GetStreamReader
-  - DotNetHelper_IO.FileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
+  - DotNetHelper_IO.FileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
   - DotNetHelper_IO.FileObject.EncryptFile(DotNetHelper_Contracts.Enum.Encryption.SymmetricProvider,System.Byte[])
   - DotNetHelper_IO.FileObject.DecryptFile(DotNetHelper_Contracts.Enum.Encryption.SymmetricProvider,System.Byte[])
   - DotNetHelper_IO.FileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
@@ -1244,15 +1244,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper_IO.FileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
-  commentId: M:DotNetHelper_IO.FileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
+- uid: DotNetHelper_IO.FileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
+  commentId: M:DotNetHelper_IO.FileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
   parent: DotNetHelper_IO.FileObject
   isExternal: true
-  name: WriteContentToFile(String, FileOption)
-  nameWithType: FileObject.WriteContentToFile(String, FileOption)
-  fullName: DotNetHelper_IO.FileObject.WriteContentToFile(System.String, DotNetHelper_Contracts.Enum.IO.FileOption)
+  name: WriteContentToFile(String, Encoding, FileOption)
+  nameWithType: FileObject.WriteContentToFile(String, Encoding, FileOption)
+  fullName: DotNetHelper_IO.FileObject.WriteContentToFile(System.String, System.Text.Encoding, DotNetHelper_Contracts.Enum.IO.FileOption)
   spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
+  - uid: DotNetHelper_IO.FileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
     name: WriteContentToFile
     nameWithType: FileObject.WriteContentToFile
     fullName: DotNetHelper_IO.FileObject.WriteContentToFile
@@ -1267,6 +1267,14 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
+  - uid: System.Text.Encoding
+    name: Encoding
+    nameWithType: Encoding
+    fullName: System.Text.Encoding
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
   - uid: DotNetHelper_Contracts.Enum.IO.FileOption
     name: FileOption
     nameWithType: FileOption
@@ -1276,7 +1284,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: DotNetHelper_IO.FileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
+  - uid: DotNetHelper_IO.FileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
     name: WriteContentToFile
     nameWithType: FileObject.WriteContentToFile
     fullName: DotNetHelper_IO.FileObject.WriteContentToFile
@@ -1287,6 +1295,14 @@ references:
     name: String
     nameWithType: String
     fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Text.Encoding
+    name: Encoding
+    nameWithType: Encoding
+    fullName: System.Text.Encoding
     isExternal: true
   - name: ', '
     nameWithType: ', '

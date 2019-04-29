@@ -1,16 +1,16 @@
 // Install modules
-#module nuget:?package=Cake.DotNetTool.Module&version=0.1.0
+#module nuget:?package=Cake.DotNetTool.Module&version=0.2.0
 
 // Install addins.
-#addin "nuget:?package=Cake.Gitter&version=0.9.0"
+#addin "nuget:?package=Cake.Gitter&version=0.11.0"
 #addin "nuget:?package=Cake.Docker&version=0.9.6"
-#addin "nuget:?package=Cake.Npm&version=0.15.0"
-#addin "nuget:?package=Cake.Incubator&version=3.0.0"
+#addin "nuget:?package=Cake.Npm&version=0.17.0"
+#addin "nuget:?package=Cake.Incubator&version=5.0.1"
 #addin "nuget:?package=Cake.Json&version=3.0.0"
 #addin "nuget:?package=Cake.Tfx&version=0.8.0"
 #addin "nuget:?package=Cake.Gem&version=0.7.0"
 #addin "nuget:?package=Cake.Coverlet&version=2.2.1"
-#addin "nuget:?package=Cake.Codecov&version=0.5.0"
+#addin "nuget:?package=Cake.Codecov&version=0.6.0"
 #addin "nuget:?package=Newtonsoft.Json&version=9.0.1"
 #addin "nuget:?package=xunit.assert&version=2.4.1"
 #addin "nuget:?package=Cake.DocFx&version=0.12.0"
@@ -20,8 +20,8 @@
 #tool "nuget:?package=NUnit.ConsoleRunner&version=3.9.0"
 #tool "nuget:?package=GitReleaseNotes&version=0.7.1"
 #tool "nuget:?package=ILRepack&version=2.0.16"
-#tool "nuget:?package=Codecov&version=1.1.0"
-#tool "nuget:?package=nuget.commandline&version=4.9.2"
+#tool "nuget:?package=Codecov&version=1.4.0"
+#tool "nuget:?package=nuget.commandline&version=4.9.4"
 #tool "nuget:?package=GitVersion.CommandLine&version=5.0.0-beta2-6" // 4.0.0 - latest stable
 #tool "nuget:?package=docfx.console&version=2.41.0"
 
