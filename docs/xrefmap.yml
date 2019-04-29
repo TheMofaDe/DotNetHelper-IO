@@ -713,12 +713,12 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.WatchTimeout
   nameWithType: FileObject.WatchTimeout
-- uid: DotNetHelper_IO.FileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
-  name: WriteContentToFile(String, FileOption)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteContentToFile_System_String_DotNetHelper_Contracts_Enum_IO_FileOption_
-  commentId: M:DotNetHelper_IO.FileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
-  fullName: DotNetHelper_IO.FileObject.WriteContentToFile(System.String, DotNetHelper_Contracts.Enum.IO.FileOption)
-  nameWithType: FileObject.WriteContentToFile(String, FileOption)
+- uid: DotNetHelper_IO.FileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
+  name: WriteContentToFile(String, Encoding, FileOption)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteContentToFile_System_String_System_Text_Encoding_DotNetHelper_Contracts_Enum_IO_FileOption_
+  commentId: M:DotNetHelper_IO.FileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
+  fullName: DotNetHelper_IO.FileObject.WriteContentToFile(System.String, System.Text.Encoding, DotNetHelper_Contracts.Enum.IO.FileOption)
+  nameWithType: FileObject.WriteContentToFile(String, Encoding, FileOption)
 - uid: DotNetHelper_IO.FileObject.WriteContentToFile*
   name: WriteContentToFile
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteContentToFile_
@@ -764,12 +764,6 @@ references:
   commentId: T:DotNetHelper_IO.FolderObject
   fullName: DotNetHelper_IO.FolderObject
   nameWithType: FolderObject
-- uid: DotNetHelper_IO.FolderObject.#ctor(System.String)
-  name: FolderObject(String)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_String_
-  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.String)
-  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.String)
-  nameWithType: FolderObject.FolderObject(String)
 - uid: DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
   name: FolderObject(String, Boolean, Boolean, Boolean)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_String_System_Boolean_System_Boolean_System_Boolean_
@@ -1837,12 +1831,12 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.Interface.IFileObject.WatchTimeout
   nameWithType: IFileObject.WatchTimeout
-- uid: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
-  name: WriteContentToFile(String, FileOption)
-  href: api/DotNetHelper_IO.Interface.IFileObject.html#DotNetHelper_IO_Interface_IFileObject_WriteContentToFile_System_String_DotNetHelper_Contracts_Enum_IO_FileOption_
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
-  fullName: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String, DotNetHelper_Contracts.Enum.IO.FileOption)
-  nameWithType: IFileObject.WriteContentToFile(String, FileOption)
+- uid: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
+  name: WriteContentToFile(String, Encoding, FileOption)
+  href: api/DotNetHelper_IO.Interface.IFileObject.html#DotNetHelper_IO_Interface_IFileObject_WriteContentToFile_System_String_System_Text_Encoding_DotNetHelper_Contracts_Enum_IO_FileOption_
+  commentId: M:DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
+  fullName: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String, System.Text.Encoding, DotNetHelper_Contracts.Enum.IO.FileOption)
+  nameWithType: IFileObject.WriteContentToFile(String, Encoding, FileOption)
 - uid: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile*
   name: WriteContentToFile
   href: api/DotNetHelper_IO.Interface.IFileObject.html#DotNetHelper_IO_Interface_IFileObject_WriteContentToFile_

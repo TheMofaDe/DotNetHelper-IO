@@ -212,7 +212,7 @@ namespace DotNetHelper_IO.Interface
         /// </summary>
         /// <param name="content">The content.</param>
         /// <param name="option">The option.</param>
-        void WriteContentToFile(string content, FileOption option = FileOption.Append);
+        void WriteContentToFile(string content, Encoding encoding,FileOption option = FileOption.Append);
 
         /// <summary>
         /// Encrypts the file.
@@ -228,7 +228,7 @@ namespace DotNetHelper_IO.Interface
         /// <param name="key">The key. defaults to the IAppconfig interface if key is null</param>
         /// <exception cref="EndOfStreamException">
         /// </exception>
-        void DecryptFile(SymmetricProvider algorithm, byte[] key = null);
+        void DecryptFile(SymmetricProvider algorithm, byte[] key);
 
         /// <summary>
         /// write stream to file as an asynchronous operation.

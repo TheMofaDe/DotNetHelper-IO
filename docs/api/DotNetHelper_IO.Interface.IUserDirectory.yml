@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IUserDirectory
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 2
@@ -48,8 +48,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetUserFolder
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 4
@@ -79,8 +79,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IUserDirectory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeleteAllUserFolder
     path: ../src/DotNetHelper-IO/Interface/IUserDirectory.cs
     startLine: 5

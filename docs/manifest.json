@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Business/TheMoFaDe/Code/DotNet-Starter-Template/docs",
+  "source_base_path": "C:/Business/TheMoFaDe/Code/TheMofaDe/DotNetHelper-IO/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.CompressedFile.html",
-          "hash": "yn4P/bzkHO7+0xFYatXmng=="
+          "hash": "dCTC50HXWM09ouyabYCH1A=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FileObject.SizeUnits.html",
-          "hash": "jmdjG3w3NGK7UZPgVvYu1Q=="
+          "hash": "pPXNbPkSrF2m1ukVY9nDjA=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FileObject.html",
-          "hash": "Vpt+M1F9liBDMFJ0+6Hf+A=="
+          "hash": "uudROJgODuXy5NPxZF6D/Q=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FolderObject.html",
-          "hash": "2+lcC9QaIYWyiFWfKMWlCQ=="
+          "hash": "Z5msDxQnKaKQyQ+ndFt/EA=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.DirectoryType.html",
-          "hash": "o4ALGBtyybwAkJ9DWJdegw=="
+          "hash": "u2yA2Qmw9dWsAT7Rll6b0Q=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.IFileObject.html",
-          "hash": "aqoMrfWJ8kRwRSm7RRxxHg=="
+          "hash": "EjBluIAbUnz6A6SS6CqwEw=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.IFolderObject.html",
-          "hash": "4W8uTm6eRK9eGnjno3W9XA=="
+          "hash": "azVozKlfCAd/sHeUe9mvOA=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.ISerializer.html",
-          "hash": "DumkGiiXmpt3BiMSzLw/jA=="
+          "hash": "nsVCXr/DyQaAZnOCrYlD5A=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.IUserDirectory.html",
-          "hash": "SSLEMUax0LfTOoV+OD7KTg=="
+          "hash": "Ruh3tK1yr3zBX76b241ZLg=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.html",
-          "hash": "Bwd/x0LzNepuCGK5JQzQeA=="
+          "hash": "ovOa4iIFWs6MTR4w8LJvFQ=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.ZipFileObject.html",
-          "hash": "Ns1W9NIZuY49SLrXl05zfQ=="
+          "hash": "Km6Rp1SUwHmD7obLrPI/7g=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.html",
-          "hash": "9hu1H9nB29poAySoag/ykg=="
+          "hash": "QXZn08TDk+rBxy8HsJT5OQ=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "X6DCzuBXNdSGlTakupHQxQ=="
+          "hash": "scTrI80FA2Z7WPG9yayR/Q=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         "resource": {
           "relative_path": "langwordmapping/langwordMapping.yml",
-          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\DotNet-Starter-Template\\docs/langwordmapping/langwordMapping.yml"
+          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\TheMofaDe\\DotNetHelper-IO\\docs/langwordmapping/langwordMapping.yml"
         }
       },
       "is_incremental": false,
@@ -190,13 +190,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -204,10 +197,11 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 1,
+          "total_file_count": 0,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
@@ -215,6 +209,12 @@
           "incrementalPhase": "build",
           "total_file_count": 12,
           "skipped_file_count": 12
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
         }
       }
     },

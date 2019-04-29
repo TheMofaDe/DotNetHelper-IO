@@ -98,18 +98,18 @@ namespace DotNetHelper_IO
         public static Tuple<bool, Exception> IsValidFolderSyntax(string path)
         {
             Exception error;
-            if (string.IsNullOrEmpty(path) || path.IndexOfAny(Path.GetInvalidPathChars()) != -1 || path.Length <= 2)
+            if (string.IsNullOrEmpty(path) || path.IndexOfAny(Path.GetInvalidPathChars()) != -1 )
             {
                 error = new Exception($"The Following Path {path} Is Not Valid For A Folder");
                 return new Tuple<bool, Exception>(false, error);
             }
 
-            if (path.Length == 3)
-            {
-                var valid = Directory.Exists(path);
-                error = valid ? null : new Exception($"The Following Path {path} Is Not Valid For A Folder");
-                return new Tuple<bool, Exception>(valid, error);
-            }
+           // if (path.Length == 3)
+           // {
+           //     var valid = Directory.Exists(path);
+           //     error = valid ? null : new Exception($"The Following Path {path} Is Not Valid For A Folder");
+           //     return new Tuple<bool, Exception>(valid, error);
+           // }
             if (DeviceInformation.DeviceOS == DeviceInformation.DeviceOs.Windows && path.Contains(":")) 
             {
                 var driveCheck = new Regex(@"^[a-zA-Z]:\\$");

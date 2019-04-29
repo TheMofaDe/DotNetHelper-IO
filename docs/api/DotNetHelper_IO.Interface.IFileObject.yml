@@ -46,7 +46,7 @@ items:
   - DotNetHelper_IO.Interface.IFileObject.StopWatching
   - DotNetHelper_IO.Interface.IFileObject.Watcher
   - DotNetHelper_IO.Interface.IFileObject.WatchTimeout
-  - DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
+  - DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
   - DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_Contracts.Enum.IO.FileOption)
   - DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
   langs:
@@ -59,8 +59,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IFileObject
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 10
@@ -90,8 +90,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileNameOnly
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 16
@@ -126,8 +126,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileNameOnlyNoExtension
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 22
@@ -162,8 +162,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FilePathOnly
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 28
@@ -198,8 +198,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FullFilePath
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 34
@@ -234,8 +234,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastWriteTimeUtc
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 40
@@ -270,8 +270,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastWriteTime
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 46
@@ -306,8 +306,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastAccessTime
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 52
@@ -342,8 +342,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastAccessTimeUtc
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 58
@@ -378,8 +378,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreationTimeUtc
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 64
@@ -414,8 +414,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreationTime
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 70
@@ -450,8 +450,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Extension
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 76
@@ -486,8 +486,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FolderNameOnly
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 82
@@ -522,8 +522,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileSize
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 88
@@ -558,8 +558,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Exist
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 94
@@ -594,8 +594,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 100
@@ -629,8 +629,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Watcher
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 106
@@ -665,8 +665,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 112
@@ -700,8 +700,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: RefreshObject
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 117
@@ -728,8 +728,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyTo
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 127
@@ -777,8 +777,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: MoveTo
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 136
@@ -824,8 +824,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 143
@@ -862,8 +862,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ChangeExtension
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 153
@@ -909,8 +909,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeleteFile
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 158
@@ -945,8 +945,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 165
@@ -980,8 +980,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadFileToList
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 171
@@ -1011,8 +1011,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadFile
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 177
@@ -1042,8 +1042,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadFileToStream
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 183
@@ -1073,8 +1073,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileStream
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 193
@@ -1112,8 +1112,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetStreamWriter
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 201
@@ -1147,8 +1147,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetStreamReader
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 207
@@ -1164,22 +1164,22 @@ items:
       description: ''
     content.vb: Function GetStreamReader As StreamReader
   overload: DotNetHelper_IO.Interface.IFileObject.GetStreamReader*
-- uid: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
-  id: WriteContentToFile(System.String,DotNetHelper_Contracts.Enum.IO.FileOption)
+- uid: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
+  commentId: M:DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
+  id: WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_Contracts.Enum.IO.FileOption)
   parent: DotNetHelper_IO.Interface.IFileObject
   langs:
   - csharp
   - vb
-  name: WriteContentToFile(String, FileOption)
-  nameWithType: IFileObject.WriteContentToFile(String, FileOption)
-  fullName: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String, DotNetHelper_Contracts.Enum.IO.FileOption)
+  name: WriteContentToFile(String, Encoding, FileOption)
+  nameWithType: IFileObject.WriteContentToFile(String, Encoding, FileOption)
+  fullName: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String, System.Text.Encoding, DotNetHelper_Contracts.Enum.IO.FileOption)
   type: Method
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteContentToFile
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 214
@@ -1189,15 +1189,17 @@ items:
   summary: "\nWrites the content to file.\n"
   example: []
   syntax:
-    content: void WriteContentToFile(string content, FileOption option = FileOption.Append)
+    content: void WriteContentToFile(string content, Encoding encoding, FileOption option = FileOption.Append)
     parameters:
     - id: content
       type: System.String
       description: The content.
+    - id: encoding
+      type: System.Text.Encoding
     - id: option
       type: DotNetHelper_Contracts.Enum.IO.FileOption
       description: The option.
-    content.vb: Sub WriteContentToFile(content As String, option As FileOption = FileOption.Append)
+    content.vb: Sub WriteContentToFile(content As String, encoding As Encoding, option As FileOption = FileOption.Append)
   overload: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile*
 - uid: DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Contracts.Enum.Encryption.SymmetricProvider,System.Byte[])
   commentId: M:DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Contracts.Enum.Encryption.SymmetricProvider,System.Byte[])
@@ -1213,8 +1215,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: EncryptFile
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 221
@@ -1251,8 +1253,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DecryptFile
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 230
@@ -1262,7 +1264,7 @@ items:
   summary: "\nDecrypts the file.\n"
   example: []
   syntax:
-    content: void DecryptFile(SymmetricProvider algorithm, byte[] key = null)
+    content: void DecryptFile(SymmetricProvider algorithm, byte[] key)
     parameters:
     - id: algorithm
       type: DotNetHelper_Contracts.Enum.Encryption.SymmetricProvider
@@ -1270,7 +1272,7 @@ items:
     - id: key
       type: System.Byte[]
       description: The key. defaults to the IAppconfig interface if key is null
-    content.vb: Sub DecryptFile(algorithm As SymmetricProvider, key As Byte() = Nothing)
+    content.vb: Sub DecryptFile(algorithm As SymmetricProvider, key As Byte())
   overload: DotNetHelper_IO.Interface.IFileObject.DecryptFile*
   exceptions:
   - type: System.IO.EndOfStreamException
@@ -1293,8 +1295,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteStreamToFileAsync
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 239
@@ -1337,8 +1339,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteStreamToFile
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 248
@@ -1380,8 +1382,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ImportData
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 258
@@ -1423,8 +1425,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ImportDataList
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 268
@@ -1468,8 +1470,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ExportData
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 279
@@ -1516,8 +1518,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileEncoding
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 289
@@ -1547,8 +1549,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileSizeDisplay
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 295
@@ -1581,8 +1583,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileSize
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 302
@@ -1617,8 +1619,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StartWatching
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 310
@@ -1655,8 +1657,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StopWatching
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 315
@@ -1683,8 +1685,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Interface/IFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: UpdateUnitTest
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/Interface/IFileObject.cs
     startLine: 321
@@ -2438,6 +2440,19 @@ references:
   name: WriteContentToFile
   nameWithType: IFileObject.WriteContentToFile
   fullName: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile
+- uid: System.Text.Encoding
+  commentId: T:System.Text.Encoding
+  parent: System.Text
+  isExternal: true
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
 - uid: DotNetHelper_IO.Interface.IFileObject.EncryptFile*
   commentId: Overload:DotNetHelper_IO.Interface.IFileObject.EncryptFile
   name: EncryptFile
@@ -2751,19 +2766,6 @@ references:
   name: GetFileEncoding
   nameWithType: IFileObject.GetFileEncoding
   fullName: DotNetHelper_IO.Interface.IFileObject.GetFileEncoding
-- uid: System.Text.Encoding
-  commentId: T:System.Text.Encoding
-  parent: System.Text
-  isExternal: true
-  name: Encoding
-  nameWithType: Encoding
-  fullName: System.Text.Encoding
-- uid: System.Text
-  commentId: N:System.Text
-  isExternal: true
-  name: System.Text
-  nameWithType: System.Text
-  fullName: System.Text
 - uid: DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay*
   commentId: Overload:DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay
   name: GetFileSizeDisplay

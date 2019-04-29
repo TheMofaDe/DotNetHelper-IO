@@ -94,7 +94,7 @@ public class BuildParameters
             IsLocalBuild             = buildSystem.IsLocalBuild,
             IsRunningOnAppVeyor      = buildSystem.IsRunningOnAppVeyor,
             IsRunningOnTravis        = buildSystem.IsRunningOnTravisCI,
-            IsRunningOnAzurePipeline = buildSystem.IsRunningOnVSTS,
+            IsRunningOnAzurePipeline = buildSystem.IsRunningOnAzurePipelines,
 
          //   IsMainRepo    = IsOnMainRepo(context,RepositoryOwner,RepositoryName),
             IsMainBranch  = IsOnMainBranch(context),
