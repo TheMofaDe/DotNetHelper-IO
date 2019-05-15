@@ -7,11 +7,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using DotNetHelper_Contracts.Enum.Encryption;
-
-//using DotNetHelper_Contracts.Extension;
 using DotNetHelper_DeviceInformation;
 using DotNetHelper_Encryption;
+using DotNetHelper_Encryption.Enums;
 using DotNetHelper_IO.Enum;
 using DotNetHelper_IO.Extension;
 using DotNetHelper_IO.Interface;
