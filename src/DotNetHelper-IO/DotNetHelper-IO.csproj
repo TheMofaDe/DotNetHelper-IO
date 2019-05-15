@@ -1,11 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-
-  </PropertyGroup>
-
-
-  <PropertyGroup>
     <TargetFrameworks>net452;netstandard2.0;net45</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -17,23 +12,21 @@
     <Authors>Joseph McNeal Jr</Authors>
     <PackageTags>Dotnethelper</PackageTags>
     <PackageReleaseNotes>BREAKING CHANGE : remove dependency from dotnethelper contract</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper-Contracts</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper-IO</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper-Contracts</RepositoryUrl>
+    <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper-IO</RepositoryUrl>
     <RootNamespace>DotNetHelper_IO</RootNamespace>
     <AssemblyName>DotNetHelper-IO</AssemblyName>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
-
   <ItemGroup>
     <PackageReference Include="DotNetHelper-DeviceInformation" Version="2019.5.2" />
     <PackageReference Include="DotNetHelper-Encryption" Version="2019.5.3" />
     <PackageReference Include="SharpCompress" Version="0.23.0" />
   </ItemGroup>
-
 
   <ItemGroup>
     <None Include="..\..\..\DotNetHelper-DeviceInformation\LICENSE.md">

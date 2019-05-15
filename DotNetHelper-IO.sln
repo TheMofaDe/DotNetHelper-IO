@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetHelper-IO-Tests", "te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetHelper-IO", "src\DotNetHelper-IO\DotNetHelper-IO.csproj", "{EBB67AC6-4A0D-4880-B3E2-A051A2C8F3F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetHelper-IO-Console", "samples\DotNetHelper-IO-Console\DotNetHelper-IO-Console.csproj", "{FD54162C-360B-4ECB-8B65-F3A83B42DFEB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{EBB67AC6-4A0D-4880-B3E2-A051A2C8F3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB67AC6-4A0D-4880-B3E2-A051A2C8F3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB67AC6-4A0D-4880-B3E2-A051A2C8F3F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD54162C-360B-4ECB-8B65-F3A83B42DFEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD54162C-360B-4ECB-8B65-F3A83B42DFEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD54162C-360B-4ECB-8B65-F3A83B42DFEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD54162C-360B-4ECB-8B65-F3A83B42DFEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
