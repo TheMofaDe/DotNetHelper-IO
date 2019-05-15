@@ -1,0 +1,343 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.FileObject.SizeUnits
+  commentId: T:DotNetHelper_IO.FileObject.SizeUnits
+  id: FileObject.SizeUnits
+  parent: DotNetHelper_IO
+  children:
+  - DotNetHelper_IO.FileObject.SizeUnits.Byte
+  - DotNetHelper_IO.FileObject.SizeUnits.Eb
+  - DotNetHelper_IO.FileObject.SizeUnits.Gb
+  - DotNetHelper_IO.FileObject.SizeUnits.Kb
+  - DotNetHelper_IO.FileObject.SizeUnits.Mb
+  - DotNetHelper_IO.FileObject.SizeUnits.Pb
+  - DotNetHelper_IO.FileObject.SizeUnits.Tb
+  - DotNetHelper_IO.FileObject.SizeUnits.Yb
+  - DotNetHelper_IO.FileObject.SizeUnits.Zb
+  langs:
+  - csharp
+  - vb
+  name: FileObject.SizeUnits
+  nameWithType: FileObject.SizeUnits
+  fullName: DotNetHelper_IO.FileObject.SizeUnits
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: SizeUnits
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1188
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public enum SizeUnits
+    content.vb: Public Enum SizeUnits
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Byte
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Byte
+  id: Byte
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Byte
+  nameWithType: FileObject.SizeUnits.Byte
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Byte
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Byte
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Byte = 0
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Kb
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Kb
+  id: Kb
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Kb
+  nameWithType: FileObject.SizeUnits.Kb
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Kb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Kb
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Kb = 1
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Mb
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Mb
+  id: Mb
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Mb
+  nameWithType: FileObject.SizeUnits.Mb
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Mb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Mb
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Mb = 2
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Gb
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Gb
+  id: Gb
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Gb
+  nameWithType: FileObject.SizeUnits.Gb
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Gb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Gb
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Gb = 3
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Tb
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Tb
+  id: Tb
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Tb
+  nameWithType: FileObject.SizeUnits.Tb
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Tb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Tb
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Tb = 4
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Pb
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Pb
+  id: Pb
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Pb
+  nameWithType: FileObject.SizeUnits.Pb
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Pb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Pb
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Pb = 5
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Eb
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Eb
+  id: Eb
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Eb
+  nameWithType: FileObject.SizeUnits.Eb
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Eb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Eb
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Eb = 6
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Zb
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Zb
+  id: Zb
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Zb
+  nameWithType: FileObject.SizeUnits.Zb
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Zb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Zb
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Zb = 7
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.FileObject.SizeUnits.Yb
+  commentId: F:DotNetHelper_IO.FileObject.SizeUnits.Yb
+  id: Yb
+  parent: DotNetHelper_IO.FileObject.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Yb
+  nameWithType: FileObject.SizeUnits.Yb
+  fullName: DotNetHelper_IO.FileObject.SizeUnits.Yb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Yb
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1190
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: Yb = 8
+    return:
+      type: DotNetHelper_IO.FileObject.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper_IO
+  commentId: N:DotNetHelper_IO
+  name: DotNetHelper_IO
+  nameWithType: DotNetHelper_IO
+  fullName: DotNetHelper_IO
+- uid: DotNetHelper_IO.FileObject.SizeUnits
+  commentId: T:DotNetHelper_IO.FileObject.SizeUnits
+  parent: DotNetHelper_IO
+  name: FileObject.SizeUnits
+  nameWithType: FileObject.SizeUnits
+  fullName: DotNetHelper_IO.FileObject.SizeUnits

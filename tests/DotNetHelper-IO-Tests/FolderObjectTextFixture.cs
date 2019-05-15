@@ -1,4 +1,4 @@
-﻿using DotNetHelper_Contracts.Enum.IO;
+﻿
 using DotNetHelper_IO;
 using NUnit.Framework;
 using System;

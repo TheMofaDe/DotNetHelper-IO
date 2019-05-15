@@ -1,0 +1,223 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Enum.FileOption
+  commentId: T:DotNetHelper_IO.Enum.FileOption
+  id: FileOption
+  parent: DotNetHelper_IO.Enum
+  children:
+  - DotNetHelper_IO.Enum.FileOption.Append
+  - DotNetHelper_IO.Enum.FileOption.DoNothingIfExist
+  - DotNetHelper_IO.Enum.FileOption.IncrementFileExtensionIfExist
+  - DotNetHelper_IO.Enum.FileOption.IncrementFileNameIfExist
+  - DotNetHelper_IO.Enum.FileOption.Overwrite
+  langs:
+  - csharp
+  - vb
+  name: FileOption
+  nameWithType: FileOption
+  fullName: DotNetHelper_IO.Enum.FileOption
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: FileOption
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nEnum FileOption\n"
+  example: []
+  syntax:
+    content: public enum FileOption
+    content.vb: Public Enum FileOption
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper_IO.Enum.FileOption.Append
+  commentId: F:DotNetHelper_IO.Enum.FileOption.Append
+  id: Append
+  parent: DotNetHelper_IO.Enum.FileOption
+  langs:
+  - csharp
+  - vb
+  name: Append
+  nameWithType: FileOption.Append
+  fullName: DotNetHelper_IO.Enum.FileOption.Append
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Append
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 16
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nThe append\n"
+  example: []
+  syntax:
+    content: Append = 1
+    return:
+      type: DotNetHelper_IO.Enum.FileOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FileOption.Overwrite
+  commentId: F:DotNetHelper_IO.Enum.FileOption.Overwrite
+  id: Overwrite
+  parent: DotNetHelper_IO.Enum.FileOption
+  langs:
+  - csharp
+  - vb
+  name: Overwrite
+  nameWithType: FileOption.Overwrite
+  fullName: DotNetHelper_IO.Enum.FileOption.Overwrite
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Overwrite
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 20
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nThe overwrite\n"
+  example: []
+  syntax:
+    content: Overwrite = 2
+    return:
+      type: DotNetHelper_IO.Enum.FileOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FileOption.DoNothingIfExist
+  commentId: F:DotNetHelper_IO.Enum.FileOption.DoNothingIfExist
+  id: DoNothingIfExist
+  parent: DotNetHelper_IO.Enum.FileOption
+  langs:
+  - csharp
+  - vb
+  name: DoNothingIfExist
+  nameWithType: FileOption.DoNothingIfExist
+  fullName: DotNetHelper_IO.Enum.FileOption.DoNothingIfExist
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: DoNothingIfExist
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 24
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nThe do nothing if exist\n"
+  example: []
+  syntax:
+    content: DoNothingIfExist = 3
+    return:
+      type: DotNetHelper_IO.Enum.FileOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FileOption.IncrementFileNameIfExist
+  commentId: F:DotNetHelper_IO.Enum.FileOption.IncrementFileNameIfExist
+  id: IncrementFileNameIfExist
+  parent: DotNetHelper_IO.Enum.FileOption
+  langs:
+  - csharp
+  - vb
+  name: IncrementFileNameIfExist
+  nameWithType: FileOption.IncrementFileNameIfExist
+  fullName: DotNetHelper_IO.Enum.FileOption.IncrementFileNameIfExist
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: IncrementFileNameIfExist
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 28
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nIncrement the file name +1\n"
+  example: []
+  syntax:
+    content: IncrementFileNameIfExist = 4
+    return:
+      type: DotNetHelper_IO.Enum.FileOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FileOption.IncrementFileExtensionIfExist
+  commentId: F:DotNetHelper_IO.Enum.FileOption.IncrementFileExtensionIfExist
+  id: IncrementFileExtensionIfExist
+  parent: DotNetHelper_IO.Enum.FileOption
+  langs:
+  - csharp
+  - vb
+  name: IncrementFileExtensionIfExist
+  nameWithType: FileOption.IncrementFileExtensionIfExist
+  fullName: DotNetHelper_IO.Enum.FileOption.IncrementFileExtensionIfExist
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: IncrementFileExtensionIfExist
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 32
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nIncrements the file extension +1\n"
+  example: []
+  syntax:
+    content: IncrementFileExtensionIfExist = 5
+    return:
+      type: DotNetHelper_IO.Enum.FileOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+- uid: DotNetHelper_IO.Enum.FileOption
+  commentId: T:DotNetHelper_IO.Enum.FileOption
+  parent: DotNetHelper_IO.Enum
+  name: FileOption
+  nameWithType: FileOption
+  fullName: DotNetHelper_IO.Enum.FileOption

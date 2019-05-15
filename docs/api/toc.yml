@@ -1,0 +1,38 @@
+### YamlMime:TableOfContent
+- uid: DotNetHelper_IO
+  name: DotNetHelper_IO
+  items:
+  - uid: DotNetHelper_IO.CompressedFile
+    name: CompressedFile
+  - uid: DotNetHelper_IO.FileObject
+    name: FileObject
+  - uid: DotNetHelper_IO.FileObject.SizeUnits
+    name: FileObject.SizeUnits
+  - uid: DotNetHelper_IO.FolderObject
+    name: FolderObject
+  - uid: DotNetHelper_IO.ZipFileObject
+    name: ZipFileObject
+- uid: DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  items:
+  - uid: DotNetHelper_IO.Enum.AddOrRemoveEnum
+    name: AddOrRemoveEnum
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+  - uid: DotNetHelper_IO.Enum.FileType
+    name: FileType
+  - uid: DotNetHelper_IO.Enum.IOType
+    name: IOType
+- uid: DotNetHelper_IO.Interface
+  name: DotNetHelper_IO.Interface
+  items:
+  - uid: DotNetHelper_IO.Interface.DirectoryType
+    name: DirectoryType
+  - uid: DotNetHelper_IO.Interface.IFileObject
+    name: IFileObject
+  - uid: DotNetHelper_IO.Interface.IFolderObject
+    name: IFolderObject
+  - uid: DotNetHelper_IO.Interface.ISerializer
+    name: ISerializer
+  - uid: DotNetHelper_IO.Interface.IUserDirectory
+    name: IUserDirectory

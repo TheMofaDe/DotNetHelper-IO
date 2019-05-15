@@ -1,0 +1,669 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ZipFileObject
+   | DotNetHelper-IO </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ZipFileObject
+   | DotNetHelper-IO ">
+    <meta name="generator" content="docfx 2.41.0.0">
+    
+    <link rel="shortcut icon" href="../logo/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../index.html" title="Home">Home</a>
+                      </li>
+                      <li>
+                          <a href="../articles/sample.html" title="Articles">Articles</a>
+                      </li>
+                      <li>
+                          <a href="../api/DotNetHelper-IO.html" title="API Documentation">API Documentation</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper_IO.html" title="DotNetHelper_IO" class="">DotNetHelper_IO</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper_IO.CompressedFile.html" title="CompressedFile" class="">CompressedFile</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.FileObject.html" title="FileObject" class="">FileObject</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.FileObject.SizeUnits.html" title="FileObject.SizeUnits" class="">FileObject.SizeUnits</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.FolderObject.html" title="FolderObject" class="">FolderObject</a>
+                          </li>
+                          <li class="active">
+                            <a href="DotNetHelper_IO.ZipFileObject.html" title="ZipFileObject" class="active">ZipFileObject</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper_IO.Enum.html" title="DotNetHelper_IO.Enum" class="">DotNetHelper_IO.Enum</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper_IO.Enum.AddOrRemoveEnum.html" title="AddOrRemoveEnum" class="">AddOrRemoveEnum</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.Enum.FileOption.html" title="FileOption" class="">FileOption</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.Enum.FileType.html" title="FileType" class="">FileType</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.Enum.IOType.html" title="IOType" class="">IOType</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper_IO.Interface.html" title="DotNetHelper_IO.Interface" class="">DotNetHelper_IO.Interface</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper_IO.Interface.DirectoryType.html" title="DirectoryType" class="">DirectoryType</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.Interface.IFileObject.html" title="IFileObject" class="">IFileObject</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.Interface.IFolderObject.html" title="IFolderObject" class="">IFolderObject</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.Interface.ISerializer.html" title="ISerializer" class="">ISerializer</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.Interface.IUserDirectory.html" title="IUserDirectory" class="">IUserDirectory</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DotNetHelper_IO.ZipFileObject">
+  
+  
+  <h1 id="DotNetHelper_IO_ZipFileObject" data-uid="DotNetHelper_IO.ZipFileObject" class="text-break">Class ZipFileObject
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DotNetHelper_IO.FileObject.html">FileObject</a></div>
+    <div class="level2"><span class="xref">ZipFileObject</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="DotNetHelper_IO.Interface.IFileObject.html">IFileObject</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FileNameOnly">FileObject.FileNameOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FileNameOnlyNoExtension">FileObject.FileNameOnlyNoExtension</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FilePathOnly">FileObject.FilePathOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FullFilePath">FileObject.FullFilePath</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_IncrementFullFilePath">FileObject.IncrementFullFilePath</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastWriteTimeUtc">FileObject.LastWriteTimeUtc</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastWriteTime">FileObject.LastWriteTime</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastAccessTime">FileObject.LastAccessTime</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastAccessTimeUtc">FileObject.LastAccessTimeUtc</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_CreationTimeUtc">FileObject.CreationTimeUtc</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_CreationTime">FileObject.CreationTime</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Extension">FileObject.Extension</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FolderNameOnly">FileObject.FolderNameOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FileSize">FileObject.FileSize</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Exist">FileObject.Exist</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WatchTimeout">FileObject.WatchTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Watcher">FileObject.Watcher</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_NotifyFilters">FileObject.NotifyFilters</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_RefreshObject">FileObject.RefreshObject()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_CopyTo_System_String_DotNetHelper_IO_Enum_FileOption_System_IProgress_System_Double__">FileObject.CopyTo(String, FileOption, IProgress&lt;Double&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_MoveTo_System_String_DotNetHelper_IO_Enum_FileOption_System_IProgress_System_Double__">FileObject.MoveTo(String, FileOption, IProgress&lt;Double&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_SetFileAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__">FileObject.SetFileAttribute(AddOrRemoveEnum, List&lt;FileAttributes&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ChangeExtension_System_String_DotNetHelper_IO_Enum_FileOption_System_IProgress_System_Double__">FileObject.ChangeExtension(String, FileOption, IProgress&lt;Double&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_DeleteFile_System_Action_System_Exception__System_Boolean_">FileObject.DeleteFile(Action&lt;Exception&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetIncrementFileName_System_String_">FileObject.GetIncrementFileName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetIncrementExtension_System_String_">FileObject.GetIncrementExtension(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadFileToList">FileObject.ReadFileToList()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadFile">FileObject.ReadFile()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadFileToStream">FileObject.ReadFileToStream()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileStream_DotNetHelper_IO_Enum_FileOption_">FileObject.GetFileStream(FileOption)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetStreamWriter_System_Boolean_">FileObject.GetStreamWriter(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetStreamReader">FileObject.GetStreamReader()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteContentToFile_System_String_System_Text_Encoding_DotNetHelper_IO_Enum_FileOption_">FileObject.WriteContentToFile(String, Encoding, FileOption)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_EncryptFile_DotNetHelper_Encryption_Enums_SymmetricProvider_System_Byte___">FileObject.EncryptFile(SymmetricProvider, Byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_DecryptFile_DotNetHelper_Encryption_Enums_SymmetricProvider_System_Byte___">FileObject.DecryptFile(SymmetricProvider, Byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ImportData__1_DotNetHelper_IO_Interface_ISerializer_">FileObject.ImportData&lt;T&gt;(ISerializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ImportDataList__1_DotNetHelper_IO_Interface_ISerializer_System_Type_">FileObject.ImportDataList&lt;T&gt;(ISerializer, Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ExportData__1_System_Collections_Generic_List___0__DotNetHelper_IO_Interface_ISerializer_DotNetHelper_IO_Enum_FileOption_System_Boolean_">FileObject.ExportData&lt;T&gt;(List&lt;T&gt;, ISerializer, FileOption, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteStreamToFileAsync_System_IO_Stream_System_IProgress_System_Double__System_Boolean_">FileObject.WriteStreamToFileAsync(Stream, IProgress&lt;Double&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteStreamToFile_System_IO_Stream_System_IProgress_System_Double__DotNetHelper_IO_Enum_FileOption_">FileObject.WriteStreamToFile(Stream, IProgress&lt;Double&gt;, FileOption)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileEncoding">FileObject.GetFileEncoding()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSizeDisplay_System_Boolean_">FileObject.GetFileSizeDisplay(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSize_DotNetHelper_IO_FileObject_SizeUnits_System_Boolean_">FileObject.GetFileSize(FileObject.SizeUnits, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_IsFileLocked">FileObject.IsFileLocked()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_">FileObject.StartWatching(WatcherChangeTypes, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_StopWatching">FileObject.StopWatching()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Dispose">FileObject.Dispose()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DotNetHelper_IO.html">DotNetHelper_IO</a></h6>
+  <h6><strong>Assembly</strong>: DotNetHelper-IO.dll</h6>
+  <h5 id="DotNetHelper_IO_ZipFileObject_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ZipFileObject : FileObject, IDisposable, IFileObject</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject__ctor_System_String_SharpCompress_Common_ArchiveType_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.%23ctor(System.String%2CSharpCompress.Common.ArchiveType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L21">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_ZipFileObject__ctor_" data-uid="DotNetHelper_IO.ZipFileObject.#ctor*"></a>
+  <h4 id="DotNetHelper_IO_ZipFileObject__ctor_System_String_SharpCompress_Common_ArchiveType_" data-uid="DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType)">ZipFileObject(String, ArchiveType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFileObject(string file, ArchiveType type = ArchiveType.Zip)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">file</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">SharpCompress.Common.ArchiveType</span></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_Type.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L19">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_ZipFileObject_Type_" data-uid="DotNetHelper_IO.ZipFileObject.Type*"></a>
+  <h4 id="DotNetHelper_IO_ZipFileObject_Type" data-uid="DotNetHelper_IO.ZipFileObject.Type">Type</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ArchiveType Type { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SharpCompress.Common.ArchiveType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_AddFilesToZip_System_Collections_Generic_List_System_String__DotNetHelper_IO_Enum_FileOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List%7BSystem.String%7D%2CDotNetHelper_IO.Enum.FileOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L96">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_ZipFileObject_AddFilesToZip_" data-uid="DotNetHelper_IO.ZipFileObject.AddFilesToZip*"></a>
+  <h4 id="DotNetHelper_IO_ZipFileObject_AddFilesToZip_System_Collections_Generic_List_System_String__DotNetHelper_IO_Enum_FileOption_" data-uid="DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List{System.String},DotNetHelper_IO.Enum.FileOption)">AddFilesToZip(List&lt;String&gt;, FileOption)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddFilesToZip(List&lt;string&gt; files, FileOption option = FileOption.Overwrite)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">files</span></td>
+        <td><p>new files to be added to the zip file</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>how to handle files that will be added to the zip</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_AddFileToZip_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L87">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_ZipFileObject_AddFileToZip_" data-uid="DotNetHelper_IO.ZipFileObject.AddFileToZip*"></a>
+  <h4 id="DotNetHelper_IO_ZipFileObject_AddFileToZip_System_String_" data-uid="DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)">AddFileToZip(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddFileToZip(string fullFilePath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fullFilePath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_CreateOrTruncate_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.CreateOrTruncate(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L33">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_ZipFileObject_CreateOrTruncate_" data-uid="DotNetHelper_IO.ZipFileObject.CreateOrTruncate*"></a>
+  <h4 id="DotNetHelper_IO_ZipFileObject_CreateOrTruncate_System_Boolean_" data-uid="DotNetHelper_IO.ZipFileObject.CreateOrTruncate(System.Boolean)">CreateOrTruncate(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Creates a empty file if it doesn't exist otherwise truncates it if set to <code>true</code> [overwrite existing files].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CreateOrTruncate(bool truncate = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">truncate</span></td>
+        <td><p>if set to <code>true</code> [truncate].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if XXXX, <code>false</code> otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_RemoveFilesToZip_System_Predicate_SharpCompress_Archives_IArchiveEntry__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate%7BSharpCompress.Archives.IArchiveEntry%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L121">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_ZipFileObject_RemoveFilesToZip_" data-uid="DotNetHelper_IO.ZipFileObject.RemoveFilesToZip*"></a>
+  <h4 id="DotNetHelper_IO_ZipFileObject_RemoveFilesToZip_System_Predicate_SharpCompress_Archives_IArchiveEntry__" data-uid="DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate{SharpCompress.Archives.IArchiveEntry})">RemoveFilesToZip(Predicate&lt;IArchiveEntry&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveFilesToZip(Predicate&lt;IArchiveEntry&gt; whereClause)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Predicate</span>&lt;<span class="xref">SharpCompress.Archives.IArchiveEntry</span>&gt;</td>
+        <td><span class="parametername">whereClause</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_UnZipFile_DotNetHelper_IO_FolderObject_DotNetHelper_IO_Enum_FileOption_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L61">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_ZipFileObject_UnZipFile_" data-uid="DotNetHelper_IO.ZipFileObject.UnZipFile*"></a>
+  <h4 id="DotNetHelper_IO_ZipFileObject_UnZipFile_DotNetHelper_IO_FolderObject_DotNetHelper_IO_Enum_FileOption_System_Boolean_" data-uid="DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject,DotNetHelper_IO.Enum.FileOption,System.Boolean)">UnZipFile(FolderObject, FileOption, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnZipFile(FolderObject folder, FileOption option, bool extractFullPath = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.FolderObject.html">FolderObject</a></td>
+        <td><span class="parametername">folder</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">extractFullPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="DotNetHelper_IO.Interface.IFileObject.html">IFileObject</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright � 2019 Joseph McNeal Jr
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Enum.AddOrRemoveEnum
+  commentId: T:DotNetHelper_IO.Enum.AddOrRemoveEnum
+  id: AddOrRemoveEnum
+  parent: DotNetHelper_IO.Enum
+  children:
+  - DotNetHelper_IO.Enum.AddOrRemoveEnum.Add
+  - DotNetHelper_IO.Enum.AddOrRemoveEnum.Remove
+  langs:
+  - csharp
+  - vb
+  name: AddOrRemoveEnum
+  nameWithType: AddOrRemoveEnum
+  fullName: DotNetHelper_IO.Enum.AddOrRemoveEnum
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: AddOrRemoveEnum
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 38
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nEnum AddOrRemoveEnum\n"
+  example: []
+  syntax:
+    content: public enum AddOrRemoveEnum
+    content.vb: Public Enum AddOrRemoveEnum
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper_IO.Enum.AddOrRemoveEnum.Add
+  commentId: F:DotNetHelper_IO.Enum.AddOrRemoveEnum.Add
+  id: Add
+  parent: DotNetHelper_IO.Enum.AddOrRemoveEnum
+  langs:
+  - csharp
+  - vb
+  name: Add
+  nameWithType: AddOrRemoveEnum.Add
+  fullName: DotNetHelper_IO.Enum.AddOrRemoveEnum.Add
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Add
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 43
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nThe add\n"
+  example: []
+  syntax:
+    content: Add = 1
+    return:
+      type: DotNetHelper_IO.Enum.AddOrRemoveEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.AddOrRemoveEnum.Remove
+  commentId: F:DotNetHelper_IO.Enum.AddOrRemoveEnum.Remove
+  id: Remove
+  parent: DotNetHelper_IO.Enum.AddOrRemoveEnum
+  langs:
+  - csharp
+  - vb
+  name: Remove
+  nameWithType: AddOrRemoveEnum.Remove
+  fullName: DotNetHelper_IO.Enum.AddOrRemoveEnum.Remove
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Remove
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 47
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nThe remove\n"
+  example: []
+  syntax:
+    content: Remove = 2
+    return:
+      type: DotNetHelper_IO.Enum.AddOrRemoveEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+- uid: DotNetHelper_IO.Enum.AddOrRemoveEnum
+  commentId: T:DotNetHelper_IO.Enum.AddOrRemoveEnum
+  parent: DotNetHelper_IO.Enum
+  name: AddOrRemoveEnum
+  nameWithType: AddOrRemoveEnum
+  fullName: DotNetHelper_IO.Enum.AddOrRemoveEnum

@@ -1,0 +1,49 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  id: DotNetHelper_IO.Enum
+  children:
+  - DotNetHelper_IO.Enum.AddOrRemoveEnum
+  - DotNetHelper_IO.Enum.FileOption
+  - DotNetHelper_IO.Enum.FileType
+  - DotNetHelper_IO.Enum.IOType
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+  type: Namespace
+  assemblies:
+  - DotNetHelper-IO
+references:
+- uid: DotNetHelper_IO.Enum.FileOption
+  commentId: T:DotNetHelper_IO.Enum.FileOption
+  parent: DotNetHelper_IO.Enum
+  name: FileOption
+  nameWithType: FileOption
+  fullName: DotNetHelper_IO.Enum.FileOption
+- uid: DotNetHelper_IO.Enum.AddOrRemoveEnum
+  commentId: T:DotNetHelper_IO.Enum.AddOrRemoveEnum
+  parent: DotNetHelper_IO.Enum
+  name: AddOrRemoveEnum
+  nameWithType: AddOrRemoveEnum
+  fullName: DotNetHelper_IO.Enum.AddOrRemoveEnum
+- uid: DotNetHelper_IO.Enum.IOType
+  commentId: T:DotNetHelper_IO.Enum.IOType
+  parent: DotNetHelper_IO.Enum
+  name: IOType
+  nameWithType: IOType
+  fullName: DotNetHelper_IO.Enum.IOType
+- uid: DotNetHelper_IO.Enum.FileType
+  commentId: T:DotNetHelper_IO.Enum.FileType
+  parent: DotNetHelper_IO.Enum
+  name: FileType
+  nameWithType: FileType
+  fullName: DotNetHelper_IO.Enum.FileType
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum

@@ -1,0 +1,145 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Enum.IOType
+  commentId: T:DotNetHelper_IO.Enum.IOType
+  id: IOType
+  parent: DotNetHelper_IO.Enum
+  children:
+  - DotNetHelper_IO.Enum.IOType.Both
+  - DotNetHelper_IO.Enum.IOType.File
+  - DotNetHelper_IO.Enum.IOType.Folder
+  langs:
+  - csharp
+  - vb
+  name: IOType
+  nameWithType: IOType
+  fullName: DotNetHelper_IO.Enum.IOType
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: IOType
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 50
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: public enum IOType
+    content.vb: Public Enum IOType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper_IO.Enum.IOType.File
+  commentId: F:DotNetHelper_IO.Enum.IOType.File
+  id: File
+  parent: DotNetHelper_IO.Enum.IOType
+  langs:
+  - csharp
+  - vb
+  name: File
+  nameWithType: IOType.File
+  fullName: DotNetHelper_IO.Enum.IOType.File
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: File
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 52
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: File = 1
+    return:
+      type: DotNetHelper_IO.Enum.IOType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.IOType.Folder
+  commentId: F:DotNetHelper_IO.Enum.IOType.Folder
+  id: Folder
+  parent: DotNetHelper_IO.Enum.IOType
+  langs:
+  - csharp
+  - vb
+  name: Folder
+  nameWithType: IOType.Folder
+  fullName: DotNetHelper_IO.Enum.IOType.Folder
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Folder
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 53
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Folder = 2
+    return:
+      type: DotNetHelper_IO.Enum.IOType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.IOType.Both
+  commentId: F:DotNetHelper_IO.Enum.IOType.Both
+  id: Both
+  parent: DotNetHelper_IO.Enum.IOType
+  langs:
+  - csharp
+  - vb
+  name: Both
+  nameWithType: IOType.Both
+  fullName: DotNetHelper_IO.Enum.IOType.Both
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Both
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 54
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Both = 3
+    return:
+      type: DotNetHelper_IO.Enum.IOType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+- uid: DotNetHelper_IO.Enum.IOType
+  commentId: T:DotNetHelper_IO.Enum.IOType
+  parent: DotNetHelper_IO.Enum
+  name: IOType
+  nameWithType: IOType
+  fullName: DotNetHelper_IO.Enum.IOType

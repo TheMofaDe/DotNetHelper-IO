@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Interface.IFolderObject
+  commentId: T:DotNetHelper_IO.Interface.IFolderObject
+  id: IFolderObject
+  parent: DotNetHelper_IO.Interface
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IFolderObject
+  nameWithType: IFolderObject
+  fullName: DotNetHelper_IO.Interface.IFolderObject
+  type: Interface
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Interface/IFolderObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: IFolderObject
+    path: ../src/DotNetHelper-IO/Interface/IFolderObject.cs
+    startLine: 2
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Interface
+  syntax:
+    content: public interface IFolderObject
+    content.vb: Public Interface IFolderObject
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+references:
+- uid: DotNetHelper_IO.Interface
+  commentId: N:DotNetHelper_IO.Interface
+  name: DotNetHelper_IO.Interface
+  nameWithType: DotNetHelper_IO.Interface
+  fullName: DotNetHelper_IO.Interface
