@@ -19,7 +19,7 @@
     <RootNamespace>DotNetHelper_IO</RootNamespace>
     <AssemblyName>DotNetHelper-IO</AssemblyName>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,11 +28,6 @@
     <PackageReference Include="SharpCompress" Version="0.23.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\..\DotNetHelper-DeviceInformation\LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+
 
 </Project>
