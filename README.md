@@ -1,29 +1,53 @@
-# DotNetHelper-IO
-#####  A simple and easy to use library for managing folders & files 
+# DotNet Starter Template
 
 
-|     BADGE(s)             |       Windows                                          |                 Linux                        |
-| -----------------------: | :---------------------------------------------------:  | :------------------------------------------: |
-|       **Build AppVeyor** |  [![Build status][appveyor-badge]][appveyor]           |                      -                       |
-|   **Build Azure DevOps** |  [![Build Status][azure-windows]][azure-pipeline]      |     ![Build Status][az-Linux]                |
-|         **CodeCoverage** |  [![codecov][codecov-badge]][codecov]                  |                      -                       |
+| Package  | Tests | Coverage |
+| :-----:  | :---: | :------: |
+| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![Coverage Status](https://coveralls.io/repos/github/TheMofaDe/DotNetHelper-IO/badge.svg)](https://coveralls.io/github/TheMofaDe/DotNetHelper-IO) |
+
+### *Azure DevOps*
+| Windows | Linux | MacOS |
+| :-----: | :-----: | :---: | 
+| ![Build Status][azure-windows]  | ![Build Status][azure-linux]  | ![Build Status][azure-macOS] 
+
+### *AppVeyor*
+| Windows |
+| :-----: | 
+| ![Build Status][appveyor-windows]
 
 
-
-Created Using DotNet-Starter-Template
-[https://github.com/TheMofaDe/DotNet-Starter-Template] 
-
+#####  DotNetHelper-IO is a simple easy to use thread safe library for handling all types of files & folders
 
 ## Documentation
-For more information, please refer to the [Officials Docs](http://themofade.github.io/DotNetHelper-IO) 
+For more information, please refer to the [Officials Docs][2]
+
+Created Using [DotNet-Starter-Template](http://themofade.github.io/DotNet-Starter-Template) 
 
 
-[appveyor]:             https://ci.appveyor.com/project/TheMofaDe/DotNetHelper-IO/branch/master
-[appveyor-badge]:       https://ci.appveyor.com/api/projects/status/s0pohwrx6clu0aif/branch/master?svg=true
-[azure-pipeline]:       https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_build/latest?definitionId=1
+<!-- Links. -->
+
+[1]:  https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[2]: http://themofade.github.io/DotNetHelper-IO
+
+[Cake]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[Azure DevOps]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[AppVeyor]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[GitVersion]: https://gitversion.readthedocs.io/en/latest/
+[Nuget]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[Chocolately]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[WiX]: http://wixtoolset.org/
+[DocFx]: https://dotnet.github.io/docfx/
+
+
+
+<!-- BADGES. -->
+
+[nuget-downloads]: https://img.shields.io/nuget/dt/DotNetHelper-IO.svg?style=flat-square
+[tests]: https://img.shields.io/appveyor/tests/themofade/DotNetHelper-IO.svg?style=flat-square
+[coverage-status]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=Windows
+
 [azure-windows]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=Windows
-[az-Linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=Linux
+[azure-linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=Linux
 [azure-macOS]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=macOS
 
-[codecov]:              https://codecov.io/gh/TheMofaDe/DotNetHelper-IO
-[codecov-badge]:        https://codecov.io/gh/TheMofaDe/DotNetHelper-IO/branch/master/graph/badge.svg
+[appveyor-windows]: https://ci.appveyor.com/project/TheMofaDe/DotNetHelper-IO/branch/master

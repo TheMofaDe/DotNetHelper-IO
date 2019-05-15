@@ -28,8 +28,8 @@
     ],
     "resource": [
       {
-          "files": [ "images/**", "langwordmapping/**" ],
-          "exclude": [ "**.meta" ]
+        "files": [ "images/**", "langwordmapping/**" ],
+        "exclude": [ "**.meta" ]
       }
     ],
     "globalMetadata": {
