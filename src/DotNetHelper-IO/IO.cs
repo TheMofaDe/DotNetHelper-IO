@@ -104,12 +104,6 @@ namespace DotNetHelper_IO
                 return new Tuple<bool, Exception>(false, error);
             }
 
-           // if (path.Length == 3)
-           // {
-           //     var valid = Directory.Exists(path);
-           //     error = valid ? null : new Exception($"The Following Path {path} Is Not Valid For A Folder");
-           //     return new Tuple<bool, Exception>(valid, error);
-           // }
             if (DeviceInformation.DeviceOS == DeviceInformation.DeviceOs.Windows && path.Contains(":")) 
             {
                 var driveCheck = new Regex(@"^[a-zA-Z]:\\$");
