@@ -222,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/sample.html",
-          "hash": "5vnOxCnPdM8T1s4BxdDR3A=="
+          "hash": "MPKfmlTuG0VS6DxpXpwdnQ=="
         }
       },
       "is_incremental": false,
@@ -246,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "fFGi98gDg3hSkeO+fZy7Xw=="
+          "hash": "EFxufqb0hc7d/Qa3vLzggw=="
         }
       },
       "is_incremental": false,
@@ -288,17 +288,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 17,
-          "skipped_file_count": 17
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 2,
           "skipped_file_count": 2
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 17,
+          "skipped_file_count": 17
         }
       }
     },
