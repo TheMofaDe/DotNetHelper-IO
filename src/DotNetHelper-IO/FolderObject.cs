@@ -4,9 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using DotNetHelper_Contracts.Enum.IO;
-using DotNetHelper_Contracts.Helpers;
+
 using DotNetHelper_DeviceInformation;
+using DotNetHelper_IO.Enum;
+using DotNetHelper_IO.Helpers;
 using DotNetHelper_IO.Interface;
 using SharpCompress.Archives;
 using SharpCompress.Archives.GZip;

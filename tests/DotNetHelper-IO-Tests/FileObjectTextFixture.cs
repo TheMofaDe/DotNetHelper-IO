@@ -1,10 +1,9 @@
-using DotNetHelper_Contracts.Enum.IO;
 using DotNetHelper_IO;
 using NUnit.Framework;
 using System;
 using System.IO;
 using System.Text;
-using DotNetHelper_Contracts.Enum.Encryption;
+using DotNetHelper_IO.Enum;
 using DotNetHelper_IO_Tests;
 
 namespace Tests

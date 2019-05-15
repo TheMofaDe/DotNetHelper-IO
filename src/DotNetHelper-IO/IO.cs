@@ -3,8 +3,8 @@
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
-using DotNetHelper_Contracts.Enum.IO;
 using DotNetHelper_DeviceInformation;
+using DotNetHelper_IO.Enum;
 
 namespace DotNetHelper_IO
 {

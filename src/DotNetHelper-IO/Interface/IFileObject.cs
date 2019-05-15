@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using DotNetHelper_Contracts.Enum.Encryption;
-using DotNetHelper_Contracts.Enum.IO;
+using DotNetHelper_IO.Enum;
 
 namespace DotNetHelper_IO.Interface
 {
