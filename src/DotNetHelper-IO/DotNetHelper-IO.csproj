@@ -5,21 +5,22 @@
     <LangVersion>default</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <FileVersion>2019.1.30.2</FileVersion>
-    <Description>Easy to work with files,folders,zip files helper</Description>
+    <Description>A simple and easy to use library for managing folders &amp; files</Description>
     <Copyright>Copyright © Joseph McNeal Jr 2017-2018</Copyright>
     <AssemblyTitle>$(AssemblyName)</AssemblyTitle>
     <Version>2019.3.5.1</Version>
     <Authors>Joseph McNeal Jr</Authors>
     <PackageTags>Dotnethelper</PackageTags>
-    <PackageReleaseNotes>bug fixed incrementing file name or extension will nolonger override the file object FullFilePath</PackageReleaseNotes>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageReleaseNotes>BREAKING CHANGE : remove dependency from dotnethelper contract</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper-IO</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper-IO</RepositoryUrl>
     <RootNamespace>DotNetHelper_IO</RootNamespace>
     <AssemblyName>DotNetHelper-IO</AssemblyName>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
-
 
   <ItemGroup>
     <PackageReference Include="DotNetHelper-DeviceInformation" Version="2018.6.15.23" />
@@ -27,6 +28,12 @@
     <PackageReference Include="SharpCompress" Version="0.23.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\..\DotNetHelper-DeviceInformation\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 
 </Project>
