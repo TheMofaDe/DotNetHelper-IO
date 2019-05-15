@@ -31,10 +31,10 @@ namespace DotNetHelper_IO
                 }
                 return path;
             }
-            catch (PathTooLongException e)
+            catch (PathTooLongException) // https://support.microsoft.com/en-us/help/177665/path-too-long-error-message-when-exceeding-max-path
             {
-                return (file.Substring(0, 200)); // just assume its valid bro
-                return null;
+                return (file.Substring(0, 200)); 
+
             }
         }
 

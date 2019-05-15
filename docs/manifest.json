@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FileObject.html",
-          "hash": "35czuAAG6WbbgdQFG8XBsQ=="
+          "hash": "3V1FlLc/WQso1d3Rz4rIhA=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FolderObject.html",
-          "hash": "6A99rWS5TKre6k/KCeIKZQ=="
+          "hash": "kI8gblwUfOrCqjKepYVimw=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.IFileObject.html",
-          "hash": "x5NXGtI3yennoMAhqnLh2g=="
+          "hash": "k20t/Wc8Q6yJ7aTpk6FjNQ=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.ISerializer.html",
-          "hash": "xkL5CYBkCCU8DgCTsqIHKg=="
+          "hash": "e5Vjr4amjdP4NnJx+YmH7g=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Interface.html",
-          "hash": "OqjU7skBIgzXXY1oXQtwNg=="
+          "hash": "cJ82Q/STMSiiuCn+UrdyzA=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.ZipFileObject.html",
-          "hash": "zTP3brBXj+SBVg1+SCsSJQ=="
+          "hash": "sEbzBInGyeCW1wjrTqRTBw=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.html",
-          "hash": "If6U6BBVLzbzUtdXanaXxQ=="
+          "hash": "dtjGLR6GsQocHWzMjn4idw=="
         }
       },
       "is_incremental": false,
@@ -298,7 +298,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 17,
-          "skipped_file_count": 17
+          "skipped_file_count": 15
         }
       }
     },

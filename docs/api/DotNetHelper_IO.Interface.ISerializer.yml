@@ -39,7 +39,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ISerializer
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -90,7 +90,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SerializeToStream
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -142,7 +142,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SerializeToStream
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -190,7 +190,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SerializeToFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 38
+    startLine: 39
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -239,7 +239,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SerializeToFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -288,7 +288,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SerializeToFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -333,7 +333,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SerializeToFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 66
+    startLine: 67
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -375,7 +375,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SerializeToString
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -414,7 +414,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SerializeToString
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 85
+    startLine: 86
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -460,7 +460,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeFromFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 94
+    startLine: 95
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -502,7 +502,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeFromFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 103
+    startLine: 104
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -549,7 +549,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeFromFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 120
+    startLine: 121
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -584,7 +584,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeListFromFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 127
+    startLine: 128
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -619,7 +619,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeToList
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 134
+    startLine: 135
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -654,7 +654,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeListFromFile
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 141
+    startLine: 142
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -696,7 +696,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeFromStream
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 150
+    startLine: 151
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -741,7 +741,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeFromStream
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 159
+    startLine: 160
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -783,7 +783,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeFromString
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 168
+    startLine: 169
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -830,7 +830,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeToList
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 177
+    startLine: 178
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -877,7 +877,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeFromString
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 186
+    startLine: 187
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface
@@ -919,7 +919,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeserializeToCSharpClass
     path: ../src/DotNetHelper-IO/Interface/ISerializer.cs
-    startLine: 189
+    startLine: 190
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Interface

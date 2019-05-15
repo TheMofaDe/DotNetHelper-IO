@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using DotNetHelper_Contracts.Enum.Encryption;
-using DotNetHelper_Contracts.Enum.IO;
+using DotNetHelper_Encryption.Enums;
 using DotNetHelper_IO;
+using DotNetHelper_IO.Enum;
 
 namespace DotNetHelper_IO_Console
 {

@@ -52,7 +52,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FolderObject
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -103,7 +103,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FolderNameOnly
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -141,7 +141,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FullFolderPath
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -179,7 +179,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Exist
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -217,7 +217,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Watcher
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -255,7 +255,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Files
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -293,7 +293,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Subfolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 55
+    startLine: 56
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -331,7 +331,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 60
+    startLine: 61
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -369,7 +369,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 65
+    startLine: 66
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -407,7 +407,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ParentFolder
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -445,7 +445,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastWriteTimeUtc
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -483,7 +483,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastWriteTime
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 80
+    startLine: 81
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -521,7 +521,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastAccessTime
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 85
+    startLine: 86
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -559,7 +559,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastAccessTimeUtc
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 90
+    startLine: 91
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -597,7 +597,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreationTimeUtc
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 95
+    startLine: 96
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -635,7 +635,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreationTime
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 100
+    startLine: 101
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -673,7 +673,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ParentNameOnly
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 105
+    startLine: 106
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -711,7 +711,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LoadSubFolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 111
+    startLine: 112
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -749,7 +749,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LoadFilesInFolder
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 116
+    startLine: 117
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -787,7 +787,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LoadRecursive
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 121
+    startLine: 122
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -825,7 +825,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 130
+    startLine: 131
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -870,7 +870,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 173
+    startLine: 174
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -911,7 +911,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Create
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 247
+    startLine: 248
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -972,7 +972,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetAllFiles
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 306
+    startLine: 307
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1012,7 +1012,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetAllFolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 351
+    startLine: 352
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1054,7 +1054,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyTo
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 420
+    startLine: 421
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1097,7 +1097,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: MoveTo
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 443
+    startLine: 444
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1140,7 +1140,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ZipFolderToFileSystem
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 473
+    startLine: 474
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1189,7 +1189,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ZipFolderToMemory
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 518
+    startLine: 519
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1224,7 +1224,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 542
+    startLine: 543
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1266,7 +1266,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeleteFolder
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 578
+    startLine: 579
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1306,7 +1306,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StartWatching
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 618
+    startLine: 619
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1348,7 +1348,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StopWatching
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 646
+    startLine: 647
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1380,7 +1380,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 716
+    startLine: 717
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
