@@ -3,7 +3,7 @@
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
-using DotNetHelper_DeviceInformation;
+
 using DotNetHelper_IO.Enum;
 
 namespace DotNetHelper_IO
@@ -104,7 +104,7 @@ namespace DotNetHelper_IO
                 return new Tuple<bool, Exception>(false, error);
             }
 
-            if (DeviceInformation.DeviceOS == DeviceInformation.DeviceOs.Windows && path.Contains(":")) 
+            if (path.ToCharArray()[1] == ':') 
             {
                 var driveCheck = new Regex(@"^[a-zA-Z]:\\$");
                 if (!driveCheck.IsMatch(path.Substring(0, 3)))
