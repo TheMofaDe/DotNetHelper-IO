@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using DotNetHelper_IO.Enum;
+using DotNetHelper_Contracts.Enum.IO;
 
 namespace DotNetHelper_IO.Interface
 {

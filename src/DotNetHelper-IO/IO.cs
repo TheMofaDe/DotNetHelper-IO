@@ -3,8 +3,8 @@
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
-
-using DotNetHelper_IO.Enum;
+using DotNetHelper_Contracts.Enum.IO;
+using DotNetHelper_DeviceInformation;
 
 namespace DotNetHelper_IO
 {
@@ -31,10 +31,10 @@ namespace DotNetHelper_IO
                 }
                 return path;
             }
-            catch (PathTooLongException)
+            catch (PathTooLongException e)
             {
-                return (file.Substring(0, 200));  // https://support.microsoft.com/en-us/help/177665/path-too-long-error-message-when-exceeding-max-path
-
+                return (file.Substring(0, 200)); // just assume its valid bro
+                return null;
             }
         }
 
@@ -104,7 +104,13 @@ namespace DotNetHelper_IO
                 return new Tuple<bool, Exception>(false, error);
             }
 
-            if (path.ToCharArray()[1] == ':') 
+           // if (path.Length == 3)
+           // {
+           //     var valid = Directory.Exists(path);
+           //     error = valid ? null : new Exception($"The Following Path {path} Is Not Valid For A Folder");
+           //     return new Tuple<bool, Exception>(valid, error);
+           // }
+            if (DeviceInformation.DeviceOS == DeviceInformation.DeviceOs.Windows && path.Contains(":")) 
             {
                 var driveCheck = new Regex(@"^[a-zA-Z]:\\$");
                 if (!driveCheck.IsMatch(path.Substring(0, 3)))
