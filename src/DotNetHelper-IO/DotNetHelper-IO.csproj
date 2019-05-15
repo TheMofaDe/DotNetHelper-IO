@@ -1,38 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net452;netstandard2.0;net45</TargetFrameworks>
+    <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <FileVersion>2019.1.30.2</FileVersion>
-    <Description>A simple and easy to use library for managing folders &amp; files</Description>
+    <Description>Easy to work with files,folders,zip files helper</Description>
     <Copyright>Copyright © Joseph McNeal Jr 2017-2018</Copyright>
     <AssemblyTitle>$(AssemblyName)</AssemblyTitle>
     <Version>2019.3.5.1</Version>
     <Authors>Joseph McNeal Jr</Authors>
     <PackageTags>Dotnethelper</PackageTags>
-    <PackageReleaseNotes>BREAKING CHANGE : remove dependency from dotnethelper contract</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper-IO</PackageProjectUrl>
+    <PackageReleaseNotes>bug fixed incrementing file name or extension will nolonger override the file object FullFilePath</PackageReleaseNotes>
+    <PackageProjectUrl></PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper-IO</RepositoryUrl>
+    <RepositoryUrl></RepositoryUrl>
     <RootNamespace>DotNetHelper_IO</RootNamespace>
     <AssemblyName>DotNetHelper-IO</AssemblyName>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
 
   <ItemGroup>
     <PackageReference Include="DotNetHelper-DeviceInformation" Version="2018.6.15.23" />
     <PackageReference Include="DotNetHelper-Encryption" Version="2018.8.12.1" />
     <PackageReference Include="SharpCompress" Version="0.23.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\DotNetHelper-DeviceInformation\LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
 
