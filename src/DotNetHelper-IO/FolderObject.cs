@@ -4,11 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-
-using DotNetHelper_DeviceInformation;
 using DotNetHelper_IO.Enum;
 using DotNetHelper_IO.Helpers;
-using DotNetHelper_IO.Interface;
 using SharpCompress.Archives;
 using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.Tar;
@@ -23,7 +20,7 @@ namespace DotNetHelper_IO
     /// Class FolderObject.
     /// </summary>
     /// <seealso cref="T:System.IDisposable" />
-    public class FolderObject : IDisposable, IFolderObject
+    public class FolderObject : IDisposable
     {
         /// <summary>
         /// Gets the folder name only.
@@ -204,15 +201,21 @@ namespace DotNetHelper_IO
                     {
                         Subfolders.AddRange(GetAllFolders("*",loadRecursive));
                     }
-                        
 
-                    if (DeviceInformation.DeviceOS != DeviceInformation.DeviceOs.Android && DeviceInformation.DeviceOS != DeviceInformation.DeviceOs.iOS)
+                    try
                     {
-                        Watcher = new FileSystemWatcher(path, "*");
-                        Watcher.Changed += WatcherOnChanged;
-                        Watcher.Created += WatcherOnCreated;
-                        Watcher.Deleted += WatcherOnDeleted;
-                        Watcher.Renamed += WatcherOnRenamed;
+                       // if (Exist == true)
+                       // {
+                            Watcher = new FileSystemWatcher(path, "*");
+                            Watcher.Changed += WatcherOnChanged;
+                            Watcher.Created += WatcherOnCreated;
+                            Watcher.Deleted += WatcherOnDeleted;
+                            Watcher.Renamed += WatcherOnRenamed;
+                       // }
+                    }
+                    catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
+                    {
+
                     }
 
                 }
@@ -722,6 +725,10 @@ namespace DotNetHelper_IO
                 Watcher.EnableRaisingEvents = false;
                 Watcher.EndInit();
                 Watcher.Dispose();
+                Watcher.Changed -= WatcherOnChanged;
+                Watcher.Created -= WatcherOnCreated;
+                Watcher.Deleted -= WatcherOnDeleted;
+                Watcher.Error -= WatcherOnError;
             }
             Exist = null;
             FolderNameOnly = null;

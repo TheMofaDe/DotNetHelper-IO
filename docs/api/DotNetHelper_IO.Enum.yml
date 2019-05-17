@@ -6,7 +6,6 @@ items:
   children:
   - DotNetHelper_IO.Enum.AddOrRemoveEnum
   - DotNetHelper_IO.Enum.FileOption
-  - DotNetHelper_IO.Enum.FileType
   - DotNetHelper_IO.Enum.IOType
   langs:
   - csharp
@@ -36,12 +35,6 @@ references:
   name: IOType
   nameWithType: IOType
   fullName: DotNetHelper_IO.Enum.IOType
-- uid: DotNetHelper_IO.Enum.FileType
-  commentId: T:DotNetHelper_IO.Enum.FileType
-  parent: DotNetHelper_IO.Enum
-  name: FileType
-  nameWithType: FileType
-  fullName: DotNetHelper_IO.Enum.FileType
 - uid: DotNetHelper_IO.Enum
   commentId: N:DotNetHelper_IO.Enum
   name: DotNetHelper_IO.Enum

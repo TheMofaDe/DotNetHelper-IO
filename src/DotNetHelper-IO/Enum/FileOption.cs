@@ -56,11 +56,4 @@ namespace DotNetHelper_IO.Enum
     }
 
 
-    public enum FileType
-    {
-        Xml,
-        Json,
-        Csv,
-        AllTypes
-    }
 }

@@ -124,6 +124,20 @@ namespace Tests
         }
 
 
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test]
+        public void Test_DisposeShouldNotThrowError()
+        {
+            var newFile = $"{AbsoluteTestFolder.FullFolderPath}DisposeTest";
+            using (var file = new FileObject(newFile))
+            {
+
+            }
+            Assert.Pass("Successfully dispose new instance without error");
+        }
+
+
+
 
         //[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
         //[Test]

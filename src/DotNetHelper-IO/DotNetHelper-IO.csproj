@@ -23,8 +23,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper-DeviceInformation" Version="2019.5.3" />
-    <PackageReference Include="DotNetHelper-Encryption" Version="2019.5.3" />
     <PackageReference Include="SharpCompress" Version="0.23.0" />
   </ItemGroup>
 
@@ -33,6 +31,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interface\" />
   </ItemGroup>
 
 

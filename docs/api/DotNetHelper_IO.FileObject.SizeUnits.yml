@@ -28,7 +28,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SizeUnits
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1188
+    startLine: 1131
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -59,7 +59,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Byte
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -91,7 +91,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Kb
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -123,7 +123,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Mb
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -155,7 +155,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Gb
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -187,7 +187,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Tb
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -219,7 +219,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Pb
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -251,7 +251,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Eb
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -283,7 +283,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Zb
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -315,7 +315,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Yb
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1190
+    startLine: 1133
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO

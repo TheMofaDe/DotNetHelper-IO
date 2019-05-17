@@ -7,12 +7,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using DotNetHelper_DeviceInformation;
-using DotNetHelper_Encryption;
-using DotNetHelper_Encryption.Enums;
+
 using DotNetHelper_IO.Enum;
 using DotNetHelper_IO.Extension;
-using DotNetHelper_IO.Interface;
+
 
 namespace DotNetHelper_IO
 {
@@ -22,7 +20,7 @@ namespace DotNetHelper_IO
     /// Class FileObject.
     /// </summary>
     /// <seealso cref="T:System.IDisposable" />
-    public class FileObject : IDisposable, IFileObject
+    public class FileObject : IDisposable
     {
         private object ThreadSafe { get; set; } = new object();
 
@@ -182,7 +180,7 @@ namespace DotNetHelper_IO
                     Creation​Time​ = info.CreationTime;
                     Extension = info.Extension;
                     FileSize = info.Length;
-                    if (DeviceInformation.DeviceOS != DeviceInformation.DeviceOs.Android && DeviceInformation.DeviceOS != DeviceInformation.DeviceOs.iOS)
+                    try
                     {
                         if (Directory.Exists(FullFilePath))
                         {
@@ -192,7 +190,11 @@ namespace DotNetHelper_IO
                             Watcher.Deleted += WatcherOnDeleted;
                             Watcher.Renamed += WatcherOnRenamed;
                         }
+                    }catch(Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
+                    {
+
                     }
+                
                 }
                 else
                 {
@@ -868,127 +870,68 @@ namespace DotNetHelper_IO
         /// </summary>
         /// <param name="algorithm">The algorithm.</param>
         /// <param name="key">The key. </param>
-        public void EncryptFile(SymmetricProvider algorithm, byte[] key )
-        {
-            var tempFileName = Path.GetTempFileName();
-            using (var cipher = EncryptionSymmetric.Create(algorithm))
-            lock (ThreadSafe)
-            {
-                using (var fileStream = File.OpenRead(FullFilePath))
-                using (var tempFile = File.Create(tempFileName))
-                {
-                    cipher.Key = key;
-                    tempFile.Write(cipher.IV, 0, cipher.IV.Length);
-                    using (var cryptoStream = new CryptoStream(tempFile, cipher.CreateEncryptor(), CryptoStreamMode.Write))
-                    {
-                        fileStream.CopyTo(cryptoStream);
-                    }
-                }
-            }
-            File.Delete(FullFilePath);
-            File.Move(tempFileName, FullFilePath);
-        }
+        //public void EncryptFile(SymmetricProvider algorithm, byte[] key )
+        //{
+        //    var tempFileName = Path.GetTempFileName();
+        //    using (var cipher = EncryptionSymmetric.Create(algorithm))
+        //    lock (ThreadSafe)
+        //    {
+        //        using (var fileStream = File.OpenRead(FullFilePath))
+        //        using (var tempFile = File.Create(tempFileName))
+        //        {
+        //            cipher.Key = key;
+        //            tempFile.Write(cipher.IV, 0, cipher.IV.Length);
+        //            using (var cryptoStream = new CryptoStream(tempFile, cipher.CreateEncryptor(), CryptoStreamMode.Write))
+        //            {
+        //                fileStream.CopyTo(cryptoStream);
+        //            }
+        //        }
+        //    }
+        //    File.Delete(FullFilePath);
+        //    File.Move(tempFileName, FullFilePath);
+        //}
 
-        /// <summary>
-        /// Decrypts the file.
-        /// </summary>
-        /// <param name="algorithm">The algorithm.</param>
-        /// <param name="key">The key. </param>
-        /// <exception cref="EndOfStreamException">
-        /// </exception>
-        public void DecryptFile(SymmetricProvider algorithm, byte[] key)
-        {
-            var tempFileName = Path.GetTempFileName();
+        ///// <summary>
+        ///// Decrypts the file.
+        ///// </summary>
+        ///// <param name="algorithm">The algorithm.</param>
+        ///// <param name="key">The key. </param>
+        ///// <exception cref="EndOfStreamException">
+        ///// </exception>
+        //public void DecryptFile(SymmetricProvider algorithm, byte[] key)
+        //{
+        //    var tempFileName = Path.GetTempFileName();
 
-            using (var cipher = EncryptionSymmetric.Create(algorithm))
-            using (var fileStream = File.OpenRead(FullFilePath))
-            using (var tempFile = File.Create(tempFileName))
-            {             
-                cipher.Key = key ?? throw new ArgumentNullException(nameof(key));
-                var iv = cipher.IV;
-                var remain = key.Length;
-                remain = iv.Length;
-                while (remain != 0)
-                {
-                    var read = fileStream.Read(iv, iv.Length - remain, remain);
-                    if (read == 0)
-                    {
-                        throw new EndOfStreamException();
-                    }
+        //    using (var cipher = EncryptionSymmetric.Create(algorithm))
+        //    using (var fileStream = File.OpenRead(FullFilePath))
+        //    using (var tempFile = File.Create(tempFileName))
+        //    {             
+        //        cipher.Key = key ?? throw new ArgumentNullException(nameof(key));
+        //        var iv = cipher.IV;
+        //        var remain = key.Length;
+        //        remain = iv.Length;
+        //        while (remain != 0)
+        //        {
+        //            var read = fileStream.Read(iv, iv.Length - remain, remain);
+        //            if (read == 0)
+        //            {
+        //                throw new EndOfStreamException();
+        //            }
 
-                    remain -= read;
-                }
+        //            remain -= read;
+        //        }
 
-                cipher.IV = iv;
+        //        cipher.IV = iv;
 
-                using (var cryptoStream = new CryptoStream(tempFile, cipher.CreateDecryptor(), CryptoStreamMode.Write))
-                {
-                    fileStream.CopyTo(cryptoStream);
-                }
-            }
+        //        using (var cryptoStream = new CryptoStream(tempFile, cipher.CreateDecryptor(), CryptoStreamMode.Write))
+        //        {
+        //            fileStream.CopyTo(cryptoStream);
+        //        }
+        //    }
 
-            File.Delete(FullFilePath);
-            File.Move(tempFileName, FullFilePath);
-        }
-
-
-
-      
-        /// <inheritdoc />
-        /// <summary>
-        /// Imports the data.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="file"></param>
-        /// <param name="serializer">The serializer.</param>
-        /// <returns>List&lt;T&gt;.</returns>
-        public T ImportData<T>(ISerializer serializer) where T : class
-        {
-            return serializer.DeserializeFromFile<T>(FullFilePath);
-        }
-
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Imports the data.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="serializer">The serializer.</param>
-        /// <returns>List&lt;T&gt;.</returns>
-        public IEnumerable<T> ImportDataList<T>(ISerializer serializer, Type type = null) where T : class
-        {
-
-            if (type == null)
-            {
-                return serializer.DeserializeListFromFile<T>(FullFilePath);
-            }
-            return serializer.DeserializeFromFile(type, FullFilePath) as IEnumerable<T>;
-            //   return serializer.DeserializeListFromFile<object>;
-        }
-
-
-
-
-
-
-        /// <summary>
-        /// Exports the data.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="data">The data.</param>
-        /// <param name="serializer">The serializer.</param>
-        /// <param name="options">The options.</param>
-        public void ExportData<T>(List<T> data, ISerializer serializer, FileOption options = FileOption.DoNothingIfExist, bool dontCreateFileIfDataEmpty = false) where T : class
-        {
-            if (dontCreateFileIfDataEmpty && data.IsNullOrEmpty())
-            {
-
-            }
-            else
-            {
-                serializer.SerializeToFile(data, FullFilePath, options);
-            }
-        }
+        //    File.Delete(FullFilePath);
+        //    File.Move(tempFileName, FullFilePath);
+        //}
 
 
 
@@ -1341,6 +1284,10 @@ namespace DotNetHelper_IO
                 Watcher.EnableRaisingEvents = false;
                 Watcher.EndInit();
                 Watcher.Dispose();
+                Watcher.Changed -= WatcherOnChanged;
+                Watcher.Created -= WatcherOnCreated;
+                Watcher.Deleted -= WatcherOnDeleted;
+                Watcher.Error -= WatcherOnError;
             }
             Exist = null;
             FilePathOnly = null;

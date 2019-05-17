@@ -100,6 +100,19 @@ namespace Tests
         }
 
 
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test]
+        public void Test_DisposeShouldNotThrowError()
+        {
+            var newFile = $"{TestFolder.FullFolderPath}DisposeTest";
+            using (var file = new FileObject(newFile))
+            {
+
+            }
+            Assert.Pass("Successfully dispose new instance without error");
+        }
+
+
         private void FileShouldExist(string file)
         {
             var value = File.Exists(file);

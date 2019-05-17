@@ -12,12 +12,9 @@ items:
   - DotNetHelper_IO.FileObject.CreateOrTruncate(System.Boolean)
   - DotNetHelper_IO.FileObject.CreationTime
   - DotNetHelper_IO.FileObject.CreationTimeUtc
-  - DotNetHelper_IO.FileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
   - DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
   - DotNetHelper_IO.FileObject.Dispose
-  - DotNetHelper_IO.FileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
   - DotNetHelper_IO.FileObject.Exist
-  - DotNetHelper_IO.FileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
   - DotNetHelper_IO.FileObject.Extension
   - DotNetHelper_IO.FileObject.FileNameOnly
   - DotNetHelper_IO.FileObject.FileNameOnlyNoExtension
@@ -33,8 +30,6 @@ items:
   - DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)
   - DotNetHelper_IO.FileObject.GetStreamReader
   - DotNetHelper_IO.FileObject.GetStreamWriter(System.Boolean)
-  - DotNetHelper_IO.FileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-  - DotNetHelper_IO.FileObject.ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
   - DotNetHelper_IO.FileObject.IncrementFullFilePath
   - DotNetHelper_IO.FileObject.IsFileLocked
   - DotNetHelper_IO.FileObject.LastAccessTime
@@ -69,17 +64,17 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileObject
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 24
+    startLine: 22
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nClass FileObject.\n"
   example: []
   syntax:
-    content: 'public class FileObject : IDisposable, IFileObject'
+    content: 'public class FileObject : IDisposable'
     content.vb: >-
       Public Class FileObject
-          Implements IDisposable, IFileObject
+          Implements IDisposable
   seealso:
   - linkId: System.IDisposable
     commentId: T:System.IDisposable
@@ -89,7 +84,6 @@ items:
   - DotNetHelper_IO.ZipFileObject
   implements:
   - System.IDisposable
-  - DotNetHelper_IO.Interface.IFileObject
   inheritedMembers:
   - System.Object.ToString
   - System.Object.Equals(System.Object)
@@ -122,7 +116,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 32
+    startLine: 30
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -136,8 +130,6 @@ items:
       description: The file name only.
     content.vb: Public ReadOnly Property FileNameOnly As String
   overload: DotNetHelper_IO.FileObject.FileNameOnly*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.FileNameOnly
   modifiers.csharp:
   - public
   - get
@@ -162,7 +154,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileNameOnlyNoExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 37
+    startLine: 35
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -176,8 +168,6 @@ items:
       description: The file name only no extension.
     content.vb: Public ReadOnly Property FileNameOnlyNoExtension As String
   overload: DotNetHelper_IO.FileObject.FileNameOnlyNoExtension*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.FileNameOnlyNoExtension
   modifiers.csharp:
   - public
   - get
@@ -202,7 +192,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FilePathOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 42
+    startLine: 40
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -216,8 +206,6 @@ items:
       description: The file path only.
     content.vb: Public ReadOnly Property FilePathOnly As String
   overload: DotNetHelper_IO.FileObject.FilePathOnly*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.FilePathOnly
   modifiers.csharp:
   - public
   - get
@@ -242,7 +230,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FullFilePath
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 47
+    startLine: 45
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -256,8 +244,6 @@ items:
       description: The full file path.
     content.vb: Public ReadOnly Property FullFilePath As String
   overload: DotNetHelper_IO.FileObject.FullFilePath*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.FullFilePath
   modifiers.csharp:
   - public
   - get
@@ -282,7 +268,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IncrementFullFilePath
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 48
+    startLine: 46
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -317,7 +303,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastWriteTimeUtc
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 53
+    startLine: 51
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -331,8 +317,6 @@ items:
       description: The last​ write​ time​ UTC.
     content.vb: Public ReadOnly Property LastWriteTimeUtc As Date?
   overload: DotNetHelper_IO.FileObject.LastWriteTimeUtc*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.LastWriteTimeUtc
   modifiers.csharp:
   - public
   - get
@@ -357,7 +341,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastWriteTime
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 58
+    startLine: 56
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -371,8 +355,6 @@ items:
       description: The last​ write​ time.
     content.vb: Public ReadOnly Property LastWriteTime As Date?
   overload: DotNetHelper_IO.FileObject.LastWriteTime*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.LastWriteTime
   modifiers.csharp:
   - public
   - get
@@ -397,7 +379,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastAccessTime
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 63
+    startLine: 61
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -411,8 +393,6 @@ items:
       description: The last​ access​ time.
     content.vb: Public ReadOnly Property LastAccessTime As Date?
   overload: DotNetHelper_IO.FileObject.LastAccessTime*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.LastAccessTime
   modifiers.csharp:
   - public
   - get
@@ -437,7 +417,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LastAccessTimeUtc
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 68
+    startLine: 66
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -451,8 +431,6 @@ items:
       description: The last​ access​ time​ UTC.
     content.vb: Public ReadOnly Property LastAccessTimeUtc As Date?
   overload: DotNetHelper_IO.FileObject.LastAccessTimeUtc*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.LastAccessTimeUtc
   modifiers.csharp:
   - public
   - get
@@ -477,7 +455,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreationTimeUtc
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 73
+    startLine: 71
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -491,8 +469,6 @@ items:
       description: The creation​ time​ UTC.
     content.vb: Public ReadOnly Property CreationTimeUtc As Date?
   overload: DotNetHelper_IO.FileObject.CreationTimeUtc*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.CreationTimeUtc
   modifiers.csharp:
   - public
   - get
@@ -517,7 +493,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreationTime
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 78
+    startLine: 76
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -531,8 +507,6 @@ items:
       description: The creation​ time​.
     content.vb: Public ReadOnly Property CreationTime As Date?
   overload: DotNetHelper_IO.FileObject.CreationTime*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.CreationTime
   modifiers.csharp:
   - public
   - get
@@ -557,7 +531,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Extension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 83
+    startLine: 81
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -571,8 +545,6 @@ items:
       description: The extension.
     content.vb: Public ReadOnly Property Extension As String
   overload: DotNetHelper_IO.FileObject.Extension*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.Extension
   modifiers.csharp:
   - public
   - get
@@ -597,7 +569,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FolderNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 88
+    startLine: 86
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -611,8 +583,6 @@ items:
       description: The folder name only.
     content.vb: Public ReadOnly Property FolderNameOnly As String
   overload: DotNetHelper_IO.FileObject.FolderNameOnly*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.FolderNameOnly
   modifiers.csharp:
   - public
   - get
@@ -637,7 +607,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 94
+    startLine: 92
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -651,8 +621,6 @@ items:
       description: The size of the file.
     content.vb: Public ReadOnly Property FileSize As Long?
   overload: DotNetHelper_IO.FileObject.FileSize*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.FileSize
   modifiers.csharp:
   - public
   - get
@@ -677,7 +645,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Exist
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 99
+    startLine: 97
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -691,8 +659,6 @@ items:
       description: <code>null</code> if [exist] contains no value, <code>true</code> if [exist]; otherwise, <code>false</code>.
     content.vb: Public ReadOnly Property Exist As Boolean?
   overload: DotNetHelper_IO.FileObject.Exist*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.Exist
   modifiers.csharp:
   - public
   - get
@@ -717,7 +683,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 104
+    startLine: 102
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -731,8 +697,6 @@ items:
       description: The watch timeout.
     content.vb: Public Property WatchTimeout As Integer
   overload: DotNetHelper_IO.FileObject.WatchTimeout*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.WatchTimeout
   modifiers.csharp:
   - public
   - get
@@ -757,7 +721,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Watcher
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 109
+    startLine: 107
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -771,8 +735,6 @@ items:
       description: The watcher.
     content.vb: Public ReadOnly Property Watcher As FileSystemWatcher
   overload: DotNetHelper_IO.FileObject.Watcher*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.Watcher
   modifiers.csharp:
   - public
   - get
@@ -797,7 +759,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 115
+    startLine: 113
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -811,8 +773,6 @@ items:
       description: The notify filters.
     content.vb: Public Property NotifyFilters As NotifyFilters
   overload: DotNetHelper_IO.FileObject.NotifyFilters*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.NotifyFilters
   modifiers.csharp:
   - public
   - get
@@ -837,7 +797,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 126
+    startLine: 124
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -873,7 +833,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 138
+    startLine: 136
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -911,7 +871,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 155
+    startLine: 153
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -921,8 +881,6 @@ items:
     content: public void RefreshObject()
     content.vb: Public Sub RefreshObject
   overload: DotNetHelper_IO.FileObject.RefreshObject*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.RefreshObject
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -945,7 +903,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 245
+    startLine: 247
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -973,8 +931,6 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: 'throws if the application doesn&apos;t have the required permission '
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.CopyTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
   nameWithType.vb: FileObject.CopyTo(String, FileOption, IProgress(Of Double))
   modifiers.csharp:
   - public
@@ -1000,7 +956,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: MoveTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 284
+    startLine: 286
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1026,8 +982,6 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: 'throws if the application doesn&apos;t have the required permission '
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
   nameWithType.vb: FileObject.MoveTo(String, FileOption, IProgress(Of Double))
   modifiers.csharp:
   - public
@@ -1053,7 +1007,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 330
+    startLine: 332
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1070,8 +1024,6 @@ items:
       description: The list.
     content.vb: Public Sub SetFileAttribute(option As AddOrRemoveEnum, list As List(Of FileAttributes))
   overload: DotNetHelper_IO.FileObject.SetFileAttribute*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
   nameWithType.vb: FileObject.SetFileAttribute(AddOrRemoveEnum, List(Of FileAttributes))
   modifiers.csharp:
   - public
@@ -1097,7 +1049,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ChangeExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 370
+    startLine: 372
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1123,8 +1075,6 @@ items:
   - type: System.UnauthorizedAccessException
     commentId: T:System.UnauthorizedAccessException
     description: 'throws if the application doesn&apos;t have the required permission '
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.ChangeExtension(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
   nameWithType.vb: FileObject.ChangeExtension(String, FileOption, IProgress(Of Double))
   modifiers.csharp:
   - public
@@ -1150,7 +1100,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeleteFile
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 389
+    startLine: 391
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1165,8 +1115,6 @@ items:
       type: System.Boolean
     content.vb: Public Sub DeleteFile(onFailedDeletion As Action(Of Exception), disposeObject As Boolean = False)
   overload: DotNetHelper_IO.FileObject.DeleteFile*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
   nameWithType.vb: FileObject.DeleteFile(Action(Of Exception), Boolean)
   modifiers.csharp:
   - public
@@ -1192,7 +1140,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 454
+    startLine: 456
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1209,8 +1157,6 @@ items:
       description: <code>true</code> if XXXX, <code>false</code> otherwise.
     content.vb: Public Function CreateOrTruncate(truncate As Boolean = True) As Boolean
   overload: DotNetHelper_IO.FileObject.CreateOrTruncate*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.CreateOrTruncate(System.Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1233,7 +1179,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetIncrementFileName
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 541
+    startLine: 543
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1268,7 +1214,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetIncrementExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 582
+    startLine: 584
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1303,7 +1249,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadFileToList
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 635
+    startLine: 637
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1316,8 +1262,6 @@ items:
       description: List&lt;System.String>.
     content.vb: Public Function ReadFileToList As List(Of String)
   overload: DotNetHelper_IO.FileObject.ReadFileToList*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.ReadFileToList
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1340,7 +1284,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadFile
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 649
+    startLine: 651
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1353,8 +1297,6 @@ items:
       description: System.String.
     content.vb: Public Function ReadFile As String
   overload: DotNetHelper_IO.FileObject.ReadFile*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.ReadFile
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1377,7 +1319,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadFileToStream
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 665
+    startLine: 667
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1390,8 +1332,6 @@ items:
       description: Stream.
     content.vb: Public Function ReadFileToStream As Stream
   overload: DotNetHelper_IO.FileObject.ReadFileToStream*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.ReadFileToStream
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1414,7 +1354,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileStream
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 730
+    startLine: 732
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1435,8 +1375,6 @@ items:
   - type: System.ArgumentOutOfRangeException
     commentId: T:System.ArgumentOutOfRangeException
     description: option - null
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1459,7 +1397,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetStreamWriter
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 785
+    startLine: 787
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1476,8 +1414,6 @@ items:
       description: StreamWriter.
     content.vb: Public Function GetStreamWriter(append As Boolean) As StreamWriter
   overload: DotNetHelper_IO.FileObject.GetStreamWriter*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.GetStreamWriter(System.Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1500,7 +1436,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetStreamReader
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 804
+    startLine: 806
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1513,8 +1449,6 @@ items:
       description: ''
     content.vb: Public Function GetStreamReader As StreamReader
   overload: DotNetHelper_IO.FileObject.GetStreamReader*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.GetStreamReader
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1537,7 +1471,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteContentToFile
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 841
+    startLine: 843
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1557,258 +1491,10 @@ items:
       description: The option.
     content.vb: Public Sub WriteContentToFile(content As String, encoding As Encoding, option As FileOption = FileOption.Append)
   overload: DotNetHelper_IO.FileObject.WriteContentToFile*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_IO.Enum.FileOption)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  commentId: M:DotNetHelper_IO.FileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  id: EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: EncryptFile(SymmetricProvider, Byte[])
-  nameWithType: FileObject.EncryptFile(SymmetricProvider, Byte[])
-  fullName: DotNetHelper_IO.FileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider, System.Byte[])
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: EncryptFile
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 870
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nEncrypts the file. this method is thread safe.\n"
-  example: []
-  syntax:
-    content: public void EncryptFile(SymmetricProvider algorithm, byte[] key)
-    parameters:
-    - id: algorithm
-      type: DotNetHelper_Encryption.Enums.SymmetricProvider
-      description: The algorithm.
-    - id: key
-      type: System.Byte[]
-      description: 'The key. '
-    content.vb: Public Sub EncryptFile(algorithm As SymmetricProvider, key As Byte())
-  overload: DotNetHelper_IO.FileObject.EncryptFile*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  nameWithType.vb: FileObject.EncryptFile(SymmetricProvider, Byte())
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper_IO.FileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider, System.Byte())
-  name.vb: EncryptFile(SymmetricProvider, Byte())
-- uid: DotNetHelper_IO.FileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  commentId: M:DotNetHelper_IO.FileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  id: DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: DecryptFile(SymmetricProvider, Byte[])
-  nameWithType: FileObject.DecryptFile(SymmetricProvider, Byte[])
-  fullName: DotNetHelper_IO.FileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider, System.Byte[])
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: DecryptFile
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 898
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nDecrypts the file.\n"
-  example: []
-  syntax:
-    content: public void DecryptFile(SymmetricProvider algorithm, byte[] key)
-    parameters:
-    - id: algorithm
-      type: DotNetHelper_Encryption.Enums.SymmetricProvider
-      description: The algorithm.
-    - id: key
-      type: System.Byte[]
-      description: 'The key. '
-    content.vb: Public Sub DecryptFile(algorithm As SymmetricProvider, key As Byte())
-  overload: DotNetHelper_IO.FileObject.DecryptFile*
-  exceptions:
-  - type: System.IO.EndOfStreamException
-    commentId: T:System.IO.EndOfStreamException
-    description: "\n"
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  nameWithType.vb: FileObject.DecryptFile(SymmetricProvider, Byte())
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper_IO.FileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider, System.Byte())
-  name.vb: DecryptFile(SymmetricProvider, Byte())
-- uid: DotNetHelper_IO.FileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-  commentId: M:DotNetHelper_IO.FileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-  id: ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: ImportData<T>(ISerializer)
-  nameWithType: FileObject.ImportData<T>(ISerializer)
-  fullName: DotNetHelper_IO.FileObject.ImportData<T>(DotNetHelper_IO.Interface.ISerializer)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: ImportData
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 944
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nImports the data.\n"
-  example: []
-  syntax:
-    content: >-
-      public T ImportData<T>(ISerializer serializer)
-          where T : class
-    parameters:
-    - id: serializer
-      type: DotNetHelper_IO.Interface.ISerializer
-      description: The serializer.
-    typeParameters:
-    - id: T
-      description: ''
-    return:
-      type: '{T}'
-      description: List&lt;T>.
-    content.vb: Public Function ImportData(Of T As Class)(serializer As ISerializer) As T
-  overload: DotNetHelper_IO.FileObject.ImportData*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-  nameWithType.vb: FileObject.ImportData(Of T)(ISerializer)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper_IO.FileObject.ImportData(Of T)(DotNetHelper_IO.Interface.ISerializer)
-  name.vb: ImportData(Of T)(ISerializer)
-- uid: DotNetHelper_IO.FileObject.ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
-  commentId: M:DotNetHelper_IO.FileObject.ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
-  id: ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: ImportDataList<T>(ISerializer, Type)
-  nameWithType: FileObject.ImportDataList<T>(ISerializer, Type)
-  fullName: DotNetHelper_IO.FileObject.ImportDataList<T>(DotNetHelper_IO.Interface.ISerializer, System.Type)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: ImportDataList
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 957
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nImports the data.\n"
-  example: []
-  syntax:
-    content: >-
-      public IEnumerable<T> ImportDataList<T>(ISerializer serializer, Type type = null)
-          where T : class
-    parameters:
-    - id: serializer
-      type: DotNetHelper_IO.Interface.ISerializer
-      description: The serializer.
-    - id: type
-      type: System.Type
-    typeParameters:
-    - id: T
-      description: ''
-    return:
-      type: System.Collections.Generic.IEnumerable{{T}}
-      description: List&lt;T>.
-    content.vb: Public Function ImportDataList(Of T As Class)(serializer As ISerializer, type As Type = Nothing) As IEnumerable(Of T)
-  overload: DotNetHelper_IO.FileObject.ImportDataList*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
-  nameWithType.vb: FileObject.ImportDataList(Of T)(ISerializer, Type)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper_IO.FileObject.ImportDataList(Of T)(DotNetHelper_IO.Interface.ISerializer, System.Type)
-  name.vb: ImportDataList(Of T)(ISerializer, Type)
-- uid: DotNetHelper_IO.FileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  id: ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: ExportData<T>(List<T>, ISerializer, FileOption, Boolean)
-  nameWithType: FileObject.ExportData<T>(List<T>, ISerializer, FileOption, Boolean)
-  fullName: DotNetHelper_IO.FileObject.ExportData<T>(System.Collections.Generic.List<T>, DotNetHelper_IO.Interface.ISerializer, DotNetHelper_IO.Enum.FileOption, System.Boolean)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: ExportData
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 980
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nExports the data.\n"
-  example: []
-  syntax:
-    content: >-
-      public void ExportData<T>(List<T> data, ISerializer serializer, FileOption options = FileOption.DoNothingIfExist, bool dontCreateFileIfDataEmpty = false)
-          where T : class
-    parameters:
-    - id: data
-      type: System.Collections.Generic.List{{T}}
-      description: The data.
-    - id: serializer
-      type: DotNetHelper_IO.Interface.ISerializer
-      description: The serializer.
-    - id: options
-      type: DotNetHelper_IO.Enum.FileOption
-      description: The options.
-    - id: dontCreateFileIfDataEmpty
-      type: System.Boolean
-    typeParameters:
-    - id: T
-      description: ''
-    content.vb: Public Sub ExportData(Of T As Class)(data As List(Of T), serializer As ISerializer, options As FileOption = FileOption.DoNothingIfExist, dontCreateFileIfDataEmpty As Boolean = False)
-  overload: DotNetHelper_IO.FileObject.ExportData*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{{T}},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  nameWithType.vb: FileObject.ExportData(Of T)(List(Of T), ISerializer, FileOption, Boolean)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper_IO.FileObject.ExportData(Of T)(System.Collections.Generic.List(Of T), DotNetHelper_IO.Interface.ISerializer, DotNetHelper_IO.Enum.FileOption, System.Boolean)
-  name.vb: ExportData(Of T)(List(Of T), ISerializer, FileOption, Boolean)
 - uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
   commentId: M:DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
   id: WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
@@ -1827,7 +1513,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteStreamToFileAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1005
+    startLine: 948
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1850,8 +1536,6 @@ items:
       description: Task&lt;System.Boolean>.
     content.vb: Public Function WriteStreamToFileAsync(stream As Stream, progress As IProgress(Of Double) = Nothing, overwriteIfFileExist As Boolean = True) As Task(Of Boolean)
   overload: DotNetHelper_IO.FileObject.WriteStreamToFileAsync*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
   nameWithType.vb: FileObject.WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
   modifiers.csharp:
   - public
@@ -1877,7 +1561,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteStreamToFile
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1059
+    startLine: 1002
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1899,8 +1583,6 @@ items:
       description: <code>true</code> if XXXX, <code>false</code> otherwise.
     content.vb: Public Function WriteStreamToFile(stream As Stream, progress As IProgress(Of Double) = Nothing, option As FileOption = FileOption.Overwrite) As Boolean
   overload: DotNetHelper_IO.FileObject.WriteStreamToFile*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
   nameWithType.vb: FileObject.WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
   modifiers.csharp:
   - public
@@ -1926,7 +1608,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1113
+    startLine: 1056
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1939,8 +1621,6 @@ items:
       description: Encoding.
     content.vb: Public Function GetFileEncoding As Encoding
   overload: DotNetHelper_IO.FileObject.GetFileEncoding*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.GetFileEncoding
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1963,7 +1643,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileSizeDisplay
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1146
+    startLine: 1089
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1979,8 +1659,6 @@ items:
       description: System.String.
     content.vb: Public Function GetFileSizeDisplay(refreshObject As Boolean = False) As String
   overload: DotNetHelper_IO.FileObject.GetFileSizeDisplay*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay(System.Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2003,7 +1681,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1178
+    startLine: 1121
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2021,8 +1699,6 @@ items:
       description: System.String.
     content.vb: Public Function GetFileSize(sizeUnits As FileObject.SizeUnits, refreshObject As Boolean = False) As Long?
   overload: DotNetHelper_IO.FileObject.GetFileSize*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.GetFileSize(DotNetHelper_IO.FileObject.SizeUnits,System.Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2045,7 +1721,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IsFileLocked
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1199
+    startLine: 1142
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2079,7 +1755,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StartWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1232
+    startLine: 1175
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2099,8 +1775,6 @@ items:
   exceptions:
   - type: System.Exception
     commentId: T:System.Exception
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2123,7 +1797,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StopWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1265
+    startLine: 1208
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2133,8 +1807,6 @@ items:
     content: public void StopWatching()
     content.vb: Public Sub StopWatching
   overload: DotNetHelper_IO.FileObject.StopWatching*
-  implements:
-  - DotNetHelper_IO.Interface.IFileObject.StopWatching
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2157,7 +1829,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1335
+    startLine: 1278
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2169,7 +1841,6 @@ items:
   overload: DotNetHelper_IO.FileObject.Dispose*
   implements:
   - System.IDisposable.Dispose
-  - DotNetHelper_IO.Interface.IFileObject.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2194,12 +1865,6 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: DotNetHelper_IO.Interface.IFileObject
-  commentId: T:DotNetHelper_IO.Interface.IFileObject
-  parent: DotNetHelper_IO.Interface
-  name: IFileObject
-  nameWithType: IFileObject
-  fullName: DotNetHelper_IO.Interface.IFileObject
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -2485,22 +2150,11 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: DotNetHelper_IO.Interface
-  commentId: N:DotNetHelper_IO.Interface
-  name: DotNetHelper_IO.Interface
-  nameWithType: DotNetHelper_IO.Interface
-  fullName: DotNetHelper_IO.Interface
 - uid: DotNetHelper_IO.FileObject.FileNameOnly*
   commentId: Overload:DotNetHelper_IO.FileObject.FileNameOnly
   name: FileNameOnly
   nameWithType: FileObject.FileNameOnly
   fullName: DotNetHelper_IO.FileObject.FileNameOnly
-- uid: DotNetHelper_IO.Interface.IFileObject.FileNameOnly
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.FileNameOnly
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: FileNameOnly
-  nameWithType: IFileObject.FileNameOnly
-  fullName: DotNetHelper_IO.Interface.IFileObject.FileNameOnly
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -2513,34 +2167,16 @@ references:
   name: FileNameOnlyNoExtension
   nameWithType: FileObject.FileNameOnlyNoExtension
   fullName: DotNetHelper_IO.FileObject.FileNameOnlyNoExtension
-- uid: DotNetHelper_IO.Interface.IFileObject.FileNameOnlyNoExtension
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.FileNameOnlyNoExtension
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: FileNameOnlyNoExtension
-  nameWithType: IFileObject.FileNameOnlyNoExtension
-  fullName: DotNetHelper_IO.Interface.IFileObject.FileNameOnlyNoExtension
 - uid: DotNetHelper_IO.FileObject.FilePathOnly*
   commentId: Overload:DotNetHelper_IO.FileObject.FilePathOnly
   name: FilePathOnly
   nameWithType: FileObject.FilePathOnly
   fullName: DotNetHelper_IO.FileObject.FilePathOnly
-- uid: DotNetHelper_IO.Interface.IFileObject.FilePathOnly
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.FilePathOnly
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: FilePathOnly
-  nameWithType: IFileObject.FilePathOnly
-  fullName: DotNetHelper_IO.Interface.IFileObject.FilePathOnly
 - uid: DotNetHelper_IO.FileObject.FullFilePath*
   commentId: Overload:DotNetHelper_IO.FileObject.FullFilePath
   name: FullFilePath
   nameWithType: FileObject.FullFilePath
   fullName: DotNetHelper_IO.FileObject.FullFilePath
-- uid: DotNetHelper_IO.Interface.IFileObject.FullFilePath
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.FullFilePath
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: FullFilePath
-  nameWithType: IFileObject.FullFilePath
-  fullName: DotNetHelper_IO.Interface.IFileObject.FullFilePath
 - uid: DotNetHelper_IO.FileObject.IncrementFullFilePath*
   commentId: Overload:DotNetHelper_IO.FileObject.IncrementFullFilePath
   name: IncrementFullFilePath
@@ -2551,12 +2187,6 @@ references:
   name: LastWriteTimeUtc
   nameWithType: FileObject.LastWriteTimeUtc
   fullName: DotNetHelper_IO.FileObject.LastWriteTimeUtc
-- uid: DotNetHelper_IO.Interface.IFileObject.LastWriteTimeUtc
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.LastWriteTimeUtc
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: LastWriteTimeUtc
-  nameWithType: IFileObject.LastWriteTimeUtc
-  fullName: DotNetHelper_IO.Interface.IFileObject.LastWriteTimeUtc
 - uid: System.Nullable{System.DateTime}
   commentId: T:System.Nullable{System.DateTime}
   parent: System
@@ -2645,89 +2275,41 @@ references:
   name: LastWriteTime
   nameWithType: FileObject.LastWriteTime
   fullName: DotNetHelper_IO.FileObject.LastWriteTime
-- uid: DotNetHelper_IO.Interface.IFileObject.LastWriteTime
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.LastWriteTime
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: LastWriteTime
-  nameWithType: IFileObject.LastWriteTime
-  fullName: DotNetHelper_IO.Interface.IFileObject.LastWriteTime
 - uid: DotNetHelper_IO.FileObject.LastAccessTime*
   commentId: Overload:DotNetHelper_IO.FileObject.LastAccessTime
   name: LastAccessTime
   nameWithType: FileObject.LastAccessTime
   fullName: DotNetHelper_IO.FileObject.LastAccessTime
-- uid: DotNetHelper_IO.Interface.IFileObject.LastAccessTime
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.LastAccessTime
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: LastAccessTime
-  nameWithType: IFileObject.LastAccessTime
-  fullName: DotNetHelper_IO.Interface.IFileObject.LastAccessTime
 - uid: DotNetHelper_IO.FileObject.LastAccessTimeUtc*
   commentId: Overload:DotNetHelper_IO.FileObject.LastAccessTimeUtc
   name: LastAccessTimeUtc
   nameWithType: FileObject.LastAccessTimeUtc
   fullName: DotNetHelper_IO.FileObject.LastAccessTimeUtc
-- uid: DotNetHelper_IO.Interface.IFileObject.LastAccessTimeUtc
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.LastAccessTimeUtc
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: LastAccessTimeUtc
-  nameWithType: IFileObject.LastAccessTimeUtc
-  fullName: DotNetHelper_IO.Interface.IFileObject.LastAccessTimeUtc
 - uid: DotNetHelper_IO.FileObject.CreationTimeUtc*
   commentId: Overload:DotNetHelper_IO.FileObject.CreationTimeUtc
   name: CreationTimeUtc
   nameWithType: FileObject.CreationTimeUtc
   fullName: DotNetHelper_IO.FileObject.CreationTimeUtc
-- uid: DotNetHelper_IO.Interface.IFileObject.CreationTimeUtc
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.CreationTimeUtc
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: CreationTimeUtc
-  nameWithType: IFileObject.CreationTimeUtc
-  fullName: DotNetHelper_IO.Interface.IFileObject.CreationTimeUtc
 - uid: DotNetHelper_IO.FileObject.CreationTime*
   commentId: Overload:DotNetHelper_IO.FileObject.CreationTime
   name: CreationTime
   nameWithType: FileObject.CreationTime
   fullName: DotNetHelper_IO.FileObject.CreationTime
-- uid: DotNetHelper_IO.Interface.IFileObject.CreationTime
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.CreationTime
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: CreationTime
-  nameWithType: IFileObject.CreationTime
-  fullName: DotNetHelper_IO.Interface.IFileObject.CreationTime
 - uid: DotNetHelper_IO.FileObject.Extension*
   commentId: Overload:DotNetHelper_IO.FileObject.Extension
   name: Extension
   nameWithType: FileObject.Extension
   fullName: DotNetHelper_IO.FileObject.Extension
-- uid: DotNetHelper_IO.Interface.IFileObject.Extension
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.Extension
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: Extension
-  nameWithType: IFileObject.Extension
-  fullName: DotNetHelper_IO.Interface.IFileObject.Extension
 - uid: DotNetHelper_IO.FileObject.FolderNameOnly*
   commentId: Overload:DotNetHelper_IO.FileObject.FolderNameOnly
   name: FolderNameOnly
   nameWithType: FileObject.FolderNameOnly
   fullName: DotNetHelper_IO.FileObject.FolderNameOnly
-- uid: DotNetHelper_IO.Interface.IFileObject.FolderNameOnly
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.FolderNameOnly
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: FolderNameOnly
-  nameWithType: IFileObject.FolderNameOnly
-  fullName: DotNetHelper_IO.Interface.IFileObject.FolderNameOnly
 - uid: DotNetHelper_IO.FileObject.FileSize*
   commentId: Overload:DotNetHelper_IO.FileObject.FileSize
   name: FileSize
   nameWithType: FileObject.FileSize
   fullName: DotNetHelper_IO.FileObject.FileSize
-- uid: DotNetHelper_IO.Interface.IFileObject.FileSize
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.FileSize
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: FileSize
-  nameWithType: IFileObject.FileSize
-  fullName: DotNetHelper_IO.Interface.IFileObject.FileSize
 - uid: System.Nullable{System.Int64}
   commentId: T:System.Nullable{System.Int64}
   parent: System
@@ -2783,12 +2365,6 @@ references:
   name: Exist
   nameWithType: FileObject.Exist
   fullName: DotNetHelper_IO.FileObject.Exist
-- uid: DotNetHelper_IO.Interface.IFileObject.Exist
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.Exist
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: Exist
-  nameWithType: IFileObject.Exist
-  fullName: DotNetHelper_IO.Interface.IFileObject.Exist
 - uid: System.Nullable{System.Boolean}
   commentId: T:System.Nullable{System.Boolean}
   parent: System
@@ -2838,12 +2414,6 @@ references:
   name: WatchTimeout
   nameWithType: FileObject.WatchTimeout
   fullName: DotNetHelper_IO.FileObject.WatchTimeout
-- uid: DotNetHelper_IO.Interface.IFileObject.WatchTimeout
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.WatchTimeout
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: WatchTimeout
-  nameWithType: IFileObject.WatchTimeout
-  fullName: DotNetHelper_IO.Interface.IFileObject.WatchTimeout
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -2856,12 +2426,6 @@ references:
   name: Watcher
   nameWithType: FileObject.Watcher
   fullName: DotNetHelper_IO.FileObject.Watcher
-- uid: DotNetHelper_IO.Interface.IFileObject.Watcher
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.Watcher
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: Watcher
-  nameWithType: IFileObject.Watcher
-  fullName: DotNetHelper_IO.Interface.IFileObject.Watcher
 - uid: System.IO.FileSystemWatcher
   commentId: T:System.IO.FileSystemWatcher
   parent: System.IO
@@ -2880,12 +2444,6 @@ references:
   name: NotifyFilters
   nameWithType: FileObject.NotifyFilters
   fullName: DotNetHelper_IO.FileObject.NotifyFilters
-- uid: DotNetHelper_IO.Interface.IFileObject.NotifyFilters
-  commentId: P:DotNetHelper_IO.Interface.IFileObject.NotifyFilters
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: NotifyFilters
-  nameWithType: IFileObject.NotifyFilters
-  fullName: DotNetHelper_IO.Interface.IFileObject.NotifyFilters
 - uid: System.IO.NotifyFilters
   commentId: T:System.IO.NotifyFilters
   parent: System.IO
@@ -2910,34 +2468,6 @@ references:
   name: RefreshObject
   nameWithType: FileObject.RefreshObject
   fullName: DotNetHelper_IO.FileObject.RefreshObject
-- uid: DotNetHelper_IO.Interface.IFileObject.RefreshObject
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.RefreshObject
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: RefreshObject()
-  nameWithType: IFileObject.RefreshObject()
-  fullName: DotNetHelper_IO.Interface.IFileObject.RefreshObject()
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.RefreshObject
-    name: RefreshObject
-    nameWithType: IFileObject.RefreshObject
-    fullName: DotNetHelper_IO.Interface.IFileObject.RefreshObject
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.RefreshObject
-    name: RefreshObject
-    nameWithType: IFileObject.RefreshObject
-    fullName: DotNetHelper_IO.Interface.IFileObject.RefreshObject
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.ArgumentOutOfRangeException
   commentId: T:System.ArgumentOutOfRangeException
   isExternal: true
@@ -2949,100 +2479,6 @@ references:
   name: CopyTo
   nameWithType: FileObject.CopyTo
   fullName: DotNetHelper_IO.FileObject.CopyTo
-- uid: DotNetHelper_IO.Interface.IFileObject.CopyTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.CopyTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: CopyTo(String, FileOption, IProgress<Double>)
-  nameWithType: IFileObject.CopyTo(String, FileOption, IProgress<Double>)
-  fullName: DotNetHelper_IO.Interface.IFileObject.CopyTo(System.String, DotNetHelper_IO.Enum.FileOption, System.IProgress<System.Double>)
-  nameWithType.vb: IFileObject.CopyTo(String, FileOption, IProgress(Of Double))
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.CopyTo(System.String, DotNetHelper_IO.Enum.FileOption, System.IProgress(Of System.Double))
-  name.vb: CopyTo(String, FileOption, IProgress(Of Double))
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.CopyTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-    name: CopyTo
-    nameWithType: IFileObject.CopyTo
-    fullName: DotNetHelper_IO.Interface.IFileObject.CopyTo
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.CopyTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-    name: CopyTo
-    nameWithType: IFileObject.CopyTo
-    fullName: DotNetHelper_IO.Interface.IFileObject.CopyTo
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.Enum.FileOption
   commentId: T:DotNetHelper_IO.Enum.FileOption
   parent: DotNetHelper_IO.Enum
@@ -3145,183 +2581,11 @@ references:
   name: MoveTo
   nameWithType: FileObject.MoveTo
   fullName: DotNetHelper_IO.FileObject.MoveTo
-- uid: DotNetHelper_IO.Interface.IFileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: MoveTo(String, FileOption, IProgress<Double>)
-  nameWithType: IFileObject.MoveTo(String, FileOption, IProgress<Double>)
-  fullName: DotNetHelper_IO.Interface.IFileObject.MoveTo(System.String, DotNetHelper_IO.Enum.FileOption, System.IProgress<System.Double>)
-  nameWithType.vb: IFileObject.MoveTo(String, FileOption, IProgress(Of Double))
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.MoveTo(System.String, DotNetHelper_IO.Enum.FileOption, System.IProgress(Of System.Double))
-  name.vb: MoveTo(String, FileOption, IProgress(Of Double))
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-    name: MoveTo
-    nameWithType: IFileObject.MoveTo
-    fullName: DotNetHelper_IO.Interface.IFileObject.MoveTo
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-    name: MoveTo
-    nameWithType: IFileObject.MoveTo
-    fullName: DotNetHelper_IO.Interface.IFileObject.MoveTo
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.SetFileAttribute*
   commentId: Overload:DotNetHelper_IO.FileObject.SetFileAttribute
   name: SetFileAttribute
   nameWithType: FileObject.SetFileAttribute
   fullName: DotNetHelper_IO.FileObject.SetFileAttribute
-- uid: DotNetHelper_IO.Interface.IFileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: SetFileAttribute(AddOrRemoveEnum, List<FileAttributes>)
-  nameWithType: IFileObject.SetFileAttribute(AddOrRemoveEnum, List<FileAttributes>)
-  fullName: DotNetHelper_IO.Interface.IFileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum, System.Collections.Generic.List<System.IO.FileAttributes>)
-  nameWithType.vb: IFileObject.SetFileAttribute(AddOrRemoveEnum, List(Of FileAttributes))
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum, System.Collections.Generic.List(Of System.IO.FileAttributes))
-  name.vb: SetFileAttribute(AddOrRemoveEnum, List(Of FileAttributes))
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
-    name: SetFileAttribute
-    nameWithType: IFileObject.SetFileAttribute
-    fullName: DotNetHelper_IO.Interface.IFileObject.SetFileAttribute
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Enum.AddOrRemoveEnum
-    name: AddOrRemoveEnum
-    nameWithType: AddOrRemoveEnum
-    fullName: DotNetHelper_IO.Enum.AddOrRemoveEnum
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.IO.FileAttributes
-    name: FileAttributes
-    nameWithType: FileAttributes
-    fullName: System.IO.FileAttributes
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
-    name: SetFileAttribute
-    nameWithType: IFileObject.SetFileAttribute
-    fullName: DotNetHelper_IO.Interface.IFileObject.SetFileAttribute
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Enum.AddOrRemoveEnum
-    name: AddOrRemoveEnum
-    nameWithType: AddOrRemoveEnum
-    fullName: DotNetHelper_IO.Enum.AddOrRemoveEnum
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.IO.FileAttributes
-    name: FileAttributes
-    nameWithType: FileAttributes
-    fullName: System.IO.FileAttributes
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.Enum.AddOrRemoveEnum
   commentId: T:DotNetHelper_IO.Enum.AddOrRemoveEnum
   parent: DotNetHelper_IO.Enum
@@ -3422,185 +2686,11 @@ references:
   name: ChangeExtension
   nameWithType: FileObject.ChangeExtension
   fullName: DotNetHelper_IO.FileObject.ChangeExtension
-- uid: DotNetHelper_IO.Interface.IFileObject.ChangeExtension(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.ChangeExtension(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: ChangeExtension(String, FileOption, IProgress<Double>)
-  nameWithType: IFileObject.ChangeExtension(String, FileOption, IProgress<Double>)
-  fullName: DotNetHelper_IO.Interface.IFileObject.ChangeExtension(System.String, DotNetHelper_IO.Enum.FileOption, System.IProgress<System.Double>)
-  nameWithType.vb: IFileObject.ChangeExtension(String, FileOption, IProgress(Of Double))
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.ChangeExtension(System.String, DotNetHelper_IO.Enum.FileOption, System.IProgress(Of System.Double))
-  name.vb: ChangeExtension(String, FileOption, IProgress(Of Double))
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ChangeExtension(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-    name: ChangeExtension
-    nameWithType: IFileObject.ChangeExtension
-    fullName: DotNetHelper_IO.Interface.IFileObject.ChangeExtension
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ChangeExtension(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
-    name: ChangeExtension
-    nameWithType: IFileObject.ChangeExtension
-    fullName: DotNetHelper_IO.Interface.IFileObject.ChangeExtension
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.DeleteFile*
   commentId: Overload:DotNetHelper_IO.FileObject.DeleteFile
   name: DeleteFile
   nameWithType: FileObject.DeleteFile
   fullName: DotNetHelper_IO.FileObject.DeleteFile
-- uid: DotNetHelper_IO.Interface.IFileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: DeleteFile(Action<Exception>, Boolean)
-  nameWithType: IFileObject.DeleteFile(Action<Exception>, Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.DeleteFile(System.Action<System.Exception>, System.Boolean)
-  nameWithType.vb: IFileObject.DeleteFile(Action(Of Exception), Boolean)
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.DeleteFile(System.Action(Of System.Exception), System.Boolean)
-  name.vb: DeleteFile(Action(Of Exception), Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-    name: DeleteFile
-    nameWithType: IFileObject.DeleteFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.DeleteFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Action`1
-    name: Action
-    nameWithType: Action
-    fullName: System.Action
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Exception
-    name: Exception
-    nameWithType: Exception
-    fullName: System.Exception
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-    name: DeleteFile
-    nameWithType: IFileObject.DeleteFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.DeleteFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Action`1
-    name: Action
-    nameWithType: Action
-    fullName: System.Action
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Exception
-    name: Exception
-    nameWithType: Exception
-    fullName: System.Exception
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Action{System.Exception}
   commentId: T:System.Action{System.Exception}
   parent: System
@@ -3689,45 +2779,6 @@ references:
   name: CreateOrTruncate
   nameWithType: FileObject.CreateOrTruncate
   fullName: DotNetHelper_IO.FileObject.CreateOrTruncate
-- uid: DotNetHelper_IO.Interface.IFileObject.CreateOrTruncate(System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.CreateOrTruncate(System.Boolean)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: CreateOrTruncate(Boolean)
-  nameWithType: IFileObject.CreateOrTruncate(Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.CreateOrTruncate(System.Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.CreateOrTruncate(System.Boolean)
-    name: CreateOrTruncate
-    nameWithType: IFileObject.CreateOrTruncate
-    fullName: DotNetHelper_IO.Interface.IFileObject.CreateOrTruncate
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.CreateOrTruncate(System.Boolean)
-    name: CreateOrTruncate
-    nameWithType: IFileObject.CreateOrTruncate
-    fullName: DotNetHelper_IO.Interface.IFileObject.CreateOrTruncate
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.GetIncrementFileName*
   commentId: Overload:DotNetHelper_IO.FileObject.GetIncrementFileName
   name: GetIncrementFileName
@@ -3743,34 +2794,6 @@ references:
   name: ReadFileToList
   nameWithType: FileObject.ReadFileToList
   fullName: DotNetHelper_IO.FileObject.ReadFileToList
-- uid: DotNetHelper_IO.Interface.IFileObject.ReadFileToList
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.ReadFileToList
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: ReadFileToList()
-  nameWithType: IFileObject.ReadFileToList()
-  fullName: DotNetHelper_IO.Interface.IFileObject.ReadFileToList()
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ReadFileToList
-    name: ReadFileToList
-    nameWithType: IFileObject.ReadFileToList
-    fullName: DotNetHelper_IO.Interface.IFileObject.ReadFileToList
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ReadFileToList
-    name: ReadFileToList
-    nameWithType: IFileObject.ReadFileToList
-    fullName: DotNetHelper_IO.Interface.IFileObject.ReadFileToList
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic.List{System.String}
   commentId: T:System.Collections.Generic.List{System.String}
   parent: System.Collections.Generic
@@ -3820,67 +2843,11 @@ references:
   name: ReadFile
   nameWithType: FileObject.ReadFile
   fullName: DotNetHelper_IO.FileObject.ReadFile
-- uid: DotNetHelper_IO.Interface.IFileObject.ReadFile
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.ReadFile
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: ReadFile()
-  nameWithType: IFileObject.ReadFile()
-  fullName: DotNetHelper_IO.Interface.IFileObject.ReadFile()
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ReadFile
-    name: ReadFile
-    nameWithType: IFileObject.ReadFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.ReadFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ReadFile
-    name: ReadFile
-    nameWithType: IFileObject.ReadFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.ReadFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.ReadFileToStream*
   commentId: Overload:DotNetHelper_IO.FileObject.ReadFileToStream
   name: ReadFileToStream
   nameWithType: FileObject.ReadFileToStream
   fullName: DotNetHelper_IO.FileObject.ReadFileToStream
-- uid: DotNetHelper_IO.Interface.IFileObject.ReadFileToStream
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.ReadFileToStream
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: ReadFileToStream()
-  nameWithType: IFileObject.ReadFileToStream()
-  fullName: DotNetHelper_IO.Interface.IFileObject.ReadFileToStream()
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ReadFileToStream
-    name: ReadFileToStream
-    nameWithType: IFileObject.ReadFileToStream
-    fullName: DotNetHelper_IO.Interface.IFileObject.ReadFileToStream
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ReadFileToStream
-    name: ReadFileToStream
-    nameWithType: IFileObject.ReadFileToStream
-    fullName: DotNetHelper_IO.Interface.IFileObject.ReadFileToStream
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.IO.Stream
   commentId: T:System.IO.Stream
   parent: System.IO
@@ -3893,42 +2860,6 @@ references:
   name: GetFileStream
   nameWithType: FileObject.GetFileStream
   fullName: DotNetHelper_IO.FileObject.GetFileStream
-- uid: DotNetHelper_IO.Interface.IFileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: GetFileStream(FileOption)
-  nameWithType: IFileObject.GetFileStream(FileOption)
-  fullName: DotNetHelper_IO.Interface.IFileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption)
-    name: GetFileStream
-    nameWithType: IFileObject.GetFileStream
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetFileStream
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption)
-    name: GetFileStream
-    nameWithType: IFileObject.GetFileStream
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetFileStream
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.IO.FileStream
   commentId: T:System.IO.FileStream
   parent: System.IO
@@ -3941,45 +2872,6 @@ references:
   name: GetStreamWriter
   nameWithType: FileObject.GetStreamWriter
   fullName: DotNetHelper_IO.FileObject.GetStreamWriter
-- uid: DotNetHelper_IO.Interface.IFileObject.GetStreamWriter(System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.GetStreamWriter(System.Boolean)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: GetStreamWriter(Boolean)
-  nameWithType: IFileObject.GetStreamWriter(Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.GetStreamWriter(System.Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetStreamWriter(System.Boolean)
-    name: GetStreamWriter
-    nameWithType: IFileObject.GetStreamWriter
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetStreamWriter
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetStreamWriter(System.Boolean)
-    name: GetStreamWriter
-    nameWithType: IFileObject.GetStreamWriter
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetStreamWriter
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.IO.StreamWriter
   commentId: T:System.IO.StreamWriter
   parent: System.IO
@@ -3992,34 +2884,6 @@ references:
   name: GetStreamReader
   nameWithType: FileObject.GetStreamReader
   fullName: DotNetHelper_IO.FileObject.GetStreamReader
-- uid: DotNetHelper_IO.Interface.IFileObject.GetStreamReader
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.GetStreamReader
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: GetStreamReader()
-  nameWithType: IFileObject.GetStreamReader()
-  fullName: DotNetHelper_IO.Interface.IFileObject.GetStreamReader()
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetStreamReader
-    name: GetStreamReader
-    nameWithType: IFileObject.GetStreamReader
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetStreamReader
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetStreamReader
-    name: GetStreamReader
-    nameWithType: IFileObject.GetStreamReader
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetStreamReader
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.IO.StreamReader
   commentId: T:System.IO.StreamReader
   parent: System.IO
@@ -4032,75 +2896,6 @@ references:
   name: WriteContentToFile
   nameWithType: FileObject.WriteContentToFile
   fullName: DotNetHelper_IO.FileObject.WriteContentToFile
-- uid: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_IO.Enum.FileOption)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_IO.Enum.FileOption)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: WriteContentToFile(String, Encoding, FileOption)
-  nameWithType: IFileObject.WriteContentToFile(String, Encoding, FileOption)
-  fullName: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String, System.Text.Encoding, DotNetHelper_IO.Enum.FileOption)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_IO.Enum.FileOption)
-    name: WriteContentToFile
-    nameWithType: IFileObject.WriteContentToFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Text.Encoding
-    name: Encoding
-    nameWithType: Encoding
-    fullName: System.Text.Encoding
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile(System.String,System.Text.Encoding,DotNetHelper_IO.Enum.FileOption)
-    name: WriteContentToFile
-    nameWithType: IFileObject.WriteContentToFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.WriteContentToFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Text.Encoding
-    name: Encoding
-    nameWithType: Encoding
-    fullName: System.Text.Encoding
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Text.Encoding
   commentId: T:System.Text.Encoding
   parent: System.Text
@@ -4114,746 +2909,11 @@ references:
   name: System.Text
   nameWithType: System.Text
   fullName: System.Text
-- uid: DotNetHelper_IO.FileObject.EncryptFile*
-  commentId: Overload:DotNetHelper_IO.FileObject.EncryptFile
-  name: EncryptFile
-  nameWithType: FileObject.EncryptFile
-  fullName: DotNetHelper_IO.FileObject.EncryptFile
-- uid: DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: EncryptFile(SymmetricProvider, Byte[])
-  nameWithType: IFileObject.EncryptFile(SymmetricProvider, Byte[])
-  fullName: DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider, System.Byte[])
-  nameWithType.vb: IFileObject.EncryptFile(SymmetricProvider, Byte())
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider, System.Byte())
-  name.vb: EncryptFile(SymmetricProvider, Byte())
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-    name: EncryptFile
-    nameWithType: IFileObject.EncryptFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.EncryptFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_Encryption.Enums.SymmetricProvider
-    name: SymmetricProvider
-    nameWithType: SymmetricProvider
-    fullName: DotNetHelper_Encryption.Enums.SymmetricProvider
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Byte
-    name: Byte
-    nameWithType: Byte
-    fullName: System.Byte
-    isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.EncryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-    name: EncryptFile
-    nameWithType: IFileObject.EncryptFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.EncryptFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_Encryption.Enums.SymmetricProvider
-    name: SymmetricProvider
-    nameWithType: SymmetricProvider
-    fullName: DotNetHelper_Encryption.Enums.SymmetricProvider
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Byte
-    name: Byte
-    nameWithType: Byte
-    fullName: System.Byte
-    isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_Encryption.Enums.SymmetricProvider
-  commentId: T:DotNetHelper_Encryption.Enums.SymmetricProvider
-  parent: DotNetHelper_Encryption.Enums
-  isExternal: true
-  name: SymmetricProvider
-  nameWithType: SymmetricProvider
-  fullName: DotNetHelper_Encryption.Enums.SymmetricProvider
-- uid: System.Byte[]
-  isExternal: true
-  name: Byte[]
-  nameWithType: Byte[]
-  fullName: System.Byte[]
-  nameWithType.vb: Byte()
-  fullName.vb: System.Byte()
-  name.vb: Byte()
-  spec.csharp:
-  - uid: System.Byte
-    name: Byte
-    nameWithType: Byte
-    fullName: System.Byte
-    isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  spec.vb:
-  - uid: System.Byte
-    name: Byte
-    nameWithType: Byte
-    fullName: System.Byte
-    isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-- uid: DotNetHelper_Encryption.Enums
-  commentId: N:DotNetHelper_Encryption.Enums
-  isExternal: true
-  name: DotNetHelper_Encryption.Enums
-  nameWithType: DotNetHelper_Encryption.Enums
-  fullName: DotNetHelper_Encryption.Enums
-- uid: System.IO.EndOfStreamException
-  commentId: T:System.IO.EndOfStreamException
-  isExternal: true
-- uid: DotNetHelper_IO.FileObject.DecryptFile*
-  commentId: Overload:DotNetHelper_IO.FileObject.DecryptFile
-  name: DecryptFile
-  nameWithType: FileObject.DecryptFile
-  fullName: DotNetHelper_IO.FileObject.DecryptFile
-- uid: DotNetHelper_IO.Interface.IFileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: DecryptFile(SymmetricProvider, Byte[])
-  nameWithType: IFileObject.DecryptFile(SymmetricProvider, Byte[])
-  fullName: DotNetHelper_IO.Interface.IFileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider, System.Byte[])
-  nameWithType.vb: IFileObject.DecryptFile(SymmetricProvider, Byte())
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider, System.Byte())
-  name.vb: DecryptFile(SymmetricProvider, Byte())
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-    name: DecryptFile
-    nameWithType: IFileObject.DecryptFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.DecryptFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_Encryption.Enums.SymmetricProvider
-    name: SymmetricProvider
-    nameWithType: SymmetricProvider
-    fullName: DotNetHelper_Encryption.Enums.SymmetricProvider
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Byte
-    name: Byte
-    nameWithType: Byte
-    fullName: System.Byte
-    isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.DecryptFile(DotNetHelper_Encryption.Enums.SymmetricProvider,System.Byte[])
-    name: DecryptFile
-    nameWithType: IFileObject.DecryptFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.DecryptFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_Encryption.Enums.SymmetricProvider
-    name: SymmetricProvider
-    nameWithType: SymmetricProvider
-    fullName: DotNetHelper_Encryption.Enums.SymmetricProvider
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Byte
-    name: Byte
-    nameWithType: Byte
-    fullName: System.Byte
-    isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_IO.FileObject.ImportData*
-  commentId: Overload:DotNetHelper_IO.FileObject.ImportData
-  name: ImportData
-  nameWithType: FileObject.ImportData
-  fullName: DotNetHelper_IO.FileObject.ImportData
-- uid: DotNetHelper_IO.Interface.IFileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: ImportData<T>(ISerializer)
-  nameWithType: IFileObject.ImportData<T>(ISerializer)
-  fullName: DotNetHelper_IO.Interface.IFileObject.ImportData<T>(DotNetHelper_IO.Interface.ISerializer)
-  nameWithType.vb: IFileObject.ImportData(Of T)(ISerializer)
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.ImportData(Of T)(DotNetHelper_IO.Interface.ISerializer)
-  name.vb: ImportData(Of T)(ISerializer)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-    name: ImportData<T>
-    nameWithType: IFileObject.ImportData<T>
-    fullName: DotNetHelper_IO.Interface.IFileObject.ImportData<T>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Interface.ISerializer
-    name: ISerializer
-    nameWithType: ISerializer
-    fullName: DotNetHelper_IO.Interface.ISerializer
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ImportData``1(DotNetHelper_IO.Interface.ISerializer)
-    name: ImportData(Of T)
-    nameWithType: IFileObject.ImportData(Of T)
-    fullName: DotNetHelper_IO.Interface.IFileObject.ImportData(Of T)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Interface.ISerializer
-    name: ISerializer
-    nameWithType: ISerializer
-    fullName: DotNetHelper_IO.Interface.ISerializer
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_IO.Interface.ISerializer
-  commentId: T:DotNetHelper_IO.Interface.ISerializer
-  parent: DotNetHelper_IO.Interface
-  name: ISerializer
-  nameWithType: ISerializer
-  fullName: DotNetHelper_IO.Interface.ISerializer
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: DotNetHelper_IO.FileObject.ImportDataList*
-  commentId: Overload:DotNetHelper_IO.FileObject.ImportDataList
-  name: ImportDataList
-  nameWithType: FileObject.ImportDataList
-  fullName: DotNetHelper_IO.FileObject.ImportDataList
-- uid: DotNetHelper_IO.Interface.IFileObject.ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: ImportDataList<T>(ISerializer, Type)
-  nameWithType: IFileObject.ImportDataList<T>(ISerializer, Type)
-  fullName: DotNetHelper_IO.Interface.IFileObject.ImportDataList<T>(DotNetHelper_IO.Interface.ISerializer, System.Type)
-  nameWithType.vb: IFileObject.ImportDataList(Of T)(ISerializer, Type)
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.ImportDataList(Of T)(DotNetHelper_IO.Interface.ISerializer, System.Type)
-  name.vb: ImportDataList(Of T)(ISerializer, Type)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
-    name: ImportDataList<T>
-    nameWithType: IFileObject.ImportDataList<T>
-    fullName: DotNetHelper_IO.Interface.IFileObject.ImportDataList<T>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Interface.ISerializer
-    name: ISerializer
-    nameWithType: ISerializer
-    fullName: DotNetHelper_IO.Interface.ISerializer
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Type
-    name: Type
-    nameWithType: Type
-    fullName: System.Type
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ImportDataList``1(DotNetHelper_IO.Interface.ISerializer,System.Type)
-    name: ImportDataList(Of T)
-    nameWithType: IFileObject.ImportDataList(Of T)
-    fullName: DotNetHelper_IO.Interface.IFileObject.ImportDataList(Of T)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Interface.ISerializer
-    name: ISerializer
-    nameWithType: ISerializer
-    fullName: DotNetHelper_IO.Interface.ISerializer
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Type
-    name: Type
-    nameWithType: Type
-    fullName: System.Type
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
-- uid: System.Collections.Generic.IEnumerable{{T}}
-  commentId: T:System.Collections.Generic.IEnumerable{``0}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_IO.FileObject.ExportData*
-  commentId: Overload:DotNetHelper_IO.FileObject.ExportData
-  name: ExportData
-  nameWithType: FileObject.ExportData
-  fullName: DotNetHelper_IO.FileObject.ExportData
-- uid: DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{{T}},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  definition: DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  name: ExportData<T>(List<T>, ISerializer, FileOption, Boolean)
-  nameWithType: IFileObject.ExportData<T>(List<T>, ISerializer, FileOption, Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.ExportData<T>(System.Collections.Generic.List<T>, DotNetHelper_IO.Interface.ISerializer, DotNetHelper_IO.Enum.FileOption, System.Boolean)
-  nameWithType.vb: IFileObject.ExportData(Of T)(List(Of T), ISerializer, FileOption, Boolean)
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.ExportData(Of T)(System.Collections.Generic.List(Of T), DotNetHelper_IO.Interface.ISerializer, DotNetHelper_IO.Enum.FileOption, System.Boolean)
-  name.vb: ExportData(Of T)(List(Of T), ISerializer, FileOption, Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-    name: ExportData<T>
-    nameWithType: IFileObject.ExportData<T>
-    fullName: DotNetHelper_IO.Interface.IFileObject.ExportData<T>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Interface.ISerializer
-    name: ISerializer
-    nameWithType: ISerializer
-    fullName: DotNetHelper_IO.Interface.ISerializer
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-    name: ExportData(Of T)
-    nameWithType: IFileObject.ExportData(Of T)
-    fullName: DotNetHelper_IO.Interface.IFileObject.ExportData(Of T)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Interface.ISerializer
-    name: ISerializer
-    nameWithType: ISerializer
-    fullName: DotNetHelper_IO.Interface.ISerializer
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.List{{T}}
-  commentId: T:System.Collections.Generic.List{``0}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  isExternal: true
-  name: ExportData<T>(List<T>, ISerializer, FileOption, Boolean)
-  nameWithType: IFileObject.ExportData<T>(List<T>, ISerializer, FileOption, Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.ExportData<T>(System.Collections.Generic.List<T>, DotNetHelper_IO.Interface.ISerializer, DotNetHelper_IO.Enum.FileOption, System.Boolean)
-  nameWithType.vb: IFileObject.ExportData(Of T)(List(Of T), ISerializer, FileOption, Boolean)
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.ExportData(Of T)(System.Collections.Generic.List(Of T), DotNetHelper_IO.Interface.ISerializer, DotNetHelper_IO.Enum.FileOption, System.Boolean)
-  name.vb: ExportData(Of T)(List(Of T), ISerializer, FileOption, Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-    name: ExportData<T>
-    nameWithType: IFileObject.ExportData<T>
-    fullName: DotNetHelper_IO.Interface.IFileObject.ExportData<T>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Interface.ISerializer
-    name: ISerializer
-    nameWithType: ISerializer
-    fullName: DotNetHelper_IO.Interface.ISerializer
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.ExportData``1(System.Collections.Generic.List{``0},DotNetHelper_IO.Interface.ISerializer,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-    name: ExportData(Of T)
-    nameWithType: IFileObject.ExportData(Of T)
-    fullName: DotNetHelper_IO.Interface.IFileObject.ExportData(Of T)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Interface.ISerializer
-    name: ISerializer
-    nameWithType: ISerializer
-    fullName: DotNetHelper_IO.Interface.ISerializer
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync*
   commentId: Overload:DotNetHelper_IO.FileObject.WriteStreamToFileAsync
   name: WriteStreamToFileAsync
   nameWithType: FileObject.WriteStreamToFileAsync
   fullName: DotNetHelper_IO.FileObject.WriteStreamToFileAsync
-- uid: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: WriteStreamToFileAsync(Stream, IProgress<Double>, Boolean)
-  nameWithType: IFileObject.WriteStreamToFileAsync(Stream, IProgress<Double>, Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync(System.IO.Stream, System.IProgress<System.Double>, System.Boolean)
-  nameWithType.vb: IFileObject.WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync(System.IO.Stream, System.IProgress(Of System.Double), System.Boolean)
-  name.vb: WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-    name: WriteStreamToFileAsync
-    nameWithType: IFileObject.WriteStreamToFileAsync
-    fullName: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.IO.Stream
-    name: Stream
-    nameWithType: Stream
-    fullName: System.IO.Stream
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-    name: WriteStreamToFileAsync
-    nameWithType: IFileObject.WriteStreamToFileAsync
-    fullName: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFileAsync
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.IO.Stream
-    name: Stream
-    nameWithType: Stream
-    fullName: System.IO.Stream
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Threading.Tasks.Task{System.Boolean}
   commentId: T:System.Threading.Tasks.Task{System.Boolean}
   parent: System.Threading.Tasks
@@ -4948,235 +3008,21 @@ references:
   name: WriteStreamToFile
   nameWithType: FileObject.WriteStreamToFile
   fullName: DotNetHelper_IO.FileObject.WriteStreamToFile
-- uid: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: WriteStreamToFile(Stream, IProgress<Double>, FileOption)
-  nameWithType: IFileObject.WriteStreamToFile(Stream, IProgress<Double>, FileOption)
-  fullName: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile(System.IO.Stream, System.IProgress<System.Double>, DotNetHelper_IO.Enum.FileOption)
-  nameWithType.vb: IFileObject.WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
-  fullName.vb: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile(System.IO.Stream, System.IProgress(Of System.Double), DotNetHelper_IO.Enum.FileOption)
-  name.vb: WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-    name: WriteStreamToFile
-    nameWithType: IFileObject.WriteStreamToFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.IO.Stream
-    name: Stream
-    nameWithType: Stream
-    fullName: System.IO.Stream
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-    name: WriteStreamToFile
-    nameWithType: IFileObject.WriteStreamToFile
-    fullName: DotNetHelper_IO.Interface.IFileObject.WriteStreamToFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.IO.Stream
-    name: Stream
-    nameWithType: Stream
-    fullName: System.IO.Stream
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.GetFileEncoding*
   commentId: Overload:DotNetHelper_IO.FileObject.GetFileEncoding
   name: GetFileEncoding
   nameWithType: FileObject.GetFileEncoding
   fullName: DotNetHelper_IO.FileObject.GetFileEncoding
-- uid: DotNetHelper_IO.Interface.IFileObject.GetFileEncoding
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.GetFileEncoding
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: GetFileEncoding()
-  nameWithType: IFileObject.GetFileEncoding()
-  fullName: DotNetHelper_IO.Interface.IFileObject.GetFileEncoding()
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetFileEncoding
-    name: GetFileEncoding
-    nameWithType: IFileObject.GetFileEncoding
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetFileEncoding
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetFileEncoding
-    name: GetFileEncoding
-    nameWithType: IFileObject.GetFileEncoding
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetFileEncoding
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.GetFileSizeDisplay*
   commentId: Overload:DotNetHelper_IO.FileObject.GetFileSizeDisplay
   name: GetFileSizeDisplay
   nameWithType: FileObject.GetFileSizeDisplay
   fullName: DotNetHelper_IO.FileObject.GetFileSizeDisplay
-- uid: DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay(System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay(System.Boolean)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: GetFileSizeDisplay(Boolean)
-  nameWithType: IFileObject.GetFileSizeDisplay(Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay(System.Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay(System.Boolean)
-    name: GetFileSizeDisplay
-    nameWithType: IFileObject.GetFileSizeDisplay
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay(System.Boolean)
-    name: GetFileSizeDisplay
-    nameWithType: IFileObject.GetFileSizeDisplay
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetFileSizeDisplay
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.GetFileSize*
   commentId: Overload:DotNetHelper_IO.FileObject.GetFileSize
   name: GetFileSize
   nameWithType: FileObject.GetFileSize
   fullName: DotNetHelper_IO.FileObject.GetFileSize
-- uid: DotNetHelper_IO.Interface.IFileObject.GetFileSize(DotNetHelper_IO.FileObject.SizeUnits,System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.GetFileSize(DotNetHelper_IO.FileObject.SizeUnits,System.Boolean)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: GetFileSize(FileObject.SizeUnits, Boolean)
-  nameWithType: IFileObject.GetFileSize(FileObject.SizeUnits, Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.GetFileSize(DotNetHelper_IO.FileObject.SizeUnits, System.Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetFileSize(DotNetHelper_IO.FileObject.SizeUnits,System.Boolean)
-    name: GetFileSize
-    nameWithType: IFileObject.GetFileSize
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetFileSize
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.FileObject.SizeUnits
-    name: FileObject.SizeUnits
-    nameWithType: FileObject.SizeUnits
-    fullName: DotNetHelper_IO.FileObject.SizeUnits
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.GetFileSize(DotNetHelper_IO.FileObject.SizeUnits,System.Boolean)
-    name: GetFileSize
-    nameWithType: IFileObject.GetFileSize
-    fullName: DotNetHelper_IO.Interface.IFileObject.GetFileSize
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.FileObject.SizeUnits
-    name: FileObject.SizeUnits
-    nameWithType: FileObject.SizeUnits
-    fullName: DotNetHelper_IO.FileObject.SizeUnits
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.SizeUnits
   commentId: T:DotNetHelper_IO.FileObject.SizeUnits
   parent: DotNetHelper_IO
@@ -5193,61 +3039,6 @@ references:
   name: StartWatching
   nameWithType: FileObject.StartWatching
   fullName: DotNetHelper_IO.FileObject.StartWatching
-- uid: DotNetHelper_IO.Interface.IFileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)
-  parent: DotNetHelper_IO.Interface.IFileObject
-  isExternal: true
-  name: StartWatching(WatcherChangeTypes, Boolean)
-  nameWithType: IFileObject.StartWatching(WatcherChangeTypes, Boolean)
-  fullName: DotNetHelper_IO.Interface.IFileObject.StartWatching(System.IO.WatcherChangeTypes, System.Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)
-    name: StartWatching
-    nameWithType: IFileObject.StartWatching
-    fullName: DotNetHelper_IO.Interface.IFileObject.StartWatching
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.IO.WatcherChangeTypes
-    name: WatcherChangeTypes
-    nameWithType: WatcherChangeTypes
-    fullName: System.IO.WatcherChangeTypes
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)
-    name: StartWatching
-    nameWithType: IFileObject.StartWatching
-    fullName: DotNetHelper_IO.Interface.IFileObject.StartWatching
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.IO.WatcherChangeTypes
-    name: WatcherChangeTypes
-    nameWithType: WatcherChangeTypes
-    fullName: System.IO.WatcherChangeTypes
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.IO.WatcherChangeTypes
   commentId: T:System.IO.WatcherChangeTypes
   parent: System.IO
@@ -5260,34 +3051,6 @@ references:
   name: StopWatching
   nameWithType: FileObject.StopWatching
   fullName: DotNetHelper_IO.FileObject.StopWatching
-- uid: DotNetHelper_IO.Interface.IFileObject.StopWatching
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.StopWatching
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: StopWatching()
-  nameWithType: IFileObject.StopWatching()
-  fullName: DotNetHelper_IO.Interface.IFileObject.StopWatching()
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.StopWatching
-    name: StopWatching
-    nameWithType: IFileObject.StopWatching
-    fullName: DotNetHelper_IO.Interface.IFileObject.StopWatching
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.StopWatching
-    name: StopWatching
-    nameWithType: IFileObject.StopWatching
-    fullName: DotNetHelper_IO.Interface.IFileObject.StopWatching
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.Dispose*
   commentId: Overload:DotNetHelper_IO.FileObject.Dispose
   name: Dispose
@@ -5318,34 +3081,6 @@ references:
     nameWithType: IDisposable.Dispose
     fullName: System.IDisposable.Dispose
     isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_IO.Interface.IFileObject.Dispose
-  commentId: M:DotNetHelper_IO.Interface.IFileObject.Dispose
-  parent: DotNetHelper_IO.Interface.IFileObject
-  name: Dispose()
-  nameWithType: IFileObject.Dispose()
-  fullName: DotNetHelper_IO.Interface.IFileObject.Dispose()
-  spec.csharp:
-  - uid: DotNetHelper_IO.Interface.IFileObject.Dispose
-    name: Dispose
-    nameWithType: IFileObject.Dispose
-    fullName: DotNetHelper_IO.Interface.IFileObject.Dispose
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.Interface.IFileObject.Dispose
-    name: Dispose
-    nameWithType: IFileObject.Dispose
-    fullName: DotNetHelper_IO.Interface.IFileObject.Dispose
   - name: (
     nameWithType: (
     fullName: (

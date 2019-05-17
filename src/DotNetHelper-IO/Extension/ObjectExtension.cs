@@ -8,12 +8,12 @@ namespace DotNetHelper_IO.Extension
 {
     internal static class ObjectExtension
     {
-        public static int ToInt(this object o)
+        internal static int ToInt(this object o)
         {
             return o.ToInt(true);
         }
 
-        public static int ToInt(this object o, bool throwEx, int returnValueOnError = default(int))
+        internal static int ToInt(this object o, bool throwEx, int returnValueOnError = default(int))
         {
             if (throwEx)
             {
