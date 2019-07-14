@@ -164,8 +164,9 @@ Task("Test")
 			OldStyle = true,
 			MergeOutput = false
         }     
-        .WithFilter("+[*.Tests*]*")
-		.WithFilter("-[*NUnit3.*]*"));
+      //  .WithFilter("+[*.Tests*]*")
+	// .WithFilter("-[*NUnit3.*]*")
+	  );
 
         }
 		    
