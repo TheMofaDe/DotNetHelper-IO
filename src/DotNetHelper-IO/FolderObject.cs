@@ -288,19 +288,6 @@ namespace DotNetHelper_IO
             return list;
         }
 
-        //private List<string> GetDirectories(string path)
-        //{
-        //    var list = new List<string>(){};
-        //    try
-        //    {
-        //        list.AddRange(GetDirectories(path));//Directory.GetDirectories(path));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.Error.WriteLine(e);
-        //    }
-        //    return list;
-        //}
 
         /// <summary>
         /// return all files in current folder object path and with filtering if pattern parameter is set
@@ -360,13 +347,6 @@ namespace DotNetHelper_IO
                 return Directory.GetDirectories(FullFolderPath, pattern ?? "*", SearchOption.AllDirectories).Select(s => new FolderObject(s));
                 return Directory.GetDirectories(FullFolderPath, pattern ?? "*", SearchOption.TopDirectoryOnly).Select(s => new FolderObject(s));
         }
-
-
-
-        //public List<FileObject> GetFiles()
-        //{
-        //    Directory.GetFiles("C:\\", "*.*", SearchOption.AllDirectories);
-        //}
 
 
         /// <summary>
@@ -595,7 +575,6 @@ namespace DotNetHelper_IO
                     GetAllFiles("*", true).ToList().ForEach(f => f.DeleteFile(e => throw e, true));
                     GetAllFolders("*", false).ToList().ForEach(delegate (FolderObject subfolder)
                     {
-                        //   folder.GetAllFiles("*", true).ToList().ForEach(f => f.DeleteFile(e => throw e));
                         Directory.Delete(subfolder.FullFolderPath, true);
                     });
                     Directory.Delete(FullFolderPath, true);
