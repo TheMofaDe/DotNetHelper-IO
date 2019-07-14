@@ -74,6 +74,7 @@ items:
     content: 'public class FileObject : IDisposable'
     content.vb: >-
       Public Class FileObject
+
           Implements IDisposable
   seealso:
   - linkId: System.IDisposable

@@ -8,14 +8,14 @@
     <title>DotNetHelper-IO | DotNetHelper-IO </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="DotNetHelper-IO | DotNetHelper-IO ">
-    <meta name="generator" content="docfx 2.41.0.0">
+    <meta name="generator" content="docfx 2.43.1.0">
     
     <link rel="shortcut icon" href="logo/favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
     <link rel="stylesheet" href="styles/docfx.css">
     <link rel="stylesheet" href="styles/main.css">
-    <meta property="docfx:navrel" content="toc">
-    <meta property="docfx:tocrel" content="toc">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
     
     <meta property="docfx:rel" content="">
     
@@ -50,10 +50,13 @@
                           <a href="index.html" title="Home">Home</a>
                       </li>
                       <li>
-                          <a href="articles/sample.html" title="Articles">Articles</a>
+                          <a href="api/DotNetHelper_IO.html" title="API">API</a>
                       </li>
                       <li>
-                          <a href="api/DotNetHelper_IO.html" title="API Documentation">API Documentation</a>
+                          <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/CHANGELOG.md" title="Change Log">Change Log</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/TheMofaDe/DotNetHelper-IO" title="Github">Github</a>
                       </li>
                 </ul>    </div>
           </div>
@@ -83,8 +86,18 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="dotnethelper-io">DotNetHelper-IO</h1>
 
-<p>This is a simple easy to use thread safe library for handling all types of files &amp; folders</p>
+<h4 id="dotnethelper-io-is-a-simple-easy-to-use-thread-safe-library-for-handling-all-types-of-files--folders"><em>DotNetHelper-IO is a simple easy to use thread safe library for handling all types of files &amp; folders</em></h4>
+<p>|| <a href="https://github.com/TheMofaDe/DotNetHelper-IO"><strong>View on Github</strong></a> ||</p>
 <h2 id="how-to-use">How to use</h2>
+<pre><code class="lang-csharp">    public enum FileOption
+    {
+        Append = 1,
+        Overwrite = 2,
+        DoNothingIfExist = 3,
+        IncrementFileNameIfExist = 4,
+        IncrementFileExtensionIfExist = 5,
+    }
+</code></pre>
 <pre><code class="lang-csharp">var sampleFile = &quot;C:\Temp\dotnet-hosting-2.2.1-win.exe&quot;;
 var file = new FileObject(sampleFile);
 var folder = new FolderObject(sampleFile);
@@ -115,17 +128,10 @@ public bool CopyTo(string copyToFullFilePath, FileOption option, IProgress&lt;do
 public void DeleteFile(Action&lt;Exception&gt; onFailedDeletion, bool disposeObject = false)
 
 
-// Simplify Encryption
-void EncryptFile(SymmetricProvider algorithm, byte[] key);
-void DecryptFile(SymmetricProvider algorithm, byte[] key = null);
-
-
 long? GetFileSize(FileObject.SizeUnits sizeUnits, bool refreshObject = false);  
 </code></pre>
-<h2 id="targeted-net-frameworks">Targeted .NET Frameworks</h2>
-<pre><code>NET452
-NETSTANDARD2.0
-</code></pre>
+<!-- Links. -->
+<!-- Documentation Links. -->
 </article>
           </div>
           
@@ -153,7 +159,7 @@ NETSTANDARD2.0
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright � 2019 Joseph McNeal Jr
+            Copyright © 2019  <strong>Joseph McNeal Jr</strong>
             
           </div>
         </div>

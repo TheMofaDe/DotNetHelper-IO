@@ -1,30 +1,24 @@
 # DotNetHelper-IO
 
 
-| Package  | Tests | Coverage |
+#### *DotNetHelper-IO is a simple easy to use thread safe library for handling all types of files & folders* 
+
+|| [**Documentation**][Docs] • [**API**][Docs-API] • [**Tutorials**][Docs-Tutorials] ||  [**Change Log**][Changelogs] • || [**View on Github**][Github]|| 
+
+| AppVeyor | AzureDevOps |
+| :-----: | :-----: |
+| [![Build status](https://ci.appveyor.com/api/projects/status/4sx1v8sem7283fuc?svg=true)](https://ci.appveyor.com/project/TheMofaDe/dotnethelper-io)  | [![Build Status](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master)](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_build/latest?definitionId=5&branchName=master)  
+
+| Package  | Tests | Code Coverage |
 | :-----:  | :---: | :------: |
-| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![Coverage Status](https://coveralls.io/repos/github/TheMofaDe/DotNetHelper-IO/badge.svg)](https://coveralls.io/github/TheMofaDe/DotNetHelper-IO) |
-
-### *Azure DevOps*
-| Windows | Linux | MacOS |
-| :-----: | :-----: | :---: | 
-| ![Build Status][azure-windows]  | ![Build Status][azure-linux]  | ![Build Status][azure-macOS] 
-
-### *AppVeyor*
-| Windows |
-| :-----: | 
-| ![Build Status][appveyor-windows]
+| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper-IO/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper-IO) |
 
 
-#####  DotNetHelper-IO is a simple easy to use thread safe library for handling all types of files & folders
+## Features
+    + Auto Increment File Name
+    + Auto Increment File Extension
 
-
-## Why use this
-Working with files,folders & stream you will run into many edge-cases that throws IO exception
-like attempting to write to a file but is parent folder doesn't exist. This library is aware of those edge-cases
-and will make working with IO less stressful. With quick access to all the file options below
-we do the hard work
- 
+## How to use
 ```csharp
     public enum FileOption
     {
@@ -36,8 +30,6 @@ we do the hard work
     }
 ```
 
-
-## How to use
 ```csharp
 var sampleFile = "C:\Temp\dotnet-hosting-2.2.1-win.exe";
 var file = new FileObject(sampleFile);
@@ -69,32 +61,21 @@ public bool CopyTo(string copyToFullFilePath, FileOption option, IProgress<doubl
 public void DeleteFile(Action<Exception> onFailedDeletion, bool disposeObject = false)
 
 
-// Simplify Encryption
-void EncryptFile(SymmetricProvider algorithm, byte[] key);
-void DecryptFile(SymmetricProvider algorithm, byte[] key = null);
-
-
 long? GetFileSize(FileObject.SizeUnits sizeUnits, bool refreshObject = false);  
 ```
 
 
-## Exception Callback 
-```csharp
-You may notice some methods will have an Action<Exception> parameter this callback can be null 
-but it will not throw the exception under any circumstances. I understand its normal for libraries to bubble up exceptions
-but you are literally implementing how to handle the exception so does not make sense for me to throw it
-```
-
 ## Documentation
-For more information, please refer to the [Officials Docs][2]
+For more information, please refer to the [Officials Docs][Docs]
 
-Created Using [DotNet-Starter-Template](http://themofade.github.io/DotNet-Starter-Template) 
+<!-- Links. -->
+## Solution Template
+[![badge](https://img.shields.io/badge/Built%20With-DotNet--Starter--Template-orange.svg)](https://github.com/TheMofaDe/DotNet-Starter-Template)
 
 
 <!-- Links. -->
 
 [1]:  https://gist.github.com/davidfowl/ed7564297c61fe9ab814
-[2]: http://themofade.github.io/DotNetHelper-IO
 
 [Cake]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
 [Azure DevOps]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
@@ -104,17 +85,21 @@ Created Using [DotNet-Starter-Template](http://themofade.github.io/DotNet-Starte
 [Chocolately]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
 [WiX]: http://wixtoolset.org/
 [DocFx]: https://dotnet.github.io/docfx/
+[Github]: https://github.com/TheMofaDe/DotNetHelper-IO
 
+
+<!-- Documentation Links. -->
+[Docs]: https://themofade.github.io/DotNetHelper-IO/index.html
+[Docs-API]: https://themofade.github.io/DotNetHelper-IO/api/DotNetHelper-IO.html
+[Docs-Tutorials]: https://themofade.github.io/DotNetHelper-IO/tutorials/index.html
+[Docs-samples]: https://dotnet.github.io/docfx/
+[Changelogs]: https://dotnet.github.io/docfx/
 
 
 <!-- BADGES. -->
 
 [nuget-downloads]: https://img.shields.io/nuget/dt/DotNetHelper-IO.svg?style=flat-square
-[tests]: https://img.shields.io/appveyor/tests/themofade/DotNetHelper-IO.svg?style=flat-square
+[tests]: https://img.shields.io/appveyor/tests/TheMofaDe/DotNetHelper-IO.svg?style=flat-square
 [coverage-status]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=Windows
 
-[azure-windows]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=Windows
-[azure-linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=Linux
-[azure-macOS]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master&jobName=macOS
 
-[appveyor-windows]: https://ci.appveyor.com/project/TheMofaDe/DotNetHelper-IO/branch/master

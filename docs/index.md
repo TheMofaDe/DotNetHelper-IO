@@ -1,8 +1,25 @@
 # DotNetHelper-IO
 
-This is a simple easy to use thread safe library for handling all types of files & folders
+#### *DotNetHelper-IO is a simple easy to use thread safe library for handling all types of files & folders* 
+
+|| [**View on Github**][Github] || 
+
+
+
+
 
 ## How to use
+```csharp
+    public enum FileOption
+    {
+        Append = 1,
+        Overwrite = 2,
+        DoNothingIfExist = 3,
+        IncrementFileNameIfExist = 4,
+        IncrementFileExtensionIfExist = 5,
+    }
+```
+
 ```csharp
 var sampleFile = "C:\Temp\dotnet-hosting-2.2.1-win.exe";
 var file = new FileObject(sampleFile);
@@ -34,15 +51,29 @@ public bool CopyTo(string copyToFullFilePath, FileOption option, IProgress<doubl
 public void DeleteFile(Action<Exception> onFailedDeletion, bool disposeObject = false)
 
 
-// Simplify Encryption
-void EncryptFile(SymmetricProvider algorithm, byte[] key);
-void DecryptFile(SymmetricProvider algorithm, byte[] key = null);
-
-
 long? GetFileSize(FileObject.SizeUnits sizeUnits, bool refreshObject = false);  
 ```
 
-## Targeted .NET Frameworks
-    NET452
-    NETSTANDARD2.0
 
+<!-- Links. -->
+
+[1]:  https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[2]: http://themofade.github.io/DotNetHelper-IO
+
+[Cake]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[Azure DevOps]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[AppVeyor]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[GitVersion]: https://gitversion.readthedocs.io/en/latest/
+[Nuget]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[Chocolately]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
+[WiX]: http://wixtoolset.org/
+[DocFx]: https://dotnet.github.io/docfx/
+[Github]: https://github.com/TheMofaDe/DotNetHelper-IO
+
+
+<!-- Documentation Links. -->
+[Docs]: https://themofade.github.io/DotNetHelper-IO/index.html
+[Docs-API]: https://themofade.github.io/DotNetHelper-IO/api/DotNetHelper-IO.Attribute.html
+[Docs-Tutorials]: https://themofade.github.io/DotNetHelper-IO/tutorials/index.html
+[Docs-samples]: https://dotnet.github.io/docfx/
+[Changelogs]: https://dotnet.github.io/docfx/

@@ -34,7 +34,9 @@ items:
     content: 'public class ZipFileObject : FileObject, IDisposable'
     content.vb: >-
       Public Class ZipFileObject
+
           Inherits FileObject
+
           Implements IDisposable
   inheritance:
   - System.Object

@@ -1309,3 +1309,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.ZipFileObject.UnZipFile
   nameWithType: ZipFileObject.UnZipFile
+- uid: TSD
+  name: THIS IS THE HOME PAGE TO TUTORIALS
+  href: tutorials/index.html
