@@ -9,23 +9,23 @@ namespace DotNetHelper_IO_Console
 {
     class Program
     {
-       static void Main(string[] args)
-       {   
-           var folderObject = new FolderObject("./",false,true);
-     
-           var content = $"PasswordPasswordPasswordPassword";
-           var newFile = new FileObject($"{folderObject.FullFolderPath}Encrypt");
-           newFile.WriteContentToFile(content, Encoding.UTF8, FileOption.Overwrite);
-           //newFile.EncryptFile(SymmetricProvider.AES, Encoding.UTF8.GetBytes(content));
-           //var readValue = newFile.ReadFile();
-           //newFile.DecryptFile(SymmetricProvider.AES, Encoding.UTF8.GetBytes(content));
-           Console.ReadKey();
-     
-           dynamic obj = new ExpandoObject();
-           obj.Type = "dfs";
-           DoSomething(obj);
-           DoSomething(new Employee());
-       }
+        static void Main(string[] args)
+        {
+            var folderObject = new FolderObject("./", false, true);
+
+            var content = $"PasswordPasswordPasswordPassword";
+            var newFile = new FileObject($"{folderObject.FullFolderPath}Encrypt");
+            newFile.WriteContentToFile(content, Encoding.UTF8, FileOption.Overwrite);
+            //newFile.EncryptFile(SymmetricProvider.AES, Encoding.UTF8.GetBytes(content));
+            //var readValue = newFile.ReadFile();
+            //newFile.DecryptFile(SymmetricProvider.AES, Encoding.UTF8.GetBytes(content));
+            Console.ReadKey();
+
+            dynamic obj = new ExpandoObject();
+            obj.Type = "dfs";
+            DoSomething(obj);
+            DoSomething(new Employee());
+        }
 
 
         private static void DoSomethingDynamic<T>(T obj) where T : IDynamicMetaObjectProvider

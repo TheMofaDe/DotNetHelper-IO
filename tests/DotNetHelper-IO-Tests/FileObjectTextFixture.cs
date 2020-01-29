@@ -13,7 +13,7 @@ namespace Tests
     public class FileObjectTextFixture : BaseTest
     {
         public FolderObject TestFolder { get; }
-        public  FileObject TestFile { get;  }
+        public FileObject TestFile { get; }
 
 
         public FileObjectTextFixture()
@@ -27,7 +27,7 @@ namespace Tests
         public void RunBeforeAnyTests()
         {
             TestFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
-            if(File.Exists(TestFile.FullFilePath))
+            if (File.Exists(TestFile.FullFilePath))
                 Assert.IsFalse(TestFile.Exist, "Unit Test setup failed due to environment not being clean");
         }
 
@@ -57,7 +57,7 @@ namespace Tests
         {
             for (var i = 1; i < 110; i++)
             {
-                TestFile.WriteContentToFile($"{i}", Encoding.UTF8,FileOption.IncrementFileExtensionIfExist);
+                TestFile.WriteContentToFile($"{i}", Encoding.UTF8, FileOption.IncrementFileExtensionIfExist);
                 FileShouldExist($"{TestFile.FilePathOnly}{TestFile.FileNameOnlyNoExtension}.{i}");
 
             }
@@ -71,7 +71,7 @@ namespace Tests
             var newFile = new FileObject($"{TestFolder.FullFolderPath}TestWritingAndReading");
             newFile.WriteContentToFile(content, Encoding.UTF8, FileOption.Overwrite);
             var readValue = newFile.ReadFile();
-            Assert.IsTrue(readValue == content,"The content that was written to the file didn't match what was read.");
+            Assert.IsTrue(readValue == content, "The content that was written to the file didn't match what was read.");
         }
 
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
@@ -90,7 +90,7 @@ namespace Tests
 
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
         [Test]
-        public void Test_CopyFile()
+        public void  Test_CopyFile()
         {
 
             var newFile = $"{TestFolder.FullFolderPath}COPY";

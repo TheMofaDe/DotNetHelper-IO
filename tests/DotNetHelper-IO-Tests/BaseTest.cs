@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace DotNetHelper_IO_Tests
 {
-public class BaseTest
-{
-    public string WorkingDirectory { get;  }
-
-    public BaseTest()
+    public class BaseTest
     {
-          WorkingDirectory = $"{Environment.CurrentDirectory}";
-    }
+        public string WorkingDirectory { get; }
 
-}
+        public BaseTest()
+        {
+            WorkingDirectory = $"{Environment.CurrentDirectory}";
+        }
+
+    }
 
 }

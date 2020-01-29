@@ -136,7 +136,7 @@ namespace DotNetHelper_IO
             RefreshObject(LoadSubFolders, LoadFilesInFolder, LoadRecursive);
         }
 
-   
+
 
         /// <summary>
         /// Formats the path.
@@ -158,7 +158,7 @@ namespace DotNetHelper_IO
             }
             else
             {
-                    path += separator;
+                path += separator;
             }
             return path;
         }
@@ -193,25 +193,25 @@ namespace DotNetHelper_IO
                     ParentNameOnly = info.Parent?.Name;
                     if (loadFilesInFolder)
                     {
-                        Files.AddRange(GetAllFiles("*",loadRecursive));
+                        Files.AddRange(GetAllFiles("*", loadRecursive));
 
                     }
 
                     if (loadSubfolders)
                     {
-                        Subfolders.AddRange(GetAllFolders("*",loadRecursive));
+                        Subfolders.AddRange(GetAllFolders("*", loadRecursive));
                     }
 
                     try
                     {
-                       // if (Exist == true)
-                       // {
-                            Watcher = new FileSystemWatcher(path, "*");
-                            Watcher.Changed += WatcherOnChanged;
-                            Watcher.Created += WatcherOnCreated;
-                            Watcher.Deleted += WatcherOnDeleted;
-                            Watcher.Renamed += WatcherOnRenamed;
-                       // }
+                        // if (Exist == true)
+                        // {
+                        Watcher = new FileSystemWatcher(path, "*");
+                        Watcher.Changed += WatcherOnChanged;
+                        Watcher.Created += WatcherOnCreated;
+                        Watcher.Deleted += WatcherOnDeleted;
+                        Watcher.Renamed += WatcherOnRenamed;
+                        // }
                     }
                     catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
                     {
@@ -278,7 +278,7 @@ namespace DotNetHelper_IO
                 {
                     list.Add(d);
                     list.AddRange(GetDirectoriesRecursive(d));
-         
+
                 }
             }
             catch (Exception e)
@@ -297,7 +297,7 @@ namespace DotNetHelper_IO
         /// https://stackoverflow.com/questions/929276/how-to-recursively-list-all-the-files-in-a-directory-in-c
         public IEnumerable<FileObject> GetAllFiles(string pattern = "*", bool recursive = false)
         {
-         
+
             var queue = new Queue<string>() { };
             var path = FullFolderPath;
             queue.Enqueue(path);
@@ -314,7 +314,7 @@ namespace DotNetHelper_IO
             while (queue.Count > 0)
             {
                 path = queue.Dequeue();
-                
+
                 var files = new List<string>() { };
                 try
                 {
@@ -342,10 +342,10 @@ namespace DotNetHelper_IO
         /// <returns></returns>
         public IEnumerable<FolderObject> GetAllFolders(string pattern = "*", bool recursive = false)
         {
-            
+
             if (recursive)
                 return Directory.GetDirectories(FullFolderPath, pattern ?? "*", SearchOption.AllDirectories).Select(s => new FolderObject(s));
-                return Directory.GetDirectories(FullFolderPath, pattern ?? "*", SearchOption.TopDirectoryOnly).Select(s => new FolderObject(s));
+            return Directory.GetDirectories(FullFolderPath, pattern ?? "*", SearchOption.TopDirectoryOnly).Select(s => new FolderObject(s));
         }
 
 
@@ -412,7 +412,7 @@ namespace DotNetHelper_IO
             if (overwriteIfExist)
             {
                 var temp = new FolderObject(location);
-                temp.DeleteFolder(e => throw e );
+                temp.DeleteFolder(e => throw e);
             }
             DirectoryCopy(FullFolderPath, location, false);
         }
@@ -435,7 +435,7 @@ namespace DotNetHelper_IO
             if (overwriteIfExist)
             {
                 var temp = new FolderObject(location);
-                temp.DeleteFolder(e => throw  e);
+                temp.DeleteFolder(e => throw e);
                 temp.Dispose();
             }
             DirectoryCopy(FullFolderPath, location, false);
@@ -551,7 +551,7 @@ namespace DotNetHelper_IO
             }
             catch (Exception)
             {
-               
+
                 // ignored because this require the user to have full control permission set and we don't problems over that 
                 // if developer is doing something that require full conrol permission let the application throw the error
             }
@@ -560,14 +560,14 @@ namespace DotNetHelper_IO
         /// <summary>
         /// Deletes the folder.
         /// </summary>
-        public void DeleteFolder( Action<Exception> onException , bool dispose = true)
+        public void DeleteFolder(Action<Exception> onException, bool dispose = true)
         {
 
             RefreshObject();
             if (Exist == true)
             {
-                
-                
+
+
                 try
                 {
                     SetFileAttribute(AddOrRemoveEnum.Remove, new List<FileAttributes>() { FileAttributes.Hidden, FileAttributes.ReadOnly });

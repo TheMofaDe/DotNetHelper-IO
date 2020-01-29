@@ -31,6 +31,10 @@ namespace DotNetHelper_IO.Enum
         /// Increments the file extension +1
         /// </summary>
         IncrementFileExtensionIfExist = 5,
+        /// <summary>
+        /// Read Only Access
+        /// </summary>
+        ReadOnly = 6
     }
 
     /// <summary>

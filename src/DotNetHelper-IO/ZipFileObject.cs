@@ -25,9 +25,8 @@ namespace DotNetHelper_IO
 
 
         /// <summary>
-        /// Creates a empty file if it doesn't exist otherwise truncates it if set to <c>true</c> [overwrite existing files].
+        /// Creates a empty zip file if it doesn't exist otherwise truncates it if set to <c>true</c> [overwrite existing files].
         /// </summary>
-        /// <param name="compressionType"></param>
         /// <param name="truncate">if set to <c>true</c> [truncate].</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public new bool CreateOrTruncate(bool truncate = true)
@@ -47,10 +46,8 @@ namespace DotNetHelper_IO
                 Directory.CreateDirectory(FilePathOnly);
             using (var archive = ZipArchive.Create())
             {
-                using (var fs = GetFileStream(FileOption.Overwrite))
-                {
-                    archive.SaveTo(fs);
-                }
+                using var fs = GetFileStream(FileOption.Overwrite);
+                archive.SaveTo(fs);
             }
             RefreshObject();
             return true;
@@ -60,26 +57,20 @@ namespace DotNetHelper_IO
 
         public void UnZipFile(FolderObject folder, FileOption option, bool extractFullPath = false)
         {
-            bool overWrite = option != FileOption.DoNothingIfExist;
-            if(option == FileOption.Append) throw new NotSupportedException("Append Option For Unzip files has not been implemented yet");
+            var overWrite = option != FileOption.DoNothingIfExist;
+            if (option == FileOption.Append) throw new NotSupportedException("Append Option For Unzip files has not been implemented yet");
             if (option == FileOption.IncrementFileExtensionIfExist) throw new NotSupportedException("IncrementFileExtensionIfExist Option For Unzip files has not been implemented yet");
             if (option == FileOption.IncrementFileNameIfExist) throw new NotSupportedException("IncrementFileNameIfExist Option For Unzip files has not been implemented yet");
-            folder.Create(e => throw e ); 
-            using (var stream = File.OpenRead(FullFilePath))
-            using (var reader = ReaderFactory.Open(stream))
+            folder.Create(e => throw e);
+            using var stream = File.OpenRead(FullFilePath);
+            using var reader = ReaderFactory.Open(stream);
+            while (reader.MoveToNextEntry())
             {
-                while (reader.MoveToNextEntry())
+                reader.WriteEntryToDirectory(folder.FullFolderPath, new ExtractionOptions()
                 {
-                    // if (!reader.Entry.IsDirectory)
-                    // {
-                    //    Console.WriteLine(reader.Entry.Key);
-                    reader.WriteEntryToDirectory(folder.FullFolderPath, new ExtractionOptions()
-                    {
-                        ExtractFullPath = extractFullPath,
-                        Overwrite = overWrite
-                    });
-                    //  }
-                }
+                    ExtractFullPath = extractFullPath,
+                    Overwrite = overWrite
+                });
             }
         }
 
@@ -216,14 +207,12 @@ namespace DotNetHelper_IO
             {
                 using (var stream = File.OpenRead(FullFilePath))
                 {
-                    using (var reader = ReaderFactory.Open(stream))
+                    using var reader = ReaderFactory.Open(stream);
+                    while (reader.MoveToNextEntry())
                     {
-                        while (reader.MoveToNextEntry())
-                        {
-                            var temp = new MemoryStream();
-                            reader.OpenEntryStream().CopyTo(temp);
-                            overwriteZipFile.AddEntry(reader.Entry.Key, temp);
-                        }
+                        var temp = new MemoryStream();
+                        reader.OpenEntryStream().CopyTo(temp);
+                        overwriteZipFile.AddEntry(reader.Entry.Key, temp);
                     }
                 }
                 safeFiles.ForEach(delegate (FileObject o)
@@ -238,7 +227,7 @@ namespace DotNetHelper_IO
                                 var temp = new MemoryStream();
                                 matchedEntries.First().OpenEntryStream().CopyTo(temp);
                                 temp.Position = temp.Length;
-                                using (var tempFileStream = o.ReadFileToStream())
+                                using (var tempFileStream = o.GetFileStream(FileOption.ReadOnly))
                                 {
                                     tempFileStream.CopyTo(temp);
                                 }

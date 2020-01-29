@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net452;netstandard2.0;net45</TargetFrameworks>
+    <TargetFrameworks>net452;netstandard2.0;netstandard2.1</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <FileVersion>2019.1.30.2</FileVersion>
@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SharpCompress" Version="0.23.0" />
+    <PackageReference Include="SharpCompress" Version="0.24.0" />
   </ItemGroup>
 
   <ItemGroup>

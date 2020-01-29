@@ -12,14 +12,14 @@ namespace Tests
     public class FolderObjectTextFixture : BaseTest
     {
         public FolderObject AbsoluteTestFolder { get; }
-        public  FileObject AbsoluteTestFile { get;  }
+        public FileObject AbsoluteTestFile { get; }
         public FolderObject RelativeTestFolder { get; }
         public FileObject RelativeTestFile { get; }
 
 
         public FolderObjectTextFixture()
         {
-            AbsoluteTestFolder = new FolderObject(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "UnitTestTempDir",true,true,true);
+            AbsoluteTestFolder = new FolderObject(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "UnitTestTempDir", true, true, true);
             RelativeTestFolder = new FolderObject("./UnitTestTempDir", true, true, true);
 
             AbsoluteTestFile = new FileObject(AbsoluteTestFolder.FullFolderPath + "UnitTestFile");
@@ -31,7 +31,7 @@ namespace Tests
         public void RunBeforeAnyTests()
         {
             AbsoluteTestFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
-            if(File.Exists(AbsoluteTestFile.FullFilePath))
+            if (File.Exists(AbsoluteTestFile.FullFilePath))
                 Assert.IsFalse(AbsoluteTestFile.Exist, "Unit Test setup failed due to environment not being clean");
         }
 
@@ -61,17 +61,17 @@ namespace Tests
         {
 
             var subFolderName = "ABSOLUTE";
-            var absoluteFolder =  new FolderObject(AbsoluteTestFolder.FullFolderPath + subFolderName);
-   
-                absoluteFolder.Create(delegate(Exception exception)
-            {
-                Assert.Fail($"{exception.Message}");
-            });
-                absoluteFolder.RefreshObject(absoluteFolder.LoadSubFolders,absoluteFolder.LoadFilesInFolder,absoluteFolder.LoadRecursive);
-            var relativeFolder = new FolderObject(RelativeTestFolder.FullFolderPath + subFolderName);
-         
+            var absoluteFolder = new FolderObject(AbsoluteTestFolder.FullFolderPath + subFolderName);
 
-            Assert.IsTrue(relativeFolder.Exist,"Syncing between absolute & relative paths is off");
+            absoluteFolder.Create(delegate (Exception exception)
+        {
+            Assert.Fail($"{exception.Message}");
+        });
+            absoluteFolder.RefreshObject(absoluteFolder.LoadSubFolders, absoluteFolder.LoadFilesInFolder, absoluteFolder.LoadRecursive);
+            var relativeFolder = new FolderObject(RelativeTestFolder.FullFolderPath + subFolderName);
+
+
+            Assert.IsTrue(relativeFolder.Exist, "Syncing between absolute & relative paths is off");
 
             Assert.IsTrue(relativeFolder.ParentFolder == absoluteFolder.ParentFolder
                           && relativeFolder.Files.Count == absoluteFolder.Files.Count
