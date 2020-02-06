@@ -1,15 +1,12 @@
-﻿using System;
+﻿using DotNetHelper_IO.Enum;
+using DotNetHelper_IO.Extension;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-
-using DotNetHelper_IO.Enum;
-using DotNetHelper_IO.Extension;
 
 
 namespace DotNetHelper_IO
@@ -24,78 +21,52 @@ namespace DotNetHelper_IO
     {
         private object ThreadSafe { get; set; } = new object();
 
+
+
+        public FileInfo FileInfo { get; private set; }
+
         /// <summary>
         /// Gets the file name only.
         /// </summary>
         /// <value>The file name only.</value>
-        public string FileNameOnly { get; private set; }
+        public string FileNameOnly => FileInfo?.Name;
         /// <summary>
         /// Gets the file name only no extension.
         /// </summary>
         /// <value>The file name only no extension.</value>
-        public string FileNameOnlyNoExtension { get; private set; }
+        public string FileNameOnlyNoExtension => Path.GetFileNameWithoutExtension(FullFilePath);
+
         /// <summary>
         /// Gets the file path only.
         /// </summary>
         /// <value>The file path only.</value>
-        public string FilePathOnly { get; private set; }
+        public string FilePathOnly => FileInfo?.DirectoryName + Path.DirectorySeparatorChar;
         /// <summary>
         /// Gets the full file path.
         /// </summary>
         /// <value>The full file path.</value>
         public string FullFilePath { get; } // Let not randomly change the file name on developers & lets remove the setter so we remember
+
+
         public string IncrementFullFilePath { get; private set; } // This allows support 
-        /// <summary>
-        /// Gets the last​ write​ time​ UTC.
-        /// </summary>
-        /// <value>The last​ write​ time​ UTC.</value>
-        public DateTime? Last​Write​Time​Utc { get; private set; }
-        /// <summary>
-        /// Gets the last​ write​ time.
-        /// </summary>
-        /// <value>The last​ write​ time.</value>
-        public DateTime? Last​Write​Time { get; private set; }
-        /// <summary>
-        /// Gets the last​ access​ time.
-        /// </summary>
-        /// <value>The last​ access​ time.</value>
-        public DateTime? Last​Access​Time { get; private set; }
-        /// <summary>
-        /// Gets the last​ access​ time​ UTC.
-        /// </summary>
-        /// <value>The last​ access​ time​ UTC.</value>
-        public DateTime? Last​Access​Time​Utc { get; private set; }
-        /// <summary>
-        /// Gets the creation​ time​ UTC.
-        /// </summary>
-        /// <value>The creation​ time​ UTC.</value>
-        public DateTime? Creation​Time​Utc { get; private set; }
-        /// <summary>
-        /// Gets the creation​ time​.
-        /// </summary>
-        /// <value>The creation​ time​.</value>
-        public DateTime? Creation​Time​ { get; private set; }
-        /// <summary>
-        /// Gets the extension. Includes the dot (.)
-        /// </summary>
-        /// <value>The extension.</value>
-        public string Extension { get; private set; }
+
+        public string Extension => FileInfo?.Extension;
         /// <summary>
         /// Gets the folder name only.
         /// </summary>
         /// <value>The folder name only.</value>
-        public string FolderNameOnly { get; private set; }
+        public string FolderNameOnly => FileInfo?.Directory?.Name;
 
         /// <summary>
         /// Size is in bytes
         /// </summary>
         /// <value>The size of the file.</value>
-        public long? FileSize { get; private set; }
+        public long? FileSize => FileInfo?.Length;
+
         /// <summary>
         /// Gets a value indicating whether this <see cref="FileObject"/> is exist.
         /// </summary>
-        /// <value><c>null</c> if [exist] contains no value, <c>true</c> if [exist]; otherwise, <c>false</c>.</value>
-        public bool? Exist { get; private set; }
+        public bool Exist => File.Exists(FullFilePath);
         /// <summary>
         /// Gets or sets the watch timeout.
         /// </summary>
@@ -148,56 +119,12 @@ namespace DotNetHelper_IO
             {
                 throw result.Item2;
             }
-
-            Exist = File.Exists(FullFilePath);
             try
             {
-                if (Exist == true)
+                var info = new FileInfo(FullFilePath);
+                FileInfo = info;
+                if (!Exist)
                 {
-                    var info = new FileInfo(FullFilePath);
-                    FileNameOnly = info.Name;
-                    FolderNameOnly = info.Directory?.Name;
-                    FilePathOnly = info.DirectoryName + Path.DirectorySeparatorChar;
-                    FileNameOnlyNoExtension = Path.GetFileNameWithoutExtension(FullFilePath);
-                    Last​Write​Time​Utc = info.LastWriteTimeUtc;
-                    Last​Write​Time = info.LastWriteTime;
-                    Last​Access​Time = info.LastAccessTime;
-                    Last​Access​Time​Utc = info.LastAccessTimeUtc;
-                    Creation​Time​Utc = info.CreationTimeUtc;
-                    Creation​Time​ = info.CreationTime;
-                    Extension = info.Extension;
-                    FileSize = info.Length;
-                    try
-                    {
-                        if (Directory.Exists(FullFilePath))
-                        {
-                            Watcher = new FileSystemWatcher(FilePathOnly, "file");
-                            Watcher.Changed += WatcherOnChanged;
-                            Watcher.Created += WatcherOnCreated;
-                            Watcher.Deleted += WatcherOnDeleted;
-                            Watcher.Renamed += WatcherOnRenamed;
-                        }
-                    }
-                    catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
-                    {
-
-                    }
-
-                }
-                else
-                {
-                    FilePathOnly = Path.GetDirectoryName(FullFilePath) + Path.DirectorySeparatorChar;
-                    Extension = Path.GetExtension(FullFilePath);
-                    FileNameOnlyNoExtension = Path.GetFileNameWithoutExtension(FullFilePath);
-                    FolderNameOnly = Path.GetDirectoryName(FullFilePath);
-                    FileNameOnly = Path.GetFileName(FullFilePath);
-                    Last​Write​Time​Utc = null;
-                    Last​Write​Time = null;
-                    Last​Access​Time = null;
-                    Last​Access​Time​Utc = null;
-                    Creation​Time​Utc = null;
-                    Creation​Time​ = null;
-                    FileSize = null;
                     if (FullFilePath.EndsWith(Path.DirectorySeparatorChar.ToString())) // we don't want to prevent users from creating file with same folder name but no extension because it not the same
                         if (string.IsNullOrEmpty(Extension) && Directory.Exists(FullFilePath))
                         {
@@ -227,34 +154,38 @@ namespace DotNetHelper_IO
         /// <param name="progress"></param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         /// <exception cref="T:System.UnauthorizedAccessException"> throws if the application doesn't have the required permission </exception>
-        public void CopyTo(string copyToFullFilePath, FileOption option, IProgress<double> progress = null)
+        public string CopyTo(string copyToFullFilePath, FileOption option, IProgress<double> progress = null)
         {
-         
+
+            var test = Path.GetDirectoryName(copyToFullFilePath);
 
             switch (option)
             {
                 case FileOption.Append:
                     Directory.CreateDirectory(Path.GetDirectoryName(copyToFullFilePath));
                     File.Copy(FullFilePath, copyToFullFilePath, false);
-                    return;
+                    return copyToFullFilePath;
                 case FileOption.Overwrite:
                     Directory.CreateDirectory(Path.GetDirectoryName(copyToFullFilePath));
                     File.Copy(FullFilePath,copyToFullFilePath,true);
-                    return;
+                    return copyToFullFilePath;
                 case FileOption.IncrementFileNameIfExist:
+                    var incrementedFileName = new FileObject(copyToFullFilePath).GetIncrementFileName();
+                    Directory.CreateDirectory(Path.GetDirectoryName(incrementedFileName));
+                    File.Copy(FullFilePath, incrementedFileName, true);
+                    return incrementedFileName;
                 case FileOption.IncrementFileExtensionIfExist:
-                    using (var newFile = new FileObject(copyToFullFilePath))
-                    {
-                        newFile.WriteStreamToFile(GetFileStream(option));
-                    }
-                    return;
+                    var incrementedFileExtension = new FileObject(copyToFullFilePath).GetIncrementFileName();
+                    Directory.CreateDirectory(Path.GetDirectoryName(incrementedFileExtension));
+                    File.Copy(FullFilePath, incrementedFileExtension, true);
+                    return incrementedFileExtension;
                 case FileOption.DoNothingIfExist:
                     if (!File.Exists(copyToFullFilePath))
                     {
                         Directory.CreateDirectory(Path.GetDirectoryName(copyToFullFilePath));
                         File.Copy(FullFilePath, copyToFullFilePath, true);
                     }
-                    return;
+                    return copyToFullFilePath;
                 case FileOption.ReadOnly:
                     throw new Exception("The fileoption read-only isn't valid for the method CopyTo");
                 default:
@@ -466,12 +397,8 @@ namespace DotNetHelper_IO
                     CreateOrTruncate();
                     break;
                 case FileOption.IncrementFileNameIfExist:
-                    TryIncrementFileName();
-                    IncrementCreateOrTruncate();
-                    break;
                 case FileOption.IncrementFileExtensionIfExist:
-                    TryIncrementFileExtension();
-                    IncrementCreateOrTruncate();
+   
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);
@@ -488,21 +415,21 @@ namespace DotNetHelper_IO
 
         }
 
-        /// <summary>
-        /// Increment file name by 1 only if the current file already exist
-        /// </summary>
-        internal void TryIncrementFileName()
-        {
-            IncrementFullFilePath = GetIncrementFileName();
-        }
+        ///// <summary>
+        ///// Increment file name by 1 only if the current file already exist
+        ///// </summary>
+        //internal void TryIncrementFileName()
+        //{
+        //    IncrementFullFilePath = GetIncrementFileName();
+        //}
 
-        /// <summary>
-        ///  Increment file extension by 1 only if the current file already exist
-        /// </summary>
-        internal void TryIncrementFileExtension()
-        {
-            IncrementFullFilePath = GetIncrementExtension();
-        }
+        ///// <summary>
+        /////  Increment file extension by 1 only if the current file already exist
+        ///// </summary>
+        //internal void TryIncrementFileExtension()
+        //{
+        //    IncrementFullFilePath = GetIncrementExtension();
+        //}
 
 
         public string GetIncrementFileName(string seperator = "")
@@ -629,12 +556,21 @@ namespace DotNetHelper_IO
         /// <param name="mode">The mode.</param>
         /// <param name="access">The access.</param>
         /// <returns>FileStream.</returns>
-        private FileStream GetFileStream(FileMode mode, FileAccess access = FileAccess.ReadWrite)
+        private FileStream GetFileStream(FileMode mode, FileAccess access = FileAccess.ReadWrite, bool useIncrementFileName = false, bool useIncrementExtension = false)
         {
-            RefreshObject();
-            if (Exist == true)
+            var file = FullFilePath;
+            if (useIncrementExtension)
             {
-                var stream = new FileStream(FullFilePath, mode, access) { };
+                file = GetIncrementExtension();
+            }
+            else if (useIncrementFileName)
+            {
+               file = GetIncrementFileName();
+            }
+      
+            if (Exist)
+            {
+                var stream = new FileStream(file, mode, access) { };
                 return stream;
             }
             else
@@ -647,27 +583,6 @@ namespace DotNetHelper_IO
                 CreateOrTruncate();
             }
             return new FileStream(FullFilePath, mode, access) { };
-        }
-
-
-        private FileStream IncrementGetFileStream(FileMode mode, FileAccess access = FileAccess.ReadWrite)
-        {
-
-            if (File.Exists(IncrementFullFilePath))
-            {
-                var stream = new FileStream(IncrementFullFilePath, mode, access) { };
-                return stream;
-            }
-            else
-            {
-                if (!Directory.Exists(FilePathOnly))
-                    Directory.CreateDirectory(FilePathOnly);
-            }
-            if (mode == FileMode.Truncate)
-            {
-                IncrementCreateOrTruncate();
-            }
-            return new FileStream(IncrementFullFilePath, mode, access) { };
         }
 
         /// <summary>
@@ -699,10 +614,11 @@ namespace DotNetHelper_IO
                     stream.Seek(0, SeekOrigin.Begin);
                     return stream;
                 case FileOption.IncrementFileNameIfExist:
+                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write,true);
+                    stream.Seek(0, SeekOrigin.Begin);
+                    return stream;
                 case FileOption.IncrementFileExtensionIfExist:
-                    //    if (preventErrors)
-                    PrepareForStreamUse(option);
-                    stream = IncrementGetFileStream(FileMode.Truncate, FileAccess.Write);
+                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write, false,true);
                     stream.Seek(0, SeekOrigin.Begin);
                     return stream;
                 case FileOption.DoNothingIfExist: 
@@ -946,18 +862,12 @@ namespace DotNetHelper_IO
         /// <param name="changeTypes">The change types.</param>
         /// <param name="onNewThread">if set to <c>true</c> [on new thread].</param>
         /// <exception cref="Exception"></exception>
-        public void StartWatching(WatcherChangeTypes changeTypes = WatcherChangeTypes.All, bool onNewThread = true)
+        public void StartWatching(WatcherChangeTypes changeTypes = WatcherChangeTypes.All, bool onNewThread = true, NotifyFilters? filters = null )
         {
-            if (Watcher == null)
-            {
-                throw new Exception($"The Following File {FullFilePath}  Doesn't Exist Therefore FileSystemWatcher Can't Be Started.");
-            }
-            else
-            {
-                Watcher.IncludeSubdirectories = false;
-                Watcher.NotifyFilter = NotifyFilters;
-                Watcher.Error += WatcherOnError;
-                Watcher.EnableRaisingEvents = true;
+            Watcher = new FileSystemWatcher(FilePathOnly, "file");
+            Watcher.IncludeSubdirectories = false;
+            Watcher.NotifyFilter = filters.GetValueOrDefault(NotifyFilters);
+            Watcher.EnableRaisingEvents = true;
                 // Watcher.BeginInit(); Seems to cause problems
                 if (!onNewThread)
                 {
@@ -970,10 +880,8 @@ namespace DotNetHelper_IO
                         Watcher.WaitForChanged(changeTypes, WatchTimeout);
                     }, CancellationToken.None);
                 }
-            }
-
-
         }
+
         /// <summary>
         /// Stops the watching.
         /// </summary>
@@ -988,55 +896,8 @@ namespace DotNetHelper_IO
             //   Watcher.EndInit(); Seems to cause problems
         }
 
-        /// <summary>
-        /// Watchers the on error.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="errorEventArgs">The <see cref="ErrorEventArgs"/> instance containing the event data.</param>
-        private void WatcherOnError(object sender, ErrorEventArgs errorEventArgs)
-        {
-
-        }
-
-        /// <summary>
-        /// Watchers the on renamed.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="renamedEventArgs">The <see cref="RenamedEventArgs"/> instance containing the event data.</param>
-        private void WatcherOnRenamed(object sender, RenamedEventArgs renamedEventArgs)
-        {
-            //  Console.WriteLine($"File Renamed. {renamedEventArgs.OldFullPath}--->{renamedEventArgs.FullPath}");
-        }
-
-        /// <summary>
-        /// Watchers the on deleted.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="fileSystemEventArgs">The <see cref="FileSystemEventArgs"/> instance containing the event data.</param>
-        private void WatcherOnDeleted(object sender, FileSystemEventArgs fileSystemEventArgs)
-        {
-            Exist = false;
-        }
-
-        /// <summary>
-        /// Watchers the on created.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="fileSystemEventArgs">The <see cref="FileSystemEventArgs"/> instance containing the event data.</param>
-        private void WatcherOnCreated(object sender, FileSystemEventArgs fileSystemEventArgs)
-        {
-            Exist = true;
-        }
-
-        /// <summary>
-        /// Watchers the on changed.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="fileSystemEventArgs">The <see cref="FileSystemEventArgs"/> instance containing the event data.</param>
-        private static void WatcherOnChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
-        {
-
-        }
+      
+       
 
 
         /// <inheritdoc />
@@ -1045,30 +906,13 @@ namespace DotNetHelper_IO
         /// </summary>
         public void Dispose()
         {
-
+            FileInfo = null;
             if (Watcher != null)
             {
                 Watcher.EnableRaisingEvents = false;
                 Watcher.EndInit();
                 Watcher.Dispose();
-                Watcher.Changed -= WatcherOnChanged;
-                Watcher.Created -= WatcherOnCreated;
-                Watcher.Deleted -= WatcherOnDeleted;
-                Watcher.Error -= WatcherOnError;
             }
-            Exist = null;
-            FilePathOnly = null;
-            Extension = null;
-            FileNameOnlyNoExtension = null;
-            FolderNameOnly = null;
-            FileNameOnly = null;
-            Last​Write​Time​Utc = null;
-            Last​Write​Time = null;
-            Last​Access​Time = null;
-            Last​Access​Time​Utc = null;
-            Creation​Time​Utc = null;
-            Creation​Time​ = null;
-            FileSize = null;
         }
     }
 
