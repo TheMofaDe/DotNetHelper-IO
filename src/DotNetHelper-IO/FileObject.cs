@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -134,7 +135,17 @@ namespace DotNetHelper_IO
             }
             catch (PathTooLongException)
             {
-                // FILE MAY STILL EXIST BUT WINDOWS DUMB 255 CHARACTER LIMIT
+#if net452
+#else
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    // FILE MAY STILL EXIST BUT WINDOWS BEING DUMB BECAUSE OF 255 CHARACTER LIMIT
+                }
+                else
+                {
+                    throw;
+                }
+#endif
             }
         }
 
@@ -594,7 +605,6 @@ namespace DotNetHelper_IO
         public FileStream GetFileStream(FileOption option)
         {
 
-            RefreshObject();
             FileStream stream;
             switch (option)
             {
@@ -644,7 +654,7 @@ namespace DotNetHelper_IO
     
 
 
-        #region  WRITING
+#region  WRITING
 
 
         /// <summary>
@@ -747,7 +757,7 @@ namespace DotNetHelper_IO
             }
         }
 
-        #endregion   
+#endregion
 
         /// <summary>
         /// Gets the file encoding. if can not determine the file Encoding this return ascii by default

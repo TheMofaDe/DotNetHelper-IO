@@ -31,8 +31,7 @@ namespace DotNetHelper_IO
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public new bool CreateOrTruncate(bool truncate = true)
         {
-            RefreshObject();
-
+        
             if (truncate)
             {
                 DeleteFile(e => throw e);
@@ -49,9 +48,7 @@ namespace DotNetHelper_IO
                 using var fs = GetFileStream(FileOption.Overwrite);
                 archive.SaveTo(fs);
             }
-            RefreshObject();
             return true;
-
         }
 
 
@@ -274,20 +271,6 @@ namespace DotNetHelper_IO
     }
 
 
-    public class CompressedFile
-    {
-        private DateTime? ArchivedTime { get; set; }
-        long CompressedSize { get; set; }
-        long Crc { get; set; }
-        DateTime? CreatedTime { get; set; }
-        string Key { get; set; }
-        bool IsDirectory { get; set; }
-        bool IsEncrypted { get; set; }
-        bool IsSplit { get; set; }
-        DateTime? LastAccessedTime { get; set; }
-        DateTime? LastModifiedTime { get; set; }
-        long Size { get; set; }
-        int? Attrib { get; set; }
-    }
+   
 
 }
