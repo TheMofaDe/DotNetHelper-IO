@@ -7,5 +7,5 @@ public static class MyProject
     public static string ProjectName  { get; private set;} = "DotNetHelper-IO"; 
     public static string SolutionFileName { get; private set;} = "DotNetHelper-IO.sln"; 
 	public static string Manufacturer { get; private set;} = $"JosephMcNealJr";
-    public static List<string> TargetFrameworks { get; } = new List<string>(){ "netstandard2.0" ,"net452", "net45","netstandard2.1" , };
+    public static List<string> TargetFrameworks { get; } = new List<string>(){ "netstandard2.0" ,"net452","netstandard2.1" , };
 }
