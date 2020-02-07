@@ -23,7 +23,6 @@ namespace DotNetHelper_IO
         private object ThreadSafe { get; set; } = new object();
 
 
-
         public FileInfo FileInfo { get; private set; }
 
         /// <summary>
@@ -135,7 +134,7 @@ namespace DotNetHelper_IO
             }
             catch (PathTooLongException)
             {
-#if net452
+#if NETFRAMEWORK
 #else
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
@@ -156,19 +155,18 @@ namespace DotNetHelper_IO
 
 
 
-        /// <inheritdoc />
-        /// <summary>
-        /// return boolean on whether or not the file got move 
-        /// </summary>
-        /// <param name="copyToFullFilePath">The new file.</param>
-        /// <param name="option"></param>
-        /// <param name="progress"></param>
-        /// <exception cref="T:System.ArgumentOutOfRangeException"></exception>
-        /// <exception cref="T:System.UnauthorizedAccessException"> throws if the application doesn't have the required permission </exception>
-        public string CopyTo(string copyToFullFilePath, FileOption option, IProgress<double> progress = null)
-        {
 
-            var test = Path.GetDirectoryName(copyToFullFilePath);
+        /// <summary>
+        /// return the fullfilepath of where the file was copied to.
+        /// </summary>
+        /// <param name="copyToFullFilePath">The file path to copy to .</param>
+        /// <param name="option"></param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.UnauthorizedAccessException"> throws if the application doesn't have the required permission </exception>
+        public string CopyTo(string copyToFullFilePath, FileOption option)
+        {
+            copyToFullFilePath.IsNullThrow();
 
             switch (option)
             {
@@ -198,92 +196,130 @@ namespace DotNetHelper_IO
                     }
                     return copyToFullFilePath;
                 case FileOption.ReadOnly:
-                    throw new Exception("The fileoption read-only isn't valid for the method CopyTo");
+                    throw new Exception("The fileoption read-only isn't valid for a write operation of CopyTo");
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);
             }
         }
 
 
-        /// <inheritdoc />
+
+/// <summary>
+/// Copy the current file to the destination
+/// </summary>
+/// <param name="copyToFullFilePath"></param>
+/// <param name="option"></param>
+/// <param name="cancellationToken"></param>
+/// <param name="bufferSize"></param>
+/// <returns></returns>
+ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+ {
+     using var sourceStream = GetFileStream(FileOption.ReadOnly, bufferSize, true);
+     using var destinationStream = new FileObject(copyToFullFilePath).GetFileStream(option, bufferSize, true);
+      await sourceStream.CopyToAsync(destinationStream, bufferSize, cancellationToken)
+         .ConfigureAwait(continueOnCapturedContext: false);
+      return copyToFullFilePath;
+ }
+
+
+/// <summary>
+/// Copy the current file to the destination with progress
+/// </summary>
+/// <param name="copyToFullFilePath"></param>
+/// <param name="option"></param>
+/// <param name="cancellationToken"></param>
+/// <param name="progress"></param>
+/// <param name="bufferSize"></param>
+/// <returns></returns>
+public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption option, CancellationToken cancellationToken, IProgress<long> progress, int bufferSize = 4096)
+{
+    using var sourceStream = GetFileStream(FileOption.ReadOnly, bufferSize, true);
+    using var destinationStream = new FileObject(copyToFullFilePath).GetFileStream(option, bufferSize, true);
+    await sourceStream.CopyToAsync(destinationStream, progress, cancellationToken, bufferSize)
+        .ConfigureAwait(continueOnCapturedContext: false);
+    return copyToFullFilePath;
+}
+
+
+
         /// <summary>
-        /// return boolean on whether or not the file got move 
+        /// Copies the file and deletes the original 
         /// </summary>
         /// <param name="moveToFullFilePath"></param>
         /// <param name="option"></param>
         /// <exception cref="T:System.Exception"></exception>
         /// <exception cref="T:System.UnauthorizedAccessException"> throws if the application doesn't have the required permission </exception>
-        public bool MoveTo(string moveToFullFilePath, FileOption option, IProgress<double> progress = null)
+        public bool MoveTo(string moveToFullFilePath, FileOption option)
         {
-            if (Exist != true) return false; //throw new Exception($"Couldn't Copy {FullFilePath} To {moveToFullFilePath} Because The File Doesn't Exist");
             if (moveToFullFilePath == FullFilePath) return true;
+            if (Exist != true) return false; 
             if (option == FileOption.Overwrite)
             {
                 File.Move(FullFilePath, moveToFullFilePath); // move the file
                 return true;
             }
-            using (var newFile = new FileObject(moveToFullFilePath))
+            // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
+            switch (option) 
             {
-                using var stream = GetFileStream(FileOption.ReadOnly);
-                var copyFile = new FileObject(moveToFullFilePath);
-                switch (option)
-                {
                     case FileOption.Append:
                     case FileOption.IncrementFileNameIfExist:  // Child Record Picks Up name
                     case FileOption.IncrementFileExtensionIfExist:
-                        Directory.CreateDirectory(newFile.FilePathOnly);
-                        copyFile.WriteStreamToFile(stream, progress, option);
+                        CopyTo(moveToFullFilePath, option);
                         break;
                     case FileOption.DoNothingIfExist:
-                        if (newFile.Exist == true)
+                        if (File.Exists(moveToFullFilePath))
                             return false;
-                        Directory.CreateDirectory(newFile.FilePathOnly);
-                        copyFile.WriteStreamToFile(stream, progress, option);
+                        CopyTo(moveToFullFilePath, option);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(option), option, null);
-                }
             }
             DeleteFile(e => throw e);
             return true;
-
         }
 
-        /// <inheritdoc />
+
         /// <summary>
-        /// Sets the file attribute.
+        /// Copies the file and deletes the original 
         /// </summary>
-        /// <param name="option">The option.</param>
-        /// <param name="list">The list.</param>
-        public void SetFileAttribute(AddOrRemoveEnum option, List<FileAttributes> list)
+        /// <param name="moveToFullFilePath"></param>
+        /// <param name="option"></param>
+        /// <param name="cancellationToken"></param>
+        /// <param name="bufferSize"></param>
+        /// <exception cref="T:System.Exception"></exception>
+        /// <exception cref="T:System.UnauthorizedAccessException"> throws if the application doesn't have the required permission </exception>
+        public async Task<bool> MoveToAsync(string moveToFullFilePath, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
         {
-            if (Exist != true) return;
-            if (list == null || !list.Any()) return;
-            try
+            if (moveToFullFilePath == FullFilePath) return true;
+            if (Exist != true) return false;
+            if (option == FileOption.Overwrite)
             {
-                if (option == AddOrRemoveEnum.Add)
-                {
-                    foreach (var attr in list)
-                    {
-                        File.SetAttributes(FullFilePath, File.GetAttributes(FullFilePath) | attr);
-                    }
-
-                }
-                else if (option == AddOrRemoveEnum.Remove)
-                {
-                    foreach (var attr in list)
-                    {
-                        File.SetAttributes(FullFilePath, File.GetAttributes(FullFilePath) & ~attr);
-                    }
-                }
+                File.Move(FullFilePath, moveToFullFilePath); // move the file
+                return true;
             }
-            catch (Exception)
+            // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
+            switch (option)
             {
-
-                // ignored because this require the user to have full control permission set and we don't problems over that 
-                // if developer is doing something that require full conrol permission let the application throw the error
+                case FileOption.Append:
+                case FileOption.IncrementFileNameIfExist:  // Child Record Picks Up name
+                case FileOption.IncrementFileExtensionIfExist:
+                    await CopyToAsync(moveToFullFilePath, option,cancellationToken,bufferSize);
+                    break;
+                case FileOption.DoNothingIfExist:
+                    if (File.Exists(moveToFullFilePath))
+                        return false;
+                    await CopyToAsync(moveToFullFilePath, option,cancellationToken,bufferSize);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(option), option, null);
             }
+            DeleteFile(e => throw e);
+            return true;
         }
+
+
+
+
 
 
         /// <summary>
@@ -298,8 +334,28 @@ namespace DotNetHelper_IO
         public bool ChangeExtension(string newExtension, FileOption option, IProgress<double> progress = null)
         {
             if (newExtension == null) throw new NullReferenceException($"Could not change the extension of file {FullFilePath} Because Developer Provided A Null Value");
-            return MoveTo(Path.ChangeExtension(FullFilePath, newExtension), option, progress);
+            return MoveTo(Path.ChangeExtension(FullFilePath, newExtension), option);
         }
+
+
+        /// <summary>
+        /// Changes the extension of the current file. Does nothing if file doesn't exist return boolean on whether or not the file extension actually got change
+        /// 
+        /// </summary>
+        /// <param name="newExtension"></param>
+        /// <param name="option"></param>
+        /// <param name="cancellationToken"></param>
+        /// <param name="bufferSize"></param>
+        /// <exception cref="Exception"></exception>
+        /// <exception cref="UnauthorizedAccessException"> throws if the application doesn't have the required permission </exception>
+        public async Task<bool> ChangeExtensionAsync(string newExtension, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+        {
+            if (newExtension == null) throw new NullReferenceException($"Could not change the extension of file {FullFilePath} Because Developer Provided A Null Value");
+            return await MoveToAsync(Path.ChangeExtension(FullFilePath, newExtension), option,cancellationToken,bufferSize);
+        }
+
+
+
 
         /// <summary>
         /// Deletes the file. If you want an 
@@ -327,38 +383,7 @@ namespace DotNetHelper_IO
 
 
 
-        private bool IncrementCreateOrTruncate(bool truncate = true)
-        {
-            if (truncate)
-            {
-                if (File.Exists(IncrementFullFilePath))
-                {
-                    try
-                    {
-                        File.Delete(IncrementFullFilePath);
-                    }
-                    catch (Exception)
-                    {
-                        // ignored
-                        // it may not look like it here but trust me this will bubble up if its a problem. This is only used for a special senario
-                    }
-                }
-            }
-            else
-            {
-                if (File.Exists(IncrementFullFilePath)) return true;
-            }
-            // HAVE TO CHECK IF DIRECTORY EXIST FIRST BEFORE THIS
-            if (!Directory.Exists(FilePathOnly))
-                Directory.CreateDirectory(FilePathOnly);
-            using (var stream = new FileStream(IncrementFullFilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite))
-            {
-                using var sw = new StreamWriter(stream);
-                sw.Write(string.Empty);
-            }
 
-            return true;
-        }
 
         /// <summary>
         /// Creates a empty file if it doesn't exist otherwise truncates it if set to <c>true</c> [overwrite existing files].
@@ -367,82 +392,25 @@ namespace DotNetHelper_IO
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool CreateOrTruncate(bool truncate = true)
         {
-            if (truncate)
+
+            if (!truncate && Exist)
             {
-                DeleteFile(e => throw e);
-            }
-            else
-            {
-                if (Exist == true) return true;
+                return false;
             }
             if (!Directory.Exists(FilePathOnly))
                 Directory.CreateDirectory(FilePathOnly);
             lock (ThreadSafe)
             {
-                using var stream = new FileStream(FullFilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite);
-                using var sw = new StreamWriter(stream);
-                sw.Write(string.Empty);
+                File.Create(FullFilePath).Dispose();
             }
             return true;
 
         }
 
-        /// <summary>
-        /// Prepares for stream use.  Prevents Exeception From Being Throwned When working with file Streams
-        /// </summary>
-        /// <param name="option">The option.</param>
-        /// <exception cref="ArgumentOutOfRangeException">option - null</exception>
-        internal void PrepareForStreamUse(FileOption option)
-        {
-            switch (option)
-            {
-                case FileOption.Append:
-                    CreateOrTruncate(false);
-                    break;
-                case FileOption.Overwrite:
-                    CreateOrTruncate();
-                    break;
-                case FileOption.DoNothingIfExist:
-                    if (Exist == true)
-                        return;
-                    CreateOrTruncate();
-                    break;
-                case FileOption.IncrementFileNameIfExist:
-                case FileOption.IncrementFileExtensionIfExist:
-   
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(option), option, null);
-            }
-        }
-
-
-
-        private static string ReverseString(string str)
-        {
-            var charArray = str.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
-
-        }
 
         ///// <summary>
         ///// Increment file name by 1 only if the current file already exist
         ///// </summary>
-        //internal void TryIncrementFileName()
-        //{
-        //    IncrementFullFilePath = GetIncrementFileName();
-        //}
-
-        ///// <summary>
-        /////  Increment file extension by 1 only if the current file already exist
-        ///// </summary>
-        //internal void TryIncrementFileExtension()
-        //{
-        //    IncrementFullFilePath = GetIncrementExtension();
-        //}
-
-
         public string GetIncrementFileName(string seperator = "")
         {
 
@@ -483,7 +451,9 @@ namespace DotNetHelper_IO
             }
         }
 
-
+        ///// <summary>
+        /////  Increment file extension by 1 only if the current file already exist
+        ///// </summary>
         public string GetIncrementExtension(string seperator = "")
         {
 
@@ -497,12 +467,10 @@ namespace DotNetHelper_IO
                 var temp = $"{FullFilePath}";
                 while (File.Exists(temp))
                 {
-
                     var number = fileVersionNumber + counter;
                     var tempExtension = string.IsNullOrEmpty(fileNameReverse) ? "." : Extension;
                     temp = $"{FilePathOnly}{FileNameOnlyNoExtension}{tempExtension}{seperator}{number}";
                     counter++;
-
                 }
                 return temp;
             }
@@ -531,15 +499,15 @@ namespace DotNetHelper_IO
         }
 
 
-
+        #region  Reading File
 
         /// <summary>
         /// Reads the file to list.
         /// </summary>
         /// <returns>List&lt;System.String&gt;.</returns>
-        public List<string> ReadFileToList(bool throwOnFileNotFound = true)
+        public string[] ReadAllLines()
         {
-            return File.ReadAllLines(FullFilePath).AsList();
+            return File.ReadAllLines(FullFilePath);
         }
 
         /// <summary>
@@ -560,14 +528,51 @@ namespace DotNetHelper_IO
             return sr.ReadToEnd();
         }
 
+        #endregion
+
+        /// <summary>
+        /// Prepares for stream use.  Prevents Exeception From Being Throwned When working with file Streams
+        /// </summary>
+        /// <param name="option">The option.</param>
+        /// <exception cref="ArgumentOutOfRangeException">option - null</exception>
+        internal void PrepareForStreamUse(FileOption option)
+        {
+            switch (option)
+            {
+                case FileOption.Append:
+                    CreateOrTruncate(false);
+                    break;
+                case FileOption.Overwrite:
+                    CreateOrTruncate();
+                    break;
+                case FileOption.DoNothingIfExist:
+                    if (Exist == true)
+                        return;
+                    CreateOrTruncate();
+                    break;
+                case FileOption.IncrementFileNameIfExist:
+                case FileOption.IncrementFileExtensionIfExist:
+
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(option), option, null);
+            }
+        }
+
 
         /// <summary>
         /// Gets the file stream.
         /// </summary>
         /// <param name="mode">The mode.</param>
         /// <param name="access">The access.</param>
+        /// <param name="share"></param>
+        /// <param name="bufferSize"></param>
+        /// <param name="fileOptions"></param>
+        /// <param name="useIncrementFileName"></param>
+        /// <param name="useIncrementExtension"></param>
         /// <returns>FileStream.</returns>
-        private FileStream GetFileStream(FileMode mode, FileAccess access = FileAccess.ReadWrite, bool useIncrementFileName = false, bool useIncrementExtension = false)
+        /// default fileshare is read see https://referencesource.microsoft.com/#mscorlib/system/io/filestream.cs
+        private FileStream GetFileStream(FileMode mode, FileAccess access, FileShare share,int bufferSize = 4096, FileOptions fileOptions = FileOptions.None, bool useIncrementFileName = false, bool useIncrementExtension = false)
         {
             var file = FullFilePath;
             if (useIncrementExtension)
@@ -581,7 +586,7 @@ namespace DotNetHelper_IO
       
             if (Exist)
             {
-                var stream = new FileStream(file, mode, access) { };
+                var stream = new FileStream(file, mode, access,share,bufferSize,fileOptions) { };
                 return stream;
             }
             else
@@ -593,18 +598,37 @@ namespace DotNetHelper_IO
             {
                 CreateOrTruncate();
             }
-            return new FileStream(FullFilePath, mode, access) { };
+            return new FileStream(FullFilePath, mode, access, share,bufferSize,fileOptions) { };
         }
+
+
+        /// <summary>
+        /// Gets the file stream.
+        /// </summary>
+        /// <param name="mode">The mode.</param>
+        /// <param name="access">The access.</param>
+        /// <param name="useIncrementFileName"></param>
+        /// <param name="useIncrementExtension"></param>
+        /// <returns>FileStream.</returns>
+        /// default fileshare is read see https://referencesource.microsoft.com/#mscorlib/system/io/filestream.cs
+        private FileStream GetFileStream(FileMode mode, FileAccess access = FileAccess.ReadWrite, bool useIncrementFileName = false, bool useIncrementExtension = false)
+        {
+            return GetFileStream(mode, access, FileShare.Read, 4096, FileOptions.None, useIncrementFileName, useIncrementExtension);
+        }
+
 
         /// <summary>
         /// Gets the file stream.
         /// </summary>
         /// <param name="option">The option.</param>
+        /// <param name="bufferSize"></param>
+        /// <param name="useAsync"></param>
         /// <returns>FileStream.</returns>
         /// <exception cref="ArgumentOutOfRangeException">option - null</exception>
-        public FileStream GetFileStream(FileOption option)
+        /// <exception cref="FileNotFoundException"></exception>
+        public FileStream GetFileStream(FileOption option, int bufferSize = 4096, bool useAsync = false)
         {
-
+            var fileOptions = useAsync ? (FileOptions.Asynchronous | FileOptions.SequentialScan) : FileOptions.None;
             FileStream stream;
             switch (option)
             {
@@ -612,7 +636,7 @@ namespace DotNetHelper_IO
                     return new FileStream(FullFilePath, FileMode.Open, FileAccess.Read, FileShare.Read) { };
                 case FileOption.Append:
                     PrepareForStreamUse(option);
-                    stream = GetFileStream(FileMode.Append, FileAccess.Write);
+                    stream = GetFileStream(FileMode.Append, FileAccess.Write,FileShare.Read,bufferSize,fileOptions);
                     if (stream.CanSeek)
                     {
                         stream.Seek(0, SeekOrigin.End);
@@ -620,27 +644,27 @@ namespace DotNetHelper_IO
                     return stream;
                 case FileOption.Overwrite:
                     PrepareForStreamUse(option);
-                    stream = GetFileStream(FileMode.Truncate, FileAccess.Write);
+                    stream = GetFileStream(FileMode.Truncate, FileAccess.Write, FileShare.Read, bufferSize, fileOptions);
                     stream.Seek(0, SeekOrigin.Begin);
                     return stream;
                 case FileOption.IncrementFileNameIfExist:
-                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write,true);
+                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write,FileShare.Read,bufferSize,fileOptions,true);
                     stream.Seek(0, SeekOrigin.Begin);
                     return stream;
                 case FileOption.IncrementFileExtensionIfExist:
-                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write, false,true);
+                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write, FileShare.Read, bufferSize, fileOptions, false,true);
                     stream.Seek(0, SeekOrigin.Begin);
                     return stream;
                 case FileOption.DoNothingIfExist: 
-                    if (Exist == true)
+                    if (Exist)
                     {
-                        stream = GetFileStream(FileMode.Open);
+                        stream = GetFileStream(FileMode.Open,FileAccess.ReadWrite, FileShare.Read, bufferSize, fileOptions);
                         stream.Seek(0, SeekOrigin.Begin);
                         return stream;
                     }
                     else
                     {
-                        stream = GetFileStream(FileMode.CreateNew, FileAccess.Write);
+                        stream = GetFileStream(FileMode.CreateNew, FileAccess.Write, FileShare.Read, bufferSize, fileOptions);
                         if (stream.CanSeek)
                         {
                             stream.Seek(0, SeekOrigin.End);
@@ -797,11 +821,10 @@ namespace DotNetHelper_IO
         /// <returns>System.String.</returns>
         public string GetFileSizeDisplay(bool refreshObject = false)
         {
-
-            if (refreshObject) RefreshObject();
+            if (refreshObject)
+                RefreshObject();
             if (FileSize < 1024)
             {
-                if (FileSize == null) return $"File Doesn't Exist";
                 return $"{FileSize}B";
             }
             string[] unit = { "KB", "MB", "GB", "TB", "PB" };
@@ -906,8 +929,56 @@ namespace DotNetHelper_IO
             //   Watcher.EndInit(); Seems to cause problems
         }
 
-      
-       
+
+
+        #region HelperMethods
+
+
+
+        /// <summary>
+        /// Sets the file attribute.
+        /// </summary>
+        /// <param name="option">The option.</param>
+        /// <param name="list">The list.</param>
+        public void SetFileAttribute(AddOrRemoveEnum option, List<FileAttributes> list)
+        {
+            if (Exist != true) return;
+            if (list == null || !list.Any()) return;
+            try
+            {
+                if (option == AddOrRemoveEnum.Add)
+                {
+                    foreach (var attr in list)
+                    {
+                        File.SetAttributes(FullFilePath, File.GetAttributes(FullFilePath) | attr);
+                    }
+
+                }
+                else if (option == AddOrRemoveEnum.Remove)
+                {
+                    foreach (var attr in list)
+                    {
+                        File.SetAttributes(FullFilePath, File.GetAttributes(FullFilePath) & ~attr);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                // ignored because this require the user to have full control permission set and we don't problems over that 
+                // if developer is doing something that require full conrol permission let the application throw the error
+            }
+        }
+
+        private static string ReverseString(string str)
+        {
+            var charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+
+        }
+#endregion
+
 
 
         /// <inheritdoc />
