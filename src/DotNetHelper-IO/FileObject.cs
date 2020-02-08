@@ -176,7 +176,7 @@ namespace DotNetHelper_IO
                     return copyToFullFilePath;
                 case FileOption.Overwrite:
                     Directory.CreateDirectory(Path.GetDirectoryName(copyToFullFilePath));
-                    File.Copy(FullFilePath,copyToFullFilePath,true);
+                    File.Copy(FullFilePath, copyToFullFilePath, true);
                     return copyToFullFilePath;
                 case FileOption.IncrementFileNameIfExist:
                     var incrementedFileName = new FileObject(copyToFullFilePath).GetIncrementFileName();
@@ -204,41 +204,49 @@ namespace DotNetHelper_IO
 
 
 
-/// <summary>
-/// Copy the current file to the destination
-/// </summary>
-/// <param name="copyToFullFilePath"></param>
-/// <param name="option"></param>
-/// <param name="cancellationToken"></param>
-/// <param name="bufferSize"></param>
-/// <returns></returns>
- public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
- {
-     using var sourceStream = GetFileStream(FileOption.ReadOnly, bufferSize, true);
-     using var destinationStream = new FileObject(copyToFullFilePath).GetFileStream(option, bufferSize, true);
-      await sourceStream.CopyToAsync(destinationStream, bufferSize, cancellationToken)
-         .ConfigureAwait(continueOnCapturedContext: false);
-      return copyToFullFilePath;
- }
+        /// <summary>
+        /// Copy the current file to the destination. Returns the destination file name
+        /// </summary>
+        /// <param name="copyToFullFilePath"></param>
+        /// <param name="option"></param>
+        /// <param name="cancellationToken"></param>
+        /// <param name="bufferSize"></param>
+        /// <returns>The copy to file</returns>
+        public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+        {
+            using var sourceStream = GetFileStream(FileOption.ReadOnly, bufferSize, true).fileStream;
+            var fileStreamAndFileName = new FileObject(copyToFullFilePath).GetFileStream(option, bufferSize, true);
+            using (var destinationStream = fileStreamAndFileName.fileStream)
+            {
+                await sourceStream.CopyToAsync(destinationStream, bufferSize, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
+
+            }
+            return fileStreamAndFileName.fullFilePath;
+        }
 
 
-/// <summary>
-/// Copy the current file to the destination with progress
-/// </summary>
-/// <param name="copyToFullFilePath"></param>
-/// <param name="option"></param>
-/// <param name="cancellationToken"></param>
-/// <param name="progress"></param>
-/// <param name="bufferSize"></param>
-/// <returns></returns>
-public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption option, CancellationToken cancellationToken, IProgress<long> progress, int bufferSize = 4096)
-{
-    using var sourceStream = GetFileStream(FileOption.ReadOnly, bufferSize, true);
-    using var destinationStream = new FileObject(copyToFullFilePath).GetFileStream(option, bufferSize, true);
-    await sourceStream.CopyToAsync(destinationStream, progress, cancellationToken, bufferSize)
-        .ConfigureAwait(continueOnCapturedContext: false);
-    return copyToFullFilePath;
-}
+        /// <summary>
+        /// Copy the current file to the destination with progress
+        /// </summary>
+        /// <param name="copyToFullFilePath"></param>
+        /// <param name="option"></param>
+        /// <param name="cancellationToken"></param>
+        /// <param name="progress"></param>
+        /// <param name="bufferSize"></param>
+        /// <returns></returns>
+        public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption option, CancellationToken cancellationToken, IProgress<long> progress, int bufferSize = 4096)
+        {
+            using var sourceStream = GetFileStream(FileOption.ReadOnly, bufferSize, true).fileStream;
+            var fileStreamAndFileName = new FileObject(copyToFullFilePath).GetFileStream(option, bufferSize, true);
+            using (var destinationStream = fileStreamAndFileName.fileStream)
+            {
+                await sourceStream.CopyToAsync(destinationStream, progress, cancellationToken, bufferSize)
+                    .ConfigureAwait(continueOnCapturedContext: false);
+
+            }
+            return fileStreamAndFileName.fullFilePath;
+        }
 
 
 
@@ -252,27 +260,27 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
         public bool MoveTo(string moveToFullFilePath, FileOption option)
         {
             if (moveToFullFilePath == FullFilePath) return true;
-            if (Exist != true) return false; 
+            if (Exist != true) return false;
             if (option == FileOption.Overwrite)
             {
                 File.Move(FullFilePath, moveToFullFilePath); // move the file
                 return true;
             }
             // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-            switch (option) 
+            switch (option)
             {
-                    case FileOption.Append:
-                    case FileOption.IncrementFileNameIfExist:  // Child Record Picks Up name
-                    case FileOption.IncrementFileExtensionIfExist:
-                        CopyTo(moveToFullFilePath, option);
-                        break;
-                    case FileOption.DoNothingIfExist:
-                        if (File.Exists(moveToFullFilePath))
-                            return false;
-                        CopyTo(moveToFullFilePath, option);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(option), option, null);
+                case FileOption.Append:
+                case FileOption.IncrementFileNameIfExist:  // Child Record Picks Up name
+                case FileOption.IncrementFileExtensionIfExist:
+                    CopyTo(moveToFullFilePath, option);
+                    break;
+                case FileOption.DoNothingIfExist:
+                    if (File.Exists(moveToFullFilePath))
+                        return false;
+                    CopyTo(moveToFullFilePath, option);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(option), option, null);
             }
             DeleteFile(e => throw e);
             return true;
@@ -297,18 +305,21 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
                 File.Move(FullFilePath, moveToFullFilePath); // move the file
                 return true;
             }
-            // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
+
             switch (option)
             {
                 case FileOption.Append:
                 case FileOption.IncrementFileNameIfExist:  // Child Record Picks Up name
                 case FileOption.IncrementFileExtensionIfExist:
-                    await CopyToAsync(moveToFullFilePath, option,cancellationToken,bufferSize);
+                    await CopyToAsync(moveToFullFilePath, option, cancellationToken, bufferSize);
                     break;
                 case FileOption.DoNothingIfExist:
                     if (File.Exists(moveToFullFilePath))
                         return false;
-                    await CopyToAsync(moveToFullFilePath, option,cancellationToken,bufferSize);
+                    await CopyToAsync(moveToFullFilePath, option, cancellationToken, bufferSize);
+                    break;
+                case FileOption.Overwrite:
+                case FileOption.ReadOnly:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);
@@ -351,7 +362,7 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
         public async Task<bool> ChangeExtensionAsync(string newExtension, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
         {
             if (newExtension == null) throw new NullReferenceException($"Could not change the extension of file {FullFilePath} Because Developer Provided A Null Value");
-            return await MoveToAsync(Path.ChangeExtension(FullFilePath, newExtension), option,cancellationToken,bufferSize);
+            return await MoveToAsync(Path.ChangeExtension(FullFilePath, newExtension), option, cancellationToken, bufferSize);
         }
 
 
@@ -514,7 +525,7 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
         /// Reads the file.
         /// </summary>
         /// <returns>System.String.</returns>
-        public string ReadFile(bool throwOnFileNotFound = true)
+        public string ReadToString(bool throwOnFileNotFound = true)
         {
             if (Exist != true)
             {
@@ -524,7 +535,7 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
                 }
                 return null;
             }
-            using var sr = new StreamReader(GetFileStream(FileOption.ReadOnly));
+            using var sr = new StreamReader(GetFileStream(FileOption.ReadOnly).fileStream);
             return sr.ReadToEnd();
         }
 
@@ -572,7 +583,7 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
         /// <param name="useIncrementExtension"></param>
         /// <returns>FileStream.</returns>
         /// default fileshare is read see https://referencesource.microsoft.com/#mscorlib/system/io/filestream.cs
-        private FileStream GetFileStream(FileMode mode, FileAccess access, FileShare share,int bufferSize = 4096, FileOptions fileOptions = FileOptions.None, bool useIncrementFileName = false, bool useIncrementExtension = false)
+        private (FileStream fileStream, string fullFilePath) GetFileStream(FileMode mode, FileAccess access, FileShare share, int bufferSize = 4096, FileOptions fileOptions = FileOptions.None, bool useIncrementFileName = false, bool useIncrementExtension = false)
         {
             var file = FullFilePath;
             if (useIncrementExtension)
@@ -581,13 +592,14 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
             }
             else if (useIncrementFileName)
             {
-               file = GetIncrementFileName();
+                file = GetIncrementFileName();
             }
-      
+
+            FileStream stream;
             if (Exist)
             {
-                var stream = new FileStream(file, mode, access,share,bufferSize,fileOptions) { };
-                return stream;
+                stream = new FileStream(file, mode, access, share, bufferSize, fileOptions) { };
+                return (stream, file);
             }
             else
             {
@@ -598,7 +610,8 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
             {
                 CreateOrTruncate();
             }
-            return new FileStream(FullFilePath, mode, access, share,bufferSize,fileOptions) { };
+            stream = new FileStream(FullFilePath, mode, access, share, bufferSize, fileOptions) { };
+            return (stream, file);
         }
 
 
@@ -611,7 +624,7 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
         /// <param name="useIncrementExtension"></param>
         /// <returns>FileStream.</returns>
         /// default fileshare is read see https://referencesource.microsoft.com/#mscorlib/system/io/filestream.cs
-        private FileStream GetFileStream(FileMode mode, FileAccess access = FileAccess.ReadWrite, bool useIncrementFileName = false, bool useIncrementExtension = false)
+        private (FileStream fileStream, string fullFilePath) GetFileStream(FileMode mode, FileAccess access = FileAccess.ReadWrite, bool useIncrementFileName = false, bool useIncrementExtension = false)
         {
             return GetFileStream(mode, access, FileShare.Read, 4096, FileOptions.None, useIncrementFileName, useIncrementExtension);
         }
@@ -626,76 +639,97 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
         /// <returns>FileStream.</returns>
         /// <exception cref="ArgumentOutOfRangeException">option - null</exception>
         /// <exception cref="FileNotFoundException"></exception>
-        public FileStream GetFileStream(FileOption option, int bufferSize = 4096, bool useAsync = false)
+        public (FileStream fileStream, string fullFilePath) GetFileStream(FileOption option, int bufferSize = 4096, bool useAsync = false)
         {
             var fileOptions = useAsync ? (FileOptions.Asynchronous | FileOptions.SequentialScan) : FileOptions.None;
-            FileStream stream;
+            (FileStream fileStream, string fullFilePath) stream;
             switch (option)
             {
                 case FileOption.ReadOnly:
-                    return new FileStream(FullFilePath, FileMode.Open, FileAccess.Read, FileShare.Read) { };
+                    stream = (new FileStream(FullFilePath, FileMode.Open, FileAccess.Read, FileShare.Read) { }, FullFilePath);
+                    break;
                 case FileOption.Append:
                     PrepareForStreamUse(option);
-                    stream = GetFileStream(FileMode.Append, FileAccess.Write,FileShare.Read,bufferSize,fileOptions);
-                    if (stream.CanSeek)
+                    stream = GetFileStream(FileMode.Append, FileAccess.Write, FileShare.Read, bufferSize, fileOptions);
+                    if (stream.fileStream.CanSeek)
                     {
-                        stream.Seek(0, SeekOrigin.End);
+                        stream.fileStream.Seek(0, SeekOrigin.End);
                     }
-                    return stream;
+                    break;
                 case FileOption.Overwrite:
                     PrepareForStreamUse(option);
                     stream = GetFileStream(FileMode.Truncate, FileAccess.Write, FileShare.Read, bufferSize, fileOptions);
-                    stream.Seek(0, SeekOrigin.Begin);
-                    return stream;
+                    stream.fileStream.Seek(0, SeekOrigin.Begin);
+                    break;
                 case FileOption.IncrementFileNameIfExist:
-                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write,FileShare.Read,bufferSize,fileOptions,true);
-                    stream.Seek(0, SeekOrigin.Begin);
-                    return stream;
+                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write, FileShare.Read, bufferSize, fileOptions, true);
+                    stream.fileStream.Seek(0, SeekOrigin.Begin);
+                    break;
                 case FileOption.IncrementFileExtensionIfExist:
-                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write, FileShare.Read, bufferSize, fileOptions, false,true);
-                    stream.Seek(0, SeekOrigin.Begin);
-                    return stream;
-                case FileOption.DoNothingIfExist: 
+                    stream = GetFileStream(FileMode.CreateNew, FileAccess.Write, FileShare.Read, bufferSize, fileOptions, false, true);
+                    stream.fileStream.Seek(0, SeekOrigin.Begin);
+                    break;
+                case FileOption.DoNothingIfExist:
                     if (Exist)
                     {
-                        stream = GetFileStream(FileMode.Open,FileAccess.ReadWrite, FileShare.Read, bufferSize, fileOptions);
-                        stream.Seek(0, SeekOrigin.Begin);
-                        return stream;
+                        stream = GetFileStream(FileMode.Open, FileAccess.ReadWrite, FileShare.Read, bufferSize, fileOptions);
+                        stream.fileStream.Seek(0, SeekOrigin.Begin);
+                        break;
                     }
                     else
                     {
                         stream = GetFileStream(FileMode.CreateNew, FileAccess.Write, FileShare.Read, bufferSize, fileOptions);
-                        if (stream.CanSeek)
+                        if (stream.fileStream.CanSeek)
                         {
-                            stream.Seek(0, SeekOrigin.End);
+                            stream.fileStream.Seek(0, SeekOrigin.End);
                         }
-                        return stream;
+                        break;
                     }
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);
             }
+            return stream;
+
         }
-    
 
 
-#region  WRITING
 
+        #region  WRITING
 
         /// <summary>
-        /// Writes the content to file. This method is thread safe
+        /// Writes the content to file. Returns the full file name content was written to. This method is thread safe
         /// </summary>
         /// <param name="content">The content.</param>
         /// <param name="encoding"></param>
         /// <param name="option">The option.</param>
-        public void WriteContentToFile(string content, Encoding encoding, FileOption option = FileOption.Append)
+        /// <param name="bufferSize"></param>
+        public string Write(string content, FileOption option, Encoding encoding, int bufferSize = 4096)
         {
-            if (option == FileOption.DoNothingIfExist && Exist == true) return;
+            if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
+            var fileStreamAndFileName = GetFileStream(option);
             lock (ThreadSafe)
             {
-                using var stream = GetFileStream(option);
-                using var sw = new StreamWriter(stream, encoding);
+                using var sw = new StreamWriter(fileStreamAndFileName.fileStream, encoding, bufferSize, false);
                 sw.Write(content);
             }
+            return fileStreamAndFileName.fullFilePath;
+        }
+
+
+        /// <summary>
+        /// Writes the content to file. Returns the full file name content was written to. 
+        /// </summary>
+        /// <param name="content">The content.</param>
+        /// <param name="encoding"></param>
+        /// <param name="option">The option.</param>
+        /// <param name="bufferSize"></param>
+        public async Task<string> WriteAsync(string content, FileOption option, Encoding encoding, int bufferSize = 4096)
+        {
+            if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
+            var fileStreamAndFileName = GetFileStream(option);
+            using var sw = new StreamWriter(fileStreamAndFileName.fileStream, encoding, bufferSize, false);
+            await sw.WriteAsync(content);
+            return fileStreamAndFileName.fullFilePath;
         }
 
 
@@ -711,32 +745,32 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
         {
             if (!overwriteIfFileExist && Exist == true) return true;
 
-                if (stream.Length <= 0 && !stream.CanRead)
-                {
-                    Console.WriteLine("Couldn't retrieve the data from stream length was zero and also the stream was not readabale");
-                    return false;
-                }
-                stream.Position = 0;
-                var start = DateTime.Now;
-
-                using var file = new FileStream(FullFilePath, FileMode.Create, FileAccess.Write) { Position = 0 };
-                var buffer = new byte[4 * 1024];
-
-                int read;
-                var max = stream.Length;
-                var currentprogress = 0;
-                while ((read = stream.Read(buffer, 0, buffer.Length)) > 0)
-                {
-                    currentprogress = currentprogress + read;
-                    var realprogress = decimal.Divide(currentprogress, max) * 100;
-                    if (progress != null)
-                        if ((Convert.ToInt32(realprogress) / 2) > 0)
-                            progress.Report((Convert.ToInt32(realprogress)));
-                    await file.WriteAsync(buffer, 0, read, CancellationToken.None);
-                }
-                var elapsedTimeInSeconds = DateTime.Now.Subtract(start).TotalSeconds;
-                return true;
+            if (stream.Length <= 0 && !stream.CanRead)
+            {
+                Console.WriteLine("Couldn't retrieve the data from stream length was zero and also the stream was not readabale");
+                return false;
             }
+            stream.Position = 0;
+            var start = DateTime.Now;
+
+            using var file = new FileStream(FullFilePath, FileMode.Create, FileAccess.Write) { Position = 0 };
+            var buffer = new byte[4 * 1024];
+
+            int read;
+            var max = stream.Length;
+            var currentprogress = 0;
+            while ((read = stream.Read(buffer, 0, buffer.Length)) > 0)
+            {
+                currentprogress = currentprogress + read;
+                var realprogress = decimal.Divide(currentprogress, max) * 100;
+                if (progress != null)
+                    if ((Convert.ToInt32(realprogress) / 2) > 0)
+                        progress.Report((Convert.ToInt32(realprogress)));
+                await file.WriteAsync(buffer, 0, read, CancellationToken.None);
+            }
+            var elapsedTimeInSeconds = DateTime.Now.Subtract(start).TotalSeconds;
+            return true;
+        }
 
         /// <summary>
         /// Writes the stream to file. this method is thread safe
@@ -757,7 +791,7 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
             var start = DateTime.Now;
             lock (ThreadSafe)
             {
-                using var file = GetFileStream(option);
+                using var file = GetFileStream(option).fileStream;
                 var buffer = new byte[4 * 1024];
 
                 int read;
@@ -781,7 +815,7 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
             }
         }
 
-#endregion
+        #endregion
 
         /// <summary>
         /// Gets the file encoding. if can not determine the file Encoding this return ascii by default
@@ -895,24 +929,24 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
         /// <param name="changeTypes">The change types.</param>
         /// <param name="onNewThread">if set to <c>true</c> [on new thread].</param>
         /// <exception cref="Exception"></exception>
-        public void StartWatching(WatcherChangeTypes changeTypes = WatcherChangeTypes.All, bool onNewThread = true, NotifyFilters? filters = null )
+        public void StartWatching(WatcherChangeTypes changeTypes = WatcherChangeTypes.All, bool onNewThread = true, NotifyFilters? filters = null)
         {
             Watcher = new FileSystemWatcher(FilePathOnly, "file");
             Watcher.IncludeSubdirectories = false;
             Watcher.NotifyFilter = filters.GetValueOrDefault(NotifyFilters);
             Watcher.EnableRaisingEvents = true;
-                // Watcher.BeginInit(); Seems to cause problems
-                if (!onNewThread)
+            // Watcher.BeginInit(); Seems to cause problems
+            if (!onNewThread)
+            {
+                Watcher.WaitForChanged(changeTypes, WatchTimeout);
+            }
+            else
+            {
+                Task.Run(delegate
                 {
                     Watcher.WaitForChanged(changeTypes, WatchTimeout);
-                }
-                else
-                {
-                    Task.Run(delegate
-                    {
-                        Watcher.WaitForChanged(changeTypes, WatchTimeout);
-                    }, CancellationToken.None);
-                }
+                }, CancellationToken.None);
+            }
         }
 
         /// <summary>
@@ -977,7 +1011,7 @@ public async Task<string> CopyToAsync(string copyToFullFilePath, FileOption opti
             return new string(charArray);
 
         }
-#endregion
+        #endregion
 
 
 

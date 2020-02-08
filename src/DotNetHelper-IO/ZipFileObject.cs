@@ -31,7 +31,7 @@ namespace DotNetHelper_IO
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public new bool CreateOrTruncate(bool truncate = true)
         {
-        
+
             if (truncate)
             {
                 DeleteFile(e => throw e);
@@ -45,7 +45,7 @@ namespace DotNetHelper_IO
                 Directory.CreateDirectory(FilePathOnly);
             using (var archive = ZipArchive.Create())
             {
-                using var fs = GetFileStream(FileOption.Overwrite);
+                using var fs = GetFileStream(FileOption.Overwrite).fileStream;
                 archive.SaveTo(fs);
             }
             return true;
@@ -224,7 +224,7 @@ namespace DotNetHelper_IO
                                 var temp = new MemoryStream();
                                 matchedEntries.First().OpenEntryStream().CopyTo(temp);
                                 temp.Position = temp.Length;
-                                using (var tempFileStream = o.GetFileStream(FileOption.ReadOnly))
+                                using (var tempFileStream = o.GetFileStream(FileOption.ReadOnly).fileStream)
                                 {
                                     tempFileStream.CopyTo(temp);
                                 }
@@ -271,6 +271,6 @@ namespace DotNetHelper_IO
     }
 
 
-   
+
 
 }

@@ -11,7 +11,7 @@ namespace DotNetHelper.IO.Performance
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-         //   var summary = BenchmarkRunner.Run<Md5VsSha256>();
+            //   var summary = BenchmarkRunner.Run<Md5VsSha256>();
             Console.ReadLine();
         }
     }

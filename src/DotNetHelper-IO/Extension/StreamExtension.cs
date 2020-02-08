@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DotNetHelper_IO.Extension
 {
-    public static class StreamExtensions
+    internal static class StreamExtensions
     {
         public static async Task CopyAndFlushAsync(this Stream source, Stream destination, IProgress<long> progress, CancellationToken cancellationToken = default, int bufferSize = 4096)
         {

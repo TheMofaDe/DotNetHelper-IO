@@ -14,8 +14,8 @@ namespace DotNetHelper.IO.Performance
     [SimpleJob(RuntimeMoniker.NetCoreApp31)]
     public class FileObjectPerformance
     {
-     
-        FileObject TestFile = new FileObject(Path.Combine(Environment.CurrentDirectory,"WriteTest"));
+
+        FileObject TestFile = new FileObject(Path.Combine(Environment.CurrentDirectory, "WriteTest"));
 
         public FileObjectPerformance()
         {

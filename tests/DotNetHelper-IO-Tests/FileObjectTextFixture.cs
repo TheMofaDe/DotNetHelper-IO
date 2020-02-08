@@ -18,87 +18,103 @@ namespace Tests
         public FileObject TestFile { get; }
 
 
+
         public FileObjectTextFixture()
         {
-            TestFolder = new FolderObject(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "UnitTestTempDir");
+            TestFolder = new FolderObject(WorkingDirectory);
             TestFile = new FileObject(TestFolder.FullFolderPath + "UnitTestFile");
         }
 
 
+
         [OneTimeSetUp]
-        public void RunBeforeAnyTests()
+        public void ClassInit()
         {
-            TestFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
-            if (File.Exists(TestFile.FullFilePath))
-                Assert.IsFalse(TestFile.Exist, "Unit Test setup failed due to environment not being clean");
+            // Executes once for the test class. (Optional)
+            BaseFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
         }
 
         [OneTimeTearDown]
-        public void RunAfterAnyTests()
+        public void ClassCleanup()
         {
-            TestFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
+            // Runs once after all tests in this class are executed. (Optional)
+            // Not guaranteed that it executes instantly after all tests from the class.
+            BaseFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
         }
 
-
-
         [SetUp]
-        public void Init()
+        public void TestInit()
         {
-
+            // Runs before each test. (Optional)
         }
 
         [TearDown]
-        public void Cleanup()
+        public void TestCleanup()
         {
+            // Runs after each test. (Optional)
             TestFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
         }
 
 
 
+
+
+
+
+
+
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-        [Test]
-        public void Test_IncrementFileExtension()
+        [Test()]
+        public void Test_Write_And_Read_Hello_To_And_From_File([Values]FileOption fileOption)
         {
-            TestFile.CreateOrTruncate();
-            for (var i = 1; i < 110; i++)
+
+            // Arrange
+            var content = $"Hello";
+            var encoding = Encoding.ASCII;
+            // Act
+            // Assert
+            if (fileOption == FileOption.ReadOnly)
             {
-                TestFile.WriteContentToFile($"{i}", Encoding.UTF8, FileOption.IncrementFileExtensionIfExist);
-                FileShouldExist($"{TestFile.FilePathOnly}{TestFile.FileNameOnlyNoExtension}.{i}");
+                // Writing to file is not allow when requesting read-only option
+                Assert.That(() => { TestFile.Write(content, fileOption, encoding); }, Throws.Exception);
+            }
+            else
+            {
+                Assert.That(() =>
+                {
+                    var file = new FileObject(TestFile.Write(content, fileOption, encoding));
+                    Assert.That(file.ReadToString(), Is.EqualTo(content));
+
+                }, Throws.Nothing);
             }
         }
 
-        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-        [Test]
-        public void Test_IncrementFileName()
-        {
-            TestFile.CreateOrTruncate();
-            for (var i = 1; i < 110; i++)
-            {
-                TestFile.WriteContentToFile($"{i}", Encoding.UTF8, FileOption.IncrementFileNameIfExist);
-                FileShouldExist($"{TestFile.FilePathOnly}{TestFile.FileNameOnlyNoExtension}{i}");
-            }
-        }
 
 
-        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-        [Test]
-        public void Test_WritingToAndReadingFile()
-        {
-            var content = $"A {Environment.NewLine} B!";
-            var newFile = new FileObject($"{TestFolder.FullFolderPath}TestWritingAndReading");
-            newFile.WriteContentToFile(content, Encoding.UTF8, FileOption.Overwrite);
-            var readValue = newFile.ReadFile();
-            Assert.IsTrue(readValue == content, "The content that was written to the file didn't match what was read.");
-        }
+
 
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
         [Test]
         public void Test_MoveFile()
         {
+            // Arrange
+
+            var moveToFile = $"{TestFolder.FullFolderPath}MOVE";
+            TestFile.CreateOrTruncate();
+            TestFile.Write($"this file was original name {TestFile.FullFilePath} and should had been moved to the following location {moveToFile}", FileOption.Overwrite, Encoding.UTF8);
+            TestFile.MoveTo(moveToFile, FileOption.Overwrite);
+            FileShouldExist(moveToFile);
+            FileShouldNotExist(TestFile.FullFilePath);
+        }
+
+
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test]
+        public void Test_Move_EmptyFile()
+        {
 
             var newFile = $"{TestFolder.FullFolderPath}MOVE";
             TestFile.CreateOrTruncate();
-            TestFile.WriteContentToFile($"this file was original name {TestFile.FullFilePath} and should had been moved to the following location {newFile}", Encoding.UTF8);
             TestFile.MoveTo(newFile, FileOption.Overwrite);
             FileShouldExist(newFile);
             FileShouldNotExist(TestFile.FullFilePath);
@@ -113,8 +129,8 @@ namespace Tests
 
             var newFile = $"{TestFolder.FullFolderPath}MOVE";
             TestFile.CreateOrTruncate();
-            TestFile.WriteContentToFile($"this file was original name {TestFile.FullFilePath} and should had been moved to the following location {newFile}", Encoding.UTF8);
-            var result = await TestFile.MoveToAsync(newFile, FileOption.Overwrite,CancellationToken.None);
+            TestFile.Write($"this file was original name {TestFile.FullFilePath} and should had been moved to the following location {newFile}", FileOption.Overwrite, Encoding.UTF8);
+            var result = await TestFile.MoveToAsync(newFile, FileOption.Overwrite, CancellationToken.None);
             FileShouldExist(newFile);
             FileShouldNotExist(TestFile.FullFilePath);
 
@@ -122,13 +138,15 @@ namespace Tests
 
 
 
+
+
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
         [Test]
-        public void  Test_CopyFile()
+        public void Test_CopyFile()
         {
 
             var newFile = $"{TestFolder.FullFolderPath}COPY";
-            TestFile.WriteContentToFile($"This file should have been copied to the following location {newFile}", Encoding.UTF8);
+            TestFile.Write($"This file should have been copied to the following location {newFile}", FileOption.Overwrite, Encoding.UTF8);
             TestFile.CopyTo(newFile, FileOption.Overwrite);
             FileShouldExist(newFile);
         }
@@ -141,7 +159,7 @@ namespace Tests
         {
 
             var newFile = $"{TestFolder.FullFolderPath}COPY";
-            TestFile.WriteContentToFile($"This file should have been copied to the following location {newFile}", Encoding.UTF8); 
+            TestFile.Write($"This file should have been copied to the following location {newFile}", FileOption.Overwrite, Encoding.UTF8);
             await TestFile.CopyToAsync(newFile, FileOption.Overwrite, CancellationToken.None);
             FileShouldExist(newFile);
             FileShouldExist(newFile);
@@ -177,7 +195,7 @@ namespace Tests
         [Test]
         public void Test_Change_Extension_With_File_Having_A_Extension()
         {
-          
+
             var filePath = TestFile.FilePathOnly + "AnotherTest.Gohan";
             using (var file = new FileObject(filePath))
             {
@@ -200,6 +218,11 @@ namespace Tests
         {
             var value = File.Exists(file);
             Assert.IsFalse(value, $"Test failed due to file existing {file}");
+        }
+
+        private bool FileExists(string file)
+        {
+            return File.Exists(file);
         }
 
 

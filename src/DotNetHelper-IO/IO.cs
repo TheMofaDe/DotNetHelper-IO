@@ -96,28 +96,28 @@ namespace DotNetHelper_IO
 
         public static Tuple<bool, Exception> IsValidFolderSyntax(string path)
         {
-          // Exception error;
-          // if (string.IsNullOrEmpty(path) || path.IndexOfAny(Path.GetInvalidPathChars()) != -1)
-          // {
-          //     error = new Exception($"The Following Path {path} Is Not Valid For A Folder");
-          //     return new Tuple<bool, Exception>(false, error);
-          // }
-          //
-          // if (path.Contains(":"))
-          // {
-          //     var driveCheck = new Regex(@"^[a-zA-Z]:\\$");
-          //     if (!driveCheck.IsMatch(path.Substring(0, 3)))
-          //         return new Tuple<bool, Exception>(false,
-          //             new Exception($"The Following Path {path} Is Not Valid For A Folder"));
-          //     var strTheseAreInvalidFileNameChars = new string(Path.GetInvalidPathChars());
-          //     strTheseAreInvalidFileNameChars += @":/?*" + "\"";
-          //     var containsABadCharacter = new Regex("[" + Regex.Escape(strTheseAreInvalidFileNameChars) + "]");
-          //     if (containsABadCharacter.IsMatch(path.Substring(3, path.Length - 3)))
-          //     {
-          //         error = new Exception($"The Following Path {path} Is Not Valid For A Folder");
-          //         return new Tuple<bool, Exception>(false, error);
-          //     }
-          // }
+            // Exception error;
+            // if (string.IsNullOrEmpty(path) || path.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+            // {
+            //     error = new Exception($"The Following Path {path} Is Not Valid For A Folder");
+            //     return new Tuple<bool, Exception>(false, error);
+            // }
+            //
+            // if (path.Contains(":"))
+            // {
+            //     var driveCheck = new Regex(@"^[a-zA-Z]:\\$");
+            //     if (!driveCheck.IsMatch(path.Substring(0, 3)))
+            //         return new Tuple<bool, Exception>(false,
+            //             new Exception($"The Following Path {path} Is Not Valid For A Folder"));
+            //     var strTheseAreInvalidFileNameChars = new string(Path.GetInvalidPathChars());
+            //     strTheseAreInvalidFileNameChars += @":/?*" + "\"";
+            //     var containsABadCharacter = new Regex("[" + Regex.Escape(strTheseAreInvalidFileNameChars) + "]");
+            //     if (containsABadCharacter.IsMatch(path.Substring(3, path.Length - 3)))
+            //     {
+            //         error = new Exception($"The Following Path {path} Is Not Valid For A Folder");
+            //         return new Tuple<bool, Exception>(false, error);
+            //     }
+            // }
 
             return new Tuple<bool, Exception>(true, null);
         }
