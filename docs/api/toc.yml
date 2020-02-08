@@ -2,12 +2,8 @@
 - uid: DotNetHelper_IO
   name: DotNetHelper_IO
   items:
-  - uid: DotNetHelper_IO.CompressedFile
-    name: CompressedFile
   - uid: DotNetHelper_IO.FileObject
     name: FileObject
-  - uid: DotNetHelper_IO.FileObject.SizeUnits
-    name: FileObject.SizeUnits
   - uid: DotNetHelper_IO.FolderObject
     name: FolderObject
   - uid: DotNetHelper_IO.ZipFileObject
@@ -21,3 +17,5 @@
     name: FileOption
   - uid: DotNetHelper_IO.Enum.IOType
     name: IOType
+  - uid: DotNetHelper_IO.Enum.SizeUnits
+    name: SizeUnits

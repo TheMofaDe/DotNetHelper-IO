@@ -23,10 +23,10 @@
 #tool "nuget:?package=Codecov&version=1.9.0"
 #tool "nuget:?package=nuget.commandline&version=5.4.0"
 #tool "nuget:?package=GitVersion.CommandLine&version=5.1.3"
-#tool "nuget:?package=docfx.console&version=2.46.0"
+#tool "nuget:?package=docfx.console&version=2.48.0"
 #tool "nuget:?package=WiX.Toolset.UnofficialFork&version=3.11.1"
 #tool "nuget:?package=OpenCover&version=4.7.922"
-#tool "nuget:?package=ReportGenerator&version=4.3.2"
+#tool "nuget:?package=ReportGenerator&version=4.4.7"
 
 // Install .NET Core Global tools.
 #tool "dotnet:?package=GitReleaseManager.Tool&version=0.10.3"

@@ -62,7 +62,6 @@ items:
     content: 'public class FolderObject : IDisposable'
     content.vb: >-
       Public Class FolderObject
-
           Implements IDisposable
   seealso:
   - linkId: System.IDisposable
@@ -1380,7 +1379,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 699
+    startLine: 695
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO

@@ -13,7 +13,7 @@ namespace DotNetHelper_IO_Tests
     {
 
 
-        public static FolderObject BaseFolder { get; } = new FolderObject($"{Path.Combine(Environment.CurrentDirectory,"UnitTests")}");
+        public static FolderObject BaseFolder { get; } = new FolderObject($"{Path.Combine(Environment.CurrentDirectory, "UnitTests")}");
 
 #if NETCORE31
         public string WorkingDirectory { get; }  = Path.Combine(BaseFolder.FullFolderPath,$"NETCORE_31"); 

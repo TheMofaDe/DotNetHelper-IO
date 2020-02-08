@@ -1,0 +1,343 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Enum.SizeUnits
+  commentId: T:DotNetHelper_IO.Enum.SizeUnits
+  id: SizeUnits
+  parent: DotNetHelper_IO.Enum
+  children:
+  - DotNetHelper_IO.Enum.SizeUnits.Byte
+  - DotNetHelper_IO.Enum.SizeUnits.Eb
+  - DotNetHelper_IO.Enum.SizeUnits.Gb
+  - DotNetHelper_IO.Enum.SizeUnits.Kb
+  - DotNetHelper_IO.Enum.SizeUnits.Mb
+  - DotNetHelper_IO.Enum.SizeUnits.Pb
+  - DotNetHelper_IO.Enum.SizeUnits.Tb
+  - DotNetHelper_IO.Enum.SizeUnits.Yb
+  - DotNetHelper_IO.Enum.SizeUnits.Zb
+  langs:
+  - csharp
+  - vb
+  name: SizeUnits
+  nameWithType: SizeUnits
+  fullName: DotNetHelper_IO.Enum.SizeUnits
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: SizeUnits
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 9
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: public enum SizeUnits
+    content.vb: Public Enum SizeUnits
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper_IO.Enum.SizeUnits.Byte
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Byte
+  id: Byte
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Byte
+  nameWithType: SizeUnits.Byte
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Byte
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Byte
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Byte = 0
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.SizeUnits.Kb
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Kb
+  id: Kb
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Kb
+  nameWithType: SizeUnits.Kb
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Kb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Kb
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Kb = 1
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.SizeUnits.Mb
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Mb
+  id: Mb
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Mb
+  nameWithType: SizeUnits.Mb
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Mb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Mb
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Mb = 2
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.SizeUnits.Gb
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Gb
+  id: Gb
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Gb
+  nameWithType: SizeUnits.Gb
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Gb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Gb
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Gb = 3
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.SizeUnits.Tb
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Tb
+  id: Tb
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Tb
+  nameWithType: SizeUnits.Tb
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Tb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Tb
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Tb = 4
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.SizeUnits.Pb
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Pb
+  id: Pb
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Pb
+  nameWithType: SizeUnits.Pb
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Pb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Pb
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Pb = 5
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.SizeUnits.Eb
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Eb
+  id: Eb
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Eb
+  nameWithType: SizeUnits.Eb
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Eb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Eb
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Eb = 6
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.SizeUnits.Zb
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Zb
+  id: Zb
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Zb
+  nameWithType: SizeUnits.Zb
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Zb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Zb
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Zb = 7
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.SizeUnits.Yb
+  commentId: F:DotNetHelper_IO.Enum.SizeUnits.Yb
+  id: Yb
+  parent: DotNetHelper_IO.Enum.SizeUnits
+  langs:
+  - csharp
+  - vb
+  name: Yb
+  nameWithType: SizeUnits.Yb
+  fullName: DotNetHelper_IO.Enum.SizeUnits.Yb
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/SizeUnit.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Yb
+    path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Yb = 8
+    return:
+      type: DotNetHelper_IO.Enum.SizeUnits
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+- uid: DotNetHelper_IO.Enum.SizeUnits
+  commentId: T:DotNetHelper_IO.Enum.SizeUnits
+  parent: DotNetHelper_IO.Enum
+  name: SizeUnits
+  nameWithType: SizeUnits
+  fullName: DotNetHelper_IO.Enum.SizeUnits

@@ -15,7 +15,7 @@ namespace DotNetHelper_IO_Console
 
             var content = $"PasswordPasswordPasswordPassword";
             var newFile = new FileObject($"{folderObject.FullFolderPath}Encrypt");
-            newFile.Write(content,FileOption.Overwrite,Encoding.ASCII);
+            newFile.Write(content, FileOption.Overwrite, Encoding.ASCII);
             //newFile.EncryptFile(SymmetricProvider.AES, Encoding.UTF8.GetBytes(content));
             //var readValue = newFile.ReadFile();
             //newFile.DecryptFile(SymmetricProvider.AES, Encoding.UTF8.GetBytes(content));

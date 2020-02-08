@@ -7,6 +7,7 @@ items:
   - DotNetHelper_IO.Enum.AddOrRemoveEnum
   - DotNetHelper_IO.Enum.FileOption
   - DotNetHelper_IO.Enum.IOType
+  - DotNetHelper_IO.Enum.SizeUnits
   langs:
   - csharp
   - vb
@@ -35,6 +36,12 @@ references:
   name: IOType
   nameWithType: IOType
   fullName: DotNetHelper_IO.Enum.IOType
+- uid: DotNetHelper_IO.Enum.SizeUnits
+  commentId: T:DotNetHelper_IO.Enum.SizeUnits
+  parent: DotNetHelper_IO.Enum
+  name: SizeUnits
+  nameWithType: SizeUnits
+  fullName: DotNetHelper_IO.Enum.SizeUnits
 - uid: DotNetHelper_IO.Enum
   commentId: N:DotNetHelper_IO.Enum
   name: DotNetHelper_IO.Enum

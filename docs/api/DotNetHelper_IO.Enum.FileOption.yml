@@ -10,6 +10,7 @@ items:
   - DotNetHelper_IO.Enum.FileOption.IncrementFileExtensionIfExist
   - DotNetHelper_IO.Enum.FileOption.IncrementFileNameIfExist
   - DotNetHelper_IO.Enum.FileOption.Overwrite
+  - DotNetHelper_IO.Enum.FileOption.ReadOnly
   langs:
   - csharp
   - vb
@@ -201,6 +202,40 @@ items:
   example: []
   syntax:
     content: IncrementFileExtensionIfExist = 5
+    return:
+      type: DotNetHelper_IO.Enum.FileOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FileOption.ReadOnly
+  commentId: F:DotNetHelper_IO.Enum.FileOption.ReadOnly
+  id: ReadOnly
+  parent: DotNetHelper_IO.Enum.FileOption
+  langs:
+  - csharp
+  - vb
+  name: ReadOnly
+  nameWithType: FileOption.ReadOnly
+  fullName: DotNetHelper_IO.Enum.FileOption.ReadOnly
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: ReadOnly
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 36
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nRead Only Access\n"
+  example: []
+  syntax:
+    content: ReadOnly = 6
     return:
       type: DotNetHelper_IO.Enum.FileOption
   modifiers.csharp:
