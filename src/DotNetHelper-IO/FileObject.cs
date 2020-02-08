@@ -261,12 +261,7 @@ namespace DotNetHelper_IO
         {
             if (moveToFullFilePath == FullFilePath) return true;
             if (Exist != true) return false;
-            if (option == FileOption.Overwrite)
-            {
-                File.Move(FullFilePath, moveToFullFilePath); // move the file
-                return true;
-            }
-            // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
+    
             switch (option)
             {
                 case FileOption.Append:
@@ -278,6 +273,11 @@ namespace DotNetHelper_IO
                     if (File.Exists(moveToFullFilePath))
                         return false;
                     CopyTo(moveToFullFilePath, option);
+                    break;
+                case FileOption.Overwrite: 
+                    File.Move(FullFilePath, moveToFullFilePath); // move the file
+                    return true;
+                case FileOption.ReadOnly:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);
@@ -853,7 +853,7 @@ namespace DotNetHelper_IO
         /// Gets the file size display.
         /// </summary>
         /// <returns>System.String.</returns>
-        public string GetFileSizeDisplay(bool refreshObject = false)
+        public string GetFileSize(bool refreshObject = false)
         {
             if (refreshObject)
                 RefreshObject();
@@ -896,32 +896,7 @@ namespace DotNetHelper_IO
 
 
 
-        protected virtual bool IsFileLocked()
-        {
-            FileStream stream = null;
-
-            try
-            {
-                var file = new FileInfo(FullFilePath);
-                stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None);
-            }
-            catch (IOException)
-            {
-                //the file is unavailable because it is:
-                //still being written to
-                //or being processed by another thread
-                //or does not exist (has already been processed)
-                return true;
-            }
-            finally
-            {
-                stream?.Close();
-            }
-
-            //file is not locked
-            return false;
-        }
-
+      
 
         /// <summary>
         /// Starts the watching.

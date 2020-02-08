@@ -47,6 +47,9 @@ Task("Test")
         }
 		    
      }
-	  //  ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
+
+	 if(parameters.IsLocalBuild){
+	   ReportGenerator(parameters.Paths.Files.TestCoverageOutputFilePath,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
+	  }
 
 });
