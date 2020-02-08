@@ -656,7 +656,6 @@ namespace DotNetHelper_IO
         /// <param name="renamedEventArgs">The <see cref="RenamedEventArgs"/> instance containing the event data.</param>
         private void WatcherOnRenamed(object sender, RenamedEventArgs renamedEventArgs)
         {
-            //     Console.WriteLine($"Directory Renamed. {renamedEventArgs.OldFullPath}--->{renamedEventArgs.FullPath}");
         }
 
         /// <summary>
@@ -667,7 +666,6 @@ namespace DotNetHelper_IO
         private void WatcherOnDeleted(object sender, FileSystemEventArgs fileSystemEventArgs)
         {
             Exist = false;
-            //  Console.WriteLine($"Directory Deleted. {fileSystemEventArgs.FullPath}");
         }
 
         /// <summary>
@@ -678,7 +676,6 @@ namespace DotNetHelper_IO
         private void WatcherOnCreated(object sender, FileSystemEventArgs fileSystemEventArgs)
         {
             Exist = true;
-            //  Console.WriteLine($"Directory Created. {fileSystemEventArgs.FullPath}");
 
         }
 
@@ -689,7 +686,6 @@ namespace DotNetHelper_IO
         /// <param name="fileSystemEventArgs">The <see cref="FileSystemEventArgs"/> instance containing the event data.</param>
         private void WatcherOnChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
         {
-            //  Console.WriteLine($"Directory Changed. {fileSystemEventArgs.FullPath}");
         }
 
 
