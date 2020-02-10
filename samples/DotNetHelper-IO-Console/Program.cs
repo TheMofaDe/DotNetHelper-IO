@@ -38,13 +38,13 @@ namespace DotNetHelper_IO_Console
 
 
             // CREATE OR TRUNCATE A FILE
-            var testFile = new FileObject(Path.Combine(Environment.CurrentDirectory,"File.txt"));
+            var testFile = new FileObject(Path.Combine(Environment.CurrentDirectory, "File.txt"));
 
             // Creates a empty file if it doesn't exist otherwise truncates it paramter set to <c>true</c> [overwrite existing files].
             testFile.CreateOrTruncate(true);
 
 
-            
+
 
 
 

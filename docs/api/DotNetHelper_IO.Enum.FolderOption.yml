@@ -1,0 +1,151 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Enum.FolderOption
+  commentId: T:DotNetHelper_IO.Enum.FolderOption
+  id: FolderOption
+  parent: DotNetHelper_IO.Enum
+  children:
+  - DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
+  - DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
+  - DotNetHelper_IO.Enum.FolderOption.Overwrite
+  langs:
+  - csharp
+  - vb
+  name: FolderOption
+  nameWithType: FolderOption
+  fullName: DotNetHelper_IO.Enum.FolderOption
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: FolderOption
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 13
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nEnum FileOption\n"
+  example: []
+  syntax:
+    content: public enum FolderOption
+    content.vb: Public Enum FolderOption
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
+  id: IncrementFolderNameIfExist
+  parent: DotNetHelper_IO.Enum.FolderOption
+  langs:
+  - csharp
+  - vb
+  name: IncrementFolderNameIfExist
+  nameWithType: FolderOption.IncrementFolderNameIfExist
+  fullName: DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: IncrementFolderNameIfExist
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 16
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: IncrementFolderNameIfExist = 1
+    return:
+      type: DotNetHelper_IO.Enum.FolderOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FolderOption.Overwrite
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.Overwrite
+  id: Overwrite
+  parent: DotNetHelper_IO.Enum.FolderOption
+  langs:
+  - csharp
+  - vb
+  name: Overwrite
+  nameWithType: FolderOption.Overwrite
+  fullName: DotNetHelper_IO.Enum.FolderOption.Overwrite
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Overwrite
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 20
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nThe overwrite\n"
+  example: []
+  syntax:
+    content: Overwrite = 2
+    return:
+      type: DotNetHelper_IO.Enum.FolderOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
+  id: DoNothingIfExist
+  parent: DotNetHelper_IO.Enum.FolderOption
+  langs:
+  - csharp
+  - vb
+  name: DoNothingIfExist
+  nameWithType: FolderOption.DoNothingIfExist
+  fullName: DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: DoNothingIfExist
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 24
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nThe do nothing if exist\n"
+  example: []
+  syntax:
+    content: DoNothingIfExist = 3
+    return:
+      type: DotNetHelper_IO.Enum.FolderOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+- uid: DotNetHelper_IO.Enum.FolderOption
+  commentId: T:DotNetHelper_IO.Enum.FolderOption
+  parent: DotNetHelper_IO.Enum
+  name: FolderOption
+  nameWithType: FolderOption
+  fullName: DotNetHelper_IO.Enum.FolderOption

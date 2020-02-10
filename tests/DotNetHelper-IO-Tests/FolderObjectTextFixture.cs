@@ -18,7 +18,7 @@ namespace Tests
 
         public FolderObjectTextFixture()
         {
-         
+
         }
 
 
@@ -52,7 +52,7 @@ namespace Tests
 
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
         [Test]
-        public void Test_CreateOrTruncate_Should_Create_New_Folder([Values(true,false)] bool truncate)
+        public void Test_CreateOrTruncate_Should_Create_New_Folder([Values(true, false)] bool truncate)
         {
             // Arrange
             var randomFolderName = new Randomizer().String(8, 'A', 'Z');
@@ -63,7 +63,7 @@ namespace Tests
             folder.CreateOrTruncate(truncate);
 
             // Assert
-            Assert.That(Directory.Exists(path),Is.True);
+            Assert.That(Directory.Exists(path), Is.True);
         }
 
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
@@ -71,14 +71,14 @@ namespace Tests
         public void Test_CreateOrTruncateSubFolder_Should_Create_New_SubFolder([Values(true, false)] bool truncate)
         {
             // Arrange
-            var randomFolderName = new Randomizer().String(8,'A','Z');
+            var randomFolderName = new Randomizer().String(8, 'A', 'Z');
             var path = Path.Combine(WorkingDirectory, randomFolderName);
             var folder = new FolderObject(path);
             var subFolderPath = Path.Combine(path, $"Sub1{Path.DirectorySeparatorChar}Sub2{Path.DirectorySeparatorChar}");
             // Act
 
             var subFolder = folder.CreateOrTruncateSubFolder(subFolderPath, truncate);
-            
+
 
             // Assert
             Assert.That(Directory.Exists(subFolderPath), Is.True);
@@ -132,7 +132,7 @@ namespace Tests
             var randomFolderName = new Randomizer().String(8, 'A', 'Z');
             var path = Path.Combine(WorkingDirectory, randomFolderName);
             var folder = new FolderObject(path);
-            folder.CreateOrTruncateSubFolder($"Sub1{Path.DirectorySeparatorChar}Sub2",true);
+            folder.CreateOrTruncateSubFolder($"Sub1{Path.DirectorySeparatorChar}Sub2", true);
 
             // Act
             Directory.CreateDirectory(path);

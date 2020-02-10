@@ -5,14 +5,16 @@ items:
   id: FileObject
   parent: DotNetHelper_IO
   children:
-  - DotNetHelper_IO.FileObject.#ctor(System.String,System.Boolean)
+  - DotNetHelper_IO.FileObject.#ctor(System.IO.FileInfo,System.Text.Encoding)
+  - DotNetHelper_IO.FileObject.#ctor(System.String,System.Text.Encoding)
   - DotNetHelper_IO.FileObject.ChangeExtension(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
   - DotNetHelper_IO.FileObject.ChangeExtensionAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
   - DotNetHelper_IO.FileObject.CopyTo(System.String,DotNetHelper_IO.Enum.FileOption)
   - DotNetHelper_IO.FileObject.CopyToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
   - DotNetHelper_IO.FileObject.CopyToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.IProgress{System.Int64},System.Int32)
   - DotNetHelper_IO.FileObject.CreateOrTruncate(System.Boolean)
-  - DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
+  - DotNetHelper_IO.FileObject.DefaultEncoding
+  - DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
   - DotNetHelper_IO.FileObject.Dispose
   - DotNetHelper_IO.FileObject.Exist
   - DotNetHelper_IO.FileObject.Extension
@@ -29,7 +31,6 @@ items:
   - DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   - DotNetHelper_IO.FileObject.GetIncrementExtension(System.String)
   - DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)
-  - DotNetHelper_IO.FileObject.IncrementFullFilePath
   - DotNetHelper_IO.FileObject.Init(System.Boolean)
   - DotNetHelper_IO.FileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption)
   - DotNetHelper_IO.FileObject.MoveToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
@@ -42,10 +43,14 @@ items:
   - DotNetHelper_IO.FileObject.StopWatching
   - DotNetHelper_IO.FileObject.Watcher
   - DotNetHelper_IO.FileObject.WatchTimeout
+  - DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  - DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  - DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
   - DotNetHelper_IO.FileObject.Write(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
+  - DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+  - DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  - DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
   - DotNetHelper_IO.FileObject.WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
-  - DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  - DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
   langs:
   - csharp
   - vb
@@ -60,7 +65,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileObject
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -94,6 +99,41 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: DotNetHelper_IO.FileObject.DefaultEncoding
+  commentId: P:DotNetHelper_IO.FileObject.DefaultEncoding
+  id: DefaultEncoding
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: DefaultEncoding
+  nameWithType: FileObject.DefaultEncoding
+  fullName: DotNetHelper_IO.FileObject.DefaultEncoding
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: DefaultEncoding
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 25
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public Encoding DefaultEncoding { get; }
+    parameters: []
+    return:
+      type: System.Text.Encoding
+    content.vb: Public ReadOnly Property DefaultEncoding As Encoding
+  overload: DotNetHelper_IO.FileObject.DefaultEncoding*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: DotNetHelper_IO.FileObject.FileInfo
   commentId: P:DotNetHelper_IO.FileObject.FileInfo
   id: FileInfo
@@ -112,7 +152,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileInfo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -147,7 +187,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -185,7 +225,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileNameOnlyNoExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -223,7 +263,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FilePathOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 42
+    startLine: 43
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -261,7 +301,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FullFilePath
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -275,41 +315,6 @@ items:
       description: The full file path.
     content.vb: Public ReadOnly Property FullFilePath As String
   overload: DotNetHelper_IO.FileObject.FullFilePath*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: DotNetHelper_IO.FileObject.IncrementFullFilePath
-  commentId: P:DotNetHelper_IO.FileObject.IncrementFullFilePath
-  id: IncrementFullFilePath
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: IncrementFullFilePath
-  nameWithType: FileObject.IncrementFullFilePath
-  fullName: DotNetHelper_IO.FileObject.IncrementFullFilePath
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: IncrementFullFilePath
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 50
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  syntax:
-    content: public string IncrementFullFilePath { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public ReadOnly Property IncrementFullFilePath As String
-  overload: DotNetHelper_IO.FileObject.IncrementFullFilePath*
   modifiers.csharp:
   - public
   - get
@@ -334,7 +339,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Extension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 52
+    startLine: 51
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -369,7 +374,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FolderNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 57
+    startLine: 56
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -407,7 +412,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 63
+    startLine: 62
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -445,7 +450,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Exist
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 68
+    startLine: 67
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -482,7 +487,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 73
+    startLine: 81
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -520,7 +525,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Watcher
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 78
+    startLine: 86
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -558,7 +563,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 84
+    startLine: 92
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -578,16 +583,16 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FileObject.#ctor(System.String,System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.#ctor(System.String,System.Boolean)
-  id: '#ctor(System.String,System.Boolean)'
+- uid: DotNetHelper_IO.FileObject.#ctor(System.String,System.Text.Encoding)
+  commentId: M:DotNetHelper_IO.FileObject.#ctor(System.String,System.Text.Encoding)
+  id: '#ctor(System.String,System.Text.Encoding)'
   parent: DotNetHelper_IO.FileObject
   langs:
   - csharp
   - vb
-  name: FileObject(String, Boolean)
-  nameWithType: FileObject.FileObject(String, Boolean)
-  fullName: DotNetHelper_IO.FileObject.FileObject(System.String, System.Boolean)
+  name: FileObject(String, Encoding)
+  nameWithType: FileObject.FileObject(String, Encoding)
+  fullName: DotNetHelper_IO.FileObject.FileObject(System.String, System.Text.Encoding)
   type: Constructor
   source:
     remote:
@@ -596,21 +601,61 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 90
+    startLine: 99
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nInitializes a new instance of the <xref href=\"DotNetHelper_IO.FileObject\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
   example: []
   syntax:
-    content: public FileObject(string file, bool throwOnBadFileName = true)
+    content: public FileObject(string file, Encoding defaultEncoding = null)
     parameters:
     - id: file
       type: System.String
       description: The file.
-    - id: throwOnBadFileName
-      type: System.Boolean
-    content.vb: Public Sub New(file As String, throwOnBadFileName As Boolean = True)
+    - id: defaultEncoding
+      type: System.Text.Encoding
+      description: ''
+    content.vb: Public Sub New(file As String, defaultEncoding As Encoding = Nothing)
+  overload: DotNetHelper_IO.FileObject.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.FileObject.#ctor(System.IO.FileInfo,System.Text.Encoding)
+  commentId: M:DotNetHelper_IO.FileObject.#ctor(System.IO.FileInfo,System.Text.Encoding)
+  id: '#ctor(System.IO.FileInfo,System.Text.Encoding)'
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: FileObject(FileInfo, Encoding)
+  nameWithType: FileObject.FileObject(FileInfo, Encoding)
+  fullName: DotNetHelper_IO.FileObject.FileObject(System.IO.FileInfo, System.Text.Encoding)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: .ctor
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 112
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nInitializes a new instance of the <xref href=\"DotNetHelper_IO.FileObject\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public FileObject(FileInfo fileInfo, Encoding defaultEncoding = null)
+    parameters:
+    - id: fileInfo
+      type: System.IO.FileInfo
+      description: ''
+    - id: defaultEncoding
+      type: System.Text.Encoding
+      description: ''
+    content.vb: Public Sub New(fileInfo As FileInfo, defaultEncoding As Encoding = Nothing)
   overload: DotNetHelper_IO.FileObject.#ctor*
   modifiers.csharp:
   - public
@@ -634,7 +679,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Init
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 98
+    startLine: 122
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -667,7 +712,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 114
+    startLine: 138
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -699,7 +744,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 166
+    startLine: 186
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -748,7 +793,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 214
+    startLine: 234
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -796,7 +841,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 237
+    startLine: 257
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -850,7 +895,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: MoveTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 259
+    startLine: 279
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -897,7 +942,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: MoveToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 298
+    startLine: 318
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -950,7 +995,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ChangeExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 344
+    startLine: 364
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1003,7 +1048,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ChangeExtensionAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 361
+    startLine: 381
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1038,16 +1083,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-  id: DeleteFile(System.Action{System.Exception},System.Boolean)
+- uid: DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
+  commentId: M:DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
+  id: DeleteFile(System.Boolean)
   parent: DotNetHelper_IO.FileObject
   langs:
   - csharp
   - vb
-  name: DeleteFile(Action<Exception>, Boolean)
-  nameWithType: FileObject.DeleteFile(Action<Exception>, Boolean)
-  fullName: DotNetHelper_IO.FileObject.DeleteFile(System.Action<System.Exception>, System.Boolean)
+  name: DeleteFile(Boolean)
+  nameWithType: FileObject.DeleteFile(Boolean)
+  fullName: DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
   type: Method
   source:
     remote:
@@ -1056,28 +1101,23 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeleteFile
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 373
+    startLine: 393
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nDeletes the file. If you want an \n"
+  summary: "\nDeletes the file.\n"
   example: []
   syntax:
-    content: public void DeleteFile(Action<Exception> onFailedDeletion, bool disposeObject = false)
+    content: public void DeleteFile(bool disposeObject)
     parameters:
-    - id: onFailedDeletion
-      type: System.Action{System.Exception}
     - id: disposeObject
       type: System.Boolean
-    content.vb: Public Sub DeleteFile(onFailedDeletion As Action(Of Exception), disposeObject As Boolean = False)
+    content.vb: Public Sub DeleteFile(disposeObject As Boolean)
   overload: DotNetHelper_IO.FileObject.DeleteFile*
-  nameWithType.vb: FileObject.DeleteFile(Action(Of Exception), Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper_IO.FileObject.DeleteFile(System.Action(Of System.Exception), System.Boolean)
-  name.vb: DeleteFile(Action(Of Exception), Boolean)
 - uid: DotNetHelper_IO.FileObject.CreateOrTruncate(System.Boolean)
   commentId: M:DotNetHelper_IO.FileObject.CreateOrTruncate(System.Boolean)
   id: CreateOrTruncate(System.Boolean)
@@ -1096,7 +1136,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 403
+    startLine: 414
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1135,7 +1175,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetIncrementFileName
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 424
+    startLine: 432
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1170,7 +1210,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetIncrementExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 467
+    startLine: 475
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1205,7 +1245,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadAllLines
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 518
+    startLine: 526
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1240,7 +1280,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadToString
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 527
+    startLine: 535
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1278,7 +1318,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileStream
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 641
+    startLine: 637
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1329,14 +1369,14 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 705
+    startLine: 701
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nWrites the content to file. Returns the full file name content was written to. This method is thread safe\n"
+  summary: "\nWrites the content to file. Returns the full file name content was written to. This method is not thread safe\n"
   example: []
   syntax:
-    content: public string Write(string content, FileOption option, Encoding encoding, int bufferSize = 4096)
+    content: public string Write(string content, FileOption option = FileOption.Overwrite, Encoding encoding = null, int bufferSize = 4096)
     parameters:
     - id: content
       type: System.String
@@ -1346,18 +1386,162 @@ items:
       description: The option.
     - id: encoding
       type: System.Text.Encoding
-      description: ''
+      description: default to UTF-8
     - id: bufferSize
       type: System.Int32
       description: ''
     return:
       type: System.String
-    content.vb: Public Function Write(content As String, option As FileOption, encoding As Encoding, bufferSize As Integer = 4096) As String
+    content.vb: Public Function Write(content As String, option As FileOption = FileOption.Overwrite, encoding As Encoding = Nothing, bufferSize As Integer = 4096) As String
   overload: DotNetHelper_IO.FileObject.Write*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
+- uid: DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  id: Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: Write(Byte[], FileOption, Int32, Nullable<Int32>)
+  nameWithType: FileObject.Write(Byte[], FileOption, Int32, Nullable<Int32>)
+  fullName: DotNetHelper_IO.FileObject.Write(System.Byte[], DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable<System.Int32>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Write
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 717
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nWrites the bytes to file. Returns the full file name content was written to. This method is not thread safe\n"
+  example: []
+  syntax:
+    content: public string Write(byte[] bytes, FileOption option = FileOption.Overwrite, int offset = 0, int? count = default(int? ))
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+      description: The bytes.
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+      description: The option.
+    - id: offset
+      type: System.Int32
+      description: ''
+    - id: count
+      type: System.Nullable{System.Int32}
+      description: ''
+    return:
+      type: System.String
+    content.vb: Public Function Write(bytes As Byte(), option As FileOption = FileOption.Overwrite, offset As Integer = 0, count As Integer? = Nothing) As String
+  overload: DotNetHelper_IO.FileObject.Write*
+  nameWithType.vb: FileObject.Write(Byte(), FileOption, Int32, Nullable(Of Int32))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper_IO.FileObject.Write(System.Byte(), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable(Of System.Int32))
+  name.vb: Write(Byte(), FileOption, Int32, Nullable(Of Int32))
+- uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  id: Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: Write(Stream, FileOption, Int32)
+  nameWithType: FileObject.Write(Stream, FileOption, Int32)
+  fullName: DotNetHelper_IO.FileObject.Write(System.IO.Stream, DotNetHelper_IO.Enum.FileOption, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Write
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 735
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nWrites the content to file. Returns the full file name content was written to. This method is not thread safe\n"
+  example: []
+  syntax:
+    content: public string Write(Stream stream, FileOption option = FileOption.Overwrite, int bufferSize = 4096)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: ''
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+      description: The option.
+    - id: bufferSize
+      type: System.Int32
+      description: ''
+    return:
+      type: System.String
+    content.vb: Public Function Write(stream As Stream, option As FileOption = FileOption.Overwrite, bufferSize As Integer = 4096) As String
+  overload: DotNetHelper_IO.FileObject.Write*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+  id: Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: Write(Stream, IProgress<Int64>, FileOption, Int32)
+  nameWithType: FileObject.Write(Stream, IProgress<Int64>, FileOption, Int32)
+  fullName: DotNetHelper_IO.FileObject.Write(System.IO.Stream, System.IProgress<System.Int64>, DotNetHelper_IO.Enum.FileOption, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: Write
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 751
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nWrites the content to file. Returns the full file name content was written to. This method is not thread safe\n"
+  example: []
+  syntax:
+    content: public string Write(Stream stream, IProgress<long> progress, FileOption option = FileOption.Overwrite, int bufferSize = 4096)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: ''
+    - id: progress
+      type: System.IProgress{System.Int64}
+      description: 'Report progress in stream bytes not percentages. '
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+      description: The option.
+    - id: bufferSize
+      type: System.Int32
+      description: ''
+    return:
+      type: System.String
+    content.vb: Public Function Write(stream As Stream, progress As IProgress(Of Long), option As FileOption = FileOption.Overwrite, bufferSize As Integer = 4096) As String
+  overload: DotNetHelper_IO.FileObject.Write*
+  nameWithType.vb: FileObject.Write(Stream, IProgress(Of Int64), FileOption, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper_IO.FileObject.Write(System.IO.Stream, System.IProgress(Of System.Int64), DotNetHelper_IO.Enum.FileOption, System.Int32)
+  name.vb: Write(Stream, IProgress(Of Int64), FileOption, Int32)
 - uid: DotNetHelper_IO.FileObject.WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
   commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
   id: WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
@@ -1376,7 +1560,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 725
+    startLine: 769
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1405,102 +1589,159 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-  id: WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+  id: WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
   parent: DotNetHelper_IO.FileObject
   langs:
   - csharp
   - vb
-  name: WriteStreamToFileAsync(Stream, IProgress<Double>, Boolean)
-  nameWithType: FileObject.WriteStreamToFileAsync(Stream, IProgress<Double>, Boolean)
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream, System.IProgress<System.Double>, System.Boolean)
+  name: WriteAsync(Byte[], FileOption, Int32, Nullable<Int32>, CancellationToken)
+  nameWithType: FileObject.WriteAsync(Byte[], FileOption, Int32, Nullable<Int32>, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.Byte[], DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable<System.Int32>, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: WriteStreamToFileAsync
+    id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 743
+    startLine: 787
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nwrite stream to file as an asynchronous operation. this method is not thread safe\n"
+  summary: "\nWrites the bytes to file. Returns the full file name content was written to. This method is not thread safe\n"
   example: []
   syntax:
-    content: public Task<bool> WriteStreamToFileAsync(Stream stream, IProgress<double> progress = null, bool overwriteIfFileExist = true)
+    content: public Task<string> WriteAsync(byte[] bytes, FileOption option = FileOption.Overwrite, int offset = 0, int? count = default(int? ), CancellationToken cancellationToken = default(CancellationToken))
     parameters:
-    - id: stream
-      type: System.IO.Stream
-      description: The stream.
-    - id: progress
-      type: System.IProgress{System.Double}
-      description: The progress.
-    - id: overwriteIfFileExist
-      type: System.Boolean
-      description: if set to <code>true</code> [overwrite if file exist].
-    return:
-      type: System.Threading.Tasks.Task{System.Boolean}
-      description: Task&lt;System.Boolean>.
-    content.vb: Public Function WriteStreamToFileAsync(stream As Stream, progress As IProgress(Of Double) = Nothing, overwriteIfFileExist As Boolean = True) As Task(Of Boolean)
-  overload: DotNetHelper_IO.FileObject.WriteStreamToFileAsync*
-  nameWithType.vb: FileObject.WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream, System.IProgress(Of System.Double), System.Boolean)
-  name.vb: WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  commentId: M:DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  id: WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: WriteStreamToFile(Stream, IProgress<Double>, FileOption)
-  nameWithType: FileObject.WriteStreamToFile(Stream, IProgress<Double>, FileOption)
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream, System.IProgress<System.Double>, DotNetHelper_IO.Enum.FileOption)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: WriteStreamToFile
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 781
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nWrites the stream to file. this method is thread safe\n"
-  example: []
-  syntax:
-    content: public bool WriteStreamToFile(Stream stream, IProgress<double> progress = null, FileOption option = FileOption.Overwrite)
-    parameters:
-    - id: stream
-      type: System.IO.Stream
-      description: The stream.
-    - id: progress
-      type: System.IProgress{System.Double}
-      description: The progress.
+    - id: bytes
+      type: System.Byte[]
+      description: The bytes.
     - id: option
       type: DotNetHelper_IO.Enum.FileOption
+      description: The option.
+    - id: offset
+      type: System.Int32
+      description: ''
+    - id: count
+      type: System.Nullable{System.Int32}
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
       description: ''
     return:
-      type: System.Boolean
-      description: <code>true</code> if XXXX, <code>false</code> otherwise.
-    content.vb: Public Function WriteStreamToFile(stream As Stream, progress As IProgress(Of Double) = Nothing, option As FileOption = FileOption.Overwrite) As Boolean
-  overload: DotNetHelper_IO.FileObject.WriteStreamToFile*
-  nameWithType.vb: FileObject.WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Public Function WriteAsync(bytes As Byte(), option As FileOption = FileOption.Overwrite, offset As Integer = 0, count As Integer? = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of String)
+  overload: DotNetHelper_IO.FileObject.WriteAsync*
+  nameWithType.vb: FileObject.WriteAsync(Byte(), FileOption, Int32, Nullable(Of Int32), CancellationToken)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream, System.IProgress(Of System.Double), DotNetHelper_IO.Enum.FileOption)
-  name.vb: WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
+  fullName.vb: DotNetHelper_IO.FileObject.WriteAsync(System.Byte(), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable(Of System.Int32), System.Threading.CancellationToken)
+  name.vb: WriteAsync(Byte(), FileOption, Int32, Nullable(Of Int32), CancellationToken)
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  id: WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync(Stream, FileOption, Int32, CancellationToken)
+  nameWithType: FileObject.WriteAsync(Stream, FileOption, Int32, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: WriteAsync
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 806
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nWrites the content to file. Returns the full file name content was written to. This method is not thread safe\n"
+  example: []
+  syntax:
+    content: public Task<string> WriteAsync(Stream stream, FileOption option = FileOption.Overwrite, int bufferSize = 4096, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: ''
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+      description: The option.
+    - id: bufferSize
+      type: System.Int32
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Public Function WriteAsync(stream As Stream, option As FileOption = FileOption.Overwrite, bufferSize As Integer = 4096, cancellationToken As CancellationToken = Nothing) As Task(Of String)
+  overload: DotNetHelper_IO.FileObject.WriteAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  id: WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync(Stream, IProgress<Int64>, FileOption, Int32, CancellationToken)
+  nameWithType: FileObject.WriteAsync(Stream, IProgress<Int64>, FileOption, Int32, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, System.IProgress<System.Int64>, DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+    id: WriteAsync
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 824
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nWrites the content to file. Returns the full file name content was written to. This method is not thread safe\n"
+  example: []
+  syntax:
+    content: public Task<string> WriteAsync(Stream stream, IProgress<long> progress, FileOption option = FileOption.Overwrite, int bufferSize = 4096, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: ''
+    - id: progress
+      type: System.IProgress{System.Int64}
+      description: ''
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+      description: The option.
+    - id: bufferSize
+      type: System.Int32
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Public Function WriteAsync(stream As Stream, progress As IProgress(Of Long), option As FileOption = FileOption.Overwrite, bufferSize As Integer = 4096, cancellationToken As CancellationToken = Nothing) As Task(Of String)
+  overload: DotNetHelper_IO.FileObject.WriteAsync*
+  nameWithType.vb: FileObject.WriteAsync(Stream, IProgress(Of Int64), FileOption, Int32, CancellationToken)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, System.IProgress(Of System.Int64), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  name.vb: WriteAsync(Stream, IProgress(Of Int64), FileOption, Int32, CancellationToken)
 - uid: DotNetHelper_IO.FileObject.GetFileEncoding
   commentId: M:DotNetHelper_IO.FileObject.GetFileEncoding
   id: GetFileEncoding
@@ -1519,7 +1760,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 823
+    startLine: 842
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1554,7 +1795,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 855
+    startLine: 868
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1592,7 +1833,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 885
+    startLine: 898
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1632,7 +1873,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StartWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 906
+    startLine: 927
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1679,7 +1920,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StopWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 929
+    startLine: 952
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1711,7 +1952,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 951
+    startLine: 974
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1753,7 +1994,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 996
+    startLine: 1019
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2074,6 +2315,24 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DotNetHelper_IO.FileObject.DefaultEncoding*
+  commentId: Overload:DotNetHelper_IO.FileObject.DefaultEncoding
+  name: DefaultEncoding
+  nameWithType: FileObject.DefaultEncoding
+  fullName: DotNetHelper_IO.FileObject.DefaultEncoding
+- uid: System.Text.Encoding
+  commentId: T:System.Text.Encoding
+  parent: System.Text
+  isExternal: true
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
 - uid: DotNetHelper_IO.FileObject.FileInfo*
   commentId: Overload:DotNetHelper_IO.FileObject.FileInfo
   name: FileInfo
@@ -2119,11 +2378,6 @@ references:
   name: FullFilePath
   nameWithType: FileObject.FullFilePath
   fullName: DotNetHelper_IO.FileObject.FullFilePath
-- uid: DotNetHelper_IO.FileObject.IncrementFullFilePath*
-  commentId: Overload:DotNetHelper_IO.FileObject.IncrementFullFilePath
-  name: IncrementFullFilePath
-  nameWithType: FileObject.IncrementFullFilePath
-  fullName: DotNetHelper_IO.FileObject.IncrementFullFilePath
 - uid: DotNetHelper_IO.FileObject.Extension*
   commentId: Overload:DotNetHelper_IO.FileObject.Extension
   name: Extension
@@ -2622,89 +2876,6 @@ references:
   name: DeleteFile
   nameWithType: FileObject.DeleteFile
   fullName: DotNetHelper_IO.FileObject.DeleteFile
-- uid: System.Action{System.Exception}
-  commentId: T:System.Action{System.Exception}
-  parent: System
-  definition: System.Action`1
-  name: Action<Exception>
-  nameWithType: Action<Exception>
-  fullName: System.Action<System.Exception>
-  nameWithType.vb: Action(Of Exception)
-  fullName.vb: System.Action(Of System.Exception)
-  name.vb: Action(Of Exception)
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    nameWithType: Action
-    fullName: System.Action
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Exception
-    name: Exception
-    nameWithType: Exception
-    fullName: System.Exception
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    nameWithType: Action
-    fullName: System.Action
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Exception
-    name: Exception
-    nameWithType: Exception
-    fullName: System.Exception
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Action`1
-  commentId: T:System.Action`1
-  isExternal: true
-  name: Action<T>
-  nameWithType: Action<T>
-  fullName: System.Action<T>
-  nameWithType.vb: Action(Of T)
-  fullName.vb: System.Action(Of T)
-  name.vb: Action(Of T)
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    nameWithType: Action
-    fullName: System.Action
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    nameWithType: Action
-    fullName: System.Action
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.CreateOrTruncate*
   commentId: Overload:DotNetHelper_IO.FileObject.CreateOrTruncate
   name: CreateOrTruncate
@@ -2829,29 +3000,76 @@ references:
   name: Write
   nameWithType: FileObject.Write
   fullName: DotNetHelper_IO.FileObject.Write
-- uid: System.Text.Encoding
-  commentId: T:System.Text.Encoding
-  parent: System.Text
+- uid: System.Byte[]
   isExternal: true
-  name: Encoding
-  nameWithType: Encoding
-  fullName: System.Text.Encoding
-- uid: System.Text
-  commentId: N:System.Text
-  isExternal: true
-  name: System.Text
-  nameWithType: System.Text
-  fullName: System.Text
-- uid: DotNetHelper_IO.FileObject.WriteAsync*
-  commentId: Overload:DotNetHelper_IO.FileObject.WriteAsync
-  name: WriteAsync
-  nameWithType: FileObject.WriteAsync
-  fullName: DotNetHelper_IO.FileObject.WriteAsync
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync*
-  commentId: Overload:DotNetHelper_IO.FileObject.WriteStreamToFileAsync
-  name: WriteStreamToFileAsync
-  nameWithType: FileObject.WriteStreamToFileAsync
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFileAsync
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
+  fullName: System.Nullable<System.Int32>
+  nameWithType.vb: Nullable(Of Int32)
+  fullName.vb: System.Nullable(Of System.Int32)
+  name.vb: Nullable(Of Int32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.IO.Stream
   commentId: T:System.IO.Stream
   parent: System.IO
@@ -2859,11 +3077,11 @@ references:
   name: Stream
   nameWithType: Stream
   fullName: System.IO.Stream
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFile*
-  commentId: Overload:DotNetHelper_IO.FileObject.WriteStreamToFile
-  name: WriteStreamToFile
-  nameWithType: FileObject.WriteStreamToFile
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFile
+- uid: DotNetHelper_IO.FileObject.WriteAsync*
+  commentId: Overload:DotNetHelper_IO.FileObject.WriteAsync
+  name: WriteAsync
+  nameWithType: FileObject.WriteAsync
+  fullName: DotNetHelper_IO.FileObject.WriteAsync
 - uid: DotNetHelper_IO.FileObject.GetFileEncoding*
   commentId: Overload:DotNetHelper_IO.FileObject.GetFileEncoding
   name: GetFileEncoding

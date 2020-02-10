@@ -21,7 +21,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: AddOrRemoveEnum
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 42
+    startLine: 64
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Add
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 47
+    startLine: 69
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -88,7 +88,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Remove
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 51
+    startLine: 73
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum

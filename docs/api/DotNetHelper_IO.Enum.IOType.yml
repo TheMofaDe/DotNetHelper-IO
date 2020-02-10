@@ -22,7 +22,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IOType
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 54
+    startLine: 76
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -53,7 +53,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: File
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 56
+    startLine: 78
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Folder
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 57
+    startLine: 79
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -117,7 +117,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Both
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 58
+    startLine: 80
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum

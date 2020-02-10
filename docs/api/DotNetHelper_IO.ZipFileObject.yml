@@ -42,12 +42,12 @@ items:
   implements:
   - System.IDisposable
   inheritedMembers:
+  - DotNetHelper_IO.FileObject.DefaultEncoding
   - DotNetHelper_IO.FileObject.FileInfo
   - DotNetHelper_IO.FileObject.FileNameOnly
   - DotNetHelper_IO.FileObject.FileNameOnlyNoExtension
   - DotNetHelper_IO.FileObject.FilePathOnly
   - DotNetHelper_IO.FileObject.FullFilePath
-  - DotNetHelper_IO.FileObject.IncrementFullFilePath
   - DotNetHelper_IO.FileObject.Extension
   - DotNetHelper_IO.FileObject.FolderNameOnly
   - DotNetHelper_IO.FileObject.FileSize
@@ -64,16 +64,20 @@ items:
   - DotNetHelper_IO.FileObject.MoveToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
   - DotNetHelper_IO.FileObject.ChangeExtension(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})
   - DotNetHelper_IO.FileObject.ChangeExtensionAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
-  - DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
+  - DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
   - DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)
   - DotNetHelper_IO.FileObject.GetIncrementExtension(System.String)
   - DotNetHelper_IO.FileObject.ReadAllLines
   - DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
   - DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   - DotNetHelper_IO.FileObject.Write(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
+  - DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  - DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  - DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
   - DotNetHelper_IO.FileObject.WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
-  - DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-  - DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
+  - DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+  - DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  - DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
   - DotNetHelper_IO.FileObject.GetFileEncoding
   - DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
   - DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
@@ -377,6 +381,12 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
+- uid: DotNetHelper_IO.FileObject.DefaultEncoding
+  commentId: P:DotNetHelper_IO.FileObject.DefaultEncoding
+  parent: DotNetHelper_IO.FileObject
+  name: DefaultEncoding
+  nameWithType: FileObject.DefaultEncoding
+  fullName: DotNetHelper_IO.FileObject.DefaultEncoding
 - uid: DotNetHelper_IO.FileObject.FileInfo
   commentId: P:DotNetHelper_IO.FileObject.FileInfo
   parent: DotNetHelper_IO.FileObject
@@ -407,12 +417,6 @@ references:
   name: FullFilePath
   nameWithType: FileObject.FullFilePath
   fullName: DotNetHelper_IO.FileObject.FullFilePath
-- uid: DotNetHelper_IO.FileObject.IncrementFullFilePath
-  commentId: P:DotNetHelper_IO.FileObject.IncrementFullFilePath
-  parent: DotNetHelper_IO.FileObject
-  name: IncrementFullFilePath
-  nameWithType: FileObject.IncrementFullFilePath
-  fullName: DotNetHelper_IO.FileObject.IncrementFullFilePath
 - uid: DotNetHelper_IO.FileObject.Extension
   commentId: P:DotNetHelper_IO.FileObject.Extension
   parent: DotNetHelper_IO.FileObject
@@ -1103,43 +1107,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
+- uid: DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
+  commentId: M:DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
   parent: DotNetHelper_IO.FileObject
   isExternal: true
-  name: DeleteFile(Action<Exception>, Boolean)
-  nameWithType: FileObject.DeleteFile(Action<Exception>, Boolean)
-  fullName: DotNetHelper_IO.FileObject.DeleteFile(System.Action<System.Exception>, System.Boolean)
-  nameWithType.vb: FileObject.DeleteFile(Action(Of Exception), Boolean)
-  fullName.vb: DotNetHelper_IO.FileObject.DeleteFile(System.Action(Of System.Exception), System.Boolean)
-  name.vb: DeleteFile(Action(Of Exception), Boolean)
+  name: DeleteFile(Boolean)
+  nameWithType: FileObject.DeleteFile(Boolean)
+  fullName: DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
   spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
+  - uid: DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
     name: DeleteFile
     nameWithType: FileObject.DeleteFile
     fullName: DotNetHelper_IO.FileObject.DeleteFile
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Action`1
-    name: Action
-    nameWithType: Action
-    fullName: System.Action
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Exception
-    name: Exception
-    nameWithType: Exception
-    fullName: System.Exception
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
   - uid: System.Boolean
     name: Boolean
     nameWithType: Boolean
@@ -1149,32 +1131,13 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
+  - uid: DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
     name: DeleteFile
     nameWithType: FileObject.DeleteFile
     fullName: DotNetHelper_IO.FileObject.DeleteFile
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Action`1
-    name: Action
-    nameWithType: Action
-    fullName: System.Action
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Exception
-    name: Exception
-    nameWithType: Exception
-    fullName: System.Exception
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
   - uid: System.Boolean
     name: Boolean
     nameWithType: Boolean
@@ -1482,6 +1445,301 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: Write(Byte[], FileOption, Int32, Nullable<Int32>)
+  nameWithType: FileObject.Write(Byte[], FileOption, Int32, Nullable<Int32>)
+  fullName: DotNetHelper_IO.FileObject.Write(System.Byte[], DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable<System.Int32>)
+  nameWithType.vb: FileObject.Write(Byte(), FileOption, Int32, Nullable(Of Int32))
+  fullName.vb: DotNetHelper_IO.FileObject.Write(System.Byte(), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable(Of System.Int32))
+  name.vb: Write(Byte(), FileOption, Int32, Nullable(Of Int32))
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+    name: Write
+    nameWithType: FileObject.Write
+    fullName: DotNetHelper_IO.FileObject.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+    name: Write
+    nameWithType: FileObject.Write
+    fullName: DotNetHelper_IO.FileObject.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: Write(Stream, FileOption, Int32)
+  nameWithType: FileObject.Write(Stream, FileOption, Int32)
+  fullName: DotNetHelper_IO.FileObject.Write(System.IO.Stream, DotNetHelper_IO.Enum.FileOption, System.Int32)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+    name: Write
+    nameWithType: FileObject.Write
+    fullName: DotNetHelper_IO.FileObject.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+    name: Write
+    nameWithType: FileObject.Write
+    fullName: DotNetHelper_IO.FileObject.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: Write(Stream, IProgress<Int64>, FileOption, Int32)
+  nameWithType: FileObject.Write(Stream, IProgress<Int64>, FileOption, Int32)
+  fullName: DotNetHelper_IO.FileObject.Write(System.IO.Stream, System.IProgress<System.Int64>, DotNetHelper_IO.Enum.FileOption, System.Int32)
+  nameWithType.vb: FileObject.Write(Stream, IProgress(Of Int64), FileOption, Int32)
+  fullName.vb: DotNetHelper_IO.FileObject.Write(System.IO.Stream, System.IProgress(Of System.Int64), DotNetHelper_IO.Enum.FileOption, System.Int32)
+  name.vb: Write(Stream, IProgress(Of Int64), FileOption, Int32)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+    name: Write
+    nameWithType: FileObject.Write
+    fullName: DotNetHelper_IO.FileObject.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IProgress`1
+    name: IProgress
+    nameWithType: IProgress
+    fullName: System.IProgress
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+    name: Write
+    nameWithType: FileObject.Write
+    fullName: DotNetHelper_IO.FileObject.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IProgress`1
+    name: IProgress
+    nameWithType: IProgress
+    fullName: System.IProgress
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: DotNetHelper_IO.FileObject.WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
   commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
   parent: DotNetHelper_IO.FileObject
@@ -1567,21 +1825,238 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
   parent: DotNetHelper_IO.FileObject
   isExternal: true
-  name: WriteStreamToFileAsync(Stream, IProgress<Double>, Boolean)
-  nameWithType: FileObject.WriteStreamToFileAsync(Stream, IProgress<Double>, Boolean)
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream, System.IProgress<System.Double>, System.Boolean)
-  nameWithType.vb: FileObject.WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
-  fullName.vb: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream, System.IProgress(Of System.Double), System.Boolean)
-  name.vb: WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
+  name: WriteAsync(Byte[], FileOption, Int32, Nullable<Int32>, CancellationToken)
+  nameWithType: FileObject.WriteAsync(Byte[], FileOption, Int32, Nullable<Int32>, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.Byte[], DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable<System.Int32>, System.Threading.CancellationToken)
+  nameWithType.vb: FileObject.WriteAsync(Byte(), FileOption, Int32, Nullable(Of Int32), CancellationToken)
+  fullName.vb: DotNetHelper_IO.FileObject.WriteAsync(System.Byte(), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable(Of System.Int32), System.Threading.CancellationToken)
+  name.vb: WriteAsync(Byte(), FileOption, Int32, Nullable(Of Int32), CancellationToken)
   spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-    name: WriteStreamToFileAsync
-    nameWithType: FileObject.WriteStreamToFileAsync
-    fullName: DotNetHelper_IO.FileObject.WriteStreamToFileAsync
+  - uid: DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+    name: WriteAsync
+    nameWithType: FileObject.WriteAsync
+    fullName: DotNetHelper_IO.FileObject.WriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+    name: WriteAsync
+    nameWithType: FileObject.WriteAsync
+    fullName: DotNetHelper_IO.FileObject.WriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: WriteAsync(Stream, FileOption, Int32, CancellationToken)
+  nameWithType: FileObject.WriteAsync(Stream, FileOption, Int32, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+    name: WriteAsync
+    nameWithType: FileObject.WriteAsync
+    fullName: DotNetHelper_IO.FileObject.WriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+    name: WriteAsync
+    nameWithType: FileObject.WriteAsync
+    fullName: DotNetHelper_IO.FileObject.WriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: WriteAsync(Stream, IProgress<Int64>, FileOption, Int32, CancellationToken)
+  nameWithType: FileObject.WriteAsync(Stream, IProgress<Int64>, FileOption, Int32, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, System.IProgress<System.Int64>, DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  nameWithType.vb: FileObject.WriteAsync(Stream, IProgress(Of Int64), FileOption, Int32, CancellationToken)
+  fullName.vb: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, System.IProgress(Of System.Int64), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  name.vb: WriteAsync(Stream, IProgress(Of Int64), FileOption, Int32, CancellationToken)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+    name: WriteAsync
+    nameWithType: FileObject.WriteAsync
+    fullName: DotNetHelper_IO.FileObject.WriteAsync
   - name: (
     nameWithType: (
     fullName: (
@@ -1601,10 +2076,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1612,19 +2087,34 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
+  - uid: DotNetHelper_IO.Enum.FileOption
+    name: FileOption
+    nameWithType: FileOption
+    fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-    name: WriteStreamToFileAsync
-    nameWithType: FileObject.WriteStreamToFileAsync
-    fullName: DotNetHelper_IO.FileObject.WriteStreamToFileAsync
+  - uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+    name: WriteAsync
+    nameWithType: FileObject.WriteAsync
+    fullName: DotNetHelper_IO.FileObject.WriteAsync
   - name: (
     nameWithType: (
     fullName: (
@@ -1644,105 +2134,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  commentId: M:DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  parent: DotNetHelper_IO.FileObject
-  isExternal: true
-  name: WriteStreamToFile(Stream, IProgress<Double>, FileOption)
-  nameWithType: FileObject.WriteStreamToFile(Stream, IProgress<Double>, FileOption)
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream, System.IProgress<System.Double>, DotNetHelper_IO.Enum.FileOption)
-  nameWithType.vb: FileObject.WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
-  fullName.vb: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream, System.IProgress(Of System.Double), DotNetHelper_IO.Enum.FileOption)
-  name.vb: WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
-  spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-    name: WriteStreamToFile
-    nameWithType: FileObject.WriteStreamToFile
-    fullName: DotNetHelper_IO.FileObject.WriteStreamToFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.IO.Stream
-    name: Stream
-    nameWithType: Stream
-    fullName: System.IO.Stream
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: DotNetHelper_IO.Enum.FileOption
-    name: FileOption
-    nameWithType: FileOption
-    fullName: DotNetHelper_IO.Enum.FileOption
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-    name: WriteStreamToFile
-    nameWithType: FileObject.WriteStreamToFile
-    fullName: DotNetHelper_IO.FileObject.WriteStreamToFile
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.IO.Stream
-    name: Stream
-    nameWithType: Stream
-    fullName: System.IO.Stream
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.IProgress`1
-    name: IProgress
-    nameWithType: IProgress
-    fullName: System.IProgress
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Double
-    name: Double
-    nameWithType: Double
-    fullName: System.Double
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
     isExternal: true
   - name: )
     nameWithType: )
@@ -1754,6 +2149,22 @@ references:
     name: FileOption
     nameWithType: FileOption
     fullName: DotNetHelper_IO.Enum.FileOption
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )

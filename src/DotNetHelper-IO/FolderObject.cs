@@ -43,13 +43,14 @@ namespace DotNetHelper_IO
         /// Gets a value indicating whether this <see cref="FolderObject"/> is exist.
         /// </summary>
         /// <value><c>null</c> if [exist] contains no value, <c>true</c> if [exist]; otherwise, <c>false</c>.</value>
-        public bool Exist {
+        public bool Exist
+        {
             get
             {
-               var exist = Directory.Exists(FullFolderPath);
-               if(exist && DirectoryInfo == null)
-                   RefreshObject(); // DATA OUT OF SYNC
-               return exist;
+                var exist = Directory.Exists(FullFolderPath);
+                if (exist && DirectoryInfo == null)
+                    RefreshObject(); // DATA OUT OF SYNC
+                return exist;
             }
         }
         /// <summary>
@@ -61,12 +62,12 @@ namespace DotNetHelper_IO
         /// Gets the files.
         /// </summary>
         /// <value>The files.</value>
-        public List<FileObject> Files { get; } = new List<FileObject>() {};
+        public List<FileObject> Files { get; } = new List<FileObject>() { };
         /// <summary>
         /// Gets the subfolders.
         /// </summary>
         /// <value>The subfolders.</value>
-        public List<FolderObject> Subfolders { get; } = new List<FolderObject>() {};
+        public List<FolderObject> Subfolders { get; } = new List<FolderObject>() { };
         /// <summary>
         /// Gets or sets the watch timeout.
         /// </summary>
@@ -169,32 +170,32 @@ namespace DotNetHelper_IO
             Files.Clear();
             Subfolders.Clear();
 
-             if (Directory.Exists(path))
-             {
-                 DirectoryInfo = new DirectoryInfo(path);
-                
-                 if (loadFilesInFolder)
-                 {
-                     Files.AddRange(GetAllFiles("*", loadRecursive).Select(s => new FileObject(s)));
-                 }
+            if (Directory.Exists(path))
+            {
+                DirectoryInfo = new DirectoryInfo(path);
 
-                 if (loadSubfolders)
-                 {
-                     Subfolders.AddRange(GetAllFolders("*", loadRecursive));
-                 }
+                if (loadFilesInFolder)
+                {
+                    Files.AddRange(GetAllFiles("*", loadRecursive).Select(s => new FileObject(s)));
+                }
 
-                 try
-                 {
-                     Watcher = new FileSystemWatcher(path, "*");
-                 }
-                 catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
-                 {
+                if (loadSubfolders)
+                {
+                    Subfolders.AddRange(GetAllFolders("*", loadRecursive));
+                }
 
-                 }
+                try
+                {
+                    Watcher = new FileSystemWatcher(path, "*");
+                }
+                catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
+                {
 
-             }
-             
-         
+                }
+
+            }
+
+
         }
 
 
@@ -244,7 +245,7 @@ namespace DotNetHelper_IO
         /// <param name="subfolderPath"></param>
         /// <param name="truncateIfExist"></param>
         /// <returns></returns>
-        public FolderObject CreateOrTruncateSubFolder(string subfolderPath,  bool truncateIfExist = true)
+        public FolderObject CreateOrTruncateSubFolder(string subfolderPath, bool truncateIfExist = true)
         {
             FolderObject localTruncate(DirectoryInfo directoryInfo)
             {
@@ -257,12 +258,12 @@ namespace DotNetHelper_IO
                     foreach (var subfolder in directoryInfo.GetDirectories())
                     {
                         subfolder.Delete(true);
-                    } 
+                    }
                 }
                 return new FolderObject(directoryInfo);
             }
 
-             var subFolder = subfolderPath;
+            var subFolder = subfolderPath;
             var exist = false;
             if (Path.IsPathRooted(subfolderPath))
             {
@@ -273,7 +274,7 @@ namespace DotNetHelper_IO
                 subFolder = Path.Combine(FullFolderPath, subfolderPath);
                 exist = Directory.Exists(subFolder);
             }
-      
+
             if (!exist)
             {
                 return localTruncate(Directory.CreateDirectory(subFolder));
@@ -282,7 +283,7 @@ namespace DotNetHelper_IO
             {
                 return localTruncate(new DirectoryInfo(subFolder));
             }
-        
+
         }
 
 
@@ -452,14 +453,14 @@ namespace DotNetHelper_IO
         /// <param name="folderOption"></param>
         /// <exception cref="Exception">
         /// </exception>
-        public bool MoveTo(string location,FolderOption folderOption)
+        public bool MoveTo(string location, FolderOption folderOption)
         {
             if (!Exist) return false;
             switch (folderOption)
             {
                 case FolderOption.Overwrite:
                     new FolderObject(location).Delete(true);
-                    Directory.Move(FullFolderPath,location);
+                    Directory.Move(FullFolderPath, location);
                     break;
                 case FolderOption.DoNothingIfExist:
                     if (Exist != true)
@@ -660,7 +661,7 @@ namespace DotNetHelper_IO
 
         }
 
-        
+
 
         /// <inheritdoc />
         /// <summary>
@@ -706,7 +707,7 @@ namespace DotNetHelper_IO
 
 
 
-   
+
 
 
 }

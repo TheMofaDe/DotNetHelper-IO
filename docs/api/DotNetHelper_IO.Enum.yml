@@ -6,6 +6,7 @@ items:
   children:
   - DotNetHelper_IO.Enum.AddOrRemoveEnum
   - DotNetHelper_IO.Enum.FileOption
+  - DotNetHelper_IO.Enum.FolderOption
   - DotNetHelper_IO.Enum.IOType
   - DotNetHelper_IO.Enum.SizeUnits
   langs:
@@ -18,6 +19,12 @@ items:
   assemblies:
   - DotNetHelper-IO
 references:
+- uid: DotNetHelper_IO.Enum.FolderOption
+  commentId: T:DotNetHelper_IO.Enum.FolderOption
+  parent: DotNetHelper_IO.Enum
+  name: FolderOption
+  nameWithType: FolderOption
+  fullName: DotNetHelper_IO.Enum.FolderOption
 - uid: DotNetHelper_IO.Enum.FileOption
   commentId: T:DotNetHelper_IO.Enum.FileOption
   parent: DotNetHelper_IO.Enum

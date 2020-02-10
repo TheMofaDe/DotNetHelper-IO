@@ -9,6 +9,6 @@ namespace DotNetHelper_IO.Enum
 
     public enum SizeUnits
     {
-        Byte, Kb = 1, Mb = 2, Gb = 3 , Tb = 4, Pb = 5, Eb = 6, Zb = 7, Yb = 8
+        Byte, Kb = 1, Mb = 2, Gb = 3, Tb = 4, Pb = 5, Eb = 6, Zb = 7, Yb = 8
     }
 }

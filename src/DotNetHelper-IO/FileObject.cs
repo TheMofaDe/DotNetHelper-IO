@@ -138,7 +138,7 @@ namespace DotNetHelper_IO
         /// </summary>
         public void RefreshObject()
         {
-       
+
             try
             {
                 var info = new FileInfo(FullFilePath);
@@ -395,12 +395,12 @@ namespace DotNetHelper_IO
         {
             if (Exist != true) return;
 
-           SetFileAttribute(AddOrRemoveEnum.Remove, new List<FileAttributes>() { FileAttributes.Hidden, FileAttributes.ReadOnly });
-           File.Delete(FullFilePath);
-           if (!disposeObject) return;
-           Dispose();
-           return;
-           
+            SetFileAttribute(AddOrRemoveEnum.Remove, new List<FileAttributes>() { FileAttributes.Hidden, FileAttributes.ReadOnly });
+            File.Delete(FullFilePath);
+            if (!disposeObject) return;
+            Dispose();
+            return;
+
         }
 
 
@@ -518,7 +518,7 @@ namespace DotNetHelper_IO
         }
 
 
-#region  Reading File
+        #region  Reading File
 
         /// <summary>
         /// Reads the file to list.
@@ -547,7 +547,7 @@ namespace DotNetHelper_IO
             return sr.ReadToEnd();
         }
 
-#endregion
+        #endregion
 
         /// <summary>
         /// Prepares for stream use.  Prevents Exeception From Being Throwned When working with file Streams
@@ -690,7 +690,7 @@ namespace DotNetHelper_IO
 
 
 
-#region  WRITING
+        #region  WRITING
 
         /// <summary>
         /// Writes the content to file. Returns the full file name content was written to. This method is not thread safe
@@ -721,7 +721,7 @@ namespace DotNetHelper_IO
             var (fileStream, fullFilePath) = GetFileStream(option);
             using (fileStream)
             {
-                fileStream.Write(bytes,offset, count.GetValueOrDefault(bytes.Length));
+                fileStream.Write(bytes, offset, count.GetValueOrDefault(bytes.Length));
             }
             return fullFilePath;
         }
@@ -737,8 +737,8 @@ namespace DotNetHelper_IO
         {
             if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
             var (fileStream, fullFilePath) = GetFileStream(option);
-            using(fileStream)
-                stream.CopyTo(fileStream,bufferSize);
+            using (fileStream)
+                stream.CopyTo(fileStream, bufferSize);
             return fullFilePath;
         }
 
@@ -754,7 +754,7 @@ namespace DotNetHelper_IO
             if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
             var (fileStream, fullFilePath) = GetFileStream(option);
             using (fileStream)
-                 stream.CopyTo(fileStream, progress,bufferSize);
+                stream.CopyTo(fileStream, progress, bufferSize);
             return fullFilePath;
         }
 
@@ -791,7 +791,7 @@ namespace DotNetHelper_IO
             var (fileStream, fullFilePath) = GetFileStream(option);
             using (fileStream)
             {
-               await fileStream.WriteAsync(bytes, offset, count.GetValueOrDefault(bytes.Length), cancellationToken);
+                await fileStream.WriteAsync(bytes, offset, count.GetValueOrDefault(bytes.Length), cancellationToken);
             }
             return fullFilePath;
         }
@@ -809,7 +809,7 @@ namespace DotNetHelper_IO
             if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
             var (fileStream, fullFilePath) = GetFileStream(option);
             using (fileStream)
-                await fileStream.CopyToAsync(stream, bufferSize,cancellationToken);
+                await fileStream.CopyToAsync(stream, bufferSize, cancellationToken);
             return fullFilePath;
         }
 
@@ -827,14 +827,14 @@ namespace DotNetHelper_IO
             if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
             var (fileStream, fullFilePath) = GetFileStream(option);
             using (fileStream)
-                await stream.CopyToAsync(fileStream, progress,cancellationToken, bufferSize);
+                await stream.CopyToAsync(fileStream, progress, cancellationToken, bufferSize);
             return fullFilePath;
         }
 
 
 
 
-#endregion
+        #endregion
 
         /// <summary>
         /// Gets the file encoding. if can not determine the file Encoding this return ascii by default
@@ -904,14 +904,14 @@ namespace DotNetHelper_IO
             const int filter = 1024;
             if (sizeUnits == SizeUnits.Byte) return FileSize;
 
-            var limit = (int) sizeUnits;
+            var limit = (int)sizeUnits;
             var value = FileSize.Value;
             while (limit > 0)
             {
                 limit--;
                 value = value / filter;
             }
-            return value; 
+            return value;
         }
 
 
@@ -963,7 +963,7 @@ namespace DotNetHelper_IO
 
 
 
-#region HelperMethods
+        #region HelperMethods
 
 
 
@@ -1009,7 +1009,7 @@ namespace DotNetHelper_IO
             return new string(charArray);
 
         }
-#endregion
+        #endregion
 
 
 

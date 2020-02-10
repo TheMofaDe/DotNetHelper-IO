@@ -10,7 +10,7 @@ namespace DotNetHelper_IO.Extension
 {
 
 
-    
+
 
 
     internal static class StreamExtensions
@@ -44,8 +44,8 @@ namespace DotNetHelper_IO.Extension
             var buffer = new byte[bufferSize];
             var bytesRead = 0;
             long bytesTotal = 0;
-            while ((bytesRead =  source.Read(buffer, 0, buffer.Length)) > 0)
-            { 
+            while ((bytesRead = source.Read(buffer, 0, buffer.Length)) > 0)
+            {
                 destination.Write(buffer, 0, bytesRead);
                 bytesTotal += bytesRead;
                 progress?.Report(bytesTotal);

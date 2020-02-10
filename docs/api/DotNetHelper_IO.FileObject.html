@@ -124,6 +124,9 @@
                             <a href="DotNetHelper_IO.Enum.FileOption.html" title="FileOption" class="">FileOption</a>
                           </li>
                           <li class="">
+                            <a href="DotNetHelper_IO.Enum.FolderOption.html" title="FolderOption" class="">FolderOption</a>
+                          </li>
+                          <li class="">
                             <a href="DotNetHelper_IO.Enum.IOType.html" title="IOType" class="">IOType</a>
                           </li>
                           <li class="">
@@ -189,19 +192,57 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject__ctor_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.%23ctor(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject__ctor_System_IO_FileInfo_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.%23ctor(System.IO.FileInfo%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L91">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L113">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject__ctor_" data-uid="DotNetHelper_IO.FileObject.#ctor*"></a>
-  <h4 id="DotNetHelper_IO_FileObject__ctor_System_String_System_Boolean_" data-uid="DotNetHelper_IO.FileObject.#ctor(System.String,System.Boolean)">FileObject(String, Boolean)</h4>
+  <h4 id="DotNetHelper_IO_FileObject__ctor_System_IO_FileInfo_System_Text_Encoding_" data-uid="DotNetHelper_IO.FileObject.#ctor(System.IO.FileInfo,System.Text.Encoding)">FileObject(FileInfo, Encoding)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DotNetHelper_IO.FileObject.html">FileObject</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FileObject(string file, bool throwOnBadFileName = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public FileObject(FileInfo fileInfo, Encoding defaultEncoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.fileinfo">FileInfo</a></td>
+        <td><span class="parametername">fileInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
+        <td><span class="parametername">defaultEncoding</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject__ctor_System_String_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.%23ctor(System.String%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L100">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FileObject__ctor_" data-uid="DotNetHelper_IO.FileObject.#ctor*"></a>
+  <h4 id="DotNetHelper_IO_FileObject__ctor_System_String_System_Text_Encoding_" data-uid="DotNetHelper_IO.FileObject.#ctor(System.String,System.Text.Encoding)">FileObject(String, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DotNetHelper_IO.FileObject.html">FileObject</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileObject(string file, Encoding defaultEncoding = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -220,8 +261,8 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">throwOnBadFileName</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
+        <td><span class="parametername">defaultEncoding</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -230,10 +271,40 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_DefaultEncoding.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.DefaultEncoding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L26">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FileObject_DefaultEncoding_" data-uid="DotNetHelper_IO.FileObject.DefaultEncoding*"></a>
+  <h4 id="DotNetHelper_IO_FileObject_DefaultEncoding" data-uid="DotNetHelper_IO.FileObject.DefaultEncoding">DefaultEncoding</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Encoding DefaultEncoding { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Exist.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Exist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L69">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L68">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_Exist_" data-uid="DotNetHelper_IO.FileObject.Exist*"></a>
   <h4 id="DotNetHelper_IO_FileObject_Exist" data-uid="DotNetHelper_IO.FileObject.Exist">Exist</h4>
@@ -264,7 +335,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Extension.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Extension%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L53">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L52">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_Extension_" data-uid="DotNetHelper_IO.FileObject.Extension*"></a>
   <h4 id="DotNetHelper_IO_FileObject_Extension" data-uid="DotNetHelper_IO.FileObject.Extension">Extension</h4>
@@ -294,7 +365,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_FileInfo.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.FileInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L26">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L27">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_FileInfo_" data-uid="DotNetHelper_IO.FileObject.FileInfo*"></a>
   <h4 id="DotNetHelper_IO_FileObject_FileInfo" data-uid="DotNetHelper_IO.FileObject.FileInfo">FileInfo</h4>
@@ -324,7 +395,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_FileNameOnly.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.FileNameOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L32">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L33">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_FileNameOnly_" data-uid="DotNetHelper_IO.FileObject.FileNameOnly*"></a>
   <h4 id="DotNetHelper_IO_FileObject_FileNameOnly" data-uid="DotNetHelper_IO.FileObject.FileNameOnly">FileNameOnly</h4>
@@ -356,7 +427,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_FileNameOnlyNoExtension.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.FileNameOnlyNoExtension%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L37">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L38">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_FileNameOnlyNoExtension_" data-uid="DotNetHelper_IO.FileObject.FileNameOnlyNoExtension*"></a>
   <h4 id="DotNetHelper_IO_FileObject_FileNameOnlyNoExtension" data-uid="DotNetHelper_IO.FileObject.FileNameOnlyNoExtension">FileNameOnlyNoExtension</h4>
@@ -388,7 +459,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_FilePathOnly.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.FilePathOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L43">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L44">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_FilePathOnly_" data-uid="DotNetHelper_IO.FileObject.FilePathOnly*"></a>
   <h4 id="DotNetHelper_IO_FileObject_FilePathOnly" data-uid="DotNetHelper_IO.FileObject.FilePathOnly">FilePathOnly</h4>
@@ -420,7 +491,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_FileSize.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.FileSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L64">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L63">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_FileSize_" data-uid="DotNetHelper_IO.FileObject.FileSize*"></a>
   <h4 id="DotNetHelper_IO_FileObject_FileSize" data-uid="DotNetHelper_IO.FileObject.FileSize">FileSize</h4>
@@ -452,7 +523,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_FolderNameOnly.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.FolderNameOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L58">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L57">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_FolderNameOnly_" data-uid="DotNetHelper_IO.FileObject.FolderNameOnly*"></a>
   <h4 id="DotNetHelper_IO_FileObject_FolderNameOnly" data-uid="DotNetHelper_IO.FileObject.FolderNameOnly">FolderNameOnly</h4>
@@ -484,7 +555,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_FullFilePath.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.FullFilePath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L48">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L49">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_FullFilePath_" data-uid="DotNetHelper_IO.FileObject.FullFilePath*"></a>
   <h4 id="DotNetHelper_IO_FileObject_FullFilePath" data-uid="DotNetHelper_IO.FileObject.FullFilePath">FullFilePath</h4>
@@ -513,40 +584,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_IncrementFullFilePath.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.IncrementFullFilePath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L51">View Source</a>
-  </span>
-  <a id="DotNetHelper_IO_FileObject_IncrementFullFilePath_" data-uid="DotNetHelper_IO.FileObject.IncrementFullFilePath*"></a>
-  <h4 id="DotNetHelper_IO_FileObject_IncrementFullFilePath" data-uid="DotNetHelper_IO.FileObject.IncrementFullFilePath">IncrementFullFilePath</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string IncrementFullFilePath { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_NotifyFilters.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.NotifyFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L85">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L93">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_NotifyFilters_" data-uid="DotNetHelper_IO.FileObject.NotifyFilters*"></a>
   <h4 id="DotNetHelper_IO_FileObject_NotifyFilters" data-uid="DotNetHelper_IO.FileObject.NotifyFilters">NotifyFilters</h4>
@@ -578,7 +619,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Watcher.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Watcher%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L79">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L87">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_Watcher_" data-uid="DotNetHelper_IO.FileObject.Watcher*"></a>
   <h4 id="DotNetHelper_IO_FileObject_Watcher" data-uid="DotNetHelper_IO.FileObject.Watcher">Watcher</h4>
@@ -610,7 +651,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_WatchTimeout.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.WatchTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L74">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L82">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_WatchTimeout_" data-uid="DotNetHelper_IO.FileObject.WatchTimeout*"></a>
   <h4 id="DotNetHelper_IO_FileObject_WatchTimeout" data-uid="DotNetHelper_IO.FileObject.WatchTimeout">WatchTimeout</h4>
@@ -644,7 +685,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_ChangeExtension_System_String_DotNetHelper_IO_Enum_FileOption_System_IProgress_System_Double__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.ChangeExtension(System.String%2CDotNetHelper_IO.Enum.FileOption%2CSystem.IProgress%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L345">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L365">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_ChangeExtension_" data-uid="DotNetHelper_IO.FileObject.ChangeExtension*"></a>
   <h4 id="DotNetHelper_IO_FileObject_ChangeExtension_System_String_DotNetHelper_IO_Enum_FileOption_System_IProgress_System_Double__" data-uid="DotNetHelper_IO.FileObject.ChangeExtension(System.String,DotNetHelper_IO.Enum.FileOption,System.IProgress{System.Double})">ChangeExtension(String, FileOption, IProgress&lt;Double&gt;)</h4>
@@ -722,7 +763,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_ChangeExtensionAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Threading_CancellationToken_System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.ChangeExtensionAsync(System.String%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Threading.CancellationToken%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L362">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L382">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_ChangeExtensionAsync_" data-uid="DotNetHelper_IO.FileObject.ChangeExtensionAsync*"></a>
   <h4 id="DotNetHelper_IO_FileObject_ChangeExtensionAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Threading_CancellationToken_System_Int32_" data-uid="DotNetHelper_IO.FileObject.ChangeExtensionAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)">ChangeExtensionAsync(String, FileOption, CancellationToken, Int32)</h4>
@@ -805,7 +846,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_CopyTo_System_String_DotNetHelper_IO_Enum_FileOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.CopyTo(System.String%2CDotNetHelper_IO.Enum.FileOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L167">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L187">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_CopyTo_" data-uid="DotNetHelper_IO.FileObject.CopyTo*"></a>
   <h4 id="DotNetHelper_IO_FileObject_CopyTo_System_String_DotNetHelper_IO_Enum_FileOption_" data-uid="DotNetHelper_IO.FileObject.CopyTo(System.String,DotNetHelper_IO.Enum.FileOption)">CopyTo(String, FileOption)</h4>
@@ -883,7 +924,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_CopyToAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Threading_CancellationToken_System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.CopyToAsync(System.String%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Threading.CancellationToken%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L215">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L235">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_CopyToAsync_" data-uid="DotNetHelper_IO.FileObject.CopyToAsync*"></a>
   <h4 id="DotNetHelper_IO_FileObject_CopyToAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Threading_CancellationToken_System_Int32_" data-uid="DotNetHelper_IO.FileObject.CopyToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)">CopyToAsync(String, FileOption, CancellationToken, Int32)</h4>
@@ -947,7 +988,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_CopyToAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Threading_CancellationToken_System_IProgress_System_Int64__System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.CopyToAsync(System.String%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Threading.CancellationToken%2CSystem.IProgress%7BSystem.Int64%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L238">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L258">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_CopyToAsync_" data-uid="DotNetHelper_IO.FileObject.CopyToAsync*"></a>
   <h4 id="DotNetHelper_IO_FileObject_CopyToAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Threading_CancellationToken_System_IProgress_System_Int64__System_Int32_" data-uid="DotNetHelper_IO.FileObject.CopyToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.IProgress{System.Int64},System.Int32)">CopyToAsync(String, FileOption, CancellationToken, IProgress&lt;Int64&gt;, Int32)</h4>
@@ -1015,7 +1056,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_CreateOrTruncate_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.CreateOrTruncate(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L404">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L415">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_CreateOrTruncate_" data-uid="DotNetHelper_IO.FileObject.CreateOrTruncate*"></a>
   <h4 id="DotNetHelper_IO_FileObject_CreateOrTruncate_System_Boolean_" data-uid="DotNetHelper_IO.FileObject.CreateOrTruncate(System.Boolean)">CreateOrTruncate(Boolean)</h4>
@@ -1062,19 +1103,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_DeleteFile_System_Action_System_Exception__System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.DeleteFile(System.Action%7BSystem.Exception%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_DeleteFile_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L374">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L394">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_DeleteFile_" data-uid="DotNetHelper_IO.FileObject.DeleteFile*"></a>
-  <h4 id="DotNetHelper_IO_FileObject_DeleteFile_System_Action_System_Exception__System_Boolean_" data-uid="DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)">DeleteFile(Action&lt;Exception&gt;, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Deletes the file. If you want an</p>
+  <h4 id="DotNetHelper_IO_FileObject_DeleteFile_System_Boolean_" data-uid="DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)">DeleteFile(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Deletes the file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void DeleteFile(Action&lt;Exception&gt; onFailedDeletion, bool disposeObject = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public void DeleteFile(bool disposeObject)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1087,11 +1128,6 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception">Exception</a>&gt;</td>
-        <td><span class="parametername">onFailedDeletion</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">disposeObject</span></td>
         <td></td>
@@ -1103,7 +1139,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Dispose.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L997">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L1020">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_Dispose_" data-uid="DotNetHelper_IO.FileObject.Dispose*"></a>
   <h4 id="DotNetHelper_IO_FileObject_Dispose" data-uid="DotNetHelper_IO.FileObject.Dispose">Dispose()</h4>
@@ -1119,7 +1155,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_GetFileEncoding.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.GetFileEncoding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L824">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L843">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_GetFileEncoding_" data-uid="DotNetHelper_IO.FileObject.GetFileEncoding*"></a>
   <h4 id="DotNetHelper_IO_FileObject_GetFileEncoding" data-uid="DotNetHelper_IO.FileObject.GetFileEncoding">GetFileEncoding()</h4>
@@ -1151,7 +1187,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_GetFileSize_DotNetHelper_IO_Enum_SizeUnits_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L886">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L899">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_GetFileSize_" data-uid="DotNetHelper_IO.FileObject.GetFileSize*"></a>
   <h4 id="DotNetHelper_IO_FileObject_GetFileSize_DotNetHelper_IO_Enum_SizeUnits_System_Boolean_" data-uid="DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)">GetFileSize(SizeUnits, Boolean)</h4>
@@ -1205,7 +1241,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_GetFileSize_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L856">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L869">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_GetFileSize_" data-uid="DotNetHelper_IO.FileObject.GetFileSize*"></a>
   <h4 id="DotNetHelper_IO_FileObject_GetFileSize_System_Boolean_" data-uid="DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)">GetFileSize(Boolean)</h4>
@@ -1254,7 +1290,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_GetFileStream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L642">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L638">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_GetFileStream_" data-uid="DotNetHelper_IO.FileObject.GetFileStream*"></a>
   <h4 id="DotNetHelper_IO_FileObject_GetFileStream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Boolean_" data-uid="DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)">GetFileStream(FileOption, Int32, Boolean)</h4>
@@ -1334,7 +1370,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_GetIncrementExtension_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.GetIncrementExtension(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L468">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L476">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_GetIncrementExtension_" data-uid="DotNetHelper_IO.FileObject.GetIncrementExtension*"></a>
   <h4 id="DotNetHelper_IO_FileObject_GetIncrementExtension_System_String_" data-uid="DotNetHelper_IO.FileObject.GetIncrementExtension(System.String)">GetIncrementExtension(String)</h4>
@@ -1381,7 +1417,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_GetIncrementFileName_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L425">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L433">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_GetIncrementFileName_" data-uid="DotNetHelper_IO.FileObject.GetIncrementFileName*"></a>
   <h4 id="DotNetHelper_IO_FileObject_GetIncrementFileName_System_String_" data-uid="DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)">GetIncrementFileName(String)</h4>
@@ -1428,7 +1464,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Init_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Init(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L99">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L123">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_Init_" data-uid="DotNetHelper_IO.FileObject.Init*"></a>
   <h4 id="DotNetHelper_IO_FileObject_Init_System_Boolean_" data-uid="DotNetHelper_IO.FileObject.Init(System.Boolean)">Init(Boolean)</h4>
@@ -1460,7 +1496,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_MoveTo_System_String_DotNetHelper_IO_Enum_FileOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.MoveTo(System.String%2CDotNetHelper_IO.Enum.FileOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L260">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L280">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_MoveTo_" data-uid="DotNetHelper_IO.FileObject.MoveTo*"></a>
   <h4 id="DotNetHelper_IO_FileObject_MoveTo_System_String_DotNetHelper_IO_Enum_FileOption_" data-uid="DotNetHelper_IO.FileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption)">MoveTo(String, FileOption)</h4>
@@ -1533,7 +1569,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_MoveToAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Threading_CancellationToken_System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.MoveToAsync(System.String%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Threading.CancellationToken%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L299">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L319">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_MoveToAsync_" data-uid="DotNetHelper_IO.FileObject.MoveToAsync*"></a>
   <h4 id="DotNetHelper_IO_FileObject_MoveToAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Threading_CancellationToken_System_Int32_" data-uid="DotNetHelper_IO.FileObject.MoveToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)">MoveToAsync(String, FileOption, CancellationToken, Int32)</h4>
@@ -1616,7 +1652,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_ReadAllLines.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.ReadAllLines%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L519">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L527">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_ReadAllLines_" data-uid="DotNetHelper_IO.FileObject.ReadAllLines*"></a>
   <h4 id="DotNetHelper_IO_FileObject_ReadAllLines" data-uid="DotNetHelper_IO.FileObject.ReadAllLines">ReadAllLines()</h4>
@@ -1648,7 +1684,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_ReadToString_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.ReadToString(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L528">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L536">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_ReadToString_" data-uid="DotNetHelper_IO.FileObject.ReadToString*"></a>
   <h4 id="DotNetHelper_IO_FileObject_ReadToString_System_Boolean_" data-uid="DotNetHelper_IO.FileObject.ReadToString(System.Boolean)">ReadToString(Boolean)</h4>
@@ -1697,7 +1733,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_RefreshObject.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.RefreshObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L115">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L139">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_RefreshObject_" data-uid="DotNetHelper_IO.FileObject.RefreshObject*"></a>
   <h4 id="DotNetHelper_IO_FileObject_RefreshObject" data-uid="DotNetHelper_IO.FileObject.RefreshObject">RefreshObject()</h4>
@@ -1713,7 +1749,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_SetFileAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum%2CSystem.Collections.Generic.List%7BSystem.IO.FileAttributes%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L952">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L975">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_SetFileAttribute_" data-uid="DotNetHelper_IO.FileObject.SetFileAttribute*"></a>
   <h4 id="DotNetHelper_IO_FileObject_SetFileAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__" data-uid="DotNetHelper_IO.FileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})">SetFileAttribute(AddOrRemoveEnum, List&lt;FileAttributes&gt;)</h4>
@@ -1753,7 +1789,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_System_Nullable_System_IO_NotifyFilters__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes%2CSystem.Boolean%2CSystem.Nullable%7BSystem.IO.NotifyFilters%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L907">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L928">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_StartWatching_" data-uid="DotNetHelper_IO.FileObject.StartWatching*"></a>
   <h4 id="DotNetHelper_IO_FileObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_System_Nullable_System_IO_NotifyFilters__" data-uid="DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})">StartWatching(WatcherChangeTypes, Boolean, Nullable&lt;NotifyFilters&gt;)</h4>
@@ -1813,7 +1849,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_StopWatching.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.StopWatching%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L930">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L953">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_StopWatching_" data-uid="DotNetHelper_IO.FileObject.StopWatching*"></a>
   <h4 id="DotNetHelper_IO_FileObject_StopWatching" data-uid="DotNetHelper_IO.FileObject.StopWatching">StopWatching()</h4>
@@ -1826,19 +1862,208 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Write_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Write(System.String%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Text.Encoding%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Write_System_Byte___DotNetHelper_IO_Enum_FileOption_System_Int32_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Write(System.Byte%5B%5D%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Int32%2CSystem.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L706">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L718">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_Write_" data-uid="DotNetHelper_IO.FileObject.Write*"></a>
-  <h4 id="DotNetHelper_IO_FileObject_Write_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_" data-uid="DotNetHelper_IO.FileObject.Write(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)">Write(String, FileOption, Encoding, Int32)</h4>
-  <div class="markdown level1 summary"><p>Writes the content to file. Returns the full file name content was written to. This method is thread safe</p>
+  <h4 id="DotNetHelper_IO_FileObject_Write_System_Byte___DotNetHelper_IO_Enum_FileOption_System_Int32_System_Nullable_System_Int32__" data-uid="DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})">Write(Byte[], FileOption, Int32, Nullable&lt;Int32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes the bytes to file. Returns the full file name content was written to. This method is not thread safe</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Write(string content, FileOption option, Encoding encoding, int bufferSize = 4096)</code></pre>
+    <pre><code class="lang-csharp hljs">public string Write(byte[] bytes, FileOption option = FileOption.Overwrite, int offset = 0, int? count = default(int? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">bytes</span></td>
+        <td><p>The bytes.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>The option.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td><span class="parametername">count</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Write_System_IO_Stream_DotNetHelper_IO_Enum_FileOption_System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Write(System.IO.Stream%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L736">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FileObject_Write_" data-uid="DotNetHelper_IO.FileObject.Write*"></a>
+  <h4 id="DotNetHelper_IO_FileObject_Write_System_IO_Stream_DotNetHelper_IO_Enum_FileOption_System_Int32_" data-uid="DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)">Write(Stream, FileOption, Int32)</h4>
+  <div class="markdown level1 summary"><p>Writes the content to file. Returns the full file name content was written to. This method is not thread safe</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Write(Stream stream, FileOption option = FileOption.Overwrite, int bufferSize = 4096)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>The option.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Write_System_IO_Stream_System_IProgress_System_Int64__DotNetHelper_IO_Enum_FileOption_System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Write(System.IO.Stream%2CSystem.IProgress%7BSystem.Int64%7D%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L752">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FileObject_Write_" data-uid="DotNetHelper_IO.FileObject.Write*"></a>
+  <h4 id="DotNetHelper_IO_FileObject_Write_System_IO_Stream_System_IProgress_System_Int64__DotNetHelper_IO_Enum_FileOption_System_Int32_" data-uid="DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)">Write(Stream, IProgress&lt;Int64&gt;, FileOption, Int32)</h4>
+  <div class="markdown level1 summary"><p>Writes the content to file. Returns the full file name content was written to. This method is not thread safe</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Write(Stream stream, IProgress&lt;long&gt; progress, FileOption option = FileOption.Overwrite, int bufferSize = 4096)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a>&gt;</td>
+        <td><span class="parametername">progress</span></td>
+        <td><p>Report progress in stream bytes not percentages.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>The option.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_Write_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.Write(System.String%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Text.Encoding%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L702">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FileObject_Write_" data-uid="DotNetHelper_IO.FileObject.Write*"></a>
+  <h4 id="DotNetHelper_IO_FileObject_Write_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_" data-uid="DotNetHelper_IO.FileObject.Write(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)">Write(String, FileOption, Encoding, Int32)</h4>
+  <div class="markdown level1 summary"><p>Writes the content to file. Returns the full file name content was written to. This method is not thread safe</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Write(string content, FileOption option = FileOption.Overwrite, Encoding encoding = null, int bufferSize = 4096)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1865,7 +2090,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
         <td><span class="parametername">encoding</span></td>
-        <td></td>
+        <td><p>default to UTF-8</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
@@ -1891,10 +2117,213 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_WriteAsync_System_Byte___DotNetHelper_IO_Enum_FileOption_System_Int32_System_Nullable_System_Int32__System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.WriteAsync(System.Byte%5B%5D%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Int32%2CSystem.Nullable%7BSystem.Int32%7D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L788">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FileObject_WriteAsync_" data-uid="DotNetHelper_IO.FileObject.WriteAsync*"></a>
+  <h4 id="DotNetHelper_IO_FileObject_WriteAsync_System_Byte___DotNetHelper_IO_Enum_FileOption_System_Int32_System_Nullable_System_Int32__System_Threading_CancellationToken_" data-uid="DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)">WriteAsync(Byte[], FileOption, Int32, Nullable&lt;Int32&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Writes the bytes to file. Returns the full file name content was written to. This method is not thread safe</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;string&gt; WriteAsync(byte[] bytes, FileOption option = FileOption.Overwrite, int offset = 0, int? count = default(int? ), CancellationToken cancellationToken = default(CancellationToken))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">bytes</span></td>
+        <td><p>The bytes.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>The option.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td><span class="parametername">count</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_WriteAsync_System_IO_Stream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L807">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FileObject_WriteAsync_" data-uid="DotNetHelper_IO.FileObject.WriteAsync*"></a>
+  <h4 id="DotNetHelper_IO_FileObject_WriteAsync_System_IO_Stream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Threading_CancellationToken_" data-uid="DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)">WriteAsync(Stream, FileOption, Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Writes the content to file. Returns the full file name content was written to. This method is not thread safe</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;string&gt; WriteAsync(Stream stream, FileOption option = FileOption.Overwrite, int bufferSize = 4096, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>The option.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_WriteAsync_System_IO_Stream_System_IProgress_System_Int64__DotNetHelper_IO_Enum_FileOption_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream%2CSystem.IProgress%7BSystem.Int64%7D%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L825">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FileObject_WriteAsync_" data-uid="DotNetHelper_IO.FileObject.WriteAsync*"></a>
+  <h4 id="DotNetHelper_IO_FileObject_WriteAsync_System_IO_Stream_System_IProgress_System_Int64__DotNetHelper_IO_Enum_FileOption_System_Int32_System_Threading_CancellationToken_" data-uid="DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)">WriteAsync(Stream, IProgress&lt;Int64&gt;, FileOption, Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Writes the content to file. Returns the full file name content was written to. This method is not thread safe</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;string&gt; WriteAsync(Stream stream, IProgress&lt;long&gt; progress, FileOption option = FileOption.Overwrite, int bufferSize = 4096, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a>&gt;</td>
+        <td><span class="parametername">progress</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>The option.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_WriteAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.WriteAsync(System.String%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Text.Encoding%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L726">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L770">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FileObject_WriteAsync_" data-uid="DotNetHelper_IO.FileObject.WriteAsync*"></a>
   <h4 id="DotNetHelper_IO_FileObject_WriteAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_" data-uid="DotNetHelper_IO.FileObject.WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)">WriteAsync(String, FileOption, Encoding, Int32)</h4>
@@ -1954,129 +2383,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_WriteStreamToFile_System_IO_Stream_System_IProgress_System_Double__DotNetHelper_IO_Enum_FileOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream%2CSystem.IProgress%7BSystem.Double%7D%2CDotNetHelper_IO.Enum.FileOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L782">View Source</a>
-  </span>
-  <a id="DotNetHelper_IO_FileObject_WriteStreamToFile_" data-uid="DotNetHelper_IO.FileObject.WriteStreamToFile*"></a>
-  <h4 id="DotNetHelper_IO_FileObject_WriteStreamToFile_System_IO_Stream_System_IProgress_System_Double__DotNetHelper_IO_Enum_FileOption_" data-uid="DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)">WriteStreamToFile(Stream, IProgress&lt;Double&gt;, FileOption)</h4>
-  <div class="markdown level1 summary"><p>Writes the stream to file. this method is thread safe</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool WriteStreamToFile(Stream stream, IProgress&lt;double&gt; progress = null, FileOption option = FileOption.Overwrite)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
-        <td><span class="parametername">stream</span></td>
-        <td><p>The stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
-        <td><span class="parametername">progress</span></td>
-        <td><p>The progress.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="DotNetHelper_IO.Enum.FileOption.html">FileOption</a></td>
-        <td><span class="parametername">option</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><code>true</code> if XXXX, <code>false</code> otherwise.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject_WriteStreamToFileAsync_System_IO_Stream_System_IProgress_System_Double__System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream%2CSystem.IProgress%7BSystem.Double%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L744">View Source</a>
-  </span>
-  <a id="DotNetHelper_IO_FileObject_WriteStreamToFileAsync_" data-uid="DotNetHelper_IO.FileObject.WriteStreamToFileAsync*"></a>
-  <h4 id="DotNetHelper_IO_FileObject_WriteStreamToFileAsync_System_IO_Stream_System_IProgress_System_Double__System_Boolean_" data-uid="DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)">WriteStreamToFileAsync(Stream, IProgress&lt;Double&gt;, Boolean)</h4>
-  <div class="markdown level1 summary"><p>write stream to file as an asynchronous operation. this method is not thread safe</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; WriteStreamToFileAsync(Stream stream, IProgress&lt;double&gt; progress = null, bool overwriteIfFileExist = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
-        <td><span class="parametername">stream</span></td>
-        <td><p>The stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
-        <td><span class="parametername">progress</span></td>
-        <td><p>The progress.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">overwriteIfFileExist</span></td>
-        <td><p>if set to <code>true</code> [overwrite if file exist].</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
-        <td><p>Task&lt;System.Boolean&gt;.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
@@ -2096,7 +2402,7 @@
                     <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FileObject.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FileObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L21" class="contribution-link">View Source</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FileObject.cs/#L23" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

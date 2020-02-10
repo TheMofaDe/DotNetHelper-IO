@@ -17,7 +17,7 @@ namespace DotNetHelper_IO_Tests
         public static string BaseFolder { get; } = $"{Path.Combine(Environment.CurrentDirectory, "UnitTests")}";
 
 #if NETCORE31
-        public string WorkingDirectory { get; }  = Path.Combine(BaseFolder,$"NETCORE_31");
+        public string WorkingDirectory { get; } = Path.Combine(BaseFolder, $"NETCORE_31");
 #elif NET452
         public string WorkingDirectory { get; } = Path.Combine(BaseFolder, $"NET_452");
 #endif
@@ -32,7 +32,7 @@ namespace DotNetHelper_IO_Tests
 #endif
 
 
-     
+
         public BaseTest()
         {
 

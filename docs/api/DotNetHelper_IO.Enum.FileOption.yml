@@ -25,7 +25,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileOption
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 11
+    startLine: 33
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -58,7 +58,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Append
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 16
+    startLine: 38
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -92,7 +92,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Overwrite
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 20
+    startLine: 42
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -126,7 +126,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DoNothingIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 24
+    startLine: 46
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -160,7 +160,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IncrementFileNameIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 28
+    startLine: 50
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -194,7 +194,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IncrementFileExtensionIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 32
+    startLine: 54
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -228,7 +228,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadOnly
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 36
+    startLine: 58
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum

@@ -73,6 +73,30 @@ references:
   commentId: F:DotNetHelper_IO.Enum.FileOption.ReadOnly
   fullName: DotNetHelper_IO.Enum.FileOption.ReadOnly
   nameWithType: FileOption.ReadOnly
+- uid: DotNetHelper_IO.Enum.FolderOption
+  name: FolderOption
+  href: api/DotNetHelper_IO.Enum.FolderOption.html
+  commentId: T:DotNetHelper_IO.Enum.FolderOption
+  fullName: DotNetHelper_IO.Enum.FolderOption
+  nameWithType: FolderOption
+- uid: DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
+  name: DoNothingIfExist
+  href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_DoNothingIfExist
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
+  fullName: DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
+  nameWithType: FolderOption.DoNothingIfExist
+- uid: DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
+  name: IncrementFolderNameIfExist
+  href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_IncrementFolderNameIfExist
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
+  fullName: DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
+  nameWithType: FolderOption.IncrementFolderNameIfExist
+- uid: DotNetHelper_IO.Enum.FolderOption.Overwrite
+  name: Overwrite
+  href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_Overwrite
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.Overwrite
+  fullName: DotNetHelper_IO.Enum.FolderOption.Overwrite
+  nameWithType: FolderOption.Overwrite
 - uid: DotNetHelper_IO.Enum.IOType
   name: IOType
   href: api/DotNetHelper_IO.Enum.IOType.html
@@ -163,12 +187,18 @@ references:
   commentId: T:DotNetHelper_IO.FileObject
   fullName: DotNetHelper_IO.FileObject
   nameWithType: FileObject
-- uid: DotNetHelper_IO.FileObject.#ctor(System.String,System.Boolean)
-  name: FileObject(String, Boolean)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject__ctor_System_String_System_Boolean_
-  commentId: M:DotNetHelper_IO.FileObject.#ctor(System.String,System.Boolean)
-  fullName: DotNetHelper_IO.FileObject.FileObject(System.String, System.Boolean)
-  nameWithType: FileObject.FileObject(String, Boolean)
+- uid: DotNetHelper_IO.FileObject.#ctor(System.IO.FileInfo,System.Text.Encoding)
+  name: FileObject(FileInfo, Encoding)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject__ctor_System_IO_FileInfo_System_Text_Encoding_
+  commentId: M:DotNetHelper_IO.FileObject.#ctor(System.IO.FileInfo,System.Text.Encoding)
+  fullName: DotNetHelper_IO.FileObject.FileObject(System.IO.FileInfo, System.Text.Encoding)
+  nameWithType: FileObject.FileObject(FileInfo, Encoding)
+- uid: DotNetHelper_IO.FileObject.#ctor(System.String,System.Text.Encoding)
+  name: FileObject(String, Encoding)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject__ctor_System_String_System_Text_Encoding_
+  commentId: M:DotNetHelper_IO.FileObject.#ctor(System.String,System.Text.Encoding)
+  fullName: DotNetHelper_IO.FileObject.FileObject(System.String, System.Text.Encoding)
+  nameWithType: FileObject.FileObject(String, Encoding)
 - uid: DotNetHelper_IO.FileObject.#ctor*
   name: FileObject
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject__ctor_
@@ -253,15 +283,25 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.CreateOrTruncate
   nameWithType: FileObject.CreateOrTruncate
-- uid: DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-  name: DeleteFile(Action<Exception>, Boolean)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_DeleteFile_System_Action_System_Exception__System_Boolean_
-  commentId: M:DotNetHelper_IO.FileObject.DeleteFile(System.Action{System.Exception},System.Boolean)
-  name.vb: DeleteFile(Action(Of Exception), Boolean)
-  fullName: DotNetHelper_IO.FileObject.DeleteFile(System.Action<System.Exception>, System.Boolean)
-  fullName.vb: DotNetHelper_IO.FileObject.DeleteFile(System.Action(Of System.Exception), System.Boolean)
-  nameWithType: FileObject.DeleteFile(Action<Exception>, Boolean)
-  nameWithType.vb: FileObject.DeleteFile(Action(Of Exception), Boolean)
+- uid: DotNetHelper_IO.FileObject.DefaultEncoding
+  name: DefaultEncoding
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_DefaultEncoding
+  commentId: P:DotNetHelper_IO.FileObject.DefaultEncoding
+  fullName: DotNetHelper_IO.FileObject.DefaultEncoding
+  nameWithType: FileObject.DefaultEncoding
+- uid: DotNetHelper_IO.FileObject.DefaultEncoding*
+  name: DefaultEncoding
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_DefaultEncoding_
+  commentId: Overload:DotNetHelper_IO.FileObject.DefaultEncoding
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.DefaultEncoding
+  nameWithType: FileObject.DefaultEncoding
+- uid: DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
+  name: DeleteFile(Boolean)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_DeleteFile_System_Boolean_
+  commentId: M:DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
+  fullName: DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
+  nameWithType: FileObject.DeleteFile(Boolean)
 - uid: DotNetHelper_IO.FileObject.DeleteFile*
   name: DeleteFile
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_DeleteFile_
@@ -470,19 +510,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.GetIncrementFileName
   nameWithType: FileObject.GetIncrementFileName
-- uid: DotNetHelper_IO.FileObject.IncrementFullFilePath
-  name: IncrementFullFilePath
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_IncrementFullFilePath
-  commentId: P:DotNetHelper_IO.FileObject.IncrementFullFilePath
-  fullName: DotNetHelper_IO.FileObject.IncrementFullFilePath
-  nameWithType: FileObject.IncrementFullFilePath
-- uid: DotNetHelper_IO.FileObject.IncrementFullFilePath*
-  name: IncrementFullFilePath
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_IncrementFullFilePath_
-  commentId: Overload:DotNetHelper_IO.FileObject.IncrementFullFilePath
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.IncrementFullFilePath
-  nameWithType: FileObject.IncrementFullFilePath
 - uid: DotNetHelper_IO.FileObject.Init(System.Boolean)
   name: Init(Boolean)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Init_System_Boolean_
@@ -645,6 +672,30 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.WatchTimeout
   nameWithType: FileObject.WatchTimeout
+- uid: DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  name: Write(Byte[], FileOption, Int32, Nullable<Int32>)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Write_System_Byte___DotNetHelper_IO_Enum_FileOption_System_Int32_System_Nullable_System_Int32__
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  name.vb: Write(Byte(), FileOption, Int32, Nullable(Of Int32))
+  fullName: DotNetHelper_IO.FileObject.Write(System.Byte[], DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable<System.Int32>)
+  fullName.vb: DotNetHelper_IO.FileObject.Write(System.Byte(), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable(Of System.Int32))
+  nameWithType: FileObject.Write(Byte[], FileOption, Int32, Nullable<Int32>)
+  nameWithType.vb: FileObject.Write(Byte(), FileOption, Int32, Nullable(Of Int32))
+- uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  name: Write(Stream, FileOption, Int32)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Write_System_IO_Stream_DotNetHelper_IO_Enum_FileOption_System_Int32_
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  fullName: DotNetHelper_IO.FileObject.Write(System.IO.Stream, DotNetHelper_IO.Enum.FileOption, System.Int32)
+  nameWithType: FileObject.Write(Stream, FileOption, Int32)
+- uid: DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+  name: Write(Stream, IProgress<Int64>, FileOption, Int32)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Write_System_IO_Stream_System_IProgress_System_Int64__DotNetHelper_IO_Enum_FileOption_System_Int32_
+  commentId: M:DotNetHelper_IO.FileObject.Write(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32)
+  name.vb: Write(Stream, IProgress(Of Int64), FileOption, Int32)
+  fullName: DotNetHelper_IO.FileObject.Write(System.IO.Stream, System.IProgress<System.Int64>, DotNetHelper_IO.Enum.FileOption, System.Int32)
+  fullName.vb: DotNetHelper_IO.FileObject.Write(System.IO.Stream, System.IProgress(Of System.Int64), DotNetHelper_IO.Enum.FileOption, System.Int32)
+  nameWithType: FileObject.Write(Stream, IProgress<Int64>, FileOption, Int32)
+  nameWithType.vb: FileObject.Write(Stream, IProgress(Of Int64), FileOption, Int32)
 - uid: DotNetHelper_IO.FileObject.Write(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
   name: Write(String, FileOption, Encoding, Int32)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Write_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_
@@ -658,6 +709,30 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.Write
   nameWithType: FileObject.Write
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+  name: WriteAsync(Byte[], FileOption, Int32, Nullable<Int32>, CancellationToken)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteAsync_System_Byte___DotNetHelper_IO_Enum_FileOption_System_Int32_System_Nullable_System_Int32__System_Threading_CancellationToken_
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
+  name.vb: WriteAsync(Byte(), FileOption, Int32, Nullable(Of Int32), CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.Byte[], DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable<System.Int32>, System.Threading.CancellationToken)
+  fullName.vb: DotNetHelper_IO.FileObject.WriteAsync(System.Byte(), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable(Of System.Int32), System.Threading.CancellationToken)
+  nameWithType: FileObject.WriteAsync(Byte[], FileOption, Int32, Nullable<Int32>, CancellationToken)
+  nameWithType.vb: FileObject.WriteAsync(Byte(), FileOption, Int32, Nullable(Of Int32), CancellationToken)
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  name: WriteAsync(Stream, FileOption, Int32, CancellationToken)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteAsync_System_IO_Stream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Threading_CancellationToken_
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  nameWithType: FileObject.WriteAsync(Stream, FileOption, Int32, CancellationToken)
+- uid: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  name: WriteAsync(Stream, IProgress<Int64>, FileOption, Int32, CancellationToken)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteAsync_System_IO_Stream_System_IProgress_System_Int64__DotNetHelper_IO_Enum_FileOption_System_Int32_System_Threading_CancellationToken_
+  commentId: M:DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
+  name.vb: WriteAsync(Stream, IProgress(Of Int64), FileOption, Int32, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, System.IProgress<System.Int64>, DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  fullName.vb: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, System.IProgress(Of System.Int64), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
+  nameWithType: FileObject.WriteAsync(Stream, IProgress<Int64>, FileOption, Int32, CancellationToken)
+  nameWithType.vb: FileObject.WriteAsync(Stream, IProgress(Of Int64), FileOption, Int32, CancellationToken)
 - uid: DotNetHelper_IO.FileObject.WriteAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
   name: WriteAsync(String, FileOption, Encoding, Int32)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteAsync_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_
@@ -671,44 +746,18 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.WriteAsync
   nameWithType: FileObject.WriteAsync
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  name: WriteStreamToFile(Stream, IProgress<Double>, FileOption)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteStreamToFile_System_IO_Stream_System_IProgress_System_Double__DotNetHelper_IO_Enum_FileOption_
-  commentId: M:DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
-  name.vb: WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream, System.IProgress<System.Double>, DotNetHelper_IO.Enum.FileOption)
-  fullName.vb: DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream, System.IProgress(Of System.Double), DotNetHelper_IO.Enum.FileOption)
-  nameWithType: FileObject.WriteStreamToFile(Stream, IProgress<Double>, FileOption)
-  nameWithType.vb: FileObject.WriteStreamToFile(Stream, IProgress(Of Double), FileOption)
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFile*
-  name: WriteStreamToFile
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteStreamToFile_
-  commentId: Overload:DotNetHelper_IO.FileObject.WriteStreamToFile
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFile
-  nameWithType: FileObject.WriteStreamToFile
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-  name: WriteStreamToFileAsync(Stream, IProgress<Double>, Boolean)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteStreamToFileAsync_System_IO_Stream_System_IProgress_System_Double__System_Boolean_
-  commentId: M:DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
-  name.vb: WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream, System.IProgress<System.Double>, System.Boolean)
-  fullName.vb: DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream, System.IProgress(Of System.Double), System.Boolean)
-  nameWithType: FileObject.WriteStreamToFileAsync(Stream, IProgress<Double>, Boolean)
-  nameWithType.vb: FileObject.WriteStreamToFileAsync(Stream, IProgress(Of Double), Boolean)
-- uid: DotNetHelper_IO.FileObject.WriteStreamToFileAsync*
-  name: WriteStreamToFileAsync
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WriteStreamToFileAsync_
-  commentId: Overload:DotNetHelper_IO.FileObject.WriteStreamToFileAsync
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.WriteStreamToFileAsync
-  nameWithType: FileObject.WriteStreamToFileAsync
 - uid: DotNetHelper_IO.FolderObject
   name: FolderObject
   href: api/DotNetHelper_IO.FolderObject.html
   commentId: T:DotNetHelper_IO.FolderObject
   fullName: DotNetHelper_IO.FolderObject
   nameWithType: FolderObject
+- uid: DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
+  name: FolderObject(DirectoryInfo)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_
+  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
+  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.IO.DirectoryInfo)
+  nameWithType: FolderObject.FolderObject(DirectoryInfo)
 - uid: DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
   name: FolderObject(String, Boolean, Boolean, Boolean)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_String_System_Boolean_System_Boolean_System_Boolean_
@@ -722,12 +771,12 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.FolderObject
   nameWithType: FolderObject.FolderObject
-- uid: DotNetHelper_IO.FolderObject.CopyTo(System.String,System.Boolean)
-  name: CopyTo(String, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CopyTo_System_String_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.CopyTo(System.String,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.CopyTo(System.String, System.Boolean)
-  nameWithType: FolderObject.CopyTo(String, Boolean)
+- uid: DotNetHelper_IO.FolderObject.CopyTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  name: CopyTo(String, FolderOption)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CopyTo_System_String_DotNetHelper_IO_Enum_FolderOption_
+  commentId: M:DotNetHelper_IO.FolderObject.CopyTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  fullName: DotNetHelper_IO.FolderObject.CopyTo(System.String, DotNetHelper_IO.Enum.FolderOption)
+  nameWithType: FolderObject.CopyTo(String, FolderOption)
 - uid: DotNetHelper_IO.FolderObject.CopyTo*
   name: CopyTo
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CopyTo_
@@ -735,64 +784,58 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.CopyTo
   nameWithType: FolderObject.CopyTo
-- uid: DotNetHelper_IO.FolderObject.Create(System.Action{System.Exception})
-  name: Create(Action<Exception>)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Create_System_Action_System_Exception__
-  commentId: M:DotNetHelper_IO.FolderObject.Create(System.Action{System.Exception})
-  name.vb: Create(Action(Of Exception))
-  fullName: DotNetHelper_IO.FolderObject.Create(System.Action<System.Exception>)
-  fullName.vb: DotNetHelper_IO.FolderObject.Create(System.Action(Of System.Exception))
-  nameWithType: FolderObject.Create(Action<Exception>)
-  nameWithType.vb: FolderObject.Create(Action(Of Exception))
-- uid: DotNetHelper_IO.FolderObject.Create*
-  name: Create
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Create_
-  commentId: Overload:DotNetHelper_IO.FolderObject.Create
+- uid: DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)
+  name: CreateOrTruncate(Boolean)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreateOrTruncate_System_Boolean_
+  commentId: M:DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)
+  fullName: DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)
+  nameWithType: FolderObject.CreateOrTruncate(Boolean)
+- uid: DotNetHelper_IO.FolderObject.CreateOrTruncate*
+  name: CreateOrTruncate
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreateOrTruncate_
+  commentId: Overload:DotNetHelper_IO.FolderObject.CreateOrTruncate
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.Create
-  nameWithType: FolderObject.Create
-- uid: DotNetHelper_IO.FolderObject.CreationTime
-  name: CreationTime
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreationTime
-  commentId: P:DotNetHelper_IO.FolderObject.CreationTime
-  fullName: DotNetHelper_IO.FolderObject.CreationTime
-  nameWithType: FolderObject.CreationTime
-- uid: DotNetHelper_IO.FolderObject.CreationTime*
-  name: CreationTime
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreationTime_
-  commentId: Overload:DotNetHelper_IO.FolderObject.CreationTime
+  fullName: DotNetHelper_IO.FolderObject.CreateOrTruncate
+  nameWithType: FolderObject.CreateOrTruncate
+- uid: DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String,System.Boolean)
+  name: CreateOrTruncateSubFolder(String, Boolean)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreateOrTruncateSubFolder_System_String_System_Boolean_
+  commentId: M:DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String,System.Boolean)
+  fullName: DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String, System.Boolean)
+  nameWithType: FolderObject.CreateOrTruncateSubFolder(String, Boolean)
+- uid: DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder*
+  name: CreateOrTruncateSubFolder
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreateOrTruncateSubFolder_
+  commentId: Overload:DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.CreationTime
-  nameWithType: FolderObject.CreationTime
-- uid: DotNetHelper_IO.FolderObject.CreationTimeUtc
-  name: CreationTimeUtc
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreationTimeUtc
-  commentId: P:DotNetHelper_IO.FolderObject.CreationTimeUtc
-  fullName: DotNetHelper_IO.FolderObject.CreationTimeUtc
-  nameWithType: FolderObject.CreationTimeUtc
-- uid: DotNetHelper_IO.FolderObject.CreationTimeUtc*
-  name: CreationTimeUtc
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreationTimeUtc_
-  commentId: Overload:DotNetHelper_IO.FolderObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder
+  nameWithType: FolderObject.CreateOrTruncateSubFolder
+- uid: DotNetHelper_IO.FolderObject.Delete(System.Boolean)
+  name: Delete(Boolean)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Delete_System_Boolean_
+  commentId: M:DotNetHelper_IO.FolderObject.Delete(System.Boolean)
+  fullName: DotNetHelper_IO.FolderObject.Delete(System.Boolean)
+  nameWithType: FolderObject.Delete(Boolean)
+- uid: DotNetHelper_IO.FolderObject.Delete*
+  name: Delete
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Delete_
+  commentId: Overload:DotNetHelper_IO.FolderObject.Delete
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.CreationTimeUtc
-  nameWithType: FolderObject.CreationTimeUtc
-- uid: DotNetHelper_IO.FolderObject.DeleteFolder(System.Action{System.Exception},System.Boolean)
-  name: DeleteFolder(Action<Exception>, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_DeleteFolder_System_Action_System_Exception__System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.DeleteFolder(System.Action{System.Exception},System.Boolean)
-  name.vb: DeleteFolder(Action(Of Exception), Boolean)
-  fullName: DotNetHelper_IO.FolderObject.DeleteFolder(System.Action<System.Exception>, System.Boolean)
-  fullName.vb: DotNetHelper_IO.FolderObject.DeleteFolder(System.Action(Of System.Exception), System.Boolean)
-  nameWithType: FolderObject.DeleteFolder(Action<Exception>, Boolean)
-  nameWithType.vb: FolderObject.DeleteFolder(Action(Of Exception), Boolean)
-- uid: DotNetHelper_IO.FolderObject.DeleteFolder*
-  name: DeleteFolder
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_DeleteFolder_
-  commentId: Overload:DotNetHelper_IO.FolderObject.DeleteFolder
+  fullName: DotNetHelper_IO.FolderObject.Delete
+  nameWithType: FolderObject.Delete
+- uid: DotNetHelper_IO.FolderObject.DirectoryInfo
+  name: DirectoryInfo
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_DirectoryInfo
+  commentId: P:DotNetHelper_IO.FolderObject.DirectoryInfo
+  fullName: DotNetHelper_IO.FolderObject.DirectoryInfo
+  nameWithType: FolderObject.DirectoryInfo
+- uid: DotNetHelper_IO.FolderObject.DirectoryInfo*
+  name: DirectoryInfo
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_DirectoryInfo_
+  commentId: Overload:DotNetHelper_IO.FolderObject.DirectoryInfo
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.DeleteFolder
-  nameWithType: FolderObject.DeleteFolder
+  fullName: DotNetHelper_IO.FolderObject.DirectoryInfo
+  nameWithType: FolderObject.DirectoryInfo
 - uid: DotNetHelper_IO.FolderObject.Dispose
   name: Dispose()
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Dispose
@@ -884,58 +927,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.GetAllFolders
   nameWithType: FolderObject.GetAllFolders
-- uid: DotNetHelper_IO.FolderObject.LastAccessTime
-  name: LastAccessTime
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastAccessTime
-  commentId: P:DotNetHelper_IO.FolderObject.LastAccessTime
-  fullName: DotNetHelper_IO.FolderObject.LastAccessTime
-  nameWithType: FolderObject.LastAccessTime
-- uid: DotNetHelper_IO.FolderObject.LastAccessTime*
-  name: LastAccessTime
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastAccessTime_
-  commentId: Overload:DotNetHelper_IO.FolderObject.LastAccessTime
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.LastAccessTime
-  nameWithType: FolderObject.LastAccessTime
-- uid: DotNetHelper_IO.FolderObject.LastAccessTimeUtc
-  name: LastAccessTimeUtc
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastAccessTimeUtc
-  commentId: P:DotNetHelper_IO.FolderObject.LastAccessTimeUtc
-  fullName: DotNetHelper_IO.FolderObject.LastAccessTimeUtc
-  nameWithType: FolderObject.LastAccessTimeUtc
-- uid: DotNetHelper_IO.FolderObject.LastAccessTimeUtc*
-  name: LastAccessTimeUtc
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastAccessTimeUtc_
-  commentId: Overload:DotNetHelper_IO.FolderObject.LastAccessTimeUtc
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.LastAccessTimeUtc
-  nameWithType: FolderObject.LastAccessTimeUtc
-- uid: DotNetHelper_IO.FolderObject.LastWriteTime
-  name: LastWriteTime
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastWriteTime
-  commentId: P:DotNetHelper_IO.FolderObject.LastWriteTime
-  fullName: DotNetHelper_IO.FolderObject.LastWriteTime
-  nameWithType: FolderObject.LastWriteTime
-- uid: DotNetHelper_IO.FolderObject.LastWriteTime*
-  name: LastWriteTime
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastWriteTime_
-  commentId: Overload:DotNetHelper_IO.FolderObject.LastWriteTime
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.LastWriteTime
-  nameWithType: FolderObject.LastWriteTime
-- uid: DotNetHelper_IO.FolderObject.LastWriteTimeUtc
-  name: LastWriteTimeUtc
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastWriteTimeUtc
-  commentId: P:DotNetHelper_IO.FolderObject.LastWriteTimeUtc
-  fullName: DotNetHelper_IO.FolderObject.LastWriteTimeUtc
-  nameWithType: FolderObject.LastWriteTimeUtc
-- uid: DotNetHelper_IO.FolderObject.LastWriteTimeUtc*
-  name: LastWriteTimeUtc
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastWriteTimeUtc_
-  commentId: Overload:DotNetHelper_IO.FolderObject.LastWriteTimeUtc
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.LastWriteTimeUtc
-  nameWithType: FolderObject.LastWriteTimeUtc
 - uid: DotNetHelper_IO.FolderObject.LoadFilesInFolder
   name: LoadFilesInFolder
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LoadFilesInFolder
@@ -975,12 +966,12 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.LoadSubFolders
   nameWithType: FolderObject.LoadSubFolders
-- uid: DotNetHelper_IO.FolderObject.MoveTo(System.String,System.Boolean)
-  name: MoveTo(String, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_MoveTo_System_String_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.MoveTo(System.String,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.MoveTo(System.String, System.Boolean)
-  nameWithType: FolderObject.MoveTo(String, Boolean)
+- uid: DotNetHelper_IO.FolderObject.MoveTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  name: MoveTo(String, FolderOption)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_MoveTo_System_String_DotNetHelper_IO_Enum_FolderOption_
+  commentId: M:DotNetHelper_IO.FolderObject.MoveTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  fullName: DotNetHelper_IO.FolderObject.MoveTo(System.String, DotNetHelper_IO.Enum.FolderOption)
+  nameWithType: FolderObject.MoveTo(String, FolderOption)
 - uid: DotNetHelper_IO.FolderObject.MoveTo*
   name: MoveTo
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_MoveTo_
@@ -1040,22 +1031,22 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.RefreshObject
   nameWithType: FolderObject.RefreshObject
-- uid: DotNetHelper_IO.FolderObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
-  name: SetFileAttribute(AddOrRemoveEnum, List<FileAttributes>)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_SetFileAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__
-  commentId: M:DotNetHelper_IO.FolderObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
-  name.vb: SetFileAttribute(AddOrRemoveEnum, List(Of FileAttributes))
-  fullName: DotNetHelper_IO.FolderObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum, System.Collections.Generic.List<System.IO.FileAttributes>)
-  fullName.vb: DotNetHelper_IO.FolderObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum, System.Collections.Generic.List(Of System.IO.FileAttributes))
-  nameWithType: FolderObject.SetFileAttribute(AddOrRemoveEnum, List<FileAttributes>)
-  nameWithType.vb: FolderObject.SetFileAttribute(AddOrRemoveEnum, List(Of FileAttributes))
-- uid: DotNetHelper_IO.FolderObject.SetFileAttribute*
-  name: SetFileAttribute
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_SetFileAttribute_
-  commentId: Overload:DotNetHelper_IO.FolderObject.SetFileAttribute
+- uid: DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
+  name: SetFolderAttribute(AddOrRemoveEnum, List<FileAttributes>)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_SetFolderAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__
+  commentId: M:DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
+  name.vb: SetFolderAttribute(AddOrRemoveEnum, List(Of FileAttributes))
+  fullName: DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum, System.Collections.Generic.List<System.IO.FileAttributes>)
+  fullName.vb: DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum, System.Collections.Generic.List(Of System.IO.FileAttributes))
+  nameWithType: FolderObject.SetFolderAttribute(AddOrRemoveEnum, List<FileAttributes>)
+  nameWithType.vb: FolderObject.SetFolderAttribute(AddOrRemoveEnum, List(Of FileAttributes))
+- uid: DotNetHelper_IO.FolderObject.SetFolderAttribute*
+  name: SetFolderAttribute
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_SetFolderAttribute_
+  commentId: Overload:DotNetHelper_IO.FolderObject.SetFolderAttribute
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.SetFileAttribute
-  nameWithType: FolderObject.SetFileAttribute
+  fullName: DotNetHelper_IO.FolderObject.SetFolderAttribute
+  nameWithType: FolderObject.SetFolderAttribute
 - uid: DotNetHelper_IO.FolderObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)
   name: StartWatching(WatcherChangeTypes, Boolean)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_

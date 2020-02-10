@@ -48,7 +48,7 @@ namespace Tests
         {
             // Runs once after all tests in this class are executed. (Optional)
             // Not guaranteed that it executes instantly after all tests from the class.
-            new FolderObject(BaseFolder).Delete( true); // PURGE EVERYTHING
+            new FolderObject(BaseFolder).Delete(true); // PURGE EVERYTHING
         }
 
         [SetUp]
@@ -61,7 +61,7 @@ namespace Tests
         public void TestCleanup()
         {
             // Runs after each test. (Optional)
-            TestFolder.Delete( true); // PURGE EVERYTHING
+            TestFolder.Delete(true); // PURGE EVERYTHING
         }
 
 
@@ -85,7 +85,7 @@ namespace Tests
             var fileSizeInMegaBytes = TestFile.GetFileSize(SizeUnits.Mb);
 
             var fileSizeAsString = TestFile.GetFileSize();
-           
+
             // Assert
             Assert.That(fileSizeInBytes, Is.EqualTo(fileSize));
             Assert.That(fileSizeInKiloBytes, Is.EqualTo(97656));
@@ -95,7 +95,7 @@ namespace Tests
 
 
 
-   
+
 
 
         //[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
