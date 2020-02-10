@@ -34,7 +34,7 @@ namespace DotNetHelper_IO
 
             if (truncate)
             {
-                DeleteFile(e => throw e);
+                DeleteFile(false);
             }
             else
             {
@@ -58,7 +58,7 @@ namespace DotNetHelper_IO
             if (option == FileOption.Append) throw new NotSupportedException("Append Option For Unzip files has not been implemented yet");
             if (option == FileOption.IncrementFileExtensionIfExist) throw new NotSupportedException("IncrementFileExtensionIfExist Option For Unzip files has not been implemented yet");
             if (option == FileOption.IncrementFileNameIfExist) throw new NotSupportedException("IncrementFileNameIfExist Option For Unzip files has not been implemented yet");
-            folder.Create(e => throw e);
+            folder.CreateOrTruncate(true);
             using var stream = File.OpenRead(FullFilePath);
             using var reader = ReaderFactory.Open(stream);
             while (reader.MoveToNextEntry())
@@ -83,7 +83,7 @@ namespace DotNetHelper_IO
         /// <param name="option">how to handle files that will be added to the zip</param>
         public void AddFilesToZip(List<string> files, FileOption option = FileOption.Overwrite)
         {
-            var safeFiles = files.Select(s => new FileObject(s, false)).Where(f => f.Exist == true).ToList();
+            var safeFiles = files.Select(s => new FileObject(s)).Where(f => f.Exist == true).ToList();
             if (safeFiles.Count <= 0) return;
             if (Exist != true) CreateOrTruncate(false);
             switch (Type)

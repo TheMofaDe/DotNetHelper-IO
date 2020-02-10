@@ -418,6 +418,12 @@ references:
   commentId: M:DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
   fullName: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits, System.Boolean)
   nameWithType: FileObject.GetFileSize(SizeUnits, Boolean)
+- uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
+  name: GetFileSize(Boolean)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSize_System_Boolean_
+  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
+  fullName: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
+  nameWithType: FileObject.GetFileSize(Boolean)
 - uid: DotNetHelper_IO.FileObject.GetFileSize*
   name: GetFileSize
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSize_
@@ -425,19 +431,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.GetFileSize
   nameWithType: FileObject.GetFileSize
-- uid: DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
-  name: GetFileSizeDisplay(Boolean)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSizeDisplay_System_Boolean_
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
-  nameWithType: FileObject.GetFileSizeDisplay(Boolean)
-- uid: DotNetHelper_IO.FileObject.GetFileSizeDisplay*
-  name: GetFileSizeDisplay
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSizeDisplay_
-  commentId: Overload:DotNetHelper_IO.FileObject.GetFileSizeDisplay
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.GetFileSizeDisplay
-  nameWithType: FileObject.GetFileSizeDisplay
 - uid: DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   name: GetFileStream(FileOption, Int32, Boolean)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileStream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Boolean_
@@ -503,19 +496,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.Init
   nameWithType: FileObject.Init
-- uid: DotNetHelper_IO.FileObject.IsFileLocked
-  name: IsFileLocked()
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_IsFileLocked
-  commentId: M:DotNetHelper_IO.FileObject.IsFileLocked
-  fullName: DotNetHelper_IO.FileObject.IsFileLocked()
-  nameWithType: FileObject.IsFileLocked()
-- uid: DotNetHelper_IO.FileObject.IsFileLocked*
-  name: IsFileLocked
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_IsFileLocked_
-  commentId: Overload:DotNetHelper_IO.FileObject.IsFileLocked
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.IsFileLocked
-  nameWithType: FileObject.IsFileLocked
 - uid: DotNetHelper_IO.FileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption)
   name: MoveTo(String, FileOption)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_MoveTo_System_String_DotNetHelper_IO_Enum_FileOption_

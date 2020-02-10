@@ -8,8 +8,17 @@ using System.Threading.Tasks;
 
 namespace DotNetHelper_IO.Extension
 {
+
+
+    
+
+
     internal static class StreamExtensions
     {
+
+
+
+
         public static async Task CopyAndFlushAsync(this Stream source, Stream destination, IProgress<long> progress, CancellationToken cancellationToken = default, int bufferSize = 4096)
         {
             await source.CopyToAsync(destination, progress, cancellationToken, bufferSize);
@@ -27,7 +36,21 @@ namespace DotNetHelper_IO.Extension
                 bytesTotal += bytesRead;
                 progress?.Report(bytesTotal);
             }
-            await destination.FlushAsync(cancellationToken);
+            //   await destination.FlushAsync(cancellationToken);
+        }
+
+        public static void CopyTo(this Stream source, Stream destination, IProgress<long> progress, int bufferSize = 4096)
+        {
+            var buffer = new byte[bufferSize];
+            var bytesRead = 0;
+            long bytesTotal = 0;
+            while ((bytesRead =  source.Read(buffer, 0, buffer.Length)) > 0)
+            { 
+                destination.Write(buffer, 0, bytesRead);
+                bytesTotal += bytesRead;
+                progress?.Report(bytesTotal);
+            }
+            //  destination.Flush(cancellationToken);
         }
     }
 }

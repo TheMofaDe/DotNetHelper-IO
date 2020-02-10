@@ -3,6 +3,8 @@ using DotNetHelper_IO;
 using NUnit.Framework;
 using System;
 using System.IO;
+using System.Linq;
+using Bogus;
 using DotNetHelper_IO_Tests;
 
 namespace Tests
@@ -11,130 +13,214 @@ namespace Tests
     [NonParallelizable] //since were sharing a single file across multiple test cases we don't want Parallelizable
     public class FolderObjectTextFixture : BaseTest
     {
-        public FolderObject AbsoluteTestFolder { get; }
-        public FileObject AbsoluteTestFile { get; }
-        public FolderObject RelativeTestFolder { get; }
-        public FileObject RelativeTestFile { get; }
+
 
 
         public FolderObjectTextFixture()
         {
-            AbsoluteTestFolder = new FolderObject(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "UnitTestTempDir", true, true, true);
-            RelativeTestFolder = new FolderObject("./UnitTestTempDir", true, true, true);
-
-            AbsoluteTestFile = new FileObject(AbsoluteTestFolder.FullFolderPath + "UnitTestFile");
-            RelativeTestFile = new FileObject(RelativeTestFolder.FullFolderPath + "UnitTestFile");
+         
         }
 
 
         [OneTimeSetUp]
-        public void RunBeforeAnyTests()
+        public void ClassInit()
         {
-            AbsoluteTestFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
-            if (File.Exists(AbsoluteTestFile.FullFilePath))
-                Assert.IsFalse(AbsoluteTestFile.Exist, "Unit Test setup failed due to environment not being clean");
+            // Executes once for the test class. (Optional)
+            new FolderObject(BaseFolder).Delete(true); // PURGE EVERYTHING
         }
 
         [OneTimeTearDown]
-        public void RunAfterAnyTests()
+        public void ClassCleanup()
         {
-            AbsoluteTestFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
+            // Runs once after all tests in this class are executed. (Optional)
+            // Not guaranteed that it executes instantly after all tests from the class.
+            new FolderObject(BaseFolder).Delete(true); // PURGE EVERYTHING
         }
 
-
-
         [SetUp]
-        public void Init()
+        public void TestInit()
         {
-
+            // Runs before each test. (Optional)
         }
 
         [TearDown]
-        public void Cleanup()
+        public void TestCleanup()
         {
 
-        }
-
-        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-        [Test]
-        public void Test_AbsoluteCreateFolderSoRelativeShouldNot()
-        {
-
-            var subFolderName = "ABSOLUTE";
-            var absoluteFolder = new FolderObject(AbsoluteTestFolder.FullFolderPath + subFolderName);
-
-            absoluteFolder.Create(delegate (Exception exception)
-        {
-            Assert.Fail($"{exception.Message}");
-        });
-            absoluteFolder.RefreshObject(absoluteFolder.LoadSubFolders, absoluteFolder.LoadFilesInFolder, absoluteFolder.LoadRecursive);
-            var relativeFolder = new FolderObject(RelativeTestFolder.FullFolderPath + subFolderName);
-
-
-            Assert.IsTrue(relativeFolder.Exist, "Syncing between absolute & relative paths is off");
-
-            Assert.IsTrue(relativeFolder.ParentFolder == absoluteFolder.ParentFolder
-                          && relativeFolder.Files.Count == absoluteFolder.Files.Count
-                          && relativeFolder.Creation​Time​ == absoluteFolder.Creation​Time​
-                          && relativeFolder.Last​Access​Time​Utc == absoluteFolder.Last​Access​Time​Utc
-                          );
-        }
-
-
-
-        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-        [Test]
-        public void Test_RelativeCreateFolderSoAbsoluteShouldNot()
-        {
-
-            var subFolderName = "RELATIVE";
-            var relativeFolder = new FolderObject(AbsoluteTestFolder.FullFolderPath + subFolderName);
-
-            relativeFolder.Create(delegate (Exception exception)
-            {
-                Assert.Fail($"{exception.Message}");
-            });
-            relativeFolder.RefreshObject(relativeFolder.LoadSubFolders, relativeFolder.LoadFilesInFolder, relativeFolder.LoadRecursive);
-            var absoluteFolder = new FolderObject(RelativeTestFolder.FullFolderPath + subFolderName);
-
-
-            Assert.IsTrue(relativeFolder.Exist, "Syncing between absolute & relative paths is off");
-
-            Assert.IsTrue(relativeFolder.ParentFolder == absoluteFolder.ParentFolder
-                          && relativeFolder.Files.Count == absoluteFolder.Files.Count
-                          && relativeFolder.Creation​Time​ == absoluteFolder.Creation​Time​
-                          && relativeFolder.Last​Access​Time​Utc == absoluteFolder.Last​Access​Time​Utc
-            );
-        }
-
-
-
-        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-        [Test]
-        public void Test_RelativeAndAbsoluteMatch()
-        {
-
-
-
-            Assert.IsTrue(RelativeTestFolder.ParentFolder == AbsoluteTestFolder.ParentFolder
-                          && RelativeTestFolder.Files.Count == AbsoluteTestFolder.Files.Count
-                          && RelativeTestFolder.Creation​Time​ == AbsoluteTestFolder.Creation​Time​
-                          && RelativeTestFolder.Last​Access​Time​Utc == AbsoluteTestFolder.Last​Access​Time​Utc
-            );
         }
 
 
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
         [Test]
-        public void Test_DisposeShouldNotThrowError()
+        public void Test_CreateOrTruncate_Should_Create_New_Folder([Values(true,false)] bool truncate)
         {
-            var newFile = $"{AbsoluteTestFolder.FullFolderPath}DisposeTest";
-            using (var file = new FileObject(newFile))
-            {
+            // Arrange
+            var randomFolderName = new Randomizer().String(8, 'A', 'Z');
+            var path = Path.Combine(WorkingDirectory, randomFolderName);
+            var folder = new FolderObject(path);
 
-            }
-            Assert.Pass("Successfully dispose new instance without error");
+            // Act
+            folder.CreateOrTruncate(truncate);
+
+            // Assert
+            Assert.That(Directory.Exists(path),Is.True);
         }
+
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test]
+        public void Test_CreateOrTruncateSubFolder_Should_Create_New_SubFolder([Values(true, false)] bool truncate)
+        {
+            // Arrange
+            var randomFolderName = new Randomizer().String(8,'A','Z');
+            var path = Path.Combine(WorkingDirectory, randomFolderName);
+            var folder = new FolderObject(path);
+            var subFolderPath = Path.Combine(path, $"Sub1{Path.DirectorySeparatorChar}Sub2{Path.DirectorySeparatorChar}");
+            // Act
+
+            var subFolder = folder.CreateOrTruncateSubFolder(subFolderPath, truncate);
+            
+
+            // Assert
+            Assert.That(Directory.Exists(subFolderPath), Is.True);
+            Assert.That(subFolderPath, Is.EqualTo(subFolder.FullFolderPath));
+        }
+
+
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test]
+        public void Test_CreateOrTruncateSubFolder_Should_Create_New_SubFolder_With_RelativePath([Values(true, false)] bool truncate)
+        {
+            // Arrange
+            var randomFolderName = new Randomizer().String(8, 'A', 'Z');
+            var path = Path.Combine(WorkingDirectory, randomFolderName);
+            var folder = new FolderObject(path);
+            var subFolderPath = $"./Ham/Chesse/";
+            // Act
+
+            var subFolder = folder.CreateOrTruncateSubFolder(subFolderPath, truncate);
+
+
+            // Assert
+            Assert.That(Directory.Exists(subFolder.FullFolderPath), Is.True);
+            Assert.That(subFolderPath, Is.EqualTo(subFolder.FullFolderPath));
+        }
+
+
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test]
+        public void Test_Delete_Should_Delete_Folder()
+        {
+            // Arrange
+            var randomFolderName = new Randomizer().String(8, 'A', 'Z');
+            var path = Path.Combine(WorkingDirectory, randomFolderName);
+            var folder = new FolderObject(path);
+
+            // Act
+            Directory.CreateDirectory(path);
+            folder.Delete(true);
+
+            // Assert
+            Assert.That(Directory.Exists(path), Is.False);
+        }
+
+
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test]
+        public void Test_Delete_Should_Delete_Folder_And_Its_Subfolder()
+        {
+            // Arrange
+            var randomFolderName = new Randomizer().String(8, 'A', 'Z');
+            var path = Path.Combine(WorkingDirectory, randomFolderName);
+            var folder = new FolderObject(path);
+            folder.CreateOrTruncateSubFolder($"Sub1{Path.DirectorySeparatorChar}Sub2",true);
+
+            // Act
+            Directory.CreateDirectory(path);
+            new FolderObject(path).Delete(true);
+
+            // Assert
+            Assert.That(Directory.Exists(path), Is.False);
+        }
+
+
+
+
+
+
+        //[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        //[Test]
+        //public void Test_AbsoluteCreateFolderSoRelativeShouldNot()
+        //{
+
+        //    var subFolderName = "ABSOLUTE";
+        //    var absoluteFolder = new FolderObject(BaseFolder.FullFolderPath + subFolderName);
+
+        //    absoluteFolder.CreateOrTruncate(true);
+        //    absoluteFolder.RefreshObject(absoluteFolder.LoadSubFolders, absoluteFolder.LoadFilesInFolder, absoluteFolder.LoadRecursive);
+        //    var relativeFolder = new FolderObject(BaseFolderRelative.FullFolderPath + subFolderName);
+
+
+        //    Assert.IsTrue(relativeFolder.Exist, "Syncing between absolute & relative paths is off");
+
+        //    Assert.IsTrue(relativeFolder.ParentFolder == absoluteFolder.ParentFolder
+        //                  && relativeFolder.Files.Count == absoluteFolder.Files.Count
+        //                  && relativeFolder.DirectoryInfo.CreationTime == absoluteFolder.DirectoryInfo.Creation​Time​
+        //                  && relativeFolder.DirectoryInfo.Last​Access​Time​Utc == absoluteFolder.DirectoryInfo.Last​Access​Time​Utc
+        //                  );
+        //}
+
+
+
+        //[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        //[Test]
+        //public void Test_RelativeCreateFolderSoAbsoluteShouldNot()
+        //{
+
+        //    var subFolderName = "RELATIVE";
+        //    var relativeFolder = new FolderObject(BaseFolder.FullFolderPath + subFolderName);
+
+        //    relativeFolder.CreateOrTruncate(false);
+        //    relativeFolder.RefreshObject(relativeFolder.LoadSubFolders, relativeFolder.LoadFilesInFolder, relativeFolder.LoadRecursive);
+        //    var absoluteFolder = new FolderObject(BaseFolderRelative.FullFolderPath + subFolderName);
+
+
+        //    Assert.IsTrue(relativeFolder.Exist, "Syncing between absolute & relative paths is off");
+
+        //    Assert.IsTrue(relativeFolder.ParentFolder == absoluteFolder.ParentFolder
+        //                  && relativeFolder.Files.Count == absoluteFolder.Files.Count
+        //                  && relativeFolder.DirectoryInfo.Creation​Time​ == absoluteFolder.DirectoryInfo.Creation​Time​
+        //                  && relativeFolder.DirectoryInfo.Last​Access​Time​Utc == absoluteFolder.DirectoryInfo.Last​Access​Time​Utc
+        //    );
+        //}
+
+
+
+        //[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        //[Test]
+        //public void Test_RelativeAndAbsoluteMatch()
+        //{
+
+        //    RelativeTestFolder.CreateOrTruncate(true);
+        //    RelativeTestFile.CreateOrTruncate();
+        //    Assert.IsTrue(BaseFolderRelative.ParentFolder == BaseFolder.ParentFolder
+        //                  && BaseFolderRelative.Files.Count == BaseFolder.Files.Count
+        //                  && BaseFolderRelative.DirectoryInfo.Creation​Time​ == BaseFolder.DirectoryInfo.Creation​Time​
+        //                  && BaseFolderRelative.DirectoryInfo.Last​Access​Time​Utc == BaseFolder.DirectoryInfo.Last​Access​Time​Utc
+        //    );
+        //}
+
+
+        //[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        //[Test]
+        //public void Test_DisposeShouldNotThrowError()
+        //{
+        //    var newFile = $"{BaseFolder.FullFolderPath}DisposeTest";
+        //    using (var file = new FileObject(newFile))
+        //    {
+
+        //    }
+        //    Assert.Pass("Successfully dispose new instance without error");
+        //}
 
 
 

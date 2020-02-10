@@ -6,6 +6,28 @@ using System.Threading.Tasks;
 
 namespace DotNetHelper_IO.Enum
 {
+
+
+    /// <summary>
+    /// Enum FileOption
+    /// </summary>
+    public enum FolderOption
+    {
+
+        IncrementFolderNameIfExist = 1,
+        /// <summary>
+        /// The overwrite
+        /// </summary>
+        Overwrite = 2,
+        /// <summary>
+        /// The do nothing if exist
+        /// </summary>
+        DoNothingIfExist = 3,
+
+
+    }
+
+
     /// <summary>
     /// Enum FileOption
     /// </summary>

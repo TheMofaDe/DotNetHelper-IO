@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+#if NETFRAMEWORK
+#else
+using System.Runtime.InteropServices;
+#endif
 
 namespace DotNetHelper_IO
 {
@@ -20,9 +22,8 @@ namespace DotNetHelper_IO
     /// <seealso cref="T:System.IDisposable" />
     public class FileObject : IDisposable
     {
-        private object ThreadSafe { get; set; } = new object();
 
-
+        public Encoding DefaultEncoding { get; } = Encoding.UTF8;
         public FileInfo FileInfo { get; private set; }
 
         /// <summary>
@@ -48,8 +49,6 @@ namespace DotNetHelper_IO
         public string FullFilePath { get; } // Let not randomly change the file name on developers & lets remove the setter so we remember
 
 
-        public string IncrementFullFilePath { get; private set; } // This allows support 
-
         public string Extension => FileInfo?.Extension;
         /// <summary>
         /// Gets the folder name only.
@@ -66,7 +65,16 @@ namespace DotNetHelper_IO
         /// <summary>
         /// Gets a value indicating whether this <see cref="FileObject"/> is exist.
         /// </summary>
-        public bool Exist => File.Exists(FullFilePath);
+        public bool Exist
+        {
+            get
+            {
+                var exist = File.Exists(FullFilePath);
+                if (exist && FileInfo == null)
+                    RefreshObject(); // DATA OUT OF SYNC
+                return exist;
+            }
+        }
         /// <summary>
         /// Gets or sets the watch timeout.
         /// </summary>
@@ -88,10 +96,26 @@ namespace DotNetHelper_IO
         /// Initializes a new instance of the <see cref="FileObject"/> class.
         /// </summary>
         /// <param name="file">The file.</param>
-        public FileObject(string file, bool throwOnBadFileName = true)
+        /// <param name="defaultEncoding"></param>
+        public FileObject(string file, Encoding defaultEncoding = null)
         {
             FullFilePath = file;
-            Init(throwOnBadFileName);
+            DefaultEncoding = defaultEncoding;
+            Init(true);
+        }
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileObject"/> class.
+        /// </summary>
+        /// <param name="fileInfo"></param>
+        /// <param name="defaultEncoding"></param>
+        public FileObject(FileInfo fileInfo, Encoding defaultEncoding = null)
+        {
+            FullFilePath = fileInfo.FullName;
+            FileInfo = fileInfo;
+            DefaultEncoding = defaultEncoding;
+
         }
 
 
@@ -114,11 +138,7 @@ namespace DotNetHelper_IO
         /// </summary>
         public void RefreshObject()
         {
-            var result = IO.IsValidFilePathSyntax(FullFilePath);
-            if (result.Item1 != true)
-            {
-                throw result.Item2;
-            }
+       
             try
             {
                 var info = new FileInfo(FullFilePath);
@@ -261,7 +281,7 @@ namespace DotNetHelper_IO
         {
             if (moveToFullFilePath == FullFilePath) return true;
             if (Exist != true) return false;
-    
+
             switch (option)
             {
                 case FileOption.Append:
@@ -274,7 +294,7 @@ namespace DotNetHelper_IO
                         return false;
                     CopyTo(moveToFullFilePath, option);
                     break;
-                case FileOption.Overwrite: 
+                case FileOption.Overwrite:
                     File.Move(FullFilePath, moveToFullFilePath); // move the file
                     return true;
                 case FileOption.ReadOnly:
@@ -282,7 +302,7 @@ namespace DotNetHelper_IO
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);
             }
-            DeleteFile(e => throw e);
+            DeleteFile(false);
             return true;
         }
 
@@ -324,7 +344,7 @@ namespace DotNetHelper_IO
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);
             }
-            DeleteFile(e => throw e);
+            DeleteFile(false);
             return true;
         }
 
@@ -344,7 +364,7 @@ namespace DotNetHelper_IO
         /// <exception cref="UnauthorizedAccessException"> throws if the application doesn't have the required permission </exception>
         public bool ChangeExtension(string newExtension, FileOption option, IProgress<double> progress = null)
         {
-            if (newExtension == null) throw new NullReferenceException($"Could not change the extension of file {FullFilePath} Because Developer Provided A Null Value");
+            newExtension.IsNullThrow();
             return MoveTo(Path.ChangeExtension(FullFilePath, newExtension), option);
         }
 
@@ -369,27 +389,18 @@ namespace DotNetHelper_IO
 
 
         /// <summary>
-        /// Deletes the file. If you want an 
+        /// Deletes the file.
         /// </summary>
-        public void DeleteFile(Action<Exception> onFailedDeletion, bool disposeObject = false)
+        public void DeleteFile(bool disposeObject)
         {
-            if (Exist == true)
-            {
-                try
-                {
-                    SetFileAttribute(AddOrRemoveEnum.Remove, new List<FileAttributes>() { FileAttributes.Hidden, FileAttributes.ReadOnly });
-                    File.Delete(FullFilePath);
-                    if (disposeObject)
-                    {
-                        Dispose();
-                        return;
-                    }
-                }
-                catch (Exception error)
-                {
-                    onFailedDeletion?.Invoke(error);
-                }
-            }
+            if (Exist != true) return;
+
+           SetFileAttribute(AddOrRemoveEnum.Remove, new List<FileAttributes>() { FileAttributes.Hidden, FileAttributes.ReadOnly });
+           File.Delete(FullFilePath);
+           if (!disposeObject) return;
+           Dispose();
+           return;
+           
         }
 
 
@@ -410,10 +421,7 @@ namespace DotNetHelper_IO
             }
             if (!Directory.Exists(FilePathOnly))
                 Directory.CreateDirectory(FilePathOnly);
-            lock (ThreadSafe)
-            {
-                File.Create(FullFilePath).Dispose();
-            }
+            File.Create(FullFilePath).Dispose();
             return true;
 
         }
@@ -510,7 +518,7 @@ namespace DotNetHelper_IO
         }
 
 
-        #region  Reading File
+#region  Reading File
 
         /// <summary>
         /// Reads the file to list.
@@ -539,7 +547,7 @@ namespace DotNetHelper_IO
             return sr.ReadToEnd();
         }
 
-        #endregion
+#endregion
 
         /// <summary>
         /// Prepares for stream use.  Prevents Exeception From Being Throwned When working with file Streams
@@ -564,6 +572,8 @@ namespace DotNetHelper_IO
                 case FileOption.IncrementFileNameIfExist:
                 case FileOption.IncrementFileExtensionIfExist:
 
+                    break;
+                case FileOption.ReadOnly:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);
@@ -615,20 +625,6 @@ namespace DotNetHelper_IO
         }
 
 
-        /// <summary>
-        /// Gets the file stream.
-        /// </summary>
-        /// <param name="mode">The mode.</param>
-        /// <param name="access">The access.</param>
-        /// <param name="useIncrementFileName"></param>
-        /// <param name="useIncrementExtension"></param>
-        /// <returns>FileStream.</returns>
-        /// default fileshare is read see https://referencesource.microsoft.com/#mscorlib/system/io/filestream.cs
-        private (FileStream fileStream, string fullFilePath) GetFileStream(FileMode mode, FileAccess access = FileAccess.ReadWrite, bool useIncrementFileName = false, bool useIncrementExtension = false)
-        {
-            return GetFileStream(mode, access, FileShare.Read, 4096, FileOptions.None, useIncrementFileName, useIncrementExtension);
-        }
-
 
         /// <summary>
         /// Gets the file stream.
@@ -646,7 +642,7 @@ namespace DotNetHelper_IO
             switch (option)
             {
                 case FileOption.ReadOnly:
-                    stream = (new FileStream(FullFilePath, FileMode.Open, FileAccess.Read, FileShare.Read) { }, FullFilePath);
+                    stream = (new FileStream(FullFilePath, FileMode.Open, FileAccess.Read, FileShare.Read), FullFilePath);
                     break;
                 case FileOption.Append:
                     PrepareForStreamUse(option);
@@ -694,26 +690,74 @@ namespace DotNetHelper_IO
 
 
 
-        #region  WRITING
+#region  WRITING
 
         /// <summary>
-        /// Writes the content to file. Returns the full file name content was written to. This method is thread safe
+        /// Writes the content to file. Returns the full file name content was written to. This method is not thread safe
         /// </summary>
         /// <param name="content">The content.</param>
-        /// <param name="encoding"></param>
+        /// <param name="encoding">default to UTF-8</param>
         /// <param name="option">The option.</param>
         /// <param name="bufferSize"></param>
-        public string Write(string content, FileOption option, Encoding encoding, int bufferSize = 4096)
+        public string Write(string content, FileOption option = FileOption.Overwrite, Encoding encoding = null, int bufferSize = 4096)
         {
             if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
-            var fileStreamAndFileName = GetFileStream(option);
-            lock (ThreadSafe)
-            {
-                using var sw = new StreamWriter(fileStreamAndFileName.fileStream, encoding, bufferSize, false);
-                sw.Write(content);
-            }
-            return fileStreamAndFileName.fullFilePath;
+            var (fileStream, fullFilePath) = GetFileStream(option);
+            using var sw = new StreamWriter(fileStream, encoding ?? Encoding.UTF8, bufferSize, false);
+            sw.Write(content);
+            return fullFilePath;
         }
+
+        /// <summary>
+        /// Writes the bytes to file. Returns the full file name content was written to. This method is not thread safe
+        /// </summary>
+        /// <param name="bytes">The bytes.</param>
+        /// <param name="option">The option.</param>
+        /// <param name="offset"></param>
+        /// <param name="count"></param>
+        public string Write(byte[] bytes, FileOption option = FileOption.Overwrite, int offset = 0, int? count = null)
+        {
+            if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
+            var (fileStream, fullFilePath) = GetFileStream(option);
+            using (fileStream)
+            {
+                fileStream.Write(bytes,offset, count.GetValueOrDefault(bytes.Length));
+            }
+            return fullFilePath;
+        }
+
+
+        /// <summary>
+        /// Writes the content to file. Returns the full file name content was written to. This method is not thread safe
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="option">The option.</param>
+        /// <param name="bufferSize"></param>
+        public string Write(Stream stream, FileOption option = FileOption.Overwrite, int bufferSize = 4096)
+        {
+            if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
+            var (fileStream, fullFilePath) = GetFileStream(option);
+            using(fileStream)
+                stream.CopyTo(fileStream,bufferSize);
+            return fullFilePath;
+        }
+
+        /// <summary>
+        /// Writes the content to file. Returns the full file name content was written to. This method is not thread safe
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="progress">Report progress in stream bytes not percentages. </param>
+        /// <param name="option">The option.</param>
+        /// <param name="bufferSize"></param>
+        public string Write(Stream stream, IProgress<long> progress, FileOption option = FileOption.Overwrite, int bufferSize = 4096)
+        {
+            if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
+            var (fileStream, fullFilePath) = GetFileStream(option);
+            using (fileStream)
+                 stream.CopyTo(fileStream, progress,bufferSize);
+            return fullFilePath;
+        }
+
 
 
         /// <summary>
@@ -726,96 +770,71 @@ namespace DotNetHelper_IO
         public async Task<string> WriteAsync(string content, FileOption option, Encoding encoding, int bufferSize = 4096)
         {
             if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
-            var fileStreamAndFileName = GetFileStream(option);
-            using var sw = new StreamWriter(fileStreamAndFileName.fileStream, encoding, bufferSize, false);
+            var (fileStream, fullFilePath) = GetFileStream(option);
+            using var sw = new StreamWriter(fileStream, encoding, bufferSize, false);
             await sw.WriteAsync(content);
-            return fileStreamAndFileName.fullFilePath;
+            return fullFilePath;
         }
-
 
 
         /// <summary>
-        /// write stream to file as an asynchronous operation. this method is not thread safe
+        /// Writes the bytes to file. Returns the full file name content was written to. This method is not thread safe
         /// </summary>
-        /// <param name="stream">The stream.</param>
-        /// <param name="progress">The progress.</param>
-        /// <param name="overwriteIfFileExist">if set to <c>true</c> [overwrite if file exist].</param>
-        /// <returns>Task&lt;System.Boolean&gt;.</returns>
-        public async Task<bool> WriteStreamToFileAsync(Stream stream, IProgress<double> progress = null, bool overwriteIfFileExist = true)
+        /// <param name="bytes">The bytes.</param>
+        /// <param name="option">The option.</param>
+        /// <param name="offset"></param>
+        /// <param name="count"></param>
+        /// <param name="cancellationToken"></param>
+        public async Task<string> WriteAsync(byte[] bytes, FileOption option = FileOption.Overwrite, int offset = 0, int? count = null, CancellationToken cancellationToken = default)
         {
-            if (!overwriteIfFileExist && Exist == true) return true;
-
-            if (stream.Length <= 0 && !stream.CanRead)
+            if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
+            var (fileStream, fullFilePath) = GetFileStream(option);
+            using (fileStream)
             {
-                Console.WriteLine("Couldn't retrieve the data from stream length was zero and also the stream was not readabale");
-                return false;
+               await fileStream.WriteAsync(bytes, offset, count.GetValueOrDefault(bytes.Length), cancellationToken);
             }
-            stream.Position = 0;
-            var start = DateTime.Now;
-
-            using var file = new FileStream(FullFilePath, FileMode.Create, FileAccess.Write) { Position = 0 };
-            var buffer = new byte[4 * 1024];
-
-            int read;
-            var max = stream.Length;
-            var currentprogress = 0;
-            while ((read = stream.Read(buffer, 0, buffer.Length)) > 0)
-            {
-                currentprogress = currentprogress + read;
-                var realprogress = decimal.Divide(currentprogress, max) * 100;
-                if (progress != null)
-                    if ((Convert.ToInt32(realprogress) / 2) > 0)
-                        progress.Report((Convert.ToInt32(realprogress)));
-                await file.WriteAsync(buffer, 0, read, CancellationToken.None);
-            }
-            var elapsedTimeInSeconds = DateTime.Now.Subtract(start).TotalSeconds;
-            return true;
+            return fullFilePath;
         }
+
 
         /// <summary>
-        /// Writes the stream to file. this method is thread safe
+        /// Writes the content to file. Returns the full file name content was written to. This method is not thread safe
         /// </summary>
-        /// <param name="stream">The stream.</param>
-        /// <param name="progress">The progress.</param>
-        /// <param name="option"></param>
-        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        public bool WriteStreamToFile(Stream stream, IProgress<double> progress = null, FileOption option = FileOption.Overwrite)
+        /// <param name="stream"></param>
+        /// <param name="option">The option.</param>
+        /// <param name="bufferSize"></param>
+        /// <param name="cancellationToken"></param>
+        public async Task<string> WriteAsync(Stream stream, FileOption option = FileOption.Overwrite, int bufferSize = 4096, CancellationToken cancellationToken = default)
         {
-            if (option == FileOption.DoNothingIfExist && Exist == true) return true;
-
-            if (stream.Length <= 0) // COPY NOTHING
-            {
-                return true;
-            }
-            stream.Position = 0;
-            var start = DateTime.Now;
-            lock (ThreadSafe)
-            {
-                using var file = GetFileStream(option).fileStream;
-                var buffer = new byte[4 * 1024];
-
-                int read;
-                var max = stream.Length;
-                var currentprogress = 0;
-                while ((read = stream.Read(buffer, 0, buffer.Length)) > 0)
-                {
-                    currentprogress = currentprogress + read;
-                    if (max != 0)
-                    {
-                        var realprogress = decimal.Divide(currentprogress, max) * 100;
-                        if (progress != null)
-                            if ((Convert.ToInt32(realprogress) / 2) > 0)
-                                progress.Report((Convert.ToInt32(realprogress)));
-                    }
-
-                    file.Write(buffer, 0, read);
-                }
-                var elapsedTimeInSeconds = DateTime.Now.Subtract(start).TotalSeconds;
-                return true;
-            }
+            if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
+            var (fileStream, fullFilePath) = GetFileStream(option);
+            using (fileStream)
+                await fileStream.CopyToAsync(stream, bufferSize,cancellationToken);
+            return fullFilePath;
         }
 
-        #endregion
+
+        /// <summary>
+        /// Writes the content to file. Returns the full file name content was written to. This method is not thread safe
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="progress"></param>
+        /// <param name="option">The option.</param>
+        /// <param name="bufferSize"></param>
+        /// <param name="cancellationToken"></param>
+        public async Task<string> WriteAsync(Stream stream, IProgress<long> progress, FileOption option = FileOption.Overwrite, int bufferSize = 4096, CancellationToken cancellationToken = default)
+        {
+            if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
+            var (fileStream, fullFilePath) = GetFileStream(option);
+            using (fileStream)
+                await stream.CopyToAsync(fileStream, progress,cancellationToken, bufferSize);
+            return fullFilePath;
+        }
+
+
+
+
+#endregion
 
         /// <summary>
         /// Gets the file encoding. if can not determine the file Encoding this return ascii by default
@@ -825,12 +844,6 @@ namespace DotNetHelper_IO
         {
             // *** Detect byte order mark if any - otherwise assume default
             var buffer = new byte[5];
-
-            if (Exist != true)
-            {
-                Console.WriteLine("Couldn't Get File Encoding Because File Doesn't Exist");
-                return null;
-            }
             using (var z = File.OpenRead(FullFilePath))
             {
                 z.Read(buffer, 0, 5);
@@ -890,13 +903,21 @@ namespace DotNetHelper_IO
             if (FileSize == 0) return 0;
             const int filter = 1024;
             if (sizeUnits == SizeUnits.Byte) return FileSize;
-            return FileSize.Value / (filter * sizeUnits.ToInt() + 1);
+
+            var limit = (int) sizeUnits;
+            var value = FileSize.Value;
+            while (limit > 0)
+            {
+                limit--;
+                value = value / filter;
+            }
+            return value; 
         }
 
 
 
 
-      
+
 
         /// <summary>
         /// Starts the watching.
@@ -906,10 +927,12 @@ namespace DotNetHelper_IO
         /// <exception cref="Exception"></exception>
         public void StartWatching(WatcherChangeTypes changeTypes = WatcherChangeTypes.All, bool onNewThread = true, NotifyFilters? filters = null)
         {
-            Watcher = new FileSystemWatcher(FilePathOnly, "file");
-            Watcher.IncludeSubdirectories = false;
-            Watcher.NotifyFilter = filters.GetValueOrDefault(NotifyFilters);
-            Watcher.EnableRaisingEvents = true;
+            Watcher = new FileSystemWatcher(FilePathOnly, "file")
+            {
+                IncludeSubdirectories = false,
+                NotifyFilter = filters.GetValueOrDefault(NotifyFilters),
+                EnableRaisingEvents = true
+            };
             // Watcher.BeginInit(); Seems to cause problems
             if (!onNewThread)
             {
@@ -940,7 +963,7 @@ namespace DotNetHelper_IO
 
 
 
-        #region HelperMethods
+#region HelperMethods
 
 
 
@@ -986,7 +1009,7 @@ namespace DotNetHelper_IO
             return new string(charArray);
 
         }
-        #endregion
+#endregion
 
 
 

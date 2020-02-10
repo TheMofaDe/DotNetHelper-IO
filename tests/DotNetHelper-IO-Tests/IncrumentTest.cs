@@ -58,7 +58,7 @@ namespace Tests
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
-            TestFolder.DeleteFolder(e => throw e, true); // PURGE EVERYTHING
+            TestFolder.Delete(false); // PURGE EVERYTHING
             if (File.Exists(TestFile.FullFilePath))
                 Assert.IsFalse(TestFile.Exist, "Unit Test setup failed due to environment not being clean");
         }
@@ -88,7 +88,7 @@ namespace Tests
         [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
         [Test()]
 
-        public void Write_Create_ANewFile_When_Using_IncrementFileExtension_Option([Range(1, 101)] int i)
+        public void Write_Create_ANewFile_When_Using_IncrementFileExtension_Option([Range(90, 101)] int i)
         {
             // Arrange
             TestFile.CreateOrTruncate();

@@ -75,9 +75,8 @@ items:
   - DotNetHelper_IO.FileObject.WriteStreamToFileAsync(System.IO.Stream,System.IProgress{System.Double},System.Boolean)
   - DotNetHelper_IO.FileObject.WriteStreamToFile(System.IO.Stream,System.IProgress{System.Double},DotNetHelper_IO.Enum.FileOption)
   - DotNetHelper_IO.FileObject.GetFileEncoding
-  - DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
+  - DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
   - DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  - DotNetHelper_IO.FileObject.IsFileLocked
   - DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   - DotNetHelper_IO.FileObject.StopWatching
   - DotNetHelper_IO.FileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
@@ -1786,18 +1785,18 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
+- uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
+  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
   parent: DotNetHelper_IO.FileObject
   isExternal: true
-  name: GetFileSizeDisplay(Boolean)
-  nameWithType: FileObject.GetFileSizeDisplay(Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
+  name: GetFileSize(Boolean)
+  nameWithType: FileObject.GetFileSize(Boolean)
+  fullName: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
   spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
-    name: GetFileSizeDisplay
-    nameWithType: FileObject.GetFileSizeDisplay
-    fullName: DotNetHelper_IO.FileObject.GetFileSizeDisplay
+  - uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
+    name: GetFileSize
+    nameWithType: FileObject.GetFileSize
+    fullName: DotNetHelper_IO.FileObject.GetFileSize
   - name: (
     nameWithType: (
     fullName: (
@@ -1810,10 +1809,10 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
-    name: GetFileSizeDisplay
-    nameWithType: FileObject.GetFileSizeDisplay
-    fullName: DotNetHelper_IO.FileObject.GetFileSizeDisplay
+  - uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
+    name: GetFileSize
+    nameWithType: FileObject.GetFileSize
+    fullName: DotNetHelper_IO.FileObject.GetFileSize
   - name: (
     nameWithType: (
     fullName: (
@@ -1875,34 +1874,6 @@ references:
     nameWithType: Boolean
     fullName: System.Boolean
     isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_IO.FileObject.IsFileLocked
-  commentId: M:DotNetHelper_IO.FileObject.IsFileLocked
-  parent: DotNetHelper_IO.FileObject
-  name: IsFileLocked()
-  nameWithType: FileObject.IsFileLocked()
-  fullName: DotNetHelper_IO.FileObject.IsFileLocked()
-  spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.IsFileLocked
-    name: IsFileLocked
-    nameWithType: FileObject.IsFileLocked
-    fullName: DotNetHelper_IO.FileObject.IsFileLocked
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.FileObject.IsFileLocked
-    name: IsFileLocked
-    nameWithType: FileObject.IsFileLocked
-    fullName: DotNetHelper_IO.FileObject.IsFileLocked
-  - name: (
-    nameWithType: (
-    fullName: (
   - name: )
     nameWithType: )
     fullName: )

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Bogus;
 using DotNetHelper_IO;
 
 namespace DotNetHelper_IO_Tests
@@ -13,15 +14,25 @@ namespace DotNetHelper_IO_Tests
     {
 
 
-        public static FolderObject BaseFolder { get; } = new FolderObject($"{Path.Combine(Environment.CurrentDirectory, "UnitTests")}");
+        public static string BaseFolder { get; } = $"{Path.Combine(Environment.CurrentDirectory, "UnitTests")}";
 
 #if NETCORE31
-        public string WorkingDirectory { get; }  = Path.Combine(BaseFolder.FullFolderPath,$"NETCORE_31"); 
+        public string WorkingDirectory { get; }  = Path.Combine(BaseFolder,$"NETCORE_31");
 #elif NET452
-        public string WorkingDirectory { get; } = Path.Combine(BaseFolder.FullFolderPath, $"NET_452");
+        public string WorkingDirectory { get; } = Path.Combine(BaseFolder, $"NET_452");
 #endif
 
 
+        public static string BaseFolderRelative { get; } = $"{Path.Combine("./", "UnitTests")}";
+
+#if NETCORE31
+        public string WorkingDirectoryRelative { get; } = Path.Combine(BaseFolderRelative, $"NETCORE_31");
+#elif NET452
+        public string WorkingDirectoryRelative { get; } = Path.Combine(BaseFolderRelative, $"NET_452");
+#endif
+
+
+     
         public BaseTest()
         {
 

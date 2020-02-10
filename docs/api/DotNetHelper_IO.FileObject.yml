@@ -25,13 +25,12 @@ items:
   - DotNetHelper_IO.FileObject.FullFilePath
   - DotNetHelper_IO.FileObject.GetFileEncoding
   - DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  - DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
+  - DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
   - DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   - DotNetHelper_IO.FileObject.GetIncrementExtension(System.String)
   - DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)
   - DotNetHelper_IO.FileObject.IncrementFullFilePath
   - DotNetHelper_IO.FileObject.Init(System.Boolean)
-  - DotNetHelper_IO.FileObject.IsFileLocked
   - DotNetHelper_IO.FileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption)
   - DotNetHelper_IO.FileObject.MoveToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
   - DotNetHelper_IO.FileObject.NotifyFilters
@@ -1537,23 +1536,23 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
-  id: GetFileSizeDisplay(System.Boolean)
+- uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
+  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
+  id: GetFileSize(System.Boolean)
   parent: DotNetHelper_IO.FileObject
   langs:
   - csharp
   - vb
-  name: GetFileSizeDisplay(Boolean)
-  nameWithType: FileObject.GetFileSizeDisplay(Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSizeDisplay(System.Boolean)
+  name: GetFileSize(Boolean)
+  nameWithType: FileObject.GetFileSize(Boolean)
+  fullName: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
   type: Method
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: GetFileSizeDisplay
+    id: GetFileSize
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 855
   assemblies:
@@ -1562,15 +1561,15 @@ items:
   summary: "\nGets the file size display.\n"
   example: []
   syntax:
-    content: public string GetFileSizeDisplay(bool refreshObject = false)
+    content: public string GetFileSize(bool refreshObject = false)
     parameters:
     - id: refreshObject
       type: System.Boolean
     return:
       type: System.String
       description: System.String.
-    content.vb: Public Function GetFileSizeDisplay(refreshObject As Boolean = False) As String
-  overload: DotNetHelper_IO.FileObject.GetFileSizeDisplay*
+    content.vb: Public Function GetFileSize(refreshObject As Boolean = False) As String
+  overload: DotNetHelper_IO.FileObject.GetFileSize*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1615,40 +1614,6 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FileObject.IsFileLocked
-  commentId: M:DotNetHelper_IO.FileObject.IsFileLocked
-  id: IsFileLocked
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: IsFileLocked()
-  nameWithType: FileObject.IsFileLocked()
-  fullName: DotNetHelper_IO.FileObject.IsFileLocked()
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: IsFileLocked
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 898
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  syntax:
-    content: protected virtual bool IsFileLocked()
-    return:
-      type: System.Boolean
-    content.vb: Protected Overridable Function IsFileLocked As Boolean
-  overload: DotNetHelper_IO.FileObject.IsFileLocked*
-  modifiers.csharp:
-  - protected
-  - virtual
-  modifiers.vb:
-  - Protected
-  - Overridable
 - uid: DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   commentId: M:DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   id: StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
@@ -1667,7 +1632,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StartWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 931
+    startLine: 906
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1714,7 +1679,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StopWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 954
+    startLine: 929
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1746,7 +1711,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 976
+    startLine: 951
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1788,7 +1753,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1021
+    startLine: 996
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2904,11 +2869,6 @@ references:
   name: GetFileEncoding
   nameWithType: FileObject.GetFileEncoding
   fullName: DotNetHelper_IO.FileObject.GetFileEncoding
-- uid: DotNetHelper_IO.FileObject.GetFileSizeDisplay*
-  commentId: Overload:DotNetHelper_IO.FileObject.GetFileSizeDisplay
-  name: GetFileSizeDisplay
-  nameWithType: FileObject.GetFileSizeDisplay
-  fullName: DotNetHelper_IO.FileObject.GetFileSizeDisplay
 - uid: DotNetHelper_IO.FileObject.GetFileSize*
   commentId: Overload:DotNetHelper_IO.FileObject.GetFileSize
   name: GetFileSize
@@ -2920,11 +2880,6 @@ references:
   name: SizeUnits
   nameWithType: SizeUnits
   fullName: DotNetHelper_IO.Enum.SizeUnits
-- uid: DotNetHelper_IO.FileObject.IsFileLocked*
-  commentId: Overload:DotNetHelper_IO.FileObject.IsFileLocked
-  name: IsFileLocked
-  nameWithType: FileObject.IsFileLocked
-  fullName: DotNetHelper_IO.FileObject.IsFileLocked
 - uid: DotNetHelper_IO.FileObject.StartWatching*
   commentId: Overload:DotNetHelper_IO.FileObject.StartWatching
   name: StartWatching
