@@ -807,9 +807,15 @@ namespace DotNetHelper_IO
         public async Task<string> WriteAsync(Stream stream, FileOption option = FileOption.Overwrite, int bufferSize = 4096, CancellationToken cancellationToken = default)
         {
             if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
-            var (fileStream, fullFilePath) = GetFileStream(option);
+            var (fileStream, fullFilePath) = GetFileStream(option,bufferSize,true);
+#if NETSTANDARD21
+            await using (fileStream)
+                await stream.CopyToAsync(fileStream, null, cancellationToken, bufferSize);
+            // await fileStream.CopyToAsync(stream, bufferSize, cancellationToken);
+#else
             using (fileStream)
-                await fileStream.CopyToAsync(stream, bufferSize, cancellationToken);
+                await stream.CopyToAsync(fileStream, null, cancellationToken, bufferSize);
+#endif
             return fullFilePath;
         }
 
@@ -826,15 +832,20 @@ namespace DotNetHelper_IO
         {
             if (option == FileOption.DoNothingIfExist && Exist) return FullFilePath;
             var (fileStream, fullFilePath) = GetFileStream(option);
+#if NETSTANDARD21
+            await using (fileStream)
+                await stream.CopyToAsync(fileStream,  progress, cancellationToken, bufferSize);
+#else
             using (fileStream)
                 await stream.CopyToAsync(fileStream, progress, cancellationToken, bufferSize);
+#endif
             return fullFilePath;
         }
 
 
 
 
-        #endregion
+#endregion
 
         /// <summary>
         /// Gets the file encoding. if can not determine the file Encoding this return ascii by default
@@ -963,7 +974,7 @@ namespace DotNetHelper_IO
 
 
 
-        #region HelperMethods
+#region HelperMethods
 
 
 
@@ -1009,7 +1020,7 @@ namespace DotNetHelper_IO
             return new string(charArray);
 
         }
-        #endregion
+#endregion
 
 
 

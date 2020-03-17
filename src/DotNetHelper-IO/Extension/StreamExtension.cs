@@ -25,6 +25,15 @@ namespace DotNetHelper_IO.Extension
             await destination.FlushAsync(cancellationToken);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        /// <param name="progress"></param>
+        /// <param name="cancellationToken"></param>
+        /// <param name="bufferSize"></param>
+        /// <returns></returns>
         public static async Task CopyToAsync(this Stream source, Stream destination, IProgress<long> progress, CancellationToken cancellationToken = default, int bufferSize = 4096)
         {
             var buffer = new byte[bufferSize];
@@ -39,6 +48,13 @@ namespace DotNetHelper_IO.Extension
             //   await destination.FlushAsync(cancellationToken);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        /// <param name="progress"></param>
+        /// <param name="bufferSize"></param>
         public static void CopyTo(this Stream source, Stream destination, IProgress<long> progress, int bufferSize = 4096)
         {
             var buffer = new byte[bufferSize];

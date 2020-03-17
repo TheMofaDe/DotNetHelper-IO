@@ -94,6 +94,37 @@ namespace Tests
         }
 
 
+        [Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+        [Test()]
+        public async Task Test_GetFileSize_Return_Correct_Size_Async()
+        {
+            // Arrange
+            var fileSize = 100000000;
+            var expectedSizeInByte = $"{fileSize}B";
+            var expectedSizeInKiloByte = $"100000";
+            var expectedSizeInMB = $"95.37MB";
+
+            var content = new string('A', fileSize);
+            var stream = GenerateStreamFromString(content);
+
+            // Act
+            await TestFile.WriteAsync(stream);
+            var fileSizeInBytes = TestFile.GetFileSize(SizeUnits.Byte);
+            var fileSizeInKiloBytes = TestFile.GetFileSize(SizeUnits.Kb);
+            var fileSizeInMegaBytes = TestFile.GetFileSize(SizeUnits.Mb);
+
+            var fileSizeAsString = TestFile.GetFileSize();
+
+            // Assert
+            Assert.That(fileSizeInBytes, Is.EqualTo(fileSize));
+            Assert.That(fileSizeInKiloBytes, Is.EqualTo(97656));
+            Assert.That(fileSizeInMegaBytes, Is.EqualTo(95));
+            Assert.That(fileSizeAsString, Is.EqualTo(expectedSizeInMB));
+        }
+
+
+
+
 
 
 
