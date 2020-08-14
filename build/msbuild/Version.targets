@@ -1,0 +1,24 @@
+<Project>
+
+ <PropertyGroup>
+    <PrepareForBuildDependsOn>WriteVersions;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
+  </PropertyGroup>
+
+      
+  <Target
+    Name="WriteVersions"
+    DependsOnTargets="SetVersions">
+        
+  </Target>
+
+  <Target
+    Name="SetVersions"
+    DependsOnTargets="GitVersion"
+    Returns="$(Version)"
+    Condition="'$(GitInfoImported)' == 'true' And '$(ExcludeRestorePackageImports)' != 'true'">
+
+  </Target>
+
+
+
+</Project>

@@ -22,7 +22,7 @@ namespace DotNetHelper_IO
     /// Class FolderObject.
     /// </summary>
     /// <seealso cref="T:System.IDisposable" />
-    public class FolderObject : IDisposable
+    public class FolderObject : PathObject, IDisposable
     {
 
 

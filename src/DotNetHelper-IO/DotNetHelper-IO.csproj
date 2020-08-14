@@ -2,37 +2,12 @@
 
   <PropertyGroup>
     <TargetFrameworks>net452;netstandard2.0;netstandard2.1</TargetFrameworks>
-    <LangVersion>default</LangVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <FileVersion>2019.1.30.2</FileVersion>
-    <Description>A simple and easy to use library for managing folders &amp; files</Description>
-    <Copyright>Copyright © Joseph McNeal Jr 2017-2018</Copyright>
-    <AssemblyTitle>$(AssemblyName)</AssemblyTitle>
-    <Version>2019.3.5.1</Version>
-    <Authors>Joseph McNeal Jr</Authors>
-    <PackageTags>Dotnethelper</PackageTags>
-    <PackageReleaseNotes>BREAKING CHANGE : remove dependency from dotnethelper contract</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper-IO</PackageProjectUrl>
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper-IO</RepositoryUrl>
     <RootNamespace>DotNetHelper_IO</RootNamespace>
-    <AssemblyName>DotNetHelper-IO</AssemblyName>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  ">
-    <DefineConstants>$(DefineConstants);NETFRAMEWORK</DefineConstants>
-  </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.1' ">
-    <DefineConstants>$(DefineConstants);NETSTANDARD21</DefineConstants>
-  </PropertyGroup>
-
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452' ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452' ">
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
 
@@ -40,12 +15,6 @@
     <PackageReference Include="SharpCompress" Version="0.24.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
 
 
 </Project>

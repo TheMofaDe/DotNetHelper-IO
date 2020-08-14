@@ -15,12 +15,13 @@ using System.Runtime.InteropServices;
 namespace DotNetHelper_IO
 {
 
-    /// <inheritdoc />
-    /// <summary>
-    /// Class FileObject.
-    /// </summary>
-    /// <seealso cref="T:System.IDisposable" />
-    public class FileObject : IDisposable
+	/// <inheritdoc />
+	/// <summary>
+	/// Class FileObject.
+	/// </summary>
+	/// <seealso cref="T:System.PathObject" />
+	/// <seealso cref="T:System.IDisposable" />
+	public class FileObject : PathObject, IDisposable
     {
 
         public Encoding DefaultEncoding { get; } = Encoding.UTF8;
@@ -62,19 +63,82 @@ namespace DotNetHelper_IO
         /// <value>The size of the file.</value>
         public long? FileSize => FileInfo?.Length;
 
+        public override PathType PathType { get; internal set; }
+        public override string Name { get; internal set; }
+
+
+
         /// <summary>
-        /// Gets a value indicating whether this <see cref="FileObject"/> is exist.
+        /// Gets the file size display.
         /// </summary>
-        public bool Exist
+        /// <returns>System.String.</returns>
+        public override string GetSize(bool refreshObject = false)
         {
-            get
-            {
-                var exist = File.Exists(FullFilePath);
-                if (exist && FileInfo == null)
-                    RefreshObject(); // DATA OUT OF SYNC
-                return exist;
-            }
+	        if (refreshObject)
+		        RefreshObject();
+	        if (FileSize < 1024)
+	        {
+		        return $"{FileSize}B";
+	        }
+	        string[] unit = { "KB", "MB", "GB", "TB", "PB" };
+	        const int filter = 1024;
+	        long unitsize = 1;
+	        var flag = true;
+	        decimal? size = FileSize;
+	        var index = -1;
+	        while (flag)
+	        {
+		        size = size / filter;
+		        unitsize = unitsize * filter;
+		        flag = size > filter;
+		        index++;
+		        if (index >= unit.Length - 1)
+			        flag = false;
+	        }
+	        return $"{size:f2}{unit[index]}";
         }
+
+
+        /// <summary>
+        /// Gets the file size display.
+        /// </summary>
+        /// <returns>System.String.</returns>
+        public override long? GetSize(SizeUnits sizeUnits, bool refreshObject = false)
+        {
+	        if (refreshObject)
+		        RefreshObject();
+	        if (FileSize == null)
+		        return null;
+	        if (FileSize == 0)
+		        return 0;
+	        const int filter = 1024;
+	        if (sizeUnits == SizeUnits.Byte)
+		        return FileSize;
+
+	        var limit = (int)sizeUnits;
+	        var value = FileSize.Value;
+	        while (limit > 0)
+	        {
+		        limit--;
+		        value = value / filter;
+	        }
+	        return value;
+        }
+
+
+		public override FolderObject GetParentFolder()
+        {
+	        return new FolderObject(FileInfo?.Directory?.Parent?.FullName);
+        }
+    
+		internal override bool Exists()
+        {
+			var exist = File.Exists(FullFilePath);
+			if (exist && FileInfo == null)
+				RefreshObject(); // FORCE SYNC
+			return exist;
+		}
+
         /// <summary>
         /// Gets or sets the watch timeout.
         /// </summary>
@@ -872,58 +936,6 @@ namespace DotNetHelper_IO
             return Encoding.ASCII;
         }
 
-
-        /// <summary>
-        /// Gets the file size display.
-        /// </summary>
-        /// <returns>System.String.</returns>
-        public string GetFileSize(bool refreshObject = false)
-        {
-            if (refreshObject)
-                RefreshObject();
-            if (FileSize < 1024)
-            {
-                return $"{FileSize}B";
-            }
-            string[] unit = { "KB", "MB", "GB", "TB", "PB" };
-            const int filter = 1024;
-            long unitsize = 1;
-            var flag = true;
-            decimal? size = FileSize;
-            var index = -1;
-            while (flag)
-            {
-                size = size / filter;
-                unitsize = unitsize * filter;
-                flag = size > filter;
-                index++;
-                if (index >= unit.Length - 1) flag = false;
-            }
-            return $"{size:f2}{unit[index]}";
-        }
-
-
-        /// <summary>
-        /// Gets the file size display.
-        /// </summary>
-        /// <returns>System.String.</returns>
-        public long? GetFileSize(SizeUnits sizeUnits, bool refreshObject = false)
-        {
-            if (refreshObject) RefreshObject();
-            if (FileSize == null) return null;
-            if (FileSize == 0) return 0;
-            const int filter = 1024;
-            if (sizeUnits == SizeUnits.Byte) return FileSize;
-
-            var limit = (int)sizeUnits;
-            var value = FileSize.Value;
-            while (limit > 0)
-            {
-                limit--;
-                value = value / filter;
-            }
-            return value;
-        }
 
 
 
