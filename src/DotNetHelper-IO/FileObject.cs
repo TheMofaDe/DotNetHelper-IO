@@ -1,5 +1,6 @@
 ﻿using DotNetHelper_IO.Enum;
 using DotNetHelper_IO.Extension;
+using DotNetHelper_IO.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -61,10 +62,12 @@ namespace DotNetHelper_IO
         /// Size is in bytes
         /// </summary>
         /// <value>The size of the file.</value>
-        public long? FileSize => FileInfo?.Length;
+        // public long? FileSize => FileInfo?.Length;
 
-        public override PathType PathType { get; internal set; }
-        public override string Name { get; internal set; }
+
+        public override string Name => FileInfo?.Name;
+
+        public override string FullName => FileInfo?.FullName;
 
 
 
@@ -72,24 +75,23 @@ namespace DotNetHelper_IO
         /// Gets the file size display.
         /// </summary>
         /// <returns>System.String.</returns>
-        public override string GetSize(bool refreshObject = false)
+        public override string GetSize()
         {
-	        if (refreshObject)
-		        RefreshObject();
-	        if (FileSize < 1024)
+            RefreshObject();
+	        if (FileInfo?.Length < 1024)
 	        {
-		        return $"{FileSize}B";
+		        return $"{FileInfo?.Length}B";
 	        }
 	        string[] unit = { "KB", "MB", "GB", "TB", "PB" };
 	        const int filter = 1024;
 	        long unitsize = 1;
 	        var flag = true;
-	        decimal? size = FileSize;
+	        decimal? size = FileInfo?.Length;
 	        var index = -1;
 	        while (flag)
 	        {
-		        size = size / filter;
-		        unitsize = unitsize * filter;
+		        size /= filter;
+		        unitsize *= filter;
 		        flag = size > filter;
 		        index++;
 		        if (index >= unit.Length - 1)
@@ -99,30 +101,19 @@ namespace DotNetHelper_IO
         }
 
 
+        
+
+
         /// <summary>
         /// Gets the file size display.
         /// </summary>
         /// <returns>System.String.</returns>
-        public override long? GetSize(SizeUnits sizeUnits, bool refreshObject = false)
+        public override long? GetSize(SizeUnits sizeUnits)
         {
-	        if (refreshObject)
-		        RefreshObject();
-	        if (FileSize == null)
+		    // RefreshObject();
+	        if (FileInfo?.Length == null)
 		        return null;
-	        if (FileSize == 0)
-		        return 0;
-	        const int filter = 1024;
-	        if (sizeUnits == SizeUnits.Byte)
-		        return FileSize;
-
-	        var limit = (int)sizeUnits;
-	        var value = FileSize.Value;
-	        while (limit > 0)
-	        {
-		        limit--;
-		        value = value / filter;
-	        }
-	        return value;
+            return ByteSizeHelper.GetSize(FileInfo.Length, sizeUnits);
         }
 
 
@@ -161,7 +152,7 @@ namespace DotNetHelper_IO
         /// </summary>
         /// <param name="file">The file.</param>
         /// <param name="defaultEncoding"></param>
-        public FileObject(string file, Encoding defaultEncoding = null)
+        public FileObject(string file, Encoding defaultEncoding = null) : base(PathType.File)
         {
             FullFilePath = file;
             DefaultEncoding = defaultEncoding;
@@ -174,7 +165,7 @@ namespace DotNetHelper_IO
         /// </summary>
         /// <param name="fileInfo"></param>
         /// <param name="defaultEncoding"></param>
-        public FileObject(FileInfo fileInfo, Encoding defaultEncoding = null)
+        public FileObject(FileInfo fileInfo, Encoding defaultEncoding = null) : base(PathType.File)
         {
             FullFilePath = fileInfo.FullName;
             FileInfo = fileInfo;

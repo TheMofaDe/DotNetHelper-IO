@@ -29,30 +29,12 @@ namespace DotNetHelper_IO
         public DirectoryInfo DirectoryInfo { get; private set; }
 
         /// <summary>
-        /// Gets the folder name only.
-        /// </summary>
-        /// <value>The folder name only.</value>
-        public string FolderNameOnly => DirectoryInfo?.Name;
-        /// <summary>
         /// Gets the full folder path.
         /// </summary>
         /// <value>The full folder path.</value>
         public string FullFolderPath { get; private set; }
 
-        /// <summary>
-        /// Gets a value indicating whether this <see cref="FolderObject"/> is exist.
-        /// </summary>
-        /// <value><c>null</c> if [exist] contains no value, <c>true</c> if [exist]; otherwise, <c>false</c>.</value>
-        public bool Exist
-        {
-            get
-            {
-                var exist = Directory.Exists(FullFolderPath);
-                if (exist && DirectoryInfo == null)
-                    RefreshObject(); // DATA OUT OF SYNC
-                return exist;
-            }
-        }
+     
         /// <summary>
         /// Gets the watcher.
         /// </summary>
@@ -107,6 +89,10 @@ namespace DotNetHelper_IO
         /// <value><c>true</c> if [load files in folder recursively]; otherwise, <c>false</c>.</value>
         public bool LoadRecursive { get; }
 
+		public override string Name => DirectoryInfo?.Name;
+
+        public override string FullName => DirectoryInfo?.FullName;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FolderObject"/> class.
         /// </summary>
@@ -114,7 +100,7 @@ namespace DotNetHelper_IO
         /// <param name="loadSubfolders">if set to <c>true</c> [load subfolders].</param>
         /// <param name="loadFilesInFolder">if set to <c>true</c> [load files in folder].</param>
         /// <param name="loadRecursive"></param>
-        public FolderObject(string path, bool loadSubfolders = false, bool loadFilesInFolder = false, bool loadRecursive = false)
+        public FolderObject(string path, bool loadSubfolders = false, bool loadFilesInFolder = false, bool loadRecursive = false) : base(PathType.Folder)
         {
             FullFolderPath = FormatPath(path);
             LoadSubFolders = loadSubfolders;
@@ -125,10 +111,14 @@ namespace DotNetHelper_IO
 
 
 
-        public FolderObject(DirectoryInfo directoryInfo)
+        public FolderObject(DirectoryInfo directoryInfo, bool loadSubfolders = false, bool loadFilesInFolder = false, bool loadRecursive = false) : base(PathType.Folder)
         {
             FullFolderPath = FormatPath(directoryInfo.FullName);
+            LoadSubFolders = loadSubfolders;
+            LoadFilesInFolder = loadFilesInFolder;
+            LoadRecursive = loadRecursive;
             DirectoryInfo = directoryInfo;
+
         }
 
 
@@ -292,19 +282,14 @@ namespace DotNetHelper_IO
         private List<string> GetDirectoriesRecursive(string sDir)
         {
             var list = new List<string>() { };
-            try
-            {
+     
                 foreach (var d in Directory.GetDirectories(sDir))
                 {
                     list.Add(d);
                     list.AddRange(GetDirectoriesRecursive(d));
 
                 }
-            }
-            catch (Exception e)
-            {
-                Console.Error.WriteLine(e);
-            }
+
             return list;
         }
 
@@ -677,7 +662,31 @@ namespace DotNetHelper_IO
                 Watcher.Dispose();
             }
         }
-    }
+
+		public override string GetSize()
+		{
+            return ByteSizeHelper.GetSize(GetAllFiles("*", true).Select(f => new FileObject(f).Size.GetValueOrDefault(0)).Sum());
+        }
+
+		public override long? GetSize(SizeUnits sizeUnits)
+		{
+            return GetAllFiles("*", true).Select(f => new FileObject(f).GetSize(sizeUnits).GetValueOrDefault(0)).Sum();
+		}
+
+		public override FolderObject GetParentFolder()
+		{
+            return new FolderObject(DirectoryInfo.Parent);
+		}
+
+		internal override bool Exists()
+		{
+            var exist = Directory.Exists(FullFolderPath);
+            if (exist && DirectoryInfo == null)
+                RefreshObject(); // DATA OUT OF SYNC
+            return exist;
+           ;
+		}
+	}
 
 
 

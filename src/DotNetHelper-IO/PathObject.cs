@@ -23,19 +23,22 @@ namespace DotNetHelper_IO
     /// </summary>
     public abstract class PathObject
     {
-	    public abstract PathType PathType { get; internal set; }
 
-	    /// <summary>
+		/// <summary>
 		/// if object is file then get the name of the file with extension
 		/// if object is folder then get the folder name only
 		/// </summary>
 		/// <value></value>
-		public abstract string Name { get; internal set; }
+		public abstract string Name { get; }
 		/// <summary>
 		/// Gets the full path.
 		/// </summary>
 		/// <value>The full folder path.</value>
-		public string FullName { get; internal set; }
+		public abstract string FullName { get; }
+
+
+
+		public PathType PathType { get; internal set; }
 
 		/// <summary>
 		/// return the size of the object in bytes
@@ -48,13 +51,13 @@ namespace DotNetHelper_IO
 		/// <value><c>null</c> if [exist] contains no value, <c>true</c> if [exist]; otherwise, <c>false</c>.</value>
 		public bool Exist => Exists();
 
-		protected PathObject()
+		protected PathObject(PathType pathType)
         {
-           
+			PathType = pathType;
         }
 
-		public abstract string GetSize(bool refreshObject = false);
-		public abstract long? GetSize(SizeUnits sizeUnits, bool refreshObject = false);
+		public abstract string GetSize();
+		public abstract long? GetSize(SizeUnits sizeUnits);
 		public abstract FolderObject GetParentFolder();
         internal abstract bool Exists();
 
