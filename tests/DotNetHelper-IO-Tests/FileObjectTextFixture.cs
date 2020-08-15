@@ -80,11 +80,11 @@ namespace Tests
 
             // Act
             TestFile.Write(stream);
-            var fileSizeInBytes = TestFile.GetFileSize(SizeUnits.Byte);
-            var fileSizeInKiloBytes = TestFile.GetFileSize(SizeUnits.Kb);
-            var fileSizeInMegaBytes = TestFile.GetFileSize(SizeUnits.Mb);
+            var fileSizeInBytes = TestFile.GetSize(SizeUnits.Byte);
+            var fileSizeInKiloBytes = TestFile.GetSize(SizeUnits.Kb);
+            var fileSizeInMegaBytes = TestFile.GetSize(SizeUnits.Mb);
 
-            var fileSizeAsString = TestFile.GetFileSize();
+            var fileSizeAsString = TestFile.GetSize();
 
             // Assert
             Assert.That(fileSizeInBytes, Is.EqualTo(fileSize));
@@ -109,11 +109,11 @@ namespace Tests
 
             // Act
             await TestFile.WriteAsync(stream);
-            var fileSizeInBytes = TestFile.GetFileSize(SizeUnits.Byte);
-            var fileSizeInKiloBytes = TestFile.GetFileSize(SizeUnits.Kb);
-            var fileSizeInMegaBytes = TestFile.GetFileSize(SizeUnits.Mb);
+            var fileSizeInBytes = TestFile.GetSize(SizeUnits.Byte);
+            var fileSizeInKiloBytes = TestFile.GetSize(SizeUnits.Kb);
+            var fileSizeInMegaBytes = TestFile.GetSize(SizeUnits.Mb);
 
-            var fileSizeAsString = TestFile.GetFileSize();
+            var fileSizeAsString = TestFile.GetSize();
 
             // Assert
             Assert.That(fileSizeInBytes, Is.EqualTo(fileSize));
@@ -167,7 +167,7 @@ namespace Tests
                 Assert.That(() =>
                 {
                     var file = new FileObject(TestFile.Write(content, fileOption, encoding));
-                    Assert.That(file.ReadToString(), Is.EqualTo(content));
+                    Assert.That(file.ReadAllText(), Is.EqualTo(content));
 
                 }, Throws.Nothing);
             }

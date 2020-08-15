@@ -25,7 +25,7 @@ namespace DotNetHelper_IO_Console
             var FileNameOnly = file.FileNameOnly; // dotnet-hosting-2.2.1-win.exe
             var FileNameOnlyNoExtension = file.FileNameOnlyNoExtension; // dotnet-hosting-2.2.1-win
             var FilePathOnly = file.FilePathOnly; // C:\Temp\
-            var FileSize = file.FileSize; // 100720328
+            var FileSize = file.Size; // 100720328
             var FolderNameOnly = file.FolderNameOnly; // Temp
             var FullFilePath = file.FullFilePath; // C:\Temp\dotnet-hosting-2.2.1-win.exe
             DateTime? LastAccessTime = file.FileInfo.LastAccessTime; // 1/23/2019 9:03:26 PM
