@@ -585,33 +585,102 @@ namespace DotNetHelper_IO
         #region  Reading File
 
         /// <summary>
-        /// Reads the file to list.
+        /// Reads the file to list. You can start enumerating the collection of strings before the whole collection is returned.
         /// </summary>
         /// <returns>List&lt;System.String&gt;.</returns>
         public string[] ReadAllLines()
-        {
+        {      
             return File.ReadAllLines(FullFilePath);
         }
 
+#if NETSTANDARD21
         /// <summary>
-        /// Reads the file.
+        /// Reads the file to list. You can start enumerating the collection of strings before the whole collection is returned.
         /// </summary>
-        /// <returns>System.String.</returns>
-        public string ReadToString(bool throwOnFileNotFound = true)
+        /// <returns>List&lt;System.String&gt;.</returns>
+        public async Task<string[]> ReadAllLinesAsync(Encoding encoding = null, CancellationToken cancellationToken = default)
         {
-            if (Exist != true)
-            {
-                if (throwOnFileNotFound)
-                {
-                    throw new FileNotFoundException($"Couldn't read file {FullFilePath} because it doesn't exist");
-                }
-                return null;
-            }
-            using var sr = new StreamReader(GetFileStream(FileOption.ReadOnly).fileStream);
-            return sr.ReadToEnd();
+            return await File.ReadAllLinesAsync(FullFilePath, encoding ?? DefaultEncoding,cancellationToken);
+        }
+#endif
+
+
+        /// <summary>
+        /// Reads the entire content of a file all at once
+        /// </summary>
+        /// <returns>List&lt;System.String&gt;.</returns>
+        public string ReadAllText(Encoding encoding = null)
+        {
+            return File.ReadAllText(FullName, encoding ?? DefaultEncoding);
         }
 
-        #endregion
+#if NETSTANDARD21
+        /// <summary>
+        /// Reads the entire content of a file all at once 
+        /// </summary>
+        /// <returns>List&lt;System.String&gt;.</returns>
+        public async Task<string> ReadAllTextAsync(Encoding encoding = null, CancellationToken cancellationToken = default)
+        {
+            return await File.ReadAllTextAsync(FullFilePath, encoding ?? DefaultEncoding, cancellationToken);
+        }
+#endif
+
+
+#if NETSTANDARD21
+        /// <summary>
+        /// Reads the file in chunks instead of all at once 
+        /// </summary>
+        /// <returns>List&lt;System.String&gt;.</returns>
+        public async Task<byte[]> ReadToBytesAsync(CancellationToken cancellationToken = default)
+        {
+            return await File.ReadAllBytesAsync(FullFilePath, cancellationToken);
+        }
+#endif
+
+        /// <summary>
+        /// Reads the file to a byte[] but in chunks
+        /// </summary>
+        /// <returns>System.String.</returns>
+        public async Task<byte[]> ReadToBytesInChunksAsync(int offset = 0, CancellationToken cancellationToken = default)
+        {
+            byte[] result;
+            using (FileStream SourceStream = File.Open(FullName, FileMode.Open))
+            {
+                result = new byte[SourceStream.Length];
+                await SourceStream.ReadAsync(result, offset, (int)SourceStream.Length, cancellationToken);
+            }
+            return result;
+        }
+
+
+
+        /// <summary>
+        /// Reads to filestream
+        /// </summary>
+        /// <returns>System.String.</returns>
+        public FileStream ReadToStream(int bufferSize = 4096)
+        {
+            return GetFileStream(FileOption.ReadOnly,bufferSize).fileStream;
+          
+        }
+
+        /// <summary>
+        /// Reads to async file stream
+        /// </summary>
+        /// <returns>System.String.</returns>
+        public FileStream ReadToStringInChunksAsync(int bufferSize = 4096)
+        {
+            return GetFileStream(FileOption.ReadOnly,bufferSize,true).fileStream;
+           
+        }
+
+
+
+        
+
+
+
+#endregion
 
         /// <summary>
         /// Prepares for stream use.  Prevents Exeception From Being Throwned When working with file Streams
@@ -754,7 +823,7 @@ namespace DotNetHelper_IO
 
 
 
-        #region  WRITING
+#region  WRITING
 
         /// <summary>
         /// Writes the content to file. Returns the full file name content was written to. This method is not thread safe

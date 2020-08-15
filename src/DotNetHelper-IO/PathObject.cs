@@ -54,41 +54,12 @@ namespace DotNetHelper_IO
         }
 
 		public abstract string GetSize(bool refreshObject = false);
-		public abstract long GetSize(SizeUnits sizeUnits, bool refreshObject = false);
+		public abstract long? GetSize(SizeUnits sizeUnits, bool refreshObject = false);
 		public abstract FolderObject GetParentFolder();
         internal abstract bool Exists();
 
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

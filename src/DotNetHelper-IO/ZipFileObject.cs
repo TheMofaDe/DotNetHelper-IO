@@ -5,6 +5,8 @@ using System.Linq;
 using DotNetHelper_IO.Enum;
 using SharpCompress.Archives;
 using SharpCompress.Archives.GZip;
+using SharpCompress.Archives.Rar;
+using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
 using SharpCompress.Archives.Zip;
 using SharpCompress.Common;
@@ -98,7 +100,9 @@ namespace DotNetHelper_IO
                     AddAllToZip(GZipArchive.Open(FullFilePath), safeFiles, option);
                     break;
                 case ArchiveType.Rar:
-                case ArchiveType.SevenZip:
+                  //  AddAllToZip(RarArchive.Open(FullFilePath), safeFiles, option);
+                case ArchiveType.SevenZip: 
+                  //  AddAllToZip(SevenZipArchive.Open(FullFilePath), safeFiles, option);
                     throw new NotImplementedException("This Functionality For Rar & 7ZIP files hasn't been implemented yet so feel free to do it yourself if you need it ");
                 default:
                     throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
