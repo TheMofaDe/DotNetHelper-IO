@@ -21,8 +21,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileOption
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 33
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Append
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 38
@@ -88,8 +88,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Overwrite
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 42
@@ -122,8 +122,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DoNothingIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 46
@@ -156,8 +156,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: IncrementFileNameIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 50
@@ -190,8 +190,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: IncrementFileExtensionIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 54
@@ -224,8 +224,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadOnly
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 58

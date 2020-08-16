@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ZipFileObject
    | DotNetHelper-IO ">
-    <meta name="generator" content="docfx 2.48.0.0">
+    <meta name="generator" content="docfx 2.56.1.0">
     
     <link rel="shortcut icon" href="../logo/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -108,6 +108,9 @@
                           <li class="">
                             <a href="DotNetHelper_IO.FolderObject.html" title="FolderObject" class="">FolderObject</a>
                           </li>
+                          <li class="">
+                            <a href="DotNetHelper_IO.PathObject.html" title="PathObject" class="">PathObject</a>
+                          </li>
                           <li class="active">
                             <a href="DotNetHelper_IO.ZipFileObject.html" title="ZipFileObject" class="active">ZipFileObject</a>
                           </li>
@@ -130,7 +133,19 @@
                             <a href="DotNetHelper_IO.Enum.IOType.html" title="IOType" class="">IOType</a>
                           </li>
                           <li class="">
+                            <a href="DotNetHelper_IO.Enum.PathType.html" title="PathType" class="">PathType</a>
+                          </li>
+                          <li class="">
                             <a href="DotNetHelper_IO.Enum.SizeUnits.html" title="SizeUnits" class="">SizeUnits</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper_IO.Helpers.html" title="DotNetHelper_IO.Helpers" class="">DotNetHelper_IO.Helpers</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper_IO.Helpers.ByteSizeHelper.html" title="ByteSizeHelper" class="">ByteSizeHelper</a>
                           </li>
                         </ul>  </li>
                   </ul>        </div>
@@ -150,8 +165,9 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="DotNetHelper_IO.FileObject.html">FileObject</a></div>
-    <div class="level2"><span class="xref">ZipFileObject</span></div>
+    <div class="level1"><a class="xref" href="DotNetHelper_IO.PathObject.html">PathObject</a></div>
+    <div class="level2"><a class="xref" href="DotNetHelper_IO.FileObject.html">FileObject</a></div>
+    <div class="level3"><span class="xref">ZipFileObject</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -175,19 +191,22 @@
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FilePathOnly">FileObject.FilePathOnly</a>
     </div>
     <div>
-      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FullFilePath">FileObject.FullFilePath</a>
-    </div>
-    <div>
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Extension">FileObject.Extension</a>
     </div>
     <div>
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FolderNameOnly">FileObject.FolderNameOnly</a>
     </div>
     <div>
-      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FileSize">FileObject.FileSize</a>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Name">FileObject.Name</a>
     </div>
     <div>
-      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Exist">FileObject.Exist</a>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetSize">FileObject.GetSize()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetSize_DotNetHelper_IO_Enum_SizeUnits_">FileObject.GetSize(SizeUnits)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetParentFolder">FileObject.GetParentFolder()</a>
     </div>
     <div>
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_WatchTimeout">FileObject.WatchTimeout</a>
@@ -238,7 +257,16 @@
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadAllLines">FileObject.ReadAllLines()</a>
     </div>
     <div>
-      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToString_System_Boolean_">FileObject.ReadToString(Boolean)</a>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadAllText_System_Text_Encoding_">FileObject.ReadAllText(Encoding)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToBytesInChunksAsync_System_Int32_System_Threading_CancellationToken_">FileObject.ReadToBytesInChunksAsync(Int32, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToStream_System_Int32_">FileObject.ReadToStream(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToStringInChunksAsync_System_Int32_">FileObject.ReadToStringInChunksAsync(Int32)</a>
     </div>
     <div>
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileStream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Boolean_">FileObject.GetFileStream(FileOption, Int32, Boolean)</a>
@@ -271,12 +299,6 @@
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileEncoding">FileObject.GetFileEncoding()</a>
     </div>
     <div>
-      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSize_System_Boolean_">FileObject.GetFileSize(Boolean)</a>
-    </div>
-    <div>
-      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSize_DotNetHelper_IO_Enum_SizeUnits_System_Boolean_">FileObject.GetFileSize(SizeUnits, Boolean)</a>
-    </div>
-    <div>
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_System_Nullable_System_IO_NotifyFilters__">FileObject.StartWatching(WatcherChangeTypes, Boolean, Nullable&lt;NotifyFilters&gt;)</a>
     </div>
     <div>
@@ -287,6 +309,21 @@
     </div>
     <div>
       <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Dispose">FileObject.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Dispose_System_Boolean_">FileObject.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_FullName">PathObject.FullName</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_PathType">PathObject.PathType</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Size">PathObject.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Exist">PathObject.Exist</a>
     </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
@@ -320,10 +357,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject__ctor_System_String_SharpCompress_Common_ArchiveType_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.%23ctor(System.String%2CSharpCompress.Common.ArchiveType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject__ctor_System_String_SharpCompress_Common_ArchiveType_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.%23ctor(System.String%2CSharpCompress.Common.ArchiveType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L21">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/ZipFileObject.cs/#L23">View Source</a>
   </span>
   <a id="DotNetHelper_IO_ZipFileObject__ctor_" data-uid="DotNetHelper_IO.ZipFileObject.#ctor*"></a>
   <h4 id="DotNetHelper_IO_ZipFileObject__ctor_System_String_SharpCompress_Common_ArchiveType_" data-uid="DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType)">ZipFileObject(String, ArchiveType)</h4>
@@ -359,10 +396,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_Type.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_Type.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L19">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/ZipFileObject.cs/#L21">View Source</a>
   </span>
   <a id="DotNetHelper_IO_ZipFileObject_Type_" data-uid="DotNetHelper_IO.ZipFileObject.Type*"></a>
   <h4 id="DotNetHelper_IO_ZipFileObject_Type" data-uid="DotNetHelper_IO.ZipFileObject.Type">Type</h4>
@@ -391,10 +428,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_AddFilesToZip_System_Collections_Generic_List_System_String__DotNetHelper_IO_Enum_FileOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List%7BSystem.String%7D%2CDotNetHelper_IO.Enum.FileOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_AddFilesToZip_System_Collections_Generic_List_System_String__DotNetHelper_IO_Enum_FileOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List%7BSystem.String%7D%2CDotNetHelper_IO.Enum.FileOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L84">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/ZipFileObject.cs/#L90">View Source</a>
   </span>
   <a id="DotNetHelper_IO_ZipFileObject_AddFilesToZip_" data-uid="DotNetHelper_IO.ZipFileObject.AddFilesToZip*"></a>
   <h4 id="DotNetHelper_IO_ZipFileObject_AddFilesToZip_System_Collections_Generic_List_System_String__DotNetHelper_IO_Enum_FileOption_" data-uid="DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List{System.String},DotNetHelper_IO.Enum.FileOption)">AddFilesToZip(List&lt;String&gt;, FileOption)</h4>
@@ -430,10 +467,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_AddFileToZip_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_AddFileToZip_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L75">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/ZipFileObject.cs/#L81">View Source</a>
   </span>
   <a id="DotNetHelper_IO_ZipFileObject_AddFileToZip_" data-uid="DotNetHelper_IO.ZipFileObject.AddFileToZip*"></a>
   <h4 id="DotNetHelper_IO_ZipFileObject_AddFileToZip_System_String_" data-uid="DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)">AddFileToZip(String)</h4>
@@ -441,7 +478,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddFileToZip(string fullFilePath)</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddFileToZip(string FullName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -455,17 +492,17 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">fullFilePath</span></td>
+        <td><span class="parametername">FullName</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_CreateOrTruncate_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.CreateOrTruncate(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_CreateOrTruncate_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.CreateOrTruncate(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L32">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/ZipFileObject.cs/#L34">View Source</a>
   </span>
   <a id="DotNetHelper_IO_ZipFileObject_CreateOrTruncate_" data-uid="DotNetHelper_IO.ZipFileObject.CreateOrTruncate*"></a>
   <h4 id="DotNetHelper_IO_ZipFileObject_CreateOrTruncate_System_Boolean_" data-uid="DotNetHelper_IO.ZipFileObject.CreateOrTruncate(System.Boolean)">CreateOrTruncate(Boolean)</h4>
@@ -512,10 +549,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_RemoveFilesToZip_System_Predicate_SharpCompress_Archives_IArchiveEntry__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate%7BSharpCompress.Archives.IArchiveEntry%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_RemoveFilesToZip_System_Predicate_SharpCompress_Archives_IArchiveEntry__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate%7BSharpCompress.Archives.IArchiveEntry%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L109">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/ZipFileObject.cs/#L119">View Source</a>
   </span>
   <a id="DotNetHelper_IO_ZipFileObject_RemoveFilesToZip_" data-uid="DotNetHelper_IO.ZipFileObject.RemoveFilesToZip*"></a>
   <h4 id="DotNetHelper_IO_ZipFileObject_RemoveFilesToZip_System_Predicate_SharpCompress_Archives_IArchiveEntry__" data-uid="DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate{SharpCompress.Archives.IArchiveEntry})">RemoveFilesToZip(Predicate&lt;IArchiveEntry&gt;)</h4>
@@ -544,10 +581,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_UnZipFile_DotNetHelper_IO_FolderObject_DotNetHelper_IO_Enum_FileOption_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject_UnZipFile_DotNetHelper_IO_FolderObject_DotNetHelper_IO_Enum_FileOption_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject%2CDotNetHelper_IO.Enum.FileOption%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L55">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/ZipFileObject.cs/#L58">View Source</a>
   </span>
   <a id="DotNetHelper_IO_ZipFileObject_UnZipFile_" data-uid="DotNetHelper_IO.ZipFileObject.UnZipFile*"></a>
   <h4 id="DotNetHelper_IO_ZipFileObject_UnZipFile_DotNetHelper_IO_FolderObject_DotNetHelper_IO_Enum_FileOption_System_Boolean_" data-uid="DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject,DotNetHelper_IO.Enum.FileOption,System.Boolean)">UnZipFile(FolderObject, FileOption, Boolean)</h4>
@@ -596,10 +633,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_ZipFileObject.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.ZipFileObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/ZipFileObject.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/ZipFileObject.cs/#L19" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

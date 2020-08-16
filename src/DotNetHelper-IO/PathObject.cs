@@ -18,11 +18,11 @@ using SharpCompress.Writers;
 namespace DotNetHelper_IO
 {
 
-    /// <summary>
-    /// Class FolderObject.
-    /// </summary>
-    public abstract class PathObject
-    {
+	/// <summary>
+	/// Class FolderObject.
+	/// </summary>
+	public abstract class PathObject
+	{
 
 		/// <summary>
 		/// if object is file then get the name of the file with extension
@@ -30,15 +30,14 @@ namespace DotNetHelper_IO
 		/// </summary>
 		/// <value></value>
 		public abstract string Name { get; }
+
 		/// <summary>
 		/// Gets the full path.
 		/// </summary>
-		/// <value>The full folder path.</value>
-		public abstract string FullName { get; }
+		/// <value></value>
+		public string FullName { get; } = null;
 
-
-
-		public PathType PathType { get; internal set; }
+		public PathType PathType { get; }
 
 		/// <summary>
 		/// return the size of the object in bytes
@@ -51,15 +50,16 @@ namespace DotNetHelper_IO
 		/// <value><c>null</c> if [exist] contains no value, <c>true</c> if [exist]; otherwise, <c>false</c>.</value>
 		public bool Exist => Exists();
 
-		protected PathObject(PathType pathType)
-        {
+		protected PathObject(PathType pathType, string fullName)
+		{
 			PathType = pathType;
-        }
+			FullName = fullName;
+		}
 
 		public abstract string GetSize();
 		public abstract long? GetSize(SizeUnits sizeUnits);
 		public abstract FolderObject GetParentFolder();
-        internal abstract bool Exists();
+		internal abstract bool Exists();
 
 
 	}

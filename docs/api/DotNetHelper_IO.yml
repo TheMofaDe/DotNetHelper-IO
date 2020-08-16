@@ -6,6 +6,7 @@ items:
   children:
   - DotNetHelper_IO.FileObject
   - DotNetHelper_IO.FolderObject
+  - DotNetHelper_IO.PathObject
   - DotNetHelper_IO.ZipFileObject
   langs:
   - csharp
@@ -29,6 +30,12 @@ references:
   name: FolderObject
   nameWithType: FolderObject
   fullName: DotNetHelper_IO.FolderObject
+- uid: DotNetHelper_IO.PathObject
+  commentId: T:DotNetHelper_IO.PathObject
+  parent: DotNetHelper_IO
+  name: PathObject
+  nameWithType: PathObject
+  fullName: DotNetHelper_IO.PathObject
 - uid: DotNetHelper_IO.ZipFileObject
   commentId: T:DotNetHelper_IO.ZipFileObject
   name: ZipFileObject

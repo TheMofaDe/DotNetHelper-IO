@@ -8,6 +8,7 @@ items:
   - DotNetHelper_IO.Enum.FileOption
   - DotNetHelper_IO.Enum.FolderOption
   - DotNetHelper_IO.Enum.IOType
+  - DotNetHelper_IO.Enum.PathType
   - DotNetHelper_IO.Enum.SizeUnits
   langs:
   - csharp
@@ -43,6 +44,12 @@ references:
   name: IOType
   nameWithType: IOType
   fullName: DotNetHelper_IO.Enum.IOType
+- uid: DotNetHelper_IO.Enum.PathType
+  commentId: T:DotNetHelper_IO.Enum.PathType
+  parent: DotNetHelper_IO.Enum
+  name: PathType
+  nameWithType: PathType
+  fullName: DotNetHelper_IO.Enum.PathType
 - uid: DotNetHelper_IO.Enum.SizeUnits
   commentId: T:DotNetHelper_IO.Enum.SizeUnits
   parent: DotNetHelper_IO.Enum

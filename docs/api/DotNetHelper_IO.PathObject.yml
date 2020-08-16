@@ -1,0 +1,846 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.PathObject
+  commentId: T:DotNetHelper_IO.PathObject
+  id: PathObject
+  parent: DotNetHelper_IO
+  children:
+  - DotNetHelper_IO.PathObject.#ctor(DotNetHelper_IO.Enum.PathType,System.String)
+  - DotNetHelper_IO.PathObject.Exist
+  - DotNetHelper_IO.PathObject.FullName
+  - DotNetHelper_IO.PathObject.GetParentFolder
+  - DotNetHelper_IO.PathObject.GetSize
+  - DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  - DotNetHelper_IO.PathObject.Name
+  - DotNetHelper_IO.PathObject.PathType
+  - DotNetHelper_IO.PathObject.Size
+  langs:
+  - csharp
+  - vb
+  name: PathObject
+  nameWithType: PathObject
+  fullName: DotNetHelper_IO.PathObject
+  type: Class
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: PathObject
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 23
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nClass FolderObject.\n"
+  example: []
+  syntax:
+    content: public abstract class PathObject
+    content.vb: Public MustInherit Class PathObject
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - DotNetHelper_IO.FileObject
+  - DotNetHelper_IO.FolderObject
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: DotNetHelper_IO.PathObject.Name
+  commentId: P:DotNetHelper_IO.PathObject.Name
+  id: Name
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: PathObject.Name
+  fullName: DotNetHelper_IO.PathObject.Name
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Name
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 31
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nif object is file then get the name of the file with extension\nif object is folder then get the folder name only\n"
+  example: []
+  syntax:
+    content: public abstract string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public MustOverride ReadOnly Property Name As String
+  overload: DotNetHelper_IO.PathObject.Name*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.FullName
+  commentId: P:DotNetHelper_IO.PathObject.FullName
+  id: FullName
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: FullName
+  nameWithType: PathObject.FullName
+  fullName: DotNetHelper_IO.PathObject.FullName
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: FullName
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 37
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nGets the full path.\n"
+  example: []
+  syntax:
+    content: public string FullName { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public ReadOnly Property FullName As String
+  overload: DotNetHelper_IO.PathObject.FullName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.PathType
+  commentId: P:DotNetHelper_IO.PathObject.PathType
+  id: PathType
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: PathType
+  nameWithType: PathObject.PathType
+  fullName: DotNetHelper_IO.PathObject.PathType
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: PathType
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 39
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public PathType PathType { get; }
+    parameters: []
+    return:
+      type: DotNetHelper_IO.Enum.PathType
+    content.vb: Public ReadOnly Property PathType As PathType
+  overload: DotNetHelper_IO.PathObject.PathType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.Size
+  commentId: P:DotNetHelper_IO.PathObject.Size
+  id: Size
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: PathObject.Size
+  fullName: DotNetHelper_IO.PathObject.Size
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Size
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 44
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nreturn the size of the object in bytes\n"
+  example: []
+  syntax:
+    content: public long? Size { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public ReadOnly Property Size As Long?
+  overload: DotNetHelper_IO.PathObject.Size*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.Exist
+  commentId: P:DotNetHelper_IO.PathObject.Exist
+  id: Exist
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: Exist
+  nameWithType: PathObject.Exist
+  fullName: DotNetHelper_IO.PathObject.Exist
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Exist
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 50
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nreturn whether path exist.\n"
+  example: []
+  syntax:
+    content: public bool Exist { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>null</code> if [exist] contains no value, <code>true</code> if [exist]; otherwise, <code>false</code>.
+    content.vb: Public ReadOnly Property Exist As Boolean
+  overload: DotNetHelper_IO.PathObject.Exist*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.#ctor(DotNetHelper_IO.Enum.PathType,System.String)
+  commentId: M:DotNetHelper_IO.PathObject.#ctor(DotNetHelper_IO.Enum.PathType,System.String)
+  id: '#ctor(DotNetHelper_IO.Enum.PathType,System.String)'
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: PathObject(PathType, String)
+  nameWithType: PathObject.PathObject(PathType, String)
+  fullName: DotNetHelper_IO.PathObject.PathObject(DotNetHelper_IO.Enum.PathType, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: .ctor
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 52
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: protected PathObject(PathType pathType, string fullName)
+    parameters:
+    - id: pathType
+      type: DotNetHelper_IO.Enum.PathType
+    - id: fullName
+      type: System.String
+    content.vb: Protected Sub New(pathType As PathType, fullName As String)
+  overload: DotNetHelper_IO.PathObject.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: DotNetHelper_IO.PathObject.GetSize
+  commentId: M:DotNetHelper_IO.PathObject.GetSize
+  id: GetSize
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: GetSize()
+  nameWithType: PathObject.GetSize()
+  fullName: DotNetHelper_IO.PathObject.GetSize()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetSize
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 58
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract string GetSize()
+    return:
+      type: System.String
+    content.vb: Public MustOverride Function GetSize As String
+  overload: DotNetHelper_IO.PathObject.GetSize*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  commentId: M:DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  id: GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: GetSize(SizeUnits)
+  nameWithType: PathObject.GetSize(SizeUnits)
+  fullName: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetSize
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 59
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract long? GetSize(SizeUnits sizeUnits)
+    parameters:
+    - id: sizeUnits
+      type: DotNetHelper_IO.Enum.SizeUnits
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public MustOverride Function GetSize(sizeUnits As SizeUnits) As Long?
+  overload: DotNetHelper_IO.PathObject.GetSize*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: DotNetHelper_IO.PathObject.GetParentFolder
+  commentId: M:DotNetHelper_IO.PathObject.GetParentFolder
+  id: GetParentFolder
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: GetParentFolder()
+  nameWithType: PathObject.GetParentFolder()
+  fullName: DotNetHelper_IO.PathObject.GetParentFolder()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetParentFolder
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 60
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract FolderObject GetParentFolder()
+    return:
+      type: DotNetHelper_IO.FolderObject
+    content.vb: Public MustOverride Function GetParentFolder As FolderObject
+  overload: DotNetHelper_IO.PathObject.GetParentFolder*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+references:
+- uid: DotNetHelper_IO
+  commentId: N:DotNetHelper_IO
+  name: DotNetHelper_IO
+  nameWithType: DotNetHelper_IO
+  fullName: DotNetHelper_IO
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper_IO.PathObject.Name*
+  commentId: Overload:DotNetHelper_IO.PathObject.Name
+  name: Name
+  nameWithType: PathObject.Name
+  fullName: DotNetHelper_IO.PathObject.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DotNetHelper_IO.PathObject.FullName*
+  commentId: Overload:DotNetHelper_IO.PathObject.FullName
+  name: FullName
+  nameWithType: PathObject.FullName
+  fullName: DotNetHelper_IO.PathObject.FullName
+- uid: DotNetHelper_IO.PathObject.PathType*
+  commentId: Overload:DotNetHelper_IO.PathObject.PathType
+  name: PathType
+  nameWithType: PathObject.PathType
+  fullName: DotNetHelper_IO.PathObject.PathType
+- uid: DotNetHelper_IO.Enum.PathType
+  commentId: T:DotNetHelper_IO.Enum.PathType
+  parent: DotNetHelper_IO.Enum
+  name: PathType
+  nameWithType: PathType
+  fullName: DotNetHelper_IO.Enum.PathType
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+- uid: DotNetHelper_IO.PathObject.Size*
+  commentId: Overload:DotNetHelper_IO.PathObject.Size
+  name: Size
+  nameWithType: PathObject.Size
+  fullName: DotNetHelper_IO.PathObject.Size
+- uid: System.Nullable{System.Int64}
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
+  fullName: System.Nullable<System.Int64>
+  nameWithType.vb: Nullable(Of Int64)
+  fullName.vb: System.Nullable(Of System.Int64)
+  name.vb: Nullable(Of Int64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.PathObject.Exist*
+  commentId: Overload:DotNetHelper_IO.PathObject.Exist
+  name: Exist
+  nameWithType: PathObject.Exist
+  fullName: DotNetHelper_IO.PathObject.Exist
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: DotNetHelper_IO.PathObject.#ctor*
+  commentId: Overload:DotNetHelper_IO.PathObject.#ctor
+  name: PathObject
+  nameWithType: PathObject.PathObject
+  fullName: DotNetHelper_IO.PathObject.PathObject
+- uid: DotNetHelper_IO.PathObject.GetSize*
+  commentId: Overload:DotNetHelper_IO.PathObject.GetSize
+  name: GetSize
+  nameWithType: PathObject.GetSize
+  fullName: DotNetHelper_IO.PathObject.GetSize
+- uid: DotNetHelper_IO.Enum.SizeUnits
+  commentId: T:DotNetHelper_IO.Enum.SizeUnits
+  parent: DotNetHelper_IO.Enum
+  name: SizeUnits
+  nameWithType: SizeUnits
+  fullName: DotNetHelper_IO.Enum.SizeUnits
+- uid: DotNetHelper_IO.PathObject.GetParentFolder*
+  commentId: Overload:DotNetHelper_IO.PathObject.GetParentFolder
+  name: GetParentFolder
+  nameWithType: PathObject.GetParentFolder
+  fullName: DotNetHelper_IO.PathObject.GetParentFolder
+- uid: DotNetHelper_IO.FolderObject
+  commentId: T:DotNetHelper_IO.FolderObject
+  parent: DotNetHelper_IO
+  name: FolderObject
+  nameWithType: FolderObject
+  fullName: DotNetHelper_IO.FolderObject

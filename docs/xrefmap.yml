@@ -121,6 +121,36 @@ references:
   commentId: F:DotNetHelper_IO.Enum.IOType.Folder
   fullName: DotNetHelper_IO.Enum.IOType.Folder
   nameWithType: IOType.Folder
+- uid: DotNetHelper_IO.Enum.PathType
+  name: PathType
+  href: api/DotNetHelper_IO.Enum.PathType.html
+  commentId: T:DotNetHelper_IO.Enum.PathType
+  fullName: DotNetHelper_IO.Enum.PathType
+  nameWithType: PathType
+- uid: DotNetHelper_IO.Enum.PathType.File
+  name: File
+  href: api/DotNetHelper_IO.Enum.PathType.html#DotNetHelper_IO_Enum_PathType_File
+  commentId: F:DotNetHelper_IO.Enum.PathType.File
+  fullName: DotNetHelper_IO.Enum.PathType.File
+  nameWithType: PathType.File
+- uid: DotNetHelper_IO.Enum.PathType.Folder
+  name: Folder
+  href: api/DotNetHelper_IO.Enum.PathType.html#DotNetHelper_IO_Enum_PathType_Folder
+  commentId: F:DotNetHelper_IO.Enum.PathType.Folder
+  fullName: DotNetHelper_IO.Enum.PathType.Folder
+  nameWithType: PathType.Folder
+- uid: DotNetHelper_IO.Enum.PathType.None
+  name: None
+  href: api/DotNetHelper_IO.Enum.PathType.html#DotNetHelper_IO_Enum_PathType_None
+  commentId: F:DotNetHelper_IO.Enum.PathType.None
+  fullName: DotNetHelper_IO.Enum.PathType.None
+  nameWithType: PathType.None
+- uid: DotNetHelper_IO.Enum.PathType.Zip
+  name: Zip
+  href: api/DotNetHelper_IO.Enum.PathType.html#DotNetHelper_IO_Enum_PathType_Zip
+  commentId: F:DotNetHelper_IO.Enum.PathType.Zip
+  fullName: DotNetHelper_IO.Enum.PathType.Zip
+  nameWithType: PathType.Zip
 - uid: DotNetHelper_IO.Enum.SizeUnits
   name: SizeUnits
   href: api/DotNetHelper_IO.Enum.SizeUnits.html
@@ -315,6 +345,12 @@ references:
   commentId: M:DotNetHelper_IO.FileObject.Dispose
   fullName: DotNetHelper_IO.FileObject.Dispose()
   nameWithType: FileObject.Dispose()
+- uid: DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Dispose_System_Boolean_
+  commentId: M:DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  fullName: DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  nameWithType: FileObject.Dispose(Boolean)
 - uid: DotNetHelper_IO.FileObject.Dispose*
   name: Dispose
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Dispose_
@@ -322,19 +358,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.Dispose
   nameWithType: FileObject.Dispose
-- uid: DotNetHelper_IO.FileObject.Exist
-  name: Exist
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Exist
-  commentId: P:DotNetHelper_IO.FileObject.Exist
-  fullName: DotNetHelper_IO.FileObject.Exist
-  nameWithType: FileObject.Exist
-- uid: DotNetHelper_IO.FileObject.Exist*
-  name: Exist
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Exist_
-  commentId: Overload:DotNetHelper_IO.FileObject.Exist
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.Exist
-  nameWithType: FileObject.Exist
 - uid: DotNetHelper_IO.FileObject.Extension
   name: Extension
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Extension
@@ -400,19 +423,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.FilePathOnly
   nameWithType: FileObject.FilePathOnly
-- uid: DotNetHelper_IO.FileObject.FileSize
-  name: FileSize
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FileSize
-  commentId: P:DotNetHelper_IO.FileObject.FileSize
-  fullName: DotNetHelper_IO.FileObject.FileSize
-  nameWithType: FileObject.FileSize
-- uid: DotNetHelper_IO.FileObject.FileSize*
-  name: FileSize
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FileSize_
-  commentId: Overload:DotNetHelper_IO.FileObject.FileSize
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.FileSize
-  nameWithType: FileObject.FileSize
 - uid: DotNetHelper_IO.FileObject.FolderNameOnly
   name: FolderNameOnly
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FolderNameOnly
@@ -426,19 +436,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.FolderNameOnly
   nameWithType: FileObject.FolderNameOnly
-- uid: DotNetHelper_IO.FileObject.FullFilePath
-  name: FullFilePath
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FullFilePath
-  commentId: P:DotNetHelper_IO.FileObject.FullFilePath
-  fullName: DotNetHelper_IO.FileObject.FullFilePath
-  nameWithType: FileObject.FullFilePath
-- uid: DotNetHelper_IO.FileObject.FullFilePath*
-  name: FullFilePath
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_FullFilePath_
-  commentId: Overload:DotNetHelper_IO.FileObject.FullFilePath
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.FullFilePath
-  nameWithType: FileObject.FullFilePath
 - uid: DotNetHelper_IO.FileObject.GetFileEncoding
   name: GetFileEncoding()
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileEncoding
@@ -452,25 +449,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.GetFileEncoding
   nameWithType: FileObject.GetFileEncoding
-- uid: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  name: GetFileSize(SizeUnits, Boolean)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSize_DotNetHelper_IO_Enum_SizeUnits_System_Boolean_
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits, System.Boolean)
-  nameWithType: FileObject.GetFileSize(SizeUnits, Boolean)
-- uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  name: GetFileSize(Boolean)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSize_System_Boolean_
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  nameWithType: FileObject.GetFileSize(Boolean)
-- uid: DotNetHelper_IO.FileObject.GetFileSize*
-  name: GetFileSize
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileSize_
-  commentId: Overload:DotNetHelper_IO.FileObject.GetFileSize
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.GetFileSize
-  nameWithType: FileObject.GetFileSize
 - uid: DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   name: GetFileStream(FileOption, Int32, Boolean)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileStream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Boolean_
@@ -510,6 +488,38 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.GetIncrementFileName
   nameWithType: FileObject.GetIncrementFileName
+- uid: DotNetHelper_IO.FileObject.GetParentFolder
+  name: GetParentFolder()
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetParentFolder
+  commentId: M:DotNetHelper_IO.FileObject.GetParentFolder
+  fullName: DotNetHelper_IO.FileObject.GetParentFolder()
+  nameWithType: FileObject.GetParentFolder()
+- uid: DotNetHelper_IO.FileObject.GetParentFolder*
+  name: GetParentFolder
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetParentFolder_
+  commentId: Overload:DotNetHelper_IO.FileObject.GetParentFolder
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.GetParentFolder
+  nameWithType: FileObject.GetParentFolder
+- uid: DotNetHelper_IO.FileObject.GetSize
+  name: GetSize()
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetSize
+  commentId: M:DotNetHelper_IO.FileObject.GetSize
+  fullName: DotNetHelper_IO.FileObject.GetSize()
+  nameWithType: FileObject.GetSize()
+- uid: DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  name: GetSize(SizeUnits)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetSize_DotNetHelper_IO_Enum_SizeUnits_
+  commentId: M:DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  fullName: DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  nameWithType: FileObject.GetSize(SizeUnits)
+- uid: DotNetHelper_IO.FileObject.GetSize*
+  name: GetSize
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetSize_
+  commentId: Overload:DotNetHelper_IO.FileObject.GetSize
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.GetSize
+  nameWithType: FileObject.GetSize
 - uid: DotNetHelper_IO.FileObject.Init(System.Boolean)
   name: Init(Boolean)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Init_System_Boolean_
@@ -549,6 +559,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.MoveToAsync
   nameWithType: FileObject.MoveToAsync
+- uid: DotNetHelper_IO.FileObject.Name
+  name: Name
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Name
+  commentId: P:DotNetHelper_IO.FileObject.Name
+  fullName: DotNetHelper_IO.FileObject.Name
+  nameWithType: FileObject.Name
+- uid: DotNetHelper_IO.FileObject.Name*
+  name: Name
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_Name_
+  commentId: Overload:DotNetHelper_IO.FileObject.Name
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.Name
+  nameWithType: FileObject.Name
 - uid: DotNetHelper_IO.FileObject.NotifyFilters
   name: NotifyFilters
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_NotifyFilters
@@ -575,19 +598,58 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.ReadAllLines
   nameWithType: FileObject.ReadAllLines
-- uid: DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
-  name: ReadToString(Boolean)
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToString_System_Boolean_
-  commentId: M:DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
-  fullName: DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
-  nameWithType: FileObject.ReadToString(Boolean)
-- uid: DotNetHelper_IO.FileObject.ReadToString*
-  name: ReadToString
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToString_
-  commentId: Overload:DotNetHelper_IO.FileObject.ReadToString
+- uid: DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+  name: ReadAllText(Encoding)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadAllText_System_Text_Encoding_
+  commentId: M:DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+  fullName: DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+  nameWithType: FileObject.ReadAllText(Encoding)
+- uid: DotNetHelper_IO.FileObject.ReadAllText*
+  name: ReadAllText
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadAllText_
+  commentId: Overload:DotNetHelper_IO.FileObject.ReadAllText
   isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.ReadToString
-  nameWithType: FileObject.ReadToString
+  fullName: DotNetHelper_IO.FileObject.ReadAllText
+  nameWithType: FileObject.ReadAllText
+- uid: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  name: ReadToBytesInChunksAsync(Int32, CancellationToken)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToBytesInChunksAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32, System.Threading.CancellationToken)
+  nameWithType: FileObject.ReadToBytesInChunksAsync(Int32, CancellationToken)
+- uid: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync*
+  name: ReadToBytesInChunksAsync
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToBytesInChunksAsync_
+  commentId: Overload:DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync
+  nameWithType: FileObject.ReadToBytesInChunksAsync
+- uid: DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  name: ReadToStream(Int32)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToStream_System_Int32_
+  commentId: M:DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  fullName: DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  nameWithType: FileObject.ReadToStream(Int32)
+- uid: DotNetHelper_IO.FileObject.ReadToStream*
+  name: ReadToStream
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToStream_
+  commentId: Overload:DotNetHelper_IO.FileObject.ReadToStream
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.ReadToStream
+  nameWithType: FileObject.ReadToStream
+- uid: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  name: ReadToStringInChunksAsync(Int32)
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToStringInChunksAsync_System_Int32_
+  commentId: M:DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  fullName: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  nameWithType: FileObject.ReadToStringInChunksAsync(Int32)
+- uid: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync*
+  name: ReadToStringInChunksAsync
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_ReadToStringInChunksAsync_
+  commentId: Overload:DotNetHelper_IO.FileObject.ReadToStringInChunksAsync
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync
+  nameWithType: FileObject.ReadToStringInChunksAsync
 - uid: DotNetHelper_IO.FileObject.RefreshObject
   name: RefreshObject()
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_RefreshObject
@@ -752,12 +814,12 @@ references:
   commentId: T:DotNetHelper_IO.FolderObject
   fullName: DotNetHelper_IO.FolderObject
   nameWithType: FolderObject
-- uid: DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
-  name: FolderObject(DirectoryInfo)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_
-  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
-  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.IO.DirectoryInfo)
-  nameWithType: FolderObject.FolderObject(DirectoryInfo)
+- uid: DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)
+  name: FolderObject(DirectoryInfo, Boolean, Boolean, Boolean)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)
+  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.IO.DirectoryInfo, System.Boolean, System.Boolean, System.Boolean)
+  nameWithType: FolderObject.FolderObject(DirectoryInfo, Boolean, Boolean, Boolean)
 - uid: DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
   name: FolderObject(String, Boolean, Boolean, Boolean)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_String_System_Boolean_System_Boolean_System_Boolean_
@@ -842,6 +904,12 @@ references:
   commentId: M:DotNetHelper_IO.FolderObject.Dispose
   fullName: DotNetHelper_IO.FolderObject.Dispose()
   nameWithType: FolderObject.Dispose()
+- uid: DotNetHelper_IO.FolderObject.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Dispose_System_Boolean_
+  commentId: M:DotNetHelper_IO.FolderObject.Dispose(System.Boolean)
+  fullName: DotNetHelper_IO.FolderObject.Dispose(System.Boolean)
+  nameWithType: FolderObject.Dispose(Boolean)
 - uid: DotNetHelper_IO.FolderObject.Dispose*
   name: Dispose
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Dispose_
@@ -849,19 +917,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.Dispose
   nameWithType: FolderObject.Dispose
-- uid: DotNetHelper_IO.FolderObject.Exist
-  name: Exist
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Exist
-  commentId: P:DotNetHelper_IO.FolderObject.Exist
-  fullName: DotNetHelper_IO.FolderObject.Exist
-  nameWithType: FolderObject.Exist
-- uid: DotNetHelper_IO.FolderObject.Exist*
-  name: Exist
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Exist_
-  commentId: Overload:DotNetHelper_IO.FolderObject.Exist
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.Exist
-  nameWithType: FolderObject.Exist
 - uid: DotNetHelper_IO.FolderObject.Files
   name: Files
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Files
@@ -875,32 +930,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.Files
   nameWithType: FolderObject.Files
-- uid: DotNetHelper_IO.FolderObject.FolderNameOnly
-  name: FolderNameOnly
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_FolderNameOnly
-  commentId: P:DotNetHelper_IO.FolderObject.FolderNameOnly
-  fullName: DotNetHelper_IO.FolderObject.FolderNameOnly
-  nameWithType: FolderObject.FolderNameOnly
-- uid: DotNetHelper_IO.FolderObject.FolderNameOnly*
-  name: FolderNameOnly
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_FolderNameOnly_
-  commentId: Overload:DotNetHelper_IO.FolderObject.FolderNameOnly
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.FolderNameOnly
-  nameWithType: FolderObject.FolderNameOnly
-- uid: DotNetHelper_IO.FolderObject.FullFolderPath
-  name: FullFolderPath
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_FullFolderPath
-  commentId: P:DotNetHelper_IO.FolderObject.FullFolderPath
-  fullName: DotNetHelper_IO.FolderObject.FullFolderPath
-  nameWithType: FolderObject.FullFolderPath
-- uid: DotNetHelper_IO.FolderObject.FullFolderPath*
-  name: FullFolderPath
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_FullFolderPath_
-  commentId: Overload:DotNetHelper_IO.FolderObject.FullFolderPath
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.FullFolderPath
-  nameWithType: FolderObject.FullFolderPath
 - uid: DotNetHelper_IO.FolderObject.GetAllFiles(System.String,System.Boolean)
   name: GetAllFiles(String, Boolean)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetAllFiles_System_String_System_Boolean_
@@ -927,6 +956,38 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.GetAllFolders
   nameWithType: FolderObject.GetAllFolders
+- uid: DotNetHelper_IO.FolderObject.GetParentFolder
+  name: GetParentFolder()
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetParentFolder
+  commentId: M:DotNetHelper_IO.FolderObject.GetParentFolder
+  fullName: DotNetHelper_IO.FolderObject.GetParentFolder()
+  nameWithType: FolderObject.GetParentFolder()
+- uid: DotNetHelper_IO.FolderObject.GetParentFolder*
+  name: GetParentFolder
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetParentFolder_
+  commentId: Overload:DotNetHelper_IO.FolderObject.GetParentFolder
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.GetParentFolder
+  nameWithType: FolderObject.GetParentFolder
+- uid: DotNetHelper_IO.FolderObject.GetSize
+  name: GetSize()
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetSize
+  commentId: M:DotNetHelper_IO.FolderObject.GetSize
+  fullName: DotNetHelper_IO.FolderObject.GetSize()
+  nameWithType: FolderObject.GetSize()
+- uid: DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  name: GetSize(SizeUnits)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetSize_DotNetHelper_IO_Enum_SizeUnits_
+  commentId: M:DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  fullName: DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  nameWithType: FolderObject.GetSize(SizeUnits)
+- uid: DotNetHelper_IO.FolderObject.GetSize*
+  name: GetSize
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetSize_
+  commentId: Overload:DotNetHelper_IO.FolderObject.GetSize
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.GetSize
+  nameWithType: FolderObject.GetSize
 - uid: DotNetHelper_IO.FolderObject.LoadFilesInFolder
   name: LoadFilesInFolder
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LoadFilesInFolder
@@ -979,6 +1040,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.MoveTo
   nameWithType: FolderObject.MoveTo
+- uid: DotNetHelper_IO.FolderObject.Name
+  name: Name
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Name
+  commentId: P:DotNetHelper_IO.FolderObject.Name
+  fullName: DotNetHelper_IO.FolderObject.Name
+  nameWithType: FolderObject.Name
+- uid: DotNetHelper_IO.FolderObject.Name*
+  name: Name
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Name_
+  commentId: Overload:DotNetHelper_IO.FolderObject.Name
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.Name
+  nameWithType: FolderObject.Name
 - uid: DotNetHelper_IO.FolderObject.NotifyFilters
   name: NotifyFilters
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_NotifyFilters
@@ -992,32 +1066,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.NotifyFilters
   nameWithType: FolderObject.NotifyFilters
-- uid: DotNetHelper_IO.FolderObject.ParentFolder
-  name: ParentFolder
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_ParentFolder
-  commentId: P:DotNetHelper_IO.FolderObject.ParentFolder
-  fullName: DotNetHelper_IO.FolderObject.ParentFolder
-  nameWithType: FolderObject.ParentFolder
-- uid: DotNetHelper_IO.FolderObject.ParentFolder*
-  name: ParentFolder
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_ParentFolder_
-  commentId: Overload:DotNetHelper_IO.FolderObject.ParentFolder
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.ParentFolder
-  nameWithType: FolderObject.ParentFolder
-- uid: DotNetHelper_IO.FolderObject.ParentNameOnly
-  name: ParentNameOnly
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_ParentNameOnly
-  commentId: P:DotNetHelper_IO.FolderObject.ParentNameOnly
-  fullName: DotNetHelper_IO.FolderObject.ParentNameOnly
-  nameWithType: FolderObject.ParentNameOnly
-- uid: DotNetHelper_IO.FolderObject.ParentNameOnly*
-  name: ParentNameOnly
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_ParentNameOnly_
-  commentId: Overload:DotNetHelper_IO.FolderObject.ParentNameOnly
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.ParentNameOnly
-  nameWithType: FolderObject.ParentNameOnly
 - uid: DotNetHelper_IO.FolderObject.RefreshObject(System.Boolean,System.Boolean,System.Boolean)
   name: RefreshObject(Boolean, Boolean, Boolean)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_RefreshObject_System_Boolean_System_Boolean_System_Boolean_
@@ -1138,6 +1186,153 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.ZipFolderToMemory
   nameWithType: FolderObject.ZipFolderToMemory
+- uid: DotNetHelper_IO.Helpers
+  name: DotNetHelper_IO.Helpers
+  href: api/DotNetHelper_IO.Helpers.html
+  commentId: N:DotNetHelper_IO.Helpers
+  fullName: DotNetHelper_IO.Helpers
+  nameWithType: DotNetHelper_IO.Helpers
+- uid: DotNetHelper_IO.Helpers.ByteSizeHelper
+  name: ByteSizeHelper
+  href: api/DotNetHelper_IO.Helpers.ByteSizeHelper.html
+  commentId: T:DotNetHelper_IO.Helpers.ByteSizeHelper
+  fullName: DotNetHelper_IO.Helpers.ByteSizeHelper
+  nameWithType: ByteSizeHelper
+- uid: DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize(System.Int64)
+  name: GetSize(Int64)
+  href: api/DotNetHelper_IO.Helpers.ByteSizeHelper.html#DotNetHelper_IO_Helpers_ByteSizeHelper_GetSize_System_Int64_
+  commentId: M:DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize(System.Int64)
+  fullName: DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize(System.Int64)
+  nameWithType: ByteSizeHelper.GetSize(Int64)
+- uid: DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize(System.Int64,DotNetHelper_IO.Enum.SizeUnits)
+  name: GetSize(Int64, SizeUnits)
+  href: api/DotNetHelper_IO.Helpers.ByteSizeHelper.html#DotNetHelper_IO_Helpers_ByteSizeHelper_GetSize_System_Int64_DotNetHelper_IO_Enum_SizeUnits_
+  commentId: M:DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize(System.Int64,DotNetHelper_IO.Enum.SizeUnits)
+  fullName: DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize(System.Int64, DotNetHelper_IO.Enum.SizeUnits)
+  nameWithType: ByteSizeHelper.GetSize(Int64, SizeUnits)
+- uid: DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize*
+  name: GetSize
+  href: api/DotNetHelper_IO.Helpers.ByteSizeHelper.html#DotNetHelper_IO_Helpers_ByteSizeHelper_GetSize_
+  commentId: Overload:DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize
+  isSpec: "True"
+  fullName: DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize
+  nameWithType: ByteSizeHelper.GetSize
+- uid: DotNetHelper_IO.PathObject
+  name: PathObject
+  href: api/DotNetHelper_IO.PathObject.html
+  commentId: T:DotNetHelper_IO.PathObject
+  fullName: DotNetHelper_IO.PathObject
+  nameWithType: PathObject
+- uid: DotNetHelper_IO.PathObject.#ctor(DotNetHelper_IO.Enum.PathType,System.String)
+  name: PathObject(PathType, String)
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject__ctor_DotNetHelper_IO_Enum_PathType_System_String_
+  commentId: M:DotNetHelper_IO.PathObject.#ctor(DotNetHelper_IO.Enum.PathType,System.String)
+  fullName: DotNetHelper_IO.PathObject.PathObject(DotNetHelper_IO.Enum.PathType, System.String)
+  nameWithType: PathObject.PathObject(PathType, String)
+- uid: DotNetHelper_IO.PathObject.#ctor*
+  name: PathObject
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject__ctor_
+  commentId: Overload:DotNetHelper_IO.PathObject.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.PathObject
+  nameWithType: PathObject.PathObject
+- uid: DotNetHelper_IO.PathObject.Exist
+  name: Exist
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Exist
+  commentId: P:DotNetHelper_IO.PathObject.Exist
+  fullName: DotNetHelper_IO.PathObject.Exist
+  nameWithType: PathObject.Exist
+- uid: DotNetHelper_IO.PathObject.Exist*
+  name: Exist
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Exist_
+  commentId: Overload:DotNetHelper_IO.PathObject.Exist
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.Exist
+  nameWithType: PathObject.Exist
+- uid: DotNetHelper_IO.PathObject.FullName
+  name: FullName
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_FullName
+  commentId: P:DotNetHelper_IO.PathObject.FullName
+  fullName: DotNetHelper_IO.PathObject.FullName
+  nameWithType: PathObject.FullName
+- uid: DotNetHelper_IO.PathObject.FullName*
+  name: FullName
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_FullName_
+  commentId: Overload:DotNetHelper_IO.PathObject.FullName
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.FullName
+  nameWithType: PathObject.FullName
+- uid: DotNetHelper_IO.PathObject.GetParentFolder
+  name: GetParentFolder()
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_GetParentFolder
+  commentId: M:DotNetHelper_IO.PathObject.GetParentFolder
+  fullName: DotNetHelper_IO.PathObject.GetParentFolder()
+  nameWithType: PathObject.GetParentFolder()
+- uid: DotNetHelper_IO.PathObject.GetParentFolder*
+  name: GetParentFolder
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_GetParentFolder_
+  commentId: Overload:DotNetHelper_IO.PathObject.GetParentFolder
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.GetParentFolder
+  nameWithType: PathObject.GetParentFolder
+- uid: DotNetHelper_IO.PathObject.GetSize
+  name: GetSize()
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_GetSize
+  commentId: M:DotNetHelper_IO.PathObject.GetSize
+  fullName: DotNetHelper_IO.PathObject.GetSize()
+  nameWithType: PathObject.GetSize()
+- uid: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  name: GetSize(SizeUnits)
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_GetSize_DotNetHelper_IO_Enum_SizeUnits_
+  commentId: M:DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  fullName: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  nameWithType: PathObject.GetSize(SizeUnits)
+- uid: DotNetHelper_IO.PathObject.GetSize*
+  name: GetSize
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_GetSize_
+  commentId: Overload:DotNetHelper_IO.PathObject.GetSize
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.GetSize
+  nameWithType: PathObject.GetSize
+- uid: DotNetHelper_IO.PathObject.Name
+  name: Name
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Name
+  commentId: P:DotNetHelper_IO.PathObject.Name
+  fullName: DotNetHelper_IO.PathObject.Name
+  nameWithType: PathObject.Name
+- uid: DotNetHelper_IO.PathObject.Name*
+  name: Name
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Name_
+  commentId: Overload:DotNetHelper_IO.PathObject.Name
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.Name
+  nameWithType: PathObject.Name
+- uid: DotNetHelper_IO.PathObject.PathType
+  name: PathType
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_PathType
+  commentId: P:DotNetHelper_IO.PathObject.PathType
+  fullName: DotNetHelper_IO.PathObject.PathType
+  nameWithType: PathObject.PathType
+- uid: DotNetHelper_IO.PathObject.PathType*
+  name: PathType
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_PathType_
+  commentId: Overload:DotNetHelper_IO.PathObject.PathType
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.PathType
+  nameWithType: PathObject.PathType
+- uid: DotNetHelper_IO.PathObject.Size
+  name: Size
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Size
+  commentId: P:DotNetHelper_IO.PathObject.Size
+  fullName: DotNetHelper_IO.PathObject.Size
+  nameWithType: PathObject.Size
+- uid: DotNetHelper_IO.PathObject.Size*
+  name: Size
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Size_
+  commentId: Overload:DotNetHelper_IO.PathObject.Size
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.Size
+  nameWithType: PathObject.Size
 - uid: DotNetHelper_IO.ZipFileObject
   name: ZipFileObject
   href: api/DotNetHelper_IO.ZipFileObject.html
