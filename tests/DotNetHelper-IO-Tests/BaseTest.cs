@@ -32,7 +32,7 @@ namespace DotNetHelper_IO_Tests
         public string WorkingDirectoryRelative { get; } = Path.Combine(BaseFolderRelative, $"NET_452");
 #endif
 
-		public FileObject RandomTestFile
+		public FileObject RandomTestFileNoExtension
 		{
 			get
 			{

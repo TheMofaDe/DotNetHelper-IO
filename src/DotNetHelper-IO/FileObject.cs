@@ -22,7 +22,11 @@ namespace DotNetHelper_IO
 	public class FileObject : PathObject, IDisposable
 	{
 
+		/// <summary>
+		/// https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding.default?view=netcore-3.1
+		/// </summary>
 		public Encoding DefaultEncoding { get; }
+
 		public FileInfo FileInfo { get; private set; }
 
 		/// <summary>
@@ -270,7 +274,7 @@ namespace DotNetHelper_IO
 		/// <param name="cancellationToken"></param>
 		/// <param name="bufferSize"></param>
 		/// <returns>The copy to file</returns>
-		public async Task<string> CopyToAsync(string copyToFullName, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+		public async Task<string> CopyToAsync(string copyToFullName, FileOption option, CancellationToken cancellationToken = default, int bufferSize = 4096)
 		{
 			using var sourceStream = GetFileStream(FileOption.ReadOnly, bufferSize, true).fileStream;
 			var fileStreamAndFileName = new FileObject(copyToFullName).GetFileStream(option, bufferSize, true);
@@ -345,6 +349,8 @@ namespace DotNetHelper_IO
 					CopyTo(moveToFullName, option);
 					break;
 				case FileOption.Overwrite:
+					if (File.Exists(moveToFullName))
+						File.Delete(moveToFullName);
 					File.Move(FullName, moveToFullName); // move the file
 					return true;
 				case FileOption.ReadOnly:
@@ -431,7 +437,7 @@ namespace DotNetHelper_IO
 		/// <param name="bufferSize"></param>
 		/// <exception cref="Exception"></exception>
 		/// <exception cref="UnauthorizedAccessException"> throws if the application doesn't have the required permission </exception>
-		public async Task<bool> ChangeExtensionAsync(string newExtension, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+		public async Task<bool> ChangeExtensionAsync(string newExtension, FileOption option, CancellationToken cancellationToken = default, int bufferSize = 4096)
 		{
 			if (newExtension == null)
 				throw new NullReferenceException($"Could not change the extension of file {FullName} Because Developer Provided A Null Value");
@@ -895,12 +901,12 @@ namespace DotNetHelper_IO
 		/// <param name="encoding"></param>
 		/// <param name="option">The option.</param>
 		/// <param name="bufferSize"></param>
-		public async Task<string> WriteAsync(string content, FileOption option, Encoding encoding, int bufferSize = 4096)
+		public async Task<string> WriteAsync(string content, FileOption option = FileOption.Overwrite, Encoding encoding = null, int bufferSize = 4096)
 		{
 			if (option == FileOption.DoNothingIfExist && Exist)
 				return FullName;
 			var (fileStream, fullName) = GetFileStream(option);
-			using var sw = new StreamWriter(fileStream, encoding, bufferSize, false);
+			using var sw = new StreamWriter(fileStream, encoding ?? DefaultEncoding, bufferSize, false);
 			await sw.WriteAsync(content);
 			return fullName;
 		}

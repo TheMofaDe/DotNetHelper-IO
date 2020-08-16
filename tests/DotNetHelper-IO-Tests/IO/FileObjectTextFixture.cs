@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Bogus;
+using DotNetHelper.IO.Tests.Extensions;
 using DotNetHelper_IO;
 using DotNetHelper_IO.Enum;
 using DotNetHelper_IO_Tests;
@@ -78,7 +79,7 @@ namespace Tests
 			var expectedSizeInMB = $"95.37MB";
 
 			var content = new string('A', fileSize);
-			var stream = GenerateStreamFromString(content);
+			var stream = content.ToStream();
 			var testFile = new FileObject(TestFolder.FullName + new Randomizer().String(8, 'A', 'Z'));
 
 
@@ -96,39 +97,6 @@ namespace Tests
 			Assert.That(fileSizeInMegaBytes, Is.EqualTo(95));
 			Assert.That(fileSizeAsString, Is.EqualTo(expectedSizeInMB));
 		}
-
-
-		//[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		//[Test()]
-		//public async Task Test_GetFileSize_Return_Correct_Size_Async()
-		//{
-		//    // Arrange
-		//    var fileSize = 100000000;
-		//    var expectedSizeInByte = $"{fileSize}B";
-		//    var expectedSizeInKiloByte = $"100000";
-		//    var expectedSizeInMB = $"95.37MB";
-
-		//    var content = new string('A', fileSize);
-		//    var stream = GenerateStreamFromString(content);
-
-		//    // Act
-		//    await TestFile.WriteAsync(stream);
-		//    var fileSizeInBytes = TestFile.GetSize(SizeUnits.Byte);
-		//    var fileSizeInKiloBytes = TestFile.GetSize(SizeUnits.Kb);
-		//    var fileSizeInMegaBytes = TestFile.GetSize(SizeUnits.Mb);
-
-		//    var fileSizeAsString = TestFile.GetSize();
-
-		//    // Assert
-		//    Assert.That(fileSizeInBytes, Is.EqualTo(fileSize));
-		//    Assert.That(fileSizeInKiloBytes, Is.EqualTo(97656));
-		//    Assert.That(fileSizeInMegaBytes, Is.EqualTo(95));
-		//    Assert.That(fileSizeAsString, Is.EqualTo(expectedSizeInMB));
-		//}
-
-
-
-
 
 
 
@@ -159,7 +127,7 @@ namespace Tests
 			// Arrange
 			var content = $"Hello";
 			var encoding = Encoding.ASCII;
-			var testFile = RandomTestFile;
+			var testFile = RandomTestFileNoExtension;
 			// Act
 			// Assert
 			if (fileOption == FileOption.ReadOnly)
@@ -183,7 +151,7 @@ namespace Tests
 		[Test]
 		public void Test_Delete_File_If_Exist()
 		{
-			var testFile = RandomTestFile;
+			var testFile = RandomTestFileNoExtension;
 
 			testFile.CreateOrTruncate(false);
 			FileShouldExist(testFile.FullName);
@@ -197,7 +165,7 @@ namespace Tests
 		[Test]
 		public void Test_Delete_File_Dont_Throw_When_Not_Exist()
 		{
-			var testFile = RandomTestFile;
+			var testFile = RandomTestFileNoExtension;
 
 			testFile.DeleteFile(false);
 			FileShouldNotExist(testFile.FullName);
@@ -206,106 +174,7 @@ namespace Tests
 
 
 
-		//[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		//[Test]
-		//public void Test_MoveFile()
-		//{
-		//	// Arrange
 
-		//	var moveToFile = $"{TestFolder.FullName}MOVE";
-		//	TestFile.CreateOrTruncate();
-		//	TestFile.Write($"this file was original name {TestFile.FullName} and should had been moved to the following location {moveToFile}", FileOption.Overwrite, Encoding.UTF8);
-		//	TestFile.MoveTo(moveToFile, FileOption.Overwrite);
-		//	FileShouldExist(moveToFile);
-		//	FileShouldNotExist(TestFile.FullName);
-		//}
-
-
-		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		[Test]
-		public void Test_Move_EmptyFile()
-		{
-			var testFile = RandomTestFile;
-
-			var newFile = $"{TestFolder.FullName}MOVE";
-			testFile.CreateOrTruncate();
-			testFile.MoveTo(newFile, FileOption.Overwrite);
-			FileShouldExist(newFile);
-			FileShouldNotExist(testFile.FullName);
-
-		}
-
-
-		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		[Test]
-		public async Task Test_MoveFile_Async_Overwrite()
-		{
-			var testFile = RandomTestFile;
-
-			var newFile = RandomTestFile.FullName;
-			testFile.CreateOrTruncate();
-			testFile.Write($"this file was original name {testFile.FullName} and should had been moved to the following location {newFile}", FileOption.Overwrite);
-			var result = await testFile.MoveToAsync(newFile, FileOption.Overwrite, CancellationToken.None);
-			FileShouldExist(newFile);
-			FileShouldNotExist(testFile.FullName);
-
-		}
-
-
-
-
-		//public void Test_GetFileSize([Values(5, 50, 150, 400, 700)] int repeatCounter)
-		//{
-		//	// Arrange
-		//	var content = new StringBuilder($"Hello", repeatCounter).ToString();
-		//	var encoding = Encoding.ASCII;
-		//	// Act
-		//	var expectedFileSize = encoding.GetPreamble();
-		//	// Assert
-		//	if (fileOption == FileOption.ReadOnly)
-		//	{
-		//		// Writing to file is not allow when requesting read-only option
-		//		Assert.That(() => { TestFile.Write(content, fileOption, encoding); }, Throws.Exception);
-		//	}
-		//	else
-		//	{
-		//		Assert.That(() =>
-		//		{
-		//			var file = new FileObject(TestFile.Write(content, fileOption, encoding));
-		//			Assert.That(file.ReadToString(), Is.EqualTo(content));
-
-		//		}, Throws.Nothing);
-		//	}
-		//}
-
-
-
-		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		[Test]
-		public void Test_CopyFile()
-		{
-			var testFile = RandomTestFile;
-
-			var newFile = $"{TestFolder.FullName}COPY";
-			testFile.Write($"This file should have been copied to the following location {newFile}", FileOption.Overwrite, Encoding.UTF8);
-			testFile.CopyTo(newFile, FileOption.Overwrite);
-			FileShouldExist(newFile);
-		}
-
-
-
-		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		[Test]
-		public async Task Test_CopyFile_Async_Overwrite()
-		{
-			var testFile = RandomTestFile;
-
-			var newFile = $"{TestFolder.FullName}COPY";
-			testFile.Write($"This file should have been copied to the following location {newFile}", FileOption.Overwrite, Encoding.UTF8);
-			await testFile.CopyToAsync(newFile, FileOption.Overwrite, CancellationToken.None);
-			FileShouldExist(newFile);
-			FileShouldExist(newFile);
-		}
 
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
@@ -325,7 +194,7 @@ namespace Tests
 		[Test]
 		public void Test_Change_Extension_With_File_Having_No_Extension()
 		{
-			var testFile = RandomTestFile;
+			var testFile = RandomTestFileNoExtension;
 
 			testFile.CreateOrTruncate();
 			testFile.ChangeExtension(".GOKU", FileOption.Overwrite);
@@ -339,10 +208,10 @@ namespace Tests
 		[Test]
 		public async Task Test_Change_Extension_With_File_Having_No_Extension_Async()
 		{
-			var testFile = RandomTestFile;
+			var testFile = RandomTestFileNoExtension;
 
 			testFile.CreateOrTruncate();
-			await testFile.ChangeExtensionAsync(".GOKU", FileOption.Overwrite,CancellationToken.None);
+			await testFile.ChangeExtensionAsync(".GOKU", FileOption.Overwrite, CancellationToken.None);
 			FileShouldExist($"{testFile.FullName}.GOKU");
 			FileShouldNotExist(testFile.FullName);
 			Assert.Pass("Successfully change extension of file");
@@ -355,7 +224,7 @@ namespace Tests
 		public void Test_Change_Extension_With_File_Having_A_Extension()
 		{
 
-			var testFile = RandomTestFile;
+			var testFile = RandomTestFileNoExtension;
 
 
 			var filePath = testFile.FilePathOnly + "AnotherTest.Gohan";
@@ -368,6 +237,15 @@ namespace Tests
 				Assert.Pass("Successfully change extension of file");
 			}
 		}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -390,14 +268,5 @@ namespace Tests
 
 
 
-		public static Stream GenerateStreamFromString(string s)
-		{
-			var stream = new MemoryStream();
-			var writer = new StreamWriter(stream);
-			writer.Write(s);
-			writer.Flush();
-			stream.Position = 0;
-			return stream;
-		}
 	}
 }

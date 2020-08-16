@@ -128,10 +128,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DefaultEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 24
+    startLine: 27
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
+  summary: "\nhttps://docs.microsoft.com/en-us/dotnet/api/system.text.encoding.default?view=netcore-3.1\n"
+  example: []
   syntax:
     content: public Encoding DefaultEncoding { get; }
     parameters: []
@@ -163,7 +165,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileInfo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 25
+    startLine: 29
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -198,7 +200,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 31
+    startLine: 35
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -236,7 +238,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileNameOnlyNoExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 36
+    startLine: 40
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -274,7 +276,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FilePathOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 42
+    startLine: 46
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -312,7 +314,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Extension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 50
+    startLine: 54
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -350,7 +352,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FolderNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 55
+    startLine: 59
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -388,7 +390,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Name
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 64
+    startLine: 68
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -429,7 +431,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 74
+    startLine: 78
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -467,7 +469,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 107
+    startLine: 111
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -508,7 +510,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetParentFolder
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 116
+    startLine: 120
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -543,7 +545,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 133
+    startLine: 137
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -581,7 +583,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Watcher
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 138
+    startLine: 142
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -619,7 +621,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 144
+    startLine: 148
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -657,7 +659,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 151
+    startLine: 155
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -696,7 +698,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 164
+    startLine: 168
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -735,7 +737,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Init
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 173
+    startLine: 177
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -768,7 +770,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 191
+    startLine: 195
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -800,7 +802,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 224
+    startLine: 228
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -849,14 +851,14 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 272
+    startLine: 276
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nCopy the current file to the destination. Returns the destination file name\n"
   example: []
   syntax:
-    content: public Task<string> CopyToAsync(string copyToFullName, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+    content: public Task<string> CopyToAsync(string copyToFullName, FileOption option, CancellationToken cancellationToken = default(CancellationToken), int bufferSize = 4096)
     parameters:
     - id: copyToFullName
       type: System.String
@@ -873,7 +875,7 @@ items:
     return:
       type: System.Threading.Tasks.Task{System.String}
       description: The copy to file
-    content.vb: Public Function CopyToAsync(copyToFullName As String, option As FileOption, cancellationToken As CancellationToken, bufferSize As Integer = 4096) As Task(Of String)
+    content.vb: Public Function CopyToAsync(copyToFullName As String, option As FileOption, cancellationToken As CancellationToken = Nothing, bufferSize As Integer = 4096) As Task(Of String)
   overload: DotNetHelper_IO.FileObject.CopyToAsync*
   modifiers.csharp:
   - public
@@ -897,7 +899,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 295
+    startLine: 299
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -951,7 +953,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: MoveTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 327
+    startLine: 331
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -998,7 +1000,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: MoveToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 368
+    startLine: 374
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1051,7 +1053,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ChangeExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 416
+    startLine: 422
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1104,14 +1106,14 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ChangeExtensionAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 433
+    startLine: 439
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nChanges the extension of the current file. Does nothing if file doesn&apos;t exist return boolean on whether or not the file extension actually got change\n\n"
   example: []
   syntax:
-    content: public Task<bool> ChangeExtensionAsync(string newExtension, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+    content: public Task<bool> ChangeExtensionAsync(string newExtension, FileOption option, CancellationToken cancellationToken = default(CancellationToken), int bufferSize = 4096)
     parameters:
     - id: newExtension
       type: System.String
@@ -1127,7 +1129,7 @@ items:
       description: ''
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
-    content.vb: Public Function ChangeExtensionAsync(newExtension As String, option As FileOption, cancellationToken As CancellationToken, bufferSize As Integer = 4096) As Task(Of Boolean)
+    content.vb: Public Function ChangeExtensionAsync(newExtension As String, option As FileOption, cancellationToken As CancellationToken = Nothing, bufferSize As Integer = 4096) As Task(Of Boolean)
   overload: DotNetHelper_IO.FileObject.ChangeExtensionAsync*
   exceptions:
   - type: System.Exception
@@ -1157,7 +1159,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeleteFile
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 446
+    startLine: 452
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1192,7 +1194,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 469
+    startLine: 475
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1231,7 +1233,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetIncrementFileName
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 487
+    startLine: 493
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1266,7 +1268,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetIncrementExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 530
+    startLine: 536
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1301,7 +1303,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadAllLines
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 581
+    startLine: 587
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1336,7 +1338,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadAllText
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 602
+    startLine: 608
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1374,7 +1376,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadToBytesInChunksAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 634
+    startLine: 640
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1414,7 +1416,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadToStream
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 651
+    startLine: 657
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1452,7 +1454,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadToStringInChunksAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 661
+    startLine: 667
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1490,7 +1492,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetFileStream
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 761
+    startLine: 767
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1541,7 +1543,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 825
+    startLine: 831
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1588,7 +1590,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 842
+    startLine: 848
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1638,7 +1640,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 861
+    startLine: 867
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1682,7 +1684,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 878
+    startLine: 884
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1732,14 +1734,14 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 897
+    startLine: 903
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nWrites the content to file. Returns the full file name content was written to. \n"
   example: []
   syntax:
-    content: public Task<string> WriteAsync(string content, FileOption option, Encoding encoding, int bufferSize = 4096)
+    content: public Task<string> WriteAsync(string content, FileOption option = FileOption.Overwrite, Encoding encoding = null, int bufferSize = 4096)
     parameters:
     - id: content
       type: System.String
@@ -1755,7 +1757,7 @@ items:
       description: ''
     return:
       type: System.Threading.Tasks.Task{System.String}
-    content.vb: Public Function WriteAsync(content As String, option As FileOption, encoding As Encoding, bufferSize As Integer = 4096) As Task(Of String)
+    content.vb: Public Function WriteAsync(content As String, option As FileOption = FileOption.Overwrite, encoding As Encoding = Nothing, bufferSize As Integer = 4096) As Task(Of String)
   overload: DotNetHelper_IO.FileObject.WriteAsync*
   modifiers.csharp:
   - public
@@ -1779,7 +1781,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 916
+    startLine: 922
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1832,7 +1834,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 936
+    startLine: 942
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1879,7 +1881,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 961
+    startLine: 967
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1932,7 +1934,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetFileEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 985
+    startLine: 991
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1967,7 +1969,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StartWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1018
+    startLine: 1024
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2014,7 +2016,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StopWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1043
+    startLine: 1049
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2046,7 +2048,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1065
+    startLine: 1071
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2088,7 +2090,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1113
+    startLine: 1119
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2120,7 +2122,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1120
+    startLine: 1126
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
