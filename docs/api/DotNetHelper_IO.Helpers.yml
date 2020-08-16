@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Helpers
+  commentId: N:DotNetHelper_IO.Helpers
+  id: DotNetHelper_IO.Helpers
+  children:
+  - DotNetHelper_IO.Helpers.ByteSizeHelper
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper_IO.Helpers
+  nameWithType: DotNetHelper_IO.Helpers
+  fullName: DotNetHelper_IO.Helpers
+  type: Namespace
+  assemblies:
+  - DotNetHelper-IO
+references:
+- uid: DotNetHelper_IO.Helpers.ByteSizeHelper
+  commentId: T:DotNetHelper_IO.Helpers.ByteSizeHelper
+  name: ByteSizeHelper
+  nameWithType: ByteSizeHelper
+  fullName: DotNetHelper_IO.Helpers.ByteSizeHelper

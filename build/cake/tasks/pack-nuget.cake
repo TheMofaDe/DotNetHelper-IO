@@ -15,6 +15,10 @@ Task("Pack-Nuget")
         
      foreach(var project in parameters.SolutionProjects)
      {
+
+        var isABoolean = bool.TryParse(project.GetProjectProperty("IsPackable"),out var canPackAndPublish);
+
+        if(canPackAndPublish){
         DotNetCorePack(project.ProjectFilePath.FullPath, new DotNetCorePackSettings { 
             ArgumentCustomization = args => args
                                .Append($"-p:Version={parameters.Version.SemVersion}"),
@@ -24,6 +28,9 @@ Task("Pack-Nuget")
             NoRestore = true,
             MSBuildSettings = buildSettings,
         });
+        }
+
+        
       }
        
 });

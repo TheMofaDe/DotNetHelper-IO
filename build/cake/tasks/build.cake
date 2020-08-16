@@ -20,7 +20,12 @@ var buildTask = Task("Build")
         };
         DotNetCoreBuild(project.ProjectFilePath.FullPath, settings);
         context.SetVersionFromJsonFile(parameters);  
-        CopyDirectory(Directory(System.IO.Path.GetDirectoryName(project.ProjectFilePath.FullPath) + $"/bin/{parameters.Configuration}"), parameters.Paths.Directories.ArtifactsBin);
+        
+
+         var isABoolean = bool.TryParse(project.GetProjectProperty("IsPackable"),out var canPackAndPublish);
+         if(canPackAndPublish){
+             CopyDirectory(Directory(System.IO.Path.GetDirectoryName(project.ProjectFilePath.FullPath) + $"/bin/{parameters.Configuration}"), parameters.Paths.Directories.ArtifactsBin);
+         }
     }  
 }).ReportError(exception =>
 {
