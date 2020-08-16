@@ -5,7 +5,7 @@ items:
   id: FolderObject
   parent: DotNetHelper_IO
   children:
-  - DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
+  - DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)
   - DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
   - DotNetHelper_IO.FolderObject.CopyTo(System.String,DotNetHelper_IO.Enum.FolderOption)
   - DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)
@@ -13,19 +13,19 @@ items:
   - DotNetHelper_IO.FolderObject.Delete(System.Boolean)
   - DotNetHelper_IO.FolderObject.DirectoryInfo
   - DotNetHelper_IO.FolderObject.Dispose
-  - DotNetHelper_IO.FolderObject.Exist
+  - DotNetHelper_IO.FolderObject.Dispose(System.Boolean)
   - DotNetHelper_IO.FolderObject.Files
-  - DotNetHelper_IO.FolderObject.FolderNameOnly
-  - DotNetHelper_IO.FolderObject.FullFolderPath
   - DotNetHelper_IO.FolderObject.GetAllFiles(System.String,System.Boolean)
   - DotNetHelper_IO.FolderObject.GetAllFolders(System.String,System.Boolean)
+  - DotNetHelper_IO.FolderObject.GetParentFolder
+  - DotNetHelper_IO.FolderObject.GetSize
+  - DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
   - DotNetHelper_IO.FolderObject.LoadFilesInFolder
   - DotNetHelper_IO.FolderObject.LoadRecursive
   - DotNetHelper_IO.FolderObject.LoadSubFolders
   - DotNetHelper_IO.FolderObject.MoveTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  - DotNetHelper_IO.FolderObject.Name
   - DotNetHelper_IO.FolderObject.NotifyFilters
-  - DotNetHelper_IO.FolderObject.ParentFolder
-  - DotNetHelper_IO.FolderObject.ParentNameOnly
   - DotNetHelper_IO.FolderObject.RefreshObject(System.Boolean,System.Boolean,System.Boolean)
   - DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
   - DotNetHelper_IO.FolderObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)
@@ -45,8 +45,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FolderObject
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 24
@@ -56,18 +56,24 @@ items:
   summary: "\nClass FolderObject.\n"
   example: []
   syntax:
-    content: 'public class FolderObject : IDisposable'
+    content: 'public class FolderObject : PathObject, IDisposable'
     content.vb: >-
       Public Class FolderObject
+          Inherits PathObject
           Implements IDisposable
   seealso:
   - linkId: System.IDisposable
     commentId: T:System.IDisposable
   inheritance:
   - System.Object
+  - DotNetHelper_IO.PathObject
   implements:
   - System.IDisposable
   inheritedMembers:
+  - DotNetHelper_IO.PathObject.FullName
+  - DotNetHelper_IO.PathObject.PathType
+  - DotNetHelper_IO.PathObject.Size
+  - DotNetHelper_IO.PathObject.Exist
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -95,8 +101,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DirectoryInfo
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 28
@@ -110,120 +116,6 @@ items:
       type: System.IO.DirectoryInfo
     content.vb: Public ReadOnly Property DirectoryInfo As DirectoryInfo
   overload: DotNetHelper_IO.FolderObject.DirectoryInfo*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: DotNetHelper_IO.FolderObject.FolderNameOnly
-  commentId: P:DotNetHelper_IO.FolderObject.FolderNameOnly
-  id: FolderNameOnly
-  parent: DotNetHelper_IO.FolderObject
-  langs:
-  - csharp
-  - vb
-  name: FolderNameOnly
-  nameWithType: FolderObject.FolderNameOnly
-  fullName: DotNetHelper_IO.FolderObject.FolderNameOnly
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: FolderNameOnly
-    path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 34
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets the folder name only.\n"
-  example: []
-  syntax:
-    content: public string FolderNameOnly { get; }
-    parameters: []
-    return:
-      type: System.String
-      description: The folder name only.
-    content.vb: Public ReadOnly Property FolderNameOnly As String
-  overload: DotNetHelper_IO.FolderObject.FolderNameOnly*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: DotNetHelper_IO.FolderObject.FullFolderPath
-  commentId: P:DotNetHelper_IO.FolderObject.FullFolderPath
-  id: FullFolderPath
-  parent: DotNetHelper_IO.FolderObject
-  langs:
-  - csharp
-  - vb
-  name: FullFolderPath
-  nameWithType: FolderObject.FullFolderPath
-  fullName: DotNetHelper_IO.FolderObject.FullFolderPath
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: FullFolderPath
-    path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 39
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets the full folder path.\n"
-  example: []
-  syntax:
-    content: public string FullFolderPath { get; }
-    parameters: []
-    return:
-      type: System.String
-      description: The full folder path.
-    content.vb: Public ReadOnly Property FullFolderPath As String
-  overload: DotNetHelper_IO.FolderObject.FullFolderPath*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: DotNetHelper_IO.FolderObject.Exist
-  commentId: P:DotNetHelper_IO.FolderObject.Exist
-  id: Exist
-  parent: DotNetHelper_IO.FolderObject
-  langs:
-  - csharp
-  - vb
-  name: Exist
-  nameWithType: FolderObject.Exist
-  fullName: DotNetHelper_IO.FolderObject.Exist
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: Exist
-    path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 45
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets a value indicating whether this <xref href=\"DotNetHelper_IO.FolderObject\" data-throw-if-not-resolved=\"false\"></xref> is exist.\n"
-  example: []
-  syntax:
-    content: public bool Exist { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-      description: <code>null</code> if [exist] contains no value, <code>true</code> if [exist]; otherwise, <code>false</code>.
-    content.vb: Public ReadOnly Property Exist As Boolean
-  overload: DotNetHelper_IO.FolderObject.Exist*
   modifiers.csharp:
   - public
   - get
@@ -244,11 +136,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Watcher
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 59
+    startLine: 37
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -282,11 +174,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Files
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 64
+    startLine: 42
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -320,11 +212,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Subfolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 69
+    startLine: 47
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -358,11 +250,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 74
+    startLine: 52
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -396,11 +288,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 79
+    startLine: 57
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -420,82 +312,6 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FolderObject.ParentFolder
-  commentId: P:DotNetHelper_IO.FolderObject.ParentFolder
-  id: ParentFolder
-  parent: DotNetHelper_IO.FolderObject
-  langs:
-  - csharp
-  - vb
-  name: ParentFolder
-  nameWithType: FolderObject.ParentFolder
-  fullName: DotNetHelper_IO.FolderObject.ParentFolder
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: ParentFolder
-    path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 85
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets the parent folder.\n"
-  example: []
-  syntax:
-    content: public string ParentFolder { get; }
-    parameters: []
-    return:
-      type: System.String
-      description: The parent folder.
-    content.vb: Public ReadOnly Property ParentFolder As String
-  overload: DotNetHelper_IO.FolderObject.ParentFolder*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: DotNetHelper_IO.FolderObject.ParentNameOnly
-  commentId: P:DotNetHelper_IO.FolderObject.ParentNameOnly
-  id: ParentNameOnly
-  parent: DotNetHelper_IO.FolderObject
-  langs:
-  - csharp
-  - vb
-  name: ParentNameOnly
-  nameWithType: FolderObject.ParentNameOnly
-  fullName: DotNetHelper_IO.FolderObject.ParentNameOnly
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: ParentNameOnly
-    path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 91
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets the parent.\n"
-  example: []
-  syntax:
-    content: public string ParentNameOnly { get; }
-    parameters: []
-    return:
-      type: System.String
-      description: The parent.
-    content.vb: Public ReadOnly Property ParentNameOnly As String
-  overload: DotNetHelper_IO.FolderObject.ParentNameOnly*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: DotNetHelper_IO.FolderObject.LoadSubFolders
   commentId: P:DotNetHelper_IO.FolderObject.LoadSubFolders
   id: LoadSubFolders
@@ -510,11 +326,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LoadSubFolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 97
+    startLine: 64
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -548,11 +364,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LoadFilesInFolder
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 102
+    startLine: 69
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -586,11 +402,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: LoadRecursive
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 107
+    startLine: 74
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -610,6 +426,44 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: DotNetHelper_IO.FolderObject.Name
+  commentId: P:DotNetHelper_IO.FolderObject.Name
+  id: Name
+  parent: DotNetHelper_IO.FolderObject
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: FolderObject.Name
+  fullName: DotNetHelper_IO.FolderObject.Name
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Name
+    path: ../src/DotNetHelper-IO/FolderObject.cs
+    startLine: 76
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Name As String
+  overridden: DotNetHelper_IO.PathObject.Name
+  overload: DotNetHelper_IO.FolderObject.Name*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
 - uid: DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
   commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
   id: '#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)'
@@ -624,11 +478,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 116
+    startLine: 85
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -655,34 +509,40 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
-  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
-  id: '#ctor(System.IO.DirectoryInfo)'
+- uid: DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)
+  id: '#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)'
   parent: DotNetHelper_IO.FolderObject
   langs:
   - csharp
   - vb
-  name: FolderObject(DirectoryInfo)
-  nameWithType: FolderObject.FolderObject(DirectoryInfo)
-  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.IO.DirectoryInfo)
+  name: FolderObject(DirectoryInfo, Boolean, Boolean, Boolean)
+  nameWithType: FolderObject.FolderObject(DirectoryInfo, Boolean, Boolean, Boolean)
+  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.IO.DirectoryInfo, System.Boolean, System.Boolean, System.Boolean)
   type: Constructor
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 127
+    startLine: 97
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   syntax:
-    content: public FolderObject(DirectoryInfo directoryInfo)
+    content: public FolderObject(DirectoryInfo directoryInfo, bool loadSubfolders = false, bool loadFilesInFolder = false, bool loadRecursive = false)
     parameters:
     - id: directoryInfo
       type: System.IO.DirectoryInfo
-    content.vb: Public Sub New(directoryInfo As DirectoryInfo)
+    - id: loadSubfolders
+      type: System.Boolean
+    - id: loadFilesInFolder
+      type: System.Boolean
+    - id: loadRecursive
+      type: System.Boolean
+    content.vb: Public Sub New(directoryInfo As DirectoryInfo, loadSubfolders As Boolean = False, loadFilesInFolder As Boolean = False, loadRecursive As Boolean = False)
   overload: DotNetHelper_IO.FolderObject.#ctor*
   modifiers.csharp:
   - public
@@ -702,11 +562,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 166
+    startLine: 142
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -743,11 +603,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 210
+    startLine: 186
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -800,11 +660,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncateSubFolder
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 247
+    startLine: 223
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -842,11 +702,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetAllFiles
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 318
+    startLine: 289
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -884,11 +744,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetAllFolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 362
+    startLine: 333
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -926,11 +786,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyTo
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 424
+    startLine: 395
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -968,11 +828,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: MoveTo
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 455
+    startLine: 426
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1013,11 +873,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ZipFolderToFileSystem
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 493
+    startLine: 465
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1062,11 +922,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ZipFolderToMemory
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 538
+    startLine: 510
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1097,11 +957,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SetFolderAttribute
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 562
+    startLine: 534
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1139,11 +999,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Delete
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 598
+    startLine: 571
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1174,11 +1034,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StartWatching
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 624
+    startLine: 597
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1216,11 +1076,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StopWatching
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 651
+    startLine: 624
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1248,16 +1108,14 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Dispose
     path: ../src/DotNetHelper-IO/FolderObject.cs
-    startLine: 669
+    startLine: 641
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nPerforms application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.\n"
-  example: []
   syntax:
     content: public void Dispose()
     content.vb: Public Sub Dispose
@@ -1268,6 +1126,149 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: DotNetHelper_IO.FolderObject.Dispose(System.Boolean)
+  commentId: M:DotNetHelper_IO.FolderObject.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: DotNetHelper_IO.FolderObject
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: FolderObject.Dispose(Boolean)
+  fullName: DotNetHelper_IO.FolderObject.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Dispose
+    path: ../src/DotNetHelper-IO/FolderObject.cs
+    startLine: 648
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+    content.vb: Protected Overridable Sub Dispose(disposing As Boolean)
+  overload: DotNetHelper_IO.FolderObject.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: DotNetHelper_IO.FolderObject.GetSize
+  commentId: M:DotNetHelper_IO.FolderObject.GetSize
+  id: GetSize
+  parent: DotNetHelper_IO.FolderObject
+  langs:
+  - csharp
+  - vb
+  name: GetSize()
+  nameWithType: FolderObject.GetSize()
+  fullName: DotNetHelper_IO.FolderObject.GetSize()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetSize
+    path: ../src/DotNetHelper-IO/FolderObject.cs
+    startLine: 679
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override string GetSize()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function GetSize As String
+  overridden: DotNetHelper_IO.PathObject.GetSize
+  overload: DotNetHelper_IO.FolderObject.GetSize*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  commentId: M:DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  id: GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  parent: DotNetHelper_IO.FolderObject
+  langs:
+  - csharp
+  - vb
+  name: GetSize(SizeUnits)
+  nameWithType: FolderObject.GetSize(SizeUnits)
+  fullName: DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetSize
+    path: ../src/DotNetHelper-IO/FolderObject.cs
+    startLine: 684
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override long? GetSize(SizeUnits sizeUnits)
+    parameters:
+    - id: sizeUnits
+      type: DotNetHelper_IO.Enum.SizeUnits
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overrides Function GetSize(sizeUnits As SizeUnits) As Long?
+  overridden: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  overload: DotNetHelper_IO.FolderObject.GetSize*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: DotNetHelper_IO.FolderObject.GetParentFolder
+  commentId: M:DotNetHelper_IO.FolderObject.GetParentFolder
+  id: GetParentFolder
+  parent: DotNetHelper_IO.FolderObject
+  langs:
+  - csharp
+  - vb
+  name: GetParentFolder()
+  nameWithType: FolderObject.GetParentFolder()
+  fullName: DotNetHelper_IO.FolderObject.GetParentFolder()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FolderObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetParentFolder
+    path: ../src/DotNetHelper-IO/FolderObject.cs
+    startLine: 689
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override FolderObject GetParentFolder()
+    return:
+      type: DotNetHelper_IO.FolderObject
+    content.vb: Public Overrides Function GetParentFolder As FolderObject
+  overridden: DotNetHelper_IO.PathObject.GetParentFolder
+  overload: DotNetHelper_IO.FolderObject.GetParentFolder*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
 references:
 - uid: System.IDisposable
   commentId: T:System.IDisposable
@@ -1288,6 +1289,36 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: DotNetHelper_IO.PathObject
+  commentId: T:DotNetHelper_IO.PathObject
+  parent: DotNetHelper_IO
+  name: PathObject
+  nameWithType: PathObject
+  fullName: DotNetHelper_IO.PathObject
+- uid: DotNetHelper_IO.PathObject.FullName
+  commentId: P:DotNetHelper_IO.PathObject.FullName
+  parent: DotNetHelper_IO.PathObject
+  name: FullName
+  nameWithType: PathObject.FullName
+  fullName: DotNetHelper_IO.PathObject.FullName
+- uid: DotNetHelper_IO.PathObject.PathType
+  commentId: P:DotNetHelper_IO.PathObject.PathType
+  parent: DotNetHelper_IO.PathObject
+  name: PathType
+  nameWithType: PathObject.PathType
+  fullName: DotNetHelper_IO.PathObject.PathType
+- uid: DotNetHelper_IO.PathObject.Size
+  commentId: P:DotNetHelper_IO.PathObject.Size
+  parent: DotNetHelper_IO.PathObject
+  name: Size
+  nameWithType: PathObject.Size
+  fullName: DotNetHelper_IO.PathObject.Size
+- uid: DotNetHelper_IO.PathObject.Exist
+  commentId: P:DotNetHelper_IO.PathObject.Exist
+  parent: DotNetHelper_IO.PathObject
+  name: Exist
+  nameWithType: PathObject.Exist
+  fullName: DotNetHelper_IO.PathObject.Exist
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -1591,41 +1622,6 @@ references:
   name: System.IO
   nameWithType: System.IO
   fullName: System.IO
-- uid: DotNetHelper_IO.FolderObject.FolderNameOnly*
-  commentId: Overload:DotNetHelper_IO.FolderObject.FolderNameOnly
-  name: FolderNameOnly
-  nameWithType: FolderObject.FolderNameOnly
-  fullName: DotNetHelper_IO.FolderObject.FolderNameOnly
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: DotNetHelper_IO.FolderObject.FullFolderPath*
-  commentId: Overload:DotNetHelper_IO.FolderObject.FullFolderPath
-  name: FullFolderPath
-  nameWithType: FolderObject.FullFolderPath
-  fullName: DotNetHelper_IO.FolderObject.FullFolderPath
-- uid: DotNetHelper_IO.FolderObject
-  commentId: T:DotNetHelper_IO.FolderObject
-  parent: DotNetHelper_IO
-  name: FolderObject
-  nameWithType: FolderObject
-  fullName: DotNetHelper_IO.FolderObject
-- uid: DotNetHelper_IO.FolderObject.Exist*
-  commentId: Overload:DotNetHelper_IO.FolderObject.Exist
-  name: Exist
-  nameWithType: FolderObject.Exist
-  fullName: DotNetHelper_IO.FolderObject.Exist
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean
 - uid: DotNetHelper_IO.FolderObject.Watcher*
   commentId: Overload:DotNetHelper_IO.FolderObject.Watcher
   name: Watcher
@@ -1801,21 +1797,18 @@ references:
   name: NotifyFilters
   nameWithType: NotifyFilters
   fullName: System.IO.NotifyFilters
-- uid: DotNetHelper_IO.FolderObject.ParentFolder*
-  commentId: Overload:DotNetHelper_IO.FolderObject.ParentFolder
-  name: ParentFolder
-  nameWithType: FolderObject.ParentFolder
-  fullName: DotNetHelper_IO.FolderObject.ParentFolder
-- uid: DotNetHelper_IO.FolderObject.ParentNameOnly*
-  commentId: Overload:DotNetHelper_IO.FolderObject.ParentNameOnly
-  name: ParentNameOnly
-  nameWithType: FolderObject.ParentNameOnly
-  fullName: DotNetHelper_IO.FolderObject.ParentNameOnly
 - uid: DotNetHelper_IO.FolderObject.LoadSubFolders*
   commentId: Overload:DotNetHelper_IO.FolderObject.LoadSubFolders
   name: LoadSubFolders
   nameWithType: FolderObject.LoadSubFolders
   fullName: DotNetHelper_IO.FolderObject.LoadSubFolders
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: DotNetHelper_IO.FolderObject.LoadFilesInFolder*
   commentId: Overload:DotNetHelper_IO.FolderObject.LoadFilesInFolder
   name: LoadFilesInFolder
@@ -1826,6 +1819,30 @@ references:
   name: LoadRecursive
   nameWithType: FolderObject.LoadRecursive
   fullName: DotNetHelper_IO.FolderObject.LoadRecursive
+- uid: DotNetHelper_IO.PathObject.Name
+  commentId: P:DotNetHelper_IO.PathObject.Name
+  parent: DotNetHelper_IO.PathObject
+  name: Name
+  nameWithType: PathObject.Name
+  fullName: DotNetHelper_IO.PathObject.Name
+- uid: DotNetHelper_IO.FolderObject.Name*
+  commentId: Overload:DotNetHelper_IO.FolderObject.Name
+  name: Name
+  nameWithType: FolderObject.Name
+  fullName: DotNetHelper_IO.FolderObject.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DotNetHelper_IO.FolderObject
+  commentId: T:DotNetHelper_IO.FolderObject
+  parent: DotNetHelper_IO
+  name: FolderObject
+  nameWithType: FolderObject
+  fullName: DotNetHelper_IO.FolderObject
 - uid: DotNetHelper_IO.FolderObject.#ctor*
   commentId: Overload:DotNetHelper_IO.FolderObject.#ctor
   name: FolderObject
@@ -2181,3 +2198,194 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: DotNetHelper_IO.PathObject.GetSize
+  commentId: M:DotNetHelper_IO.PathObject.GetSize
+  parent: DotNetHelper_IO.PathObject
+  name: GetSize()
+  nameWithType: PathObject.GetSize()
+  fullName: DotNetHelper_IO.PathObject.GetSize()
+  spec.csharp:
+  - uid: DotNetHelper_IO.PathObject.GetSize
+    name: GetSize
+    nameWithType: PathObject.GetSize
+    fullName: DotNetHelper_IO.PathObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.PathObject.GetSize
+    name: GetSize
+    nameWithType: PathObject.GetSize
+    fullName: DotNetHelper_IO.PathObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FolderObject.GetSize*
+  commentId: Overload:DotNetHelper_IO.FolderObject.GetSize
+  name: GetSize
+  nameWithType: FolderObject.GetSize
+  fullName: DotNetHelper_IO.FolderObject.GetSize
+- uid: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  commentId: M:DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  parent: DotNetHelper_IO.PathObject
+  name: GetSize(SizeUnits)
+  nameWithType: PathObject.GetSize(SizeUnits)
+  fullName: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  spec.csharp:
+  - uid: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+    name: GetSize
+    nameWithType: PathObject.GetSize
+    fullName: DotNetHelper_IO.PathObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper_IO.Enum.SizeUnits
+    name: SizeUnits
+    nameWithType: SizeUnits
+    fullName: DotNetHelper_IO.Enum.SizeUnits
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+    name: GetSize
+    nameWithType: PathObject.GetSize
+    fullName: DotNetHelper_IO.PathObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper_IO.Enum.SizeUnits
+    name: SizeUnits
+    nameWithType: SizeUnits
+    fullName: DotNetHelper_IO.Enum.SizeUnits
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.Enum.SizeUnits
+  commentId: T:DotNetHelper_IO.Enum.SizeUnits
+  parent: DotNetHelper_IO.Enum
+  name: SizeUnits
+  nameWithType: SizeUnits
+  fullName: DotNetHelper_IO.Enum.SizeUnits
+- uid: System.Nullable{System.Int64}
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
+  fullName: System.Nullable<System.Int64>
+  nameWithType.vb: Nullable(Of Int64)
+  fullName.vb: System.Nullable(Of System.Int64)
+  name.vb: Nullable(Of Int64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.PathObject.GetParentFolder
+  commentId: M:DotNetHelper_IO.PathObject.GetParentFolder
+  parent: DotNetHelper_IO.PathObject
+  name: GetParentFolder()
+  nameWithType: PathObject.GetParentFolder()
+  fullName: DotNetHelper_IO.PathObject.GetParentFolder()
+  spec.csharp:
+  - uid: DotNetHelper_IO.PathObject.GetParentFolder
+    name: GetParentFolder
+    nameWithType: PathObject.GetParentFolder
+    fullName: DotNetHelper_IO.PathObject.GetParentFolder
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.PathObject.GetParentFolder
+    name: GetParentFolder
+    nameWithType: PathObject.GetParentFolder
+    fullName: DotNetHelper_IO.PathObject.GetParentFolder
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FolderObject.GetParentFolder*
+  commentId: Overload:DotNetHelper_IO.FolderObject.GetParentFolder
+  name: GetParentFolder
+  nameWithType: FolderObject.GetParentFolder
+  fullName: DotNetHelper_IO.FolderObject.GetParentFolder

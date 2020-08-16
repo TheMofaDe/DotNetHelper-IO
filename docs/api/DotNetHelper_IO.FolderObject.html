@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class FolderObject
    | DotNetHelper-IO ">
-    <meta name="generator" content="docfx 2.48.0.0">
+    <meta name="generator" content="docfx 2.56.1.0">
     
     <link rel="shortcut icon" href="../logo/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -109,6 +109,9 @@
                             <a href="DotNetHelper_IO.FolderObject.html" title="FolderObject" class="active">FolderObject</a>
                           </li>
                           <li class="">
+                            <a href="DotNetHelper_IO.PathObject.html" title="PathObject" class="">PathObject</a>
+                          </li>
+                          <li class="">
                             <a href="DotNetHelper_IO.ZipFileObject.html" title="ZipFileObject" class="">ZipFileObject</a>
                           </li>
                         </ul>  </li>
@@ -130,7 +133,19 @@
                             <a href="DotNetHelper_IO.Enum.IOType.html" title="IOType" class="">IOType</a>
                           </li>
                           <li class="">
+                            <a href="DotNetHelper_IO.Enum.PathType.html" title="PathType" class="">PathType</a>
+                          </li>
+                          <li class="">
                             <a href="DotNetHelper_IO.Enum.SizeUnits.html" title="SizeUnits" class="">SizeUnits</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper_IO.Helpers.html" title="DotNetHelper_IO.Helpers" class="">DotNetHelper_IO.Helpers</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper_IO.Helpers.ByteSizeHelper.html" title="ByteSizeHelper" class="">ByteSizeHelper</a>
                           </li>
                         </ul>  </li>
                   </ul>        </div>
@@ -151,7 +166,8 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">FolderObject</span></div>
+    <div class="level1"><a class="xref" href="DotNetHelper_IO.PathObject.html">PathObject</a></div>
+    <div class="level2"><span class="xref">FolderObject</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -159,6 +175,18 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_FullName">PathObject.FullName</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_PathType">PathObject.PathType</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Size">PathObject.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Exist">PathObject.Exist</a>
+    </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
     </div>
@@ -185,24 +213,24 @@
   <h6><strong>Assembly</strong>: DotNetHelper-IO.dll</h6>
   <h5 id="DotNetHelper_IO_FolderObject_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FolderObject : IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class FolderObject : PathObject, IDisposable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.%23ctor(System.IO.DirectoryInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.%23ctor(System.IO.DirectoryInfo%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L128">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L98">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject__ctor_" data-uid="DotNetHelper_IO.FolderObject.#ctor*"></a>
-  <h4 id="DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_" data-uid="DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)">FolderObject(DirectoryInfo)</h4>
+  <h4 id="DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_System_Boolean_System_Boolean_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)">FolderObject(DirectoryInfo, Boolean, Boolean, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FolderObject(DirectoryInfo directoryInfo)</code></pre>
+    <pre><code class="lang-csharp hljs">public FolderObject(DirectoryInfo directoryInfo, bool loadSubfolders = false, bool loadFilesInFolder = false, bool loadRecursive = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -219,14 +247,29 @@
         <td><span class="parametername">directoryInfo</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">loadSubfolders</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">loadFilesInFolder</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">loadRecursive</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject__ctor_System_String_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.%23ctor(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject__ctor_System_String_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.%23ctor(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L117">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L86">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject__ctor_" data-uid="DotNetHelper_IO.FolderObject.#ctor*"></a>
   <h4 id="DotNetHelper_IO_FolderObject__ctor_System_String_System_Boolean_System_Boolean_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)">FolderObject(String, Boolean, Boolean, Boolean)</h4>
@@ -276,10 +319,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_DirectoryInfo.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.DirectoryInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_DirectoryInfo.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.DirectoryInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L29">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L29">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_DirectoryInfo_" data-uid="DotNetHelper_IO.FolderObject.DirectoryInfo*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_DirectoryInfo" data-uid="DotNetHelper_IO.FolderObject.DirectoryInfo">DirectoryInfo</h4>
@@ -306,42 +349,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Exist.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Exist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Files.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Files%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L46">View Source</a>
-  </span>
-  <a id="DotNetHelper_IO_FolderObject_Exist_" data-uid="DotNetHelper_IO.FolderObject.Exist*"></a>
-  <h4 id="DotNetHelper_IO_FolderObject_Exist" data-uid="DotNetHelper_IO.FolderObject.Exist">Exist</h4>
-  <div class="markdown level1 summary"><p>Gets a value indicating whether this <a class="xref" href="DotNetHelper_IO.FolderObject.html">FolderObject</a> is exist.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Exist { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><code>null</code> if [exist] contains no value, <code>true</code> if [exist]; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Files.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Files%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L65">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L43">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_Files_" data-uid="DotNetHelper_IO.FolderObject.Files*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_Files" data-uid="DotNetHelper_IO.FolderObject.Files">Files</h4>
@@ -370,74 +381,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_FolderNameOnly.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.FolderNameOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_LoadFilesInFolder.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.LoadFilesInFolder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L35">View Source</a>
-  </span>
-  <a id="DotNetHelper_IO_FolderObject_FolderNameOnly_" data-uid="DotNetHelper_IO.FolderObject.FolderNameOnly*"></a>
-  <h4 id="DotNetHelper_IO_FolderObject_FolderNameOnly" data-uid="DotNetHelper_IO.FolderObject.FolderNameOnly">FolderNameOnly</h4>
-  <div class="markdown level1 summary"><p>Gets the folder name only.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FolderNameOnly { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>The folder name only.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_FullFolderPath.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.FullFolderPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L40">View Source</a>
-  </span>
-  <a id="DotNetHelper_IO_FolderObject_FullFolderPath_" data-uid="DotNetHelper_IO.FolderObject.FullFolderPath*"></a>
-  <h4 id="DotNetHelper_IO_FolderObject_FullFolderPath" data-uid="DotNetHelper_IO.FolderObject.FullFolderPath">FullFolderPath</h4>
-  <div class="markdown level1 summary"><p>Gets the full folder path.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FullFolderPath { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>The full folder path.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_LoadFilesInFolder.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.LoadFilesInFolder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L103">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L70">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_LoadFilesInFolder_" data-uid="DotNetHelper_IO.FolderObject.LoadFilesInFolder*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_LoadFilesInFolder" data-uid="DotNetHelper_IO.FolderObject.LoadFilesInFolder">LoadFilesInFolder</h4>
@@ -466,10 +413,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_LoadRecursive.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.LoadRecursive%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_LoadRecursive.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.LoadRecursive%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L108">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L75">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_LoadRecursive_" data-uid="DotNetHelper_IO.FolderObject.LoadRecursive*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_LoadRecursive" data-uid="DotNetHelper_IO.FolderObject.LoadRecursive">LoadRecursive</h4>
@@ -498,10 +445,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_LoadSubFolders.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.LoadSubFolders%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_LoadSubFolders.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.LoadSubFolders%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L98">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L65">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_LoadSubFolders_" data-uid="DotNetHelper_IO.FolderObject.LoadSubFolders*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_LoadSubFolders" data-uid="DotNetHelper_IO.FolderObject.LoadSubFolders">LoadSubFolders</h4>
@@ -530,10 +477,42 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_NotifyFilters.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.NotifyFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Name.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L80">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L77">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FolderObject_Name_" data-uid="DotNetHelper_IO.FolderObject.Name*"></a>
+  <h4 id="DotNetHelper_IO_FolderObject_Name" data-uid="DotNetHelper_IO.FolderObject.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Name">PathObject.Name</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_NotifyFilters.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.NotifyFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L58">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_NotifyFilters_" data-uid="DotNetHelper_IO.FolderObject.NotifyFilters*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_NotifyFilters" data-uid="DotNetHelper_IO.FolderObject.NotifyFilters">NotifyFilters</h4>
@@ -562,74 +541,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_ParentFolder.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.ParentFolder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Subfolders.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Subfolders%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L86">View Source</a>
-  </span>
-  <a id="DotNetHelper_IO_FolderObject_ParentFolder_" data-uid="DotNetHelper_IO.FolderObject.ParentFolder*"></a>
-  <h4 id="DotNetHelper_IO_FolderObject_ParentFolder" data-uid="DotNetHelper_IO.FolderObject.ParentFolder">ParentFolder</h4>
-  <div class="markdown level1 summary"><p>Gets the parent folder.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ParentFolder { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>The parent folder.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_ParentNameOnly.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.ParentNameOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L92">View Source</a>
-  </span>
-  <a id="DotNetHelper_IO_FolderObject_ParentNameOnly_" data-uid="DotNetHelper_IO.FolderObject.ParentNameOnly*"></a>
-  <h4 id="DotNetHelper_IO_FolderObject_ParentNameOnly" data-uid="DotNetHelper_IO.FolderObject.ParentNameOnly">ParentNameOnly</h4>
-  <div class="markdown level1 summary"><p>Gets the parent.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ParentNameOnly { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>The parent.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Subfolders.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Subfolders%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L70">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L48">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_Subfolders_" data-uid="DotNetHelper_IO.FolderObject.Subfolders*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_Subfolders" data-uid="DotNetHelper_IO.FolderObject.Subfolders">Subfolders</h4>
@@ -658,10 +573,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Watcher.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Watcher%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Watcher.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Watcher%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L60">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L38">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_Watcher_" data-uid="DotNetHelper_IO.FolderObject.Watcher*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_Watcher" data-uid="DotNetHelper_IO.FolderObject.Watcher">Watcher</h4>
@@ -690,10 +605,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_WatchTimeout.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.WatchTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_WatchTimeout.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.WatchTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L75">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L53">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_WatchTimeout_" data-uid="DotNetHelper_IO.FolderObject.WatchTimeout*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_WatchTimeout" data-uid="DotNetHelper_IO.FolderObject.WatchTimeout">WatchTimeout</h4>
@@ -724,10 +639,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_CopyTo_System_String_DotNetHelper_IO_Enum_FolderOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.CopyTo(System.String%2CDotNetHelper_IO.Enum.FolderOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_CopyTo_System_String_DotNetHelper_IO_Enum_FolderOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.CopyTo(System.String%2CDotNetHelper_IO.Enum.FolderOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L425">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L396">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_CopyTo_" data-uid="DotNetHelper_IO.FolderObject.CopyTo*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_CopyTo_System_String_DotNetHelper_IO_Enum_FolderOption_" data-uid="DotNetHelper_IO.FolderObject.CopyTo(System.String,DotNetHelper_IO.Enum.FolderOption)">CopyTo(String, FolderOption)</h4>
@@ -778,10 +693,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_CreateOrTruncate_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_CreateOrTruncate_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L211">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L187">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_CreateOrTruncate_" data-uid="DotNetHelper_IO.FolderObject.CreateOrTruncate*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_CreateOrTruncate_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)">CreateOrTruncate(Boolean)</h4>
@@ -870,10 +785,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_CreateOrTruncateSubFolder_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_CreateOrTruncateSubFolder_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L248">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L224">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_CreateOrTruncateSubFolder_" data-uid="DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_CreateOrTruncateSubFolder_System_String_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String,System.Boolean)">CreateOrTruncateSubFolder(String, Boolean)</h4>
@@ -923,10 +838,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Delete_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Delete(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Delete_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Delete(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L599">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L572">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_Delete_" data-uid="DotNetHelper_IO.FolderObject.Delete*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_Delete_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.Delete(System.Boolean)">Delete(Boolean)</h4>
@@ -956,15 +871,14 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Dispose.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Dispose.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L670">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L642">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_Dispose_" data-uid="DotNetHelper_IO.FolderObject.Dispose*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_Dispose" data-uid="DotNetHelper_IO.FolderObject.Dispose">Dispose()</h4>
-  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -972,10 +886,42 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_GetAllFiles_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.GetAllFiles(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L319">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L649">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FolderObject_Dispose_" data-uid="DotNetHelper_IO.FolderObject.Dispose*"></a>
+  <h4 id="DotNetHelper_IO_FolderObject_Dispose_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_GetAllFiles_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.GetAllFiles(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L290">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_GetAllFiles_" data-uid="DotNetHelper_IO.FolderObject.GetAllFiles*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_GetAllFiles_System_String_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.GetAllFiles(System.String,System.Boolean)">GetAllFiles(String, Boolean)</h4>
@@ -1025,10 +971,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_GetAllFolders_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.GetAllFolders(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_GetAllFolders_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.GetAllFolders(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L363">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L334">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_GetAllFolders_" data-uid="DotNetHelper_IO.FolderObject.GetAllFolders*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_GetAllFolders_System_String_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.GetAllFolders(System.String,System.Boolean)">GetAllFolders(String, Boolean)</h4>
@@ -1078,10 +1024,123 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_MoveTo_System_String_DotNetHelper_IO_Enum_FolderOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.MoveTo(System.String%2CDotNetHelper_IO.Enum.FolderOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_GetParentFolder.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.GetParentFolder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L456">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L690">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FolderObject_GetParentFolder_" data-uid="DotNetHelper_IO.FolderObject.GetParentFolder*"></a>
+  <h4 id="DotNetHelper_IO_FolderObject_GetParentFolder" data-uid="DotNetHelper_IO.FolderObject.GetParentFolder">GetParentFolder()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override FolderObject GetParentFolder()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.FolderObject.html">FolderObject</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_GetParentFolder">PathObject.GetParentFolder()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_GetSize.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.GetSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L680">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FolderObject_GetSize_" data-uid="DotNetHelper_IO.FolderObject.GetSize*"></a>
+  <h4 id="DotNetHelper_IO_FolderObject_GetSize" data-uid="DotNetHelper_IO.FolderObject.GetSize">GetSize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetSize()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_GetSize">PathObject.GetSize()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_GetSize_DotNetHelper_IO_Enum_SizeUnits_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L685">View Source</a>
+  </span>
+  <a id="DotNetHelper_IO_FolderObject_GetSize_" data-uid="DotNetHelper_IO.FolderObject.GetSize*"></a>
+  <h4 id="DotNetHelper_IO_FolderObject_GetSize_DotNetHelper_IO_Enum_SizeUnits_" data-uid="DotNetHelper_IO.FolderObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)">GetSize(SizeUnits)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long? GetSize(SizeUnits sizeUnits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DotNetHelper_IO.Enum.SizeUnits.html">SizeUnits</a></td>
+        <td><span class="parametername">sizeUnits</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_GetSize_DotNetHelper_IO_Enum_SizeUnits_">PathObject.GetSize(SizeUnits)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_MoveTo_System_String_DotNetHelper_IO_Enum_FolderOption_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.MoveTo(System.String%2CDotNetHelper_IO.Enum.FolderOption)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L427">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_MoveTo_" data-uid="DotNetHelper_IO.FolderObject.MoveTo*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_MoveTo_System_String_DotNetHelper_IO_Enum_FolderOption_" data-uid="DotNetHelper_IO.FolderObject.MoveTo(System.String,DotNetHelper_IO.Enum.FolderOption)">MoveTo(String, FolderOption)</h4>
@@ -1147,10 +1206,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_RefreshObject_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.RefreshObject(System.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_RefreshObject_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.RefreshObject(System.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L167">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L143">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_RefreshObject_" data-uid="DotNetHelper_IO.FolderObject.RefreshObject*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_RefreshObject_System_Boolean_System_Boolean_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.RefreshObject(System.Boolean,System.Boolean,System.Boolean)">RefreshObject(Boolean, Boolean, Boolean)</h4>
@@ -1192,10 +1251,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_SetFolderAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum%2CSystem.Collections.Generic.List%7BSystem.IO.FileAttributes%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_SetFolderAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum%2CSystem.Collections.Generic.List%7BSystem.IO.FileAttributes%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L563">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L535">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_SetFolderAttribute_" data-uid="DotNetHelper_IO.FolderObject.SetFolderAttribute*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_SetFolderAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__" data-uid="DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})">SetFolderAttribute(AddOrRemoveEnum, List&lt;FileAttributes&gt;)</h4>
@@ -1232,10 +1291,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.StartWatching(System.IO.WatcherChangeTypes%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.StartWatching(System.IO.WatcherChangeTypes%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L625">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L598">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_StartWatching_" data-uid="DotNetHelper_IO.FolderObject.StartWatching*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)">StartWatching(WatcherChangeTypes, Boolean)</h4>
@@ -1288,10 +1347,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_StopWatching.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.StopWatching%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_StopWatching.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.StopWatching%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L652">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L625">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_StopWatching_" data-uid="DotNetHelper_IO.FolderObject.StopWatching*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_StopWatching" data-uid="DotNetHelper_IO.FolderObject.StopWatching">StopWatching()</h4>
@@ -1304,10 +1363,10 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_ZipFolderToFileSystem_DotNetHelper_IO_FileObject_SharpCompress_Common_ArchiveType_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(DotNetHelper_IO.FileObject%2CSharpCompress.Common.ArchiveType%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_ZipFolderToFileSystem_DotNetHelper_IO_FileObject_SharpCompress_Common_ArchiveType_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(DotNetHelper_IO.FileObject%2CSharpCompress.Common.ArchiveType%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L494">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L466">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_ZipFolderToFileSystem_" data-uid="DotNetHelper_IO.FolderObject.ZipFolderToFileSystem*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_ZipFolderToFileSystem_DotNetHelper_IO_FileObject_SharpCompress_Common_ArchiveType_System_Boolean_" data-uid="DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(DotNetHelper_IO.FileObject,SharpCompress.Common.ArchiveType,System.Boolean)">ZipFolderToFileSystem(FileObject, ArchiveType, Boolean)</h4>
@@ -1373,10 +1432,10 @@ This Feature Hasn't Be Implemented Yet For Rar Files</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject_ZipFolderToMemory.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.ZipFolderToMemory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject_ZipFolderToMemory.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject.ZipFolderToMemory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L539">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L511">View Source</a>
   </span>
   <a id="DotNetHelper_IO_FolderObject_ZipFolderToMemory_" data-uid="DotNetHelper_IO.FolderObject.ZipFolderToMemory*"></a>
   <h4 id="DotNetHelper_IO_FolderObject_ZipFolderToMemory" data-uid="DotNetHelper_IO.FolderObject.ZipFolderToMemory">ZipFolderToMemory()</h4>
@@ -1419,10 +1478,10 @@ This Feature Hasn't Be Implemented Yet For Rar Files</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/master/apiSpec/new?filename=DotNetHelper_IO_FolderObject.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/new/wor/apiSpec/new?filename=DotNetHelper_IO_FolderObject.md&amp;value=---%0Auid%3A%20DotNetHelper_IO.FolderObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/master/src/DotNetHelper-IO/FolderObject.cs/#L25" class="contribution-link">View Source</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper-IO/blob/wor/src/DotNetHelper-IO/FolderObject.cs/#L25" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

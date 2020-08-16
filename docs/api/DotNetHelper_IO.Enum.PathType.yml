@@ -1,0 +1,178 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Enum.PathType
+  commentId: T:DotNetHelper_IO.Enum.PathType
+  id: PathType
+  parent: DotNetHelper_IO.Enum
+  children:
+  - DotNetHelper_IO.Enum.PathType.File
+  - DotNetHelper_IO.Enum.PathType.Folder
+  - DotNetHelper_IO.Enum.PathType.None
+  - DotNetHelper_IO.Enum.PathType.Zip
+  langs:
+  - csharp
+  - vb
+  name: PathType
+  nameWithType: PathType
+  fullName: DotNetHelper_IO.Enum.PathType
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/PathType.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: PathType
+    path: ../src/DotNetHelper-IO/Enum/PathType.cs
+    startLine: 8
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: public enum PathType
+    content.vb: Public Enum PathType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper_IO.Enum.PathType.File
+  commentId: F:DotNetHelper_IO.Enum.PathType.File
+  id: File
+  parent: DotNetHelper_IO.Enum.PathType
+  langs:
+  - csharp
+  - vb
+  name: File
+  nameWithType: PathType.File
+  fullName: DotNetHelper_IO.Enum.PathType.File
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/PathType.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: File
+    path: ../src/DotNetHelper-IO/Enum/PathType.cs
+    startLine: 10
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: File = 1
+    return:
+      type: DotNetHelper_IO.Enum.PathType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.PathType.Folder
+  commentId: F:DotNetHelper_IO.Enum.PathType.Folder
+  id: Folder
+  parent: DotNetHelper_IO.Enum.PathType
+  langs:
+  - csharp
+  - vb
+  name: Folder
+  nameWithType: PathType.Folder
+  fullName: DotNetHelper_IO.Enum.PathType.Folder
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/PathType.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Folder
+    path: ../src/DotNetHelper-IO/Enum/PathType.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Folder = 2
+    return:
+      type: DotNetHelper_IO.Enum.PathType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.PathType.Zip
+  commentId: F:DotNetHelper_IO.Enum.PathType.Zip
+  id: Zip
+  parent: DotNetHelper_IO.Enum.PathType
+  langs:
+  - csharp
+  - vb
+  name: Zip
+  nameWithType: PathType.Zip
+  fullName: DotNetHelper_IO.Enum.PathType.Zip
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/PathType.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Zip
+    path: ../src/DotNetHelper-IO/Enum/PathType.cs
+    startLine: 12
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: Zip = 3
+    return:
+      type: DotNetHelper_IO.Enum.PathType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.PathType.None
+  commentId: F:DotNetHelper_IO.Enum.PathType.None
+  id: None
+  parent: DotNetHelper_IO.Enum.PathType
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: PathType.None
+  fullName: DotNetHelper_IO.Enum.PathType.None
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/PathType.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: None
+    path: ../src/DotNetHelper-IO/Enum/PathType.cs
+    startLine: 13
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  syntax:
+    content: None = 3
+    return:
+      type: DotNetHelper_IO.Enum.PathType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+- uid: DotNetHelper_IO.Enum.PathType
+  commentId: T:DotNetHelper_IO.Enum.PathType
+  parent: DotNetHelper_IO.Enum
+  name: PathType
+  nameWithType: PathType
+  fullName: DotNetHelper_IO.Enum.PathType

@@ -22,11 +22,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ZipFileObject
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -38,6 +38,7 @@ items:
           Implements IDisposable
   inheritance:
   - System.Object
+  - DotNetHelper_IO.PathObject
   - DotNetHelper_IO.FileObject
   implements:
   - System.IDisposable
@@ -47,11 +48,12 @@ items:
   - DotNetHelper_IO.FileObject.FileNameOnly
   - DotNetHelper_IO.FileObject.FileNameOnlyNoExtension
   - DotNetHelper_IO.FileObject.FilePathOnly
-  - DotNetHelper_IO.FileObject.FullFilePath
   - DotNetHelper_IO.FileObject.Extension
   - DotNetHelper_IO.FileObject.FolderNameOnly
-  - DotNetHelper_IO.FileObject.FileSize
-  - DotNetHelper_IO.FileObject.Exist
+  - DotNetHelper_IO.FileObject.Name
+  - DotNetHelper_IO.FileObject.GetSize
+  - DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  - DotNetHelper_IO.FileObject.GetParentFolder
   - DotNetHelper_IO.FileObject.WatchTimeout
   - DotNetHelper_IO.FileObject.Watcher
   - DotNetHelper_IO.FileObject.NotifyFilters
@@ -68,7 +70,10 @@ items:
   - DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)
   - DotNetHelper_IO.FileObject.GetIncrementExtension(System.String)
   - DotNetHelper_IO.FileObject.ReadAllLines
-  - DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
+  - DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+  - DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  - DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  - DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
   - DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   - DotNetHelper_IO.FileObject.Write(System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
   - DotNetHelper_IO.FileObject.Write(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
@@ -79,12 +84,15 @@ items:
   - DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
   - DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
   - DotNetHelper_IO.FileObject.GetFileEncoding
-  - DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  - DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
   - DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   - DotNetHelper_IO.FileObject.StopWatching
   - DotNetHelper_IO.FileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
   - DotNetHelper_IO.FileObject.Dispose
+  - DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  - DotNetHelper_IO.PathObject.FullName
+  - DotNetHelper_IO.PathObject.PathType
+  - DotNetHelper_IO.PathObject.Size
+  - DotNetHelper_IO.PathObject.Exist
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -112,11 +120,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Type
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -147,11 +155,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -182,11 +190,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 31
+    startLine: 33
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -221,11 +229,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: UnZipFile
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 54
+    startLine: 57
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -258,20 +266,20 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: AddFileToZip
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 74
+    startLine: 80
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   syntax:
-    content: public void AddFileToZip(string fullFilePath)
+    content: public void AddFileToZip(string FullName)
     parameters:
-    - id: fullFilePath
+    - id: FullName
       type: System.String
-    content.vb: Public Sub AddFileToZip(fullFilePath As String)
+    content.vb: Public Sub AddFileToZip(FullName As String)
   overload: DotNetHelper_IO.ZipFileObject.AddFileToZip*
   modifiers.csharp:
   - public
@@ -291,11 +299,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: AddFilesToZip
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 83
+    startLine: 89
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -333,11 +341,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: RemoveFilesToZip
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 108
+    startLine: 118
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -368,6 +376,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: DotNetHelper_IO.PathObject
+  commentId: T:DotNetHelper_IO.PathObject
+  parent: DotNetHelper_IO
+  name: PathObject
+  nameWithType: PathObject
+  fullName: DotNetHelper_IO.PathObject
 - uid: DotNetHelper_IO.FileObject
   commentId: T:DotNetHelper_IO.FileObject
   parent: DotNetHelper_IO
@@ -411,12 +425,6 @@ references:
   name: FilePathOnly
   nameWithType: FileObject.FilePathOnly
   fullName: DotNetHelper_IO.FileObject.FilePathOnly
-- uid: DotNetHelper_IO.FileObject.FullFilePath
-  commentId: P:DotNetHelper_IO.FileObject.FullFilePath
-  parent: DotNetHelper_IO.FileObject
-  name: FullFilePath
-  nameWithType: FileObject.FullFilePath
-  fullName: DotNetHelper_IO.FileObject.FullFilePath
 - uid: DotNetHelper_IO.FileObject.Extension
   commentId: P:DotNetHelper_IO.FileObject.Extension
   parent: DotNetHelper_IO.FileObject
@@ -429,18 +437,104 @@ references:
   name: FolderNameOnly
   nameWithType: FileObject.FolderNameOnly
   fullName: DotNetHelper_IO.FileObject.FolderNameOnly
-- uid: DotNetHelper_IO.FileObject.FileSize
-  commentId: P:DotNetHelper_IO.FileObject.FileSize
+- uid: DotNetHelper_IO.FileObject.Name
+  commentId: P:DotNetHelper_IO.FileObject.Name
   parent: DotNetHelper_IO.FileObject
-  name: FileSize
-  nameWithType: FileObject.FileSize
-  fullName: DotNetHelper_IO.FileObject.FileSize
-- uid: DotNetHelper_IO.FileObject.Exist
-  commentId: P:DotNetHelper_IO.FileObject.Exist
+  name: Name
+  nameWithType: FileObject.Name
+  fullName: DotNetHelper_IO.FileObject.Name
+- uid: DotNetHelper_IO.FileObject.GetSize
+  commentId: M:DotNetHelper_IO.FileObject.GetSize
   parent: DotNetHelper_IO.FileObject
-  name: Exist
-  nameWithType: FileObject.Exist
-  fullName: DotNetHelper_IO.FileObject.Exist
+  name: GetSize()
+  nameWithType: FileObject.GetSize()
+  fullName: DotNetHelper_IO.FileObject.GetSize()
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.GetSize
+    name: GetSize
+    nameWithType: FileObject.GetSize
+    fullName: DotNetHelper_IO.FileObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.GetSize
+    name: GetSize
+    nameWithType: FileObject.GetSize
+    fullName: DotNetHelper_IO.FileObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  commentId: M:DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  parent: DotNetHelper_IO.FileObject
+  name: GetSize(SizeUnits)
+  nameWithType: FileObject.GetSize(SizeUnits)
+  fullName: DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+    name: GetSize
+    nameWithType: FileObject.GetSize
+    fullName: DotNetHelper_IO.FileObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper_IO.Enum.SizeUnits
+    name: SizeUnits
+    nameWithType: SizeUnits
+    fullName: DotNetHelper_IO.Enum.SizeUnits
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+    name: GetSize
+    nameWithType: FileObject.GetSize
+    fullName: DotNetHelper_IO.FileObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper_IO.Enum.SizeUnits
+    name: SizeUnits
+    nameWithType: SizeUnits
+    fullName: DotNetHelper_IO.Enum.SizeUnits
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.GetParentFolder
+  commentId: M:DotNetHelper_IO.FileObject.GetParentFolder
+  parent: DotNetHelper_IO.FileObject
+  name: GetParentFolder()
+  nameWithType: FileObject.GetParentFolder()
+  fullName: DotNetHelper_IO.FileObject.GetParentFolder()
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.GetParentFolder
+    name: GetParentFolder
+    nameWithType: FileObject.GetParentFolder
+    fullName: DotNetHelper_IO.FileObject.GetParentFolder
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.GetParentFolder
+    name: GetParentFolder
+    nameWithType: FileObject.GetParentFolder
+    fullName: DotNetHelper_IO.FileObject.GetParentFolder
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: DotNetHelper_IO.FileObject.WatchTimeout
   commentId: P:DotNetHelper_IO.FileObject.WatchTimeout
   parent: DotNetHelper_IO.FileObject
@@ -1252,41 +1346,174 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
+- uid: DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+  commentId: M:DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
   parent: DotNetHelper_IO.FileObject
   isExternal: true
-  name: ReadToString(Boolean)
-  nameWithType: FileObject.ReadToString(Boolean)
-  fullName: DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
+  name: ReadAllText(Encoding)
+  nameWithType: FileObject.ReadAllText(Encoding)
+  fullName: DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
   spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
-    name: ReadToString
-    nameWithType: FileObject.ReadToString
-    fullName: DotNetHelper_IO.FileObject.ReadToString
+  - uid: DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+    name: ReadAllText
+    nameWithType: FileObject.ReadAllText
+    fullName: DotNetHelper_IO.FileObject.ReadAllText
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
+  - uid: System.Text.Encoding
+    name: Encoding
+    nameWithType: Encoding
+    fullName: System.Text.Encoding
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
-    name: ReadToString
-    nameWithType: FileObject.ReadToString
-    fullName: DotNetHelper_IO.FileObject.ReadToString
+  - uid: DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+    name: ReadAllText
+    nameWithType: FileObject.ReadAllText
+    fullName: DotNetHelper_IO.FileObject.ReadAllText
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
+  - uid: System.Text.Encoding
+    name: Encoding
+    nameWithType: Encoding
+    fullName: System.Text.Encoding
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: ReadToBytesInChunksAsync(Int32, CancellationToken)
+  nameWithType: FileObject.ReadToBytesInChunksAsync(Int32, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+    name: ReadToBytesInChunksAsync
+    nameWithType: FileObject.ReadToBytesInChunksAsync
+    fullName: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+    name: ReadToBytesInChunksAsync
+    nameWithType: FileObject.ReadToBytesInChunksAsync
+    fullName: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  commentId: M:DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: ReadToStream(Int32)
+  nameWithType: FileObject.ReadToStream(Int32)
+  fullName: DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+    name: ReadToStream
+    nameWithType: FileObject.ReadToStream
+    fullName: DotNetHelper_IO.FileObject.ReadToStream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+    name: ReadToStream
+    nameWithType: FileObject.ReadToStream
+    fullName: DotNetHelper_IO.FileObject.ReadToStream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  commentId: M:DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: ReadToStringInChunksAsync(Int32)
+  nameWithType: FileObject.ReadToStringInChunksAsync(Int32)
+  fullName: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+    name: ReadToStringInChunksAsync
+    nameWithType: FileObject.ReadToStringInChunksAsync
+    fullName: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+    name: ReadToStringInChunksAsync
+    nameWithType: FileObject.ReadToStringInChunksAsync
+    fullName: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
     isExternal: true
   - name: )
     nameWithType: )
@@ -2196,98 +2423,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  parent: DotNetHelper_IO.FileObject
-  isExternal: true
-  name: GetFileSize(Boolean)
-  nameWithType: FileObject.GetFileSize(Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-    name: GetFileSize
-    nameWithType: FileObject.GetFileSize
-    fullName: DotNetHelper_IO.FileObject.GetFileSize
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-    name: GetFileSize
-    nameWithType: FileObject.GetFileSize
-    fullName: DotNetHelper_IO.FileObject.GetFileSize
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  parent: DotNetHelper_IO.FileObject
-  isExternal: true
-  name: GetFileSize(SizeUnits, Boolean)
-  nameWithType: FileObject.GetFileSize(SizeUnits, Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits, System.Boolean)
-  spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-    name: GetFileSize
-    nameWithType: FileObject.GetFileSize
-    fullName: DotNetHelper_IO.FileObject.GetFileSize
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Enum.SizeUnits
-    name: SizeUnits
-    nameWithType: SizeUnits
-    fullName: DotNetHelper_IO.Enum.SizeUnits
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-    name: GetFileSize
-    nameWithType: FileObject.GetFileSize
-    fullName: DotNetHelper_IO.FileObject.GetFileSize
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: DotNetHelper_IO.Enum.SizeUnits
-    name: SizeUnits
-    nameWithType: SizeUnits
-    fullName: DotNetHelper_IO.Enum.SizeUnits
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   commentId: M:DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   parent: DotNetHelper_IO.FileObject
@@ -2518,6 +2653,69 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  commentId: M:DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  parent: DotNetHelper_IO.FileObject
+  isExternal: true
+  name: Dispose(Boolean)
+  nameWithType: FileObject.Dispose(Boolean)
+  fullName: DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  spec.csharp:
+  - uid: DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+    name: Dispose
+    nameWithType: FileObject.Dispose
+    fullName: DotNetHelper_IO.FileObject.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+    name: Dispose
+    nameWithType: FileObject.Dispose
+    fullName: DotNetHelper_IO.FileObject.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.PathObject.FullName
+  commentId: P:DotNetHelper_IO.PathObject.FullName
+  parent: DotNetHelper_IO.PathObject
+  name: FullName
+  nameWithType: PathObject.FullName
+  fullName: DotNetHelper_IO.PathObject.FullName
+- uid: DotNetHelper_IO.PathObject.PathType
+  commentId: P:DotNetHelper_IO.PathObject.PathType
+  parent: DotNetHelper_IO.PathObject
+  name: PathType
+  nameWithType: PathObject.PathType
+  fullName: DotNetHelper_IO.PathObject.PathType
+- uid: DotNetHelper_IO.PathObject.Size
+  commentId: P:DotNetHelper_IO.PathObject.Size
+  parent: DotNetHelper_IO.PathObject
+  name: Size
+  nameWithType: PathObject.Size
+  fullName: DotNetHelper_IO.PathObject.Size
+- uid: DotNetHelper_IO.PathObject.Exist
+  commentId: P:DotNetHelper_IO.PathObject.Exist
+  parent: DotNetHelper_IO.PathObject
+  name: Exist
+  nameWithType: PathObject.Exist
+  fullName: DotNetHelper_IO.PathObject.Exist
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object

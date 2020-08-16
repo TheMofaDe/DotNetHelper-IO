@@ -16,27 +16,30 @@ items:
   - DotNetHelper_IO.FileObject.DefaultEncoding
   - DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
   - DotNetHelper_IO.FileObject.Dispose
-  - DotNetHelper_IO.FileObject.Exist
+  - DotNetHelper_IO.FileObject.Dispose(System.Boolean)
   - DotNetHelper_IO.FileObject.Extension
   - DotNetHelper_IO.FileObject.FileInfo
   - DotNetHelper_IO.FileObject.FileNameOnly
   - DotNetHelper_IO.FileObject.FileNameOnlyNoExtension
   - DotNetHelper_IO.FileObject.FilePathOnly
-  - DotNetHelper_IO.FileObject.FileSize
   - DotNetHelper_IO.FileObject.FolderNameOnly
-  - DotNetHelper_IO.FileObject.FullFilePath
   - DotNetHelper_IO.FileObject.GetFileEncoding
-  - DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  - DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
   - DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   - DotNetHelper_IO.FileObject.GetIncrementExtension(System.String)
   - DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)
+  - DotNetHelper_IO.FileObject.GetParentFolder
+  - DotNetHelper_IO.FileObject.GetSize
+  - DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
   - DotNetHelper_IO.FileObject.Init(System.Boolean)
   - DotNetHelper_IO.FileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption)
   - DotNetHelper_IO.FileObject.MoveToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
+  - DotNetHelper_IO.FileObject.Name
   - DotNetHelper_IO.FileObject.NotifyFilters
   - DotNetHelper_IO.FileObject.ReadAllLines
-  - DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
+  - DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+  - DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  - DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  - DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
   - DotNetHelper_IO.FileObject.RefreshObject
   - DotNetHelper_IO.FileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
   - DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
@@ -61,31 +64,39 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileObject
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nClass FileObject.\n"
   example: []
   syntax:
-    content: 'public class FileObject : IDisposable'
+    content: 'public class FileObject : PathObject, IDisposable'
     content.vb: >-
       Public Class FileObject
+          Inherits PathObject
           Implements IDisposable
   seealso:
+  - linkId: System.PathObject
+    commentId: T:System.PathObject
   - linkId: System.IDisposable
     commentId: T:System.IDisposable
   inheritance:
   - System.Object
+  - DotNetHelper_IO.PathObject
   derivedClasses:
   - DotNetHelper_IO.ZipFileObject
   implements:
   - System.IDisposable
   inheritedMembers:
+  - DotNetHelper_IO.PathObject.FullName
+  - DotNetHelper_IO.PathObject.PathType
+  - DotNetHelper_IO.PathObject.Size
+  - DotNetHelper_IO.PathObject.Exist
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -113,14 +124,16 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DefaultEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
+  summary: "\nhttps://docs.microsoft.com/en-us/dotnet/api/system.text.encoding.default?view=netcore-3.1\n"
+  example: []
   syntax:
     content: public Encoding DefaultEncoding { get; }
     parameters: []
@@ -148,11 +161,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileInfo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -183,11 +196,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -221,11 +234,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FileNameOnlyNoExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 37
+    startLine: 40
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -259,11 +272,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FilePathOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 43
+    startLine: 46
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -277,44 +290,6 @@ items:
       description: The file path only.
     content.vb: Public ReadOnly Property FilePathOnly As String
   overload: DotNetHelper_IO.FileObject.FilePathOnly*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: DotNetHelper_IO.FileObject.FullFilePath
-  commentId: P:DotNetHelper_IO.FileObject.FullFilePath
-  id: FullFilePath
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: FullFilePath
-  nameWithType: FileObject.FullFilePath
-  fullName: DotNetHelper_IO.FileObject.FullFilePath
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: FullFilePath
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 48
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets the full file path.\n"
-  example: []
-  syntax:
-    content: public string FullFilePath { get; }
-    parameters: []
-    return:
-      type: System.String
-      description: The full file path.
-    content.vb: Public ReadOnly Property FullFilePath As String
-  overload: DotNetHelper_IO.FileObject.FullFilePath*
   modifiers.csharp:
   - public
   - get
@@ -335,19 +310,22 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Extension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 51
+    startLine: 54
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
+  summary: "\nGets the full file path.\n"
+  example: []
   syntax:
     content: public string Extension { get; }
     parameters: []
     return:
       type: System.String
+      description: The full file path.
     content.vb: Public ReadOnly Property Extension As String
   overload: DotNetHelper_IO.FileObject.Extension*
   modifiers.csharp:
@@ -370,11 +348,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: FolderNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 56
+    startLine: 59
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -394,81 +372,161 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper_IO.FileObject.FileSize
-  commentId: P:DotNetHelper_IO.FileObject.FileSize
-  id: FileSize
+- uid: DotNetHelper_IO.FileObject.Name
+  commentId: P:DotNetHelper_IO.FileObject.Name
+  id: Name
   parent: DotNetHelper_IO.FileObject
   langs:
   - csharp
   - vb
-  name: FileSize
-  nameWithType: FileObject.FileSize
-  fullName: DotNetHelper_IO.FileObject.FileSize
+  name: Name
+  nameWithType: FileObject.Name
+  fullName: DotNetHelper_IO.FileObject.Name
   type: Property
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: FileSize
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Name
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 62
+    startLine: 68
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nSize is in bytes\n"
   example: []
   syntax:
-    content: public long? FileSize { get; }
+    content: public override string Name { get; }
     parameters: []
     return:
-      type: System.Nullable{System.Int64}
+      type: System.String
       description: The size of the file.
-    content.vb: Public ReadOnly Property FileSize As Long?
-  overload: DotNetHelper_IO.FileObject.FileSize*
+    content.vb: Public Overrides ReadOnly Property Name As String
+  overridden: DotNetHelper_IO.PathObject.Name
+  overload: DotNetHelper_IO.FileObject.Name*
   modifiers.csharp:
   - public
+  - override
   - get
   modifiers.vb:
   - Public
+  - Overrides
   - ReadOnly
-- uid: DotNetHelper_IO.FileObject.Exist
-  commentId: P:DotNetHelper_IO.FileObject.Exist
-  id: Exist
+- uid: DotNetHelper_IO.FileObject.GetSize
+  commentId: M:DotNetHelper_IO.FileObject.GetSize
+  id: GetSize
   parent: DotNetHelper_IO.FileObject
   langs:
   - csharp
   - vb
-  name: Exist
-  nameWithType: FileObject.Exist
-  fullName: DotNetHelper_IO.FileObject.Exist
-  type: Property
+  name: GetSize()
+  nameWithType: FileObject.GetSize()
+  fullName: DotNetHelper_IO.FileObject.GetSize()
+  type: Method
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: Exist
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 67
+    startLine: 78
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nGets a value indicating whether this <xref href=\"DotNetHelper_IO.FileObject\" data-throw-if-not-resolved=\"false\"></xref> is exist.\n"
+  summary: "\nGets the file size display.\n"
   example: []
   syntax:
-    content: public bool Exist { get; }
-    parameters: []
+    content: public override string GetSize()
     return:
-      type: System.Boolean
-    content.vb: Public ReadOnly Property Exist As Boolean
-  overload: DotNetHelper_IO.FileObject.Exist*
+      type: System.String
+      description: System.String.
+    content.vb: Public Overrides Function GetSize As String
+  overridden: DotNetHelper_IO.PathObject.GetSize
+  overload: DotNetHelper_IO.FileObject.GetSize*
   modifiers.csharp:
   - public
-  - get
+  - override
   modifiers.vb:
   - Public
-  - ReadOnly
+  - Overrides
+- uid: DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  commentId: M:DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  id: GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: GetSize(SizeUnits)
+  nameWithType: FileObject.GetSize(SizeUnits)
+  fullName: DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetSize
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 111
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nGets the file size display.\n"
+  example: []
+  syntax:
+    content: public override long? GetSize(SizeUnits sizeUnits)
+    parameters:
+    - id: sizeUnits
+      type: DotNetHelper_IO.Enum.SizeUnits
+    return:
+      type: System.Nullable{System.Int64}
+      description: System.String.
+    content.vb: Public Overrides Function GetSize(sizeUnits As SizeUnits) As Long?
+  overridden: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  overload: DotNetHelper_IO.FileObject.GetSize*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: DotNetHelper_IO.FileObject.GetParentFolder
+  commentId: M:DotNetHelper_IO.FileObject.GetParentFolder
+  id: GetParentFolder
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: GetParentFolder()
+  nameWithType: FileObject.GetParentFolder()
+  fullName: DotNetHelper_IO.FileObject.GetParentFolder()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: GetParentFolder
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 120
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override FolderObject GetParentFolder()
+    return:
+      type: DotNetHelper_IO.FolderObject
+    content.vb: Public Overrides Function GetParentFolder As FolderObject
+  overridden: DotNetHelper_IO.PathObject.GetParentFolder
+  overload: DotNetHelper_IO.FileObject.GetParentFolder*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
 - uid: DotNetHelper_IO.FileObject.WatchTimeout
   commentId: P:DotNetHelper_IO.FileObject.WatchTimeout
   id: WatchTimeout
@@ -483,11 +541,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 81
+    startLine: 137
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -521,11 +579,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Watcher
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 86
+    startLine: 142
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -559,11 +617,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 92
+    startLine: 148
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -597,11 +655,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 99
+    startLine: 155
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -636,11 +694,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 112
+    startLine: 168
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -675,11 +733,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Init
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 122
+    startLine: 177
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -708,11 +766,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 138
+    startLine: 195
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -740,20 +798,20 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 186
+    startLine: 228
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nreturn the fullfilepath of where the file was copied to.\n"
+  summary: "\nreturn the FullName of where the file was copied to.\n"
   example: []
   syntax:
-    content: public string CopyTo(string copyToFullFilePath, FileOption option)
+    content: public string CopyTo(string copyToFullName, FileOption option)
     parameters:
-    - id: copyToFullFilePath
+    - id: copyToFullName
       type: System.String
       description: The file path to copy to .
     - id: option
@@ -761,7 +819,7 @@ items:
       description: ''
     return:
       type: System.String
-    content.vb: Public Function CopyTo(copyToFullFilePath As String, option As FileOption) As String
+    content.vb: Public Function CopyTo(copyToFullName As String, option As FileOption) As String
   overload: DotNetHelper_IO.FileObject.CopyTo*
   exceptions:
   - type: System.ArgumentOutOfRangeException
@@ -789,20 +847,20 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 234
+    startLine: 276
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nCopy the current file to the destination. Returns the destination file name\n"
   example: []
   syntax:
-    content: public Task<string> CopyToAsync(string copyToFullFilePath, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+    content: public Task<string> CopyToAsync(string copyToFullName, FileOption option, CancellationToken cancellationToken = default(CancellationToken), int bufferSize = 4096)
     parameters:
-    - id: copyToFullFilePath
+    - id: copyToFullName
       type: System.String
       description: ''
     - id: option
@@ -817,7 +875,7 @@ items:
     return:
       type: System.Threading.Tasks.Task{System.String}
       description: The copy to file
-    content.vb: Public Function CopyToAsync(copyToFullFilePath As String, option As FileOption, cancellationToken As CancellationToken, bufferSize As Integer = 4096) As Task(Of String)
+    content.vb: Public Function CopyToAsync(copyToFullName As String, option As FileOption, cancellationToken As CancellationToken = Nothing, bufferSize As Integer = 4096) As Task(Of String)
   overload: DotNetHelper_IO.FileObject.CopyToAsync*
   modifiers.csharp:
   - public
@@ -837,20 +895,20 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 257
+    startLine: 299
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nCopy the current file to the destination with progress\n"
   example: []
   syntax:
-    content: public Task<string> CopyToAsync(string copyToFullFilePath, FileOption option, CancellationToken cancellationToken, IProgress<long> progress, int bufferSize = 4096)
+    content: public Task<string> CopyToAsync(string copyToFullName, FileOption option, CancellationToken cancellationToken, IProgress<long> progress, int bufferSize = 4096)
     parameters:
-    - id: copyToFullFilePath
+    - id: copyToFullName
       type: System.String
       description: ''
     - id: option
@@ -868,7 +926,7 @@ items:
     return:
       type: System.Threading.Tasks.Task{System.String}
       description: ''
-    content.vb: Public Function CopyToAsync(copyToFullFilePath As String, option As FileOption, cancellationToken As CancellationToken, progress As IProgress(Of Long), bufferSize As Integer = 4096) As Task(Of String)
+    content.vb: Public Function CopyToAsync(copyToFullName As String, option As FileOption, cancellationToken As CancellationToken, progress As IProgress(Of Long), bufferSize As Integer = 4096) As Task(Of String)
   overload: DotNetHelper_IO.FileObject.CopyToAsync*
   nameWithType.vb: FileObject.CopyToAsync(String, FileOption, CancellationToken, IProgress(Of Int64), Int32)
   modifiers.csharp:
@@ -891,20 +949,20 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: MoveTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 279
+    startLine: 331
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nCopies the file and deletes the original \n"
   example: []
   syntax:
-    content: public bool MoveTo(string moveToFullFilePath, FileOption option)
+    content: public bool MoveTo(string moveToFullName, FileOption option)
     parameters:
-    - id: moveToFullFilePath
+    - id: moveToFullName
       type: System.String
       description: ''
     - id: option
@@ -912,7 +970,7 @@ items:
       description: ''
     return:
       type: System.Boolean
-    content.vb: Public Function MoveTo(moveToFullFilePath As String, option As FileOption) As Boolean
+    content.vb: Public Function MoveTo(moveToFullName As String, option As FileOption) As Boolean
   overload: DotNetHelper_IO.FileObject.MoveTo*
   exceptions:
   - type: System.Exception
@@ -938,20 +996,20 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: MoveToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 318
+    startLine: 374
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nCopies the file and deletes the original \n"
   example: []
   syntax:
-    content: public Task<bool> MoveToAsync(string moveToFullFilePath, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+    content: public Task<bool> MoveToAsync(string moveToFullName, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
     parameters:
-    - id: moveToFullFilePath
+    - id: moveToFullName
       type: System.String
       description: ''
     - id: option
@@ -965,7 +1023,7 @@ items:
       description: ''
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
-    content.vb: Public Function MoveToAsync(moveToFullFilePath As String, option As FileOption, cancellationToken As CancellationToken, bufferSize As Integer = 4096) As Task(Of Boolean)
+    content.vb: Public Function MoveToAsync(moveToFullName As String, option As FileOption, cancellationToken As CancellationToken, bufferSize As Integer = 4096) As Task(Of Boolean)
   overload: DotNetHelper_IO.FileObject.MoveToAsync*
   exceptions:
   - type: System.Exception
@@ -991,11 +1049,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ChangeExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 364
+    startLine: 422
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1044,18 +1102,18 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ChangeExtensionAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 381
+    startLine: 439
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nChanges the extension of the current file. Does nothing if file doesn&apos;t exist return boolean on whether or not the file extension actually got change\n\n"
   example: []
   syntax:
-    content: public Task<bool> ChangeExtensionAsync(string newExtension, FileOption option, CancellationToken cancellationToken, int bufferSize = 4096)
+    content: public Task<bool> ChangeExtensionAsync(string newExtension, FileOption option, CancellationToken cancellationToken = default(CancellationToken), int bufferSize = 4096)
     parameters:
     - id: newExtension
       type: System.String
@@ -1071,7 +1129,7 @@ items:
       description: ''
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
-    content.vb: Public Function ChangeExtensionAsync(newExtension As String, option As FileOption, cancellationToken As CancellationToken, bufferSize As Integer = 4096) As Task(Of Boolean)
+    content.vb: Public Function ChangeExtensionAsync(newExtension As String, option As FileOption, cancellationToken As CancellationToken = Nothing, bufferSize As Integer = 4096) As Task(Of Boolean)
   overload: DotNetHelper_IO.FileObject.ChangeExtensionAsync*
   exceptions:
   - type: System.Exception
@@ -1097,11 +1155,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: DeleteFile
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 393
+    startLine: 452
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1132,11 +1190,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 414
+    startLine: 475
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1171,11 +1229,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetIncrementFileName
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 432
+    startLine: 493
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1206,11 +1264,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetIncrementExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 475
+    startLine: 536
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1241,15 +1299,15 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: ReadAllLines
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 526
+    startLine: 587
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nReads the file to list.\n"
+  summary: "\nReads the file to list. You can start enumerating the collection of strings before the whole collection is returned.\n"
   example: []
   syntax:
     content: public string[] ReadAllLines()
@@ -1262,40 +1320,156 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
-  id: ReadToString(System.Boolean)
+- uid: DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+  commentId: M:DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
+  id: ReadAllText(System.Text.Encoding)
   parent: DotNetHelper_IO.FileObject
   langs:
   - csharp
   - vb
-  name: ReadToString(Boolean)
-  nameWithType: FileObject.ReadToString(Boolean)
-  fullName: DotNetHelper_IO.FileObject.ReadToString(System.Boolean)
+  name: ReadAllText(Encoding)
+  nameWithType: FileObject.ReadAllText(Encoding)
+  fullName: DotNetHelper_IO.FileObject.ReadAllText(System.Text.Encoding)
   type: Method
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: ReadToString
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: ReadAllText
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 535
+    startLine: 608
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nReads the file.\n"
+  summary: "\nReads the entire content of a file all at once\n"
   example: []
   syntax:
-    content: public string ReadToString(bool throwOnFileNotFound = true)
+    content: public string ReadAllText(Encoding encoding = null)
     parameters:
-    - id: throwOnFileNotFound
-      type: System.Boolean
+    - id: encoding
+      type: System.Text.Encoding
     return:
       type: System.String
+      description: List&lt;System.String>.
+    content.vb: Public Function ReadAllText(encoding As Encoding = Nothing) As String
+  overload: DotNetHelper_IO.FileObject.ReadAllText*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  id: ReadToBytesInChunksAsync(System.Int32,System.Threading.CancellationToken)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: ReadToBytesInChunksAsync(Int32, CancellationToken)
+  nameWithType: FileObject.ReadToBytesInChunksAsync(Int32, CancellationToken)
+  fullName: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync(System.Int32, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: ReadToBytesInChunksAsync
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 640
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nReads the file to a byte[] but in chunks\n"
+  example: []
+  syntax:
+    content: public Task<byte[]> ReadToBytesInChunksAsync(int offset = 0, CancellationToken cancellationToken = default(CancellationToken))
+    parameters:
+    - id: offset
+      type: System.Int32
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Byte[]}
       description: System.String.
-    content.vb: Public Function ReadToString(throwOnFileNotFound As Boolean = True) As String
-  overload: DotNetHelper_IO.FileObject.ReadToString*
+    content.vb: Public Function ReadToBytesInChunksAsync(offset As Integer = 0, cancellationToken As CancellationToken = Nothing) As Task(Of Byte())
+  overload: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  commentId: M:DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  id: ReadToStream(System.Int32)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: ReadToStream(Int32)
+  nameWithType: FileObject.ReadToStream(Int32)
+  fullName: DotNetHelper_IO.FileObject.ReadToStream(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: ReadToStream
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 657
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nReads to filestream\n"
+  example: []
+  syntax:
+    content: public FileStream ReadToStream(int bufferSize = 4096)
+    parameters:
+    - id: bufferSize
+      type: System.Int32
+    return:
+      type: System.IO.FileStream
+      description: System.String.
+    content.vb: Public Function ReadToStream(bufferSize As Integer = 4096) As FileStream
+  overload: DotNetHelper_IO.FileObject.ReadToStream*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  commentId: M:DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  id: ReadToStringInChunksAsync(System.Int32)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: ReadToStringInChunksAsync(Int32)
+  nameWithType: FileObject.ReadToStringInChunksAsync(Int32)
+  fullName: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: ReadToStringInChunksAsync
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 667
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nReads to async file stream\n"
+  example: []
+  syntax:
+    content: public FileStream ReadToStringInChunksAsync(int bufferSize = 4096)
+    parameters:
+    - id: bufferSize
+      type: System.Int32
+    return:
+      type: System.IO.FileStream
+      description: System.String.
+    content.vb: Public Function ReadToStringInChunksAsync(bufferSize As Integer = 4096) As FileStream
+  overload: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1314,18 +1488,18 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetFileStream
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 637
+    startLine: 767
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nGets the file stream.\n"
   example: []
   syntax:
-    content: public (FileStream fileStream, string fullFilePath) GetFileStream(FileOption option, int bufferSize = 4096, bool useAsync = false)
+    content: public (FileStream fileStream, string fullName) GetFileStream(FileOption option, int bufferSize = 4096, bool useAsync = false)
     parameters:
     - id: option
       type: DotNetHelper_IO.Enum.FileOption
@@ -1339,7 +1513,7 @@ items:
     return:
       type: System.ValueTuple{System.IO.FileStream,System.String}
       description: FileStream.
-    content.vb: Public Function GetFileStream(option As FileOption, bufferSize As Integer = 4096, useAsync As Boolean = False) As(fileStream As FileStream, fullFilePath As String)
+    content.vb: Public Function GetFileStream(option As FileOption, bufferSize As Integer = 4096, useAsync As Boolean = False) As(fileStream As FileStream, fullName As String)
   overload: DotNetHelper_IO.FileObject.GetFileStream*
   exceptions:
   - type: System.ArgumentOutOfRangeException
@@ -1365,11 +1539,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 701
+    startLine: 831
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1412,11 +1586,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 717
+    startLine: 848
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1462,11 +1636,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 735
+    startLine: 867
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1506,11 +1680,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 751
+    startLine: 884
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1556,18 +1730,18 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 769
+    startLine: 903
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nWrites the content to file. Returns the full file name content was written to. \n"
   example: []
   syntax:
-    content: public Task<string> WriteAsync(string content, FileOption option, Encoding encoding, int bufferSize = 4096)
+    content: public Task<string> WriteAsync(string content, FileOption option = FileOption.Overwrite, Encoding encoding = null, int bufferSize = 4096)
     parameters:
     - id: content
       type: System.String
@@ -1583,7 +1757,7 @@ items:
       description: ''
     return:
       type: System.Threading.Tasks.Task{System.String}
-    content.vb: Public Function WriteAsync(content As String, option As FileOption, encoding As Encoding, bufferSize As Integer = 4096) As Task(Of String)
+    content.vb: Public Function WriteAsync(content As String, option As FileOption = FileOption.Overwrite, encoding As Encoding = Nothing, bufferSize As Integer = 4096) As Task(Of String)
   overload: DotNetHelper_IO.FileObject.WriteAsync*
   modifiers.csharp:
   - public
@@ -1603,11 +1777,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 787
+    startLine: 922
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1656,11 +1830,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 806
+    startLine: 942
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1703,11 +1877,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 824
+    startLine: 967
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1756,11 +1930,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: GetFileEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 842
+    startLine: 991
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1773,84 +1947,6 @@ items:
       description: Encoding.
     content.vb: Public Function GetFileEncoding As Encoding
   overload: DotNetHelper_IO.FileObject.GetFileEncoding*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  id: GetFileSize(System.Boolean)
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: GetFileSize(Boolean)
-  nameWithType: FileObject.GetFileSize(Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSize(System.Boolean)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: GetFileSize
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 868
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets the file size display.\n"
-  example: []
-  syntax:
-    content: public string GetFileSize(bool refreshObject = false)
-    parameters:
-    - id: refreshObject
-      type: System.Boolean
-    return:
-      type: System.String
-      description: System.String.
-    content.vb: Public Function GetFileSize(refreshObject As Boolean = False) As String
-  overload: DotNetHelper_IO.FileObject.GetFileSize*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  commentId: M:DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  id: GetFileSize(DotNetHelper_IO.Enum.SizeUnits,System.Boolean)
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: GetFileSize(SizeUnits, Boolean)
-  nameWithType: FileObject.GetFileSize(SizeUnits, Boolean)
-  fullName: DotNetHelper_IO.FileObject.GetFileSize(DotNetHelper_IO.Enum.SizeUnits, System.Boolean)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: GetFileSize
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 898
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets the file size display.\n"
-  example: []
-  syntax:
-    content: public long? GetFileSize(SizeUnits sizeUnits, bool refreshObject = false)
-    parameters:
-    - id: sizeUnits
-      type: DotNetHelper_IO.Enum.SizeUnits
-    - id: refreshObject
-      type: System.Boolean
-    return:
-      type: System.Nullable{System.Int64}
-      description: System.String.
-    content.vb: Public Function GetFileSize(sizeUnits As SizeUnits, refreshObject As Boolean = False) As Long?
-  overload: DotNetHelper_IO.FileObject.GetFileSize*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1869,11 +1965,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StartWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 927
+    startLine: 1024
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1916,11 +2012,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: StopWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 952
+    startLine: 1049
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1948,11 +2044,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 974
+    startLine: 1071
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1990,16 +2086,14 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1019
+    startLine: 1119
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nPerforms application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.\n"
-  example: []
   syntax:
     content: public void Dispose()
     content.vb: Public Sub Dispose
@@ -2010,7 +2104,45 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  commentId: M:DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: FileObject.Dispose(Boolean)
+  fullName: DotNetHelper_IO.FileObject.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: wor
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+    id: Dispose
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 1126
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+    content.vb: Protected Overridable Sub Dispose(disposing As Boolean)
+  overload: DotNetHelper_IO.FileObject.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
 references:
+- uid: System.PathObject
+  commentId: T:System.PathObject
+  isExternal: true
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -2030,6 +2162,36 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: DotNetHelper_IO.PathObject
+  commentId: T:DotNetHelper_IO.PathObject
+  parent: DotNetHelper_IO
+  name: PathObject
+  nameWithType: PathObject
+  fullName: DotNetHelper_IO.PathObject
+- uid: DotNetHelper_IO.PathObject.FullName
+  commentId: P:DotNetHelper_IO.PathObject.FullName
+  parent: DotNetHelper_IO.PathObject
+  name: FullName
+  nameWithType: PathObject.FullName
+  fullName: DotNetHelper_IO.PathObject.FullName
+- uid: DotNetHelper_IO.PathObject.PathType
+  commentId: P:DotNetHelper_IO.PathObject.PathType
+  parent: DotNetHelper_IO.PathObject
+  name: PathType
+  nameWithType: PathObject.PathType
+  fullName: DotNetHelper_IO.PathObject.PathType
+- uid: DotNetHelper_IO.PathObject.Size
+  commentId: P:DotNetHelper_IO.PathObject.Size
+  parent: DotNetHelper_IO.PathObject
+  name: Size
+  nameWithType: PathObject.Size
+  fullName: DotNetHelper_IO.PathObject.Size
+- uid: DotNetHelper_IO.PathObject.Exist
+  commentId: P:DotNetHelper_IO.PathObject.Exist
+  parent: DotNetHelper_IO.PathObject
+  name: Exist
+  nameWithType: PathObject.Exist
+  fullName: DotNetHelper_IO.PathObject.Exist
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -2373,11 +2535,6 @@ references:
   name: FilePathOnly
   nameWithType: FileObject.FilePathOnly
   fullName: DotNetHelper_IO.FileObject.FilePathOnly
-- uid: DotNetHelper_IO.FileObject.FullFilePath*
-  commentId: Overload:DotNetHelper_IO.FileObject.FullFilePath
-  name: FullFilePath
-  nameWithType: FileObject.FullFilePath
-  fullName: DotNetHelper_IO.FileObject.FullFilePath
 - uid: DotNetHelper_IO.FileObject.Extension*
   commentId: Overload:DotNetHelper_IO.FileObject.Extension
   name: Extension
@@ -2388,11 +2545,92 @@ references:
   name: FolderNameOnly
   nameWithType: FileObject.FolderNameOnly
   fullName: DotNetHelper_IO.FileObject.FolderNameOnly
-- uid: DotNetHelper_IO.FileObject.FileSize*
-  commentId: Overload:DotNetHelper_IO.FileObject.FileSize
-  name: FileSize
-  nameWithType: FileObject.FileSize
-  fullName: DotNetHelper_IO.FileObject.FileSize
+- uid: DotNetHelper_IO.PathObject.Name
+  commentId: P:DotNetHelper_IO.PathObject.Name
+  parent: DotNetHelper_IO.PathObject
+  name: Name
+  nameWithType: PathObject.Name
+  fullName: DotNetHelper_IO.PathObject.Name
+- uid: DotNetHelper_IO.FileObject.Name*
+  commentId: Overload:DotNetHelper_IO.FileObject.Name
+  name: Name
+  nameWithType: FileObject.Name
+  fullName: DotNetHelper_IO.FileObject.Name
+- uid: DotNetHelper_IO.PathObject.GetSize
+  commentId: M:DotNetHelper_IO.PathObject.GetSize
+  parent: DotNetHelper_IO.PathObject
+  name: GetSize()
+  nameWithType: PathObject.GetSize()
+  fullName: DotNetHelper_IO.PathObject.GetSize()
+  spec.csharp:
+  - uid: DotNetHelper_IO.PathObject.GetSize
+    name: GetSize
+    nameWithType: PathObject.GetSize
+    fullName: DotNetHelper_IO.PathObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.PathObject.GetSize
+    name: GetSize
+    nameWithType: PathObject.GetSize
+    fullName: DotNetHelper_IO.PathObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.GetSize*
+  commentId: Overload:DotNetHelper_IO.FileObject.GetSize
+  name: GetSize
+  nameWithType: FileObject.GetSize
+  fullName: DotNetHelper_IO.FileObject.GetSize
+- uid: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  commentId: M:DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  parent: DotNetHelper_IO.PathObject
+  name: GetSize(SizeUnits)
+  nameWithType: PathObject.GetSize(SizeUnits)
+  fullName: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  spec.csharp:
+  - uid: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+    name: GetSize
+    nameWithType: PathObject.GetSize
+    fullName: DotNetHelper_IO.PathObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper_IO.Enum.SizeUnits
+    name: SizeUnits
+    nameWithType: SizeUnits
+    fullName: DotNetHelper_IO.Enum.SizeUnits
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+    name: GetSize
+    nameWithType: PathObject.GetSize
+    fullName: DotNetHelper_IO.PathObject.GetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper_IO.Enum.SizeUnits
+    name: SizeUnits
+    nameWithType: SizeUnits
+    fullName: DotNetHelper_IO.Enum.SizeUnits
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.Enum.SizeUnits
+  commentId: T:DotNetHelper_IO.Enum.SizeUnits
+  parent: DotNetHelper_IO.Enum
+  name: SizeUnits
+  nameWithType: SizeUnits
+  fullName: DotNetHelper_IO.Enum.SizeUnits
 - uid: System.Nullable{System.Int64}
   commentId: T:System.Nullable{System.Int64}
   parent: System
@@ -2437,6 +2675,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
@@ -2476,24 +2719,45 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper_IO.FileObject
-  commentId: T:DotNetHelper_IO.FileObject
+- uid: DotNetHelper_IO.PathObject.GetParentFolder
+  commentId: M:DotNetHelper_IO.PathObject.GetParentFolder
+  parent: DotNetHelper_IO.PathObject
+  name: GetParentFolder()
+  nameWithType: PathObject.GetParentFolder()
+  fullName: DotNetHelper_IO.PathObject.GetParentFolder()
+  spec.csharp:
+  - uid: DotNetHelper_IO.PathObject.GetParentFolder
+    name: GetParentFolder
+    nameWithType: PathObject.GetParentFolder
+    fullName: DotNetHelper_IO.PathObject.GetParentFolder
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper_IO.PathObject.GetParentFolder
+    name: GetParentFolder
+    nameWithType: PathObject.GetParentFolder
+    fullName: DotNetHelper_IO.PathObject.GetParentFolder
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.GetParentFolder*
+  commentId: Overload:DotNetHelper_IO.FileObject.GetParentFolder
+  name: GetParentFolder
+  nameWithType: FileObject.GetParentFolder
+  fullName: DotNetHelper_IO.FileObject.GetParentFolder
+- uid: DotNetHelper_IO.FolderObject
+  commentId: T:DotNetHelper_IO.FolderObject
   parent: DotNetHelper_IO
-  name: FileObject
-  nameWithType: FileObject
-  fullName: DotNetHelper_IO.FileObject
-- uid: DotNetHelper_IO.FileObject.Exist*
-  commentId: Overload:DotNetHelper_IO.FileObject.Exist
-  name: Exist
-  nameWithType: FileObject.Exist
-  fullName: DotNetHelper_IO.FileObject.Exist
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean
+  name: FolderObject
+  nameWithType: FolderObject
+  fullName: DotNetHelper_IO.FolderObject
 - uid: DotNetHelper_IO.FileObject.WatchTimeout*
   commentId: Overload:DotNetHelper_IO.FileObject.WatchTimeout
   name: WatchTimeout
@@ -2530,6 +2794,12 @@ references:
   name: NotifyFilters
   nameWithType: NotifyFilters
   fullName: System.IO.NotifyFilters
+- uid: DotNetHelper_IO.FileObject
+  commentId: T:DotNetHelper_IO.FileObject
+  parent: DotNetHelper_IO
+  name: FileObject
+  nameWithType: FileObject
+  fullName: DotNetHelper_IO.FileObject
 - uid: DotNetHelper_IO.FileObject.#ctor*
   commentId: Overload:DotNetHelper_IO.FileObject.#ctor
   name: FileObject
@@ -2540,6 +2810,13 @@ references:
   name: Init
   nameWithType: FileObject.Init
   fullName: DotNetHelper_IO.FileObject.Init
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: DotNetHelper_IO.FileObject.RefreshObject*
   commentId: Overload:DotNetHelper_IO.FileObject.RefreshObject
   name: RefreshObject
@@ -2565,11 +2842,6 @@ references:
   name: FileOption
   nameWithType: FileOption
   fullName: DotNetHelper_IO.Enum.FileOption
-- uid: DotNetHelper_IO.Enum
-  commentId: N:DotNetHelper_IO.Enum
-  name: DotNetHelper_IO.Enum
-  nameWithType: DotNetHelper_IO.Enum
-  fullName: DotNetHelper_IO.Enum
 - uid: DotNetHelper_IO.FileObject.CopyToAsync*
   commentId: Overload:DotNetHelper_IO.FileObject.CopyToAsync
   name: CopyToAsync
@@ -2922,11 +3194,83 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: DotNetHelper_IO.FileObject.ReadToString*
-  commentId: Overload:DotNetHelper_IO.FileObject.ReadToString
-  name: ReadToString
-  nameWithType: FileObject.ReadToString
-  fullName: DotNetHelper_IO.FileObject.ReadToString
+- uid: DotNetHelper_IO.FileObject.ReadAllText*
+  commentId: Overload:DotNetHelper_IO.FileObject.ReadAllText
+  name: ReadAllText
+  nameWithType: FileObject.ReadAllText
+  fullName: DotNetHelper_IO.FileObject.ReadAllText
+- uid: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync*
+  commentId: Overload:DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync
+  name: ReadToBytesInChunksAsync
+  nameWithType: FileObject.ReadToBytesInChunksAsync
+  fullName: DotNetHelper_IO.FileObject.ReadToBytesInChunksAsync
+- uid: System.Threading.Tasks.Task{System.Byte[]}
+  commentId: T:System.Threading.Tasks.Task{System.Byte[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Byte[]>
+  nameWithType: Task<Byte[]>
+  fullName: System.Threading.Tasks.Task<System.Byte[]>
+  nameWithType.vb: Task(Of Byte())
+  fullName.vb: System.Threading.Tasks.Task(Of System.Byte())
+  name.vb: Task(Of Byte())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.FileObject.ReadToStream*
+  commentId: Overload:DotNetHelper_IO.FileObject.ReadToStream
+  name: ReadToStream
+  nameWithType: FileObject.ReadToStream
+  fullName: DotNetHelper_IO.FileObject.ReadToStream
+- uid: System.IO.FileStream
+  commentId: T:System.IO.FileStream
+  parent: System.IO
+  isExternal: true
+  name: FileStream
+  nameWithType: FileStream
+  fullName: System.IO.FileStream
+- uid: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync*
+  commentId: Overload:DotNetHelper_IO.FileObject.ReadToStringInChunksAsync
+  name: ReadToStringInChunksAsync
+  nameWithType: FileObject.ReadToStringInChunksAsync
+  fullName: DotNetHelper_IO.FileObject.ReadToStringInChunksAsync
 - uid: System.IO.FileNotFoundException
   commentId: T:System.IO.FileNotFoundException
   isExternal: true
@@ -3087,17 +3431,6 @@ references:
   name: GetFileEncoding
   nameWithType: FileObject.GetFileEncoding
   fullName: DotNetHelper_IO.FileObject.GetFileEncoding
-- uid: DotNetHelper_IO.FileObject.GetFileSize*
-  commentId: Overload:DotNetHelper_IO.FileObject.GetFileSize
-  name: GetFileSize
-  nameWithType: FileObject.GetFileSize
-  fullName: DotNetHelper_IO.FileObject.GetFileSize
-- uid: DotNetHelper_IO.Enum.SizeUnits
-  commentId: T:DotNetHelper_IO.Enum.SizeUnits
-  parent: DotNetHelper_IO.Enum
-  name: SizeUnits
-  nameWithType: SizeUnits
-  fullName: DotNetHelper_IO.Enum.SizeUnits
 - uid: DotNetHelper_IO.FileObject.StartWatching*
   commentId: Overload:DotNetHelper_IO.FileObject.StartWatching
   name: StartWatching

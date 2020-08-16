@@ -6,6 +6,8 @@
     name: FileObject
   - uid: DotNetHelper_IO.FolderObject
     name: FolderObject
+  - uid: DotNetHelper_IO.PathObject
+    name: PathObject
   - uid: DotNetHelper_IO.ZipFileObject
     name: ZipFileObject
 - uid: DotNetHelper_IO.Enum
@@ -19,5 +21,12 @@
     name: FolderOption
   - uid: DotNetHelper_IO.Enum.IOType
     name: IOType
+  - uid: DotNetHelper_IO.Enum.PathType
+    name: PathType
   - uid: DotNetHelper_IO.Enum.SizeUnits
     name: SizeUnits
+- uid: DotNetHelper_IO.Helpers
+  name: DotNetHelper_IO.Helpers
+  items:
+  - uid: DotNetHelper_IO.Helpers.ByteSizeHelper
+    name: ByteSizeHelper
