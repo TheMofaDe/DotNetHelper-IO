@@ -17,18 +17,55 @@
 ## Features
     + Auto Increment File Name
     + Auto Increment File Extension
+    + Writing with async support
+    + Reading with async support
+    + Get file/folder file sizes by any size unit, example , bytes,kb,mb,gb etc..
+## Tutorial
+</br>
 
-## How to use
+## Write Operation 
+
+##### Overloads for writing string,stream, or bytes exist
+##### Async methods exist as well
+
+
 ```csharp
-    public enum FileOption
-    {
-        Append = 1,
-        Overwrite = 2,
-        DoNothingIfExist = 3,
-        IncrementFileNameIfExist = 4,
-        IncrementFileExtensionIfExist = 5,
-    }
+
+var file = new FileObject($@"C:\Temp\MyTestFile.txt"); 
+
+file.Write("Will create MyTestFile.txt with this content", FileOption.Append); 
+file.Write("will ovewrite the file MyTestFile.txt with this text", FileOption.Overwrite);
+file.Write("nothing will happen since file already exist", FileOption.DoNothingIfExist); 
+var newFileName = file.Write("will create file MyTestFile.txt1 and this method returns file name", FileOption.IncrementFileExtensionIfExist); 
+var newFileName2 = file.Write("will create file MyTestFile1.txt and this method returns file name ", FileOption.IncrementFileNameIfExist); 
 ```
+
+
+
+## Copying Operation
+
+##### Async methods exist as well
+
+```csharp
+var file = new FileObject($@"C:\Temp\MyTestFile.txt");
+// Copies & Append file content to specified path
+file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.Append); 
+
+// Copies file content and paste it to specified path and will overwrite if other file already exist
+file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.Overwrite);
+
+// Copies file content to specified path only if it doesn't exist otherwise do nothing
+file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.DoNothingIfExist);
+
+// Copy file content to specified path. If path already exist then create a new file with the file extension increment.
+var newFileName = file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.IncrementFileExtensionIfExist);
+
+// Copy file content to specified path. If path already exist then create a new file with the file name increment.
+var newFileName2 = file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.IncrementFileNameIfExist); 
+```
+
+
+## Much more not shown here 
 
 ```csharp
 var sampleFile = "C:\Temp\dotnet-hosting-2.2.1-win.exe";
@@ -55,13 +92,8 @@ NotifyFilters NotifyFilters = file.NotifyFilters; // FileName, LastWrite, LastAc
 FileSystemWatcher Watcher = file.Watcher; // NULL
 Int32 WatchTimeout = file.WatchTimeout; // 2147483647
 
-// Perform thread safe IO operations with progress reporting
-public bool MoveTo(string moveToFullFilePath, FileOption option, IProgress<double> progress = null)
-public bool CopyTo(string copyToFullFilePath, FileOption option, IProgress<double> progress = null)
-public void DeleteFile(Action<Exception> onFailedDeletion, bool disposeObject = false)
 
-
-long? GetFileSize(FileObject.SizeUnits sizeUnits, bool refreshObject = false);  
+long? GetFileSize(FileObject.SizeUnits sizeUnits);  
 ```
 
 
