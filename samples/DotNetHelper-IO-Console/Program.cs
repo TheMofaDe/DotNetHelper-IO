@@ -17,7 +17,7 @@ namespace DotNetHelper_IO_Console
 
 			var file = new FileObject($@"C:\Temp\MyTestFile.txt");
 			// Copies & Append file content to specified path
-			file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.Append); 
+			file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.Append);
 
 			// Copies file content and paste it to specified path and will overwrite if other file already exist
 			file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.Overwrite);
@@ -29,7 +29,7 @@ namespace DotNetHelper_IO_Console
 			var newFileName = file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.IncrementFileExtensionIfExist);
 
 			// Copy file content to specified path. If path already exist then create a new file with the file name increment.
-			var newFileName2 = file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.IncrementFileNameIfExist); 
+			var newFileName2 = file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.IncrementFileNameIfExist);
 
 
 
@@ -41,7 +41,7 @@ namespace DotNetHelper_IO_Console
 			//var newFileName2 = file.WriteAsync("will create file MyTestFile1.txt and this method returns file name ", FileOption.IncrementFileNameIfExist); // overload for stream & bytes exist as well
 
 
-		
+
 
 
 

@@ -42,13 +42,27 @@ namespace DotNetHelper_IO
 		/// <summary>
 		/// return the size of the object in bytes
 		/// </summary>
-		public long? Size => GetSize(SizeUnits.Byte);
+		public long? SizeInBytes => GetSize(SizeUnits.Byte);
+
+		/// <summary>
+		/// return the size of the object in the most reasonable size unit
+		/// </summary>
+		public string Size => GetSize();
 
 		/// <summary>
 		/// return whether path exist.
 		/// </summary>
 		/// <value><c>null</c> if [exist] contains no value, <c>true</c> if [exist]; otherwise, <c>false</c>.</value>
 		public bool Exist => Exists();
+
+
+
+		public abstract DateTime? LastWriteTime { get; }
+		public abstract DateTime? LastWriteTimeUtc { get; }
+		public abstract DateTime? CreationTimeUtc { get; }
+		public abstract DateTime? CreationTime { get; }
+		public abstract DateTime? LastAccessTimeUtc { get; }
+		public abstract DateTime? LastAccessTime { get; }
 
 		protected PathObject(PathType pathType, string fullName)
 		{

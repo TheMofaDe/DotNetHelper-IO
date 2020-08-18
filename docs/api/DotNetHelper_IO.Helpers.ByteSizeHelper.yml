@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Helpers/ByteSizeHelper.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ByteSizeHelper
     path: ../src/DotNetHelper-IO/Helpers/ByteSizeHelper.cs
     startLine: 5
@@ -59,8 +59,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Helpers/ByteSizeHelper.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetSize
     path: ../src/DotNetHelper-IO/Helpers/ByteSizeHelper.cs
     startLine: 9
@@ -96,8 +96,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Helpers/ByteSizeHelper.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetSize
     path: ../src/DotNetHelper-IO/Helpers/ByteSizeHelper.cs
     startLine: 38

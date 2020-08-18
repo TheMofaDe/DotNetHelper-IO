@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IOType
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 76
@@ -49,8 +49,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: File
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 78
@@ -81,8 +81,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Folder
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 79
@@ -113,8 +113,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Both
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 80

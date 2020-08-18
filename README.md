@@ -5,13 +5,16 @@
 
 || [**Documentation**][Docs] • [**API**][Docs-API] • [**Tutorials**][Docs-Tutorials] ||  [**Change Log**][Changelogs] • || [**View on Github**][Github]|| 
 
-| AppVeyor | AzureDevOps |
-| :-----: | :-----: |
-| [![Build status](https://ci.appveyor.com/api/projects/status/4sx1v8sem7283fuc?svg=true)](https://ci.appveyor.com/project/TheMofaDe/dotnethelper-io)  | [![Build Status](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-IO/_apis/build/status/TheMofaDe.DotNetHelper-IO?branchName=master)](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_build/latest?definitionId=5&branchName=master)  
 
 | Package  | Tests | Code Coverage |
 | :-----:  | :---: | :------: |
-| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper-IO/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper-IO) |
+| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.Database/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper-IO) |
+
+
+| Continous Integration | Windows | Linux | MacOS | 
+| :-----: | :-----: | :-----: | :-----: |
+| **AppVeyor** | [![Build status](https://ci.appveyor.com/api/projects/status/4sx1v8sem7283fuc?svg=true)](https://ci.appveyor.com/project/TheMofaDe/dotnethelper-IO)  | | |
+| **Azure Devops** | ![Build Status][azure-windows]  | ![Build Status][azure-linux]  | ![Build Status][azure-macOS] | 
 
 
 ## Features
@@ -129,6 +132,12 @@ For more information, please refer to the [Officials Docs][Docs]
 
 
 <!-- BADGES. -->
+[azure-windows]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-io/_apis/build/status/TheMofaDe.DotNetHelper-io?branchName=master&stageName=Build
+[azure-linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-io/_apis/build/status/TheMofaDe.DotNetHelper-io?branchName=master&jobName=Linux
+[azure-macOS]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper-io/_apis/build/status/TheMofaDe.DotNetHelper-io?branchName=master&jobName=macOS
+[app-veyor]: https://ci.appveyor.com/project/TheMofaDe/dotnethelper-io
+
+
 
 [nuget-downloads]: https://img.shields.io/nuget/dt/DotNetHelper-IO.svg?style=flat-square
 [tests]: https://img.shields.io/appveyor/tests/TheMofaDe/DotNetHelper-IO.svg?style=flat-square

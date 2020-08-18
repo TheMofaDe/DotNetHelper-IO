@@ -68,6 +68,15 @@ namespace DotNetHelper_IO
 
 		public override string Name => FileInfo?.Name;
 
+
+
+		public override DateTime? LastWriteTime => FileInfo?.LastWriteTime;
+		public override DateTime? LastWriteTimeUtc => FileInfo?.LastWriteTimeUtc;
+		public override DateTime? CreationTimeUtc => FileInfo?.CreationTimeUtc;
+		public override DateTime? CreationTime => FileInfo?.CreationTime;
+		public override DateTime? LastAccessTimeUtc => FileInfo?.LastAccessTimeUtc;
+		public override DateTime? LastAccessTime => FileInfo?.LastAccessTime;
+
 		//    public override string FullName => FileInfo?.FullName;
 
 
@@ -177,6 +186,9 @@ namespace DotNetHelper_IO
 
 		public void Init(bool throwOnBadFileName)
 		{
+	
+
+
 			try
 			{
 				if (string.IsNullOrEmpty(FullName))

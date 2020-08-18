@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ZipFileObject
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 18
@@ -120,8 +120,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Type
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 20
@@ -155,8 +155,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 22
@@ -190,8 +190,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 33
@@ -229,8 +229,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: UnZipFile
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 57
@@ -266,8 +266,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: AddFileToZip
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 80
@@ -299,8 +299,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: AddFilesToZip
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 89
@@ -341,8 +341,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: RemoveFilesToZip
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
     startLine: 118

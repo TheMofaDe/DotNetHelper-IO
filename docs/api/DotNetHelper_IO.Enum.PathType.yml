@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/PathType.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: PathType
     path: ../src/DotNetHelper-IO/Enum/PathType.cs
     startLine: 8
@@ -50,8 +50,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/PathType.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: File
     path: ../src/DotNetHelper-IO/Enum/PathType.cs
     startLine: 10
@@ -82,8 +82,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/PathType.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Folder
     path: ../src/DotNetHelper-IO/Enum/PathType.cs
     startLine: 11
@@ -114,8 +114,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/PathType.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Zip
     path: ../src/DotNetHelper-IO/Enum/PathType.cs
     startLine: 12
@@ -146,8 +146,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/PathType.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: None
     path: ../src/DotNetHelper-IO/Enum/PathType.cs
     startLine: 13

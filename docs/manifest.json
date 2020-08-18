@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Business/TheMoFaDe/Code/DotNetHelper-IO/docs",
+  "source_base_path": "C:/Business/TheMoFaDe/DotNetHelper-IO/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.AddOrRemoveEnum.html",
-          "hash": "5i5N05O4erStPywDlHwxPw=="
+          "hash": "eHEY8YslylUvD2bBnxHZpQ=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.FileOption.html",
-          "hash": "YKNHubtNx4tt5NN9JsDd4g=="
+          "hash": "BhnMM7EafDSZBSAb63E32A=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.FolderOption.html",
-          "hash": "LS2A+sfRZXV9KZ29ADnZsg=="
+          "hash": "iBIj4xsSli+sZsiw/Jyobw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.IOType.html",
-          "hash": "DjJ5Ln13JfimjUQaGCNmtQ=="
+          "hash": "6ygDWh1AHZnxI4dBtsaYlg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.PathType.html",
-          "hash": "2DnLLua0i42fwSRGL40Nyg=="
+          "hash": "H07Btaxq28jFHfNGZHQvUg=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.SizeUnits.html",
-          "hash": "+HN9vrcdvj0tFkuOFBNFnQ=="
+          "hash": "udzzTqojI29A5U0maMMFjw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FileObject.html",
-          "hash": "0/NVpunmt3W9PQtYhr/TOQ=="
+          "hash": "eKIL8ebQRJtKqd9QMv8zJQ=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FolderObject.html",
-          "hash": "/z4F3+uQEL3QDmRRRz3JFw=="
+          "hash": "RxNkd45Y/IC7yxEXyaTOjA=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Helpers.ByteSizeHelper.html",
-          "hash": "xFY6EJrS36VH9bY2+H3XpQ=="
+          "hash": "w8O5zqsaFsK6uUJamcEq3g=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.PathObject.html",
-          "hash": "Mc9nXTJtLyWoafh7glwTWw=="
+          "hash": "JcuPuJ/6VojDAGo2HU1nkg=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.ZipFileObject.html",
-          "hash": "Ii3ql26B86O4nd/Tg3fotQ=="
+          "hash": "2C/D7Eo7+JpaxgeLIWWZ3A=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         "resource": {
           "relative_path": "images/icon.png",
-          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\DotNetHelper-IO\\docs/images/icon.png"
+          "link_to_path": "C:\\Business\\TheMoFaDe\\DotNetHelper-IO\\docs/images/icon.png"
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "YChJHMiDj1/1mfH1hynm6g=="
+          "hash": "R+XmeamgcvHcqxlJHBA3LA=="
         }
       },
       "is_incremental": false,
@@ -222,7 +222,7 @@
       "output": {
         "resource": {
           "relative_path": "langwordmapping/langwordMapping.yml",
-          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\DotNetHelper-IO\\docs/langwordmapping/langwordMapping.yml"
+          "link_to_path": "C:\\Business\\TheMoFaDe\\DotNetHelper-IO\\docs/langwordmapping/langwordMapping.yml"
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/Attributes/attribute.html",
-          "hash": "vYsZC7Yuh3vmqAUdLTGr4g=="
+          "hash": "0wsiIHA0zu5YYUh47A+nNw=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/datatable2sql.html",
-          "hash": "JB3I1FmEnDDhwiAOX7bFxQ=="
+          "hash": "3/jGEq17IYhdaMMXN98a1w=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/object2sql.html",
-          "hash": "0gv5rVHwyp9zXiYbV3kUHg=="
+          "hash": "61qVGYTaFLPwH8Pn3ueh0A=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/index.html",
-          "hash": "9qoyda/ozdAc9I82uM0Bmw=="
+          "hash": "1+ZOa4NTl5A4lPnz7HtRIg=="
         }
       },
       "is_incremental": false,
@@ -307,23 +307,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 5,
-          "skipped_file_count": 5
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 14,
-          "skipped_file_count": 14
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

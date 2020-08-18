@@ -45,8 +45,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FolderObject
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 24
@@ -101,8 +101,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DirectoryInfo
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 28
@@ -136,8 +136,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Watcher
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 37
@@ -174,8 +174,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Files
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 42
@@ -212,8 +212,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Subfolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 47
@@ -250,8 +250,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 52
@@ -288,8 +288,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 57
@@ -326,8 +326,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LoadSubFolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 64
@@ -364,8 +364,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LoadFilesInFolder
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 69
@@ -402,8 +402,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: LoadRecursive
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 74
@@ -440,8 +440,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Name
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 76
@@ -478,8 +478,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 85
@@ -523,8 +523,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 97
@@ -562,8 +562,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 142
@@ -603,8 +603,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 186
@@ -660,8 +660,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreateOrTruncateSubFolder
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 223
@@ -702,8 +702,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetAllFiles
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 289
@@ -744,8 +744,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetAllFolders
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 333
@@ -786,8 +786,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyTo
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 395
@@ -828,8 +828,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: MoveTo
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 426
@@ -873,8 +873,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ZipFolderToFileSystem
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 465
@@ -922,8 +922,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ZipFolderToMemory
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 510
@@ -957,8 +957,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SetFolderAttribute
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 534
@@ -999,8 +999,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Delete
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 571
@@ -1034,8 +1034,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StartWatching
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 597
@@ -1076,8 +1076,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StopWatching
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 624
@@ -1108,8 +1108,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 641
@@ -1140,8 +1140,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 648
@@ -1175,8 +1175,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetSize
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 679
@@ -1210,8 +1210,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetSize
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 684
@@ -1248,8 +1248,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FolderObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetParentFolder
     path: ../src/DotNetHelper-IO/FolderObject.cs
     startLine: 689

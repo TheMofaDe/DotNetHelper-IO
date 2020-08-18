@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FolderOption
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 13
@@ -51,8 +51,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: IncrementFolderNameIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 16
@@ -83,8 +83,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Overwrite
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 20
@@ -117,8 +117,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DoNothingIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 24

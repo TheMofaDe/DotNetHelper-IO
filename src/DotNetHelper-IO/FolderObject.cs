@@ -76,6 +76,16 @@ namespace DotNetHelper_IO
 
 		public override string Name => DirectoryInfo?.Name;
 
+
+		public override DateTime? LastWriteTime => DirectoryInfo?.LastWriteTime;
+		public override DateTime? LastWriteTimeUtc => DirectoryInfo?.LastWriteTimeUtc;
+		public override DateTime? CreationTimeUtc => DirectoryInfo?.CreationTimeUtc;
+		public override DateTime? CreationTime => DirectoryInfo?.CreationTime;
+		public override DateTime? LastAccessTimeUtc => DirectoryInfo?.LastAccessTimeUtc;
+		public override DateTime? LastAccessTime => DirectoryInfo?.LastAccessTime;
+
+
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="FolderObject"/> class.
 		/// </summary>
@@ -146,31 +156,33 @@ namespace DotNetHelper_IO
 			Files.Clear();
 			Subfolders.Clear();
 
-			if (DirectoryInfo?.Exists == true)
+			if (DirectoryInfo == null)
 			{
 				DirectoryInfo = new DirectoryInfo(FullName);
-
-				if (loadFilesInFolder)
-				{
-					Files.AddRange(GetAllFiles("*", loadRecursive).Select(s => new FileObject(s)));
-				}
-
-				if (loadSubfolders)
-				{
-					Subfolders.AddRange(GetAllFolders("*", loadRecursive));
-				}
-
-				try
-				{
-					Watcher = new FileSystemWatcher(FullName, "*");
-				}
-				catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
-				{
-
-				}
-
+			}
+			else
+			{
+				DirectoryInfo.Refresh();
 			}
 
+			if (loadFilesInFolder)
+			{
+				Files.AddRange(GetAllFiles("*", loadRecursive).Select(s => new FileObject(s)));
+			}
+
+			if (loadSubfolders)
+			{
+				Subfolders.AddRange(GetAllFolders("*", loadRecursive));
+			}
+
+			try
+			{
+				Watcher = new FileSystemWatcher(FullName, "*");
+			}
+			catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
+			{
+
+			}
 
 		}
 
@@ -289,13 +301,13 @@ namespace DotNetHelper_IO
 		/// https://stackoverflow.com/questions/929276/how-to-recursively-list-all-the-files-in-a-directory-in-c
 		public IEnumerable<string> GetAllFiles(string pattern = "*", bool recursive = false)
 		{
-
+			
 			var queue = new Queue<string>() { };
 			var path = FullName;
 			queue.Enqueue(path);
 			if (recursive)
 			{
-
+				
 				var allSubFolders = GetDirectoriesRecursive(path);
 				allSubFolders.ForEach(delegate (string s)
 				{
@@ -679,7 +691,7 @@ namespace DotNetHelper_IO
 
 		public override string GetSize()
 		{
-			return ByteSizeHelper.GetSize(GetAllFiles("*", true).Select(f => new FileObject(f).Size.GetValueOrDefault(0)).Sum());
+			return ByteSizeHelper.GetSize(GetAllFiles("*", true).Select(f => new FileObject(f).SizeInBytes.GetValueOrDefault(0)).Sum());
 		}
 
 		public override long? GetSize(SizeUnits sizeUnits)

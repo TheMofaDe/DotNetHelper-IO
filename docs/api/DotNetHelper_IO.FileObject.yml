@@ -64,8 +64,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileObject
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 21
@@ -124,8 +124,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DefaultEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 27
@@ -161,8 +161,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileInfo
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 29
@@ -196,8 +196,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 35
@@ -234,8 +234,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FileNameOnlyNoExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 40
@@ -272,8 +272,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FilePathOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 46
@@ -310,8 +310,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Extension
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 54
@@ -348,8 +348,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: FolderNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 59
@@ -386,8 +386,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Name
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 68
@@ -427,8 +427,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetSize
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 78
@@ -465,8 +465,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetSize
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 111
@@ -506,8 +506,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetParentFolder
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 120
@@ -541,8 +541,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 137
@@ -579,8 +579,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Watcher
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 142
@@ -617,8 +617,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 148
@@ -655,8 +655,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 155
@@ -694,8 +694,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 168
@@ -733,8 +733,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Init
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 177
@@ -766,8 +766,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 195
@@ -798,8 +798,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyTo
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 228
@@ -847,8 +847,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 276
@@ -895,8 +895,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 299
@@ -949,8 +949,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: MoveTo
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 331
@@ -996,8 +996,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: MoveToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 374
@@ -1049,8 +1049,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ChangeExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 422
@@ -1102,8 +1102,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ChangeExtensionAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 439
@@ -1155,8 +1155,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: DeleteFile
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 452
@@ -1190,8 +1190,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 475
@@ -1229,8 +1229,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetIncrementFileName
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 493
@@ -1264,8 +1264,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetIncrementExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 536
@@ -1299,8 +1299,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadAllLines
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 587
@@ -1334,8 +1334,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadAllText
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 608
@@ -1372,8 +1372,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadToBytesInChunksAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 640
@@ -1412,8 +1412,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadToStream
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 657
@@ -1450,8 +1450,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: ReadToStringInChunksAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 667
@@ -1488,8 +1488,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileStream
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 767
@@ -1539,8 +1539,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 831
@@ -1586,8 +1586,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 848
@@ -1636,8 +1636,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 867
@@ -1680,8 +1680,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 884
@@ -1730,8 +1730,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 903
@@ -1777,8 +1777,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 922
@@ -1830,8 +1830,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 942
@@ -1877,8 +1877,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 967
@@ -1930,8 +1930,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: GetFileEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 991
@@ -1965,8 +1965,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StartWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1024
@@ -2012,8 +2012,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: StopWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1049
@@ -2044,8 +2044,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1071
@@ -2086,8 +2086,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1119
@@ -2118,8 +2118,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
-      branch: wor
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO.git
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper-IO
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 1126
