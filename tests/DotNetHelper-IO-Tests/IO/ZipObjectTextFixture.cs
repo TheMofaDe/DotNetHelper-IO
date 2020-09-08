@@ -72,7 +72,42 @@ namespace Tests
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test()]
-		public void Test_GetFileCount_Return_3_When_Adding_3_Files([Values(ArchiveType.Zip,ArchiveType.GZip, ArchiveType.Tar)] ArchiveType archiveType)
+		public void Test_Zip_Folder_Contains_All_Files_And_Match_Content([Values(ArchiveType.Zip, ArchiveType.GZip)] ArchiveType archiveType)
+		{
+			// Arrange
+			var testFiles = new List<FileObject>()
+			{
+				RandomTestFileNoExtension, RandomTestFileNoExtension, RandomTestFileNoExtension
+			};
+
+			testFiles.ForEach(f => f.Write("A"));
+
+			var folderWithTestFile = new FolderObject(testFiles.First().FilePathOnly);
+			var zipFileName = folderWithTestFile.FullName + $"{folderWithTestFile.Name}.zip";
+			var zipFile = folderWithTestFile.ZipFolderToFileSystem(zipFileName, ArchiveType.Zip, null, "*", SearchOption.AllDirectories);
+
+			using (var archive = zipFile.GetReadableArchive())
+			{
+				foreach (var entry in archive.Entries)
+				{
+					Assert.Contains(entry.Key, testFiles.Select(f => f.Name).ToList());
+
+					var stream = entry.OpenEntryStream();
+					var content = stream.ReadToString();
+					Assert.That(content.Equals(testFiles.First(f => f.FileNameOnly == entry.Key).ReadAllText()));
+
+				}
+			}
+
+			Assert.That(zipFile.GetEntriesCount(), Is.EqualTo(testFiles.Count));
+
+		}
+
+
+
+		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		[Test()]
+		public void Test_GetFileCount_Return_3_When_Adding_3_Files([Values(ArchiveType.Zip, ArchiveType.GZip)] ArchiveType archiveType)
 		{
 			// Arrange
 			var testFiles = new List<FileObject>()
@@ -84,7 +119,7 @@ namespace Tests
 				testFiles.RemoveAt(2);
 				testFiles.RemoveAt(1);
 			}
-			var zipFile = new ZipFileObject(Path.Combine(TestFolder.FullName,"Test" + CompressExtensionHelper.ExtensionLookup[archiveType]),archiveType);
+			var zipFile = new ZipFileObject(Path.Combine(TestFolder.FullName, "Test" + CompressExtensionHelper.ZipExtensionLookup[archiveType]), archiveType);
 
 			// Act
 			foreach (var file in testFiles)
@@ -94,17 +129,18 @@ namespace Tests
 			}
 
 			// Assert
-			Assert.That(zipFile.GetFileCount(), Is.EqualTo(testFiles.Count));
-		//	Assert.That(zipFile.GetArchiveEntries().Count(), Is.EqualTo(3));
+			Assert.That(zipFile.GetEntriesCount(), Is.EqualTo(testFiles.Count));
+			//	Assert.That(zipFile.GetArchiveEntries().Count(), Is.EqualTo(3));
 		}
 
 
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test()]
-		public void Test_GetArchiveEntries_Return_Correct_Content([Values(ArchiveType.Zip,ArchiveType.GZip,ArchiveType.Tar)] ArchiveType archiveType)
+		public void Test_GetArchiveEntries_Return_Correct_Content([Values(ArchiveType.Zip, ArchiveType.GZip, ArchiveType.Tar)] ArchiveType archiveType)
 		{
-			if (archiveType == ArchiveType.Rar || archiveType == ArchiveType.SevenZip) return;
+			if (archiveType == ArchiveType.Rar || archiveType == ArchiveType.SevenZip)
+				return;
 			// Arrange
 			var testFiles = new List<FileObject>()
 			{
@@ -115,7 +151,7 @@ namespace Tests
 				testFiles.RemoveAt(2);
 				testFiles.RemoveAt(1);
 			}
-			var zipFile = new ZipFileObject(Path.Combine(TestFolder.FullName, $"Test{CompressExtensionHelper.ExtensionLookup[archiveType]}"), archiveType);
+			var zipFile = new ZipFileObject(Path.Combine(TestFolder.FullName, $"Test{CompressExtensionHelper.ZipExtensionLookup[archiveType]}"), archiveType);
 
 			// Act
 			foreach (var file in testFiles)
@@ -137,8 +173,8 @@ namespace Tests
 				}
 			}
 
-				// Assert
-			
+			// Assert
+
 
 		}
 

@@ -23,24 +23,37 @@ namespace DotNetHelper_IO
 
 	public class ZipFileObject : FileObject
 	{
-		public string Password { get; }
+		public ReaderOptions ReaderOptions { get; set; }
+		public WriterOptions WriterOptions { get; set; }
 		public ArchiveType Type { get; }
+
 
 		public ZipFileObject(string fullFilePath, ArchiveType type, string password = null) : base(fullFilePath)
 		{
-			Password = password;
+			ReaderOptions = CompressExtensionHelper.DefaultReaderOptionsLookup[type];
+			ReaderOptions.Password = password;
+			WriterOptions = CompressExtensionHelper.DefaultWriterOptionsLookup[type];
+
 			Type = type;
 		}
 
-		public ZipFileObject(FolderObject folderObject, ArchiveType type, string password = null) : base(folderObject.GetParentFolder().FullName + $"{folderObject.Name}{CompressExtensionHelper.ExtensionLookup[type]}")
+		public ZipFileObject(FolderObject folderObject, ArchiveType type, string password = null) : base(folderObject.GetParentFolder().FullName + $"{folderObject.Name}{CompressExtensionHelper.ZipExtensionLookup[type]}")
 		{
-			Password = password;
+			ReaderOptions = CompressExtensionHelper.DefaultReaderOptionsLookup[type];
+			ReaderOptions.Password = password;
+			WriterOptions = CompressExtensionHelper.DefaultWriterOptionsLookup[type];
+			Type = type;
+		}
+
+		public ZipFileObject(string fullFilePath, ArchiveType type, ReaderOptions readerOptions, WriterOptions writerOptions) : base(fullFilePath)
+		{
+			ReaderOptions = readerOptions ?? CompressExtensionHelper.DefaultReaderOptionsLookup[type];
+			WriterOptions = writerOptions ?? CompressExtensionHelper.DefaultWriterOptionsLookup[type];
 			Type = type;
 		}
 
 
-	
-		private IWritableArchive GetNewWritableArchive()
+		public IWritableArchive GetWritableArchive()
 		{
 			switch (Type)
 			{
@@ -57,87 +70,53 @@ namespace DotNetHelper_IO
 					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
 			}
 		}
-		private IWritableArchive GetWritableArchive()
-		{
-			IWritableArchive MapToNewArchive(IWritableArchive writableArchive)
-			{
-				IWritableArchive newWritableArchive = GetNewWritableArchive();
-				using (writableArchive)
-				{
-					foreach (var entry in writableArchive.Entries)
-					{
-						var memoryStream = new MemoryStream();
-						entry.WriteTo(memoryStream);
-						newWritableArchive.AddEntry(entry.Key, memoryStream, true, entry.Size, entry.LastModifiedTime);
-					}
-				}
-				return newWritableArchive;
-			}
-
-			switch (Type)
-			{
-				case ArchiveType.Zip:
-					return (Exist ? MapToNewArchive(ZipArchive.Open(FullName)) : GetNewWritableArchive());
-				case ArchiveType.Tar:
-					return (Exist ? MapToNewArchive(TarArchive.Open(FullName)) : GetNewWritableArchive());
-				case ArchiveType.GZip:
-					return (Exist ? MapToNewArchive(GZipArchive.Open(FullName)) : GetNewWritableArchive());
-				case ArchiveType.Rar:
-				case ArchiveType.SevenZip:
-					throw new NotImplementedException("Writing operation for Rar & SevenZip is not support yet. ");
-				default:
-					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
-			}
-		}
-
 		public IArchive GetReadableArchive()
 		{
 			switch (Type)
 			{
 				case ArchiveType.Zip:
-					return (Exist ? ZipArchive.Open(FullName) : ZipArchive.Create());
+					return ZipArchive.Open(FileInfo);
 				case ArchiveType.Tar:
-					return (Exist ? TarArchive.Open(FullName) : TarArchive.Create());
+					return TarArchive.Open(FileInfo);
 				case ArchiveType.GZip:
-					return (Exist ? GZipArchive.Open(FullName) : GZipArchive.Create());
+					return GZipArchive.Open(FileInfo);
 				case ArchiveType.Rar:
-					return (Exist
-						? RarArchive.Open(FullName)
-						: throw new NotImplementedException("Rar files only have read only support"));
+					return RarArchive.Open(FileInfo);
 				case ArchiveType.SevenZip:
-					return (Exist
-						? SevenZipArchive.Open(FullName)
-						: throw new NotImplementedException("7ZIP files only have read only support"));
+					return SevenZipArchive.Open(FileInfo);
 				default:
 					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
 			}
 		}
 
-		private WriterOptions GetDefaultWriterOptions()
+		public int GetEntriesCount()
 		{
+
 			switch (Type)
 			{
 				case ArchiveType.Rar:
-					return new WriterOptions(CompressionType.Rar){LeaveStreamOpen = false};
+					using (var archive = RarArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
 				case ArchiveType.Zip:
-					return new WriterOptions(CompressionType.Deflate) { LeaveStreamOpen = false };
+					using (var archive = ZipArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
 				case ArchiveType.Tar:
-					return new WriterOptions(CompressionType.GZip) { LeaveStreamOpen = true };
+					using (var archive = TarArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
 				case ArchiveType.SevenZip:
-					return new WriterOptions(CompressionType.Xz) { LeaveStreamOpen = false };
+					using (var archive = SevenZipArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
 				case ArchiveType.GZip:
-					return new WriterOptions(CompressionType.GZip) { LeaveStreamOpen = false };
+					using (var archive = GZipArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
 				default:
-					throw new ArgumentOutOfRangeException();
+					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
 			}
 		}
 
-		//public IEnumerable<IArchiveEntry> GetArchiveEntries()
-		//{
-		//	return GetReadableArchive()?.Entries;
-		//}
 
-		
+
+
 
 		/// <summary>
 		/// Creates a empty zip file if it doesn't exist otherwise truncates it if set to <c>true</c> [overwrite existing files].
@@ -160,10 +139,8 @@ namespace DotNetHelper_IO
 				Directory.CreateDirectory(FilePathOnly);
 			using (var archive = GetWritableArchive())
 			{
-				var defaultWriteOptions = GetDefaultWriterOptions();
-				defaultWriteOptions.LeaveStreamOpen = false;
 				using var fs = GetFileStream(FileOption.Overwrite).fileStream;
-				archive.SaveTo(fs, defaultWriteOptions);
+				archive.SaveTo(fs, WriterOptions);
 			}
 			return true;
 		}
@@ -172,125 +149,19 @@ namespace DotNetHelper_IO
 
 		public void ExtractToDirectory(string fullFolderPath, ExtractionOptions extractionOptions = null)
 		{
-			GetReadableArchive().WriteToDirectory(fullFolderPath,extractionOptions ?? new ExtractionOptions());
+			GetReadableArchive().WriteToDirectory(fullFolderPath, extractionOptions ?? new ExtractionOptions());
 		}
 
 		public void Compress(FolderObject folderObject, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
 		{
-			Compress(folderObject.FullName,searchPattern,searchOption);
+			Compress(folderObject.FullName, searchPattern, searchOption);
 		}
-		public void Compress(string fullFolderPathToCompress,string searchPattern = "*",SearchOption searchOption = SearchOption.AllDirectories)
+		public void Compress(string fullFolderPathToCompress, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
 		{
-			GetWritableArchive().AddAllFromDirectory(fullFolderPathToCompress,searchPattern,searchOption);
-		}
-
-		public int GetFileCount()
-		{
-			var readerOptions = new ReaderOptions() {Password = Password, LeaveStreamOpen = false,LookForHeader = false};
-			switch (Type)
-			{
-				case ArchiveType.Rar:
-					using (var archive = RarArchive.Open(FullName, readerOptions))
-						return archive.Entries.Count;
-				case ArchiveType.Zip:
-					using (var archive = ZipArchive.Open(FullName, readerOptions))
-						return archive.Entries.Count;
-				case ArchiveType.Tar:
-					using (var archive = TarArchive.Open(FullName, readerOptions))
-						return archive.Entries.Count;
-				case ArchiveType.SevenZip:
-					using (var archive = SevenZipArchive.Open(FullName, readerOptions))
-						return archive.Entries.Count;
-				case ArchiveType.GZip:
-					using (var archive = GZipArchive.Open(FullName, readerOptions))
-						return archive.Entries.Count;
-				default:
-					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
-			}
+			GetWritableArchive().AddAllFromDirectory(fullFolderPathToCompress, searchPattern, searchOption);
 		}
 
 
-		#region Helper Methods
-
-
-		public bool ContainsFile(string key)
-		{
-			if (!Exist)
-			{
-				return false;
-			}
-
-			using (var archive = GetReadableArchive())
-			{
-				var entries = archive.Entries;
-				foreach (var entry in entries)
-				{
-					var path = entry.Key;
-					var p = path.Replace('/', '\\');
-					if (p.StartsWith("\\"))
-					{
-						p = p.Substring(1);
-					}
-					var exist = string.Equals(p, key, StringComparison.OrdinalIgnoreCase);
-					if (exist)
-					{
-						return true;
-					}
-				}
-			}
-
-			return false;
-		}
-
-		internal (bool exist, IArchive archive, IArchiveEntry file) TryGetFile(string key)
-		{
-			if (!Exist)
-			{
-				return (false,null,null);
-			}
-
-			var archive = GetReadableArchive();
-			var entries = archive.Entries;
-			foreach (var entry in entries)
-			{
-				var path = entry.Key;
-				var p = path.Replace('/', '\\');
-				if (p.StartsWith("\\"))
-				{
-					p = p.Substring(1);
-				}
-				var exist = string.Equals(p, key, StringComparison.OrdinalIgnoreCase);
-				if (exist)
-				{
-					return (true,archive,entry);
-				}
-			}
-			return (false,archive,null);
-		}
-
-
-		//internal bool EntryExist(IEnumerable<IArchiveEntry> entries, string key, out IArchiveEntry file)
-		//{
-		//	foreach (var entry in entries)
-		//	{
-		//		var path = entry.Key;
-		//		var p = path.Replace('/', '\\');
-		//		if (p.StartsWith("\\"))
-		//		{
-		//			p = p.Substring(1);
-		//		}
-		//		var exist = string.Equals(p, key, StringComparison.OrdinalIgnoreCase);
-		//		if (exist)
-		//		{
-		//			file = entry;
-		//			return true;
-		//		}
-		//	}
-		//	file = null;
-		//	return false;
-		//}
-
-		#endregion
 
 		#region Remove from zip
 		public void RemoveFilesToZip(Predicate<IArchiveEntry> whereClause)
@@ -303,12 +174,23 @@ namespace DotNetHelper_IO
 					writeableArchive.RemoveEntry(file);
 				}
 				using var fileStream = GetFileStream(FileOption.Overwrite).fileStream;
-				writeableArchive.SaveTo(fileStream,GetDefaultWriterOptions());
+				writeableArchive.SaveTo(fileStream, WriterOptions);
 			}
 		}
-#endregion
+		#endregion
 
 		#region Add To Zip
+
+
+		public void AddFromDirectory(string folderFullPath, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
+		{
+			using (var archive = GetWritableArchive())
+			{
+				archive.AddAllFromDirectory(folderFullPath, searchPattern, searchOption);
+				archive.SaveTo(FullName, WriterOptions);
+			}
+
+		}
 
 		public void Add(string fileFullPath, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
 		{
@@ -339,74 +221,81 @@ namespace DotNetHelper_IO
 		/// <param name="writerOptions"></param>
 		public void Add(IEnumerable<FileObject> files, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
 		{
+			(bool entryExist, IArchiveEntry entry) EntryExist(IArchive archive, string key)
+			{
+				var entries = archive.Entries;
+				foreach (var entry in entries)
+				{
+					var path = entry.Key;
+					var p = path.Replace('/', '\\');
+					if (p.StartsWith("\\"))
+					{
+						p = p.Substring(1);
+					}
+					var exist = string.Equals(p, key, StringComparison.OrdinalIgnoreCase);
+					if (exist)
+					{
+						return (true, entry);
+					}
+				}
+
+				return (false, null);
+			};
+
 			var existingFiles = files.Where(f => f.Exist).AsList();
 			if (existingFiles.Count <= 0)
 				return;
 
-			using (var writableArchive = GetWritableArchive())
-			{
 
+			using (var writableArchive = Exist ? this.CopyContentToNewWritableArchive() : GetWritableArchive())
+			{
 				foreach (var file in files)
 				{
 					var fileStream = file.GetFileStream(FileOption.ReadOnly).fileStream;
-					var (entryExist, archive, archiveEntry) = TryGetFile(file.Name);
-					using (archive)
+					var (entryExist, existingEntry) = EntryExist(writableArchive, file.Name);
+					switch (option)
 					{
-						switch (option)
-						{
-							case FileOption.Append:
-								if (entryExist)
-								{
-									var existingStream = archiveEntry.OpenEntryStream();
-									fileStream.CopyTo(existingStream);
-								}
-								else
-								{
-									writableArchive.AddEntry(file.Name, fileStream, true, file.SizeInBytes.Value,
-										file.LastWriteTime);
-								}
+						case FileOption.Append:
+							if (entryExist)
+							{
+								var existingStream = existingEntry.OpenEntryStream();
+								fileStream.CopyTo(existingStream);
+							}
+							else
+							{
+								writableArchive.AddEntry(file.Name, fileStream, true, file.SizeInBytes.Value,
+									file.LastWriteTime);
+							}
 
-								break;
-							case FileOption.Overwrite:
-								if (entryExist)
-								{
-									writableArchive.RemoveEntry(archiveEntry);
-								}
-								else
-								{
+							break;
+						case FileOption.Overwrite:
+							if (entryExist)
+							{
+								writableArchive.RemoveEntry(existingEntry);
+							}
+							else
+							{
+								writableArchive.AddEntry(file.Name, fileStream, true, file.SizeInBytes.Value, file.LastWriteTime);
+							}
 
-								
-
-									writableArchive.AddEntry(file.Name, fileStream, true, file.SizeInBytes.Value,
-										file.LastWriteTime);
-								}
-
-								break;
-							case FileOption.DoNothingIfExist:
-								if (!ContainsFile(file.Name))
-									writableArchive.AddEntry(file.Name, fileStream, true);
-								break;
-							case FileOption.IncrementFileNameIfExist:
-							case FileOption.IncrementFileExtensionIfExist:
-								throw new NotImplementedException(
-									"Increment Support will implemented in future release");
-							default:
-								throw new ArgumentOutOfRangeException(nameof(option), option, null);
-						}
+							break;
+						case FileOption.DoNothingIfExist:
+							if (!entryExist)
+								writableArchive.AddEntry(file.Name, fileStream, true);
+							break;
+						case FileOption.IncrementFileNameIfExist:
+						case FileOption.IncrementFileExtensionIfExist:
+							throw new NotImplementedException(
+								"Increment Support will implemented in future release");
+						default:
+							throw new ArgumentOutOfRangeException(nameof(option), option, null);
 					}
 				}
-				var options = writerOptions ?? GetDefaultWriterOptions();
-				options.LeaveStreamOpen = false;
-
 				if (Exist)
 					DeleteFile(false);
 
-				writableArchive.SaveTo(FullName, options);
+				writableArchive.SaveTo(FullName, WriterOptions);
 			}
-
-
-			
-			
 		}
 
 

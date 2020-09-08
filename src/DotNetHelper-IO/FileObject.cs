@@ -810,7 +810,7 @@ namespace DotNetHelper_IO
 				case FileOption.DoNothingIfExist:
 					if (Exist)
 					{
-						stream = GetFileStream(FileMode.Open, FileAccess.ReadWrite, FileShare.Read, bufferSize, fileOptions);
+						stream = GetFileStream(FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize, fileOptions);
 						stream.fileStream.Seek(0, SeekOrigin.Begin);
 						break;
 					}

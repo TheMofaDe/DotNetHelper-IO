@@ -457,59 +457,45 @@ namespace DotNetHelper_IO
 			return true;
 		}
 
+		///// <summary>
+		///// Zips the folder to file system.
+		///// </summary>
+		///// <param name="archiveType">Type of the archive.</param>
+		///// <param name="searchPattern"></param>
+		///// <param name="searchOption"></param>
+		//public ZipFileObject ZipFolderToFileSystem(ArchiveType archiveType,string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
+		//{
+		//	var zipFileObject = new ZipFileObject(this, archiveType);
+		//	zipFileObject.AddFromDirectory(FullName,searchPattern,searchOption);
+		//	return zipFileObject;
+		//}
+
+		/// <summary>
+		/// Zips the folder to file system in this parent folder.
+		/// </summary>
+		/// <param name="archiveType">Type of the archive.</param>
+		public ZipFileObject ZipFolderToFileSystem(ArchiveType archiveType)
+		{
+			var zipFileObject = new ZipFileObject(this, archiveType);
+			zipFileObject.AddFromDirectory(FullName);
+			return zipFileObject;
+		}
+
+
 		/// <summary>
 		/// Zips the folder to file system.
 		/// </summary>
-		/// <param name="zipfile">The zipfile.</param>
 		/// <param name="archiveType">Type of the archive.</param>
-		/// <param name="overWrite">if set to <c>true</c> [over write].</param>
-		/// <exception cref="NotImplementedException">
-		/// This Feature Hasn't Be Implemented Yet For Rar Files
-		/// or
-		/// This Feature Hasn't Be Implemented Yet For Rar Files
-		/// </exception>
-		/// <exception cref="ArgumentOutOfRangeException">archiveType - null</exception>
-		public void ZipFolderToFileSystem(FileObject zipfile, ArchiveType archiveType, bool overWrite = false)
+		/// <param name="searchPattern"></param>
+		/// <param name="searchOption"></param>
+		public ZipFileObject ZipFolderToFileSystem(string fullPathToZipFile, ArchiveType archiveType, WriterOptions writerOptions = null, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
 		{
-			if (zipfile.Exist == true && !overWrite)
-			{
-				return;
-			}
-
-			switch (archiveType)
-			{
-				case ArchiveType.Rar:
-					throw new NotImplementedException("This Feature Hasn't Be Implemented Yet For Rar Files");
-				case ArchiveType.Zip:
-					using (var archive = ZipArchive.Create())
-					{
-						archive.AddAllFromDirectory(FullName);
-						archive.SaveTo(zipfile.FullName, CompressionType.Deflate);
-					}
-					break;
-				case ArchiveType.Tar:
-					using (var archive = TarArchive.Create())
-					{
-						archive.AddAllFromDirectory(FullName);
-						archive.SaveTo(zipfile.FullName, CompressionType.Deflate);
-					}
-					break;
-				case ArchiveType.SevenZip:
-					throw new NotImplementedException("This Feature Hasn't Be Implemented Yet For Rar Files");
-				case ArchiveType.GZip:
-					using (var archive = GZipArchive.Create())
-					{
-						archive.AddAllFromDirectory(FullName);
-						archive.SaveTo(zipfile.FullName, CompressionType.Deflate);
-					}
-					break;
-				default:
-					throw new ArgumentOutOfRangeException(nameof(archiveType), archiveType, null);
-			}
-
-
-
+			var zipFileObject = new ZipFileObject(fullPathToZipFile, archiveType, null, writerOptions);
+			zipFileObject.AddFromDirectory(FullName, searchPattern, searchOption);
+			return zipFileObject;
 		}
+
+
 		/// <summary>
 		/// Zips the folder to memory.
 		/// </summary>
