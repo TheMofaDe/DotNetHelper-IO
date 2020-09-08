@@ -23,6 +23,7 @@
     + Writing with async support
     + Reading with async support
     + Get file/folder file sizes by any size unit, example , bytes,kb,mb,gb etc..
+    + Archive file support (.zip .rar .tar .7z .gzip)
 ## Tutorial
 </br>
 
@@ -43,6 +44,8 @@ var newFileName = file.Write("will create file MyTestFile.txt1 and this method r
 var newFileName2 = file.Write("will create file MyTestFile1.txt and this method returns file name ", FileOption.IncrementFileNameIfExist); 
 ```
 
+</br>
+</br>
 
 
 ## Copying Operation
@@ -67,37 +70,45 @@ var newFileName = file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.IncrementFi
 var newFileName2 = file.CopyTo("D:\\Temp\\MyTestFile.txt", FileOption.IncrementFileNameIfExist); 
 ```
 
+</br>
+</br>
 
-## Much more not shown here 
+
+
+## Archive Files (.zip .rar .gzip .7z .tar)
+
+##### Read content of a archive file
 
 ```csharp
-var sampleFile = "C:\Temp\dotnet-hosting-2.2.1-win.exe";
-var file = new FileObject(sampleFile);
-var folder = new FolderObject(sampleFile);
-var zipFile = new ZipFileObject(sampleFile);
-
-// Quick access to all your file information
-DateTime? CreationTime = file.CreationTime; // 1/23/2019 9:03:26 PM
-DateTime? CreationTimeUtc = file.CreationTimeUtc; // 1/24/2019 3:03:26 AM
-Boolean? Exist = file.Exist; // True
-String Extension = file.Extension; // .exe
-String FileNameOnly = file.FileNameOnly; // dotnet-hosting-2.2.1-win.exe
-String FileNameOnlyNoExtension = file.FileNameOnlyNoExtension; // dotnet-hosting-2.2.1-win
-String FilePathOnly = file.FilePathOnly; // C:\Temp\
-Int64? FileSize = file.FileSize; // 100720328
-String FolderNameOnly = file.FolderNameOnly; // Temp
-String FullFilePath = file.FullFilePath; // C:\Temp\dotnet-hosting-2.2.1-win.exe
-DateTime? LastAccessTime = file.LastAccessTime; // 1/23/2019 9:03:26 PM
-DateTime? LastAccessTimeUtc = file.LastAccessTimeUtc; // 1/24/2019 3:03:26 AM
-DateTime? LastWriteTime = file.LastWriteTime; // 1/23/2019 9:03:47 PM
-DateTime? LastWriteTimeUtc = file.LastWriteTimeUtc; // 1/24/2019 3:03:47 AM
-NotifyFilters NotifyFilters = file.NotifyFilters; // FileName, LastWrite, LastAccess, CreationTime
-FileSystemWatcher Watcher = file.Watcher; // NULL
-Int32 WatchTimeout = file.WatchTimeout; // 2147483647
-
-
-long? GetFileSize(FileObject.SizeUnits sizeUnits);  
+var zipFile = new ZipFileObject($"C:\\Temp\\test.zip",ArchiveType.Zip);
+using (var archive = zipFile.GetReadableArchive())
+{
+	foreach (var entry in archive.Entries)
+	{
+		var fileNameInZip = entry.Key;
+		var fileContent = entry.OpenEntryStream();
+	}
+}
 ```
+
+
+##### Add file to existing zip or automatically create a new zip with file in it
+
+```csharp
+var zipFileObj = new ZipFileObject($"C:\\Temp\\test.zip", ArchiveType.Zip);
+// overwrite file in zip if it already exist
+zipFileObj.Add($"C:\\Temp\\TestFile.txt",FileOption.Overwrite);
+// don't add to zip if already exist
+zipFileObj.Add($"C:\\Temp\\TestFile.txt", FileOption.DoNothingIfExist);
+// append to the same file in zip
+zipFileObj.Add($"C:\\Temp\\TestFile.txt", FileOption.Append);
+
+```
+
+</br>
+</br>
+</br>
+
 
 
 ## Documentation
