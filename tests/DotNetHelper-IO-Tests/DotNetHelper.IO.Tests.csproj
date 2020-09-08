@@ -1,12 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0</TargetFrameworks>
-    <IsPackable>false</IsPackable>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
     <OutputType>Library</OutputType>
-
-
-
   </PropertyGroup>
 
   <ItemGroup>

@@ -14,9 +14,13 @@ var unitTestTask = Task("UnitTest")
         foreach(var framework in project.TargetFrameworkVersions){
 
             // does not support single target .net 5 yet https://github.com/cake-contrib/Cake.Incubator/blob/3858732caa686c9edf16111459869cde2e2694a6/src/Cake.Incubator/Project/ProjectParserExtensions.cs
-             if(!project.IsTestProject() && framework != "net5.0"){
+             if(framework == "net5.0"){
+
+             }else{
+             if(!project.IsTestProject()){
                     continue;
              } 
+             }
           
 
             if(!parameters.IsRunningOnWindows && framework == "net452"){
@@ -53,7 +57,7 @@ var unitTestTask = Task("UnitTest")
             
                 if (!parameters.IsRunningOnMacOS) {
                     settings.TestAdapterPath = new DirectoryPath(".");
-                    //settings.Logger = $"nunit;LogFilePath={resultsPath}"; // TODO :: enable if your using NUnit as your testing framework
+                    settings.Logger = $"nunit;LogFilePath={resultsPath}"; // TODO :: enable if your using NUnit as your testing framework
                 }
 
                 if (IsRunningOnUnix() && string.Equals(framework, project.IsNetFramework))
