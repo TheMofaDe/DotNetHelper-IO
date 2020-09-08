@@ -19,11 +19,14 @@ Task("Heat")
 
     foreach (var (os, cpuArchitectures) in parameters.NativeRuntimes){
     
-                            foreach(var cpuArchitecture in cpuArchitectures){
+                  foreach(var cpuArchitecture in cpuArchitectures){
+ 
 
-// LIGHT 
-           // DirectoryPath harvestDirectory = parameters.Paths.Directories.ArtifactsBin.Combine(targetFramework);
-              DirectoryPath harvestDirectory = parameters.Paths.Directories.Artifacts.Combine("publish").Combine(targetFramework);
+             DirectoryPath harvestDirectory;
+             // IF YOU WANT MSI TO USE BUILD FILES
+             // harvestDirectory = parameters.Paths.Directories.ArtifactsBin.Combine(targetFramework);
+             // IF YOU WANT MSI TO USE PUBLISH FILES
+             harvestDirectory = parameters.Paths.Directories.Artifacts.Combine("publish").Combine(targetFramework);
               var outputMetadataFile = parameters.Paths.Directories.Installer.Combine(targetFramework).CombineWithFilePath("Components.wxs"); 
      
 
@@ -52,7 +55,6 @@ Task("Heat")
 
         var files = GetFiles($"{parameters.Paths.Directories.Installer.Combine(targetFramework).ToString()}/*.wxs");
 
-        Information($"FOUND  {files.Count} files");
         var settings = new CandleSettings {
 		  	    ArgumentCustomization = args => args.Append("-dHeatSourceFilesDir=" + $"{harvestDirectory.ToString()}"),
                 Verbose = true,
@@ -73,7 +75,7 @@ Task("Heat")
 	  	  ArgumentCustomization = args => args
                 .Append("-dHeatSourceFilesDir=" + $"{harvestDirectory.ToString()}"),
         Defines = new Dictionary<string, string>(){ },
-        OutputFile = parameters.Paths.Directories.Installer.CombineWithFilePath($"{project.AssemblyName}-{parameters.Version.PackageVersion}-fx-{targetFramework}-{os}-{cpuArchitecture}.msi").ToString(),
+        OutputFile = parameters.Paths.Directories.Installer.CombineWithFilePath($"{project.AssemblyName}-{parameters.Version.PackageVersion}-{cpuArchitecture}.msi").ToString(),
         NoLogo = true,
      
         };
@@ -91,4 +93,3 @@ Task("Heat")
 
   
   });
-

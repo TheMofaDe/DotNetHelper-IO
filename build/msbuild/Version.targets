@@ -1,24 +1,82 @@
 <Project>
 
- <PropertyGroup>
-    <PrepareForBuildDependsOn>WriteVersions;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
-  </PropertyGroup>
+<!-- https://github.com/microsoft/msbuild/pull/2014 -->
+<ItemGroup>
+    <PackageReference Include="GitInfo" Version="2.0.33">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+</ItemGroup>
 
-      
-  <Target
-    Name="WriteVersions"
-    DependsOnTargets="SetVersions">
-        
-  </Target>
+ <!-- REFERENCE https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets?view=vs-2019 -->
+<PropertyGroup>
+    <PrepareForBuildDependsOn >WriteVersionToFile;$(PrepareForBuildDependsOn);WriteVersionToFile</PrepareForBuildDependsOn> 
+    <GitInfoReportImportance Condition="'$(Configuration)' == 'Debug'">High</GitInfoReportImportance>
+</PropertyGroup>
 
   <Target
     Name="SetVersions"
     DependsOnTargets="GitVersion"
     Returns="$(Version)"
-    Condition="'$(GitInfoImported)' == 'true' And '$(ExcludeRestorePackageImports)' != 'true'">
-
+    Condition="'$(GitInfoImported)' == 'true' ">
   </Target>
 
 
+ <Target Name="WriteVersionToFile"  DependsOnTargets="SetVersions" >
+
+ 
+     <PropertyGroup>
+        <PackageProjectUrl>$(GitRepositoryUrl)</PackageProjectUrl>
+        <RepositoryUrl>$(GitRepositoryUrl)</RepositoryUrl>
+        <PackageReleaseNotes>$(GitRepositoryUrl)/blob/master/CHANGELOG.md</PackageReleaseNotes>
+        <RepositoryCommit>$(GitCommit)</RepositoryCommit>
+        <RepositoryBranch>$(GitBranch)</RepositoryBranch>
+        <AssemblyVersion>$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)</AssemblyVersion>
+        <PackageVersion>$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)</PackageVersion>
+        <Version>$(PackageVersion)</Version>
+        <FileVersion>$(PackageVersion)</FileVersion>
+        <InformationalVersion>$(PackageVersion)</InformationalVersion>
+    </PropertyGroup>
+
+
+
+    <PropertyGroup>
+      <VersionJson>{
+        &quot;GitBaseVersion&quot;:      &quot;$(GitBaseVersion)&quot;,
+        &quot;GitSemVersion&quot;:      &quot;$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)&quot;,
+        &quot;GitCommits&quot;:      &quot;$(GitCommits)&quot;,
+        &quot;GitBaseVersionMajor&quot;:      &quot;$(GitBaseVersionMajor)&quot;,
+        &quot;GitBaseVersionMinor&quot;:      &quot;$(GitBaseVersionMinor)&quot;,
+        &quot;GitBaseVersionPatch&quot;:      &quot;$(GitBaseVersionPatch)&quot;,
+        &quot;GitSemVerMajor&quot;:      &quot;$(GitSemVerMajor)&quot;,
+        &quot;GitSemVerMinor&quot;:      &quot;$(GitSemVerMinor)&quot;,
+        &quot;GitSemVerPatch&quot;:      &quot;$(GitSemVerPatch)&quot;,
+        &quot;AssemblyVersion&quot;:         &quot;$(AssemblyVersion)&quot;,
+        &quot;FileVersion&quot;:             &quot;$(FileVersion)&quot;,
+        &quot;InformationalVersion&quot;:    &quot;$(InformationalVersion)&quot;,
+        &quot;PackageVersion&quot;:          &quot;$(PackageVersion)&quot;,
+        &quot;Version&quot;:         &quot;$(Version)&quot;,
+        &quot;VersionPrefix&quot;: &quot;$(VersionPrefix)&quot;,
+        &quot;VersionSuffix&quot;:  &quot;$(VersionSuffix)&quot;,
+        &quot;SemVerDashLabel &quot;: &quot;$(GitSemVerDashLabel)&quot;,
+        &quot;GitTag &quot;: &quot;$(GitTag)&quot;,
+        &quot;GitBaseTag &quot;: &quot;$(GitBaseTag)&quot;,
+        &quot;GitIsDirty &quot;: &quot;$(GitIsDirty)&quot;,
+        &quot;PackageProjectUrl&quot;:      &quot;$(GitRepositoryUrl)&quot;,
+        &quot;RepositoryUrl&quot;:      &quot;$(GitRepositoryUrl)&quot;,
+        &quot;PackageReleaseNotes&quot;:      &quot;$(GitRepositoryUrl)/blob/master/CHANGELOG.md&quot;,
+        &quot;RepositoryCommit&quot;:      &quot;$(GitCommit)&quot;,
+        &quot;RepositoryBranch&quot;:      &quot;$(GitBranch)&quot;
+}
+      </VersionJson>
+    </PropertyGroup>
+
+
+    <WriteLinesToFile
+          Overwrite="true"
+          Lines="$(VersionJson)"
+          File="$(RepoArtifactsRootPath)build.version.json"
+          ContinueOnError="false"/>
+
+    </Target>
 
 </Project>

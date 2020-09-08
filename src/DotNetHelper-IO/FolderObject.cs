@@ -126,12 +126,6 @@ namespace DotNetHelper_IO
 		/// <returns>System.String.</returns>
 		internal static string FormatPath(string path)
 		{
-			var result = IO.IsValidFolderSyntax(path);
-			if (result.Item1 != true)
-			{
-				throw result.Item2;
-			}
-
 			var separator = Path.IsPathRooted(path) ? Path.DirectorySeparatorChar : Path.AltDirectorySeparatorChar;
 			if (path.EndsWith(separator.ToString()))
 			{
@@ -301,13 +295,13 @@ namespace DotNetHelper_IO
 		/// https://stackoverflow.com/questions/929276/how-to-recursively-list-all-the-files-in-a-directory-in-c
 		public IEnumerable<string> GetAllFiles(string pattern = "*", bool recursive = false)
 		{
-			
+
 			var queue = new Queue<string>() { };
 			var path = FullName;
 			queue.Enqueue(path);
 			if (recursive)
 			{
-				
+
 				var allSubFolders = GetDirectoriesRecursive(path);
 				allSubFolders.ForEach(delegate (string s)
 				{

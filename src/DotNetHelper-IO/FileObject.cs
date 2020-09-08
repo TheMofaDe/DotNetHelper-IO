@@ -186,7 +186,7 @@ namespace DotNetHelper_IO
 
 		public void Init(bool throwOnBadFileName)
 		{
-	
+
 
 
 			try
@@ -1113,7 +1113,7 @@ namespace DotNetHelper_IO
 			}
 		}
 
-		private static string ReverseString(string str)
+		internal static string ReverseString(string str)
 		{
 			var charArray = str.ToCharArray();
 			Array.Reverse(charArray);

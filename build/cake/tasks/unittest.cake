@@ -11,13 +11,16 @@ var unitTestTask = Task("UnitTest")
      var actions = new List<Action>(){};
     foreach(var project in parameters.SolutionProjects){  
         
-        if(!project.IsTestProject()) // does not support single target .net 5 yet https://github.com/cake-contrib/Cake.Incubator/blob/3858732caa686c9edf16111459869cde2e2694a6/src/Cake.Incubator/Project/ProjectParserExtensions.cs
-        continue;
-
         foreach(var framework in project.TargetFrameworkVersions){
 
+            // does not support single target .net 5 yet https://github.com/cake-contrib/Cake.Incubator/blob/3858732caa686c9edf16111459869cde2e2694a6/src/Cake.Incubator/Project/ProjectParserExtensions.cs
+             if(!project.IsTestProject() && framework != "net5.0"){
+                    continue;
+             } 
+          
+
             if(!parameters.IsRunningOnWindows && framework == "net452"){
-                // will always throw 
+                // will always throw mono only support dotnet core
                 //System.TypeLoadException: Could not load type of field 'Xunit.Runner.VisualStudio.VsExecutionSink:recorder' (4) due to: 
                 //Could not load file or assembly 'Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' 
             }else{

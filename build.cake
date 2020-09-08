@@ -7,9 +7,10 @@
 #addin "nuget:?package=Cake.DocFx&version=0.13.1"
 #addin "nuget:?package=Newtonsoft.Json&version=12.0.2"
 // Install tools.
-#tool "nuget:?package=docfx.console&version=2.56.1"
-#tool "nuget:?package=nuget.commandline&version=5.6.0"
+#tool "nuget:?package=docfx.console&version=2.56.2"
+#tool "nuget:?package=nuget.commandline&version=5.7.0"
 #tool "nuget:?package=ReportGenerator&version=4.6.1"
+#tool "nuget:?package=WiX.Toolset.UnofficialFork&version=3.11.1"
 //#tool "nuget:?package=NUnit.ConsoleRunner&version=3.11.1"
 //#tool "nuget:?package=NunitXml.TestLogger&version=2.1.62"
 
@@ -35,7 +36,8 @@
 #load "./build/cake/tasks/publish-azuredevops.cake"
 #load "./build/cake/tasks/publish-nuget.cake"
 #load "./build/cake/tasks/publish.cake"
-
+#load "./build/cake/tasks/createmsi.cake"
+#load "./build/cake/tasks/publish-dotnet.cake"
  
 
 using Newtonsoft.Json;
@@ -124,13 +126,17 @@ zipFilesTask = zipFilesTask.IsDependentOnWhen("Build", isSingleStageRun);
 packTask = packTask.IsDependentOnWhen("Zip-Files", isSingleStageRun);
 packTask = packTask.IsDependentOnWhen("Pack-Nuget", isSingleStageRun);
 
-
-
 publishTask = publishTask.IsDependentOnWhen("Build", isSingleStageRun);
 publishTask = publishTask.IsDependentOnWhen("UnitTest", isSingleStageRun);
 publishTask = publishTask.IsDependentOnWhen("Format-Code", isSingleStageRun);
 publishTask = publishTask.IsDependentOnWhen("Generate-Docs", isSingleStageRun);
 publishTask = publishTask.IsDependentOnWhen("Pack", isSingleStageRun);
+
+// ONLY NEEDED WHEN PUBLISHING A TOOL or EXE
+// publishTask = publishTask.IsDependentOnWhen("Publish-DotNet", isSingleStageRun);
+// publishTask = publishTask.IsDependentOnWhen("Heat", isSingleStageRun);
+
+// ONLY NEEDED WHEN USING CI
 publishTask = publishTask.IsDependentOnWhen("Publish-AppVeyor", isSingleStageRun);
 publishTask = publishTask.IsDependentOnWhen("Publish-AzurePipeline", isSingleStageRun);
 publishTask = publishTask.IsDependentOnWhen("Publish-Coverage", isSingleStageRun);

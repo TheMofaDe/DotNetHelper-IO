@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Business/TheMoFaDe/DotNetHelper-IO/docs",
+  "source_base_path": "C:/Users/jmcneal/Documents/Code/StoreSystem/DotNetHelper-IO/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.AddOrRemoveEnum.html",
-          "hash": "eHEY8YslylUvD2bBnxHZpQ=="
+          "hash": "yaxZa4pZ8XfIzy71zijxTQ=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.FileOption.html",
-          "hash": "BhnMM7EafDSZBSAb63E32A=="
+          "hash": "oWwcLgNsHX48hzRGXcZDbQ=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.FolderOption.html",
-          "hash": "iBIj4xsSli+sZsiw/Jyobw=="
+          "hash": "cce/c3fBtUx4zuz6NFQoRA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.IOType.html",
-          "hash": "6ygDWh1AHZnxI4dBtsaYlg=="
+          "hash": "ecb4PWY+E+Hb960r+wavUw=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.PathType.html",
-          "hash": "H07Btaxq28jFHfNGZHQvUg=="
+          "hash": "jsQyXcJFyR+V4WdvG36ziQ=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.SizeUnits.html",
-          "hash": "udzzTqojI29A5U0maMMFjw=="
+          "hash": "MvKG4+eIQy+kBx+jCgL/kg=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.html",
-          "hash": "Segp3Ga6yz0FS3nOtDzQiA=="
+          "hash": "SlPquj2y9ew06mxXrS/Fpg=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FileObject.html",
-          "hash": "eKIL8ebQRJtKqd9QMv8zJQ=="
+          "hash": "5xY5hrCgLeJwBTgH4o+b/w=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FolderObject.html",
-          "hash": "RxNkd45Y/IC7yxEXyaTOjA=="
+          "hash": "2PgYho0B8e7tvuPDOM4Oew=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Helpers.ByteSizeHelper.html",
-          "hash": "w8O5zqsaFsK6uUJamcEq3g=="
+          "hash": "Aw9QajKpEq0AXa3wNJk2cw=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Helpers.html",
-          "hash": "jUWwCF7O6GogzlZ8ub2Ikw=="
+          "hash": "QdOzbj4jrSDWRBu9mf0h1A=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.PathObject.html",
-          "hash": "JcuPuJ/6VojDAGo2HU1nkg=="
+          "hash": "vXyrhjTJ4AmAoKJKoVv4hg=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.ZipFileObject.html",
-          "hash": "2C/D7Eo7+JpaxgeLIWWZ3A=="
+          "hash": "LBOQDJtUGPBZBkcE2IfzuA=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.html",
-          "hash": "eKKBIq2MeRvJpNL8HKioyQ=="
+          "hash": "xqsQ2GyYhqefCEFgAWj4UQ=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         "resource": {
           "relative_path": "images/icon.png",
-          "link_to_path": "C:\\Business\\TheMoFaDe\\DotNetHelper-IO\\docs/images/icon.png"
+          "link_to_path": "C:\\Users\\jmcneal\\Documents\\Code\\StoreSystem\\DotNetHelper-IO\\docs/images/icon.png"
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "R+XmeamgcvHcqxlJHBA3LA=="
+          "hash": "COrQsB3XpoEwds+qZxhe4g=="
         }
       },
       "is_incremental": false,
@@ -222,7 +222,7 @@
       "output": {
         "resource": {
           "relative_path": "langwordmapping/langwordMapping.yml",
-          "link_to_path": "C:\\Business\\TheMoFaDe\\DotNetHelper-IO\\docs/langwordmapping/langwordMapping.yml"
+          "link_to_path": "C:\\Users\\jmcneal\\Documents\\Code\\StoreSystem\\DotNetHelper-IO\\docs/langwordmapping/langwordMapping.yml"
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/Attributes/attribute.html",
-          "hash": "0wsiIHA0zu5YYUh47A+nNw=="
+          "hash": "//iEWLCOWvKrywgrV+G4dg=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/datatable2sql.html",
-          "hash": "3/jGEq17IYhdaMMXN98a1w=="
+          "hash": "FxzYyMz5fndrh22Y0V+5Gw=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/object2sql.html",
-          "hash": "61qVGYTaFLPwH8Pn3ueh0A=="
+          "hash": "sprBSIhU/GnY2DW8zBUn5w=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/index.html",
-          "hash": "1+ZOa4NTl5A4lPnz7HtRIg=="
+          "hash": "Flej3IsLrUOtS7YMYYmQCA=="
         }
       },
       "is_incremental": false,

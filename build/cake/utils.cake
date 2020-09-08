@@ -161,7 +161,6 @@ public static void ForceDeleteDirectory(this ICakeContext context, string fileOr
     if(context.DirectoryExists(dir))
         context.DeleteDirectory(dir,settings);
 }
-
 public static void ForceDeleteDirectory(this ICakeContext context, Cake.Core.IO.Path path){ 
     
      context.ForceDeleteDirectory(path.FullPath);

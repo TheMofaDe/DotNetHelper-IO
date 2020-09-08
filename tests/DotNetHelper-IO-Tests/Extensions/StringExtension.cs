@@ -21,5 +21,12 @@ namespace DotNetHelper.IO.Tests.Extensions
 			stream.Position = 0;
 			return stream;
 		}
+
+		public static string ReadToString(this Stream s)
+		{
+			StreamReader reader = new StreamReader(s);
+			string text = reader.ReadToEnd();
+			return text;
+		}
 	}
 }

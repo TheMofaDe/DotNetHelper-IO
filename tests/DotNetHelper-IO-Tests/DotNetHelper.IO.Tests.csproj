@@ -1,13 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <IsPackable>false</IsPackable>
     <OutputType>Library</OutputType>
 
 
 
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ZipTests\Read\**" />
+    <EmbeddedResource Remove="ZipTests\Read\**" />
+    <None Remove="ZipTests\Read\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="30.0.3" />
