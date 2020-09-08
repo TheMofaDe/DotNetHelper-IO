@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using DotNetHelper_IO.Enum;
+using DotNetHelper_IO.Extension;
+using DotNetHelper_IO.Helpers;
 using SharpCompress.Archives;
 using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.Rar;
@@ -10,6 +13,8 @@ using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
 using SharpCompress.Archives.Zip;
 using SharpCompress.Common;
+using SharpCompress.Common.GZip;
+using SharpCompress.Common.Zip;
 using SharpCompress.Readers;
 using SharpCompress.Writers;
 
@@ -18,12 +23,99 @@ namespace DotNetHelper_IO
 
 	public class ZipFileObject : FileObject
 	{
+		public ReaderOptions ReaderOptions { get; set; }
+		public WriterOptions WriterOptions { get; set; }
 		public ArchiveType Type { get; }
 
-		public ZipFileObject(string file, ArchiveType type = ArchiveType.Zip) : base(file)
+
+		public ZipFileObject(string fullFilePath, ArchiveType type, string password = null) : base(fullFilePath)
 		{
+			ReaderOptions = CompressExtensionHelper.DefaultReaderOptionsLookup[type];
+			ReaderOptions.Password = password;
+			WriterOptions = CompressExtensionHelper.DefaultWriterOptionsLookup[type];
+
 			Type = type;
 		}
+
+		public ZipFileObject(FolderObject folderObject, ArchiveType type, string password = null) : base(folderObject.GetParentFolder().FullName + $"{folderObject.Name}{CompressExtensionHelper.ZipExtensionLookup[type]}")
+		{
+			ReaderOptions = CompressExtensionHelper.DefaultReaderOptionsLookup[type];
+			ReaderOptions.Password = password;
+			WriterOptions = CompressExtensionHelper.DefaultWriterOptionsLookup[type];
+			Type = type;
+		}
+
+		public ZipFileObject(string fullFilePath, ArchiveType type, ReaderOptions readerOptions, WriterOptions writerOptions) : base(fullFilePath)
+		{
+			ReaderOptions = readerOptions ?? CompressExtensionHelper.DefaultReaderOptionsLookup[type];
+			WriterOptions = writerOptions ?? CompressExtensionHelper.DefaultWriterOptionsLookup[type];
+			Type = type;
+		}
+
+
+		public IWritableArchive GetWritableArchive()
+		{
+			switch (Type)
+			{
+				case ArchiveType.Zip:
+					return ZipArchive.Create();
+				case ArchiveType.Tar:
+					return TarArchive.Create();
+				case ArchiveType.GZip:
+					return GZipArchive.Create();
+				case ArchiveType.Rar:
+				case ArchiveType.SevenZip:
+					throw new NotImplementedException("Writing operation for Rar & SevenZip is not support yet. ");
+				default:
+					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
+			}
+		}
+		public IArchive GetReadableArchive()
+		{
+			switch (Type)
+			{
+				case ArchiveType.Zip:
+					return ZipArchive.Open(FileInfo);
+				case ArchiveType.Tar:
+					return TarArchive.Open(FileInfo);
+				case ArchiveType.GZip:
+					return GZipArchive.Open(FileInfo);
+				case ArchiveType.Rar:
+					return RarArchive.Open(FileInfo);
+				case ArchiveType.SevenZip:
+					return SevenZipArchive.Open(FileInfo);
+				default:
+					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
+			}
+		}
+
+		public int GetEntriesCount()
+		{
+
+			switch (Type)
+			{
+				case ArchiveType.Rar:
+					using (var archive = RarArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
+				case ArchiveType.Zip:
+					using (var archive = ZipArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
+				case ArchiveType.Tar:
+					using (var archive = TarArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
+				case ArchiveType.SevenZip:
+					using (var archive = SevenZipArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
+				case ArchiveType.GZip:
+					using (var archive = GZipArchive.Open(FullName, ReaderOptions))
+						return archive.Entries.Count;
+				default:
+					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
+			}
+		}
+
+
+
 
 
 		/// <summary>
@@ -33,7 +125,6 @@ namespace DotNetHelper_IO
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		public new bool CreateOrTruncate(bool truncate = true)
 		{
-
 			if (truncate)
 			{
 				DeleteFile(false);
@@ -46,236 +137,172 @@ namespace DotNetHelper_IO
 			// HAVE TO CHECK IF DIRECTORY EXIST FIRST BEFORE THIS
 			if (!Directory.Exists(FilePathOnly))
 				Directory.CreateDirectory(FilePathOnly);
-			using (var archive = ZipArchive.Create())
+			using (var archive = GetWritableArchive())
 			{
 				using var fs = GetFileStream(FileOption.Overwrite).fileStream;
-				archive.SaveTo(fs);
+				archive.SaveTo(fs, WriterOptions);
 			}
 			return true;
 		}
 
 
-		public void UnZipFile(FolderObject folder, FileOption option, bool extractFullPath = false)
+
+		public void ExtractToDirectory(string fullFolderPath, ExtractionOptions extractionOptions = null)
 		{
-			var overWrite = option != FileOption.DoNothingIfExist;
-			if (option == FileOption.Append)
-				throw new NotSupportedException("Append Option For Unzip files has not been implemented yet");
-			if (option == FileOption.IncrementFileExtensionIfExist)
-				throw new NotSupportedException("IncrementFileExtensionIfExist Option For Unzip files has not been implemented yet");
-			if (option == FileOption.IncrementFileNameIfExist)
-				throw new NotSupportedException("IncrementFileNameIfExist Option For Unzip files has not been implemented yet");
-			folder.CreateOrTruncate(true);
-			using var stream = File.OpenRead(FullName);
-			using var reader = ReaderFactory.Open(stream);
-			while (reader.MoveToNextEntry())
+			GetReadableArchive().WriteToDirectory(fullFolderPath, extractionOptions ?? new ExtractionOptions());
+		}
+
+		public void Compress(FolderObject folderObject, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
+		{
+			Compress(folderObject.FullName, searchPattern, searchOption);
+		}
+		public void Compress(string fullFolderPathToCompress, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
+		{
+			GetWritableArchive().AddAllFromDirectory(fullFolderPathToCompress, searchPattern, searchOption);
+		}
+
+
+
+		#region Remove from zip
+		public void RemoveFilesToZip(Predicate<IArchiveEntry> whereClause)
+		{
+			using (var writeableArchive = GetWritableArchive())
 			{
-				reader.WriteEntryToDirectory(folder.FullName, new ExtractionOptions()
+				var matches = writeableArchive.Entries.Where(whereClause.Invoke);
+				foreach (var file in writeableArchive.Entries.Where(whereClause.Invoke))
 				{
-					ExtractFullPath = extractFullPath,
-					Overwrite = overWrite
-				});
+					writeableArchive.RemoveEntry(file);
+				}
+				using var fileStream = GetFileStream(FileOption.Overwrite).fileStream;
+				writeableArchive.SaveTo(fileStream, WriterOptions);
 			}
 		}
+		#endregion
+
+		#region Add To Zip
 
 
-		public void AddFileToZip(string FullName)
+		public void AddFromDirectory(string folderFullPath, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
 		{
-			AddFilesToZip(new List<string>() { FullName });
+			using (var archive = GetWritableArchive())
+			{
+				archive.AddAllFromDirectory(folderFullPath, searchPattern, searchOption);
+				archive.SaveTo(FullName, WriterOptions);
+			}
+
 		}
+
+		public void Add(string fileFullPath, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
+		{
+			Add(new List<string>() { fileFullPath }, option, writerOptions);
+		}
+
+		public void Add(FileObject fileObject, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
+		{
+			Add(new List<FileObject>() { fileObject }, option, writerOptions);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="fileFullPaths">new files to be added to the zip file </param>
+		/// <param name="option">how to handle files that will be added to the zip</param>
+		/// <param name="writerOptions"></param>
+		public void Add(IEnumerable<string> fileFullPaths, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
+		{
+			Add(fileFullPaths.Select(s => new FileObject(s)), option, writerOptions);
+		}
+
 		/// <summary>
 		/// 
 		/// </summary>
 		/// <param name="files">new files to be added to the zip file </param>
 		/// <param name="option">how to handle files that will be added to the zip</param>
-		public void AddFilesToZip(List<string> files, FileOption option = FileOption.Overwrite)
+		/// <param name="writerOptions"></param>
+		public void Add(IEnumerable<FileObject> files, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
 		{
-			var safeFiles = files.Select(s => new FileObject(s)).Where(f => f.Exist == true).ToList();
-			if (safeFiles.Count <= 0)
+			(bool entryExist, IArchiveEntry entry) EntryExist(IArchive archive, string key)
+			{
+				var entries = archive.Entries;
+				foreach (var entry in entries)
+				{
+					var path = entry.Key;
+					var p = path.Replace('/', '\\');
+					if (p.StartsWith("\\"))
+					{
+						p = p.Substring(1);
+					}
+					var exist = string.Equals(p, key, StringComparison.OrdinalIgnoreCase);
+					if (exist)
+					{
+						return (true, entry);
+					}
+				}
+
+				return (false, null);
+			};
+
+			var existingFiles = files.Where(f => f.Exist).AsList();
+			if (existingFiles.Count <= 0)
 				return;
-			if (Exist != true)
-				CreateOrTruncate(false);
-			switch (Type)
+
+
+			using (var writableArchive = Exist ? this.CopyContentToNewWritableArchive() : GetWritableArchive())
 			{
-				case ArchiveType.Zip:
-					AddAllToZip(ZipArchive.Create(), safeFiles, option);
-					break;
-				case ArchiveType.Tar:
-					AddAllToZip(TarArchive.Create(), safeFiles, option);
-					break;
-				case ArchiveType.GZip:
-					AddAllToZip(GZipArchive.Open(FullName), safeFiles, option);
-					break;
-				case ArchiveType.Rar:
-				//  AddAllToZip(RarArchive.Open(FullName), safeFiles, option);
-				case ArchiveType.SevenZip:
-					//  AddAllToZip(SevenZipArchive.Open(FullName), safeFiles, option);
-					throw new NotImplementedException("This Functionality For Rar & 7ZIP files hasn't been implemented yet so feel free to do it yourself if you need it ");
-				default:
-					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
-			}
-		}
-
-
-		public void RemoveFilesToZip(Predicate<IArchiveEntry> whereClause)
-		{
-
-			switch (Type)
-			{
-				case ArchiveType.Rar:
-					throw new NotImplementedException("This Feature Hasn't Be Implemented Yet For Rar Files");
-				case ArchiveType.Zip:
-					RemoveAllFilesFromZip(ZipArchive.Open(FullName), whereClause);
-					break;
-				case ArchiveType.Tar:
-					RemoveAllFilesFromZip(TarArchive.Open(FullName), whereClause);
-					break;
-				case ArchiveType.SevenZip:
-					throw new NotImplementedException("This Feature Hasn't Be Implemented Yet For 7Zip Files");
-				case ArchiveType.GZip:
-					RemoveAllFilesFromZip(GZipArchive.Open(FullName), whereClause);
-					break;
-				default:
-					throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
-			}
-
-
-		}
-
-		/// <summary>
-		/// Return
-		/// </summary>
-		/// <param name="type"></param>
-		/// <returns></returns>
-		//public IEnumerable<CompressedFile> GetFilesInZip()
-		//{
-		//    RefreshObject();
-		//    var list = new List<CompressedFile>() { };
-		//    if (Exist != true) return list;
-
-		//    switch (Type)
-		//    {
-		//        case ArchiveType.Rar:
-		//            using (var archive = RarArchive.Open(FullName))
-		//            {
-		//                list.AddRange(archive.Entries.Select(file => ObjectMapper.MapProperties(file, new CompressedFile(), true, StringComparison.OrdinalIgnoreCase)));
-		//            }
-		//            break;
-		//        case ArchiveType.Zip:
-		//            using (var archive = ZipArchive.Open(FullName))
-		//            {
-		//                list.AddRange(archive.Entries.Select(file => ObjectMapper.MapProperties(file, new CompressedFile(), true, StringComparison.OrdinalIgnoreCase)));
-		//            }
-		//            break;
-		//        case ArchiveType.Tar:
-		//            using (var archive = TarArchive.Open(FullName))
-		//            {
-		//                list.AddRange(archive.Entries.Select(file => ObjectMapper.MapProperties(file, new CompressedFile(), true, StringComparison.OrdinalIgnoreCase)));
-		//            }
-		//            break;
-		//        case ArchiveType.SevenZip:
-		//            using (var archive = SevenZipArchive.Open(FullName))
-		//            {
-		//                list.AddRange(archive.Entries.Select(file => ObjectMapper.MapProperties(file, new CompressedFile(), true, StringComparison.OrdinalIgnoreCase)));
-		//            }
-		//            break;
-		//        case ArchiveType.GZip:
-		//            using (var archive = GZipArchive.Open(FullName))
-		//            {
-		//                list.AddRange(archive.Entries.Select(file => ObjectMapper.MapProperties(file, new CompressedFile(), true, StringComparison.OrdinalIgnoreCase)));
-		//            }
-		//            break;
-		//        default:
-		//            throw new ArgumentOutOfRangeException(nameof(Type), Type, null);
-		//    }
-		//    return list;
-		//}
-
-
-
-		private void RemoveAllFilesFromZip<T1, T2>(AbstractWritableArchive<T1, T2> writableArchive, Predicate<T1> whereClause) where T2 : IVolume where T1 : IArchiveEntry
-		{
-			using (writableArchive)
-			{
-				var filesToRemove = writableArchive.Entries.Where(whereClause.Invoke).ToList();
-				if (filesToRemove.Count > 0)
+				foreach (var file in files)
 				{
-					foreach (var file in filesToRemove)
-					{
-						writableArchive.RemoveEntry(file);
-					}
-					writableArchive.SaveTo(FullName, CompressionType.Deflate);
-				}
-			}
-		}
-
-		private void AddAllToZip<T1, T2>(AbstractWritableArchive<T1, T2> overwriteZipFile, List<FileObject> safeFiles, FileOption option) where T2 : IVolume where T1 : IArchiveEntry
-		{
-			using (overwriteZipFile)
-			{
-				using (var stream = File.OpenRead(FullName))
-				{
-					using var reader = ReaderFactory.Open(stream);
-					while (reader.MoveToNextEntry())
-					{
-						var temp = new MemoryStream();
-						reader.OpenEntryStream().CopyTo(temp);
-						overwriteZipFile.AddEntry(reader.Entry.Key, temp);
-					}
-				}
-				safeFiles.ForEach(delegate (FileObject o)
-				{
-					var currentEntries = overwriteZipFile.Entries.ToList(); // THIS IS HERE BECAUSE DEVELOPERS MAY SEND THE SAME FILE TWICE 
-					var matchedEntries = currentEntries.Where(a => a.Key == o.FileNameOnly).ToList();
+					var fileStream = file.GetFileStream(FileOption.ReadOnly).fileStream;
+					var (entryExist, existingEntry) = EntryExist(writableArchive, file.Name);
 					switch (option)
 					{
 						case FileOption.Append:
-							if (matchedEntries.Count > 0)
+							if (entryExist)
 							{
-								var temp = new MemoryStream();
-								matchedEntries.First().OpenEntryStream().CopyTo(temp);
-								temp.Position = temp.Length;
-								using (var tempFileStream = o.GetFileStream(FileOption.ReadOnly).fileStream)
-								{
-									tempFileStream.CopyTo(temp);
-								}
-								overwriteZipFile.RemoveEntry(matchedEntries.First());
-								overwriteZipFile.AddEntry(o.FileNameOnly, temp);
-								break;
+								var existingStream = existingEntry.OpenEntryStream();
+								fileStream.CopyTo(existingStream);
 							}
-							overwriteZipFile.AddEntry(o.FileNameOnly, o.FullName);
+							else
+							{
+								writableArchive.AddEntry(file.Name, fileStream, true, file.SizeInBytes.Value,
+									file.LastWriteTime);
+							}
+
 							break;
 						case FileOption.Overwrite:
-							if (matchedEntries.Count > 0)
-								overwriteZipFile.RemoveEntry(matchedEntries.First());
-							overwriteZipFile.AddEntry(o.FileNameOnly, o.FullName);
+							if (entryExist)
+							{
+								writableArchive.RemoveEntry(existingEntry);
+							}
+							else
+							{
+								writableArchive.AddEntry(file.Name, fileStream, true, file.SizeInBytes.Value, file.LastWriteTime);
+							}
+
 							break;
 						case FileOption.DoNothingIfExist:
-							if (matchedEntries.Count > 0)
-							{
-								break;
-							}
-							overwriteZipFile.AddEntry(o.FileNameOnly, o.FullName);
+							if (!entryExist)
+								writableArchive.AddEntry(file.Name, fileStream, true);
 							break;
 						case FileOption.IncrementFileNameIfExist:
-							if (matchedEntries.Count > 0)
-							{
-								overwriteZipFile.AddEntry(new FileObject(o.GetIncrementFileName()).FileNameOnly, o.FullName);
-							}
-							break;
 						case FileOption.IncrementFileExtensionIfExist:
-							if (matchedEntries.Count > 0)
-							{
-								overwriteZipFile.AddEntry(new FileObject(o.GetIncrementExtension()).FileNameOnly, o.FullName);
-							}
-							break;
+							throw new NotImplementedException(
+								"Increment Support will implemented in future release");
 						default:
 							throw new ArgumentOutOfRangeException(nameof(option), option, null);
 					}
+				}
+				if (Exist)
+					DeleteFile(false);
 
-				});
-				overwriteZipFile.SaveTo(FullName, new WriterOptions(CompressionType.Deflate));
+				writableArchive.SaveTo(FullName, WriterOptions);
 			}
 		}
+
+
+
+
+		#endregion
+
 
 
 	}

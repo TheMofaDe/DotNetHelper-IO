@@ -186,7 +186,7 @@ namespace DotNetHelper_IO
 
 		public void Init(bool throwOnBadFileName)
 		{
-	
+
 
 
 			try
@@ -810,7 +810,7 @@ namespace DotNetHelper_IO
 				case FileOption.DoNothingIfExist:
 					if (Exist)
 					{
-						stream = GetFileStream(FileMode.Open, FileAccess.ReadWrite, FileShare.Read, bufferSize, fileOptions);
+						stream = GetFileStream(FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize, fileOptions);
 						stream.fileStream.Seek(0, SeekOrigin.Begin);
 						break;
 					}
@@ -1113,7 +1113,7 @@ namespace DotNetHelper_IO
 			}
 		}
 
-		private static string ReverseString(string str)
+		internal static string ReverseString(string str)
 		{
 			var charArray = str.ToCharArray();
 			Array.Reverse(charArray);

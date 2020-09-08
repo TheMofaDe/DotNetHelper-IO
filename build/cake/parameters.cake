@@ -81,11 +81,13 @@ public class BuildParameters
 
         IsRunningOnMainBuildSystem = context.IsOnMainBuildSystem();
 
-         NativeRuntimes = new Dictionary<PlatformFamily, string[]>
+        // MUST MATCH RUNTIME-IDENTIFER IN PROJECT PROPS
+        NativeRuntimes = new Dictionary<PlatformFamily, string[]>
         {
-            [PlatformFamily.Windows] = new[] { "win-x64", "win-x86" },
-            [PlatformFamily.Linux]   = new[] { "ubuntu.18.04-x64,ubuntu.20.04-x64" },
-            [PlatformFamily.OSX]     = new[] { "osx-x64" },
+             [PlatformFamily.Windows] = new[] { "win10-x64"},
+          //  [PlatformFamily.Windows] = new[] { "win-x64","win-x86"},
+          //  [PlatformFamily.Linux]   = new[] { "ubuntu.18.04-x64","ubuntu.20.04-x64" },
+          //  [PlatformFamily.OSX]     = new[] { "osx-x64" },
         };
 
     }

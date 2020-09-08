@@ -7,11 +7,11 @@
             "commands": ["dotnet-cake"]
         },
         "dotnet-format": {
-            "version": "4.1.131201",
+            "version": "5.0.145501",
             "commands": ["dotnet-format"]
         },
         "Codecov.Tool": {
-            "version": "1.12.1",
+            "version": "1.12.3",
             "commands": ["codecov"]
         }
     }

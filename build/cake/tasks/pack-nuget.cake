@@ -7,30 +7,28 @@ Task("Pack-Nuget")
     buildSettings.WithProperty("GeneratePackageOnBuild", "true");
     buildSettings.WithProperty("PackageVersion", parameters.Version.SemVersion);
     buildSettings.WithProperty("Version", parameters.Version.SemVersion);
-    buildSettings.WithProperty("PackageProjectUrl", parameters.Version.PackageProjectUrl);
-    buildSettings.WithProperty("RepositoryUrl", parameters.Version.RepositoryUrl);
+    if(!string.IsNullOrEmpty(parameters.Version.PackageProjectUrl))
+        buildSettings.WithProperty("PackageProjectUrl", parameters.Version.PackageProjectUrl);
+    if(!string.IsNullOrEmpty(parameters.Version.RepositoryUrl))
+        buildSettings.WithProperty("RepositoryUrl", parameters.Version.RepositoryUrl);
     buildSettings.WithProperty("PackageReleaseNotes", parameters.Version.PackageReleaseNotes.Replace(".git/",""));
     buildSettings.WithProperty("RepositoryCommit", parameters.Version.RepositoryCommit);
     buildSettings.WithProperty("RepositoryBranch", parameters.Version.RepositoryBranch);
         
      foreach(var project in parameters.SolutionProjects)
      {
-
         var isABoolean = bool.TryParse(project.GetProjectProperty("IsPackable"),out var canPackAndPublish);
-
         if(canPackAndPublish){
-        DotNetCorePack(project.ProjectFilePath.FullPath, new DotNetCorePackSettings { 
-            ArgumentCustomization = args => args
-                               .Append($"-p:Version={parameters.Version.SemVersion}"),
-            Configuration = parameters.Configuration,
-            OutputDirectory =  parameters.Paths.Directories.NugetRoot,
-            NoBuild = true, 
-            NoRestore = true,
-            MSBuildSettings = buildSettings,
-        });
+            DotNetCorePack(project.ProjectFilePath.FullPath, new DotNetCorePackSettings { 
+                ArgumentCustomization = args => args
+                                   .Append($"-p:Version={parameters.Version.SemVersion}"),
+                Configuration = parameters.Configuration,
+                OutputDirectory =  parameters.Paths.Directories.NugetRoot,
+                NoBuild = true, 
+                NoRestore = true,
+                MSBuildSettings = buildSettings,
+            });
         }
-
-        
       }
        
 });

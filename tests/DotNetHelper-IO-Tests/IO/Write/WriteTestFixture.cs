@@ -144,6 +144,40 @@ namespace DotNetHelper.IO.Tests
 
 
 
+		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		[Test]
+		public async Task Test_Write_To_Existing_File_With_DoNotIfExist_Set()
+		{
+			var testFile = RandomTestFileNoExtension;
+
+			await testFile.WriteAsync("A", FileOption.Overwrite);
+
+			await testFile.WriteAsync("A", FileOption.DoNothingIfExist);
+
+			Assert.That((await File.ReadAllTextAsync(testFile.FullName)).Equals("A"));
+
+		}
+
+
+		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		[Test]
+		public async Task Test_GetFileStream_With_DoNotIfExist_When_File_Exist_Isnt_Writable()
+		{
+			var testFile = RandomTestFileNoExtension;
+			await testFile.WriteAsync("A", FileOption.Overwrite);
+			using (var fileStream = testFile.GetFileStream(FileOption.DoNothingIfExist, 4096, false).fileStream)
+			{
+				var bytes = Encoding.UTF8.GetBytes("B");
+				Assert.ThrowsAsync<NotSupportedException>(() => fileStream.WriteAsync(bytes, 0, bytes.Length));
+			}
+
+			Assert.That((await File.ReadAllTextAsync(testFile.FullName)).Equals("A"));
+
+		}
+
+
+
+
 
 
 

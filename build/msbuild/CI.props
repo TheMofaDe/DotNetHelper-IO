@@ -1,0 +1,19 @@
+<Project>
+
+  <PropertyGroup>
+    <InCI>false</InCI>
+    <InAppVeyor Condition="'$(APPVEYOR)' == ''">false</InAppVeyor>
+    <InAzureDevOps Condition="'$(TF_BUILD)' == ''">false</InAzureDevOps>
+
+    <InAppVeyor Condition="'$(APPVEYOR)' == 'True'">true</InAppVeyor>
+    <InAzureDevOps Condition="'$(TF_BUILD)' == 'True'">true</InAzureDevOps>
+    <InCI Condition="'$(InAzureDevOps)' == 'true' or '$(InAppVeyor)' == 'true'" >true</InCI>  
+
+    <AzureDevOpsArtifactsStagingDirectory>$([System.Environment]::GetEnvironmentVariable('BUILD_ARTIFACTSTAGINGDIRECTORY'))</AzureDevOpsArtifactsStagingDirectory>
+    <!-- Prefer the PR branch, then the source branch, falling back to local git if not in ADO -->
+    <GitBranch Condition="'$(SYSTEM_PULLREQUEST_TARGETBRANCH)' != ''">$(SYSTEM_PULLREQUEST_TARGETBRANCH)</GitBranch>
+    <GitBranch Condition="'$(SYSTEM_PULLREQUEST_TARGETBRANCH)' == '' and '$(BUILD_SOURCEBRANCHNAME)' != ''">$(BUILD_SOURCEBRANCHNAME)</GitBranch>
+
+  </PropertyGroup>
+
+</Project>

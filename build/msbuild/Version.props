@@ -1,5 +1,14 @@
 <Project>
 
+  <!-- SETUP DEFAULT VALUES  -->
+  <PropertyGroup>
+    <Version Condition="'$(Version)' == ''">0.0.0</Version>
+    <PackageVersion Condition="'$(PackageVersion)' == ''">0.0.0</PackageVersion>
+    <AssemblyVersion>0.0.0</AssemblyVersion>
+    <InformationalVersion>0.0.0</InformationalVersion>
+    <FileVersion>0.0.0.0</FileVersion>
+  </PropertyGroup>
+
   <PropertyGroup  Condition="'$(GitInfoImported)' == 'true' And '$(ExcludeRestorePackageImports)' != 'true'"> 
     <GitSkipCache>true</GitSkipCache>
     <GitInfoReportImportance>High</GitInfoReportImportance>
@@ -17,9 +26,6 @@
       <Version>$(PackageVersion)</Version>
       <FileVersion>$(PackageVersion)</FileVersion>
       <InformationalVersion>$(PackageVersion)</InformationalVersion>
-
-    <!-- <Version Condition="'$(Version)' == ''">0.0.0</Version>
-    <PackageVersion Condition="'$(PackageVersion)' == ''">0.0.0</PackageVersion> -->
   </PropertyGroup>
 
   <PropertyGroup Condition='$(InAzureDevOps)'>
