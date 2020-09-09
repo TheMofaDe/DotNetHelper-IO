@@ -44,10 +44,10 @@ Param(
     [switch]$SkipUnitTest,
     [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
     [string]$Verbosity = "Verbose",
-    [Alias("DryRun","Noop")]
+    [Alias("DryRun", "Noop")]
     [switch]$WhatIf,
     [switch]$Exclusive,
-    [Parameter(Position=0,Mandatory=$false,ValueFromRemainingArguments=$true)]
+    [Parameter(Position = 0, Mandatory = $false, ValueFromRemainingArguments = $true)]
     [string[]]$ScriptArgs
 )
 
@@ -55,14 +55,13 @@ Write-Host "Preparing to run build script..."
 $DotNetInstallerUri = 'https://dot.net/v1/dotnet-install.ps1';
 $DotNetUnixInstallerUri = 'https://dot.net/v1/dotnet-install.sh'
 $DotNetChannel = 'LTS'
-# $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
+$PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
 
-[string[]] $DotNetVersion= ''
-foreach($line in Get-Content (Join-Path $PSScriptRoot 'build.config'))
-{
-  if ($line -like 'DOTNET_VERSION=*') {
-      $DotNetVersion = $line.SubString("DOTNET_VERSION=".Length).Split(',')
-  }
+[string[]] $DotNetVersion = ''
+foreach ($line in Get-Content (Join-Path $PSScriptRoot 'build.config')) {
+    if ($line -like 'DOTNET_VERSION=*') {
+        $DotNetVersion = $line.SubString("DOTNET_VERSION=".Length).Split(',')
+    }
 }
 
 # Make sure tools folder exists
@@ -79,30 +78,26 @@ if (!(Test-Path $ToolPath)) {
 # INSTALL .NET CORE CLI
 ###########################################################################
 
-Function Remove-PathVariable([string]$VariableToRemove)
-{
+Function Remove-PathVariable([string]$VariableToRemove) {
     $SplitChar = ';'
     if ($IsMacOS -or $IsLinux) {
         $SplitChar = ':'
     }
 
     $path = [Environment]::GetEnvironmentVariable("PATH", "User")
-    if ($path -ne $null)
-    {
+    if ($path -ne $null) {
         $newItems = $path.Split($SplitChar, [StringSplitOptions]::RemoveEmptyEntries) | Where-Object { "$($_)" -inotlike $VariableToRemove }
         [Environment]::SetEnvironmentVariable("PATH", [System.String]::Join($SplitChar, $newItems), "User")
     }
 
     $path = [Environment]::GetEnvironmentVariable("PATH", "Process")
-    if ($path -ne $null)
-    {
+    if ($path -ne $null) {
         $newItems = $path.Split($SplitChar, [StringSplitOptions]::RemoveEmptyEntries) | Where-Object { "$($_)" -inotlike $VariableToRemove }
         [Environment]::SetEnvironmentVariable("PATH", [System.String]::Join($SplitChar, $newItems), "Process")
     }
 }
 
-Function Add-PathVariable([string]$PathToAdd)
-{
+Function Add-PathVariable([string]$PathToAdd) {
     $SplitChar = ';'
     if ($IsMacOS -or $IsLinux) {
         $SplitChar = ':'
@@ -110,15 +105,13 @@ Function Add-PathVariable([string]$PathToAdd)
     $env:PATH = "$($PathToAdd)$($SplitChar)$env:PATH"
 }
 
-Function Install-Dotnet($DotNetVersion)
-{
+Function Install-Dotnet($DotNetVersion) {
     $proxy = [System.Net.WebRequest]::GetSystemWebProxy()
-	$proxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials
-	$wc = new-object system.net.WebClient
-	$wc.proxy = $proxy
+    $proxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials
+    $wc = new-object system.net.WebClient
+    $wc.proxy = $proxy
 
-    if (!(Check-DotnetInstalled $DotNetVersion))
-    {
+    if (!(Check-DotnetInstalled $DotNetVersion)) {
         if ($IsMacOS -or $IsLinux) {
             $ScriptPath = Join-Path $InstallPath 'dotnet-install.sh'
             if (!(Test-Path $ScriptPath)) {
@@ -138,14 +131,11 @@ Function Install-Dotnet($DotNetVersion)
     }
 }
 
-Function Check-DotnetInstalled($version)
-{
-    if (Get-Command dotnet -errorAction SilentlyContinue)
-    {
-        $sdk =  dotnet --list-sdks
+Function Check-DotnetInstalled($version) {
+    if (Get-Command dotnet -errorAction SilentlyContinue) {
+        $sdk = dotnet --list-sdks
         $result = $sdk | ? { $v = $_.Split(" ")[0]; $v -eq $version }
-        if ($null -ne $result)
-        {
+        if ($null -ne $result) {
             Write-Host "The dotnet version $version was installed globally, not installing";
             return $true;
         }
@@ -159,17 +149,16 @@ if (!(Test-Path $InstallPath)) {
     New-Item -Path $InstallPath -ItemType Directory -Force | Out-Null;
 }
 
-foreach($version in $DotNetVersion)
-{
+foreach ($version in $DotNetVersion) {
     Install-Dotnet $version
 }
 
 Remove-PathVariable "$InstallPath"
 Add-PathVariable "$InstallPath"
-$env:DOTNET_ROOT=$InstallPath
+$env:DOTNET_ROOT = $InstallPath
 
-$env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
-$env:DOTNET_CLI_TELEMETRY_OPTOUT=1
+$env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = 1
+$env:DOTNET_CLI_TELEMETRY_OPTOUT = 1
 
 # Install cake local tool
 dotnet tool restore
@@ -184,27 +173,27 @@ $env:ENABLED_UNIT_TESTS = !$SkipUnitTest
 if ($env:ENABLED_DIAGNOSTICS -and $env:ENABLED_DIAGNOSTICS -eq $true) {
     Write-Host "Diagnostics enabled: Yes"
     $Verbosity = "Diagnostic"
-} else {
+}
+else {
     Write-Host "Diagnostics enabled: No"
 }
 
 $Arguments = @{
-    target=$Target;
-    configuration=$Configuration;
-    verbosity=$Verbosity;
-    dryrun=$WhatIf;
-    exclusive=$Exclusive;
-    nuget_useinprocessclient=$true;
-    docker_distro=$DockerDistro;
-    docker_dotnetversion=$DockerDotnetVersion;
+    target                   = $Target;
+    configuration            = $Configuration;
+    verbosity                = $Verbosity;
+    dryrun                   = $WhatIf;
+    exclusive                = $Exclusive;
+    nuget_useinprocessclient = $true;
+    docker_distro            = $DockerDistro;
+    docker_dotnetversion     = $DockerDotnetVersion;
 }.GetEnumerator() | ForEach-Object { "--{0}=`"{1}`"" -f $_.key, $_.value };
 
 # Start Cake
 Write-Host "Running build script..."
 
 & dotnet cake $Script --bootstrap
-if ($LASTEXITCODE -eq 0)
-{
+if ($LASTEXITCODE -eq 0) {
     & dotnet cake $Script $Arguments
 }
 
