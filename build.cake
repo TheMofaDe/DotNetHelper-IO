@@ -11,8 +11,8 @@
 #tool "nuget:?package=nuget.commandline&version=5.7.0"
 #tool "nuget:?package=ReportGenerator&version=4.6.1"
 #tool "nuget:?package=WiX.Toolset.UnofficialFork&version=3.11.1"
-//#tool "nuget:?package=NUnit.ConsoleRunner&version=3.11.1"
-//#tool "nuget:?package=NunitXml.TestLogger&version=2.1.62"
+#tool "nuget:?package=NUnit.ConsoleRunner&version=3.11.1"
+#tool "nuget:?package=NunitXml.TestLogger&version=2.1.62"
 
 // Load other scripts.
 #load "./build/cake/utils.cake"
