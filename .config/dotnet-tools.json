@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "isRoot": true,
+    "isRoot": false,
     "tools": {
         "cake.tool": {
             "version": "0.38.4",
