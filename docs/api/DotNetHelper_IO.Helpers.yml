@@ -5,6 +5,7 @@ items:
   id: DotNetHelper_IO.Helpers
   children:
   - DotNetHelper_IO.Helpers.ByteSizeHelper
+  - DotNetHelper_IO.Helpers.CompressExtensionHelper
   langs:
   - csharp
   - vb
@@ -20,3 +21,8 @@ references:
   name: ByteSizeHelper
   nameWithType: ByteSizeHelper
   fullName: DotNetHelper_IO.Helpers.ByteSizeHelper
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  commentId: T:DotNetHelper_IO.Helpers.CompressExtensionHelper
+  name: CompressExtensionHelper
+  nameWithType: CompressExtensionHelper
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper

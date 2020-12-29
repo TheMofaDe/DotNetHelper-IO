@@ -18,10 +18,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: AddOrRemoveEnum
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 64
+    startLine: 70
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -51,10 +51,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Add
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 69
+    startLine: 75
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -85,10 +85,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Remove
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 73
+    startLine: 79
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum

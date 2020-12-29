@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/jmcneal/Documents/Code/StoreSystem/DotNetHelper-IO/docs",
+  "source_base_path": "C:/git/Code/TheMoFaDe/DotNetHelper-IO/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.AddOrRemoveEnum.html",
-          "hash": "yaxZa4pZ8XfIzy71zijxTQ=="
+          "hash": "glqYkMj2WIFLou3pOx+QGA=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.FileOption.html",
-          "hash": "oWwcLgNsHX48hzRGXcZDbQ=="
+          "hash": "8qq9ImMZ0V6ntVPUcANqdg=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.FolderOption.html",
-          "hash": "cce/c3fBtUx4zuz6NFQoRA=="
+          "hash": "cNP4WtlaqR1YdPc3y6eUPg=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.IOType.html",
-          "hash": "ecb4PWY+E+Hb960r+wavUw=="
+          "hash": "KGvimDSlWYHcJZmTqWlZCQ=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.PathType.html",
-          "hash": "jsQyXcJFyR+V4WdvG36ziQ=="
+          "hash": "wyqf+uQauIZSgdtH2N9xzw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.SizeUnits.html",
-          "hash": "MvKG4+eIQy+kBx+jCgL/kg=="
+          "hash": "VSveHws3pllsxoPdvfMfPg=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,31 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Enum.html",
-          "hash": "SlPquj2y9ew06mxXrS/Fpg=="
+          "hash": "DJmhbqnsyN0lZtbdm0gO1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper_IO.Extension.SharpCompressExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper_IO.Extension.SharpCompressExtension.html",
+          "hash": "Om5x046IXWusva/B+cEXQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper_IO.Extension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper_IO.Extension.html",
+          "hash": "tnR05Uzk5Q46ReTPseX/PQ=="
         }
       },
       "is_incremental": false,
@@ -102,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FileObject.html",
-          "hash": "5xY5hrCgLeJwBTgH4o+b/w=="
+          "hash": "FEEiyhnUcibWnIBknGHxGQ=="
         }
       },
       "is_incremental": false,
@@ -114,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.FolderObject.html",
-          "hash": "2PgYho0B8e7tvuPDOM4Oew=="
+          "hash": "hmuv5fNacrKBWh0SozxMsw=="
         }
       },
       "is_incremental": false,
@@ -126,7 +150,19 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Helpers.ByteSizeHelper.html",
-          "hash": "Aw9QajKpEq0AXa3wNJk2cw=="
+          "hash": "Q3p/8LlbD0RwsLQiUmglDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper_IO.Helpers.CompressExtensionHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html",
+          "hash": "TLJNEyPOsIEvvVsRCkWC/A=="
         }
       },
       "is_incremental": false,
@@ -138,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.Helpers.html",
-          "hash": "QdOzbj4jrSDWRBu9mf0h1A=="
+          "hash": "pDjHTMpOcBrpZNHn1q6thA=="
         }
       },
       "is_incremental": false,
@@ -150,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.PathObject.html",
-          "hash": "vXyrhjTJ4AmAoKJKoVv4hg=="
+          "hash": "qJrcLKjsA5u2WXhJVzELxQ=="
         }
       },
       "is_incremental": false,
@@ -162,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.ZipFileObject.html",
-          "hash": "LBOQDJtUGPBZBkcE2IfzuA=="
+          "hash": "9OenUtHnbV5YI6BNNybfLQ=="
         }
       },
       "is_incremental": false,
@@ -174,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper_IO.html",
-          "hash": "xqsQ2GyYhqefCEFgAWj4UQ=="
+          "hash": "VN3cOrGk5ArQHSLvOFM66w=="
         }
       },
       "is_incremental": false,
@@ -186,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "uPA+KpwNL5CeRhjcM4B1Nw=="
+          "hash": "PuT7Kj+ScfRsrrmZ8ZHV6Q=="
         }
       },
       "is_incremental": false,
@@ -198,7 +234,7 @@
       "output": {
         "resource": {
           "relative_path": "images/icon.png",
-          "link_to_path": "C:\\Users\\jmcneal\\Documents\\Code\\StoreSystem\\DotNetHelper-IO\\docs/images/icon.png"
+          "link_to_path": "C:\\git\\Code\\TheMoFaDe\\DotNetHelper-IO\\docs/images/icon.png"
         }
       },
       "is_incremental": false,
@@ -210,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "COrQsB3XpoEwds+qZxhe4g=="
+          "hash": "OjFedkCcmGrZhRajcW+/cw=="
         }
       },
       "is_incremental": false,
@@ -222,7 +258,7 @@
       "output": {
         "resource": {
           "relative_path": "langwordmapping/langwordMapping.yml",
-          "link_to_path": "C:\\Users\\jmcneal\\Documents\\Code\\StoreSystem\\DotNetHelper-IO\\docs/langwordmapping/langwordMapping.yml"
+          "link_to_path": "C:\\git\\Code\\TheMoFaDe\\DotNetHelper-IO\\docs/langwordmapping/langwordMapping.yml"
         }
       },
       "is_incremental": false,
@@ -249,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/Attributes/attribute.html",
-          "hash": "//iEWLCOWvKrywgrV+G4dg=="
+          "hash": "qSk5SA/LlorTiYzAskdfOA=="
         }
       },
       "is_incremental": false,
@@ -261,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/datatable2sql.html",
-          "hash": "FxzYyMz5fndrh22Y0V+5Gw=="
+          "hash": "SP/6YsqK1/uBBIQrPMbanQ=="
         }
       },
       "is_incremental": false,
@@ -273,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/object2sql.html",
-          "hash": "sprBSIhU/GnY2DW8zBUn5w=="
+          "hash": "DqvRF9vC9LxdmlXMZsDDAQ=="
         }
       },
       "is_incremental": false,
@@ -285,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/index.html",
-          "hash": "Flej3IsLrUOtS7YMYYmQCA=="
+          "hash": "Fcm/d3+0p9NTRcKAyKxdQw=="
         }
       },
       "is_incremental": false,
@@ -322,8 +358,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 14,
-          "skipped_file_count": 14
+          "total_file_count": 17,
+          "skipped_file_count": 11
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

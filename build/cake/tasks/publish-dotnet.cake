@@ -22,13 +22,12 @@ var publishdotnetTask = Task("Publish-DotNet")
                     {
                         ArgumentCustomization = args => args
                                .Append($"-f {targetFramework}")
-                             //  .Append($"-r {cpuArchitecture}") until runtimeidentifer works 
-                               .Append($"/p:IncludeAllContentInSingleFile=true")
-                               .Append($"/p:IncludeContentInSingleFile=true")
-                               .Append($"/p:IncludeSymbolsInSingleFile=true")
-                               .Append($"/p:IncludeNativeLibrariesInSingleFile=true")
-                             //  .Append($"/p:PublishTrimmed=true") currently not working try later
-                               .Append($"/p:PublishSingleFile=true"),
+                               .Append($"-r {cpuArchitecture}") // until runtimeidentifer works 
+                            // .Append($"/p:IncludeSymbolsInSingleFile=true") error NETSDK1142: Including symbols in a single file bundle is not supported when publishing for .NET5 or higher.
+                               .Append($"/p:IncludeAllContentForSelfExtract=true") // https://github.com/dotnet/sdk/pull/12724
+                               .Append($"/p:IncludeNativeLibrariesForSelfExtract=true")
+                            //   .Append($"/p:PublishTrimmed=true") // currently not full proof for wpf 
+                            ,
                           
                         Configuration = parameters.Configuration,
                         NoBuild = true,

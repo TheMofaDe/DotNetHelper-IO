@@ -25,8 +25,15 @@
     name: PathType
   - uid: DotNetHelper_IO.Enum.SizeUnits
     name: SizeUnits
+- uid: DotNetHelper_IO.Extension
+  name: DotNetHelper_IO.Extension
+  items:
+  - uid: DotNetHelper_IO.Extension.SharpCompressExtension
+    name: SharpCompressExtension
 - uid: DotNetHelper_IO.Helpers
   name: DotNetHelper_IO.Helpers
   items:
   - uid: DotNetHelper_IO.Helpers.ByteSizeHelper
     name: ByteSizeHelper
+  - uid: DotNetHelper_IO.Helpers.CompressExtensionHelper
+    name: CompressExtensionHelper

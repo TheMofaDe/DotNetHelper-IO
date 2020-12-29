@@ -5,9 +5,10 @@ items:
   id: FolderOption
   parent: DotNetHelper_IO.Enum
   children:
+  - DotNetHelper_IO.Enum.FolderOption.DeleteThenWrite
   - DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
-  - DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
-  - DotNetHelper_IO.Enum.FolderOption.Overwrite
+  - DotNetHelper_IO.Enum.FolderOption.DoNothingIfFileExist
+  - DotNetHelper_IO.Enum.FolderOption.OverwriteFilesIfExist
   langs:
   - csharp
   - vb
@@ -19,7 +20,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: FolderOption
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
     startLine: 13
@@ -37,64 +38,32 @@ items:
   modifiers.vb:
   - Public
   - Enum
-- uid: DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
-  commentId: F:DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
-  id: IncrementFolderNameIfExist
+- uid: DotNetHelper_IO.Enum.FolderOption.OverwriteFilesIfExist
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.OverwriteFilesIfExist
+  id: OverwriteFilesIfExist
   parent: DotNetHelper_IO.Enum.FolderOption
   langs:
   - csharp
   - vb
-  name: IncrementFolderNameIfExist
-  nameWithType: FolderOption.IncrementFolderNameIfExist
-  fullName: DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
+  name: OverwriteFilesIfExist
+  nameWithType: FolderOption.OverwriteFilesIfExist
+  fullName: DotNetHelper_IO.Enum.FolderOption.OverwriteFilesIfExist
   type: Field
   source:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: IncrementFolderNameIfExist
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: OverwriteFilesIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
-  syntax:
-    content: IncrementFolderNameIfExist = 1
-    return:
-      type: DotNetHelper_IO.Enum.FolderOption
-  modifiers.csharp:
-  - public
-  - const
-  modifiers.vb:
-  - Public
-  - Const
-- uid: DotNetHelper_IO.Enum.FolderOption.Overwrite
-  commentId: F:DotNetHelper_IO.Enum.FolderOption.Overwrite
-  id: Overwrite
-  parent: DotNetHelper_IO.Enum.FolderOption
-  langs:
-  - csharp
-  - vb
-  name: Overwrite
-  nameWithType: FolderOption.Overwrite
-  fullName: DotNetHelper_IO.Enum.FolderOption.Overwrite
-  type: Field
-  source:
-    remote:
-      path: src/DotNetHelper-IO/Enum/FileOption.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: Overwrite
-    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 20
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO.Enum
-  summary: "\nThe overwrite\n"
+  summary: "\nWill not delete any files or subfolders but when copying or moving if a file already exist with the same name it will get overwritten\n"
   example: []
   syntax:
-    content: Overwrite = 2
+    content: OverwriteFilesIfExist = 2
     return:
       type: DotNetHelper_IO.Enum.FolderOption
   modifiers.csharp:
@@ -118,17 +87,85 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: DoNothingIfExist
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
-  summary: "\nThe do nothing if exist\n"
+  summary: "\nDo absolutely nothing if the specified folder already exist. Nothing will get copy or moved even if subdirectories doesn&apos;t exist \n"
   example: []
   syntax:
     content: DoNothingIfExist = 3
+    return:
+      type: DotNetHelper_IO.Enum.FolderOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FolderOption.DoNothingIfFileExist
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.DoNothingIfFileExist
+  id: DoNothingIfFileExist
+  parent: DotNetHelper_IO.Enum.FolderOption
+  langs:
+  - csharp
+  - vb
+  name: DoNothingIfFileExist
+  nameWithType: FolderOption.DoNothingIfFileExist
+  fullName: DotNetHelper_IO.Enum.FolderOption.DoNothingIfFileExist
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: DoNothingIfFileExist
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 27
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nDo absolutely nothing if the folder already exist\n"
+  example: []
+  syntax:
+    content: DoNothingIfFileExist = 4
+    return:
+      type: DotNetHelper_IO.Enum.FolderOption
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper_IO.Enum.FolderOption.DeleteThenWrite
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.DeleteThenWrite
+  id: DeleteThenWrite
+  parent: DotNetHelper_IO.Enum.FolderOption
+  langs:
+  - csharp
+  - vb
+  name: DeleteThenWrite
+  nameWithType: FolderOption.DeleteThenWrite
+  fullName: DotNetHelper_IO.Enum.FolderOption.DeleteThenWrite
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Enum/FileOption.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: DeleteThenWrite
+    path: ../src/DotNetHelper-IO/Enum/FileOption.cs
+    startLine: 31
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Enum
+  summary: "\nDelete the specified path recursively and then perform the copy or move operation\n"
+  example: []
+  syntax:
+    content: DeleteThenWrite = 5
     return:
       type: DotNetHelper_IO.Enum.FolderOption
   modifiers.csharp:

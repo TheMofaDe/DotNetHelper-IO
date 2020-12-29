@@ -2,14 +2,14 @@
 
   <!-- PROJECTS DEFAULT PROPERTIES -->
 <PropertyGroup>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <LangVersion>latest</LangVersion>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
- <PackageTags>file,folder,io,zip,dotnethelper</PackageTags>
+    <PackageTags>.NET,Solution Template</PackageTags>
     <RepositoryType>git</RepositoryType>
-    <Description>A simple lightweight library for managing folders &amp; files and compression</Description>
+    <Description>A .NET Solution starter template </Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <Authors>Joseph McNeal Jr</Authors>
     <Company>Joseph McNeal Jr</Company>

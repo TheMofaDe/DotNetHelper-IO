@@ -3,10 +3,9 @@ using System.IO;
 using System.Threading.Tasks;
 using DotNetHelper_IO;
 using DotNetHelper_IO.Enum;
-using DotNetHelper_IO_Tests;
 using NUnit.Framework;
 
-namespace DotNetHelper.IO.Tests
+namespace DotNetHelper.IO.Tests.IO.FileObject.Copy
 {
 	[NonParallelizable]
 	public class CopyAsyncTestFixture : BaseTest
@@ -50,41 +49,21 @@ namespace DotNetHelper.IO.Tests
 		}
 
 
-
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public async Task Test_CopyTo_To_File_Append()
+		public async Task Test_CopyTo_WhenFileDoesntExist_CreatesFileAndCopiedContent(
+			[Values(FileOption.DoNothingIfExist, FileOption.Overwrite, FileOption.Append)] FileOption fileOption)
 		{
 			var fileContent = $"ABC{Environment.NewLine}";
 			var testFile = RandomTestFileNoExtension;
 			var outputFile = RandomTestFileNoExtension;
 
 			// create original file 
-			await testFile.WriteAsync(fileContent);
+			await testFile.WriteAsync(fileContent, fileOption);
 
 
 			Assert.IsFalse(File.Exists(outputFile.FullName));
-			await testFile.CopyToAsync(outputFile.FullName, FileOption.Append);
-			Assert.IsTrue(File.Exists(outputFile.FullName));
-
-			Assert.IsTrue(fileContent.Equals(await File.ReadAllTextAsync(outputFile.FullName)));
-		}
-
-
-		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		[Test]
-		public async Task Test_CopyTo_To_File_Overwrite_When_Destination_Doesnt_Exist()
-		{
-			var fileContent = $"ABC{Environment.NewLine}";
-			var testFile = RandomTestFileNoExtension;
-			var outputFile = RandomTestFileNoExtension;
-
-			// create original file 
-			await testFile.WriteAsync(fileContent, FileOption.Overwrite, null);
-
-
-			Assert.IsFalse(File.Exists(outputFile.FullName));
-			await testFile.CopyToAsync(outputFile.FullName, FileOption.Overwrite);
+			await testFile.CopyToAsync(outputFile.FullName, fileOption);
 			Assert.IsTrue(File.Exists(outputFile.FullName));
 
 			Assert.IsTrue(fileContent.Equals(await File.ReadAllTextAsync(outputFile.FullName)));
@@ -156,6 +135,44 @@ namespace DotNetHelper.IO.Tests
 		{
 			var testFile = RandomTestFileWithExtension;
 			var outputFile = RandomTestFileWithExtension;
+
+			await testFile.WriteAsync("ABC");
+
+			outputFile.CreateOrTruncate();
+
+			var newFileName = await testFile.CopyToAsync(outputFile.FullName, FileOption.IncrementFileExtensionIfExist);
+
+			Assert.That(!newFileName.Equals(testFile.FullName + "1"));
+			Assert.That((await File.ReadAllTextAsync(newFileName)).Equals("ABC"));
+		}
+
+
+
+		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		[Test]
+		public async Task Test_Copy_To_File_IncrementFileName_WhenFileNameEndsWithNumber()
+		{
+			var testFile = RandomTestFileNoExtension;
+			var outputFile = new DotNetHelper_IO.FileObject(RandomTestFileNoExtension.FullName + "1");
+
+			await testFile.WriteAsync("ABC");
+
+			outputFile.CreateOrTruncate();
+
+			var newFileName = await testFile.CopyToAsync(outputFile.FullName, FileOption.IncrementFileNameIfExist);
+
+			Assert.That(!newFileName.Equals(testFile.FullName + "1"));
+			Assert.That((await File.ReadAllTextAsync(newFileName)).Equals("ABC"));
+		}
+
+
+		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		[Test]
+		public async Task Test_Copy_To_File_IncrementFileNameExtension_WhenFileExtensionEndsWithNumbe()
+		{
+			var testFile = RandomTestFileWithExtension;
+			var outputFile = new DotNetHelper_IO.FileObject(RandomTestFileNoExtension.FullName + "1");
+
 
 			await testFile.WriteAsync("ABC");
 

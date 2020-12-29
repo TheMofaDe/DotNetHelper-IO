@@ -5,13 +5,25 @@ items:
   id: ZipFileObject
   parent: DotNetHelper_IO
   children:
-  - DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType)
-  - DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List{System.String},DotNetHelper_IO.Enum.FileOption)
-  - DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)
+  - DotNetHelper_IO.ZipFileObject.#ctor(DotNetHelper_IO.FolderObject,SharpCompress.Common.ArchiveType,System.String)
+  - DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions,SharpCompress.Writers.WriterOptions)
+  - DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,System.String)
+  - DotNetHelper_IO.ZipFileObject.Add(DotNetHelper_IO.FileObject,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  - DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  - DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{System.String},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  - DotNetHelper_IO.ZipFileObject.Add(System.String,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  - DotNetHelper_IO.ZipFileObject.AddFromDirectory(System.String,System.String,System.IO.SearchOption)
+  - DotNetHelper_IO.ZipFileObject.Compress(DotNetHelper_IO.FolderObject,System.String,System.IO.SearchOption)
+  - DotNetHelper_IO.ZipFileObject.Compress(System.String,System.String,System.IO.SearchOption)
   - DotNetHelper_IO.ZipFileObject.CreateOrTruncate(System.Boolean)
+  - DotNetHelper_IO.ZipFileObject.ExtractToDirectory(System.String,SharpCompress.Common.ExtractionOptions)
+  - DotNetHelper_IO.ZipFileObject.GetEntriesCount
+  - DotNetHelper_IO.ZipFileObject.GetReadableArchive
+  - DotNetHelper_IO.ZipFileObject.GetWritableArchive
+  - DotNetHelper_IO.ZipFileObject.ReaderOptions
   - DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate{SharpCompress.Archives.IArchiveEntry})
   - DotNetHelper_IO.ZipFileObject.Type
-  - DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject,DotNetHelper_IO.Enum.FileOption,System.Boolean)
+  - DotNetHelper_IO.ZipFileObject.WriterOptions
   langs:
   - csharp
   - vb
@@ -23,10 +35,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: ZipFileObject
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 18
+    startLine: 23
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -51,6 +63,12 @@ items:
   - DotNetHelper_IO.FileObject.Extension
   - DotNetHelper_IO.FileObject.FolderNameOnly
   - DotNetHelper_IO.FileObject.Name
+  - DotNetHelper_IO.FileObject.LastWriteTime
+  - DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  - DotNetHelper_IO.FileObject.CreationTimeUtc
+  - DotNetHelper_IO.FileObject.CreationTime
+  - DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  - DotNetHelper_IO.FileObject.LastAccessTime
   - DotNetHelper_IO.FileObject.GetSize
   - DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
   - DotNetHelper_IO.FileObject.GetParentFolder
@@ -83,7 +101,6 @@ items:
   - DotNetHelper_IO.FileObject.WriteAsync(System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)
   - DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
   - DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream,System.IProgress{System.Int64},DotNetHelper_IO.Enum.FileOption,System.Int32,System.Threading.CancellationToken)
-  - DotNetHelper_IO.FileObject.GetFileEncoding
   - DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   - DotNetHelper_IO.FileObject.StopWatching
   - DotNetHelper_IO.FileObject.SetFileAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
@@ -91,6 +108,7 @@ items:
   - DotNetHelper_IO.FileObject.Dispose(System.Boolean)
   - DotNetHelper_IO.PathObject.FullName
   - DotNetHelper_IO.PathObject.PathType
+  - DotNetHelper_IO.PathObject.SizeInBytes
   - DotNetHelper_IO.PathObject.Size
   - DotNetHelper_IO.PathObject.Exist
   - System.Object.ToString
@@ -106,6 +124,76 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: DotNetHelper_IO.ZipFileObject.ReaderOptions
+  commentId: P:DotNetHelper_IO.ZipFileObject.ReaderOptions
+  id: ReaderOptions
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: ReaderOptions
+  nameWithType: ZipFileObject.ReaderOptions
+  fullName: DotNetHelper_IO.ZipFileObject.ReaderOptions
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: ReaderOptions
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 25
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public ReaderOptions ReaderOptions { get; set; }
+    parameters: []
+    return:
+      type: SharpCompress.Readers.ReaderOptions
+    content.vb: Public Property ReaderOptions As ReaderOptions
+  overload: DotNetHelper_IO.ZipFileObject.ReaderOptions*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.WriterOptions
+  commentId: P:DotNetHelper_IO.ZipFileObject.WriterOptions
+  id: WriterOptions
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: WriterOptions
+  nameWithType: ZipFileObject.WriterOptions
+  fullName: DotNetHelper_IO.ZipFileObject.WriterOptions
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: WriterOptions
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 26
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public WriterOptions WriterOptions { get; set; }
+    parameters: []
+    return:
+      type: SharpCompress.Writers.WriterOptions
+    content.vb: Public Property WriterOptions As WriterOptions
+  overload: DotNetHelper_IO.ZipFileObject.WriterOptions*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 - uid: DotNetHelper_IO.ZipFileObject.Type
   commentId: P:DotNetHelper_IO.ZipFileObject.Type
   id: Type
@@ -121,10 +209,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Type
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 20
+    startLine: 27
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -141,37 +229,211 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType)
-  commentId: M:DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType)
-  id: '#ctor(System.String,SharpCompress.Common.ArchiveType)'
+- uid: DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,System.String)
+  commentId: M:DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,System.String)
+  id: '#ctor(System.String,SharpCompress.Common.ArchiveType,System.String)'
   parent: DotNetHelper_IO.ZipFileObject
   langs:
   - csharp
   - vb
-  name: ZipFileObject(String, ArchiveType)
-  nameWithType: ZipFileObject.ZipFileObject(String, ArchiveType)
-  fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject(System.String, SharpCompress.Common.ArchiveType)
+  name: ZipFileObject(String, ArchiveType, String)
+  nameWithType: ZipFileObject.ZipFileObject(String, ArchiveType, String)
+  fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject(System.String, SharpCompress.Common.ArchiveType, System.String)
   type: Constructor
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 22
+    startLine: 30
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   syntax:
-    content: public ZipFileObject(string file, ArchiveType type = ArchiveType.Zip)
+    content: public ZipFileObject(string fullFilePath, ArchiveType type, string password = null)
     parameters:
-    - id: file
+    - id: fullFilePath
       type: System.String
     - id: type
       type: SharpCompress.Common.ArchiveType
-    content.vb: Public Sub New(file As String, type As ArchiveType = ArchiveType.Zip)
+    - id: password
+      type: System.String
+    content.vb: Public Sub New(fullFilePath As String, type As ArchiveType, password As String = Nothing)
   overload: DotNetHelper_IO.ZipFileObject.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.#ctor(DotNetHelper_IO.FolderObject,SharpCompress.Common.ArchiveType,System.String)
+  commentId: M:DotNetHelper_IO.ZipFileObject.#ctor(DotNetHelper_IO.FolderObject,SharpCompress.Common.ArchiveType,System.String)
+  id: '#ctor(DotNetHelper_IO.FolderObject,SharpCompress.Common.ArchiveType,System.String)'
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: ZipFileObject(FolderObject, ArchiveType, String)
+  nameWithType: ZipFileObject.ZipFileObject(FolderObject, ArchiveType, String)
+  fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject(DotNetHelper_IO.FolderObject, SharpCompress.Common.ArchiveType, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: .ctor
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 39
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public ZipFileObject(FolderObject folderObject, ArchiveType type, string password = null)
+    parameters:
+    - id: folderObject
+      type: DotNetHelper_IO.FolderObject
+    - id: type
+      type: SharpCompress.Common.ArchiveType
+    - id: password
+      type: System.String
+    content.vb: Public Sub New(folderObject As FolderObject, type As ArchiveType, password As String = Nothing)
+  overload: DotNetHelper_IO.ZipFileObject.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions,SharpCompress.Writers.WriterOptions)
+  commentId: M:DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions,SharpCompress.Writers.WriterOptions)
+  id: '#ctor(System.String,SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions,SharpCompress.Writers.WriterOptions)'
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: ZipFileObject(String, ArchiveType, ReaderOptions, WriterOptions)
+  nameWithType: ZipFileObject.ZipFileObject(String, ArchiveType, ReaderOptions, WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject(System.String, SharpCompress.Common.ArchiveType, SharpCompress.Readers.ReaderOptions, SharpCompress.Writers.WriterOptions)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: .ctor
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 47
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public ZipFileObject(string fullFilePath, ArchiveType type, ReaderOptions readerOptions, WriterOptions writerOptions)
+    parameters:
+    - id: fullFilePath
+      type: System.String
+    - id: type
+      type: SharpCompress.Common.ArchiveType
+    - id: readerOptions
+      type: SharpCompress.Readers.ReaderOptions
+    - id: writerOptions
+      type: SharpCompress.Writers.WriterOptions
+    content.vb: Public Sub New(fullFilePath As String, type As ArchiveType, readerOptions As ReaderOptions, writerOptions As WriterOptions)
+  overload: DotNetHelper_IO.ZipFileObject.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.GetWritableArchive
+  commentId: M:DotNetHelper_IO.ZipFileObject.GetWritableArchive
+  id: GetWritableArchive
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: GetWritableArchive()
+  nameWithType: ZipFileObject.GetWritableArchive()
+  fullName: DotNetHelper_IO.ZipFileObject.GetWritableArchive()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: GetWritableArchive
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 55
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public IWritableArchive GetWritableArchive()
+    return:
+      type: SharpCompress.Archives.IWritableArchive
+    content.vb: Public Function GetWritableArchive As IWritableArchive
+  overload: DotNetHelper_IO.ZipFileObject.GetWritableArchive*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.GetReadableArchive
+  commentId: M:DotNetHelper_IO.ZipFileObject.GetReadableArchive
+  id: GetReadableArchive
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: GetReadableArchive()
+  nameWithType: ZipFileObject.GetReadableArchive()
+  fullName: DotNetHelper_IO.ZipFileObject.GetReadableArchive()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: GetReadableArchive
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 72
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public IArchive GetReadableArchive()
+    return:
+      type: SharpCompress.Archives.IArchive
+    content.vb: Public Function GetReadableArchive As IArchive
+  overload: DotNetHelper_IO.ZipFileObject.GetReadableArchive*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.GetEntriesCount
+  commentId: M:DotNetHelper_IO.ZipFileObject.GetEntriesCount
+  id: GetEntriesCount
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: GetEntriesCount()
+  nameWithType: ZipFileObject.GetEntriesCount()
+  fullName: DotNetHelper_IO.ZipFileObject.GetEntriesCount()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: GetEntriesCount
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 91
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public int GetEntriesCount()
+    return:
+      type: System.Int32
+    content.vb: Public Function GetEntriesCount As Integer
+  overload: DotNetHelper_IO.ZipFileObject.GetEntriesCount*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -191,10 +453,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 33
+    startLine: 125
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -215,118 +477,115 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  commentId: M:DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  id: UnZipFile(DotNetHelper_IO.FolderObject,DotNetHelper_IO.Enum.FileOption,System.Boolean)
+- uid: DotNetHelper_IO.ZipFileObject.ExtractToDirectory(System.String,SharpCompress.Common.ExtractionOptions)
+  commentId: M:DotNetHelper_IO.ZipFileObject.ExtractToDirectory(System.String,SharpCompress.Common.ExtractionOptions)
+  id: ExtractToDirectory(System.String,SharpCompress.Common.ExtractionOptions)
   parent: DotNetHelper_IO.ZipFileObject
   langs:
   - csharp
   - vb
-  name: UnZipFile(FolderObject, FileOption, Boolean)
-  nameWithType: ZipFileObject.UnZipFile(FolderObject, FileOption, Boolean)
-  fullName: DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject, DotNetHelper_IO.Enum.FileOption, System.Boolean)
+  name: ExtractToDirectory(String, ExtractionOptions)
+  nameWithType: ZipFileObject.ExtractToDirectory(String, ExtractionOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.ExtractToDirectory(System.String, SharpCompress.Common.ExtractionOptions)
   type: Method
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: UnZipFile
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: ExtractToDirectory
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 57
+    startLine: 149
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   syntax:
-    content: public void UnZipFile(FolderObject folder, FileOption option, bool extractFullPath = false)
+    content: public void ExtractToDirectory(string fullFolderPath, ExtractionOptions extractionOptions = null)
     parameters:
-    - id: folder
-      type: DotNetHelper_IO.FolderObject
-    - id: option
-      type: DotNetHelper_IO.Enum.FileOption
-    - id: extractFullPath
-      type: System.Boolean
-    content.vb: Public Sub UnZipFile(folder As FolderObject, option As FileOption, extractFullPath As Boolean = False)
-  overload: DotNetHelper_IO.ZipFileObject.UnZipFile*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)
-  commentId: M:DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)
-  id: AddFileToZip(System.String)
-  parent: DotNetHelper_IO.ZipFileObject
-  langs:
-  - csharp
-  - vb
-  name: AddFileToZip(String)
-  nameWithType: ZipFileObject.AddFileToZip(String)
-  fullName: DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/ZipFileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: AddFileToZip
-    path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 80
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  syntax:
-    content: public void AddFileToZip(string FullName)
-    parameters:
-    - id: FullName
+    - id: fullFolderPath
       type: System.String
-    content.vb: Public Sub AddFileToZip(FullName As String)
-  overload: DotNetHelper_IO.ZipFileObject.AddFileToZip*
+    - id: extractionOptions
+      type: SharpCompress.Common.ExtractionOptions
+    content.vb: Public Sub ExtractToDirectory(fullFolderPath As String, extractionOptions As ExtractionOptions = Nothing)
+  overload: DotNetHelper_IO.ZipFileObject.ExtractToDirectory*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List{System.String},DotNetHelper_IO.Enum.FileOption)
-  commentId: M:DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List{System.String},DotNetHelper_IO.Enum.FileOption)
-  id: AddFilesToZip(System.Collections.Generic.List{System.String},DotNetHelper_IO.Enum.FileOption)
+- uid: DotNetHelper_IO.ZipFileObject.Compress(DotNetHelper_IO.FolderObject,System.String,System.IO.SearchOption)
+  commentId: M:DotNetHelper_IO.ZipFileObject.Compress(DotNetHelper_IO.FolderObject,System.String,System.IO.SearchOption)
+  id: Compress(DotNetHelper_IO.FolderObject,System.String,System.IO.SearchOption)
   parent: DotNetHelper_IO.ZipFileObject
   langs:
   - csharp
   - vb
-  name: AddFilesToZip(List<String>, FileOption)
-  nameWithType: ZipFileObject.AddFilesToZip(List<String>, FileOption)
-  fullName: DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List<System.String>, DotNetHelper_IO.Enum.FileOption)
+  name: Compress(FolderObject, String, SearchOption)
+  nameWithType: ZipFileObject.Compress(FolderObject, String, SearchOption)
+  fullName: DotNetHelper_IO.ZipFileObject.Compress(DotNetHelper_IO.FolderObject, System.String, System.IO.SearchOption)
   type: Method
   source:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: AddFilesToZip
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: Compress
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 89
+    startLine: 154
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\n\n"
-  example: []
   syntax:
-    content: public void AddFilesToZip(List<string> files, FileOption option = FileOption.Overwrite)
+    content: public void Compress(FolderObject folderObject, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
     parameters:
-    - id: files
-      type: System.Collections.Generic.List{System.String}
-      description: 'new files to be added to the zip file '
-    - id: option
-      type: DotNetHelper_IO.Enum.FileOption
-      description: how to handle files that will be added to the zip
-    content.vb: Public Sub AddFilesToZip(files As List(Of String), option As FileOption = FileOption.Overwrite)
-  overload: DotNetHelper_IO.ZipFileObject.AddFilesToZip*
-  nameWithType.vb: ZipFileObject.AddFilesToZip(List(Of String), FileOption)
+    - id: folderObject
+      type: DotNetHelper_IO.FolderObject
+    - id: searchPattern
+      type: System.String
+    - id: searchOption
+      type: System.IO.SearchOption
+    content.vb: Public Sub Compress(folderObject As FolderObject, searchPattern As String = "*", searchOption As SearchOption = SearchOption.AllDirectories)
+  overload: DotNetHelper_IO.ZipFileObject.Compress*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List(Of System.String), DotNetHelper_IO.Enum.FileOption)
-  name.vb: AddFilesToZip(List(Of String), FileOption)
+- uid: DotNetHelper_IO.ZipFileObject.Compress(System.String,System.String,System.IO.SearchOption)
+  commentId: M:DotNetHelper_IO.ZipFileObject.Compress(System.String,System.String,System.IO.SearchOption)
+  id: Compress(System.String,System.String,System.IO.SearchOption)
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: Compress(String, String, SearchOption)
+  nameWithType: ZipFileObject.Compress(String, String, SearchOption)
+  fullName: DotNetHelper_IO.ZipFileObject.Compress(System.String, System.String, System.IO.SearchOption)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: Compress
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 158
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public void Compress(string fullFolderPathToCompress, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
+    parameters:
+    - id: fullFolderPathToCompress
+      type: System.String
+    - id: searchPattern
+      type: System.String
+    - id: searchOption
+      type: System.IO.SearchOption
+    content.vb: Public Sub Compress(fullFolderPathToCompress As String, searchPattern As String = "*", searchOption As SearchOption = SearchOption.AllDirectories)
+  overload: DotNetHelper_IO.ZipFileObject.Compress*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate{SharpCompress.Archives.IArchiveEntry})
   commentId: M:DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate{SharpCompress.Archives.IArchiveEntry})
   id: RemoveFilesToZip(System.Predicate{SharpCompress.Archives.IArchiveEntry})
@@ -342,10 +601,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/ZipFileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: RemoveFilesToZip
     path: ../src/DotNetHelper-IO/ZipFileObject.cs
-    startLine: 118
+    startLine: 166
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -363,6 +622,207 @@ items:
   - Public
   fullName.vb: DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate(Of SharpCompress.Archives.IArchiveEntry))
   name.vb: RemoveFilesToZip(Predicate(Of IArchiveEntry))
+- uid: DotNetHelper_IO.ZipFileObject.AddFromDirectory(System.String,System.String,System.IO.SearchOption)
+  commentId: M:DotNetHelper_IO.ZipFileObject.AddFromDirectory(System.String,System.String,System.IO.SearchOption)
+  id: AddFromDirectory(System.String,System.String,System.IO.SearchOption)
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: AddFromDirectory(String, String, SearchOption)
+  nameWithType: ZipFileObject.AddFromDirectory(String, String, SearchOption)
+  fullName: DotNetHelper_IO.ZipFileObject.AddFromDirectory(System.String, System.String, System.IO.SearchOption)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: AddFromDirectory
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 184
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public void AddFromDirectory(string folderFullPath, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
+    parameters:
+    - id: folderFullPath
+      type: System.String
+    - id: searchPattern
+      type: System.String
+    - id: searchOption
+      type: System.IO.SearchOption
+    content.vb: Public Sub AddFromDirectory(folderFullPath As String, searchPattern As String = "*", searchOption As SearchOption = SearchOption.AllDirectories)
+  overload: DotNetHelper_IO.ZipFileObject.AddFromDirectory*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.Add(System.String,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  commentId: M:DotNetHelper_IO.ZipFileObject.Add(System.String,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  id: Add(System.String,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: Add(String, FileOption, WriterOptions)
+  nameWithType: ZipFileObject.Add(String, FileOption, WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.Add(System.String, DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: Add
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 194
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public void Add(string fileFullPath, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
+    parameters:
+    - id: fileFullPath
+      type: System.String
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+    - id: writerOptions
+      type: SharpCompress.Writers.WriterOptions
+    content.vb: Public Sub Add(fileFullPath As String, option As FileOption = FileOption.Overwrite, writerOptions As WriterOptions = Nothing)
+  overload: DotNetHelper_IO.ZipFileObject.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.Add(DotNetHelper_IO.FileObject,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  commentId: M:DotNetHelper_IO.ZipFileObject.Add(DotNetHelper_IO.FileObject,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  id: Add(DotNetHelper_IO.FileObject,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: Add(FileObject, FileOption, WriterOptions)
+  nameWithType: ZipFileObject.Add(FileObject, FileOption, WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.Add(DotNetHelper_IO.FileObject, DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: Add
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 199
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public void Add(FileObject fileObject, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
+    parameters:
+    - id: fileObject
+      type: DotNetHelper_IO.FileObject
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+    - id: writerOptions
+      type: SharpCompress.Writers.WriterOptions
+    content.vb: Public Sub Add(fileObject As FileObject, option As FileOption = FileOption.Overwrite, writerOptions As WriterOptions = Nothing)
+  overload: DotNetHelper_IO.ZipFileObject.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{System.String},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  commentId: M:DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{System.String},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  id: Add(System.Collections.Generic.IEnumerable{System.String},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: Add(IEnumerable<String>, FileOption, WriterOptions)
+  nameWithType: ZipFileObject.Add(IEnumerable<String>, FileOption, WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable<System.String>, DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: Add
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 210
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Add(IEnumerable<string> fileFullPaths, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
+    parameters:
+    - id: fileFullPaths
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: 'new files to be added to the zip file '
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+      description: how to handle files that will be added to the zip
+    - id: writerOptions
+      type: SharpCompress.Writers.WriterOptions
+      description: ''
+    content.vb: Public Sub Add(fileFullPaths As IEnumerable(Of String), option As FileOption = FileOption.Overwrite, writerOptions As WriterOptions = Nothing)
+  overload: DotNetHelper_IO.ZipFileObject.Add*
+  nameWithType.vb: ZipFileObject.Add(IEnumerable(Of String), FileOption, WriterOptions)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable(Of System.String), DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  name.vb: Add(IEnumerable(Of String), FileOption, WriterOptions)
+- uid: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  commentId: M:DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  id: Add(System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  parent: DotNetHelper_IO.ZipFileObject
+  langs:
+  - csharp
+  - vb
+  name: Add(IEnumerable<FileObject>, FileOption, WriterOptions)
+  nameWithType: ZipFileObject.Add(IEnumerable<FileObject>, FileOption, WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable<DotNetHelper_IO.FileObject>, DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper-IO/ZipFileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: Add
+    path: ../src/DotNetHelper-IO/ZipFileObject.cs
+    startLine: 221
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Add(IEnumerable<FileObject> files, FileOption option = FileOption.Overwrite, WriterOptions writerOptions = null)
+    parameters:
+    - id: files
+      type: System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject}
+      description: 'new files to be added to the zip file '
+    - id: option
+      type: DotNetHelper_IO.Enum.FileOption
+      description: how to handle files that will be added to the zip
+    - id: writerOptions
+      type: SharpCompress.Writers.WriterOptions
+      description: ''
+    content.vb: Public Sub Add(files As IEnumerable(Of FileObject), option As FileOption = FileOption.Overwrite, writerOptions As WriterOptions = Nothing)
+  overload: DotNetHelper_IO.ZipFileObject.Add*
+  nameWithType.vb: ZipFileObject.Add(IEnumerable(Of FileObject), FileOption, WriterOptions)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable(Of DotNetHelper_IO.FileObject), DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  name.vb: Add(IEnumerable(Of FileObject), FileOption, WriterOptions)
 references:
 - uid: DotNetHelper_IO
   commentId: N:DotNetHelper_IO
@@ -443,6 +903,42 @@ references:
   name: Name
   nameWithType: FileObject.Name
   fullName: DotNetHelper_IO.FileObject.Name
+- uid: DotNetHelper_IO.FileObject.LastWriteTime
+  commentId: P:DotNetHelper_IO.FileObject.LastWriteTime
+  parent: DotNetHelper_IO.FileObject
+  name: LastWriteTime
+  nameWithType: FileObject.LastWriteTime
+  fullName: DotNetHelper_IO.FileObject.LastWriteTime
+- uid: DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  parent: DotNetHelper_IO.FileObject
+  name: LastWriteTimeUtc
+  nameWithType: FileObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.FileObject.LastWriteTimeUtc
+- uid: DotNetHelper_IO.FileObject.CreationTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.CreationTimeUtc
+  parent: DotNetHelper_IO.FileObject
+  name: CreationTimeUtc
+  nameWithType: FileObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.FileObject.CreationTimeUtc
+- uid: DotNetHelper_IO.FileObject.CreationTime
+  commentId: P:DotNetHelper_IO.FileObject.CreationTime
+  parent: DotNetHelper_IO.FileObject
+  name: CreationTime
+  nameWithType: FileObject.CreationTime
+  fullName: DotNetHelper_IO.FileObject.CreationTime
+- uid: DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  parent: DotNetHelper_IO.FileObject
+  name: LastAccessTimeUtc
+  nameWithType: FileObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.FileObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.FileObject.LastAccessTime
+  commentId: P:DotNetHelper_IO.FileObject.LastAccessTime
+  parent: DotNetHelper_IO.FileObject
+  name: LastAccessTime
+  nameWithType: FileObject.LastAccessTime
+  fullName: DotNetHelper_IO.FileObject.LastAccessTime
 - uid: DotNetHelper_IO.FileObject.GetSize
   commentId: M:DotNetHelper_IO.FileObject.GetSize
   parent: DotNetHelper_IO.FileObject
@@ -2395,34 +2891,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper_IO.FileObject.GetFileEncoding
-  commentId: M:DotNetHelper_IO.FileObject.GetFileEncoding
-  parent: DotNetHelper_IO.FileObject
-  name: GetFileEncoding()
-  nameWithType: FileObject.GetFileEncoding()
-  fullName: DotNetHelper_IO.FileObject.GetFileEncoding()
-  spec.csharp:
-  - uid: DotNetHelper_IO.FileObject.GetFileEncoding
-    name: GetFileEncoding
-    nameWithType: FileObject.GetFileEncoding
-    fullName: DotNetHelper_IO.FileObject.GetFileEncoding
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DotNetHelper_IO.FileObject.GetFileEncoding
-    name: GetFileEncoding
-    nameWithType: FileObject.GetFileEncoding
-    fullName: DotNetHelper_IO.FileObject.GetFileEncoding
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   commentId: M:DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   parent: DotNetHelper_IO.FileObject
@@ -2704,6 +3172,12 @@ references:
   name: PathType
   nameWithType: PathObject.PathType
   fullName: DotNetHelper_IO.PathObject.PathType
+- uid: DotNetHelper_IO.PathObject.SizeInBytes
+  commentId: P:DotNetHelper_IO.PathObject.SizeInBytes
+  parent: DotNetHelper_IO.PathObject
+  name: SizeInBytes
+  nameWithType: PathObject.SizeInBytes
+  fullName: DotNetHelper_IO.PathObject.SizeInBytes
 - uid: DotNetHelper_IO.PathObject.Size
   commentId: P:DotNetHelper_IO.PathObject.Size
   parent: DotNetHelper_IO.PathObject
@@ -3001,6 +3475,42 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DotNetHelper_IO.ZipFileObject.ReaderOptions*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.ReaderOptions
+  name: ReaderOptions
+  nameWithType: ZipFileObject.ReaderOptions
+  fullName: DotNetHelper_IO.ZipFileObject.ReaderOptions
+- uid: SharpCompress.Readers.ReaderOptions
+  commentId: T:SharpCompress.Readers.ReaderOptions
+  parent: SharpCompress.Readers
+  isExternal: true
+  name: ReaderOptions
+  nameWithType: ReaderOptions
+  fullName: SharpCompress.Readers.ReaderOptions
+- uid: SharpCompress.Readers
+  commentId: N:SharpCompress.Readers
+  isExternal: true
+  name: SharpCompress.Readers
+  nameWithType: SharpCompress.Readers
+  fullName: SharpCompress.Readers
+- uid: DotNetHelper_IO.ZipFileObject.WriterOptions*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.WriterOptions
+  name: WriterOptions
+  nameWithType: ZipFileObject.WriterOptions
+  fullName: DotNetHelper_IO.ZipFileObject.WriterOptions
+- uid: SharpCompress.Writers.WriterOptions
+  commentId: T:SharpCompress.Writers.WriterOptions
+  parent: SharpCompress.Writers
+  isExternal: true
+  name: WriterOptions
+  nameWithType: WriterOptions
+  fullName: SharpCompress.Writers.WriterOptions
+- uid: SharpCompress.Writers
+  commentId: N:SharpCompress.Writers
+  isExternal: true
+  name: SharpCompress.Writers
+  nameWithType: SharpCompress.Writers
+  fullName: SharpCompress.Writers
 - uid: DotNetHelper_IO.ZipFileObject.Type*
   commentId: Overload:DotNetHelper_IO.ZipFileObject.Type
   name: Type
@@ -3031,6 +3541,54 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: DotNetHelper_IO.FolderObject
+  commentId: T:DotNetHelper_IO.FolderObject
+  parent: DotNetHelper_IO
+  name: FolderObject
+  nameWithType: FolderObject
+  fullName: DotNetHelper_IO.FolderObject
+- uid: DotNetHelper_IO.ZipFileObject.GetWritableArchive*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.GetWritableArchive
+  name: GetWritableArchive
+  nameWithType: ZipFileObject.GetWritableArchive
+  fullName: DotNetHelper_IO.ZipFileObject.GetWritableArchive
+- uid: SharpCompress.Archives.IWritableArchive
+  commentId: T:SharpCompress.Archives.IWritableArchive
+  parent: SharpCompress.Archives
+  isExternal: true
+  name: IWritableArchive
+  nameWithType: IWritableArchive
+  fullName: SharpCompress.Archives.IWritableArchive
+- uid: SharpCompress.Archives
+  commentId: N:SharpCompress.Archives
+  isExternal: true
+  name: SharpCompress.Archives
+  nameWithType: SharpCompress.Archives
+  fullName: SharpCompress.Archives
+- uid: DotNetHelper_IO.ZipFileObject.GetReadableArchive*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.GetReadableArchive
+  name: GetReadableArchive
+  nameWithType: ZipFileObject.GetReadableArchive
+  fullName: DotNetHelper_IO.ZipFileObject.GetReadableArchive
+- uid: SharpCompress.Archives.IArchive
+  commentId: T:SharpCompress.Archives.IArchive
+  parent: SharpCompress.Archives
+  isExternal: true
+  name: IArchive
+  nameWithType: IArchive
+  fullName: SharpCompress.Archives.IArchive
+- uid: DotNetHelper_IO.ZipFileObject.GetEntriesCount*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.GetEntriesCount
+  name: GetEntriesCount
+  nameWithType: ZipFileObject.GetEntriesCount
+  fullName: DotNetHelper_IO.ZipFileObject.GetEntriesCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
 - uid: DotNetHelper_IO.ZipFileObject.CreateOrTruncate*
   commentId: Overload:DotNetHelper_IO.ZipFileObject.CreateOrTruncate
   name: CreateOrTruncate
@@ -3043,127 +3601,36 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: DotNetHelper_IO.ZipFileObject.UnZipFile*
-  commentId: Overload:DotNetHelper_IO.ZipFileObject.UnZipFile
-  name: UnZipFile
-  nameWithType: ZipFileObject.UnZipFile
-  fullName: DotNetHelper_IO.ZipFileObject.UnZipFile
-- uid: DotNetHelper_IO.FolderObject
-  commentId: T:DotNetHelper_IO.FolderObject
-  parent: DotNetHelper_IO
-  name: FolderObject
-  nameWithType: FolderObject
-  fullName: DotNetHelper_IO.FolderObject
-- uid: DotNetHelper_IO.Enum.FileOption
-  commentId: T:DotNetHelper_IO.Enum.FileOption
-  parent: DotNetHelper_IO.Enum
-  name: FileOption
-  nameWithType: FileOption
-  fullName: DotNetHelper_IO.Enum.FileOption
-- uid: DotNetHelper_IO.Enum
-  commentId: N:DotNetHelper_IO.Enum
-  name: DotNetHelper_IO.Enum
-  nameWithType: DotNetHelper_IO.Enum
-  fullName: DotNetHelper_IO.Enum
-- uid: DotNetHelper_IO.ZipFileObject.AddFileToZip*
-  commentId: Overload:DotNetHelper_IO.ZipFileObject.AddFileToZip
-  name: AddFileToZip
-  nameWithType: ZipFileObject.AddFileToZip
-  fullName: DotNetHelper_IO.ZipFileObject.AddFileToZip
-- uid: DotNetHelper_IO.ZipFileObject.AddFilesToZip*
-  commentId: Overload:DotNetHelper_IO.ZipFileObject.AddFilesToZip
-  name: AddFilesToZip
-  nameWithType: ZipFileObject.AddFilesToZip
-  fullName: DotNetHelper_IO.ZipFileObject.AddFilesToZip
-- uid: System.Collections.Generic.List{System.String}
-  commentId: T:System.Collections.Generic.List{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<String>
-  nameWithType: List<String>
-  fullName: System.Collections.Generic.List<System.String>
-  nameWithType.vb: List(Of String)
-  fullName.vb: System.Collections.Generic.List(Of System.String)
-  name.vb: List(Of String)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: DotNetHelper_IO.ZipFileObject.ExtractToDirectory*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.ExtractToDirectory
+  name: ExtractToDirectory
+  nameWithType: ZipFileObject.ExtractToDirectory
+  fullName: DotNetHelper_IO.ZipFileObject.ExtractToDirectory
+- uid: SharpCompress.Common.ExtractionOptions
+  commentId: T:SharpCompress.Common.ExtractionOptions
+  parent: SharpCompress.Common
   isExternal: true
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+  name: ExtractionOptions
+  nameWithType: ExtractionOptions
+  fullName: SharpCompress.Common.ExtractionOptions
+- uid: DotNetHelper_IO.ZipFileObject.Compress*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.Compress
+  name: Compress
+  nameWithType: ZipFileObject.Compress
+  fullName: DotNetHelper_IO.ZipFileObject.Compress
+- uid: System.IO.SearchOption
+  commentId: T:System.IO.SearchOption
+  parent: System.IO
   isExternal: true
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
+  name: SearchOption
+  nameWithType: SearchOption
+  fullName: System.IO.SearchOption
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
 - uid: DotNetHelper_IO.ZipFileObject.RemoveFilesToZip*
   commentId: Overload:DotNetHelper_IO.ZipFileObject.RemoveFilesToZip
   name: RemoveFilesToZip
@@ -3249,6 +3716,158 @@ references:
   - name: T
     nameWithType: T
     fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.ZipFileObject.AddFromDirectory*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.AddFromDirectory
+  name: AddFromDirectory
+  nameWithType: ZipFileObject.AddFromDirectory
+  fullName: DotNetHelper_IO.ZipFileObject.AddFromDirectory
+- uid: DotNetHelper_IO.ZipFileObject.Add*
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.Add
+  name: Add
+  nameWithType: ZipFileObject.Add
+  fullName: DotNetHelper_IO.ZipFileObject.Add
+- uid: DotNetHelper_IO.Enum.FileOption
+  commentId: T:DotNetHelper_IO.Enum.FileOption
+  parent: DotNetHelper_IO.Enum
+  name: FileOption
+  nameWithType: FileOption
+  fullName: DotNetHelper_IO.Enum.FileOption
+- uid: DotNetHelper_IO.Enum
+  commentId: N:DotNetHelper_IO.Enum
+  name: DotNetHelper_IO.Enum
+  nameWithType: DotNetHelper_IO.Enum
+  fullName: DotNetHelper_IO.Enum
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: System.Collections.Generic.IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject}
+  commentId: T:System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<FileObject>
+  nameWithType: IEnumerable<FileObject>
+  fullName: System.Collections.Generic.IEnumerable<DotNetHelper_IO.FileObject>
+  nameWithType.vb: IEnumerable(Of FileObject)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DotNetHelper_IO.FileObject)
+  name.vb: IEnumerable(Of FileObject)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DotNetHelper_IO.FileObject
+    name: FileObject
+    nameWithType: FileObject
+    fullName: DotNetHelper_IO.FileObject
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DotNetHelper_IO.FileObject
+    name: FileObject
+    nameWithType: FileObject
+    fullName: DotNetHelper_IO.FileObject
   - name: )
     nameWithType: )
     fullName: )

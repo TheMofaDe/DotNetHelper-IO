@@ -1,0 +1,812 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  commentId: T:DotNetHelper_IO.Helpers.CompressExtensionHelper
+  id: CompressExtensionHelper
+  parent: DotNetHelper_IO.Helpers
+  children:
+  - DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  - DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  - DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  - DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  langs:
+  - csharp
+  - vb
+  name: CompressExtensionHelper
+  nameWithType: CompressExtensionHelper
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  type: Class
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: CompressExtensionHelper
+    path: ../src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Helpers
+  syntax:
+    content: public static class CompressExtensionHelper
+    content.vb: Public Module CompressExtensionHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  commentId: P:DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  id: ZipExtensionLookup
+  parent: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  langs:
+  - csharp
+  - vb
+  name: ZipExtensionLookup
+  nameWithType: CompressExtensionHelper.ZipExtensionLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: ZipExtensionLookup
+    path: ../src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+    startLine: 13
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Helpers
+  syntax:
+    content: public static Dictionary<ArchiveType, string> ZipExtensionLookup { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,System.String}
+    content.vb: Public Shared ReadOnly Property ZipExtensionLookup As Dictionary(Of ArchiveType, String)
+  overload: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  commentId: P:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  id: DefaultCompressionTypeLookup
+  parent: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  langs:
+  - csharp
+  - vb
+  name: DefaultCompressionTypeLookup
+  nameWithType: CompressExtensionHelper.DefaultCompressionTypeLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: DefaultCompressionTypeLookup
+    path: ../src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+    startLine: 23
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Helpers
+  syntax:
+    content: public static Dictionary<ArchiveType, CompressionType> DefaultCompressionTypeLookup { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Common.CompressionType}
+    content.vb: Public Shared ReadOnly Property DefaultCompressionTypeLookup As Dictionary(Of ArchiveType, CompressionType)
+  overload: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  commentId: P:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  id: DefaultReaderOptionsLookup
+  parent: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  langs:
+  - csharp
+  - vb
+  name: DefaultReaderOptionsLookup
+  nameWithType: CompressExtensionHelper.DefaultReaderOptionsLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: DefaultReaderOptionsLookup
+    path: ../src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+    startLine: 33
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Helpers
+  syntax:
+    content: public static Dictionary<ArchiveType, ReaderOptions> DefaultReaderOptionsLookup { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions}
+    content.vb: Public Shared ReadOnly Property DefaultReaderOptionsLookup As Dictionary(Of ArchiveType, ReaderOptions)
+  overload: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  commentId: P:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  id: DefaultWriterOptionsLookup
+  parent: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  langs:
+  - csharp
+  - vb
+  name: DefaultWriterOptionsLookup
+  nameWithType: CompressExtensionHelper.DefaultWriterOptionsLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: DefaultWriterOptionsLookup
+    path: ../src/DotNetHelper-IO/Helpers/CompressExtensionHelper.cs
+    startLine: 42
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO.Helpers
+  syntax:
+    content: public static Dictionary<ArchiveType, WriterOptions> DefaultWriterOptionsLookup { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Writers.WriterOptions}
+    content.vb: Public Shared ReadOnly Property DefaultWriterOptionsLookup As Dictionary(Of ArchiveType, WriterOptions)
+  overload: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: DotNetHelper_IO.Helpers
+  commentId: N:DotNetHelper_IO.Helpers
+  name: DotNetHelper_IO.Helpers
+  nameWithType: DotNetHelper_IO.Helpers
+  fullName: DotNetHelper_IO.Helpers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup*
+  commentId: Overload:DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  name: ZipExtensionLookup
+  nameWithType: CompressExtensionHelper.ZipExtensionLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+- uid: System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<ArchiveType, String>
+  nameWithType: Dictionary<ArchiveType, String>
+  fullName: System.Collections.Generic.Dictionary<SharpCompress.Common.ArchiveType, System.String>
+  nameWithType.vb: Dictionary(Of ArchiveType, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of SharpCompress.Common.ArchiveType, System.String)
+  name.vb: Dictionary(Of ArchiveType, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SharpCompress.Common.ArchiveType
+    name: ArchiveType
+    nameWithType: ArchiveType
+    fullName: SharpCompress.Common.ArchiveType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SharpCompress.Common.ArchiveType
+    name: ArchiveType
+    nameWithType: ArchiveType
+    fullName: SharpCompress.Common.ArchiveType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup*
+  commentId: Overload:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  name: DefaultCompressionTypeLookup
+  nameWithType: CompressExtensionHelper.DefaultCompressionTypeLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+- uid: System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Common.CompressionType}
+  commentId: T:System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Common.CompressionType}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<ArchiveType, CompressionType>
+  nameWithType: Dictionary<ArchiveType, CompressionType>
+  fullName: System.Collections.Generic.Dictionary<SharpCompress.Common.ArchiveType, SharpCompress.Common.CompressionType>
+  nameWithType.vb: Dictionary(Of ArchiveType, CompressionType)
+  fullName.vb: System.Collections.Generic.Dictionary(Of SharpCompress.Common.ArchiveType, SharpCompress.Common.CompressionType)
+  name.vb: Dictionary(Of ArchiveType, CompressionType)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SharpCompress.Common.ArchiveType
+    name: ArchiveType
+    nameWithType: ArchiveType
+    fullName: SharpCompress.Common.ArchiveType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SharpCompress.Common.CompressionType
+    name: CompressionType
+    nameWithType: CompressionType
+    fullName: SharpCompress.Common.CompressionType
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SharpCompress.Common.ArchiveType
+    name: ArchiveType
+    nameWithType: ArchiveType
+    fullName: SharpCompress.Common.ArchiveType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SharpCompress.Common.CompressionType
+    name: CompressionType
+    nameWithType: CompressionType
+    fullName: SharpCompress.Common.CompressionType
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup*
+  commentId: Overload:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  name: DefaultReaderOptionsLookup
+  nameWithType: CompressExtensionHelper.DefaultReaderOptionsLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+- uid: System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions}
+  commentId: T:System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<ArchiveType, ReaderOptions>
+  nameWithType: Dictionary<ArchiveType, ReaderOptions>
+  fullName: System.Collections.Generic.Dictionary<SharpCompress.Common.ArchiveType, SharpCompress.Readers.ReaderOptions>
+  nameWithType.vb: Dictionary(Of ArchiveType, ReaderOptions)
+  fullName.vb: System.Collections.Generic.Dictionary(Of SharpCompress.Common.ArchiveType, SharpCompress.Readers.ReaderOptions)
+  name.vb: Dictionary(Of ArchiveType, ReaderOptions)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SharpCompress.Common.ArchiveType
+    name: ArchiveType
+    nameWithType: ArchiveType
+    fullName: SharpCompress.Common.ArchiveType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SharpCompress.Readers.ReaderOptions
+    name: ReaderOptions
+    nameWithType: ReaderOptions
+    fullName: SharpCompress.Readers.ReaderOptions
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SharpCompress.Common.ArchiveType
+    name: ArchiveType
+    nameWithType: ArchiveType
+    fullName: SharpCompress.Common.ArchiveType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SharpCompress.Readers.ReaderOptions
+    name: ReaderOptions
+    nameWithType: ReaderOptions
+    fullName: SharpCompress.Readers.ReaderOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup*
+  commentId: Overload:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  name: DefaultWriterOptionsLookup
+  nameWithType: CompressExtensionHelper.DefaultWriterOptionsLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+- uid: System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Writers.WriterOptions}
+  commentId: T:System.Collections.Generic.Dictionary{SharpCompress.Common.ArchiveType,SharpCompress.Writers.WriterOptions}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<ArchiveType, WriterOptions>
+  nameWithType: Dictionary<ArchiveType, WriterOptions>
+  fullName: System.Collections.Generic.Dictionary<SharpCompress.Common.ArchiveType, SharpCompress.Writers.WriterOptions>
+  nameWithType.vb: Dictionary(Of ArchiveType, WriterOptions)
+  fullName.vb: System.Collections.Generic.Dictionary(Of SharpCompress.Common.ArchiveType, SharpCompress.Writers.WriterOptions)
+  name.vb: Dictionary(Of ArchiveType, WriterOptions)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SharpCompress.Common.ArchiveType
+    name: ArchiveType
+    nameWithType: ArchiveType
+    fullName: SharpCompress.Common.ArchiveType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SharpCompress.Writers.WriterOptions
+    name: WriterOptions
+    nameWithType: WriterOptions
+    fullName: SharpCompress.Writers.WriterOptions
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SharpCompress.Common.ArchiveType
+    name: ArchiveType
+    nameWithType: ArchiveType
+    fullName: SharpCompress.Common.ArchiveType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SharpCompress.Writers.WriterOptions
+    name: WriterOptions
+    nameWithType: WriterOptions
+    fullName: SharpCompress.Writers.WriterOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

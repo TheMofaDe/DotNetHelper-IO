@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using DotNetHelper.IO.Tests.Extensions;
 using DotNetHelper_IO;
 using DotNetHelper_IO.Enum;
-using DotNetHelper_IO_Tests;
 using NUnit.Framework;
 
-namespace DotNetHelper.IO.Tests
+namespace DotNetHelper.IO.Tests.IO.FileObject.Move
 {
 	[NonParallelizable]
-	public class CopyTestFixture : BaseTest
+	public class MoveTestFixture : BaseTest
 	{
 
 		public FolderObject TestFolder { get; }
 
-		public CopyTestFixture()
+		public MoveTestFixture()
 		{
 			TestFolder = new FolderObject(WorkingDirectory);
 		}
@@ -53,10 +48,25 @@ namespace DotNetHelper.IO.Tests
 		}
 
 
+		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		[Test]
+		public void Test_Move_EmptyFile()
+		{
+			var testFile = RandomTestFileNoExtension;
+
+			var newFile = $"{TestFolder.FullName}MOVE";
+			testFile.CreateOrTruncate();
+			testFile.MoveTo(newFile, FileOption.Overwrite);
+			Assert.IsTrue(File.Exists(newFile));
+			Assert.IsFalse(File.Exists(testFile.FullName));
+
+
+		}
+
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public void Test_CopyTo_To_File_Append()
+		public void Test_MoveTo_To_File_Append()
 		{
 			var fileContent = $"ABC{Environment.NewLine}";
 			var testFile = RandomTestFileNoExtension;
@@ -67,7 +77,7 @@ namespace DotNetHelper.IO.Tests
 
 
 			Assert.IsFalse(File.Exists(outputFile.FullName));
-			testFile.CopyTo(outputFile.FullName, FileOption.Append);
+			testFile.MoveTo(outputFile.FullName, FileOption.Append);
 			Assert.IsTrue(File.Exists(outputFile.FullName));
 
 			Assert.IsTrue(fileContent.Equals(File.ReadAllText(outputFile.FullName)));
@@ -76,7 +86,7 @@ namespace DotNetHelper.IO.Tests
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public void Test_CopyTo_To_File_Overwrite_When_Destination_Doesnt_Exist()
+		public void Test_Move_To_File_Overwrite_When_Destination_Doesnt_Exist()
 		{
 			var fileContent = $"ABC{Environment.NewLine}";
 			var testFile = RandomTestFileNoExtension;
@@ -87,8 +97,9 @@ namespace DotNetHelper.IO.Tests
 
 
 			Assert.IsFalse(File.Exists(outputFile.FullName));
-			testFile.CopyTo(outputFile.FullName, FileOption.Overwrite);
+			testFile.MoveTo(outputFile.FullName, FileOption.Overwrite);
 			Assert.IsTrue(File.Exists(outputFile.FullName));
+			Assert.IsFalse(File.Exists(testFile.FullName));
 
 			Assert.IsTrue(fileContent.Equals(File.ReadAllText(outputFile.FullName)));
 		}
@@ -96,7 +107,7 @@ namespace DotNetHelper.IO.Tests
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public void Test_CopyTo_To_File_Overwrite_When_Destination_Exist()
+		public void Test_Move_To_File_Overwrite_When_Destination_Exist()
 		{
 			var fileContent = $"ABC{Environment.NewLine}";
 			var testFile = RandomTestFileNoExtension;
@@ -107,10 +118,11 @@ namespace DotNetHelper.IO.Tests
 			outputFile.Write("Something Else");
 
 			Assert.IsTrue(File.Exists(outputFile.FullName));
-			Assert.IsTrue(File.Exists(outputFile.FullName));
+			Assert.IsTrue(File.Exists(testFile.FullName));
 
-			testFile.CopyTo(outputFile.FullName, FileOption.Overwrite);
+			testFile.MoveTo(outputFile.FullName, FileOption.Overwrite);
 
+			Assert.IsFalse(File.Exists(testFile.FullName));
 			Assert.IsTrue(fileContent.Equals(File.ReadAllText(outputFile.FullName)));
 		}
 
@@ -118,7 +130,7 @@ namespace DotNetHelper.IO.Tests
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public void Test_Copy_To_File_DoNothing_When_FileExist()
+		public void Test_Move_To_File_DoNothing_When_FileExist()
 		{
 			var testFile = RandomTestFileNoExtension;
 			var outputFile = RandomTestFileNoExtension;
@@ -127,9 +139,12 @@ namespace DotNetHelper.IO.Tests
 
 			outputFile.CreateOrTruncate();
 
-			testFile.CopyTo(outputFile.FullName, FileOption.DoNothingIfExist);
+			testFile.MoveTo(outputFile.FullName, FileOption.DoNothingIfExist);
+
+			// Nothing should happen
+			Assert.IsTrue(File.Exists(testFile.FullName));
 			Assert.That(File.ReadAllText(outputFile.FullName).Equals(string.Empty));
-
+			Assert.That(File.ReadAllText(testFile.FullName).Equals("ABC"));
 
 		}
 
@@ -149,40 +164,40 @@ namespace DotNetHelper.IO.Tests
 
 
 
-		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		[Test]
-		public void Test_Copy_To_File_IncrementFileName()
-		{
-			var testFile = RandomTestFileNoExtension;
-			var outputFile = RandomTestFileNoExtension;
+		//[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		//[Test]
+		//public void Test_Copy_To_File_IncrementFileName()
+		//{
+		//	var testFile = RandomTestFileNoExtension;
+		//	var outputFile = RandomTestFileNoExtension;
 
-			testFile.Write("ABC");
+		//	testFile.Write("ABC");
 
-			outputFile.CreateOrTruncate();
+		//	outputFile.CreateOrTruncate();
 
-			var newFileName = testFile.CopyTo(outputFile.FullName, FileOption.IncrementFileNameIfExist);
+		//	var newFileName = testFile.MoveTo(outputFile.FullName, FileOption.IncrementFileNameIfExist);
 
-			Assert.That(!newFileName.Equals(testFile.FullName + "1"));
-			Assert.That(File.ReadAllText(newFileName).Equals("ABC"));
-		}
+		//	Assert.That(!newFileName.Equals(testFile.FullName + "1"));
+		//	Assert.That(File.ReadAllText(newFileName).Equals("ABC"));
+		//}
 
 
-		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		[Test]
-		public void Test_Copy_To_File_IncrementFileNameExtension()
-		{
-			var testFile = RandomTestFileWithExtension;
-			var outputFile = RandomTestFileWithExtension;
+		//[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		//[Test]
+		//public void Test_Copy_To_File_IncrementFileNameExtension()
+		//{
+		//	var testFile = RandomTestFileWithExtension;
+		//	var outputFile = RandomTestFileWithExtension;
 
-			testFile.Write("ABC");
+		//	testFile.Write("ABC");
 
-			outputFile.CreateOrTruncate();
+		//	outputFile.CreateOrTruncate();
 
-			var newFileName = testFile.CopyTo(outputFile.FullName, FileOption.IncrementFileExtensionIfExist);
+		//	var newFileName = testFile.MoveTo (outputFile.FullName, FileOption.IncrementFileExtensionIfExist);
 
-			Assert.That(!newFileName.Equals(testFile.FullName + "1"));
-			Assert.That(File.ReadAllText(newFileName).Equals("ABC"));
-		}
+		//	Assert.That(!newFileName.Equals(testFile.FullName + "1"));
+		//	Assert.That(File.ReadAllText(newFileName).Equals("ABC"));
+		//}
 
 
 

@@ -2,6 +2,8 @@
 
   <!-- SETUP DEFAULT VALUES  -->
   <PropertyGroup>
+    <GitInfoReportImportance Condition="'$(Configuration)' == 'Debug'">High</GitInfoReportImportance>
+    <GitSkipCache>true</GitSkipCache>
     <Version Condition="'$(Version)' == ''">0.0.0</Version>
     <PackageVersion Condition="'$(PackageVersion)' == ''">0.0.0</PackageVersion>
     <AssemblyVersion>0.0.0</AssemblyVersion>
@@ -10,9 +12,6 @@
   </PropertyGroup>
 
   <PropertyGroup  Condition="'$(GitInfoImported)' == 'true' And '$(ExcludeRestorePackageImports)' != 'true'"> 
-    <GitSkipCache>true</GitSkipCache>
-    <GitInfoReportImportance>High</GitInfoReportImportance>
-   
       <GitBaseVersionMajor Condition="'$(GitBaseVersionMajor)' == ''">0</GitBaseVersionMajor>
       <GitBaseVersionMinor Condition="'$(GitBaseVersionMinor)' == ''">0</GitBaseVersionMinor>
       <GitBaseVersionPatch Condition="'$(GitBaseVersionPatch)' == ''">0</GitBaseVersionPatch>

@@ -13,17 +13,23 @@ namespace DotNetHelper_IO.Enum
 	/// </summary>
 	public enum FolderOption
 	{
-
-		IncrementFolderNameIfExist = 1,
+		// IncrementFolderNameIfExist = 1,
 		/// <summary>
-		/// The overwrite
+		/// Will not delete any files or subfolders but when copying or moving if a file already exist with the same name it will get overwritten
 		/// </summary>
-		Overwrite = 2,
+		OverwriteFilesIfExist = 2,
 		/// <summary>
-		/// The do nothing if exist
+		/// Do absolutely nothing if the specified folder already exist. Nothing will get copy or moved even if subdirectories doesn't exist 
 		/// </summary>
 		DoNothingIfExist = 3,
-
+		/// <summary>
+		/// Do absolutely nothing if the folder already exist
+		/// </summary>
+		DoNothingIfFileExist = 4,
+		/// <summary>
+		/// Delete the specified path recursively and then perform the copy or move operation
+		/// </summary>
+		DeleteThenWrite = 5
 
 	}
 

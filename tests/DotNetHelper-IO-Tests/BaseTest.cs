@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using Bogus;
 using DotNetHelper_IO;
 
-namespace DotNetHelper_IO_Tests
+namespace DotNetHelper.IO.Tests
 {
 	public class BaseTest
 	{
@@ -32,12 +27,14 @@ namespace DotNetHelper_IO_Tests
         public string WorkingDirectoryRelative { get; } = Path.Combine(BaseFolderRelative, $"NET_452");
 #endif
 
+		public string RandomAlphaString => new Randomizer().String(10, 'A', 'Z');
+
 		public FileObject RandomTestFileNoExtension
 		{
 			get
 			{
 				Thread.Sleep(1);
-				return new FileObject(Path.Combine(WorkingDirectory, new Randomizer().String(10, 'A', 'Z')));
+				return new FileObject(Path.Combine(WorkingDirectory, RandomAlphaString));
 			}
 		}
 
@@ -46,7 +43,7 @@ namespace DotNetHelper_IO_Tests
 			get
 			{
 				Thread.Sleep(1);
-				return new FileObject(Path.Combine(WorkingDirectory, new Randomizer().String(10, 'A', 'Z') + ".txt"));
+				return new FileObject(Path.Combine(WorkingDirectory, RandomAlphaString + ".txt"));
 			}
 		}
 

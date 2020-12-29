@@ -14,10 +14,14 @@ Task("Clean")
         var binFolder = System.IO.Path.Combine(path,"bin");
         var objFolder = System.IO.Path.Combine(path,"obj");
 
-        if(context.DirectoryExists(objFolder))
+        if(context.DirectoryExists(objFolder)){
             context.DeleteDirectory(objFolder,settings);
-        if(context.DirectoryExists(binFolder))
+            CleanDirectory(objFolder);
+        }
+        if(context.DirectoryExists(binFolder)){
             context.DeleteDirectory(binFolder,settings);
+            CleanDirectory(binFolder);
+        }
     }
     
     if(context.DirectoryExists(parameters.Paths.Directories.Artifacts))

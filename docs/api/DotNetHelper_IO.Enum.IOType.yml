@@ -19,10 +19,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: IOType
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 76
+    startLine: 82
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -50,10 +50,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: File
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 78
+    startLine: 84
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -82,10 +82,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Folder
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 79
+    startLine: 85
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum
@@ -114,10 +114,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/FileOption.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Both
     path: ../src/DotNetHelper-IO/Enum/FileOption.cs
-    startLine: 80
+    startLine: 86
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO.Enum

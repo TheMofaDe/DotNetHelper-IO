@@ -5,14 +5,15 @@
 #addin "nuget:?package=Cake.Json&version=5.2.0"
 #addin "nuget:?package=Cake.Incubator&version=5.1.0"
 #addin "nuget:?package=Cake.DocFx&version=0.13.1"
-#addin "nuget:?package=Newtonsoft.Json&version=12.0.2"
+#addin "nuget:?package=Newtonsoft.Json&version=12.0.3"
+
 // Install tools.
-#tool "nuget:?package=docfx.console&version=2.56.2"
-#tool "nuget:?package=nuget.commandline&version=5.7.0"
+#tool "nuget:?package=docfx.console&version=2.56.6"
+#tool "nuget:?package=nuget.commandline&version=5.8.0"
 #tool "nuget:?package=ReportGenerator&version=4.6.1"
 #tool "nuget:?package=WiX.Toolset.UnofficialFork&version=3.11.1"
 //#tool "nuget:?package=NUnit.ConsoleRunner&version=3.11.1"
-//#tool "nuget:?package=NunitXml.TestLogger&version=2.1.62"
+//#tool "nuget:?package=NunitXml.TestLogger&version=2.1.80"
 
 // Load other scripts.
 #load "./build/cake/utils.cake"
@@ -57,6 +58,7 @@ Setup<BuildParameters>(context =>
 {
     var parameters = new BuildParameters(context); 
 
+      Information("Increasing verbosity to diagnostic.");
     if(!isSingleStageRun)
         context.SetVersionFromJsonFile(parameters); 
      try
@@ -97,7 +99,7 @@ Teardown<BuildParameters>((context, parameters) =>
         {
 
         }else{
-
+            
         }
         Information("Finished running tasks.");
     }
@@ -133,8 +135,8 @@ publishTask = publishTask.IsDependentOnWhen("Generate-Docs", isSingleStageRun);
 publishTask = publishTask.IsDependentOnWhen("Pack", isSingleStageRun);
 
 // ONLY NEEDED WHEN PUBLISHING A TOOL or EXE
-// publishTask = publishTask.IsDependentOnWhen("Publish-DotNet", isSingleStageRun);
-// publishTask = publishTask.IsDependentOnWhen("Heat", isSingleStageRun);
+//publishTask = publishTask.IsDependentOnWhen("Publish-DotNet", isSingleStageRun);
+//publishTask = publishTask.IsDependentOnWhen("Heat", isSingleStageRun);
 
 // ONLY NEEDED WHEN USING CI
 publishTask = publishTask.IsDependentOnWhen("Publish-AppVeyor", isSingleStageRun);

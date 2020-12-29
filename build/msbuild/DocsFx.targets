@@ -1,5 +1,5 @@
 <Project>
-<Target Name="DocFxCreator" DependsOnTargets="SetVersions">
+<Target Name="DocFxCreator" DependsOnTargets="SetCustomVersions">
 
 <PropertyGroup>
     <PrepareForBuildDependsOn>$(PrepareForBuildDependsOn);DocFxCreator</PrepareForBuildDependsOn>

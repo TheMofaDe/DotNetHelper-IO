@@ -6,14 +6,21 @@ items:
   parent: DotNetHelper_IO
   children:
   - DotNetHelper_IO.PathObject.#ctor(DotNetHelper_IO.Enum.PathType,System.String)
+  - DotNetHelper_IO.PathObject.CreationTime
+  - DotNetHelper_IO.PathObject.CreationTimeUtc
   - DotNetHelper_IO.PathObject.Exist
   - DotNetHelper_IO.PathObject.FullName
   - DotNetHelper_IO.PathObject.GetParentFolder
   - DotNetHelper_IO.PathObject.GetSize
   - DotNetHelper_IO.PathObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
+  - DotNetHelper_IO.PathObject.LastAccessTime
+  - DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  - DotNetHelper_IO.PathObject.LastWriteTime
+  - DotNetHelper_IO.PathObject.LastWriteTimeUtc
   - DotNetHelper_IO.PathObject.Name
   - DotNetHelper_IO.PathObject.PathType
   - DotNetHelper_IO.PathObject.Size
+  - DotNetHelper_IO.PathObject.SizeInBytes
   langs:
   - csharp
   - vb
@@ -25,7 +32,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: PathObject
     path: ../src/DotNetHelper-IO/PathObject.cs
     startLine: 23
@@ -73,7 +80,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Name
     path: ../src/DotNetHelper-IO/PathObject.cs
     startLine: 31
@@ -113,7 +120,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: FullName
     path: ../src/DotNetHelper-IO/PathObject.cs
     startLine: 37
@@ -151,7 +158,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: PathType
     path: ../src/DotNetHelper-IO/PathObject.cs
     startLine: 39
@@ -165,6 +172,43 @@ items:
       type: DotNetHelper_IO.Enum.PathType
     content.vb: Public ReadOnly Property PathType As PathType
   overload: DotNetHelper_IO.PathObject.PathType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.SizeInBytes
+  commentId: P:DotNetHelper_IO.PathObject.SizeInBytes
+  id: SizeInBytes
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: SizeInBytes
+  nameWithType: PathObject.SizeInBytes
+  fullName: DotNetHelper_IO.PathObject.SizeInBytes
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: SizeInBytes
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 44
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  summary: "\nreturn the size of the object in bytes\n"
+  example: []
+  syntax:
+    content: public long? SizeInBytes { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public ReadOnly Property SizeInBytes As Long?
+  overload: DotNetHelper_IO.PathObject.SizeInBytes*
   modifiers.csharp:
   - public
   - get
@@ -186,21 +230,21 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Size
     path: ../src/DotNetHelper-IO/PathObject.cs
-    startLine: 44
+    startLine: 49
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
-  summary: "\nreturn the size of the object in bytes\n"
+  summary: "\nreturn the size of the object in the most reasonable size unit\n"
   example: []
   syntax:
-    content: public long? Size { get; }
+    content: public string Size { get; }
     parameters: []
     return:
-      type: System.Nullable{System.Int64}
-    content.vb: Public ReadOnly Property Size As Long?
+      type: System.String
+    content.vb: Public ReadOnly Property Size As String
   overload: DotNetHelper_IO.PathObject.Size*
   modifiers.csharp:
   - public
@@ -223,10 +267,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Exist
     path: ../src/DotNetHelper-IO/PathObject.cs
-    startLine: 50
+    startLine: 55
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -246,6 +290,228 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: DotNetHelper_IO.PathObject.LastWriteTime
+  commentId: P:DotNetHelper_IO.PathObject.LastWriteTime
+  id: LastWriteTime
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: LastWriteTime
+  nameWithType: PathObject.LastWriteTime
+  fullName: DotNetHelper_IO.PathObject.LastWriteTime
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: LastWriteTime
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 59
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract DateTime? LastWriteTime { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public MustOverride ReadOnly Property LastWriteTime As Date?
+  overload: DotNetHelper_IO.PathObject.LastWriteTime*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  id: LastWriteTimeUtc
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: LastWriteTimeUtc
+  nameWithType: PathObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: LastWriteTimeUtc
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 60
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract DateTime? LastWriteTimeUtc { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public MustOverride ReadOnly Property LastWriteTimeUtc As Date?
+  overload: DotNetHelper_IO.PathObject.LastWriteTimeUtc*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.CreationTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.CreationTimeUtc
+  id: CreationTimeUtc
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: CreationTimeUtc
+  nameWithType: PathObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.PathObject.CreationTimeUtc
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: CreationTimeUtc
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 61
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract DateTime? CreationTimeUtc { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public MustOverride ReadOnly Property CreationTimeUtc As Date?
+  overload: DotNetHelper_IO.PathObject.CreationTimeUtc*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.CreationTime
+  commentId: P:DotNetHelper_IO.PathObject.CreationTime
+  id: CreationTime
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: CreationTime
+  nameWithType: PathObject.CreationTime
+  fullName: DotNetHelper_IO.PathObject.CreationTime
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: CreationTime
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 62
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract DateTime? CreationTime { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public MustOverride ReadOnly Property CreationTime As Date?
+  overload: DotNetHelper_IO.PathObject.CreationTime*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  id: LastAccessTimeUtc
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: LastAccessTimeUtc
+  nameWithType: PathObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: LastAccessTimeUtc
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 63
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract DateTime? LastAccessTimeUtc { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public MustOverride ReadOnly Property LastAccessTimeUtc As Date?
+  overload: DotNetHelper_IO.PathObject.LastAccessTimeUtc*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: DotNetHelper_IO.PathObject.LastAccessTime
+  commentId: P:DotNetHelper_IO.PathObject.LastAccessTime
+  id: LastAccessTime
+  parent: DotNetHelper_IO.PathObject
+  langs:
+  - csharp
+  - vb
+  name: LastAccessTime
+  nameWithType: PathObject.LastAccessTime
+  fullName: DotNetHelper_IO.PathObject.LastAccessTime
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/PathObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: LastAccessTime
+    path: ../src/DotNetHelper-IO/PathObject.cs
+    startLine: 64
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public abstract DateTime? LastAccessTime { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public MustOverride ReadOnly Property LastAccessTime As Date?
+  overload: DotNetHelper_IO.PathObject.LastAccessTime*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
 - uid: DotNetHelper_IO.PathObject.#ctor(DotNetHelper_IO.Enum.PathType,System.String)
   commentId: M:DotNetHelper_IO.PathObject.#ctor(DotNetHelper_IO.Enum.PathType,System.String)
   id: '#ctor(DotNetHelper_IO.Enum.PathType,System.String)'
@@ -261,10 +527,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/PathObject.cs
-    startLine: 52
+    startLine: 66
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -296,10 +562,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetSize
     path: ../src/DotNetHelper-IO/PathObject.cs
-    startLine: 58
+    startLine: 72
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -330,10 +596,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetSize
     path: ../src/DotNetHelper-IO/PathObject.cs
-    startLine: 59
+    startLine: 73
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -367,10 +633,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/PathObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetParentFolder
     path: ../src/DotNetHelper-IO/PathObject.cs
-    startLine: 60
+    startLine: 74
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -717,11 +983,11 @@ references:
   name: DotNetHelper_IO.Enum
   nameWithType: DotNetHelper_IO.Enum
   fullName: DotNetHelper_IO.Enum
-- uid: DotNetHelper_IO.PathObject.Size*
-  commentId: Overload:DotNetHelper_IO.PathObject.Size
-  name: Size
-  nameWithType: PathObject.Size
-  fullName: DotNetHelper_IO.PathObject.Size
+- uid: DotNetHelper_IO.PathObject.SizeInBytes*
+  commentId: Overload:DotNetHelper_IO.PathObject.SizeInBytes
+  name: SizeInBytes
+  nameWithType: PathObject.SizeInBytes
+  fullName: DotNetHelper_IO.PathObject.SizeInBytes
 - uid: System.Nullable{System.Int64}
   commentId: T:System.Nullable{System.Int64}
   parent: System
@@ -805,6 +1071,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: DotNetHelper_IO.PathObject.Size*
+  commentId: Overload:DotNetHelper_IO.PathObject.Size
+  name: Size
+  nameWithType: PathObject.Size
+  fullName: DotNetHelper_IO.PathObject.Size
 - uid: DotNetHelper_IO.PathObject.Exist*
   commentId: Overload:DotNetHelper_IO.PathObject.Exist
   name: Exist
@@ -817,6 +1088,80 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: DotNetHelper_IO.PathObject.LastWriteTime*
+  commentId: Overload:DotNetHelper_IO.PathObject.LastWriteTime
+  name: LastWriteTime
+  nameWithType: PathObject.LastWriteTime
+  fullName: DotNetHelper_IO.PathObject.LastWriteTime
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.PathObject.LastWriteTimeUtc*
+  commentId: Overload:DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  name: LastWriteTimeUtc
+  nameWithType: PathObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+- uid: DotNetHelper_IO.PathObject.CreationTimeUtc*
+  commentId: Overload:DotNetHelper_IO.PathObject.CreationTimeUtc
+  name: CreationTimeUtc
+  nameWithType: PathObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.PathObject.CreationTimeUtc
+- uid: DotNetHelper_IO.PathObject.CreationTime*
+  commentId: Overload:DotNetHelper_IO.PathObject.CreationTime
+  name: CreationTime
+  nameWithType: PathObject.CreationTime
+  fullName: DotNetHelper_IO.PathObject.CreationTime
+- uid: DotNetHelper_IO.PathObject.LastAccessTimeUtc*
+  commentId: Overload:DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  name: LastAccessTimeUtc
+  nameWithType: PathObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.PathObject.LastAccessTime*
+  commentId: Overload:DotNetHelper_IO.PathObject.LastAccessTime
+  name: LastAccessTime
+  nameWithType: PathObject.LastAccessTime
+  fullName: DotNetHelper_IO.PathObject.LastAccessTime
 - uid: DotNetHelper_IO.PathObject.#ctor*
   commentId: Overload:DotNetHelper_IO.PathObject.#ctor
   name: PathObject

@@ -25,7 +25,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: SizeUnits
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 9
@@ -56,7 +56,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Byte
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11
@@ -88,7 +88,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Kb
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11
@@ -120,7 +120,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Mb
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11
@@ -152,7 +152,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Gb
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11
@@ -184,7 +184,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Tb
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11
@@ -216,7 +216,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Pb
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11
@@ -248,7 +248,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Eb
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11
@@ -280,7 +280,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Zb
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11
@@ -312,7 +312,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/Enum/SizeUnit.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Yb
     path: ../src/DotNetHelper-IO/Enum/SizeUnit.cs
     startLine: 11

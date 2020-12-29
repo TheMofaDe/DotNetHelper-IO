@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.AccessControl;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using DotNetHelper_IO.Enum;
 using DotNetHelper_IO.Extension;
 using DotNetHelper_IO.Helpers;
 using SharpCompress.Archives;
-using SharpCompress.Archives.GZip;
-using SharpCompress.Archives.Tar;
+
 using SharpCompress.Archives.Zip;
 using SharpCompress.Common;
 using SharpCompress.Writers;
@@ -24,55 +24,51 @@ namespace DotNetHelper_IO
 	/// <seealso cref="T:System.IDisposable" />
 	public class FolderObject : PathObject, IDisposable
 	{
-
-
 		public DirectoryInfo DirectoryInfo { get; private set; }
 
 
-
-
+		FileSystemWatcher _watcher;
 		/// <summary>
 		/// Gets the watcher.
 		/// </summary>
 		/// <value>The watcher.</value>
-		public FileSystemWatcher Watcher { get; private set; }
-		/// <summary>
-		/// Gets the files.
-		/// </summary>
-		/// <value>The files.</value>
-		public List<FileObject> Files { get; } = new List<FileObject>() { };
-		/// <summary>
-		/// Gets the subfolders.
-		/// </summary>
-		/// <value>The subfolders.</value>
-		public List<FolderObject> Subfolders { get; } = new List<FolderObject>() { };
+		public FileSystemWatcher Watcher
+		{
+			get
+			{
+				if (_watcher == null)
+				{
+					try
+					{
+						_watcher = new FileSystemWatcher(FullName, "*");
+					}
+					catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
+					{
+
+					}
+				}
+				return _watcher;
+			}
+			set
+			{
+				_watcher = value;
+			}
+		}
+
+
 		/// <summary>
 		/// Gets or sets the watch timeout.
 		/// </summary>
 		/// <value>The watch timeout.</value>
 		public int WatchTimeout { get; set; } = int.MaxValue;
+
 		/// <summary>
 		/// Gets or sets the notify filters.
 		/// </summary>
 		/// <value>The notify filters.</value>
-		public NotifyFilters NotifyFilters { get; set; } = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.CreationTime;
+		public NotifyFilters NotifyFilters { get; set; } = NotifyFilters.LastAccess | NotifyFilters.LastWrite |
+														   NotifyFilters.FileName | NotifyFilters.CreationTime;
 
-
-		/// <summary>
-		/// Gets a value indicating whether [load sub folders].
-		/// </summary>
-		/// <value><c>true</c> if [load sub folders]; otherwise, <c>false</c>.</value>
-		public bool LoadSubFolders { get; }
-		/// <summary>
-		/// Gets a value indicating whether [load files in folder].
-		/// </summary>
-		/// <value><c>true</c> if [load files in folder]; otherwise, <c>false</c>.</value>
-		public bool LoadFilesInFolder { get; }
-		/// <summary>
-		/// Gets a value indicating whether [load files in folder recursively].
-		/// </summary>
-		/// <value><c>true</c> if [load files in folder recursively]; otherwise, <c>false</c>.</value>
-		public bool LoadRecursive { get; }
 
 		public override string Name => DirectoryInfo?.Name;
 
@@ -90,31 +86,17 @@ namespace DotNetHelper_IO
 		/// Initializes a new instance of the <see cref="FolderObject"/> class.
 		/// </summary>
 		/// <param name="path">The path.</param>
-		/// <param name="loadSubfolders">if set to <c>true</c> [load subfolders].</param>
-		/// <param name="loadFilesInFolder">if set to <c>true</c> [load files in folder].</param>
-		/// <param name="loadRecursive"></param>
-		public FolderObject(string path, bool loadSubfolders = false, bool loadFilesInFolder = false, bool loadRecursive = false) : base(PathType.Folder, FormatPath(path))
+		public FolderObject(string path) : base(PathType.Folder, FormatPath(path))
 		{
-			LoadSubFolders = loadSubfolders;
-			LoadFilesInFolder = loadFilesInFolder;
-			LoadRecursive = loadRecursive;
 			DirectoryInfo = new DirectoryInfo(path);
-
-			RefreshObject(LoadSubFolders, LoadFilesInFolder, LoadRecursive);
+			RefreshObject();
 		}
 
 
 
-		public FolderObject(DirectoryInfo directoryInfo, bool loadSubfolders = false, bool loadFilesInFolder = false, bool loadRecursive = false) : base(PathType.Folder, FormatPath(directoryInfo.FullName))
+		public FolderObject(DirectoryInfo directoryInfo) : base(PathType.Folder, FormatPath(directoryInfo.FullName))
 		{
-			LoadSubFolders = loadSubfolders;
-			LoadFilesInFolder = loadFilesInFolder;
-			LoadRecursive = loadRecursive;
 			DirectoryInfo = directoryInfo;
-
-
-			RefreshObject(LoadSubFolders, LoadFilesInFolder, LoadRecursive);
-
 		}
 
 
@@ -135,6 +117,7 @@ namespace DotNetHelper_IO
 			{
 				path += separator;
 			}
+
 			return path;
 		}
 
@@ -142,14 +125,8 @@ namespace DotNetHelper_IO
 		/// <summary>
 		/// Refreshes the object.
 		/// </summary>
-		/// <param name="loadSubfolders">if set to <c>true</c> [load subfolders].</param>
-		/// <param name="loadFilesInFolder">if set to <c>true</c> [load files in folder].</param>
-		public void RefreshObject(bool loadSubfolders = false, bool loadFilesInFolder = false, bool loadRecursive = false)
+		public void RefreshObject()
 		{
-
-			Files.Clear();
-			Subfolders.Clear();
-
 			if (DirectoryInfo == null)
 			{
 				DirectoryInfo = new DirectoryInfo(FullName);
@@ -158,30 +135,28 @@ namespace DotNetHelper_IO
 			{
 				DirectoryInfo.Refresh();
 			}
+		}
 
-			if (loadFilesInFolder)
-			{
-				Files.AddRange(GetAllFiles("*", loadRecursive).Select(s => new FileObject(s)));
-			}
+		public IEnumerable<FolderObject> GetDirectories(string searchPattern, SearchOption searchOption)
+		{
+			if (Exist)
+				return DirectoryInfo.GetDirectories(searchPattern, searchOption).Select(info => new FolderObject(info));
+			return new List<FolderObject>();
+		}
 
-			if (loadSubfolders)
-			{
-				Subfolders.AddRange(GetAllFolders("*", loadRecursive));
-			}
-
-			try
-			{
-				Watcher = new FileSystemWatcher(FullName, "*");
-			}
-			catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
-			{
-
-			}
-
+		public IEnumerable<FileObject> GetFiles(string searchPattern, SearchOption searchOption)
+		{
+			if (Exist)
+				return DirectoryInfo.GetFiles(searchPattern, searchOption).Select(info => new FileObject(info));
+			return new List<FileObject>();
 		}
 
 
-		/// <summary>Creates all directories and subdirectories in the specified path unless they already exist.</summary>
+
+
+		/// <summary>Creates all directories and subdirectories in the path for this FolderObject unless they already exist.
+		/// if Folder.Option
+		/// </summary>
 		/// <returns>An object that represents the directory at the specified path. This object is returned regardless of whether a directory at the specified path already exists.</returns>
 		/// <exception cref="T:System.IO.IOException">The directory specified is a file.-or-The network name is not known.</exception>
 		/// <exception cref="T:System.UnauthorizedAccessException">The caller does not have the required permission. </exception>
@@ -190,236 +165,185 @@ namespace DotNetHelper_IO
 		/// <exception cref="T:System.IO.PathTooLongException">The specified path, file name, or both exceed the system-defined maximum length. For example, on Windows-based platforms, paths must be less than 248 characters and file names must be less than 260 characters. </exception>
 		/// <exception cref="T:System.IO.DirectoryNotFoundException">The specified path is invalid (for example, it is on an unmapped drive). </exception>
 		/// <exception cref="T:System.NotSupportedException"></exception>
-		public bool CreateOrTruncate(bool truncateIfExist = true)
+		public void Create(FolderOption folderOption)
 		{
-
-			void localTruncate()
+			var exist = Exist;
+			switch (folderOption)
 			{
-				if (truncateIfExist)
-				{
-					foreach (var file in DirectoryInfo.GetFiles())
+				case FolderOption.OverwriteFilesIfExist:
+					DirectoryInfo = Directory.CreateDirectory(FullName);
+					break;
+				case FolderOption.DoNothingIfExist:
+					DirectoryInfo = Directory.CreateDirectory(FullName);
+					break;
+				case FolderOption.DoNothingIfFileExist:
+					DirectoryInfo = Directory.CreateDirectory(FullName);
+					break;
+				case FolderOption.DeleteThenWrite:
+					if (exist)
 					{
-						file.Delete();
+						DirectoryInfo.Delete(true);
+						DirectoryInfo = Directory.CreateDirectory(FullName);
 					}
-					foreach (var subfolder in DirectoryInfo.GetDirectories())
+					else
 					{
-						subfolder.Delete(true);
+						DirectoryInfo = Directory.CreateDirectory(FullName);
 					}
-				}
+					break;
+				default:
+					throw new ArgumentOutOfRangeException(nameof(folderOption), folderOption, null);
 			}
 
-			if (Exist != true)
-			{
-				DirectoryInfo = Directory.CreateDirectory(FullName);
-				localTruncate();
-			}
-			else
-			{
-				localTruncate();
-			}
-			return true;
 		}
 
-
-		/// <summary>
-		/// Creates subfolder 
-		/// </summary>
-		/// <param name="subfolderPath"></param>
-		/// <param name="truncateIfExist"></param>
-		/// <returns></returns>
-		public FolderObject CreateOrTruncateSubFolder(string subfolderPath, bool truncateIfExist = true)
+		public void Delete(bool recursive, bool dispose = true)
 		{
-			FolderObject localTruncate(DirectoryInfo directoryInfo)
-			{
-				if (truncateIfExist)
-				{
-					foreach (var file in directoryInfo.GetFiles())
-					{
-						file.Delete();
-					}
-					foreach (var subfolder in directoryInfo.GetDirectories())
-					{
-						subfolder.Delete(true);
-					}
-				}
-				return new FolderObject(directoryInfo);
-			}
-
-			var subFolder = subfolderPath;
-			var exist = false;
-			if (Path.IsPathRooted(subfolderPath))
-			{
-				exist = Directory.Exists(subfolderPath);
-			}
-			else
-			{
-				subFolder = Path.Combine(FullName, subfolderPath);
-				exist = Directory.Exists(subFolder);
-			}
-
-			if (!exist)
-			{
-				return localTruncate(Directory.CreateDirectory(subFolder));
-			}
-			else
-			{
-				return localTruncate(new DirectoryInfo(subFolder));
-			}
-
+			if (Exist)
+				DirectoryInfo.Delete(recursive);
+			if (dispose)
+				Dispose();
 		}
 
 
 
-
-		private List<string> GetDirectoriesRecursive(string sDir)
+		private void CopyLogic(DirectoryInfo source, DirectoryInfo target, FolderOption folderOption)
 		{
-			var list = new List<string>() { };
+			//if (string.Equals(source.FullName, target.FullName, StringComparison.CurrentCultureIgnoreCase))
+			//{
+			//	return;
+			//}
 
-			foreach (var d in Directory.GetDirectories(sDir))
+			// Check if the target directory exists, if not, create it.
+			if (Directory.Exists(target.FullName) == false)
 			{
-				list.Add(d);
-				list.AddRange(GetDirectoriesRecursive(d));
-
+				Directory.CreateDirectory(target.FullName);
 			}
 
-			return list;
-		}
-
-
-		/// <summary>
-		/// return all files in current folder object path and with filtering if pattern parameter is set
-		/// </summary>
-		/// <param name="pattern"></param>
-		/// <param name="recursive"></param>
-		/// <returns></returns>
-		/// https://stackoverflow.com/questions/929276/how-to-recursively-list-all-the-files-in-a-directory-in-c
-		public IEnumerable<string> GetAllFiles(string pattern = "*", bool recursive = false)
-		{
-
-			var queue = new Queue<string>() { };
-			var path = FullName;
-			queue.Enqueue(path);
-			if (recursive)
+			// Copy each file into it's new directory.
+			foreach (var fi in source.GetFiles())
 			{
-
-				var allSubFolders = GetDirectoriesRecursive(path);
-				allSubFolders.ForEach(delegate (string s)
+				//Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);
+				var destinationFile = new FileObject(Path.Combine(target.ToString(), fi.Name));
+				var sourceFile = new FileObject(fi);
+				switch (folderOption)
 				{
-					if (s?.Length <= 248)
-						queue.Enqueue(s);
-				});
-			}
-			while (queue.Count > 0)
-			{
-				path = queue.Dequeue();
-
-				var files = new List<string>() { };
-				try
-				{
-					files = Directory.GetFiles(path).ToList();
-				}
-				catch (Exception ex)
-				{
-					Console.Error.WriteLine(ex);
-				}
-				foreach (var t in files.Where(t => string.IsNullOrEmpty(pattern) || WildCardHelper.IsMatch(t, pattern, '*', '*')))
-				{
-					yield return t;
-				}
-
-			}
-		}
-
-
-		/// <summary>
-		/// return all files in current folder object path and with filtering if pattern parameter is set
-		/// </summary>
-		/// <param name="pattern"></param>
-		/// <param name="recursive"></param>
-		/// <returns></returns>
-		public IEnumerable<FolderObject> GetAllFolders(string pattern = "*", bool recursive = false)
-		{
-
-			if (recursive)
-				return Directory.GetDirectories(FullName, pattern ?? "*", SearchOption.AllDirectories).Select(s => new FolderObject(s));
-			return Directory.GetDirectories(FullName, pattern ?? "*", SearchOption.TopDirectoryOnly).Select(s => new FolderObject(s));
-		}
-
-
-		/// <summary>
-		/// Directories the copy.
-		/// </summary>
-		/// <param name="sourceDirName">Name of the source dir.</param>
-		/// <param name="destDirName">Name of the dest dir.</param>
-		/// <param name="copySubDirs">if set to <c>true</c> [copy sub dirs].</param>
-		/// <exception cref="DirectoryNotFoundException">Source directory does not exist or could not be found: " + sourceDirName</exception>
-		private void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
-		{
-
-			// Get the subdirectories for the specified directory.
-			var dir = new DirectoryInfo(sourceDirName);
-
-			if (!dir.Exists)
-			{
-				throw new DirectoryNotFoundException("Source directory does not exist or could not be found: " + sourceDirName);
-			}
-
-			var dirs = dir.GetDirectories();
-			// If the destination directory doesn't exist, create it.
-			if (!Directory.Exists(destDirName))
-			{
-				Directory.CreateDirectory(destDirName);
-			}
-
-			// Get the files in the directory and copy them to the new location.
-			var files = dir.GetFiles();
-			foreach (var file in files)
-			{
-				var temppath = Path.Combine(destDirName, file.Name);
-				file.CopyTo(temppath, false);
-			}
-
-			// If copying subdirectories, copy them and their contents to new location.
-			if (copySubDirs)
-			{
-				foreach (var subdir in dirs)
-				{
-					var temppath = Path.Combine(destDirName, subdir.Name);
-					DirectoryCopy(subdir.FullName, temppath, true);
+					case FolderOption.OverwriteFilesIfExist:
+						sourceFile.CopyTo(destinationFile.FullName, FileOption.Overwrite);
+						break;
+					case FolderOption.DoNothingIfExist: // WE SHOULD NEVER GET THIS FAR TO BEGIN WITH
+						sourceFile.CopyTo(destinationFile.FullName, FileOption.Overwrite);
+						break;
+					case FolderOption.DeleteThenWrite:
+						if (destinationFile.Exist)
+							destinationFile.DeleteFile(false);
+						sourceFile.CopyTo(destinationFile.FullName, FileOption.Overwrite);
+						break;
+					case FolderOption.DoNothingIfFileExist:
+						sourceFile.CopyTo(destinationFile.FullName, FileOption.DoNothingIfExist);
+						break;
+					default:
+						throw new ArgumentOutOfRangeException(nameof(folderOption), folderOption, null);
 				}
 			}
-		}
 
+			// Copy each subDirectory using recursion.
+			foreach (var diSourceSubDir in source.GetDirectories())
+			{
+				DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(diSourceSubDir.Name);
+				CopyLogic(diSourceSubDir, nextTargetSubDir, folderOption);
+			}
+		}
 
 
 		/// <summary>
 		/// Copies to.
 		/// </summary>
 		/// <param name="location">The location.</param>
-		/// <param name="overwriteIfExist">if set to <c>true</c> [overwrite if exist].</param>
+		/// <param name="folderOption"></param>
 		/// <exception cref="Exception">
 		/// </exception>
-		public void CopyTo(string location, FolderOption folderOption = FolderOption.DoNothingIfExist)
+		public void CopyContentsTo(string location, FolderOption folderOption)
 		{
+			var target = new DirectoryInfo(location);
+			if (folderOption == FolderOption.DoNothingIfExist && target.Exists)
+				return;
+			CopyLogic(DirectoryInfo, target, folderOption);
+		}
+
+
+		/// <summary>
+		/// Copies to.
+		/// </summary>
+		/// <param name="location">The location.</param>
+		/// <param name="folderOption"></param>
+		/// <exception cref="Exception">
+		/// </exception>
+		public void CopyTo(string location, FolderOption folderOption)
+		{
+			var destination = new DirectoryInfo(Path.Combine(location, Name));
+			if (folderOption == FolderOption.DoNothingIfExist && destination.Exists)
+				return;
+			CopyLogic(DirectoryInfo, destination, folderOption);
+		}
+
+
+
+
+
+		private void MoveLogic(string location, FolderOption folderOption, bool includeFolder)
+		{
+
+			if (!Exist)
+				return;
 
 			switch (folderOption)
 			{
-				case FolderOption.Overwrite:
-					DirectoryCopy(FullName, location, true);
+				case FolderOption.OverwriteFilesIfExist:
+					CopyLogic(DirectoryInfo, new DirectoryInfo(location), folderOption);
+					Delete(true, false);
 					break;
-				case FolderOption.DoNothingIfExist:
-					if (Exist != true)
-						DirectoryCopy(FullName, location, true);
-					break;
-				case FolderOption.IncrementFolderNameIfExist:
-					if (Exist != true)
+				case FolderOption.DoNothingIfExist: // WE SHOULD NEVER GET THIS FAR TO BEGIN WITH
+					if (Directory.Exists(location) != true)
 					{
-						DirectoryCopy(FullName, location, true);
+						Directory.CreateDirectory(location);
+						Directory.Delete(location);
+						Directory.Move(FullName, location);
 					}
+					break;
+				case FolderOption.DeleteThenWrite:
+					new FolderObject(location).Delete(true, true);
+					Directory.CreateDirectory(location);
+					Directory.Delete(location);
+					Directory.Move(FullName, location);
+					break;
+				case FolderOption.DoNothingIfFileExist:
+					if (includeFolder)
+					{
+						CopyLogic(DirectoryInfo, new DirectoryInfo(location), folderOption);
+					}
+					else
+					{
+						CopyContentsTo(location, folderOption);
+					}
+					Delete(true, false);
 					break;
 				default:
 					throw new ArgumentOutOfRangeException(nameof(folderOption), folderOption, null);
 			}
+		}
+
+
+
+		/// <summary>
+		/// Moves to.
+		/// </summary>
+		/// <param name="location">The location.</param>
+		/// <param name="folderOption"></param>
+		/// <exception cref="Exception">
+		/// </exception>
+		public void MoveTo(string location, FolderOption folderOption)
+		{
+			MoveLogic(Path.Combine(location, Name), folderOption, true);
 		}
 
 
@@ -430,45 +354,11 @@ namespace DotNetHelper_IO
 		/// <param name="folderOption"></param>
 		/// <exception cref="Exception">
 		/// </exception>
-		public bool MoveTo(string location, FolderOption folderOption)
+		public void MoveContentsTo(string location, FolderOption folderOption)
 		{
-			if (!Exist)
-				return false;
-			switch (folderOption)
-			{
-				case FolderOption.Overwrite:
-					new FolderObject(location).Delete(true);
-					Directory.Move(FullName, location);
-					break;
-				case FolderOption.DoNothingIfExist:
-					if (Exist != true)
-						Directory.Move(FullName, location);
-					break;
-				case FolderOption.IncrementFolderNameIfExist:
-					if (Exist != true)
-					{
-						Directory.Move(FullName, location);
-					}
-					break;
-				default:
-					throw new ArgumentOutOfRangeException(nameof(folderOption), folderOption, null);
-			}
-
-			return true;
+			MoveLogic(location, folderOption, false);
 		}
 
-		///// <summary>
-		///// Zips the folder to file system.
-		///// </summary>
-		///// <param name="archiveType">Type of the archive.</param>
-		///// <param name="searchPattern"></param>
-		///// <param name="searchOption"></param>
-		//public ZipFileObject ZipFolderToFileSystem(ArchiveType archiveType,string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
-		//{
-		//	var zipFileObject = new ZipFileObject(this, archiveType);
-		//	zipFileObject.AddFromDirectory(FullName,searchPattern,searchOption);
-		//	return zipFileObject;
-		//}
 
 		/// <summary>
 		/// Zips the folder to file system in this parent folder.
@@ -485,10 +375,14 @@ namespace DotNetHelper_IO
 		/// <summary>
 		/// Zips the folder to file system.
 		/// </summary>
+		/// <param name="fullPathToZipFile"></param>
 		/// <param name="archiveType">Type of the archive.</param>
+		/// <param name="writerOptions"></param>
 		/// <param name="searchPattern"></param>
 		/// <param name="searchOption"></param>
-		public ZipFileObject ZipFolderToFileSystem(string fullPathToZipFile, ArchiveType archiveType, WriterOptions writerOptions = null, string searchPattern = "*", SearchOption searchOption = SearchOption.AllDirectories)
+		public ZipFileObject ZipFolderToFileSystem(string fullPathToZipFile, ArchiveType archiveType,
+			WriterOptions writerOptions = null, string searchPattern = "*",
+			SearchOption searchOption = SearchOption.AllDirectories)
 		{
 			var zipFileObject = new ZipFileObject(fullPathToZipFile, archiveType, null, writerOptions);
 			zipFileObject.AddFromDirectory(FullName, searchPattern, searchOption);
@@ -508,70 +402,110 @@ namespace DotNetHelper_IO
 			{
 				archive.AddAllFromDirectory(FullName);
 				// TODO :: Make This Work For .Net Standard
-				archive.SaveTo(memoryStream, new WriterOptions(CompressionType.Deflate)
-				{
-					LeaveStreamOpen = true
-				});
+				archive.SaveTo(memoryStream, new WriterOptions(CompressionType.Deflate) { LeaveStreamOpen = true });
 			}
+
 			//reset memoryStream to be usable now
 			memoryStream.Position = 0;
 			return memoryStream;
 		}
 
 
-		/// <summary>
-		/// Sets the file attribute.
-		/// </summary>
-		/// <param name="option">The option.</param>
-		/// <param name="list">The list.</param>
-		public void SetFolderAttribute(AddOrRemoveEnum option, List<FileAttributes> list)
+		///// <summary>
+		///// Sets the file attribute.
+		///// </summary>
+		///// <param name="option">The option.</param>
+		///// <param name="list">The list.</param>
+		//public void SetFolderAttribute(AddOrRemoveEnum option, List<FileAttributes> list)
+		//{
+
+		//	if (Exist != true)
+		//		return;
+		//	try
+		//	{
+		//		if (option == AddOrRemoveEnum.Add)
+		//		{
+		//			foreach (var attr in list)
+		//			{
+		//				var di = new DirectoryInfo(FullName);
+		//				di.Attributes &= ~attr;
+
+		//			}
+
+		//		}
+		//		else if (option == AddOrRemoveEnum.Remove)
+		//		{
+		//			foreach (var attr in list)
+		//			{
+		//				var di = new DirectoryInfo(FullName);
+		//				di.Attributes &= attr;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception)
+		//	{
+
+		//		// ignored because this require the user to have full control permission set and we don't problems over that 
+		//		// if developer is doing something that require full conrol permission let the application throw the error
+		//	}
+		//}
+
+
+
+
+
+		public FileObject AddFile(string relativeFileName, string fileContent, FileOption fileOption,
+			Encoding encoding = null, int bufferSize = 4096)
 		{
-
-			if (Exist != true)
-				return;
-			try
-			{
-				if (option == AddOrRemoveEnum.Add)
-				{
-					foreach (var attr in list)
-					{
-						var di = new DirectoryInfo(FullName);
-						di.Attributes &= ~attr;
-
-					}
-
-				}
-				else if (option == AddOrRemoveEnum.Remove)
-				{
-					foreach (var attr in list)
-					{
-						var di = new DirectoryInfo(FullName);
-						di.Attributes &= attr;
-					}
-				}
-			}
-			catch (Exception)
-			{
-
-				// ignored because this require the user to have full control permission set and we don't problems over that 
-				// if developer is doing something that require full conrol permission let the application throw the error
-			}
+			var file = new FileObject(FullName + relativeFileName);
+			file.Write(fileContent, fileOption, encoding, bufferSize);
+			return file;
 		}
 
-		/// <summary>
-		/// Deletes the folder.
-		/// </summary>
-		public void Delete(bool dispose)
+		public FileObject AddFile(string relativeFileName, byte[] fileContent, FileOption fileOption, int offset = 0,
+			int? count = null)
 		{
-			if (Exist)
-			{
-				DirectoryInfo?.Delete(true);
-			}
+			var file = new FileObject(FullName + relativeFileName);
+			file.Write(fileContent, fileOption, offset, count);
+			return file;
+		}
 
-			if (dispose)
-			{
-				Dispose();
-			}
+		public FileObject AddFile(string relativeFileName, Stream fileContent, FileOption fileOption, int bufferSize)
+		{
+			var file = new FileObject(FullName + relativeFileName);
+			file.Write(fileContent, fileOption, bufferSize);
+			return file;
+		}
+
+		public FolderObject AddFolder(string relativeFolderPath)
+		{
+			var folder = new FolderObject(FullName + relativeFolderPath);
+			folder.Create(FolderOption.DoNothingIfExist);
+			return folder;
+		}
+
+
+		public async Task<FileObject> AddFileAsync(string relativeFileName, string fileContent, FileOption fileOption,
+			Encoding encoding = null, int bufferSize = 4096)
+		{
+			var file = new FileObject(FullName + relativeFileName);
+			await file.WriteAsync(fileContent, fileOption, encoding, bufferSize);
+			return file;
+		}
+
+		public async Task<FileObject> AddFileAsync(string relativeFileName, byte[] fileContent, FileOption fileOption, int offset = 0,
+			int? count = null)
+		{
+			var file = new FileObject(FullName + relativeFileName);
+			await file.WriteAsync(fileContent, fileOption, offset, count);
+			return file;
+		}
+
+		public async Task<FileObject> AddFileAsync(string relativeFileName, Stream fileContent, FileOption fileOption, int bufferSize)
+		{
+			var file = new FileObject(FullName + relativeFileName);
+			await file.WriteAsync(fileContent, fileOption, bufferSize);
+			return file;
 		}
 
 
@@ -611,6 +545,7 @@ namespace DotNetHelper_IO
 				}
 			}
 		}
+
 		/// <summary>
 		/// Stops the watching.
 		/// </summary>
@@ -630,6 +565,7 @@ namespace DotNetHelper_IO
 
 
 		private bool _isDisposed;
+
 		// Dispose() calls Dispose(true)
 		public void Dispose()
 		{
@@ -671,12 +607,12 @@ namespace DotNetHelper_IO
 
 		public override string GetSize()
 		{
-			return ByteSizeHelper.GetSize(GetAllFiles("*", true).Select(f => new FileObject(f).SizeInBytes.GetValueOrDefault(0)).Sum());
+			return ByteSizeHelper.GetSize(DirectoryInfo.GetFiles("*", SearchOption.AllDirectories).Select(f => new FileObject(f).SizeInBytes.GetValueOrDefault(0)).Sum());
 		}
 
 		public override long? GetSize(SizeUnits sizeUnits)
 		{
-			return GetAllFiles("*", true).Select(f => new FileObject(f).GetSize(sizeUnits).GetValueOrDefault(0)).Sum();
+			return DirectoryInfo.GetFiles("*", SearchOption.AllDirectories).Select(f => new FileObject(f).GetSize(sizeUnits).GetValueOrDefault(0)).Sum();
 		}
 
 		public override FolderObject GetParentFolder()
@@ -692,37 +628,63 @@ namespace DotNetHelper_IO
 			return exist;
 
 		}
+
+
+
+
+		//internal static string ReverseString(string str)
+		//{
+		//	var charArray = str.ToCharArray();
+		//	Array.Reverse(charArray);
+		//	return new string(charArray);
+
+		//}
+
+		/////// <summary>
+		/////// Increment file name by 1 only if the current file already exist
+		/////// </summary>
+		//public string GetIncrementFolderName(string seperator = "")
+		//{
+
+		//	var fileNameReverse = ReverseString(FullName);
+		//	var fileNumber = fileNameReverse.TakeWhile(char.IsDigit).ToList();
+		//	if (fileNumber.IsNullOrEmpty())
+		//	{
+		//		var fileVersionNumber = 0;
+		//		var counter = 1;
+		//		var temp = $"{FullName}";
+		//		while (Directory.Exists(temp))
+		//		{
+		//			var number = fileVersionNumber + counter;
+		//			temp = $"{FullName}{seperator}{number}";
+		//			counter++;
+		//		}
+
+		//		return temp;
+		//	}
+		//	else
+		//	{
+		//		var sb = new StringBuilder();
+		//		foreach (var c in fileNumber)
+		//		{
+		//			sb.Append(c);
+		//		}
+
+		//		var fileVersionNumber = ReverseString(sb.ToString()).ToInt() + 1;
+		//		var counter = fileVersionNumber;
+		//		var len = (counter - 1).ToString().Length;
+		//		var temp = $"{DirectoryInfo.Parent.FullName}{seperator}{counter}";
+		//		while (Directory.Exists(temp))
+		//		{
+		//			var number = fileVersionNumber + counter;
+		//			temp =
+		//				$"{FullName}{seperator}{number}";
+		//			counter++;
+		//		}
+
+		//		return temp;
+		//	}
+		//}
+
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

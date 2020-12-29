@@ -38,6 +38,7 @@ references:
   fullName: DotNetHelper_IO.PathObject
 - uid: DotNetHelper_IO.ZipFileObject
   commentId: T:DotNetHelper_IO.ZipFileObject
+  parent: DotNetHelper_IO
   name: ZipFileObject
   nameWithType: ZipFileObject
   fullName: DotNetHelper_IO.ZipFileObject

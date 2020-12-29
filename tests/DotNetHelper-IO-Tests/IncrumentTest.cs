@@ -1,14 +1,10 @@
-using System;
 using System.IO;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using DotNetHelper_IO;
 using DotNetHelper_IO.Enum;
-using DotNetHelper_IO_Tests;
 using NUnit.Framework;
 
-namespace Tests
+namespace DotNetHelper.IO.Tests
 {
 	[TestFixture]
 	[NonParallelizable] //since were sharing a single file across multiple test cases we don't want Parallelizable

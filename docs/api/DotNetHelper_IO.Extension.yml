@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper_IO.Extension
+  commentId: N:DotNetHelper_IO.Extension
+  id: DotNetHelper_IO.Extension
+  children:
+  - DotNetHelper_IO.Extension.SharpCompressExtension
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper_IO.Extension
+  nameWithType: DotNetHelper_IO.Extension
+  fullName: DotNetHelper_IO.Extension
+  type: Namespace
+  assemblies:
+  - DotNetHelper-IO
+references:
+- uid: DotNetHelper_IO.Extension.SharpCompressExtension
+  commentId: T:DotNetHelper_IO.Extension.SharpCompressExtension
+  name: SharpCompressExtension
+  nameWithType: SharpCompressExtension
+  fullName: DotNetHelper_IO.Extension.SharpCompressExtension

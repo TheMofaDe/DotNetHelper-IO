@@ -1,21 +1,13 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Bogus;
 using DotNetHelper.IO.Tests.Extensions;
 using DotNetHelper_IO;
-using DotNetHelper_IO.Enum;
 using DotNetHelper_IO.Helpers;
-using DotNetHelper_IO_Tests;
 using NUnit.Framework;
 using SharpCompress.Common;
 
-
-namespace Tests
+namespace DotNetHelper.IO.Tests.IO
 {
 	[TestFixture]
 	//[SingleThreadedAttribute]
@@ -75,7 +67,7 @@ namespace Tests
 		public void Test_Zip_Folder_Contains_All_Files_And_Match_Content([Values(ArchiveType.Zip, ArchiveType.GZip)] ArchiveType archiveType)
 		{
 			// Arrange
-			var testFiles = new List<FileObject>()
+			var testFiles = new List<DotNetHelper_IO.FileObject>()
 			{
 				RandomTestFileNoExtension, RandomTestFileNoExtension, RandomTestFileNoExtension
 			};
@@ -110,7 +102,7 @@ namespace Tests
 		public void Test_GetFileCount_Return_3_When_Adding_3_Files([Values(ArchiveType.Zip, ArchiveType.GZip)] ArchiveType archiveType)
 		{
 			// Arrange
-			var testFiles = new List<FileObject>()
+			var testFiles = new List<DotNetHelper_IO.FileObject>()
 			{
 				RandomTestFileNoExtension, RandomTestFileNoExtension, RandomTestFileNoExtension
 			};
@@ -142,7 +134,7 @@ namespace Tests
 			if (archiveType == ArchiveType.Rar || archiveType == ArchiveType.SevenZip)
 				return;
 			// Arrange
-			var testFiles = new List<FileObject>()
+			var testFiles = new List<DotNetHelper_IO.FileObject>()
 			{
 				RandomTestFileNoExtension, RandomTestFileNoExtension, RandomTestFileNoExtension
 			};

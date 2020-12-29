@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DotNetHelper.IO.Tests.Extensions;
 using DotNetHelper_IO;
 using DotNetHelper_IO.Enum;
-using DotNetHelper_IO_Tests;
 using NUnit.Framework;
 
-namespace DotNetHelper.IO.Tests
+namespace DotNetHelper.IO.Tests.IO.FileObject.Write
 {
 	[NonParallelizable]
 	public class WriteAsyncTestFixture : BaseTest

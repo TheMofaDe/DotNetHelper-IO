@@ -145,11 +145,34 @@ namespace DotNetHelper_IO
 		/// </summary>
 		/// <value>The watch timeout.</value>
 		public int WatchTimeout { get; set; } = int.MaxValue;
+
+		FileSystemWatcher _watcher;
 		/// <summary>
 		/// Gets the watcher.
 		/// </summary>
 		/// <value>The watcher.</value>
-		public FileSystemWatcher Watcher { get; private set; }
+		public FileSystemWatcher Watcher
+		{
+			get
+			{
+				if (_watcher == null)
+				{
+					try
+					{
+						_watcher = new FileSystemWatcher(FullName, "*");
+					}
+					catch (Exception) // TODO :: File watcher is not supported on every os platform so I need to find the exact exception that gets thrown and ignore 
+					{
+
+					}
+				}
+				return _watcher;
+			}
+			set
+			{
+				_watcher = value;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the notify filters.
@@ -186,19 +209,16 @@ namespace DotNetHelper_IO
 
 		public void Init(bool throwOnBadFileName)
 		{
-
-
-
 			try
 			{
 				if (string.IsNullOrEmpty(FullName))
 					throw new NullReferenceException($"The file name can't be null or empty.");
 				RefreshObject();
 			}
-			catch (Exception error)
+			catch (Exception)
 			{
 				if (throwOnBadFileName)
-					throw error;
+					throw;
 			}
 		}
 
@@ -996,33 +1016,6 @@ namespace DotNetHelper_IO
 
 
 		#endregion
-
-		/// <summary>
-		/// Gets the file encoding. if can not determine the file Encoding this return ascii by default
-		/// </summary>
-		/// <returns>Encoding.</returns>
-		public Encoding GetFileEncoding()
-		{
-			// *** Detect byte order mark if any - otherwise assume default
-			var buffer = new byte[5];
-			using (var z = File.OpenRead(FullName))
-			{
-				z.Read(buffer, 0, 5);
-			}
-
-			if (buffer[0] == 0xef && buffer[1] == 0xbb && buffer[2] == 0xbf)
-				return Encoding.UTF8;
-			if (buffer[0] == 0xfe && buffer[1] == 0xff)
-				return Encoding.Unicode;
-			if (buffer[0] == 0 && buffer[1] == 0 && buffer[2] == 0xfe && buffer[3] == 0xff)
-				return Encoding.UTF32;
-			if (buffer[0] == 0x2b && buffer[1] == 0x2f && buffer[2] == 0x76)
-				return Encoding.UTF7;
-
-			return Encoding.ASCII;
-		}
-
-
 
 
 

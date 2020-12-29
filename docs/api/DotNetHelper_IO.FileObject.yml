@@ -13,6 +13,8 @@ items:
   - DotNetHelper_IO.FileObject.CopyToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
   - DotNetHelper_IO.FileObject.CopyToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.IProgress{System.Int64},System.Int32)
   - DotNetHelper_IO.FileObject.CreateOrTruncate(System.Boolean)
+  - DotNetHelper_IO.FileObject.CreationTime
+  - DotNetHelper_IO.FileObject.CreationTimeUtc
   - DotNetHelper_IO.FileObject.DefaultEncoding
   - DotNetHelper_IO.FileObject.DeleteFile(System.Boolean)
   - DotNetHelper_IO.FileObject.Dispose
@@ -23,7 +25,6 @@ items:
   - DotNetHelper_IO.FileObject.FileNameOnlyNoExtension
   - DotNetHelper_IO.FileObject.FilePathOnly
   - DotNetHelper_IO.FileObject.FolderNameOnly
-  - DotNetHelper_IO.FileObject.GetFileEncoding
   - DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   - DotNetHelper_IO.FileObject.GetIncrementExtension(System.String)
   - DotNetHelper_IO.FileObject.GetIncrementFileName(System.String)
@@ -31,6 +32,10 @@ items:
   - DotNetHelper_IO.FileObject.GetSize
   - DotNetHelper_IO.FileObject.GetSize(DotNetHelper_IO.Enum.SizeUnits)
   - DotNetHelper_IO.FileObject.Init(System.Boolean)
+  - DotNetHelper_IO.FileObject.LastAccessTime
+  - DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  - DotNetHelper_IO.FileObject.LastWriteTime
+  - DotNetHelper_IO.FileObject.LastWriteTimeUtc
   - DotNetHelper_IO.FileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption)
   - DotNetHelper_IO.FileObject.MoveToAsync(System.String,DotNetHelper_IO.Enum.FileOption,System.Threading.CancellationToken,System.Int32)
   - DotNetHelper_IO.FileObject.Name
@@ -65,7 +70,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: FileObject
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 21
@@ -95,6 +100,7 @@ items:
   inheritedMembers:
   - DotNetHelper_IO.PathObject.FullName
   - DotNetHelper_IO.PathObject.PathType
+  - DotNetHelper_IO.PathObject.SizeInBytes
   - DotNetHelper_IO.PathObject.Size
   - DotNetHelper_IO.PathObject.Exist
   - System.Object.ToString
@@ -125,7 +131,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: DefaultEncoding
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 27
@@ -162,7 +168,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: FileInfo
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 29
@@ -197,7 +203,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: FileNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 35
@@ -235,7 +241,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: FileNameOnlyNoExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 40
@@ -273,7 +279,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: FilePathOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 46
@@ -311,7 +317,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Extension
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 54
@@ -349,7 +355,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: FolderNameOnly
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 59
@@ -387,7 +393,7 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Name
     path: ../src/DotNetHelper-IO/FileObject.cs
     startLine: 68
@@ -413,6 +419,234 @@ items:
   - Public
   - Overrides
   - ReadOnly
+- uid: DotNetHelper_IO.FileObject.LastWriteTime
+  commentId: P:DotNetHelper_IO.FileObject.LastWriteTime
+  id: LastWriteTime
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: LastWriteTime
+  nameWithType: FileObject.LastWriteTime
+  fullName: DotNetHelper_IO.FileObject.LastWriteTime
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: LastWriteTime
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 72
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override DateTime? LastWriteTime { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Overrides ReadOnly Property LastWriteTime As Date?
+  overridden: DotNetHelper_IO.PathObject.LastWriteTime
+  overload: DotNetHelper_IO.FileObject.LastWriteTime*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  id: LastWriteTimeUtc
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: LastWriteTimeUtc
+  nameWithType: FileObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: LastWriteTimeUtc
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 73
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override DateTime? LastWriteTimeUtc { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Overrides ReadOnly Property LastWriteTimeUtc As Date?
+  overridden: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  overload: DotNetHelper_IO.FileObject.LastWriteTimeUtc*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DotNetHelper_IO.FileObject.CreationTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.CreationTimeUtc
+  id: CreationTimeUtc
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: CreationTimeUtc
+  nameWithType: FileObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.FileObject.CreationTimeUtc
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: CreationTimeUtc
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 74
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override DateTime? CreationTimeUtc { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Overrides ReadOnly Property CreationTimeUtc As Date?
+  overridden: DotNetHelper_IO.PathObject.CreationTimeUtc
+  overload: DotNetHelper_IO.FileObject.CreationTimeUtc*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DotNetHelper_IO.FileObject.CreationTime
+  commentId: P:DotNetHelper_IO.FileObject.CreationTime
+  id: CreationTime
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: CreationTime
+  nameWithType: FileObject.CreationTime
+  fullName: DotNetHelper_IO.FileObject.CreationTime
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: CreationTime
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 75
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override DateTime? CreationTime { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Overrides ReadOnly Property CreationTime As Date?
+  overridden: DotNetHelper_IO.PathObject.CreationTime
+  overload: DotNetHelper_IO.FileObject.CreationTime*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  id: LastAccessTimeUtc
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: LastAccessTimeUtc
+  nameWithType: FileObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: LastAccessTimeUtc
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 76
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override DateTime? LastAccessTimeUtc { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Overrides ReadOnly Property LastAccessTimeUtc As Date?
+  overridden: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  overload: DotNetHelper_IO.FileObject.LastAccessTimeUtc*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DotNetHelper_IO.FileObject.LastAccessTime
+  commentId: P:DotNetHelper_IO.FileObject.LastAccessTime
+  id: LastAccessTime
+  parent: DotNetHelper_IO.FileObject
+  langs:
+  - csharp
+  - vb
+  name: LastAccessTime
+  nameWithType: FileObject.LastAccessTime
+  fullName: DotNetHelper_IO.FileObject.LastAccessTime
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper-IO/FileObject.cs
+      branch: master
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
+    id: LastAccessTime
+    path: ../src/DotNetHelper-IO/FileObject.cs
+    startLine: 77
+  assemblies:
+  - DotNetHelper-IO
+  namespace: DotNetHelper_IO
+  syntax:
+    content: public override DateTime? LastAccessTime { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Overrides ReadOnly Property LastAccessTime As Date?
+  overridden: DotNetHelper_IO.PathObject.LastAccessTime
+  overload: DotNetHelper_IO.FileObject.LastAccessTime*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
 - uid: DotNetHelper_IO.FileObject.GetSize
   commentId: M:DotNetHelper_IO.FileObject.GetSize
   id: GetSize
@@ -428,10 +662,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 78
+    startLine: 87
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -466,10 +700,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetSize
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 111
+    startLine: 120
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -507,10 +741,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetParentFolder
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 120
+    startLine: 129
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -542,10 +776,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: WatchTimeout
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 137
+    startLine: 146
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -580,29 +814,29 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Watcher
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 142
+    startLine: 153
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
   summary: "\nGets the watcher.\n"
   example: []
   syntax:
-    content: public FileSystemWatcher Watcher { get; }
+    content: public FileSystemWatcher Watcher { get; set; }
     parameters: []
     return:
       type: System.IO.FileSystemWatcher
       description: The watcher.
-    content.vb: Public ReadOnly Property Watcher As FileSystemWatcher
+    content.vb: Public Property Watcher As FileSystemWatcher
   overload: DotNetHelper_IO.FileObject.Watcher*
   modifiers.csharp:
   - public
   - get
+  - set
   modifiers.vb:
   - Public
-  - ReadOnly
 - uid: DotNetHelper_IO.FileObject.NotifyFilters
   commentId: P:DotNetHelper_IO.FileObject.NotifyFilters
   id: NotifyFilters
@@ -618,10 +852,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: NotifyFilters
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 148
+    startLine: 180
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -656,10 +890,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 155
+    startLine: 187
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -695,10 +929,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: .ctor
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 168
+    startLine: 200
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -734,10 +968,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Init
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 177
+    startLine: 209
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -767,10 +1001,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: RefreshObject
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 195
+    startLine: 227
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -799,10 +1033,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: CopyTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 228
+    startLine: 260
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -848,10 +1082,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 276
+    startLine: 308
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -896,10 +1130,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: CopyToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 299
+    startLine: 331
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -950,10 +1184,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: MoveTo
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 331
+    startLine: 363
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -997,10 +1231,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: MoveToAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 374
+    startLine: 406
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1050,10 +1284,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: ChangeExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 422
+    startLine: 454
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1103,10 +1337,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: ChangeExtensionAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 439
+    startLine: 471
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1156,10 +1390,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: DeleteFile
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 452
+    startLine: 484
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1191,10 +1425,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: CreateOrTruncate
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 475
+    startLine: 507
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1230,10 +1464,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetIncrementFileName
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 493
+    startLine: 525
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1265,10 +1499,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetIncrementExtension
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 536
+    startLine: 568
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1300,10 +1534,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: ReadAllLines
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 587
+    startLine: 619
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1335,10 +1569,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: ReadAllText
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 608
+    startLine: 640
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1373,10 +1607,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: ReadToBytesInChunksAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 640
+    startLine: 672
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1413,10 +1647,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: ReadToStream
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 657
+    startLine: 689
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1451,10 +1685,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: ReadToStringInChunksAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 667
+    startLine: 699
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1489,10 +1723,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: GetFileStream
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 767
+    startLine: 799
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1540,10 +1774,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 831
+    startLine: 863
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1587,10 +1821,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 848
+    startLine: 880
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1637,10 +1871,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 867
+    startLine: 899
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1681,10 +1915,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Write
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 884
+    startLine: 916
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1731,10 +1965,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 903
+    startLine: 935
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1778,10 +2012,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 922
+    startLine: 954
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1831,10 +2065,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 942
+    startLine: 974
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1878,10 +2112,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: WriteAsync
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 967
+    startLine: 999
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -1916,41 +2150,6 @@ items:
   - Public
   fullName.vb: DotNetHelper_IO.FileObject.WriteAsync(System.IO.Stream, System.IProgress(Of System.Int64), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Threading.CancellationToken)
   name.vb: WriteAsync(Stream, IProgress(Of Int64), FileOption, Int32, CancellationToken)
-- uid: DotNetHelper_IO.FileObject.GetFileEncoding
-  commentId: M:DotNetHelper_IO.FileObject.GetFileEncoding
-  id: GetFileEncoding
-  parent: DotNetHelper_IO.FileObject
-  langs:
-  - csharp
-  - vb
-  name: GetFileEncoding()
-  nameWithType: FileObject.GetFileEncoding()
-  fullName: DotNetHelper_IO.FileObject.GetFileEncoding()
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper-IO/FileObject.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
-    id: GetFileEncoding
-    path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 991
-  assemblies:
-  - DotNetHelper-IO
-  namespace: DotNetHelper_IO
-  summary: "\nGets the file encoding. if can not determine the file Encoding this return ascii by default\n"
-  example: []
-  syntax:
-    content: public Encoding GetFileEncoding()
-    return:
-      type: System.Text.Encoding
-      description: Encoding.
-    content.vb: Public Function GetFileEncoding As Encoding
-  overload: DotNetHelper_IO.FileObject.GetFileEncoding*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 - uid: DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   commentId: M:DotNetHelper_IO.FileObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
   id: StartWatching(System.IO.WatcherChangeTypes,System.Boolean,System.Nullable{System.IO.NotifyFilters})
@@ -1966,10 +2165,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: StartWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1024
+    startLine: 1029
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2013,10 +2212,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: StopWatching
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1049
+    startLine: 1054
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2045,10 +2244,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: SetFileAttribute
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1071
+    startLine: 1076
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2087,10 +2286,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1119
+    startLine: 1124
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2119,10 +2318,10 @@ items:
     remote:
       path: src/DotNetHelper-IO/FileObject.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper-IO
+      repo: git@github.com:TheMofaDe/DotNetHelper-IO.git
     id: Dispose
     path: ../src/DotNetHelper-IO/FileObject.cs
-    startLine: 1126
+    startLine: 1131
   assemblies:
   - DotNetHelper-IO
   namespace: DotNetHelper_IO
@@ -2180,6 +2379,12 @@ references:
   name: PathType
   nameWithType: PathObject.PathType
   fullName: DotNetHelper_IO.PathObject.PathType
+- uid: DotNetHelper_IO.PathObject.SizeInBytes
+  commentId: P:DotNetHelper_IO.PathObject.SizeInBytes
+  parent: DotNetHelper_IO.PathObject
+  name: SizeInBytes
+  nameWithType: PathObject.SizeInBytes
+  fullName: DotNetHelper_IO.PathObject.SizeInBytes
 - uid: DotNetHelper_IO.PathObject.Size
   commentId: P:DotNetHelper_IO.PathObject.Size
   parent: DotNetHelper_IO.PathObject
@@ -2556,6 +2761,155 @@ references:
   name: Name
   nameWithType: FileObject.Name
   fullName: DotNetHelper_IO.FileObject.Name
+- uid: DotNetHelper_IO.PathObject.LastWriteTime
+  commentId: P:DotNetHelper_IO.PathObject.LastWriteTime
+  parent: DotNetHelper_IO.PathObject
+  name: LastWriteTime
+  nameWithType: PathObject.LastWriteTime
+  fullName: DotNetHelper_IO.PathObject.LastWriteTime
+- uid: DotNetHelper_IO.FileObject.LastWriteTime*
+  commentId: Overload:DotNetHelper_IO.FileObject.LastWriteTime
+  name: LastWriteTime
+  nameWithType: FileObject.LastWriteTime
+  fullName: DotNetHelper_IO.FileObject.LastWriteTime
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  parent: DotNetHelper_IO.PathObject
+  name: LastWriteTimeUtc
+  nameWithType: PathObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+- uid: DotNetHelper_IO.FileObject.LastWriteTimeUtc*
+  commentId: Overload:DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  name: LastWriteTimeUtc
+  nameWithType: FileObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.FileObject.LastWriteTimeUtc
+- uid: DotNetHelper_IO.PathObject.CreationTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.CreationTimeUtc
+  parent: DotNetHelper_IO.PathObject
+  name: CreationTimeUtc
+  nameWithType: PathObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.PathObject.CreationTimeUtc
+- uid: DotNetHelper_IO.FileObject.CreationTimeUtc*
+  commentId: Overload:DotNetHelper_IO.FileObject.CreationTimeUtc
+  name: CreationTimeUtc
+  nameWithType: FileObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.FileObject.CreationTimeUtc
+- uid: DotNetHelper_IO.PathObject.CreationTime
+  commentId: P:DotNetHelper_IO.PathObject.CreationTime
+  parent: DotNetHelper_IO.PathObject
+  name: CreationTime
+  nameWithType: PathObject.CreationTime
+  fullName: DotNetHelper_IO.PathObject.CreationTime
+- uid: DotNetHelper_IO.FileObject.CreationTime*
+  commentId: Overload:DotNetHelper_IO.FileObject.CreationTime
+  name: CreationTime
+  nameWithType: FileObject.CreationTime
+  fullName: DotNetHelper_IO.FileObject.CreationTime
+- uid: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  parent: DotNetHelper_IO.PathObject
+  name: LastAccessTimeUtc
+  nameWithType: PathObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.FileObject.LastAccessTimeUtc*
+  commentId: Overload:DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  name: LastAccessTimeUtc
+  nameWithType: FileObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.FileObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.PathObject.LastAccessTime
+  commentId: P:DotNetHelper_IO.PathObject.LastAccessTime
+  parent: DotNetHelper_IO.PathObject
+  name: LastAccessTime
+  nameWithType: PathObject.LastAccessTime
+  fullName: DotNetHelper_IO.PathObject.LastAccessTime
+- uid: DotNetHelper_IO.FileObject.LastAccessTime*
+  commentId: Overload:DotNetHelper_IO.FileObject.LastAccessTime
+  name: LastAccessTime
+  nameWithType: FileObject.LastAccessTime
+  fullName: DotNetHelper_IO.FileObject.LastAccessTime
 - uid: DotNetHelper_IO.PathObject.GetSize
   commentId: M:DotNetHelper_IO.PathObject.GetSize
   parent: DotNetHelper_IO.PathObject
@@ -2680,45 +3034,6 @@ references:
   name: DotNetHelper_IO.Enum
   nameWithType: DotNetHelper_IO.Enum
   fullName: DotNetHelper_IO.Enum
-- uid: System.Nullable`1
-  commentId: T:System.Nullable`1
-  isExternal: true
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper_IO.PathObject.GetParentFolder
   commentId: M:DotNetHelper_IO.PathObject.GetParentFolder
   parent: DotNetHelper_IO.PathObject
@@ -3426,11 +3741,6 @@ references:
   name: WriteAsync
   nameWithType: FileObject.WriteAsync
   fullName: DotNetHelper_IO.FileObject.WriteAsync
-- uid: DotNetHelper_IO.FileObject.GetFileEncoding*
-  commentId: Overload:DotNetHelper_IO.FileObject.GetFileEncoding
-  name: GetFileEncoding
-  nameWithType: FileObject.GetFileEncoding
-  fullName: DotNetHelper_IO.FileObject.GetFileEncoding
 - uid: DotNetHelper_IO.FileObject.StartWatching*
   commentId: Overload:DotNetHelper_IO.FileObject.StartWatching
   name: StartWatching

@@ -79,24 +79,30 @@ references:
   commentId: T:DotNetHelper_IO.Enum.FolderOption
   fullName: DotNetHelper_IO.Enum.FolderOption
   nameWithType: FolderOption
+- uid: DotNetHelper_IO.Enum.FolderOption.DeleteThenWrite
+  name: DeleteThenWrite
+  href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_DeleteThenWrite
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.DeleteThenWrite
+  fullName: DotNetHelper_IO.Enum.FolderOption.DeleteThenWrite
+  nameWithType: FolderOption.DeleteThenWrite
 - uid: DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
   name: DoNothingIfExist
   href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_DoNothingIfExist
   commentId: F:DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
   fullName: DotNetHelper_IO.Enum.FolderOption.DoNothingIfExist
   nameWithType: FolderOption.DoNothingIfExist
-- uid: DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
-  name: IncrementFolderNameIfExist
-  href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_IncrementFolderNameIfExist
-  commentId: F:DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
-  fullName: DotNetHelper_IO.Enum.FolderOption.IncrementFolderNameIfExist
-  nameWithType: FolderOption.IncrementFolderNameIfExist
-- uid: DotNetHelper_IO.Enum.FolderOption.Overwrite
-  name: Overwrite
-  href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_Overwrite
-  commentId: F:DotNetHelper_IO.Enum.FolderOption.Overwrite
-  fullName: DotNetHelper_IO.Enum.FolderOption.Overwrite
-  nameWithType: FolderOption.Overwrite
+- uid: DotNetHelper_IO.Enum.FolderOption.DoNothingIfFileExist
+  name: DoNothingIfFileExist
+  href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_DoNothingIfFileExist
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.DoNothingIfFileExist
+  fullName: DotNetHelper_IO.Enum.FolderOption.DoNothingIfFileExist
+  nameWithType: FolderOption.DoNothingIfFileExist
+- uid: DotNetHelper_IO.Enum.FolderOption.OverwriteFilesIfExist
+  name: OverwriteFilesIfExist
+  href: api/DotNetHelper_IO.Enum.FolderOption.html#DotNetHelper_IO_Enum_FolderOption_OverwriteFilesIfExist
+  commentId: F:DotNetHelper_IO.Enum.FolderOption.OverwriteFilesIfExist
+  fullName: DotNetHelper_IO.Enum.FolderOption.OverwriteFilesIfExist
+  nameWithType: FolderOption.OverwriteFilesIfExist
 - uid: DotNetHelper_IO.Enum.IOType
   name: IOType
   href: api/DotNetHelper_IO.Enum.IOType.html
@@ -211,6 +217,18 @@ references:
   commentId: F:DotNetHelper_IO.Enum.SizeUnits.Zb
   fullName: DotNetHelper_IO.Enum.SizeUnits.Zb
   nameWithType: SizeUnits.Zb
+- uid: DotNetHelper_IO.Extension
+  name: DotNetHelper_IO.Extension
+  href: api/DotNetHelper_IO.Extension.html
+  commentId: N:DotNetHelper_IO.Extension
+  fullName: DotNetHelper_IO.Extension
+  nameWithType: DotNetHelper_IO.Extension
+- uid: DotNetHelper_IO.Extension.SharpCompressExtension
+  name: SharpCompressExtension
+  href: api/DotNetHelper_IO.Extension.SharpCompressExtension.html
+  commentId: T:DotNetHelper_IO.Extension.SharpCompressExtension
+  fullName: DotNetHelper_IO.Extension.SharpCompressExtension
+  nameWithType: SharpCompressExtension
 - uid: DotNetHelper_IO.FileObject
   name: FileObject
   href: api/DotNetHelper_IO.FileObject.html
@@ -313,6 +331,32 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.CreateOrTruncate
   nameWithType: FileObject.CreateOrTruncate
+- uid: DotNetHelper_IO.FileObject.CreationTime
+  name: CreationTime
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_CreationTime
+  commentId: P:DotNetHelper_IO.FileObject.CreationTime
+  fullName: DotNetHelper_IO.FileObject.CreationTime
+  nameWithType: FileObject.CreationTime
+- uid: DotNetHelper_IO.FileObject.CreationTime*
+  name: CreationTime
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_CreationTime_
+  commentId: Overload:DotNetHelper_IO.FileObject.CreationTime
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.CreationTime
+  nameWithType: FileObject.CreationTime
+- uid: DotNetHelper_IO.FileObject.CreationTimeUtc
+  name: CreationTimeUtc
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_CreationTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.FileObject.CreationTimeUtc
+  nameWithType: FileObject.CreationTimeUtc
+- uid: DotNetHelper_IO.FileObject.CreationTimeUtc*
+  name: CreationTimeUtc
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_CreationTimeUtc_
+  commentId: Overload:DotNetHelper_IO.FileObject.CreationTimeUtc
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.CreationTimeUtc
+  nameWithType: FileObject.CreationTimeUtc
 - uid: DotNetHelper_IO.FileObject.DefaultEncoding
   name: DefaultEncoding
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_DefaultEncoding
@@ -436,19 +480,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.FolderNameOnly
   nameWithType: FileObject.FolderNameOnly
-- uid: DotNetHelper_IO.FileObject.GetFileEncoding
-  name: GetFileEncoding()
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileEncoding
-  commentId: M:DotNetHelper_IO.FileObject.GetFileEncoding
-  fullName: DotNetHelper_IO.FileObject.GetFileEncoding()
-  nameWithType: FileObject.GetFileEncoding()
-- uid: DotNetHelper_IO.FileObject.GetFileEncoding*
-  name: GetFileEncoding
-  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileEncoding_
-  commentId: Overload:DotNetHelper_IO.FileObject.GetFileEncoding
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FileObject.GetFileEncoding
-  nameWithType: FileObject.GetFileEncoding
 - uid: DotNetHelper_IO.FileObject.GetFileStream(DotNetHelper_IO.Enum.FileOption,System.Int32,System.Boolean)
   name: GetFileStream(FileOption, Int32, Boolean)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_GetFileStream_DotNetHelper_IO_Enum_FileOption_System_Int32_System_Boolean_
@@ -533,6 +564,58 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FileObject.Init
   nameWithType: FileObject.Init
+- uid: DotNetHelper_IO.FileObject.LastAccessTime
+  name: LastAccessTime
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastAccessTime
+  commentId: P:DotNetHelper_IO.FileObject.LastAccessTime
+  fullName: DotNetHelper_IO.FileObject.LastAccessTime
+  nameWithType: FileObject.LastAccessTime
+- uid: DotNetHelper_IO.FileObject.LastAccessTime*
+  name: LastAccessTime
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastAccessTime_
+  commentId: Overload:DotNetHelper_IO.FileObject.LastAccessTime
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.LastAccessTime
+  nameWithType: FileObject.LastAccessTime
+- uid: DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  name: LastAccessTimeUtc
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastAccessTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  nameWithType: FileObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.FileObject.LastAccessTimeUtc*
+  name: LastAccessTimeUtc
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastAccessTimeUtc_
+  commentId: Overload:DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.LastAccessTimeUtc
+  nameWithType: FileObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.FileObject.LastWriteTime
+  name: LastWriteTime
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastWriteTime
+  commentId: P:DotNetHelper_IO.FileObject.LastWriteTime
+  fullName: DotNetHelper_IO.FileObject.LastWriteTime
+  nameWithType: FileObject.LastWriteTime
+- uid: DotNetHelper_IO.FileObject.LastWriteTime*
+  name: LastWriteTime
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastWriteTime_
+  commentId: Overload:DotNetHelper_IO.FileObject.LastWriteTime
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.LastWriteTime
+  nameWithType: FileObject.LastWriteTime
+- uid: DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  name: LastWriteTimeUtc
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastWriteTimeUtc
+  commentId: P:DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  nameWithType: FileObject.LastWriteTimeUtc
+- uid: DotNetHelper_IO.FileObject.LastWriteTimeUtc*
+  name: LastWriteTimeUtc
+  href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_LastWriteTimeUtc_
+  commentId: Overload:DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FileObject.LastWriteTimeUtc
+  nameWithType: FileObject.LastWriteTimeUtc
 - uid: DotNetHelper_IO.FileObject.MoveTo(System.String,DotNetHelper_IO.Enum.FileOption)
   name: MoveTo(String, FileOption)
   href: api/DotNetHelper_IO.FileObject.html#DotNetHelper_IO_FileObject_MoveTo_System_String_DotNetHelper_IO_Enum_FileOption_
@@ -814,18 +897,18 @@ references:
   commentId: T:DotNetHelper_IO.FolderObject
   fullName: DotNetHelper_IO.FolderObject
   nameWithType: FolderObject
-- uid: DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)
-  name: FolderObject(DirectoryInfo, Boolean, Boolean, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_System_Boolean_System_Boolean_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo,System.Boolean,System.Boolean,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.IO.DirectoryInfo, System.Boolean, System.Boolean, System.Boolean)
-  nameWithType: FolderObject.FolderObject(DirectoryInfo, Boolean, Boolean, Boolean)
-- uid: DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
-  name: FolderObject(String, Boolean, Boolean, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_String_System_Boolean_System_Boolean_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.String, System.Boolean, System.Boolean, System.Boolean)
-  nameWithType: FolderObject.FolderObject(String, Boolean, Boolean, Boolean)
+- uid: DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
+  name: FolderObject(DirectoryInfo)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_IO_DirectoryInfo_
+  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.IO.DirectoryInfo)
+  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.IO.DirectoryInfo)
+  nameWithType: FolderObject.FolderObject(DirectoryInfo)
+- uid: DotNetHelper_IO.FolderObject.#ctor(System.String)
+  name: FolderObject(String)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_System_String_
+  commentId: M:DotNetHelper_IO.FolderObject.#ctor(System.String)
+  fullName: DotNetHelper_IO.FolderObject.FolderObject(System.String)
+  nameWithType: FolderObject.FolderObject(String)
 - uid: DotNetHelper_IO.FolderObject.#ctor*
   name: FolderObject
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject__ctor_
@@ -833,6 +916,88 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.FolderObject
   nameWithType: FolderObject.FolderObject
+- uid: DotNetHelper_IO.FolderObject.AddFile(System.String,System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  name: AddFile(String, Byte[], FileOption, Int32, Nullable<Int32>)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFile_System_String_System_Byte___DotNetHelper_IO_Enum_FileOption_System_Int32_System_Nullable_System_Int32__
+  commentId: M:DotNetHelper_IO.FolderObject.AddFile(System.String,System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  name.vb: AddFile(String, Byte(), FileOption, Int32, Nullable(Of Int32))
+  fullName: DotNetHelper_IO.FolderObject.AddFile(System.String, System.Byte[], DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable<System.Int32>)
+  fullName.vb: DotNetHelper_IO.FolderObject.AddFile(System.String, System.Byte(), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable(Of System.Int32))
+  nameWithType: FolderObject.AddFile(String, Byte[], FileOption, Int32, Nullable<Int32>)
+  nameWithType.vb: FolderObject.AddFile(String, Byte(), FileOption, Int32, Nullable(Of Int32))
+- uid: DotNetHelper_IO.FolderObject.AddFile(System.String,System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  name: AddFile(String, Stream, FileOption, Int32)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFile_System_String_System_IO_Stream_DotNetHelper_IO_Enum_FileOption_System_Int32_
+  commentId: M:DotNetHelper_IO.FolderObject.AddFile(System.String,System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  fullName: DotNetHelper_IO.FolderObject.AddFile(System.String, System.IO.Stream, DotNetHelper_IO.Enum.FileOption, System.Int32)
+  nameWithType: FolderObject.AddFile(String, Stream, FileOption, Int32)
+- uid: DotNetHelper_IO.FolderObject.AddFile(System.String,System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
+  name: AddFile(String, String, FileOption, Encoding, Int32)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFile_System_String_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_
+  commentId: M:DotNetHelper_IO.FolderObject.AddFile(System.String,System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
+  fullName: DotNetHelper_IO.FolderObject.AddFile(System.String, System.String, DotNetHelper_IO.Enum.FileOption, System.Text.Encoding, System.Int32)
+  nameWithType: FolderObject.AddFile(String, String, FileOption, Encoding, Int32)
+- uid: DotNetHelper_IO.FolderObject.AddFile*
+  name: AddFile
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFile_
+  commentId: Overload:DotNetHelper_IO.FolderObject.AddFile
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.AddFile
+  nameWithType: FolderObject.AddFile
+- uid: DotNetHelper_IO.FolderObject.AddFileAsync(System.String,System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  name: AddFileAsync(String, Byte[], FileOption, Int32, Nullable<Int32>)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFileAsync_System_String_System_Byte___DotNetHelper_IO_Enum_FileOption_System_Int32_System_Nullable_System_Int32__
+  commentId: M:DotNetHelper_IO.FolderObject.AddFileAsync(System.String,System.Byte[],DotNetHelper_IO.Enum.FileOption,System.Int32,System.Nullable{System.Int32})
+  name.vb: AddFileAsync(String, Byte(), FileOption, Int32, Nullable(Of Int32))
+  fullName: DotNetHelper_IO.FolderObject.AddFileAsync(System.String, System.Byte[], DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable<System.Int32>)
+  fullName.vb: DotNetHelper_IO.FolderObject.AddFileAsync(System.String, System.Byte(), DotNetHelper_IO.Enum.FileOption, System.Int32, System.Nullable(Of System.Int32))
+  nameWithType: FolderObject.AddFileAsync(String, Byte[], FileOption, Int32, Nullable<Int32>)
+  nameWithType.vb: FolderObject.AddFileAsync(String, Byte(), FileOption, Int32, Nullable(Of Int32))
+- uid: DotNetHelper_IO.FolderObject.AddFileAsync(System.String,System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  name: AddFileAsync(String, Stream, FileOption, Int32)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFileAsync_System_String_System_IO_Stream_DotNetHelper_IO_Enum_FileOption_System_Int32_
+  commentId: M:DotNetHelper_IO.FolderObject.AddFileAsync(System.String,System.IO.Stream,DotNetHelper_IO.Enum.FileOption,System.Int32)
+  fullName: DotNetHelper_IO.FolderObject.AddFileAsync(System.String, System.IO.Stream, DotNetHelper_IO.Enum.FileOption, System.Int32)
+  nameWithType: FolderObject.AddFileAsync(String, Stream, FileOption, Int32)
+- uid: DotNetHelper_IO.FolderObject.AddFileAsync(System.String,System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
+  name: AddFileAsync(String, String, FileOption, Encoding, Int32)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFileAsync_System_String_System_String_DotNetHelper_IO_Enum_FileOption_System_Text_Encoding_System_Int32_
+  commentId: M:DotNetHelper_IO.FolderObject.AddFileAsync(System.String,System.String,DotNetHelper_IO.Enum.FileOption,System.Text.Encoding,System.Int32)
+  fullName: DotNetHelper_IO.FolderObject.AddFileAsync(System.String, System.String, DotNetHelper_IO.Enum.FileOption, System.Text.Encoding, System.Int32)
+  nameWithType: FolderObject.AddFileAsync(String, String, FileOption, Encoding, Int32)
+- uid: DotNetHelper_IO.FolderObject.AddFileAsync*
+  name: AddFileAsync
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFileAsync_
+  commentId: Overload:DotNetHelper_IO.FolderObject.AddFileAsync
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.AddFileAsync
+  nameWithType: FolderObject.AddFileAsync
+- uid: DotNetHelper_IO.FolderObject.AddFolder(System.String)
+  name: AddFolder(String)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFolder_System_String_
+  commentId: M:DotNetHelper_IO.FolderObject.AddFolder(System.String)
+  fullName: DotNetHelper_IO.FolderObject.AddFolder(System.String)
+  nameWithType: FolderObject.AddFolder(String)
+- uid: DotNetHelper_IO.FolderObject.AddFolder*
+  name: AddFolder
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_AddFolder_
+  commentId: Overload:DotNetHelper_IO.FolderObject.AddFolder
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.AddFolder
+  nameWithType: FolderObject.AddFolder
+- uid: DotNetHelper_IO.FolderObject.CopyContentsTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  name: CopyContentsTo(String, FolderOption)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CopyContentsTo_System_String_DotNetHelper_IO_Enum_FolderOption_
+  commentId: M:DotNetHelper_IO.FolderObject.CopyContentsTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  fullName: DotNetHelper_IO.FolderObject.CopyContentsTo(System.String, DotNetHelper_IO.Enum.FolderOption)
+  nameWithType: FolderObject.CopyContentsTo(String, FolderOption)
+- uid: DotNetHelper_IO.FolderObject.CopyContentsTo*
+  name: CopyContentsTo
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CopyContentsTo_
+  commentId: Overload:DotNetHelper_IO.FolderObject.CopyContentsTo
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.CopyContentsTo
+  nameWithType: FolderObject.CopyContentsTo
 - uid: DotNetHelper_IO.FolderObject.CopyTo(System.String,DotNetHelper_IO.Enum.FolderOption)
   name: CopyTo(String, FolderOption)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CopyTo_System_String_DotNetHelper_IO_Enum_FolderOption_
@@ -846,38 +1011,51 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.CopyTo
   nameWithType: FolderObject.CopyTo
-- uid: DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)
-  name: CreateOrTruncate(Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreateOrTruncate_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.CreateOrTruncate(System.Boolean)
-  nameWithType: FolderObject.CreateOrTruncate(Boolean)
-- uid: DotNetHelper_IO.FolderObject.CreateOrTruncate*
-  name: CreateOrTruncate
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreateOrTruncate_
-  commentId: Overload:DotNetHelper_IO.FolderObject.CreateOrTruncate
+- uid: DotNetHelper_IO.FolderObject.Create(DotNetHelper_IO.Enum.FolderOption)
+  name: Create(FolderOption)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Create_DotNetHelper_IO_Enum_FolderOption_
+  commentId: M:DotNetHelper_IO.FolderObject.Create(DotNetHelper_IO.Enum.FolderOption)
+  fullName: DotNetHelper_IO.FolderObject.Create(DotNetHelper_IO.Enum.FolderOption)
+  nameWithType: FolderObject.Create(FolderOption)
+- uid: DotNetHelper_IO.FolderObject.Create*
+  name: Create
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Create_
+  commentId: Overload:DotNetHelper_IO.FolderObject.Create
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.CreateOrTruncate
-  nameWithType: FolderObject.CreateOrTruncate
-- uid: DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String,System.Boolean)
-  name: CreateOrTruncateSubFolder(String, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreateOrTruncateSubFolder_System_String_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder(System.String, System.Boolean)
-  nameWithType: FolderObject.CreateOrTruncateSubFolder(String, Boolean)
-- uid: DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder*
-  name: CreateOrTruncateSubFolder
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreateOrTruncateSubFolder_
-  commentId: Overload:DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder
+  fullName: DotNetHelper_IO.FolderObject.Create
+  nameWithType: FolderObject.Create
+- uid: DotNetHelper_IO.FolderObject.CreationTime
+  name: CreationTime
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreationTime
+  commentId: P:DotNetHelper_IO.FolderObject.CreationTime
+  fullName: DotNetHelper_IO.FolderObject.CreationTime
+  nameWithType: FolderObject.CreationTime
+- uid: DotNetHelper_IO.FolderObject.CreationTime*
+  name: CreationTime
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreationTime_
+  commentId: Overload:DotNetHelper_IO.FolderObject.CreationTime
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.CreateOrTruncateSubFolder
-  nameWithType: FolderObject.CreateOrTruncateSubFolder
-- uid: DotNetHelper_IO.FolderObject.Delete(System.Boolean)
-  name: Delete(Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Delete_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.Delete(System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.Delete(System.Boolean)
-  nameWithType: FolderObject.Delete(Boolean)
+  fullName: DotNetHelper_IO.FolderObject.CreationTime
+  nameWithType: FolderObject.CreationTime
+- uid: DotNetHelper_IO.FolderObject.CreationTimeUtc
+  name: CreationTimeUtc
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreationTimeUtc
+  commentId: P:DotNetHelper_IO.FolderObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.FolderObject.CreationTimeUtc
+  nameWithType: FolderObject.CreationTimeUtc
+- uid: DotNetHelper_IO.FolderObject.CreationTimeUtc*
+  name: CreationTimeUtc
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_CreationTimeUtc_
+  commentId: Overload:DotNetHelper_IO.FolderObject.CreationTimeUtc
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.CreationTimeUtc
+  nameWithType: FolderObject.CreationTimeUtc
+- uid: DotNetHelper_IO.FolderObject.Delete(System.Boolean,System.Boolean)
+  name: Delete(Boolean, Boolean)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Delete_System_Boolean_System_Boolean_
+  commentId: M:DotNetHelper_IO.FolderObject.Delete(System.Boolean,System.Boolean)
+  fullName: DotNetHelper_IO.FolderObject.Delete(System.Boolean, System.Boolean)
+  nameWithType: FolderObject.Delete(Boolean, Boolean)
 - uid: DotNetHelper_IO.FolderObject.Delete*
   name: Delete
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Delete_
@@ -917,45 +1095,32 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.Dispose
   nameWithType: FolderObject.Dispose
-- uid: DotNetHelper_IO.FolderObject.Files
-  name: Files
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Files
-  commentId: P:DotNetHelper_IO.FolderObject.Files
-  fullName: DotNetHelper_IO.FolderObject.Files
-  nameWithType: FolderObject.Files
-- uid: DotNetHelper_IO.FolderObject.Files*
-  name: Files
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Files_
-  commentId: Overload:DotNetHelper_IO.FolderObject.Files
+- uid: DotNetHelper_IO.FolderObject.GetDirectories(System.String,System.IO.SearchOption)
+  name: GetDirectories(String, SearchOption)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetDirectories_System_String_System_IO_SearchOption_
+  commentId: M:DotNetHelper_IO.FolderObject.GetDirectories(System.String,System.IO.SearchOption)
+  fullName: DotNetHelper_IO.FolderObject.GetDirectories(System.String, System.IO.SearchOption)
+  nameWithType: FolderObject.GetDirectories(String, SearchOption)
+- uid: DotNetHelper_IO.FolderObject.GetDirectories*
+  name: GetDirectories
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetDirectories_
+  commentId: Overload:DotNetHelper_IO.FolderObject.GetDirectories
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.Files
-  nameWithType: FolderObject.Files
-- uid: DotNetHelper_IO.FolderObject.GetAllFiles(System.String,System.Boolean)
-  name: GetAllFiles(String, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetAllFiles_System_String_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.GetAllFiles(System.String,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.GetAllFiles(System.String, System.Boolean)
-  nameWithType: FolderObject.GetAllFiles(String, Boolean)
-- uid: DotNetHelper_IO.FolderObject.GetAllFiles*
-  name: GetAllFiles
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetAllFiles_
-  commentId: Overload:DotNetHelper_IO.FolderObject.GetAllFiles
+  fullName: DotNetHelper_IO.FolderObject.GetDirectories
+  nameWithType: FolderObject.GetDirectories
+- uid: DotNetHelper_IO.FolderObject.GetFiles(System.String,System.IO.SearchOption)
+  name: GetFiles(String, SearchOption)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetFiles_System_String_System_IO_SearchOption_
+  commentId: M:DotNetHelper_IO.FolderObject.GetFiles(System.String,System.IO.SearchOption)
+  fullName: DotNetHelper_IO.FolderObject.GetFiles(System.String, System.IO.SearchOption)
+  nameWithType: FolderObject.GetFiles(String, SearchOption)
+- uid: DotNetHelper_IO.FolderObject.GetFiles*
+  name: GetFiles
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetFiles_
+  commentId: Overload:DotNetHelper_IO.FolderObject.GetFiles
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.GetAllFiles
-  nameWithType: FolderObject.GetAllFiles
-- uid: DotNetHelper_IO.FolderObject.GetAllFolders(System.String,System.Boolean)
-  name: GetAllFolders(String, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetAllFolders_System_String_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.GetAllFolders(System.String,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.GetAllFolders(System.String, System.Boolean)
-  nameWithType: FolderObject.GetAllFolders(String, Boolean)
-- uid: DotNetHelper_IO.FolderObject.GetAllFolders*
-  name: GetAllFolders
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetAllFolders_
-  commentId: Overload:DotNetHelper_IO.FolderObject.GetAllFolders
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.GetAllFolders
-  nameWithType: FolderObject.GetAllFolders
+  fullName: DotNetHelper_IO.FolderObject.GetFiles
+  nameWithType: FolderObject.GetFiles
 - uid: DotNetHelper_IO.FolderObject.GetParentFolder
   name: GetParentFolder()
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_GetParentFolder
@@ -988,45 +1153,71 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.GetSize
   nameWithType: FolderObject.GetSize
-- uid: DotNetHelper_IO.FolderObject.LoadFilesInFolder
-  name: LoadFilesInFolder
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LoadFilesInFolder
-  commentId: P:DotNetHelper_IO.FolderObject.LoadFilesInFolder
-  fullName: DotNetHelper_IO.FolderObject.LoadFilesInFolder
-  nameWithType: FolderObject.LoadFilesInFolder
-- uid: DotNetHelper_IO.FolderObject.LoadFilesInFolder*
-  name: LoadFilesInFolder
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LoadFilesInFolder_
-  commentId: Overload:DotNetHelper_IO.FolderObject.LoadFilesInFolder
+- uid: DotNetHelper_IO.FolderObject.LastAccessTime
+  name: LastAccessTime
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastAccessTime
+  commentId: P:DotNetHelper_IO.FolderObject.LastAccessTime
+  fullName: DotNetHelper_IO.FolderObject.LastAccessTime
+  nameWithType: FolderObject.LastAccessTime
+- uid: DotNetHelper_IO.FolderObject.LastAccessTime*
+  name: LastAccessTime
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastAccessTime_
+  commentId: Overload:DotNetHelper_IO.FolderObject.LastAccessTime
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.LoadFilesInFolder
-  nameWithType: FolderObject.LoadFilesInFolder
-- uid: DotNetHelper_IO.FolderObject.LoadRecursive
-  name: LoadRecursive
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LoadRecursive
-  commentId: P:DotNetHelper_IO.FolderObject.LoadRecursive
-  fullName: DotNetHelper_IO.FolderObject.LoadRecursive
-  nameWithType: FolderObject.LoadRecursive
-- uid: DotNetHelper_IO.FolderObject.LoadRecursive*
-  name: LoadRecursive
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LoadRecursive_
-  commentId: Overload:DotNetHelper_IO.FolderObject.LoadRecursive
+  fullName: DotNetHelper_IO.FolderObject.LastAccessTime
+  nameWithType: FolderObject.LastAccessTime
+- uid: DotNetHelper_IO.FolderObject.LastAccessTimeUtc
+  name: LastAccessTimeUtc
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastAccessTimeUtc
+  commentId: P:DotNetHelper_IO.FolderObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.FolderObject.LastAccessTimeUtc
+  nameWithType: FolderObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.FolderObject.LastAccessTimeUtc*
+  name: LastAccessTimeUtc
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastAccessTimeUtc_
+  commentId: Overload:DotNetHelper_IO.FolderObject.LastAccessTimeUtc
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.LoadRecursive
-  nameWithType: FolderObject.LoadRecursive
-- uid: DotNetHelper_IO.FolderObject.LoadSubFolders
-  name: LoadSubFolders
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LoadSubFolders
-  commentId: P:DotNetHelper_IO.FolderObject.LoadSubFolders
-  fullName: DotNetHelper_IO.FolderObject.LoadSubFolders
-  nameWithType: FolderObject.LoadSubFolders
-- uid: DotNetHelper_IO.FolderObject.LoadSubFolders*
-  name: LoadSubFolders
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LoadSubFolders_
-  commentId: Overload:DotNetHelper_IO.FolderObject.LoadSubFolders
+  fullName: DotNetHelper_IO.FolderObject.LastAccessTimeUtc
+  nameWithType: FolderObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.FolderObject.LastWriteTime
+  name: LastWriteTime
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastWriteTime
+  commentId: P:DotNetHelper_IO.FolderObject.LastWriteTime
+  fullName: DotNetHelper_IO.FolderObject.LastWriteTime
+  nameWithType: FolderObject.LastWriteTime
+- uid: DotNetHelper_IO.FolderObject.LastWriteTime*
+  name: LastWriteTime
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastWriteTime_
+  commentId: Overload:DotNetHelper_IO.FolderObject.LastWriteTime
   isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.LoadSubFolders
-  nameWithType: FolderObject.LoadSubFolders
+  fullName: DotNetHelper_IO.FolderObject.LastWriteTime
+  nameWithType: FolderObject.LastWriteTime
+- uid: DotNetHelper_IO.FolderObject.LastWriteTimeUtc
+  name: LastWriteTimeUtc
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastWriteTimeUtc
+  commentId: P:DotNetHelper_IO.FolderObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.FolderObject.LastWriteTimeUtc
+  nameWithType: FolderObject.LastWriteTimeUtc
+- uid: DotNetHelper_IO.FolderObject.LastWriteTimeUtc*
+  name: LastWriteTimeUtc
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_LastWriteTimeUtc_
+  commentId: Overload:DotNetHelper_IO.FolderObject.LastWriteTimeUtc
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.LastWriteTimeUtc
+  nameWithType: FolderObject.LastWriteTimeUtc
+- uid: DotNetHelper_IO.FolderObject.MoveContentsTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  name: MoveContentsTo(String, FolderOption)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_MoveContentsTo_System_String_DotNetHelper_IO_Enum_FolderOption_
+  commentId: M:DotNetHelper_IO.FolderObject.MoveContentsTo(System.String,DotNetHelper_IO.Enum.FolderOption)
+  fullName: DotNetHelper_IO.FolderObject.MoveContentsTo(System.String, DotNetHelper_IO.Enum.FolderOption)
+  nameWithType: FolderObject.MoveContentsTo(String, FolderOption)
+- uid: DotNetHelper_IO.FolderObject.MoveContentsTo*
+  name: MoveContentsTo
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_MoveContentsTo_
+  commentId: Overload:DotNetHelper_IO.FolderObject.MoveContentsTo
+  isSpec: "True"
+  fullName: DotNetHelper_IO.FolderObject.MoveContentsTo
+  nameWithType: FolderObject.MoveContentsTo
 - uid: DotNetHelper_IO.FolderObject.MoveTo(System.String,DotNetHelper_IO.Enum.FolderOption)
   name: MoveTo(String, FolderOption)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_MoveTo_System_String_DotNetHelper_IO_Enum_FolderOption_
@@ -1066,12 +1257,12 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.NotifyFilters
   nameWithType: FolderObject.NotifyFilters
-- uid: DotNetHelper_IO.FolderObject.RefreshObject(System.Boolean,System.Boolean,System.Boolean)
-  name: RefreshObject(Boolean, Boolean, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_RefreshObject_System_Boolean_System_Boolean_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.RefreshObject(System.Boolean,System.Boolean,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.RefreshObject(System.Boolean, System.Boolean, System.Boolean)
-  nameWithType: FolderObject.RefreshObject(Boolean, Boolean, Boolean)
+- uid: DotNetHelper_IO.FolderObject.RefreshObject
+  name: RefreshObject()
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_RefreshObject
+  commentId: M:DotNetHelper_IO.FolderObject.RefreshObject
+  fullName: DotNetHelper_IO.FolderObject.RefreshObject()
+  nameWithType: FolderObject.RefreshObject()
 - uid: DotNetHelper_IO.FolderObject.RefreshObject*
   name: RefreshObject
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_RefreshObject_
@@ -1079,22 +1270,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.RefreshObject
   nameWithType: FolderObject.RefreshObject
-- uid: DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
-  name: SetFolderAttribute(AddOrRemoveEnum, List<FileAttributes>)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_SetFolderAttribute_DotNetHelper_IO_Enum_AddOrRemoveEnum_System_Collections_Generic_List_System_IO_FileAttributes__
-  commentId: M:DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum,System.Collections.Generic.List{System.IO.FileAttributes})
-  name.vb: SetFolderAttribute(AddOrRemoveEnum, List(Of FileAttributes))
-  fullName: DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum, System.Collections.Generic.List<System.IO.FileAttributes>)
-  fullName.vb: DotNetHelper_IO.FolderObject.SetFolderAttribute(DotNetHelper_IO.Enum.AddOrRemoveEnum, System.Collections.Generic.List(Of System.IO.FileAttributes))
-  nameWithType: FolderObject.SetFolderAttribute(AddOrRemoveEnum, List<FileAttributes>)
-  nameWithType.vb: FolderObject.SetFolderAttribute(AddOrRemoveEnum, List(Of FileAttributes))
-- uid: DotNetHelper_IO.FolderObject.SetFolderAttribute*
-  name: SetFolderAttribute
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_SetFolderAttribute_
-  commentId: Overload:DotNetHelper_IO.FolderObject.SetFolderAttribute
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.SetFolderAttribute
-  nameWithType: FolderObject.SetFolderAttribute
 - uid: DotNetHelper_IO.FolderObject.StartWatching(System.IO.WatcherChangeTypes,System.Boolean)
   name: StartWatching(WatcherChangeTypes, Boolean)
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_StartWatching_System_IO_WatcherChangeTypes_System_Boolean_
@@ -1121,19 +1296,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.StopWatching
   nameWithType: FolderObject.StopWatching
-- uid: DotNetHelper_IO.FolderObject.Subfolders
-  name: Subfolders
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Subfolders
-  commentId: P:DotNetHelper_IO.FolderObject.Subfolders
-  fullName: DotNetHelper_IO.FolderObject.Subfolders
-  nameWithType: FolderObject.Subfolders
-- uid: DotNetHelper_IO.FolderObject.Subfolders*
-  name: Subfolders
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Subfolders_
-  commentId: Overload:DotNetHelper_IO.FolderObject.Subfolders
-  isSpec: "True"
-  fullName: DotNetHelper_IO.FolderObject.Subfolders
-  nameWithType: FolderObject.Subfolders
 - uid: DotNetHelper_IO.FolderObject.Watcher
   name: Watcher
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_Watcher
@@ -1160,12 +1322,18 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.FolderObject.WatchTimeout
   nameWithType: FolderObject.WatchTimeout
-- uid: DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(DotNetHelper_IO.FileObject,SharpCompress.Common.ArchiveType,System.Boolean)
-  name: ZipFolderToFileSystem(FileObject, ArchiveType, Boolean)
-  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_ZipFolderToFileSystem_DotNetHelper_IO_FileObject_SharpCompress_Common_ArchiveType_System_Boolean_
-  commentId: M:DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(DotNetHelper_IO.FileObject,SharpCompress.Common.ArchiveType,System.Boolean)
-  fullName: DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(DotNetHelper_IO.FileObject, SharpCompress.Common.ArchiveType, System.Boolean)
-  nameWithType: FolderObject.ZipFolderToFileSystem(FileObject, ArchiveType, Boolean)
+- uid: DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(SharpCompress.Common.ArchiveType)
+  name: ZipFolderToFileSystem(ArchiveType)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_ZipFolderToFileSystem_SharpCompress_Common_ArchiveType_
+  commentId: M:DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(SharpCompress.Common.ArchiveType)
+  fullName: DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(SharpCompress.Common.ArchiveType)
+  nameWithType: FolderObject.ZipFolderToFileSystem(ArchiveType)
+- uid: DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(System.String,SharpCompress.Common.ArchiveType,SharpCompress.Writers.WriterOptions,System.String,System.IO.SearchOption)
+  name: ZipFolderToFileSystem(String, ArchiveType, WriterOptions, String, SearchOption)
+  href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_ZipFolderToFileSystem_System_String_SharpCompress_Common_ArchiveType_SharpCompress_Writers_WriterOptions_System_String_System_IO_SearchOption_
+  commentId: M:DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(System.String,SharpCompress.Common.ArchiveType,SharpCompress.Writers.WriterOptions,System.String,System.IO.SearchOption)
+  fullName: DotNetHelper_IO.FolderObject.ZipFolderToFileSystem(System.String, SharpCompress.Common.ArchiveType, SharpCompress.Writers.WriterOptions, System.String, System.IO.SearchOption)
+  nameWithType: FolderObject.ZipFolderToFileSystem(String, ArchiveType, WriterOptions, String, SearchOption)
 - uid: DotNetHelper_IO.FolderObject.ZipFolderToFileSystem*
   name: ZipFolderToFileSystem
   href: api/DotNetHelper_IO.FolderObject.html#DotNetHelper_IO_FolderObject_ZipFolderToFileSystem_
@@ -1217,6 +1385,64 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.Helpers.ByteSizeHelper.GetSize
   nameWithType: ByteSizeHelper.GetSize
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  name: CompressExtensionHelper
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html
+  commentId: T:DotNetHelper_IO.Helpers.CompressExtensionHelper
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper
+  nameWithType: CompressExtensionHelper
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  name: DefaultCompressionTypeLookup
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html#DotNetHelper_IO_Helpers_CompressExtensionHelper_DefaultCompressionTypeLookup
+  commentId: P:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  nameWithType: CompressExtensionHelper.DefaultCompressionTypeLookup
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup*
+  name: DefaultCompressionTypeLookup
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html#DotNetHelper_IO_Helpers_CompressExtensionHelper_DefaultCompressionTypeLookup_
+  commentId: Overload:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  isSpec: "True"
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultCompressionTypeLookup
+  nameWithType: CompressExtensionHelper.DefaultCompressionTypeLookup
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  name: DefaultReaderOptionsLookup
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html#DotNetHelper_IO_Helpers_CompressExtensionHelper_DefaultReaderOptionsLookup
+  commentId: P:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  nameWithType: CompressExtensionHelper.DefaultReaderOptionsLookup
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup*
+  name: DefaultReaderOptionsLookup
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html#DotNetHelper_IO_Helpers_CompressExtensionHelper_DefaultReaderOptionsLookup_
+  commentId: Overload:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  isSpec: "True"
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultReaderOptionsLookup
+  nameWithType: CompressExtensionHelper.DefaultReaderOptionsLookup
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  name: DefaultWriterOptionsLookup
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html#DotNetHelper_IO_Helpers_CompressExtensionHelper_DefaultWriterOptionsLookup
+  commentId: P:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  nameWithType: CompressExtensionHelper.DefaultWriterOptionsLookup
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup*
+  name: DefaultWriterOptionsLookup
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html#DotNetHelper_IO_Helpers_CompressExtensionHelper_DefaultWriterOptionsLookup_
+  commentId: Overload:DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  isSpec: "True"
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.DefaultWriterOptionsLookup
+  nameWithType: CompressExtensionHelper.DefaultWriterOptionsLookup
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  name: ZipExtensionLookup
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html#DotNetHelper_IO_Helpers_CompressExtensionHelper_ZipExtensionLookup
+  commentId: P:DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  nameWithType: CompressExtensionHelper.ZipExtensionLookup
+- uid: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup*
+  name: ZipExtensionLookup
+  href: api/DotNetHelper_IO.Helpers.CompressExtensionHelper.html#DotNetHelper_IO_Helpers_CompressExtensionHelper_ZipExtensionLookup_
+  commentId: Overload:DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  isSpec: "True"
+  fullName: DotNetHelper_IO.Helpers.CompressExtensionHelper.ZipExtensionLookup
+  nameWithType: CompressExtensionHelper.ZipExtensionLookup
 - uid: DotNetHelper_IO.PathObject
   name: PathObject
   href: api/DotNetHelper_IO.PathObject.html
@@ -1236,6 +1462,32 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.PathObject.PathObject
   nameWithType: PathObject.PathObject
+- uid: DotNetHelper_IO.PathObject.CreationTime
+  name: CreationTime
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_CreationTime
+  commentId: P:DotNetHelper_IO.PathObject.CreationTime
+  fullName: DotNetHelper_IO.PathObject.CreationTime
+  nameWithType: PathObject.CreationTime
+- uid: DotNetHelper_IO.PathObject.CreationTime*
+  name: CreationTime
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_CreationTime_
+  commentId: Overload:DotNetHelper_IO.PathObject.CreationTime
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.CreationTime
+  nameWithType: PathObject.CreationTime
+- uid: DotNetHelper_IO.PathObject.CreationTimeUtc
+  name: CreationTimeUtc
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_CreationTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.CreationTimeUtc
+  fullName: DotNetHelper_IO.PathObject.CreationTimeUtc
+  nameWithType: PathObject.CreationTimeUtc
+- uid: DotNetHelper_IO.PathObject.CreationTimeUtc*
+  name: CreationTimeUtc
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_CreationTimeUtc_
+  commentId: Overload:DotNetHelper_IO.PathObject.CreationTimeUtc
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.CreationTimeUtc
+  nameWithType: PathObject.CreationTimeUtc
 - uid: DotNetHelper_IO.PathObject.Exist
   name: Exist
   href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Exist
@@ -1294,6 +1546,58 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.PathObject.GetSize
   nameWithType: PathObject.GetSize
+- uid: DotNetHelper_IO.PathObject.LastAccessTime
+  name: LastAccessTime
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_LastAccessTime
+  commentId: P:DotNetHelper_IO.PathObject.LastAccessTime
+  fullName: DotNetHelper_IO.PathObject.LastAccessTime
+  nameWithType: PathObject.LastAccessTime
+- uid: DotNetHelper_IO.PathObject.LastAccessTime*
+  name: LastAccessTime
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_LastAccessTime_
+  commentId: Overload:DotNetHelper_IO.PathObject.LastAccessTime
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.LastAccessTime
+  nameWithType: PathObject.LastAccessTime
+- uid: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  name: LastAccessTimeUtc
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_LastAccessTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  fullName: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  nameWithType: PathObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.PathObject.LastAccessTimeUtc*
+  name: LastAccessTimeUtc
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_LastAccessTimeUtc_
+  commentId: Overload:DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.LastAccessTimeUtc
+  nameWithType: PathObject.LastAccessTimeUtc
+- uid: DotNetHelper_IO.PathObject.LastWriteTime
+  name: LastWriteTime
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_LastWriteTime
+  commentId: P:DotNetHelper_IO.PathObject.LastWriteTime
+  fullName: DotNetHelper_IO.PathObject.LastWriteTime
+  nameWithType: PathObject.LastWriteTime
+- uid: DotNetHelper_IO.PathObject.LastWriteTime*
+  name: LastWriteTime
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_LastWriteTime_
+  commentId: Overload:DotNetHelper_IO.PathObject.LastWriteTime
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.LastWriteTime
+  nameWithType: PathObject.LastWriteTime
+- uid: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  name: LastWriteTimeUtc
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_LastWriteTimeUtc
+  commentId: P:DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  fullName: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  nameWithType: PathObject.LastWriteTimeUtc
+- uid: DotNetHelper_IO.PathObject.LastWriteTimeUtc*
+  name: LastWriteTimeUtc
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_LastWriteTimeUtc_
+  commentId: Overload:DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.LastWriteTimeUtc
+  nameWithType: PathObject.LastWriteTimeUtc
 - uid: DotNetHelper_IO.PathObject.Name
   name: Name
   href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_Name
@@ -1333,18 +1637,43 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.PathObject.Size
   nameWithType: PathObject.Size
+- uid: DotNetHelper_IO.PathObject.SizeInBytes
+  name: SizeInBytes
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_SizeInBytes
+  commentId: P:DotNetHelper_IO.PathObject.SizeInBytes
+  fullName: DotNetHelper_IO.PathObject.SizeInBytes
+  nameWithType: PathObject.SizeInBytes
+- uid: DotNetHelper_IO.PathObject.SizeInBytes*
+  name: SizeInBytes
+  href: api/DotNetHelper_IO.PathObject.html#DotNetHelper_IO_PathObject_SizeInBytes_
+  commentId: Overload:DotNetHelper_IO.PathObject.SizeInBytes
+  isSpec: "True"
+  fullName: DotNetHelper_IO.PathObject.SizeInBytes
+  nameWithType: PathObject.SizeInBytes
 - uid: DotNetHelper_IO.ZipFileObject
   name: ZipFileObject
   href: api/DotNetHelper_IO.ZipFileObject.html
   commentId: T:DotNetHelper_IO.ZipFileObject
   fullName: DotNetHelper_IO.ZipFileObject
   nameWithType: ZipFileObject
-- uid: DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType)
-  name: ZipFileObject(String, ArchiveType)
-  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject__ctor_System_String_SharpCompress_Common_ArchiveType_
-  commentId: M:DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType)
-  fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject(System.String, SharpCompress.Common.ArchiveType)
-  nameWithType: ZipFileObject.ZipFileObject(String, ArchiveType)
+- uid: DotNetHelper_IO.ZipFileObject.#ctor(DotNetHelper_IO.FolderObject,SharpCompress.Common.ArchiveType,System.String)
+  name: ZipFileObject(FolderObject, ArchiveType, String)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject__ctor_DotNetHelper_IO_FolderObject_SharpCompress_Common_ArchiveType_System_String_
+  commentId: M:DotNetHelper_IO.ZipFileObject.#ctor(DotNetHelper_IO.FolderObject,SharpCompress.Common.ArchiveType,System.String)
+  fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject(DotNetHelper_IO.FolderObject, SharpCompress.Common.ArchiveType, System.String)
+  nameWithType: ZipFileObject.ZipFileObject(FolderObject, ArchiveType, String)
+- uid: DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions,SharpCompress.Writers.WriterOptions)
+  name: ZipFileObject(String, ArchiveType, ReaderOptions, WriterOptions)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject__ctor_System_String_SharpCompress_Common_ArchiveType_SharpCompress_Readers_ReaderOptions_SharpCompress_Writers_WriterOptions_
+  commentId: M:DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,SharpCompress.Readers.ReaderOptions,SharpCompress.Writers.WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject(System.String, SharpCompress.Common.ArchiveType, SharpCompress.Readers.ReaderOptions, SharpCompress.Writers.WriterOptions)
+  nameWithType: ZipFileObject.ZipFileObject(String, ArchiveType, ReaderOptions, WriterOptions)
+- uid: DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,System.String)
+  name: ZipFileObject(String, ArchiveType, String)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject__ctor_System_String_SharpCompress_Common_ArchiveType_System_String_
+  commentId: M:DotNetHelper_IO.ZipFileObject.#ctor(System.String,SharpCompress.Common.ArchiveType,System.String)
+  fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject(System.String, SharpCompress.Common.ArchiveType, System.String)
+  nameWithType: ZipFileObject.ZipFileObject(String, ArchiveType, String)
 - uid: DotNetHelper_IO.ZipFileObject.#ctor*
   name: ZipFileObject
   href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject__ctor_
@@ -1352,35 +1681,75 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.ZipFileObject.ZipFileObject
   nameWithType: ZipFileObject.ZipFileObject
-- uid: DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List{System.String},DotNetHelper_IO.Enum.FileOption)
-  name: AddFilesToZip(List<String>, FileOption)
-  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_AddFilesToZip_System_Collections_Generic_List_System_String__DotNetHelper_IO_Enum_FileOption_
-  commentId: M:DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List{System.String},DotNetHelper_IO.Enum.FileOption)
-  name.vb: AddFilesToZip(List(Of String), FileOption)
-  fullName: DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List<System.String>, DotNetHelper_IO.Enum.FileOption)
-  fullName.vb: DotNetHelper_IO.ZipFileObject.AddFilesToZip(System.Collections.Generic.List(Of System.String), DotNetHelper_IO.Enum.FileOption)
-  nameWithType: ZipFileObject.AddFilesToZip(List<String>, FileOption)
-  nameWithType.vb: ZipFileObject.AddFilesToZip(List(Of String), FileOption)
-- uid: DotNetHelper_IO.ZipFileObject.AddFilesToZip*
-  name: AddFilesToZip
-  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_AddFilesToZip_
-  commentId: Overload:DotNetHelper_IO.ZipFileObject.AddFilesToZip
+- uid: DotNetHelper_IO.ZipFileObject.Add(DotNetHelper_IO.FileObject,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  name: Add(FileObject, FileOption, WriterOptions)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_Add_DotNetHelper_IO_FileObject_DotNetHelper_IO_Enum_FileOption_SharpCompress_Writers_WriterOptions_
+  commentId: M:DotNetHelper_IO.ZipFileObject.Add(DotNetHelper_IO.FileObject,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.Add(DotNetHelper_IO.FileObject, DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  nameWithType: ZipFileObject.Add(FileObject, FileOption, WriterOptions)
+- uid: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  name: Add(IEnumerable<FileObject>, FileOption, WriterOptions)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_Add_System_Collections_Generic_IEnumerable_DotNetHelper_IO_FileObject__DotNetHelper_IO_Enum_FileOption_SharpCompress_Writers_WriterOptions_
+  commentId: M:DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{DotNetHelper_IO.FileObject},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  name.vb: Add(IEnumerable(Of FileObject), FileOption, WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable<DotNetHelper_IO.FileObject>, DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  fullName.vb: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable(Of DotNetHelper_IO.FileObject), DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  nameWithType: ZipFileObject.Add(IEnumerable<FileObject>, FileOption, WriterOptions)
+  nameWithType.vb: ZipFileObject.Add(IEnumerable(Of FileObject), FileOption, WriterOptions)
+- uid: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{System.String},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  name: Add(IEnumerable<String>, FileOption, WriterOptions)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_Add_System_Collections_Generic_IEnumerable_System_String__DotNetHelper_IO_Enum_FileOption_SharpCompress_Writers_WriterOptions_
+  commentId: M:DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable{System.String},DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  name.vb: Add(IEnumerable(Of String), FileOption, WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable<System.String>, DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  fullName.vb: DotNetHelper_IO.ZipFileObject.Add(System.Collections.Generic.IEnumerable(Of System.String), DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  nameWithType: ZipFileObject.Add(IEnumerable<String>, FileOption, WriterOptions)
+  nameWithType.vb: ZipFileObject.Add(IEnumerable(Of String), FileOption, WriterOptions)
+- uid: DotNetHelper_IO.ZipFileObject.Add(System.String,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  name: Add(String, FileOption, WriterOptions)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_Add_System_String_DotNetHelper_IO_Enum_FileOption_SharpCompress_Writers_WriterOptions_
+  commentId: M:DotNetHelper_IO.ZipFileObject.Add(System.String,DotNetHelper_IO.Enum.FileOption,SharpCompress.Writers.WriterOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.Add(System.String, DotNetHelper_IO.Enum.FileOption, SharpCompress.Writers.WriterOptions)
+  nameWithType: ZipFileObject.Add(String, FileOption, WriterOptions)
+- uid: DotNetHelper_IO.ZipFileObject.Add*
+  name: Add
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_Add_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.Add
   isSpec: "True"
-  fullName: DotNetHelper_IO.ZipFileObject.AddFilesToZip
-  nameWithType: ZipFileObject.AddFilesToZip
-- uid: DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)
-  name: AddFileToZip(String)
-  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_AddFileToZip_System_String_
-  commentId: M:DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)
-  fullName: DotNetHelper_IO.ZipFileObject.AddFileToZip(System.String)
-  nameWithType: ZipFileObject.AddFileToZip(String)
-- uid: DotNetHelper_IO.ZipFileObject.AddFileToZip*
-  name: AddFileToZip
-  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_AddFileToZip_
-  commentId: Overload:DotNetHelper_IO.ZipFileObject.AddFileToZip
+  fullName: DotNetHelper_IO.ZipFileObject.Add
+  nameWithType: ZipFileObject.Add
+- uid: DotNetHelper_IO.ZipFileObject.AddFromDirectory(System.String,System.String,System.IO.SearchOption)
+  name: AddFromDirectory(String, String, SearchOption)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_AddFromDirectory_System_String_System_String_System_IO_SearchOption_
+  commentId: M:DotNetHelper_IO.ZipFileObject.AddFromDirectory(System.String,System.String,System.IO.SearchOption)
+  fullName: DotNetHelper_IO.ZipFileObject.AddFromDirectory(System.String, System.String, System.IO.SearchOption)
+  nameWithType: ZipFileObject.AddFromDirectory(String, String, SearchOption)
+- uid: DotNetHelper_IO.ZipFileObject.AddFromDirectory*
+  name: AddFromDirectory
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_AddFromDirectory_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.AddFromDirectory
   isSpec: "True"
-  fullName: DotNetHelper_IO.ZipFileObject.AddFileToZip
-  nameWithType: ZipFileObject.AddFileToZip
+  fullName: DotNetHelper_IO.ZipFileObject.AddFromDirectory
+  nameWithType: ZipFileObject.AddFromDirectory
+- uid: DotNetHelper_IO.ZipFileObject.Compress(DotNetHelper_IO.FolderObject,System.String,System.IO.SearchOption)
+  name: Compress(FolderObject, String, SearchOption)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_Compress_DotNetHelper_IO_FolderObject_System_String_System_IO_SearchOption_
+  commentId: M:DotNetHelper_IO.ZipFileObject.Compress(DotNetHelper_IO.FolderObject,System.String,System.IO.SearchOption)
+  fullName: DotNetHelper_IO.ZipFileObject.Compress(DotNetHelper_IO.FolderObject, System.String, System.IO.SearchOption)
+  nameWithType: ZipFileObject.Compress(FolderObject, String, SearchOption)
+- uid: DotNetHelper_IO.ZipFileObject.Compress(System.String,System.String,System.IO.SearchOption)
+  name: Compress(String, String, SearchOption)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_Compress_System_String_System_String_System_IO_SearchOption_
+  commentId: M:DotNetHelper_IO.ZipFileObject.Compress(System.String,System.String,System.IO.SearchOption)
+  fullName: DotNetHelper_IO.ZipFileObject.Compress(System.String, System.String, System.IO.SearchOption)
+  nameWithType: ZipFileObject.Compress(String, String, SearchOption)
+- uid: DotNetHelper_IO.ZipFileObject.Compress*
+  name: Compress
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_Compress_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.Compress
+  isSpec: "True"
+  fullName: DotNetHelper_IO.ZipFileObject.Compress
+  nameWithType: ZipFileObject.Compress
 - uid: DotNetHelper_IO.ZipFileObject.CreateOrTruncate(System.Boolean)
   name: CreateOrTruncate(Boolean)
   href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_CreateOrTruncate_System_Boolean_
@@ -1394,6 +1763,71 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.ZipFileObject.CreateOrTruncate
   nameWithType: ZipFileObject.CreateOrTruncate
+- uid: DotNetHelper_IO.ZipFileObject.ExtractToDirectory(System.String,SharpCompress.Common.ExtractionOptions)
+  name: ExtractToDirectory(String, ExtractionOptions)
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_ExtractToDirectory_System_String_SharpCompress_Common_ExtractionOptions_
+  commentId: M:DotNetHelper_IO.ZipFileObject.ExtractToDirectory(System.String,SharpCompress.Common.ExtractionOptions)
+  fullName: DotNetHelper_IO.ZipFileObject.ExtractToDirectory(System.String, SharpCompress.Common.ExtractionOptions)
+  nameWithType: ZipFileObject.ExtractToDirectory(String, ExtractionOptions)
+- uid: DotNetHelper_IO.ZipFileObject.ExtractToDirectory*
+  name: ExtractToDirectory
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_ExtractToDirectory_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.ExtractToDirectory
+  isSpec: "True"
+  fullName: DotNetHelper_IO.ZipFileObject.ExtractToDirectory
+  nameWithType: ZipFileObject.ExtractToDirectory
+- uid: DotNetHelper_IO.ZipFileObject.GetEntriesCount
+  name: GetEntriesCount()
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_GetEntriesCount
+  commentId: M:DotNetHelper_IO.ZipFileObject.GetEntriesCount
+  fullName: DotNetHelper_IO.ZipFileObject.GetEntriesCount()
+  nameWithType: ZipFileObject.GetEntriesCount()
+- uid: DotNetHelper_IO.ZipFileObject.GetEntriesCount*
+  name: GetEntriesCount
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_GetEntriesCount_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.GetEntriesCount
+  isSpec: "True"
+  fullName: DotNetHelper_IO.ZipFileObject.GetEntriesCount
+  nameWithType: ZipFileObject.GetEntriesCount
+- uid: DotNetHelper_IO.ZipFileObject.GetReadableArchive
+  name: GetReadableArchive()
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_GetReadableArchive
+  commentId: M:DotNetHelper_IO.ZipFileObject.GetReadableArchive
+  fullName: DotNetHelper_IO.ZipFileObject.GetReadableArchive()
+  nameWithType: ZipFileObject.GetReadableArchive()
+- uid: DotNetHelper_IO.ZipFileObject.GetReadableArchive*
+  name: GetReadableArchive
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_GetReadableArchive_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.GetReadableArchive
+  isSpec: "True"
+  fullName: DotNetHelper_IO.ZipFileObject.GetReadableArchive
+  nameWithType: ZipFileObject.GetReadableArchive
+- uid: DotNetHelper_IO.ZipFileObject.GetWritableArchive
+  name: GetWritableArchive()
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_GetWritableArchive
+  commentId: M:DotNetHelper_IO.ZipFileObject.GetWritableArchive
+  fullName: DotNetHelper_IO.ZipFileObject.GetWritableArchive()
+  nameWithType: ZipFileObject.GetWritableArchive()
+- uid: DotNetHelper_IO.ZipFileObject.GetWritableArchive*
+  name: GetWritableArchive
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_GetWritableArchive_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.GetWritableArchive
+  isSpec: "True"
+  fullName: DotNetHelper_IO.ZipFileObject.GetWritableArchive
+  nameWithType: ZipFileObject.GetWritableArchive
+- uid: DotNetHelper_IO.ZipFileObject.ReaderOptions
+  name: ReaderOptions
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_ReaderOptions
+  commentId: P:DotNetHelper_IO.ZipFileObject.ReaderOptions
+  fullName: DotNetHelper_IO.ZipFileObject.ReaderOptions
+  nameWithType: ZipFileObject.ReaderOptions
+- uid: DotNetHelper_IO.ZipFileObject.ReaderOptions*
+  name: ReaderOptions
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_ReaderOptions_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.ReaderOptions
+  isSpec: "True"
+  fullName: DotNetHelper_IO.ZipFileObject.ReaderOptions
+  nameWithType: ZipFileObject.ReaderOptions
 - uid: DotNetHelper_IO.ZipFileObject.RemoveFilesToZip(System.Predicate{SharpCompress.Archives.IArchiveEntry})
   name: RemoveFilesToZip(Predicate<IArchiveEntry>)
   href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_RemoveFilesToZip_System_Predicate_SharpCompress_Archives_IArchiveEntry__
@@ -1423,19 +1857,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper_IO.ZipFileObject.Type
   nameWithType: ZipFileObject.Type
-- uid: DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  name: UnZipFile(FolderObject, FileOption, Boolean)
-  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_UnZipFile_DotNetHelper_IO_FolderObject_DotNetHelper_IO_Enum_FileOption_System_Boolean_
-  commentId: M:DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject,DotNetHelper_IO.Enum.FileOption,System.Boolean)
-  fullName: DotNetHelper_IO.ZipFileObject.UnZipFile(DotNetHelper_IO.FolderObject, DotNetHelper_IO.Enum.FileOption, System.Boolean)
-  nameWithType: ZipFileObject.UnZipFile(FolderObject, FileOption, Boolean)
-- uid: DotNetHelper_IO.ZipFileObject.UnZipFile*
-  name: UnZipFile
-  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_UnZipFile_
-  commentId: Overload:DotNetHelper_IO.ZipFileObject.UnZipFile
+- uid: DotNetHelper_IO.ZipFileObject.WriterOptions
+  name: WriterOptions
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_WriterOptions
+  commentId: P:DotNetHelper_IO.ZipFileObject.WriterOptions
+  fullName: DotNetHelper_IO.ZipFileObject.WriterOptions
+  nameWithType: ZipFileObject.WriterOptions
+- uid: DotNetHelper_IO.ZipFileObject.WriterOptions*
+  name: WriterOptions
+  href: api/DotNetHelper_IO.ZipFileObject.html#DotNetHelper_IO_ZipFileObject_WriterOptions_
+  commentId: Overload:DotNetHelper_IO.ZipFileObject.WriterOptions
   isSpec: "True"
-  fullName: DotNetHelper_IO.ZipFileObject.UnZipFile
-  nameWithType: ZipFileObject.UnZipFile
+  fullName: DotNetHelper_IO.ZipFileObject.WriterOptions
+  nameWithType: ZipFileObject.WriterOptions
 - uid: TSD
   name: THIS IS THE HOME PAGE TO TUTORIALS
   href: tutorials/index.html

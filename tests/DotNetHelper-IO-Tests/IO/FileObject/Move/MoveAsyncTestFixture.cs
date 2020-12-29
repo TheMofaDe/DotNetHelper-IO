@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using DotNetHelper.IO.Tests.Extensions;
+using System.Threading.Tasks;
 using DotNetHelper_IO;
 using DotNetHelper_IO.Enum;
-using DotNetHelper_IO_Tests;
 using NUnit.Framework;
 
-namespace DotNetHelper.IO.Tests
+namespace DotNetHelper.IO.Tests.IO.FileObject.Move
 {
 	[NonParallelizable]
-	public class MoveTestFixture : BaseTest
+	public class MoveAsyncTestFixture : BaseTest
 	{
 
 		public FolderObject TestFolder { get; }
 
-		public MoveTestFixture()
+		public MoveAsyncTestFixture()
 		{
 			TestFolder = new FolderObject(WorkingDirectory);
 		}
@@ -53,52 +49,37 @@ namespace DotNetHelper.IO.Tests
 		}
 
 
-		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
-		[Test]
-		public void Test_Move_EmptyFile()
-		{
-			var testFile = RandomTestFileNoExtension;
-
-			var newFile = $"{TestFolder.FullName}MOVE";
-			testFile.CreateOrTruncate();
-			testFile.MoveTo(newFile, FileOption.Overwrite);
-			Assert.IsTrue(File.Exists(newFile));
-			Assert.IsFalse(File.Exists(testFile.FullName));
-
-
-		}
-
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public void Test_MoveTo_To_File_Append()
+		public async Task Test_MoveTo_To_File_Append()
 		{
 			var fileContent = $"ABC{Environment.NewLine}";
 			var testFile = RandomTestFileNoExtension;
 			var outputFile = RandomTestFileNoExtension;
 
 			// create original file 
-			testFile.Write(fileContent);
+			await testFile.WriteAsync(fileContent);
 
 
 			Assert.IsFalse(File.Exists(outputFile.FullName));
 			testFile.MoveTo(outputFile.FullName, FileOption.Append);
 			Assert.IsTrue(File.Exists(outputFile.FullName));
 
-			Assert.IsTrue(fileContent.Equals(File.ReadAllText(outputFile.FullName)));
+			Assert.IsTrue(fileContent.Equals(await File.ReadAllTextAsync(outputFile.FullName)));
 		}
 
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public void Test_Move_To_File_Overwrite_When_Destination_Doesnt_Exist()
+		public async Task Test_Move_To_File_Overwrite_When_Destination_Doesnt_Exist()
 		{
 			var fileContent = $"ABC{Environment.NewLine}";
 			var testFile = RandomTestFileNoExtension;
 			var outputFile = RandomTestFileNoExtension;
 
 			// create original file 
-			testFile.Write(fileContent);
+			await testFile.WriteAsync(fileContent);
 
 
 			Assert.IsFalse(File.Exists(outputFile.FullName));
@@ -106,21 +87,21 @@ namespace DotNetHelper.IO.Tests
 			Assert.IsTrue(File.Exists(outputFile.FullName));
 			Assert.IsFalse(File.Exists(testFile.FullName));
 
-			Assert.IsTrue(fileContent.Equals(File.ReadAllText(outputFile.FullName)));
+			Assert.IsTrue(fileContent.Equals(await File.ReadAllTextAsync(outputFile.FullName)));
 		}
 
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public void Test_Move_To_File_Overwrite_When_Destination_Exist()
+		public async Task Test_Move_To_File_Overwrite_When_Destination_Exist()
 		{
 			var fileContent = $"ABC{Environment.NewLine}";
 			var testFile = RandomTestFileNoExtension;
 			var outputFile = RandomTestFileNoExtension;
 
 			// create both file to make sure overwrite works  
-			testFile.Write(fileContent);
-			outputFile.Write("Something Else");
+			await testFile.WriteAsync(fileContent);
+			await outputFile.WriteAsync("Something Else");
 
 			Assert.IsTrue(File.Exists(outputFile.FullName));
 			Assert.IsTrue(File.Exists(testFile.FullName));
@@ -128,19 +109,19 @@ namespace DotNetHelper.IO.Tests
 			testFile.MoveTo(outputFile.FullName, FileOption.Overwrite);
 
 			Assert.IsFalse(File.Exists(testFile.FullName));
-			Assert.IsTrue(fileContent.Equals(File.ReadAllText(outputFile.FullName)));
+			Assert.IsTrue(fileContent.Equals(await File.ReadAllTextAsync(outputFile.FullName)));
 		}
 
 
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]
-		public void Test_Move_To_File_DoNothing_When_FileExist()
+		public async Task Test_Move_To_File_DoNothing_When_FileExist()
 		{
 			var testFile = RandomTestFileNoExtension;
 			var outputFile = RandomTestFileNoExtension;
 
-			testFile.Write("ABC");
+			await testFile.WriteAsync("ABC");
 
 			outputFile.CreateOrTruncate();
 
@@ -148,8 +129,8 @@ namespace DotNetHelper.IO.Tests
 
 			// Nothing should happen
 			Assert.IsTrue(File.Exists(testFile.FullName));
-			Assert.That(File.ReadAllText(outputFile.FullName).Equals(string.Empty));
-			Assert.That(File.ReadAllText(testFile.FullName).Equals("ABC"));
+			Assert.That((await File.ReadAllTextAsync(outputFile.FullName)).Equals(string.Empty));
+			Assert.That((await File.ReadAllTextAsync(testFile.FullName)).Equals("ABC"));
 
 		}
 

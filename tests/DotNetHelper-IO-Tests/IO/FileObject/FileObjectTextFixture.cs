@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,11 +7,9 @@ using Bogus;
 using DotNetHelper.IO.Tests.Extensions;
 using DotNetHelper_IO;
 using DotNetHelper_IO.Enum;
-using DotNetHelper_IO_Tests;
 using NUnit.Framework;
 
-
-namespace Tests
+namespace DotNetHelper.IO.Tests.IO.FileObject
 {
 	[TestFixture]
 	//[SingleThreadedAttribute]
@@ -80,7 +76,7 @@ namespace Tests
 
 			var content = new string('A', fileSize);
 			var stream = content.ToStream();
-			var testFile = new FileObject(TestFolder.FullName + new Randomizer().String(8, 'A', 'Z'));
+			var testFile = new DotNetHelper_IO.FileObject(TestFolder.FullName + new Randomizer().String(8, 'A', 'Z'));
 
 
 			// Act
@@ -112,7 +108,7 @@ namespace Tests
 		//    {
 		//        Console.WriteLine($"Progress {l}%");
 		//    };
-		//    var file = TestFile.Write(stream, progress, FileOption.Overwrite);
+		//    var file = TestFile.Write(stream, progress, FileOption.NoDeleteButOverwriteIfExist);
 		//}
 
 
@@ -139,7 +135,7 @@ namespace Tests
 			{
 				Assert.That(() =>
 				{
-					var file = new FileObject(testFile.Write(content, fileOption, encoding));
+					var file = new DotNetHelper_IO.FileObject(testFile.Write(content, fileOption, encoding));
 					Assert.That(file.ReadAllText(), Is.EqualTo(content));
 
 				}, Throws.Nothing);
@@ -182,7 +178,7 @@ namespace Tests
 		public void Test_DisposeShouldNotThrowError()
 		{
 			var newFile = $"{TestFolder.FullName}DisposeTest";
-			using (var file = new FileObject(newFile))
+			using (var file = new DotNetHelper_IO.FileObject(newFile))
 			{
 
 			}
@@ -228,7 +224,7 @@ namespace Tests
 
 
 			var filePath = testFile.FilePathOnly + "AnotherTest.Gohan";
-			using (var file = new FileObject(filePath))
+			using (var file = new DotNetHelper_IO.FileObject(filePath))
 			{
 				file.CreateOrTruncate();
 				file.ChangeExtension(".Vegeta", FileOption.Overwrite);
@@ -239,6 +235,23 @@ namespace Tests
 		}
 
 
+
+
+		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		[Test]
+		public void Test_CreateFileObject_HaveAPathTYpeOfFile_WhenFIleExist()
+		{
+
+			var testFile = RandomTestFileNoExtension;
+
+
+			var filePath = testFile.FilePathOnly + "AnotherTest.Gohan";
+			using (var file = new DotNetHelper_IO.FileObject(filePath))
+			{
+				file.CreateOrTruncate();
+				Assert.AreEqual(file.PathType, PathType.File);
+			}
+		}
 
 
 

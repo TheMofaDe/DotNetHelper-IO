@@ -39,13 +39,13 @@ Param(
     [string]$Script = "build.cake",
     [string]$Target = "Default",
     [string]$Configuration = "Release",
-    [string]$DockerDistro = "",
-    [string]$DockerDotnetVersion = "",
+    [string]$DockerDistro = "N/A",
+    [string]$DockerDotnetVersion = "N/A",
     [switch]$SkipUnitTest,
     [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
     [string]$Verbosity = "Verbose",
     [Alias("DryRun","Noop")]
-    [switch]$WhatIf,
+    [switch]$WhatIf = $false,
     [switch]$Exclusive,
     [Parameter(Position=0,Mandatory=$false,ValueFromRemainingArguments=$true)]
     [string[]]$ScriptArgs
@@ -140,6 +140,7 @@ Function Install-Dotnet($DotNetVersion)
 
 Function Check-DotnetInstalled($version)
 {
+  return $false;
     if (Get-Command dotnet -errorAction SilentlyContinue)
     {
         $sdk =  dotnet --list-sdks
@@ -170,6 +171,8 @@ $env:DOTNET_ROOT=$InstallPath
 
 $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
 $env:DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+#Write-Host  "sdk install path $InstallPath"
 
 # Install cake local tool
 dotnet tool restore

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using DotNetHelper.IO.Tests.Extensions;
 using DotNetHelper_IO;
 using DotNetHelper_IO.Enum;
-using DotNetHelper_IO_Tests;
 using NUnit.Framework;
 
-namespace DotNetHelper.IO.Tests
+namespace DotNetHelper.IO.Tests.IO.FileObject.Write
 {
 	[NonParallelizable]
 	public class WriteTestFixture : BaseTest
@@ -53,6 +49,32 @@ namespace DotNetHelper.IO.Tests
 		}
 
 
+		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
+		[Test]
+		public void Test_Write_When_Call_Multiple_Times_Doesnt_Hold_FileStream([Values(FileOption.Append, FileOption.Overwrite)] FileOption fileOption)
+		{
+			var testFile = RandomTestFileNoExtension;
+			testFile.CreateOrTruncate();
+			try
+			{
+				testFile.Write("A", fileOption);
+				var fileContent = testFile.ReadAllLines();
+				var fileContent2 = testFile.ReadAllLines();
+				testFile.Write("A", fileOption);
+				testFile.Write("B", fileOption);
+				testFile.Write("B", fileOption);
+				var filejuContent = testFile.ReadAllLines();
+				var fileConkltent2 = testFile.ReadAllLines();
+			}
+			catch (Exception ex)
+			{
+				Assert.Fail("Exception was thrown when writing to file back to back " + ex.Message);
+			}
+
+			Assert.Pass();
+
+
+		}
 
 		[Author("Joseph McNeal Jr", "josephmcnealjr@gmail.com")]
 		[Test]

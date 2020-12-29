@@ -51,7 +51,10 @@ public class BuildParameters
 
          // TODO :: START
          if(string.IsNullOrEmpty(SolutionFile))
-         SolutionFile = context.GetFiles("./*.sln").First().ToString();
+         SolutionFile = context.GetFiles("./*.sln").FirstOrDefault().ToString();
+
+         if(SolutionFile == null)
+            context.Information($"Solution File is missing in the root directory");
          // TODO :: END
 
          SolutionParserResult = context.ParseSolution(SolutionFile);
