@@ -172,24 +172,6 @@ namespace DotNetHelper.IO.Tests.IO
 
 
 
-		private void FileShouldExist(string file)
-		{
-			var value = File.Exists(file);
-			Assert.IsTrue(value, $"Test failed due to file not existing {file}");
-		}
-		private void FileShouldNotExist(string file)
-		{
-			var value = File.Exists(file);
-			Assert.IsFalse(value, $"Test failed due to file existing {file}");
-		}
-
-		private bool FileExists(string file)
-		{
-			return File.Exists(file);
-		}
-
-
-
 
 	}
 }

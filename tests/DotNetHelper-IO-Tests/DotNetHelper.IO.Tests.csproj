@@ -29,6 +29,10 @@
     <ProjectReference Include="..\..\src\DotNetHelper-IO\DotNetHelper-IO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IO\ZipObject\" />
+  </ItemGroup>
+
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'net452'">
     <DefineConstants>$(DefineConstants);NET452</DefineConstants>
