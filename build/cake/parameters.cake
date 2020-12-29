@@ -28,7 +28,7 @@ public class BuildParameters
     public bool IsPullRequest { get; private set; }
     public bool IsChangeLogUpToDate { get; private set;}
     public bool IsRunningOnMainBuildSystem { get; private set;}
-    public bool IsStableRelease() => !IsLocalBuild && IsMainRepo && IsMainBranch && !IsPullRequest && IsTagged;
+    public bool IsStableRelease() => !IsLocalBuild && IsMainRepo && IsMainBranch && !IsPullRequest;
     public bool IsPreRelease()    => !IsLocalBuild && IsMainRepo && IsMainBranch && !IsPullRequest && !IsTagged;
     public Dictionary<PlatformFamily, string[]> NativeRuntimes { get; private set; }
     public BuildCredentials Credentials {get;}
